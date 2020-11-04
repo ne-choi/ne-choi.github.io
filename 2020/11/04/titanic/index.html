@@ -15,17 +15,17 @@
 <meta property="og:description" content="I. Practice Kaggle Data 구글 드라이브 연동 Kaggle API 설치 Kaggle Token 다운로드 Titanic 데이터 불러오기  1. 구글 드라이브 연동Google Colab을 시작하면 항상 드라이브 연동을 해야 한다. 12345678910from google.colab import drive # 패키지 불러오기 from os.pat">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_40_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_45_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_49_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_52_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_56_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_67_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_69_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_74_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_76_0.png">
-<meta property="og:image" content="https://ne-choi.github.io/images/titanic/_78_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_45_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_49_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_52_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_56_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_67_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_69_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_74_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_76_0.png">
+<meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_78_0.png">
 <meta property="article:published_time" content="2020-11-04T06:35:14.054Z">
-<meta property="article:modified_time" content="2020-11-04T06:44:18.489Z">
+<meta property="article:modified_time" content="2020-11-04T06:46:54.819Z">
 <meta property="article:author" content="Naeun Choi">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ne-choi.github.io/images/titanic/output_40_0.png">
@@ -530,7 +530,7 @@ Name: Survived, dtype: int64</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">18</span>, <span class="number">8</span>))</span><br><span class="line">train[[<span class="string">&#x27;Sex&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>]].groupby([<span class="string">&#x27;Sex&#x27;</span>]).mean().plot.bar(ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Survived vs Sex&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Sex&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=train, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Sex: Survived vs Dead&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_45_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_45_0.png" alt="png"></p>
 <p>This looks interesting. The number of men on the ship is lot more than the number of women. Still the number of women saved is almost twice the number of males saved. The survival rates for a women on the ship is around 75% while that for men in around 18-19%.  </p>
 <p>This looks to be a very important feature for modeling. But is it the best? Let’s check other features.</p>
 <p>*** Pclass -&gt; Ordinal Feature**</p>
@@ -593,7 +593,7 @@ Name: Survived, dtype: int64</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax=plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">18</span>, <span class="number">8</span>))</span><br><span class="line">train[<span class="string">&#x27;Pclass&#x27;</span>].value_counts().plot.bar(color = [<span class="string">&#x27;#CD7F32&#x27;</span>, <span class="string">&#x27;#FFDF00&#x27;</span>, <span class="string">&#x27;#D3D3D3&#x27;</span>], ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Number Of Passengers By Pclass&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;Count&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Pclass&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=train, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Pclass:Survived vs Dead&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_49_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_49_0.png" alt="png"></p>
 <p>People say <strong>Money Can’t Buy Everything</strong>. But we can clearly see that Passengers Of Pclass 1 were given a very high priority while rescue. Even thouugh the number of Passengers in Pclass 3 were a lot higher, still the number of survival from them is very low, somewhere around 25%.  </p>
 <p>For Pclass 1% survived is around 63% while for Pclass 2 is around 48%. So money and status matters. Such a materialistic world.  </p>
 <p>Let’s dive in little bit more and check for other interesting observations. Let’s check survival rate with Sex and Pclass Together.</p>
@@ -682,7 +682,7 @@ Name: Survived, dtype: int64</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.factorplot(<span class="string">&#x27;Pclass&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, hue = <span class="string">&#x27;Sex&#x27;</span>, data = train)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_52_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_52_0.png" alt="png"></p>
 <p>We use FactorPlot in this case, because they make the seperation of categorical values easy.  </p>
 <p>Looking at the CrossTab and the FactorPlot, we can easily infer that survival for Women from Pclass 1 is about 95-96%, as only 3 out of 94 Women from Pclass 1 died.  </p>
 <p>It is evident that irrespective of Pclass, Women were given first priority while rescue. Even Men from Pclass 1 have a very low survival rate.  </p>
@@ -696,7 +696,7 @@ Average Age on the ship: 29.69911764705882 Years</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">18</span>, <span class="number">8</span>))</span><br><span class="line">sns.violinplot(<span class="string">&quot;Pclass&quot;</span>, <span class="string">&quot;Age&quot;</span>, hue=<span class="string">&quot;Survived&quot;</span>, data=train, split=<span class="literal">True</span>, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Pclass and Age vs Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_yticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">110</span>, <span class="number">10</span>))</span><br><span class="line">sns.violinplot(<span class="string">&quot;Sex&quot;</span>, <span class="string">&quot;Age&quot;</span>, hue=<span class="string">&quot;Survived&quot;</span>, data=train, split=<span class="literal">True</span>, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Sex and Age vs Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_yticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">110</span>, <span class="number">10</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_56_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_56_0.png" alt="png"></p>
 <p><strong>Observations:</strong></p>
 <ul>
 <li><p>The number of cildren increases with Pclass and the survival rate for passengers below Age 10(i.e children) looks to be good irrespective of the Pclass.  </p>
@@ -800,7 +800,7 @@ Name: Age, dtype: float64</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f, ax=plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">20</span>, <span class="number">10</span>))</span><br><span class="line">train[train[<span class="string">&#x27;Survived&#x27;</span>]==<span class="number">0</span>].Age.plot.hist(ax=ax[<span class="number">0</span>], bins=<span class="number">20</span>, edgecolor=<span class="string">&#x27;black&#x27;</span>, color=<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Survived=0&#x27;</span>)</span><br><span class="line">x1=<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">85</span>, <span class="number">5</span>))</span><br><span class="line">ax[<span class="number">0</span>].set_xticks(x1)</span><br><span class="line">train[train[<span class="string">&#x27;Survived&#x27;</span>]==<span class="number">1</span>].Age.plot.hist(ax=ax[<span class="number">1</span>], color=<span class="string">&#x27;green&#x27;</span>, bins=<span class="number">20</span>, edgecolor=<span class="string">&#x27;black&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived=1&#x27;</span>)</span><br><span class="line">x2=<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">85</span>, <span class="number">5</span>))</span><br><span class="line">ax[<span class="number">1</span>].set_xticks(x2)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_67_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_67_0.png" alt="png"></p>
 <p><strong>Observations:</strong></p>
 <ul>
 <li>The Toddlers(age &lt; 5) were saved in large numbers(<em>The Women and Child First Policy</em>)  </li>
@@ -810,7 +810,7 @@ Name: Age, dtype: float64</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.factorplot(<span class="string">&#x27;Pclass&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, col=<span class="string">&#x27;Initial&#x27;</span>, data=train)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_69_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_69_0.png" alt="png"></p>
 <p>The Women and Child first policy thus holds true irrespective of the class.  </p>
 <p>*** Embarked -&gt; Categorical Value**</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.crosstab([train.Embarked, train.Pclass], [train.Sex, train.Survived], margins=<span class="literal">True</span>).style.background_gradient(cmap=<span class="string">&#x27;summer_r&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -999,12 +999,12 @@ Name: Age, dtype: float64</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.factorplot(<span class="string">&#x27;Embarked&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=train)</span><br><span class="line">fig=plt.gcf()</span><br><span class="line">fig.set_size_inches(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_74_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_74_0.png" alt="png"></p>
 <p>The chances for survival for Port C is highest around 0.55 while it is lowest for S.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f,ax=plt.subplots(<span class="number">2</span>,<span class="number">2</span>,figsize=(<span class="number">20</span>,<span class="number">15</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>,data=train,ax=ax[<span class="number">0</span>,<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>,<span class="number">0</span>].set_title(<span class="string">&#x27;No. Of Passengers Boarded&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>,hue=<span class="string">&#x27;Sex&#x27;</span>,data=train,ax=ax[<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">0</span>,<span class="number">1</span>].set_title(<span class="string">&#x27;Male-Female Split for Embarked&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>,hue=<span class="string">&#x27;Survived&#x27;</span>,data=train,ax=ax[<span class="number">1</span>,<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">1</span>,<span class="number">0</span>].set_title(<span class="string">&#x27;Embarked vs Survived&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>,hue=<span class="string">&#x27;Pclass&#x27;</span>,data=train,ax=ax[<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>,<span class="number">1</span>].set_title(<span class="string">&#x27;Embarked vs Pclass&#x27;</span>)</span><br><span class="line">plt.subplots_adjust(wspace=<span class="number">0.2</span>,hspace=<span class="number">0.5</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_76_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_76_0.png" alt="png"></p>
 <p><strong>Observations:</strong></p>
 <ul>
 <li>Maximum passengers boarded from S. Majority of them being from Pclass3.</li>
@@ -1015,7 +1015,7 @@ Name: Age, dtype: float64</code></pre>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.factorplot(<span class="string">&#x27;Pclass&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, hue=<span class="string">&#x27;Sex&#x27;</span>, col=<span class="string">&#x27;Embarked&#x27;</span>, data=train)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
 
-<p><img src="/images/titanic/_78_0.png" alt="png"></p>
+<p><img src="/images/titanic/output_78_0.png" alt="png"></p>
 <p><strong>0bservations:</strong></p>
 <ul>
 <li>The survival chances are almost 1 for women for Pclass 1 and Pclass 2 irrespective of the Pclass.</li>
