@@ -15,7 +15,7 @@
 <meta property="og:description" content="Pandas 10분 완성(10 Minutes to Pandas) 필사 본 자료의 저작권은 BSD-3-Clause이며, 데잇걸즈2가 번역한 Pandas 10분 완성을 필사한 자료임.  목차  Object Creation (객체 생성)   Viewing Data (데이터 확인하기)   Selection (선택)   Missing Data (결측치)   Oper">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-09T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-10T04:49:16.139Z">
+<meta property="article:modified_time" content="2020-11-10T04:52:44.938Z">
 <meta property="article:author" content="Naeun Choi">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="10 Minutes to Pandas">
@@ -776,7 +776,7 @@ dtype: object</code></pre>
 <li>주석: Pandas에 최적화된 데이터 접근 방법인 .at, .iat, .loc, .iloc 사용  </li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 데이터 인덱싱 및 선택</a>, <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">다중 인덱싱/심화 인덱싱</a></p>
-<h3 id="Getting-데이터-얻기"><a href="#Getting-데이터-얻기" class="headerlink" title="*** Getting(데이터 얻기)**"></a>*** Getting(데이터 얻기)**</h3><p>df.A와 동일한 Series를 생성하는 단일 열을 선택한다.</p>
+<h3 id="Getting-데이터-얻기"><a href="#Getting-데이터-얻기" class="headerlink" title="- Getting(데이터 얻기)"></a><strong>- Getting(데이터 얻기)</strong></h3><p>df.A와 동일한 Series를 생성하는 단일 열을 선택한다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;A&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
 
@@ -904,7 +904,7 @@ Freq: D, Name: A, dtype: float64</code></pre>
 
 
 
-<h3 id="Selection-by-Label"><a href="#Selection-by-Label" class="headerlink" title="*** Selection by Label**"></a>*** Selection by Label**</h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: Label을 통한 선택</a></p>
+<h3 id="Selection-by-Label"><a href="#Selection-by-Label" class="headerlink" title="- Selection by Label"></a><strong>- Selection by Label</strong></h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: Label을 통한 선택</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 라벨을 사용하여 횡단면 얻기</span></span><br><span class="line">df.loc[dates[<span class="number">0</span>]]</span><br></pre></td></tr></table></figure>
 
 
@@ -1050,7 +1050,7 @@ Name: 2013-01-02 00:00:00, dtype: float64</code></pre>
 
 
 <pre><code>-1.6126421545697252</code></pre>
-<h3 id="Selection-by-Position"><a href="#Selection-by-Position" class="headerlink" title="*** Selection by Position**"></a>*** Selection by Position**</h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 위치로 선택하기</a></p>
+<h3 id="Selection-by-Position"><a href="#Selection-by-Position" class="headerlink" title="- Selection by Position"></a><strong>- Selection by Position</strong></h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 위치로 선택하기</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 넘겨 받은 정수 위치를 기준으로 선택</span></span><br><span class="line">df.iloc[<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 
 
@@ -1284,7 +1284,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</code></pre>
 
 
 <pre><code>0.7498368136559216</code></pre>
-<h3 id="Boolean-Indexing"><a href="#Boolean-Indexing" class="headerlink" title="*** Boolean Indexing**"></a>*** Boolean Indexing**</h3><p>데이터를 선택하기 위해 단일 열 값을 사용한다.  </p>
+<h3 id="Boolean-Indexing"><a href="#Boolean-Indexing" class="headerlink" title="- Boolean Indexing"></a><strong>- Boolean Indexing</strong></h3><p>데이터를 선택하기 위해 단일 열 값을 사용한다.  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df.A &gt; <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 
 
@@ -1554,7 +1554,7 @@ Name: 2013-01-04 00:00:00, dtype: float64</code></pre>
 
 
 
-<h3 id="Setting"><a href="#Setting" class="headerlink" title="*** Setting**"></a>*** Setting**</h3><p>새 열을 설정하면 데이터가 인덱스별로 자동정렬 된다.</p>
+<h3 id="Setting"><a href="#Setting" class="headerlink" title="- Setting"></a><strong>- Setting</strong></h3><p>새 열을 설정하면 데이터가 인덱스별로 자동정렬 된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s1 = pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], index = pd.date_range(<span class="string">&#x27;20130102&#x27;</span>, periods=<span class="number">6</span>))</span><br><span class="line">s1</span><br></pre></td></tr></table></figure>
 
 
@@ -2025,7 +2025,7 @@ Freq: D, dtype: int64</code></pre>
 
 
 <h2 id="5-Operation-연산"><a href="#5-Operation-연산" class="headerlink" title="5. Operation (연산)"></a><strong>5. Operation (연산)</strong></h2><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: 이진(Binary) 연산의 기본 섹션</a>  </p>
-<h3 id="Stats"><a href="#Stats" class="headerlink" title="*** Stats**"></a>*** Stats**</h3><p>통계: 일반적으로 결측치를 제외한 후 연산된다.</p>
+<h3 id="Stats"><a href="#Stats" class="headerlink" title="- Stats"></a><strong>- Stats</strong></h3><p>통계: 일반적으로 결측치를 제외한 후 연산된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 기술통계 수행</span></span><br><span class="line">df.mean()</span><br></pre></td></tr></table></figure>
 
 
@@ -2146,7 +2146,7 @@ Freq: D, dtype: float64</code></pre>
 
 
 
-<h3 id="Apply"><a href="#Apply" class="headerlink" title="*** Apply**"></a>*** Apply**</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 데이터에 함수 적용</span></span><br><span class="line">df.apply(np.cumsum)</span><br></pre></td></tr></table></figure>
+<h3 id="Apply"><a href="#Apply" class="headerlink" title="- Apply"></a><strong>- Apply</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 데이터에 함수 적용</span></span><br><span class="line">df.apply(np.cumsum)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -2243,7 +2243,7 @@ C    1.391231
 D    0.000000
 F    4.000000
 dtype: float64</code></pre>
-<h3 id="Histogramming"><a href="#Histogramming" class="headerlink" title="*** Histogramming**"></a>*** Histogramming**</h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Histogramming and Discretization(히스토그래밍과 이산화)</a></p>
+<h3 id="Histogramming"><a href="#Histogramming" class="headerlink" title="- Histogramming"></a><strong>- Histogramming</strong></h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Histogramming and Discretization(히스토그래밍과 이산화)</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series(np.random.randint(<span class="number">0</span>, <span class="number">7</span>, size = <span class="number">10</span>))</span><br><span class="line">s</span><br></pre></td></tr></table></figure>
 
 
@@ -2276,7 +2276,7 @@ dtype: int64</code></pre>
 8    0
 9    4
 dtype: int64&gt;</code></pre>
-<h3 id="String-Methods"><a href="#String-Methods" class="headerlink" title="*** String Methods**"></a>*** String Methods**</h3><p>Series는 문자열 처리 메소드 모음(set)을 가지고 있다.<br>이 모음은 배열의 각 요소를 쉽게 조작하도록 만드는 문자열의 속성에 포함되어 있다.<br>문자열의 패턴 일치 확인은 기본적으로 정규 표현식을 사용하며, 몇몇 경우에는 항상 정규 표현식을 사용한다.  </p>
+<h3 id="String-Methods"><a href="#String-Methods" class="headerlink" title="- String Methods"></a><strong>- String Methods</strong></h3><p>Series는 문자열 처리 메소드 모음(set)을 가지고 있다.<br>이 모음은 배열의 각 요소를 쉽게 조작하도록 만드는 문자열의 속성에 포함되어 있다.<br>문자열의 패턴 일치 확인은 기본적으로 정규 표현식을 사용하며, 몇몇 경우에는 항상 정규 표현식을 사용한다.  </p>
 <p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html">- 참고: 벡터화된 문자열 메소드</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series([<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;Aaba&#x27;</span>, <span class="string">&#x27;Baca&#x27;</span>, np.nan, <span class="string">&#x27;CABA&#x27;</span>, <span class="string">&#x27;dog&#x27;</span>, <span class="string">&#x27;cat&#x27;</span>])</span><br><span class="line">s.<span class="built_in">str</span>.lower()</span><br></pre></td></tr></table></figure>
 
@@ -2293,7 +2293,7 @@ dtype: int64&gt;</code></pre>
 7     dog
 8     cat
 dtype: object</code></pre>
-<h2 id="6-Merge"><a href="#6-Merge" class="headerlink" title="6. Merge"></a><strong>6. Merge</strong></h2><h3 id="Concat-연결"><a href="#Concat-연결" class="headerlink" title="*** Concat (연결)**"></a>*** Concat (연결)**</h3><p>결합(join)/병합(merge) 형태의 연산에 관한 인덱스, 관계 대수 기능을 위한 다양한 형태의 논리를 포함한 Series, 데이터프레임, Panel 객체를 손쉽게 결합하는 기능이 있다.  </p>
+<h2 id="6-Merge"><a href="#6-Merge" class="headerlink" title="6. Merge"></a><strong>6. Merge</strong></h2><h3 id="Concat-연결"><a href="#Concat-연결" class="headerlink" title="- Concat (연결)"></a><strong>- Concat (연결)</strong></h3><p>결합(join)/병합(merge) 형태의 연산에 관한 인덱스, 관계 대수 기능을 위한 다양한 형태의 논리를 포함한 Series, 데이터프레임, Panel 객체를 손쉽게 결합하는 기능이 있다.  </p>
 <p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Merging</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># concat()으로 pandas 객체 연결</span></span><br><span class="line">df = pd.DataFrame(np.random.randn(<span class="number">10</span>, <span class="number">4</span>))</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
 
@@ -2508,7 +2508,7 @@ dtype: object</code></pre>
 
 
 
-<h3 id="Join"><a href="#Join" class="headerlink" title="*** Join**"></a>*** Join**</h3><p>SQL 방식으로 병합한다.<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: 데이터베이스 스타일 결합</a></p>
+<h3 id="Join"><a href="#Join" class="headerlink" title="- Join"></a><strong>- Join</strong></h3><p>SQL 방식으로 병합한다.<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: 데이터베이스 스타일 결합</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">left = pd.DataFrame(&#123;<span class="string">&#x27;key&#x27;</span>: [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;foo&#x27;</span>], <span class="string">&#x27;lval&#x27;</span>: [<span class="number">1</span>, <span class="number">2</span>]&#125;)</span><br><span class="line">right = pd.DataFrame(&#123;<span class="string">&#x27;key&#x27;</span>: [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;foo&#x27;</span>], <span class="string">&#x27;rval&#x27;</span>: [<span class="number">4</span>, <span class="number">5</span>]&#125;)</span><br></pre></td></tr></table></figure>
 
 
@@ -2802,7 +2802,7 @@ dtype: object</code></pre>
 
 
 
-<h3 id="Append-추가"><a href="#Append-추가" class="headerlink" title="*** Append (추가)**"></a>*** Append (추가)**</h3><p>데이터프레임에 행을 추가한다.<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Appending</a></p>
+<h3 id="Append-추가"><a href="#Append-추가" class="headerlink" title="- Append (추가)"></a><strong>- Append (추가)</strong></h3><p>데이터프레임에 행을 추가한다.<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Appending</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(np.random.randn(<span class="number">8</span>, <span class="number">4</span>), columns = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>])</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
 
 
@@ -3219,7 +3219,7 @@ dtype: object</code></pre>
 
 
 <h2 id="8-Reshaping"><a href="#8-Reshaping" class="headerlink" title="8. Reshaping"></a><strong>8. Reshaping</strong></h2><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">- 참고: 계층적 인덱싱</a>, <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">변형</a>  </p>
-<h3 id="Stack"><a href="#Stack" class="headerlink" title="*** Stack**"></a>*** Stack**</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tuples = <span class="built_in">list</span>(<span class="built_in">zip</span>(*[[<span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>,</span><br><span class="line">                     <span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;qux&#x27;</span>, <span class="string">&#x27;qux&#x27;</span>],</span><br><span class="line">                    [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>,</span><br><span class="line">                     <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>]]))</span><br><span class="line"></span><br><span class="line">index = pd.MultiIndex.from_tuples(tuples, names = [<span class="string">&#x27;first&#x27;</span>, <span class="string">&#x27;second&#x27;</span>])</span><br><span class="line">df = pd.DataFrame(np.random.randn(<span class="number">8</span>, <span class="number">2</span>), index=index, columns=[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>])</span><br><span class="line">df2 = df[:<span class="number">4</span>]</span><br><span class="line">df2</span><br></pre></td></tr></table></figure>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="- Stack"></a><strong>- Stack</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tuples = <span class="built_in">list</span>(<span class="built_in">zip</span>(*[[<span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>,</span><br><span class="line">                     <span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;qux&#x27;</span>, <span class="string">&#x27;qux&#x27;</span>],</span><br><span class="line">                    [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>,</span><br><span class="line">                     <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>]]))</span><br><span class="line"></span><br><span class="line">index = pd.MultiIndex.from_tuples(tuples, names = [<span class="string">&#x27;first&#x27;</span>, <span class="string">&#x27;second&#x27;</span>])</span><br><span class="line">df = pd.DataFrame(np.random.randn(<span class="number">8</span>, <span class="number">2</span>), index=index, columns=[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>])</span><br><span class="line">df2 = df[:<span class="number">4</span>]</span><br><span class="line">df2</span><br></pre></td></tr></table></figure>
 
 
 
@@ -3489,7 +3489,7 @@ dtype: float64</code></pre>
 
 
 
-<h3 id="Pivot-Tables"><a href="#Pivot-Tables" class="headerlink" title="*** Pivot Tables**"></a>*** Pivot Tables**</h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">- 참고: 피봇 테이블</a></p>
+<h3 id="Pivot-Tables"><a href="#Pivot-Tables" class="headerlink" title="- Pivot Tables"></a><strong>- Pivot Tables</strong></h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">- 참고: 피봇 테이블</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;A&#x27;</span>: [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>] * <span class="number">3</span>,</span><br><span class="line">                   <span class="string">&#x27;B&#x27;</span>: [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>] * <span class="number">4</span>,</span><br><span class="line">                   <span class="string">&#x27;C&#x27;</span>: [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>] * <span class="number">2</span>,</span><br><span class="line">                   <span class="string">&#x27;D&#x27;</span>: np.random.randn(<span class="number">12</span>),</span><br><span class="line">                   <span class="string">&#x27;E&#x27;</span>: np.random.randn(<span class="number">12</span>)&#125;)</span><br><span class="line"></span><br><span class="line">df</span><br></pre></td></tr></table></figure>
 
 
@@ -3984,7 +3984,7 @@ AttributeError: &#39;DataFrame&#39; object has no attribute &#39;Series&#39;</co
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ne-choi.github.io/2020/11/10/Pandas_10%EB%B6%84_%EC%99%84%EC%84%B1/" data-id="ckhag9mfw000x64ueagvo0271" class="article-share-link">Share</a>
+      <a data-url="https://ne-choi.github.io/2020/11/10/Pandas_10%EB%B6%84_%EC%99%84%EC%84%B1/" data-id="ckhbi0u6i000r44ueayw7bhdq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/10-Minutes-to-Pandas/" rel="tag">10 Minutes to Pandas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/numpy/" rel="tag">numpy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pandas/" rel="tag">pandas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
