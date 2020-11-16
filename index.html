@@ -497,7 +497,7 @@
 <h1 id="3장-데이터-마트"><a href="#3장-데이터-마트" class="headerlink" title="3장. 데이터 마트"></a>3장. 데이터 마트</h1><h2 id="1절-데이터-변경-및-요약"><a href="#1절-데이터-변경-및-요약" class="headerlink" title="1절. 데이터 변경 및 요약"></a>1절. 데이터 변경 및 요약</h2><h3 id="1-R-reshape를-이용한-데이터-마트-개발"><a href="#1-R-reshape를-이용한-데이터-마트-개발" class="headerlink" title="1. R reshape를 이용한 데이터 마트 개발"></a>1. R reshape를 이용한 데이터 마트 개발</h3><ul>
 <li><p><strong>데이터 마트</strong></p>
 <ul>
-<li>데이터 웨어하우스와 사용자 사이의 중간층에 위치한 것</li>
+<li><strong>데이터 웨어하우스와 사용자 사이의 중간층</strong>에 위치한 것</li>
 <li>하나의 주제 또는 하나의 부서 중심의 데이터 웨어하우스</li>
 <li>데이터 마트 내 대부분의 데이터는 데이터 웨어하우스로부터 복제</li>
 <li>또는 자체적으로 수집되거나 관계형/다차원 데이터 베이스를 이용해 구축</li>
@@ -525,10 +525,10 @@
 <li><p><strong>reshape의 활용</strong></p>
 <ul>
 <li>reshape 패키지에는 melt()와 cast()라는 2개 핵심 함수가 있음<ul>
-<li>melt(): 쉬운 casting을 위해 적당한 형태로 만들어주는 함수</li>
-<li>melf(data, id=…)</li>
-<li>cast(): 데이터를 원하는 형태로 계산, 변형하는 함수</li>
-<li>cast(datea, formula=… ~ variable, fun)</li>
+<li><strong>melt(): 쉬운 casting을 위해 적당한 형태로 만들어주는 함수</strong></li>
+<li>melt(data, id=…)</li>
+<li><strong>cast(): 데이터를 원하는 형태로 계산, 변형하는 함수</strong></li>
+<li>cast(data, formula=… ~ variable, fun)</li>
 </ul>
 </li>
 <li>변수를 조합해 변수명을 만들고 변수를 시간, 상품 등 차원과 결합해 다양한 요약변수와 파생변수를 쉽게 생성하여 데이터 마트를 구성할 수 있게 함</li>
@@ -931,10 +931,6 @@
 <li>특정값이 나타날 가능성이 확률적으로 주어지는 변수</li>
 <li>정의역(domain)이 표본공간, 치역(range)이 실수값 (0 &lt; y &lt; 1)인 함수</li>
 <li>0이 아닌 확률을 갖는 실수값이 형태에 따라, 이산형 확률변수(discrete random variable)와 연속형 확률변수(continuous random variable)로 구분</li>
-<li>덧셈정리(배반이 아닐 때)<ul>
-<li>사건 A와 사건 B가 동시에 일어날 수 있을 때(교집합 성립), 일어날 확률 P(A 또는 B)는 P</li>
-</ul>
-</li>
 </ul>
 </li>
 </ol>
