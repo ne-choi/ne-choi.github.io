@@ -15,7 +15,7 @@
 <meta property="og:description" content="해당 자료는 ADsP 데이터분석 준전문가 2020 완전 개정판 요약본으로 저작권은 DATA EDU에 있습니다.  1장. 데이터 분석 개요1절. 데이터 분석 기법의 이해1. 데이터 처리 데이터 분석  통계 기반이나, 통계지식과 복잡한 가정이 상대적으로 적은 실용적인 분야     활용  대기업은 데이터 웨어하우스(DW)와 데이터마트(DM)를 통해 분석 데이터">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-15T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-16T10:24:33.888Z">
+<meta property="article:modified_time" content="2020-11-17T06:37:21.770Z">
 <meta property="article:author" content="Naeun Choi">
 <meta property="article:tag" content="ADsP">
 <meta property="article:tag" content="ADSP자격증">
@@ -34,7 +34,7 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+</head>
 
 <body>
   <div id="container">
@@ -928,13 +928,905 @@
 </li>
 <li><p><strong>확률변수(random variable)</strong></p>
 <ul>
-<li>특정값이 나타날 가능성이 확률적으로 주어지는 변수</li>
-<li>정의역(domain)이 표본공간, 치역(range)이 실수값 (0 &lt; y &lt; 1)인 함수</li>
-<li>0이 아닌 확률을 갖는 실수값이 형태에 따라, 이산형 확률변수(discrete random variable)와 연속형 확률변수(continuous random variable)로 구분</li>
+<li><p>특정값이 나타날 가능성이 확률적으로 주어지는 변수</p>
+</li>
+<li><p>정의역(domain)이 표본공간, 치역(range)이 실수값 (0 &lt; y &lt; 1)인 함수</p>
+</li>
+<li><p>0이 아닌 확률을 갖는 실수값이 형태에 따라, 이산형 확률변수(discrete random variable)와 연속형 확률변수(continuous random variable)로 구분</p>
+</li>
+<li><p><strong>덧셈정리(배반 X)</strong></p>
+<ul>
+<li>사건 A와 사건 B가 동시에 일어날 수 있을 때(교집합 성립)</li>
+<li>일어날 확률 P(A 또는 B): P(A∪B) = P(A) + P(B) - P(A∩B)</li>
+<li>사건 B가 주어졌을 때, 사건 A의 조건부확률: <strong>P(A|B) = P(A∩B)/P(B)</strong></li>
+</ul>
+</li>
+<li><p><strong>덧셈정리(배반 O)</strong></p>
+<ul>
+<li>사건 A와 사건 B가 동시에 일어나지 않을 때</li>
+<li>사건 A or 사건 B 중, 한 쪽만 일어날 확률: <strong>P(A∪B) = P(A) + P(B)</strong></li>
+</ul>
+</li>
+<li><p><strong>곱셈정리</strong></p>
+<ul>
+<li>사건 A와 B가 서로 무관계하게 나타날 때(독립사건)</li>
+<li>사건 B가 주어졌을 때, 사건 A의 조건부확률: <strong>P(A|B) = P(A)</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
 </li>
+<li><p>확률분포</p>
+<ul>
+<li><p><strong>이산형 확률 변수</strong></p>
+<ol>
+<li><p><strong>베르누이 확률분포</strong>(Bernoulli distribution)</p>
+<ul>
+<li>결과가 2개만 나오는 경우</li>
+<li>동전 던지기, 시험의 합격/불합격, 안타를 칠 확률</li>
+</ul>
+</li>
+<li><p><strong>이항분포</strong>(Binomial distribution)</p>
+<ul>
+<li>베르누이 시행을 n번 반복했을 때, k번 성공할 확률</li>
+<li>5번 타석에 들어와서 3번 안타를 칠 확률 → n=5, k=3, 안타를 칠 확률 P(x)=타율</li>
+<li>성공할 확률 P가 0이나 1에 가깝지 않고 n이 충분히 크면 정규분포에 가까워짐, 1/2에 가까우면 종 모양</li>
+</ul>
+</li>
+<li><p><strong>기하분포</strong>(Geometric distribution)</p>
+<ul>
+<li>성공확률이 p인 베르누이 시행에서 첫 번째 성공이 있기까지 x번 실패할 확률</li>
+<li>5번 타석에 들어와서 3번째 타석에서 안타를 칠 확률</li>
+</ul>
+</li>
+<li><p><strong>다항분포</strong>(Multinomial distribution)</p>
+<ul>
+<li>세 가지 이상의 결과를 가지는 반복 시행에서 발생하는 확률 분포 (이항분포 확장한 것)</li>
+</ul>
+</li>
+<li><p><strong>포아송분포</strong>(Poisson distribution)</p>
+<ul>
+<li>시간과 공간 내에서 발생하는 사건의 발생횟수에 대한 확률분포</li>
+<li>책에 오타가 5p당 10개 나온다고 할 때, 한 페이지에 오타가 3개 나올 확률</li>
+<li>최근 5경기에서 10개의 홈런을 쳤다고 할 때, 오늘 경기에서 홈런을 치지 못할 확률</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>연속형 확률 변수</strong></p>
+<ol>
+<li><p><strong>균일분포</strong>(일양분포, Uniform distribution)</p>
+<ul>
+<li>모든 확률변수 X가 균일한 확률을 가지는 확률분포 (다트의 확률분포)</li>
+</ul>
+</li>
+<li><p><strong>정규분포</strong>(Normal distribution)</p>
+<ul>
+<li>평균이 μ이고 표준편차가 σ인 X의 확률밀도함수</li>
+<li>표준편차가 클 경우 그래프가 퍼져보임</li>
+<li>표준정규분포: 평균 0, 표준편차 1 → 정규분포를 표준정규분포로 만드는 공식: z = $\frac{X-μ}{σ}$</li>
+</ul>
+</li>
+<li><p><strong>지수분포</strong>(Exponential distribution)</p>
+<ul>
+<li>어떤 사건이 발생할 때까지 경과 시간에 대한 연속확률분포</li>
+<li>전자레인지 수명 시간, 콜센터에 전화가 걸려올 때까지의 시간, 은행 고객 내방에 걸리는 시간, 버스가 올 때까지 시간</li>
+</ul>
+</li>
+<li><p><strong>t-분포</strong>(t-distribution)</p>
+<ul>
+<li>데이터가 연속형일 때, 두 집단 평균이 동일한지 알고 싶을 때 사용</li>
+<li>평균이 0을 중심으로 좌우가 동일한 분포</li>
+<li>정규분포보다 퍼져 있고 자유도가 커질수록 정규분포에 가까워짐</li>
+</ul>
+</li>
+<li><p><strong>X^2^-분포</strong>(chi-square distribution)</p>
+<ul>
+<li>두 집단 간의 동질성 검정에 활용</li>
+<li>범주형 자료에 얻어진 관측값과 기대값 차이를 보는 적합성 검정에 활용</li>
+<li>모평균과 모분산이 알려지지 않은 모집단의 모분산에 대한 가설 검정에 사용되는 분포</li>
+</ul>
+</li>
+</ol>
+<p>6 <strong>F-분포</strong>(F-distribution)</p>
+<ul>
+<li>두 집단 간 분산의 동일성 검정에 사용</li>
+<li>확률변수는 항상 양의 값만 갖고 x^2^-분포와 달리 자유도를 2개 가지며 자유도가 커질수록 정규분포에 가까워짐</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-추정과-가설-검정"><a href="#5-추정과-가설-검정" class="headerlink" title="5. 추정과 가설 검정"></a>5. 추정과 가설 검정</h3><ul>
+<li><p>추정의 개요</p>
+<ul>
+<li><p><strong>확률표본</strong>(random sample)</p>
+<ul>
+<li>확률분포는 분포를 결정하는 평균, 분산 등 모수(parameter)를 가지고 있음</li>
+<li>특정한 확률분포로부터 독립적으로 반복해 표본을 추출하는 것</li>
+<li>각 관찰값들은 서로 독립적이며 동일한 분포를 가짐</li>
+</ul>
+</li>
+<li><p><strong>추정</strong></p>
+<ul>
+<li>표본으로부터 미지의 모수를 추측하는 것</li>
+</ul>
+<ol>
+<li><p><strong>점추정</strong>(point estimation)</p>
+<ul>
+<li><strong>‘모수가 특정한 값일 것</strong>‘이라고 추정하는 것</li>
+<li>표본의 평균, 중위수, 최빈값 등을 사용</li>
+<li>점추정량의 조건, 표본평균, 분산<ul>
+<li>불편성: 가능한 표본에서 얻은 추정량의 기대값은 모집단의 모수와 편의(차이)가 없음</li>
+<li>효율성: 추정량의 분산이 작을수록 좋음</li>
+<li>일치성: 표본 크기가 아주 커지면, 추정량이 모수와 거의 같아짐</li>
+<li>충족성: 추정량은 모수에 대해 모든 정보를 제공</li>
+<li>표본평균: 모집단 평균(모평균)을 추정하기 위한 추정량, 확률표본의 평균값</li>
+<li>표본분산: 모집단의 분산(모분산)을 추정하기 위한 추정량</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>구간추정</strong>(interval estimation)</p>
+<ul>
+<li>점추정의 정확성을 보완하기 위해, 확률로 표현된 믿음의 정도 하에서 <strong>모수가 특정한 구간에 있을 것</strong>이라고 선언하는 것</li>
+<li>항상 추정량 분포에 대한 전제와, 구해진 구간 안에 모수가 있을 가능성의 크기(신뢰수준(confidence interval))가 주어져야 함</li>
+<li>참고: 모분산을 알 때는 분자에 σ, 모를 때는 S를 넣음</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>가설검정</p>
+<ul>
+<li>모집단에 대한 가설을 설정하고, 표본관찰을 통해 가설의 채택여부를 결정하는 분석 방법</li>
+<li>표본 관찰 또는 실험을 통해 귀무가설과 대립가설 중 하나를 선택</li>
+<li>귀무가설이 옳다는 전제 하에 검정통계량 값을 구하고, 이 값이 나타날 가능성의 크기에 의해 귀무가설 채택 여부를 결정</li>
+</ul>
+<ol>
+<li><p><strong>귀무가설(null hypothesis, H<del>0</del>)</strong></p>
+<ul>
+<li>‘비교하는 값과 차이가 없다, 동일하다’를 기본개념으로 하는 가설</li>
+</ul>
+</li>
+<li><p><strong>대립가설(alternative hypothesis, H<del>1</del>)</strong></p>
+<ul>
+<li>뚜렷한 증거가 있을 때 주장하는 가설</li>
+</ul>
+</li>
+<li><p><strong>검정통계량(test statistic)</strong></p>
+<ul>
+<li>관찰된 표본으로부터 구하는 통계량, 검정 시 가설 진위를 판단하는 기준</li>
+</ul>
+</li>
+<li><p><strong>유의수준(significance level, α)</strong></p>
+<ul>
+<li>귀무가설이 옳은데도 기각하는 확률 크기</li>
+</ul>
+</li>
+<li><p><strong>기각역(critical regoin, C)</strong></p>
+<ul>
+<li>귀무가설이 옳다는 전제 하에서 구한 검정통계량 분포에서, 확률이 유의수준 α인 부분</li>
+<li>반대는 채택역(acceptance region)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>제1종 오류와 제2종 오류</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>사실 \ 가설검정 결과</th>
+<th>H<del>0</del>가 사실이라고 판정</th>
+<th>H<del>0</del>가 사실 아니라고 판정</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>H<del>0</del>가 사실</td>
+<td>옳은 결정</td>
+<td>제1종 오류(α)</td>
+</tr>
+<tr>
+<td>H<del>0</del>가 사실 아님</td>
+<td>제2종 오류(β)</td>
+<td>옳은 결정</td>
+</tr>
+</tbody></table>
+<ul>
+<li>두 가지 오류는 상충관계라, 가설검정에서는 제1종 오류 크기를 0.1, 0.05, 0.01 등으로 고정한 뒤, 제2종 오류가 최소가 되도록 기각역을 설정함</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-비모수-검정"><a href="#6-비모수-검정" class="headerlink" title="6. 비모수 검정"></a>6. 비모수 검정</h3><ul>
+<li><p><strong>모수적 방법</strong></p>
+<ul>
+<li>검정하고자 하는 모집단의 분포에 대해 가정하고, 가정 하에서 검정통계량과 검정통계량 분포를 유도해 검정 실시</li>
+</ul>
+</li>
+<li><p><strong>비모수적 방법</strong></p>
+<ul>
+<li>자료가 추출된 모집단의 분포에 대한 아무 제약을 가하지 않고 검정 실시</li>
+<li>관측된 자료가 특정분포를 따른다고 가정할 수 없는 경우에 이용</li>
+<li>관측된 자료 수가 많지 않거나(30개 미만) 자료가 개체 간의 서열관계를 나타내는 경우에 이용</li>
+</ul>
+</li>
+<li><p><strong>모수적 검정 vs 비모수적 검정</strong></p>
+<ol>
+<li><p>가설의 설정</p>
+<ul>
+<li>모수적 검정: 가정된 분포의 모수에 대해 가설 설정</li>
+<li>비모수적 검정: 가정된 분포 x → 가설은 단지 분포의 형태가 동일하다/동일하지 않다’처럼 분포 형태를 설명</li>
+</ul>
+</li>
+<li><p>검정 방법</p>
+<ul>
+<li>모수적 검정: 관측된 자료로 구한 표본평균, 표본분산 등 이용해 검정</li>
+<li>비모수적 검정: 관측값의 절대적 크기에 의존하지 않는 관측값의 순위나 두 관측값 차이의 부호 등 이용해 검정</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>비모수적 검정의 예</p>
+<ul>
+<li>부호 검정, 윌콕슨의 순위합검정, 윌콕슨의 부호순위합검정, 만-위트니의 U검정, 런검정, 스피어만의 순위상관계수</li>
+</ul>
+</li>
+</ul>
+<h2 id="2절-기초-통계분석"><a href="#2절-기초-통계분석" class="headerlink" title="2절. 기초 통계분석"></a>2절. 기초 통계분석</h2><h3 id="1-기술통계"><a href="#1-기술통계" class="headerlink" title="1. 기술통계"></a>1. 기술통계</h3><ul>
+<li><p><strong>기술통계(Descriptive Statistics)</strong></p>
+<ul>
+<li>자료 특성을 그림, 통계량을 사용해 쉽게 파악할 수 있도록 정리하는 것</li>
+<li>자료를 요약하는 기초적 통계를 의미</li>
+<li>데이터 분석에 앞서 대략적 통계적 수치를 계산 → 통찰력 얻기에 유리</li>
+</ul>
+</li>
+<li><p>통계량에 이한 자료 정리</p>
+<ol>
+<li>중심위치의 측도</li>
+<li>산포의 측도: 분산, 표준편차, 범위, 사분위수 범위 등</li>
+</ol>
+</li>
+<li><p>분포 형태에 관한 측도</p>
+<ul>
+<li>왜도: 분포의 비대칭 정도를 나타내는 측도<ul>
+<li>m<del>3</del> &gt; 0: 오른쪽으로 긴 꼬리를 갖는 분포 (최빈값 &lt; 중앙값 &lt; 평균)</li>
+<li>m<del>3</del> = 0: 좌우가 대칭인 분포</li>
+<li>m<del>3</del> &lt; 0: 왼쪽으로 긴 꼬리를 갖는 분포 (평균 &lt; 중앙값 &lt; 최빈값)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>그래프를 이용한 자료 정리</p>
+<ul>
+<li><p>히스토그램</p>
+<ul>
+<li>표로 된 도수분포를 그림으로 나타낸 것</li>
+</ul>
+</li>
+<li><p><strong>막대그래프 vs 히스토그램</strong></p>
+<ul>
+<li><p>막대그래프</p>
+<ul>
+<li>범주(category)형으로 구분된 데이터를 표현 → 의도에 따라 범주의 순서를 바꿀 수 있음</li>
+<li>직업, 종교, 음식</li>
+</ul>
+</li>
+<li><p>히스토그램</p>
+<ul>
+<li>연속(continuous)형으로 표시된 데이터 → 임의로 순서를 바꿀 수 없고 막대의 간격이 없음</li>
+<li>몸무게, 성적, 연봉</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>히스토그램의 생성</p>
+<ul>
+<li>계급의 수는 2^k^ ≥ n을 만족하는 최소의 정수 log<del>2</del>n = k에서 최소의 정수</li>
+<li>계급 간격은 $\frac{(최대값 - 최소값)}{계급수}$로 파악 가능</li>
+<li>계급 수와 간격이 변하면 히스토그램 모양도 변함</li>
+</ul>
+</li>
+<li><p>줄기-잎 그림(stem-and leaf plot)</p>
+</li>
+<li><p>상자그림(Box plot)</p>
+<ul>
+<li>다섯 숫자 요약을 통해 그림으로 표현(최소값, Q1, Q2, Q3, 최대값)</li>
+<li>사분위수 범위(IQR): Q3 - Q1</li>
+<li>안울타리(inner fence): Q1 - 1.5 X IQR 또는 Q3 + 1.5 X IQR</li>
+<li>바깥울타리(outer fence): Q1 - 3 X IQR 또는 Q3 + 3 X IQR</li>
+<li>보통이상점(mild outlier): 안쪽울타리와 바깥울타리 사이 자료</li>
+<li>극단이상점(extreme outlier): 바깥울타리 밖 자료</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-인과관계의-이해"><a href="#2-인과관계의-이해" class="headerlink" title="2. 인과관계의 이해"></a>2. 인과관계의 이해</h3><ul>
+<li><p>용어</p>
+<ul>
+<li><p>종속변수(반응변수, y)</p>
+<ul>
+<li>다른 변수의 영향을 받는 변수</li>
+</ul>
+</li>
+<li><p>독립변수(설명변수, x)</p>
+<ul>
+<li>영향을 주는 변수</li>
+</ul>
+</li>
+<li><p>산점도(sxatter plot)</p>
+<ul>
+<li>좌표평면 위에 점들로 표현한 그래프</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>공분산(covariance)</p>
+<ul>
+<li>두 확률변수 X, Y 방향의 조합(선형성)</li>
+<li>공분산 부호로 두 변수의 방향성 확인 가능<ul>
+<li><strong>공분산 부호가 +: 두 변수는 양의 방향성, 공분산 부호가 -: 두 변수는 음의 방향성</strong>을 가짐</li>
+<li>X, Y가 서로 독립이면, Cov(X,Y) = 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-상관분석"><a href="#3-상관분석" class="headerlink" title="3. 상관분석"></a>3. 상관분석</h3><ul>
+<li><p>상관분석(Correlation Analysis)</p>
+<ul>
+<li>두 변수 간 관계의 정도를 알아보기 위한 분석 방법</li>
+<li>상관계수(Correlation coefficient)이용</li>
+</ul>
+</li>
+<li><p>상관관계 특성</p>
+<table>
+<thead>
+<tr>
+<th>상관계수 범위</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0.7 &lt; r ≤ 1</td>
+<td>강한 양(+)의 상관이 있다</td>
+</tr>
+<tr>
+<td>0.3 &lt; r ≤ 0.7</td>
+<td>약한 양(+)의 상관이 있다</td>
+</tr>
+<tr>
+<td>0 &lt; r ≤ 0.3</td>
+<td>거의 상관이 없다</td>
+</tr>
+<tr>
+<td>r = 0</td>
+<td>상관관계(선형, 직선)가 존재하지 않는다</td>
+</tr>
+<tr>
+<td>-0.3 ≤ r &lt; 0</td>
+<td>거의 상관이 없다</td>
+</tr>
+<tr>
+<td>-0.7 ≤ r &lt; -0.3</td>
+<td>약한 음(-)의 상관이 있다</td>
+</tr>
+<tr>
+<td>-1 ≤ r &lt; -0.7</td>
+<td>강한 음(-)의 상관이 있다</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>상관분석 유형</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>피어슨</th>
+<th>스피어만</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>개념</td>
+<td>등간척도 이상으로 측정된 두 변수의 상관관계 측정 방식</td>
+<td>서열척도인 두 변수 상관관계 측정 방식</td>
+</tr>
+<tr>
+<td>특징</td>
+<td>연속형 변수, 정규성 가정, 대부분 많이 사용</td>
+<td>순서형 변수, 비모수적 방법, 순위 기준 상관관계 측정</td>
+</tr>
+<tr>
+<td>상관계수</td>
+<td>피어슨 r(적률상관계수)</td>
+<td>순위상관계수(p, 로우)</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>상관분석을 위한 R</p>
+<ul>
+<li>분산: var(x,y=NULL, na.rm=FALSE)</li>
+<li>공분산: cov(x,y=NULL, use=”everything”, method=c(“pearson”, “kendall”, “spearman”))</li>
+<li>상관관계: cor(x,y=NULL, use=”everything”, method=c(“pearson”, “kendall”, “spearman”))</li>
+<li>상관관계(Hmisc 패키지): rcorr(matrix(data명), type=c(“pearson”, “kendall”, “spearman”))</li>
+</ul>
+</li>
+<li><p><strong>상관분석의 가설 검정</strong></p>
+<ul>
+<li>상관계수 r이 0이면 입력변수 x와 출력변수 y사이에는 아무런 관계가 없음 (귀무가설: r=0, 대립가설: r≠0)</li>
+<li>t 검정통계량을 통해 얻은 p-value값이 0.05 이하인 경우, 대립가설을 채택하게 되어 데이터에서 구한 상관계수를 활용할 수 있게 됨</li>
+</ul>
+</li>
+<li><p><strong>상관분석 예제</strong></p>
+<ul>
+<li>cov: 공분산</li>
+<li>cor: 상관계수</li>
+<li>p-value: 유의수준 0.05보다 작게 나타나면 상관계수가 있음</li>
+</ul>
+</li>
+</ul>
+<h2 id="3절-회귀분석"><a href="#3절-회귀분석" class="headerlink" title="3절. 회귀분석"></a>3절. 회귀분석</h2><h3 id="1-회귀분석"><a href="#1-회귀분석" class="headerlink" title="1. 회귀분석"></a>1. 회귀분석</h3><ul>
+<li><p>회귀분석</p>
+<ul>
+<li>하나나 그 이상의 독립변수들이 종속변수에 미치는 영향을 추정할 수 있는 통계기법</li>
+<li>변수 사이의 인과관계를 밝히고 모형을 적합하여 관심 있는 변수를 예측하거나 추론하기 위한 분석 방법</li>
+<li>독립변수의 개수가 하나면 단순선형회귀분석, 독립변수 개수가 두 개 이상이면 다중선형회귀분석</li>
+</ul>
+</li>
+<li><p>회귀분석의 변수</p>
+<ul>
+<li>영향 받는 변수(y): 반응변수(response variable), 종속변수(dependent variable), 결과변수(outcome variable)</li>
+<li>영향 주는 변수(x): 설명변수(explanatory variable), 독립변수(independent variable), 예측변수(predictor variable)</li>
+</ul>
+</li>
+<li><p>선형회귀분석의 가정</p>
+<ol>
+<li><p><strong>선형성</strong></p>
+<ul>
+<li>입력변수와 출력변수의 관계가 선형 (가장 중요한 가정)</li>
+</ul>
+</li>
+<li><p><strong>등분산성</strong></p>
+<ul>
+<li>오차 분산이 입력변수와 무관하게 일정</li>
+<li>잔차플롯(산점도)를 활용해 잔차와 입력변수 간 아무런 관련성이 없게 무작위적으로 고루 분포돼야 등분산성 가정 만족</li>
+</ul>
+</li>
+<li><p><strong>독립성</strong></p>
+<ul>
+<li>입력변수와 오차는 관련 없음</li>
+<li>자기상관(독립성)을 알아보기 위해 Durbin-Waston 통계량 사용</li>
+<li>시계열 데이터에서 많이 활용</li>
+</ul>
+</li>
+<li><p><strong>비상관성</strong></p>
+<ul>
+<li>오차들끼리 상관이 없음</li>
+</ul>
+</li>
+<li><p><strong>정상성(정규성)</strong></p>
+<ul>
+<li>오차 분포가 정규분포를 따름</li>
+<li>Q-Q plot, Kolmogolov-Sirnov 검정, Shaprio-Wilk 검정 등 활용</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>가정에 대한 검증</p>
+<ul>
+<li><p>단순선형회귀분석</p>
+<ul>
+<li>입력변수와 출력변수 간 선형성을 점검하기 위해 산점도 확인</li>
+</ul>
+</li>
+<li><p>다중선형회귀분석</p>
+<ul>
+<li>선형회귀분석 가정인 선형성, 등분산성, 독립성, 정상성이 모두 만족하는지 확인</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-단순선형회귀분석"><a href="#2-단순선형회귀분석" class="headerlink" title="2. 단순선형회귀분석"></a>2. 단순선형회귀분석</h3><ul>
+<li><p>하나의 독립변수가 종속변수에 미치는 영향을 추정할 수 있는 통계기법</p>
+</li>
+<li><p>회귀분석 검토사항</p>
+<ol>
+<li><p>회귀계수가 유의미한가?</p>
+<ul>
+<li>해당 계수의 t 통계량의 p-값이 0.05보다 작으면 해당 회귀계수가 통계적으로 유의하다고 볼 수 있음</li>
+</ul>
+</li>
+<li><p>모형이 설명력을 갖는가?</p>
+<ul>
+<li>결정계수(R^2^)를 확인</li>
+<li>결정계수는 0~1값을 가지며, 높을수록 추정된 회귀식의 설명력이 높아짐</li>
+</ul>
+</li>
+<li><p>모형이 데이터를 잘 적합하는가?</p>
+<ul>
+<li>잔차를 그래프로 그리고 회귀진단</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>회귀계수의 추정</p>
+<ul>
+<li>최소제곱법, 최소자승법</li>
+<li>측정값을 기초로 적당한 제곱합을 만들고 이를 최소로 하는 값을 구해 측정결과를 처리</li>
+<li>잔차제곱이 가장 작은 선을 구하는 것</li>
+</ul>
+</li>
+<li><p>회귀분석의 검정</p>
+<ul>
+<li>회귀계수의 검정<ul>
+<li>회귀계수 β<del>1</del>이 0이면 입력변수 X와 출력변수 y 사이에는 아무런 인과관계가 없음</li>
+<li>회귀계수 β<del>1</del>이 0이면 적합된 추정식은 아무 의미가 없음 (귀무가설 β<del>1</del>=0, 대립가설 <del>1</del>≠0)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-다중선형회귀분석"><a href="#3-다중선형회귀분석" class="headerlink" title="3. 다중선형회귀분석"></a>3. 다중선형회귀분석</h3><ul>
+<li><p>다중선형회귀분석(다변량회귀분석)</p>
+<ul>
+<li><p>다중회귀식</p>
+<ul>
+<li>Y = β<del>0</del> + β<del>1</del>X<del>1</del> + β<del>2</del>X<del>2</del> + … + β<del>k</del>X<del>k</del> + ε  </li>
+</ul>
+</li>
+<li><p>모형의 통계적 유의성</p>
+<ul>
+<li>모형의 통계적 유의성은 F통계량으로 확인</li>
+<li>유의수준 5% 하에서 F통계량의 p-값이 0.05보다 작으면 추정된 회귀식은 통계적으로 유의하다 볼 수 있음</li>
+<li>F통계량이 크면 p-value가 0.05보다 작아지고 귀무가설을 기각함 → 모형이 유의하다고 결론 내릴 수 있음  </li>
+</ul>
+</li>
+<li><p>회귀계수의 유의성</p>
+<ul>
+<li>단변량 회귀분석의 회귀계수 유의성 검토와 같이 t통계량을 통해 확인</li>
+<li>모든 회귀계수의 유의성이 통계적으로 검증되어야 선택된 변수 조합으로 모형 확인 가능  </li>
+</ul>
+</li>
+<li><p>모형의 설명력</p>
+<ul>
+<li>결정계수(R^2^)나 수정된 결정계수(R^2^<del>α</del>) 확인  </li>
+</ul>
+</li>
+<li><p>모형의 적합성</p>
+<ul>
+<li>잔차와 종속변수의 산점도로 모형이 데이터를 잘 적합하고 있는지 확인</li>
+</ul>
+</li>
+<li><p>데이터가 전제하는 가정을 만족하는가?</p>
+<ul>
+<li>선형성, 독립성, 등분산성, 비상관성, 정상성</li>
+</ul>
+</li>
+<li><p>다중공선성(multicollinearity)</p>
+<ul>
+<li>다중회귀분석에서 설명변수 사이에 선형관계가 존재하면 회귀계수의 정확한 추정이 곤란함</li>
+<li>다중공선성 검사 방법<ul>
+<li>분산팽창요인(VIF): 4보다 크면 다중공산성 존재한다고 볼 수 있고, 10보다 크면 심각한 문제가 있다고 해석</li>
+<li>상태지수: 10 이상이면 문제 있다고 보고, 30보다 크면 심각한 문제가 있다고 해석<ul>
+<li>다중선형회귀분석에서 다중공선성 문제 발생 시, 문제 있는 변수를 제거하거나 주성분회귀, 능형회귀 모형을 적용하여 문제 해결</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-회귀분석의-종류"><a href="#4-회귀분석의-종류" class="headerlink" title="4. 회귀분석의 종류"></a>4. 회귀분석의 종류</h3><table>
+<thead>
+<tr>
+<th>종류</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>단순회귀</td>
+<td>독립변수가 1개이며 종속변수와의 관계가 직선</td>
+</tr>
+<tr>
+<td>다중회귀</td>
+<td>독립변수가 k개이며 종속변수와의 관계가 선형(1차 함수)</td>
+</tr>
+<tr>
+<td>로지스틱 회귀</td>
+<td>종속변수가 범주형(2진변수)인 경우에 적용, 단순 로지스틱 회귀 및 다중, 다항 로지스틱 회귀로 확장할 수 있음</td>
+</tr>
+<tr>
+<td>다항회귀</td>
+<td>독립변수와 종속변수와의 관계가 1차 함수 이상인 관계(단, k=1이면 2차 함수 이상)</td>
+</tr>
+<tr>
+<td>곡선회귀</td>
+<td>독립변수가 1개이며 종속변수와의 관계가 곡선</td>
+</tr>
+<tr>
+<td>비선형회귀</td>
+<td>회귀식 모양이 미지의 모수들의 선형관계로 이뤄져 있지 않은 모형</td>
+</tr>
+</tbody></table>
+<h3 id="5-회귀분석-사례"><a href="#5-회귀분석-사례" class="headerlink" title="5. 회귀분석 사례"></a>5. 회귀분석 사례</h3><ul>
+<li>F-statistic: F-통계량</li>
+<li>p-value: 유의수준 5% 하에서 추정되어야 해당 회귀 모형이 통계적으로 유의하다고 할 수 있음</li>
+<li>Multiple R-squared: 결정계수, Adjusted R-squared: 수정된 결정계수 (0~1값을 가지며, 높을수록 회귀식의 설명력 높아짐)</li>
+<li>Pr: 회귀계수들의 p-값</li>
+</ul>
+<h3 id="6-최적회귀방정식"><a href="#6-최적회귀방정식" class="headerlink" title="6. 최적회귀방정식"></a>6. 최적회귀방정식</h3><ul>
+<li><p>설명변수 선택</p>
+<ul>
+<li>상황에 따라 필요한 변수만 선택</li>
+<li>y에 영향을 미칠 수 있는 모든 설명변수 x가 y값 예측에 참여</li>
+<li>데이터에 설명변수 x 수가 많아지면 관리가 어려워, 가능한 범위 내에서 적은 수의 설명변수만 포함</li>
+</ul>
+</li>
+<li><p>모형선택(exploratiry analysis)</p>
+<ul>
+<li>분석 데이터에 가장 잘 맞는 모형을 찾는 방법</li>
+<li>가능한 모든 조합의 회귀분석(All possible regression): 가능한 모든 독립변수 조합에 대한 회귀모형을 생성한 뒤, 가장 적합한 회귀모형 선택</li>
+</ul>
+</li>
+<li><p>단계적 변수 선택(Stepwise Variable Selection)</p>
+<ul>
+<li><p><strong>전진선택법</strong>(forward selection)</p>
+<ul>
+<li>절편만 있는 상수모형으로 시작해 중요하다고 생각되는 설명변수부터 모형에 추가</li>
+</ul>
+</li>
+<li><p><strong>후진제거법</strong>(backward selection)</p>
+<ul>
+<li>독립변수 후보 모두를 포함한 모형에서 출발해 가장 적은 영향을 주는 변수부터 제거</li>
+<li>더 제거할 변수가 없을 때의 모형을 선택</li>
+</ul>
+</li>
+<li><p><strong>단계선택법</strong>(stepwise selection)</p>
+<ul>
+<li>전진선택법에 이해 변수를 추가하며, 새롭게 추가된 변수에 기인해 기존 변수 중요도가 약화되면 해당변수를 제거</li>
+<li>단계별로 추가 또는 제거되는 변수 여부를 검토하고 더 이상 없을 때 중단</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>벌점화된 선택기준</p>
+<ul>
+<li><p>모형 복잡도에 벌점을 주는 방법</p>
+<ul>
+<li><strong>AIC</strong>(Akaike information criterion)</li>
+<li><strong>BIC</strong>(Bayesian information criterion)</li>
+</ul>
+</li>
+<li><p>모든 후보 모형에 대해 AIC 또는 BIC를 계산하고 값이 최소가 되는 모형을 선택</p>
+</li>
+<li><p>모형 선택의 일치성(consistency inselection)</p>
+<ul>
+<li>자료 수가 늘어날 때 참인 모형이 주어진 모형 선택 기준의 최소값을 갖게 되는 성질</li>
+<li>이론적으로 AIC에 대해 일치성이 성립하지 않지만, BIC는 주요 분포에서 이러한 성질이 성립</li>
+</ul>
+</li>
+<li><p>AIC 활용이 보편화된 방식</p>
+</li>
+<li><p>추가: RIC(Risk inflation criterion), CIC(Covariance inflation criterion), DIC(Deviation information criterion)</p>
+</li>
+</ul>
+</li>
+<li><p>최적회귀방정식 사례: 교재 참고</p>
+<ol>
+<li>변수 선택법 예제(유의확률 기반)</li>
+<li>변수 선택법 예제(벌점화 전진선택법)</li>
+<li>변수 선택법 예제(벌점화 후진제거법)</li>
+</ol>
+</li>
+</ul>
+<h2 id="4절-시계열-분석"><a href="#4절-시계열-분석" class="headerlink" title="4절. 시계열 분석"></a>4절. 시계열 분석</h2><h3 id="1-시계열-자료"><a href="#1-시계열-자료" class="headerlink" title="1. 시계열 자료"></a>1. 시계열 자료</h3><ul>
+<li><p>시계열 자료</p>
+<ul>
+<li>시간의 흐름에 따라 관찰된 값</li>
+<li>시계열 데이터 분석을 통해 미래의 값을 예측하고 경향, 주기, 계절성 등을 파악하여 활용</li>
+</ul>
+</li>
+<li><p>시계열 자료의 종류</p>
+<ol>
+<li><p>비정상성 시계열 자료</p>
+<ul>
+<li>시계열 분석을 실시할 때, 다루기 어려운 자료</li>
+</ul>
+</li>
+<li><p>정상성 시계열 자료</p>
+<ul>
+<li>비정상 시계열을 핸들링해 다루기 쉬운 시계열 자료로 변환한 자료</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-정상성"><a href="#2-정상성" class="headerlink" title="2. 정상성"></a>2. 정상성</h3><ul>
+<li><p>평균이 일정할 경우</p>
+<ul>
+<li>모든 시점에 대해 일정한 평균을 가짐</li>
+<li>평균이 일정하지 않은 시계열은 <strong>차분(difference)을 통해 정상화</strong>할 수 있음</li>
+<li>차분?<ul>
+<li>현 시점 자료에서 전 시점 자료를 빼는 것</li>
+<li>일반차분: 바로 전 시점 자료를 빼는 방법, 계절차분: 여러 시점 전의 자료를 빼는 방법</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>분산이 일정</p>
+<ul>
+<li>분산도 시점에 의존하지 않고 일정해야 함</li>
+<li>분산이 일정하지 않을 경우 <strong>변환(transformation)을 통해 정상화</strong>할 수 있음</li>
+</ul>
+</li>
+<li><p>공분산도 단지 시차에만 의존, 실제 특정 시점 t, s에는 의존하지 않음</p>
+</li>
+<li><p>정상 시계열</p>
+<ul>
+<li>어떤 시점에서 평균과 분산, 특정한 시차의 길이를 갖는 자기공분산을 측정하더라도 동일한 값을 가짐</li>
+<li>정상 시계열은 항상 그 평균값으로 회귀하려는 경향이 있으며, 그 평균값 주변에서의 변동은 대체로 일정한 폭을 가짐</li>
+<li>정상 시계열이 아닌 경우 특정 기간의 시계열 자료로부터 얻은 정보를 다른 시기로 일반화할 수 없음</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-시계열자료-분석방법"><a href="#3-시계열자료-분석방법" class="headerlink" title="3. 시계열자료 분석방법"></a>3. 시계열자료 분석방법</h3><ul>
+<li><p>분석방법</p>
+<ul>
+<li>회귀분석(계량경제) 방법, Box-Jenkins 방법, 지수평활법, 시계열 분해법 등</li>
+</ul>
+</li>
+<li><p>자료 형태에 따른 분석방법</p>
+<ul>
+<li><p>일변량 시계열분석</p>
+<ul>
+<li>Box-Jenkins(ARMA), 지수평활법, 시계열 분해법</li>
+<li>시간(t)을 설명변수로 한 회귀모형주가, 소매물가지수 등 하나의 변수에 관심 갖는 경우의 시계열분석</li>
+</ul>
+</li>
+<li><p>다중 시계열분석</p>
+<ul>
+<li>계량경제모형, 전이함수모형, 개입분석, 상태공간분석, 다변량 ARIMA 등</li>
+<li>여러 개의 시간(t)에 따른 변수들을 활용하는 시계열 분석</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>이동평균법</p>
+</li>
+<li><p>지수평활법</p>
+</li>
+</ul>
+<h3 id="4-시계열모형"><a href="#4-시계열모형" class="headerlink" title="4. 시계열모형"></a>4. 시계열모형</h3><p>교재 참고</p>
+<h2 id="5절-다차원척도법"><a href="#5절-다차원척도법" class="headerlink" title="5절. 다차원척도법"></a>5절. 다차원척도법</h2><h3 id="1-다차원척도법-Multidimensional-Scaling"><a href="#1-다차원척도법-Multidimensional-Scaling" class="headerlink" title="1. 다차원척도법(Multidimensional Scaling)"></a>1. 다차원척도법(Multidimensional Scaling)</h3><ul>
+<li>객체간 근접성을 시각화하는 통계기법</li>
+<li>군집분석과 같이 개체를 대상으로 변수들을 측정한 후, 개체 사이의 유사성/비유사성을 측정하여 개체들을 2차원 공간상에 점으로 표현하는 분석 방법</li>
+<li>개체들을 2차원 또는 3차원 공간상에 점으로 표현하여 개체들 사이의 집단화를 시각적으로 표현하는 분석 방법</li>
+</ul>
+<h3 id="2-다차원척도법-목적"><a href="#2-다차원척도법-목적" class="headerlink" title="2. 다차원척도법 목적"></a>2. 다차원척도법 목적</h3><ul>
+<li>데이터 속에 잠재해 있는 패턴, 구조를 찾아냄</li>
+<li>찾아낸 구조를 소수 차원의 공간에 기하학적으로 표현</li>
+<li>데이터 축소 목적으로 다차원척도법을 이용 → 데이터에 포함되는 정보를 끄집어내기 위한 탐색수단</li>
+<li>다차원척도법에 의해 얻은 결과를, 데이터가 만들어진 현상이나 과정에 고유의 구조로서 의미 부여</li>
+</ul>
+<h3 id="3-다차원척도법-방법"><a href="#3-다차원척도법-방법" class="headerlink" title="3. 다차원척도법 방법"></a>3. 다차원척도법 방법</h3><ul>
+<li><p>객체들의 거리 계산: 유클리드 거리행렬 활용</p>
+</li>
+<li><p>관측대상의 상대적 거리 정확도를 높이기 위해 적합 정도를 스트레스값으로 나타냄</p>
+</li>
+<li><p>각 개체를 공간상에 표현하기 위한 방법: 부적합도 기준으로 STRESS나 S-STRESS 사용</p>
+</li>
+<li><p>최적모형의 적합은 부적합도를 최소로 하는 반복알고리즘을 이용하며, 이 값이 일정 수준 이하가 될 때 최종적으로 적합된 모형으로 제시</p>
+</li>
+<li><p>STRESS와 적합도 수준 M은 개체들을 공간상에 표현하기 위한 방법으로 STRESS나 S-STRESS를 부적합도 기준으로 사용</p>
+<table>
+<thead>
+<tr>
+<th>STRESS</th>
+<th>적합도 수준</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>완벽(perfect)</td>
+</tr>
+<tr>
+<td>0.05 이내</td>
+<td>매우 좋은(excellent)</td>
+</tr>
+<tr>
+<td>0.05 ~ 0.10</td>
+<td>만족(satisfactory)</td>
+</tr>
+<tr>
+<td>0.10 ~ 0.15</td>
+<td>보통(acceptable, but doubt)</td>
+</tr>
+<tr>
+<td>0.15 이상</td>
+<td>나쁨(poor)</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="4-다차원척도법-종류"><a href="#4-다차원척도법-종류" class="headerlink" title="4. 다차원척도법 종류"></a>4. 다차원척도법 종류</h3><ul>
+<li><p>계량적 MDS(Metric MDS)</p>
+<ul>
+<li>데이터가 구간척도나 비율척도인 경우 활용</li>
+<li>N개의 케이스에 대해 P개의 특성변수가 있는 경우, 각 개체들 간 유클리드 거리행렬을 계산하고 개체들 간 비유사성 S(거리제곱 행렬의 선형함수)를 공간상에 표현</li>
+</ul>
+</li>
+<li><p>비계량적 MDS(nonmetric MDS)</p>
+<ul>
+<li>데이터가 순서척도인 경우 활용</li>
+<li>개체들 간 거리가 순서로 주어진 경우에는 순서척도를 거리의 속성과 같도록 변환하여 거리를 생성한 후 적용</li>
+</ul>
+</li>
+</ul>
+<h2 id="6절-주성분분석"><a href="#6절-주성분분석" class="headerlink" title="6절. 주성분분석"></a>6절. 주성분분석</h2><h3 id="1-주성분분석-Principal-Component-Analysis"><a href="#1-주성분분석-Principal-Component-Analysis" class="headerlink" title="1. 주성분분석(Principal Component Analysis)"></a>1. 주성분분석(Principal Component Analysis)</h3><ul>
+<li>여러 변수들이 변량을 주성분이라는 서로 상관성이 높은 변수의 선형 결합으로 만들어 기존 상관성이 높은 변수들을 요약, 축소하는 기법</li>
+<li>첫 번째 주성분으로 전체 변동을 가장 많이 설명할 수 있도록 하고, 두 번째 주성분으로는 첫 번째 주성분과는 상관성이 없어서(낮아서) 첫 번째 주성분이 설명하지 못하는 나머지 변동을 정보의 손실 없이 가장 많이 설명할 수 있도록 변수들의 선형조합을 만듦</li>
+</ul>
+<h3 id="2-주성분분석의-목적"><a href="#2-주성분분석의-목적" class="headerlink" title="2. 주성분분석의 목적"></a>2. 주성분분석의 목적</h3><ul>
+<li>여러 변수들 간 내재하는 상관관계, 연관성을 이용해 소수의 주성분으로 차원을 축소함으로써 데이터를 이해하기 쉽고 관리하기 쉽게 함</li>
+<li>다중공선성이 존재하는 경우, 상관성 없는(적은) 주성분으로 변수들을 축소하여 모형 개발에 활용</li>
+<li>회귀분석이나 의사결정나무 등 모형 개발 시, 입력변수들 간 상관관계가 높은 다중공선성이 존재할 경우 모형이 잘못 만들어져 문제 발생</li>
+<li>연관성 높은 변수를 주성분분석을 통해 차원을 축소한 후, 군집분석을 수행하면 군집화 결과와 연산속도 개선 가능</li>
+<li>기계에서 나오는 센서데이터를 주성분분석으로 차원 축소 후, 시계열로 분포나 추세 변화를 분석하면 기계의 고장 징후를 사전에 파악하는 데 활용할 수 있음</li>
+</ul>
+<h3 id="3-주성분분석-vs-요인분석"><a href="#3-주성분분석-vs-요인분석" class="headerlink" title="3. 주성분분석 vs 요인분석"></a>3. 주성분분석 vs 요인분석</h3><ul>
+<li><p><strong>요인분석</strong>(Factor Analysis)</p>
+<ul>
+<li>등간척도(혹은 비율척도)로 측정한 두 개 이상 변수에 잠재된 공통인자를 찾아내는 기법</li>
+</ul>
+</li>
+<li><p>공통점</p>
+<ul>
+<li>모두 데이터를 축소하는 데 활용</li>
+<li>원래 데이터를 활용하여 몇 개의 새로운 변수 생성 가능</li>
+</ul>
+</li>
+<li><p>차이점</p>
+<ul>
+<li><p>생성된 변수의 수</p>
+<ul>
+<li>요인분석은 몇 개라고 지정 없이(2 or 3, 4, 5 …) 만들 수 있음</li>
+<li>주성분분석은 제1주성분, 제2주성분, 제3주성분 정도로 활용(대략 4개 이상은 넘지 않음)</li>
+</ul>
+</li>
+<li><p>생성된 변수 이름</p>
+<ul>
+<li>요인분석은 분석자가 요인 이름을 명명</li>
+<li>주성분분석은 주로 제1주성분, 제2주성분 등으로 표현</li>
+</ul>
+</li>
+<li><p>생성된 변수 간 관계</p>
+<ul>
+<li>요인분석은 새 변수들은 기본적으로 대등한 관계를 가짐</li>
+<li>요인분석은 어떤 것이 더 중요하다는 의미가 없음(분류/예측의 다음 단계로 사용되면 중요성 부여)</li>
+<li>주성분분석은 제1주성분이 가장 중요, 그 다음 제2주성분이 중요</li>
+</ul>
+</li>
+<li><p>분석 방법의 의미</p>
+<ul>
+<li>요인분석은 목표변수를 고려하지 않고 데이터가 주어지면 변수를 비슷한 성격으로 묶어서 새로운 (잠재)변수를 만듦</li>
+<li>주성분분석은 목표변수를 고려하여 목표변수를 예측/분류하기 위해 원래 변수의 선형 결합으로 이뤄진 몇 개의 주성분(변수)를 찾게 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-주성분의-선택법"><a href="#4-주성분의-선택법" class="headerlink" title="4. 주성분의 선택법"></a>4. 주성분의 선택법</h3><ul>
+<li>주성분분석 결과에서 누적기여율(cumulative proportion)이 85% 이상이면 주성분 수로 결정할 수 있음</li>
+<li>scree plot을 활용하여 고유값(eigenvalue)이 수평을 유지하기 전 단계로 주성분의 수 선택</li>
+</ul>
+<h3 id="5-주성분-분석-사례"><a href="#5-주성분-분석-사례" class="headerlink" title="5. 주성분 분석 사례"></a>5. 주성분 분석 사례</h3><ul>
+<li>교재 참고</li>
 </ul>
 
       
@@ -950,6 +1842,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/11/17/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Newer</span>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2020/11/14/Part02_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_%EA%B8%B0%ED%9A%8D/" id="article-nav-older" class="article-nav-link-wrap">
