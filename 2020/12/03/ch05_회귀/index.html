@@ -51,7 +51,7 @@
 <meta property="og:image" content="https://ne-choi.github.io/2020/12/03/images/machine_learning/ch05/output_159_1.png">
 <meta property="og:image" content="https://ne-choi.github.io/2020/12/03/images/machine_learning/ch05/output_165_0.png">
 <meta property="article:published_time" content="2020-12-02T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-04T07:19:57.637Z">
+<meta property="article:modified_time" content="2020-12-04T07:26:38.700Z">
 <meta property="article:author" content="Naeun Choi">
 <meta property="article:tag" content="파이썬머신러닝완벽가이드">
 <meta property="article:tag" content="회귀">
@@ -681,7 +681,7 @@ Degree 15 MSE 는 182594790.08 입니다.</code></pre>
 </li>
 </ul>
 <ul>
-<li>회귀 계수의 크기를 제어해 과적합을 개선하려면, 비용(Cost) 함수의 목표가 아래와 같이 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>M</mi><br><mi>i</mi><br><mi>n</mi><br><mo stretchy="false">(</mo><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br><mo>+</mo><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;<!-- ∗ --></mo><mrow class="MJX-TeXAtom-ORD">
+<li>회귀 계수의 크기를 제어해 과적합을 개선하려면, 비용(Cost) 함수의 목표가 아래와 같이 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>M</mi><br><mi>i</mi><br><mi>n</mi><br><mo stretchy="false">(</mo><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br><mo>+</mo><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo><mrow class="MJX-TeXAtom-ORD">
   <mo stretchy="false">|</mo>
 </mrow>
 <mrow class="MJX-TeXAtom-ORD">
@@ -703,11 +703,11 @@ Degree 15 MSE 는 182594790.08 입니다.</code></pre>
 
 </li>
 </ul>
-<p><strong>비용 함수 목표 = <math xmlns="http://www.w3.org/1998/Math/MathML"><br>  <mi>M</mi><br>  <mi>i</mi><br>  <mi>n</mi><br>  <mo stretchy="false">(</mo><br>  <mi>R</mi><br>  <mi>S</mi><br>  <mi>S</mi><br>  <mo stretchy="false">(</mo><br>  <mi>W</mi><br>  <mo stretchy="false">)</mo><br>  <mo>+</mo><br>  <mi>a</mi><br>  <mi>l</mi><br>  <mi>p</mi><br>  <mi>h</mi><br>  <mi>a</mi><br>  <mo>&#x2217;<!-- ∗ --></mo><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <mi>W</mi><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <msubsup><br>    <mrow class="MJX-TeXAtom-ORD"><br>      <mo stretchy="false">|</mo><br>    </mrow><br>    <mn>2</mn><br>    <mn>2</mn><br>  </msubsup><br>  <mo stretchy="false">)</mo><br></math></strong></p>
+<p><strong>비용 함수 목표 = <math xmlns="http://www.w3.org/1998/Math/MathML"><br>  <mi>M</mi><br>  <mi>i</mi><br>  <mi>n</mi><br>  <mo stretchy="false">(</mo><br>  <mi>R</mi><br>  <mi>S</mi><br>  <mi>S</mi><br>  <mo stretchy="false">(</mo><br>  <mi>W</mi><br>  <mo stretchy="false">)</mo><br>  <mo>+</mo><br>  <mi>a</mi><br>  <mi>l</mi><br>  <mi>p</mi><br>  <mi>h</mi><br>  <mi>a</mi><br>  <mo>&#x2217;</mo><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <mi>W</mi><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <msubsup><br>    <mrow class="MJX-TeXAtom-ORD"><br>      <mo stretchy="false">|</mo><br>    </mrow><br>    <mn>2</mn><br>    <mn>2</mn><br>  </msubsup><br>  <mo stretchy="false">)</mo><br></math></strong></p>
 <ul>
 <li>alpha: 학습 데이터 적합 정도와 회귀 계수 값의 크기 제어를 수행하는 튜닝 파라미터<ul>
 <li>alpha가 0(또는 매우 작은 값)이라면 비용 함수 식은 기존과 동일한 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>M</mi><br><mi>i</mi><br><mi>n</mi><br><mo stretchy="false">(</mo><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br><mo>+</mo><br><mn>0</mn><br><mo stretchy="false">)</mo><br></math>가 됨</li>
-<li>alpha가 무한대(또는 매우 큰 값)이라면 비용 함수 식은 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br></math>에 비해 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;<!-- ∗ --></mo><mrow class="MJX-TeXAtom-ORD">
+<li>alpha가 무한대(또는 매우 큰 값)이라면 비용 함수 식은 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br></math>에 비해 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo><mrow class="MJX-TeXAtom-ORD">
 <mo stretchy="false">|</mo>
 </mrow>
 <mrow class="MJX-TeXAtom-ORD">
@@ -739,7 +739,7 @@ Degree 15 MSE 는 182594790.08 입니다.</code></pre>
 </li>
 <li><p>규제 방식</p>
 <ul>
-<li><p>L2 규제: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;<!-- ∗ --></mo></p>
+<li><p>L2 규제: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo></p>
 <mrow class="MJX-TeXAtom-ORD">
 <mo stretchy="false">|</mo>
 </mrow>
@@ -759,7 +759,7 @@ Degree 15 MSE 는 182594790.08 입니다.</code></pre>
 </msubsup>
 </math>와 같이 W 제곱에 패널티를 부여하는 방식 ← 릿지(Ridge) 회귀  
 </li>
-<li><p>L1 규제: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;<!-- ∗ --></mo></p>
+<li><p>L1 규제: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo></p>
 <mrow class="MJX-TeXAtom-ORD">
 <mo stretchy="false">|</mo>
 </mrow>
@@ -981,7 +981,7 @@ alpha 100 일 때 5 folds 의 평균 RMSE : 5.330 </code></pre>
 </ul>
 <h3 id="3-라쏘-회귀"><a href="#3-라쏘-회귀" class="headerlink" title="(3) 라쏘 회귀"></a><strong>(3) 라쏘 회귀</strong></h3><ul>
 <li>라쏘 회귀: W의 절댓값에 패널티를 부여하는 L1 규제를 선형 회귀에 적용한 것<ul>
-<li>L1 규제는 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;<!-- ∗ --></mo><mrow class="MJX-TeXAtom-ORD">
+<li>L1 규제는 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo><mrow class="MJX-TeXAtom-ORD">
 <mo stretchy="false">|</mo>
 </mrow>
 <mrow class="MJX-TeXAtom-ORD">
@@ -1003,7 +1003,7 @@ alpha 100 일 때 5 folds 의 평균 RMSE : 5.330 </code></pre>
 <mi>p</mi>
 <mi>h</mi>
 <mi>a</mi>
-<mo>&#x2217;<!-- ∗ --></mo>
+<mo>&#x2217;</mo>
 <mrow class="MJX-TeXAtom-ORD">
 <mo stretchy="false">|</mo>
 </mrow>
@@ -1202,7 +1202,7 @@ alpha 3일 때 5 폴드 세트의 평균 RMSE: 6.189 </code></pre>
 </ul>
 <h3 id="4-엘라스틱넷-회귀"><a href="#4-엘라스틱넷-회귀" class="headerlink" title="(4) 엘라스틱넷 회귀"></a><strong>(4) 엘라스틱넷 회귀</strong></h3><ul>
 <li>엘라스틱넷(Elastic Net) 회귀: L2 규제와 L1 규제를 결합한 회귀</li>
-<li>엘라스틱넷 회귀 비용함수 목표: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br><mo>+</mo><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mn>2</mn><br><mo>&#x2217;<!-- ∗ --></mo><mrow class="MJX-TeXAtom-ORD">
+<li>엘라스틱넷 회귀 비용함수 목표: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br><mo>+</mo><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mn>2</mn><br><mo>&#x2217;</mo><mrow class="MJX-TeXAtom-ORD">
   <mo stretchy="false">|</mo>
 </mrow>
 <mrow class="MJX-TeXAtom-ORD">
@@ -1226,7 +1226,7 @@ alpha 3일 때 5 폴드 세트의 평균 RMSE: 6.189 </code></pre>
 <mi>h</mi>
 <mi>a</mi>
 <mn>1</mn>
-<mo>&#x2217;<!-- ∗ --></mo>
+<mo>&#x2217;</mo>
 <mrow class="MJX-TeXAtom-ORD">
   <mo stretchy="false">|</mo>
 </mrow>
