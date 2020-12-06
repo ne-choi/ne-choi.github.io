@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>빅데이터 분석과 R 프로그래밍 1: Ⅳ. R 그래픽 Ⅰ | Naeun Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)   POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.    Ⅳ. R 그래픽 Ⅰ1. R 그래픽 Ⅲ: 히스토그램히스토그램 (1차원) 데이터 불러오기12345# read brain databrain &lt;- read.csv(fil">
+<meta property="og:type" content="article">
+<meta property="og:title" content="빅데이터 분석과 R 프로그래밍 1: Ⅳ. R 그래픽 Ⅰ">
+<meta property="og:url" content="https://ne-choi.github.io/2020/12/06/%E2%85%A3_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A0/index.html">
+<meta property="og:site_name" content="Naeun Blog">
+<meta property="og:description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)   POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.    Ⅳ. R 그래픽 Ⅰ1. R 그래픽 Ⅲ: 히스토그램히스토그램 (1차원) 데이터 불러오기12345# read brain databrain &lt;- read.csv(fil">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-05T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-06T11:59:43.757Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech_MOOC">
+<meta property="article:tag" content="ggplot2">
+<meta property="article:tag" content="시각화">
+<meta property="article:tag" content="산점도">
+<meta property="article:tag" content="boxplot">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Naeun Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Naeun Blog</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Ⅳ_R_그래픽_Ⅰ" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      빅데이터 분석과 R 프로그래밍 1: Ⅳ. R 그래픽 Ⅰ
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.  </li>
+</ul>
+<h1 id="Ⅳ-R-그래픽-Ⅰ"><a href="#Ⅳ-R-그래픽-Ⅰ" class="headerlink" title="Ⅳ. R 그래픽 Ⅰ"></a>Ⅳ. R 그래픽 Ⅰ</h1><h2 id="1-R-그래픽-Ⅲ-히스토그램"><a href="#1-R-그래픽-Ⅲ-히스토그램" class="headerlink" title="1. R 그래픽 Ⅲ: 히스토그램"></a>1. R 그래픽 Ⅲ: 히스토그램</h2><h3 id="히스토그램-1차원"><a href="#히스토그램-1차원" class="headerlink" title="히스토그램 (1차원)"></a>히스토그램 (1차원)</h3><ul>
+<li>데이터 불러오기<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># read brain data</span><br><span class="line">brain &lt;- read.csv(file&#x3D;&quot;week4_1&#x2F;brain2210.csv&quot;)</span><br><span class="line"></span><br><span class="line"># attach 적용하기</span><br><span class="line">attach(brain)</span><br></pre></td></tr></table></figure></li>
+<li>히스토그램: hist(변수이름)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hist(brain$wt)</span><br><span class="line">hist(wt)</span><br><span class="line"></span><br><span class="line"># 색상 선택</span><br><span class="line">hist(wt, col &#x3D; &quot;lightblue&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>히스토그램(색과 제목): hist(변수이름, col=”colname”, main=” “)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># histogram with color and title, legend</span><br><span class="line">hist(wt, breaks &#x3D; 10, col &#x3D; &quot;lightblue&quot;, main&#x3D;&quot;Histogram of Brain weight&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>색(657가지 색)</li>
+<li>colors() → 모든 색의 이름을 볼 수 있음<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># see rgb values for 657 colors, choose what you like</span><br><span class="line"># colors()</span><br><span class="line"></span><br><span class="line"># select colors including &quot;blue&quot;</span><br><span class="line">grep(&quot;blue&quot;, colors(), value&#x3D;TRUE)</span><br></pre></td></tr></table></figure></li>
+<li>밀도함수 그려보기<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># fit function(find density function)</span><br><span class="line">par(mfrow&#x3D;c(1,1))</span><br><span class="line">d &lt;- density(brain$wt)</span><br><span class="line">plot(d)</span><br></pre></td></tr></table></figure></li>
+<li>그룹별 히스토그램(동일한 x축, y축 범위): xlim, ylim<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># histogram with same scale</span><br><span class="line"># 2 multiple plot</span><br><span class="line">par(mfrow&#x3D;c(2,1)) # 그래프 화면 분할을 2행 1열로 하라는 의미</span><br><span class="line">brainf&lt;-subset(brain,brain$sex&#x3D;&#x3D;&#39;f&#39;) </span><br><span class="line">hist(brainf$wt, breaks &#x3D; 12,col &#x3D; &quot;green&quot;, xlim&#x3D;c(900,1700),ylim&#x3D;c(0,20),cex&#x3D;0.7, main&#x3D;&quot;Histogram with Normal Curve (Female)&quot;, xlab&#x3D;&quot;brain weight&quot;)</span><br><span class="line"></span><br><span class="line">brainm&lt;-subset(brain,brain$sex&#x3D;&#x3D;&#39;m&#39;) </span><br><span class="line">hist(brainm$wt, breaks &#x3D; 12,col &#x3D; &quot;orange&quot;,xlim&#x3D;c(900,1700),ylim&#x3D;c(0,20), main&#x3D;&quot;Histogram with Normal Curve (Male)&quot;, xlab&#x3D;&quot;brain weight&quot;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>grep(“violet”, colors(), value=TRUE)</p>
+<h2 id="2-R-그래픽-Ⅱ-상자그림-파이차트"><a href="#2-R-그래픽-Ⅱ-상자그림-파이차트" class="headerlink" title="2. R 그래픽 Ⅱ: 상자그림, 파이차트"></a>2. R 그래픽 Ⅱ: 상자그림, 파이차트</h2><h3 id="상자그림-Boxplot-1차원"><a href="#상자그림-Boxplot-1차원" class="headerlink" title="상자그림(Boxplot, 1차원)"></a>상자그림(Boxplot, 1차원)</h3><ul>
+<li><p>상자그림: boxplot(변수이름, col=”green”)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># boxplot</span><br><span class="line">par(mfrow&#x3D;c(1,2))</span><br><span class="line"># boxplot for all data</span><br><span class="line">boxplot(brain$wt, col&#x3D;c(&quot;coral&quot;))</span><br></pre></td></tr></table></figure></li>
+<li><p>그룹별 상자그림: boxplot(변수이름~그룹이름, col=c(“col1”, “col2”)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># boxplot by gender (female, male)</span><br><span class="line">boxplot(brain$wt~brain$sex, col &#x3D; c(&quot;green&quot;, &quot;orange&quot;))</span><br><span class="line">#- 수평 상자그림: boxplot(변수이름, col&#x3D;&quot;colname&quot;, horizontal&#x3D;TRUE)</span><br><span class="line">&#96;&#96;&#96;&#123;r&#125;</span><br><span class="line">par(mfrow&#x3D;c(1,1))</span><br><span class="line">boxplot(brain$wt~brain$sex, boxwex&#x3D;0.5, horizontal&#x3D;TRUE, col &#x3D; c(&quot;grey&quot;, &quot;red&quot;))</span><br></pre></td></tr></table></figure></li>
+<li><p>박스플롯 폭 조정 옵션: boxwex=</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow&#x3D;c(1,2))</span><br><span class="line">boxplot(brain$wt, boxwex &#x3D; 0.25, col &#x3D; c(&quot;coral&quot;), main &#x3D; &quot;Boxplot for all data&quot;)</span><br><span class="line">boxplot(brain$wt, boxwex &#x3D; 0.5, col&#x3D;c(&quot;coral&quot;), main&#x3D;&quot;Boxplot for all data&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>상자그림에 기술통계치 넣기: 관측치수(n) 넣기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># add text(n) over a boxplot</span><br><span class="line">par(mfrow&#x3D;c(1,2))</span><br><span class="line">boxplot(brain$wt~brain$sex, col&#x3D;c(&quot;green&quot;, &quot;orange&quot;))</span><br><span class="line">text(c(1:nlevels(brain$sex)), a$stats[nrow(a$stats),]+30, paste(&quot;n &#x3D; &quot;,table(brain$sex),sep&#x3D;&quot;&quot;))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="막대그림"><a href="#막대그림" class="headerlink" title="막대그림"></a>막대그림</h3><ul>
+<li><p>차의 연비 데이터(autompg)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">car &lt;- read.csv(&quot;week4_2&#x2F;autompg.csv&quot;)</span><br><span class="line">attach(car)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>barplot(변수빈도, col=c(“col1”,”col2”,…))</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># bar plot with cyliner count</span><br><span class="line"># par(mfrow&#x3D;c(1,1))</span><br><span class="line">table(car$cyl)</span><br><span class="line">freq_cyl &lt;- table(cyl)</span><br><span class="line">names(freq_cyl) &lt;- c(&quot;3cyl&quot;, &quot;4cyl&quot;, &quot;5cyl&quot;, &quot;6cyl&quot;,</span><br><span class="line">                      &quot;8cyl&quot;)</span><br><span class="line">barplot(freq_cyl, col &#x3D; c(&quot;lightblue&quot;, &quot;mistyrose&quot;, &quot;lightcyan&quot;,</span><br><span class="line">                          &quot;lavender&quot;, &quot;cornsilk&quot;))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="파이차트"><a href="#파이차트" class="headerlink" title="파이차트"></a>파이차트</h3><ul>
+<li>pie(변수빈도, labels=c(“ “, …))</li>
+<li>파이차트를 그리기 위해서는 table(변수이름)을 이용하여 빈도를 계산해야 함<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># you can alse custom the labels</span><br><span class="line">freq_cyl &lt;- table(cyl)</span><br><span class="line">names(freq_cyl) &lt;- c(&quot;3cyl&quot;, &quot;4cyl&quot;, &quot;5cyl&quot;, &quot;6cyl&quot;, &quot;8cyl&quot;)</span><br><span class="line"></span><br><span class="line">pie(freq_cyl)</span><br></pre></td></tr></table></figure></li>
+<li>시계방향으로 파이차트 그리기<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># pie chart clockwise</span><br><span class="line">pie(freq_cyl, labels &#x3D; c(&quot;3cyl&quot;, &quot;4cyl&quot;, &quot;5cyl&quot;, &quot;6cyl&quot;,&quot;8cyl&quot;),</span><br><span class="line">    clockwise &#x3D; TRUE)</span><br></pre></td></tr></table></figure></li>
+<li>몇 개의 변수만 뽑아서 그래프 그리기<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 4-3 pie chart of subset</span><br><span class="line"># subset with cylinder (4,6,8) - refresh creating subset data lec3_2.R</span><br><span class="line">car1&lt;-subset(car, cyl&#x3D;&#x3D;4 | cyl&#x3D;&#x3D;6 | cyl&#x3D;&#x3D;8)</span><br><span class="line">table(car1$cyl)</span><br><span class="line"></span><br><span class="line">freq_cyl1&lt;-table(car1$cyl)</span><br><span class="line">pie(freq_cyl1, labels &#x3D; c(&quot;4cyl&quot;,&quot;6cyl&quot;,&quot;8cyl&quot;),</span><br><span class="line">    clockwise &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-R-그래픽-Ⅲ-산점도"><a href="#3-R-그래픽-Ⅲ-산점도" class="headerlink" title="3. R 그래픽 Ⅲ: 산점도"></a>3. R 그래픽 Ⅲ: 산점도</h2><h3 id="산점도-plot-x-y"><a href="#산점도-plot-x-y" class="headerlink" title="산점도: plot(x,y)"></a>산점도: plot(x,y)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">par(mforw&#x3D;c(1,1))</span><br><span class="line">x2 &lt;- c(1, 4, 9)</span><br><span class="line">y2 &#x3D; 2+x2</span><br><span class="line">plot(x2, y2)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">par(mfrwo&#x3D;c(2,1))</span><br><span class="line">x &lt;- seq(0, 2*pi, by&#x3D;0.001)</span><br><span class="line">y1 &lt;- sin(x)</span><br><span class="line">plot(x, y1, main &#x3D; &quot;sin curve (0:2*pi)&quot;)</span><br><span class="line"></span><br><span class="line">y2 &lt;- cos(x)</span><br><span class="line">plot(x,y2,main&#x3D;&quot;cosine curve (0:2*pi)&quot;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>wt(차의 무게)과 mpg(연비) 간의 산점도: plot(wt, mpg)</p>
+</li>
+<li><p>hp(마력)과 mpg(연비) 간의 산점도: plot(hp, mpg)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow&#x3D;c(2,1))</span><br><span class="line">plot(wt, mpg)</span><br><span class="line">plot(hp, mpg)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>산점도 해석</p>
+<ul>
+<li>차 무게가 무거울수록 연비는 낮다.</li>
+<li>마력과 연비 간 산점도에서는 두 개의 클러스터가 보임(클러스터 내에서는 마력이 높을수록 연비 낮음)</li>
+</ul>
+</li>
+<li><p>plot(x, y, col=as.integer(그룹변수)) <strong>색으로 표시</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow&#x3D;c(2,1), mar&#x3D;c(4,4,2,2))</span><br><span class="line">plot(disp, mpg, col&#x3D;as.integer(car$cyl))</span><br><span class="line">plot(wt, mpg,  col&#x3D;as.integer(car$cyl))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Conditioning plot: coplot(y~x|z)는 factor(그룹)</p>
+<ul>
+<li>그룹에 따른 (x와 y간) 산점도</li>
+<li>그룹변수(factor변수)간 평균 차이를 제공<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">car1&lt;-subset(car, cyl&#x3D;&#x3D;4 | cyl&#x3D;&#x3D;6 | cyl&#x3D;&#x3D;8)</span><br><span class="line">coplot(car1$mpg ~ car1$disp | as.factor(car1$cyl), data &#x3D; car1,</span><br><span class="line">       panel &#x3D; panel.smooth, rows &#x3D; 1)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>위 그래프로 확인 가능한 그룹별 산점도</p>
+<ul>
+<li>cylinder에 따른 차이를 보여줌</li>
+<li>4cyl, 6cyl, 8cyl별로 (배기량과 연비) 관계를 구체적으로 해석할 수 있음  </li>
+</ul>
+</li>
+<li><p>pairwise scatterplot: pairs(변수리스트)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cross-tab plot to see how explanatory variables are related each other</span><br><span class="line">pairs(car1[,1:6], col&#x3D;as.integer(car1$cyl), main &#x3D; &quot;autompg&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>최적 적합 함수 추정(선형회귀모형, 비선형회귀모형)</p>
+<ul>
+<li>lm(y변수~x변수): lm(linear model, 선형모형)</li>
+<li>abline: add line (선 추가 함수)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># scatterplot with best fir lines</span><br><span class="line">plot(wt, mpg, col&#x3D;as.integer(car$cyl), pch&#x3D;19)</span><br><span class="line"># best fit linear line</span><br><span class="line">abline(lm(mpg~wt), col&#x3D;&quot;red&quot;, lwd&#x3D;2, lty&#x3D;1)</span><br><span class="line"># lwd: width, 선의 굵기, lty: type, 라인의 타입</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>최적 적합 함수 추정: 비선형회귀모형, lowess 이용</p>
+<ul>
+<li>lowess: locally-weighted polynomial regression (see the references)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># scatterplot with best fit lines</span><br><span class="line">par(mfrow&#x3D;c(1,1))</span><br><span class="line">plot(wt, mpg,  col&#x3D;as.integer(car$cyl), pch&#x3D;19)</span><br><span class="line"># best fit linear line</span><br><span class="line">abline(lm(mpg~wt), col&#x3D;&quot;red&quot;, lwd&#x3D;2, lty&#x3D;1)</span><br><span class="line"></span><br><span class="line"># lowess : smoothed line, nonparmetric fit line (locally weighted polynomial regression)</span><br><span class="line">lines(lowess(wt, mpg), col&#x3D;&quot;red&quot;, lwd&#x3D;3, lty&#x3D;2)</span><br><span class="line">help(lowess)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-그래픽과-레이아웃"><a href="#4-그래픽과-레이아웃" class="headerlink" title="4. 그래픽과 레이아웃"></a>4. 그래픽과 레이아웃</h2><h3 id="그래프의-기본-함수"><a href="#그래프의-기본-함수" class="headerlink" title="그래프의 기본 함수"></a>그래프의 기본 함수</h3><ul>
+<li>그래프 종류: plot(), barplot(), boxplot(), hist(), pie(), persp()  </li>
+<li>그래프 조정 사항: 점/선 종류, 글자 크기, 여백 조정</li>
+<li>점 그리기: points()</li>
+<li>선 그리기: lines(), abline(), arrows()</li>
+<li>문자 출력: text()</li>
+<li>도형: rect(), ploygon()</li>
+<li>좌표축: axis()</li>
+<li>격자표현: grid()</li>
+</ul>
+<h3 id="그래픽-옵션"><a href="#그래픽-옵션" class="headerlink" title="그래픽 옵션"></a>그래픽 옵션</h3><ul>
+<li>par(): 그래프 출력 조정- 화면 분할, 마진, 글자 크기, 색상</li>
+<li>pty=”s”: x축과 y축을 동일 비율로 설정, square</li>
+<li>pty=”m”: 최대 크기로 설정, maximal</li>
+<li>legend = c(“name1”, “name2”)</li>
+<li>bty=”o”: box type 그래프 상자 모양 설정- o, l, 7, c, u</li>
+<li>pch=1(default): point character (1=동그라미, 2=세모, … , 19=채운 동그라미)</li>
+<li>Lty=(solid가 default): line type, 1=직선, 2=점선</li>
+<li>cex=1(default): character expansion, 문자나 점의 크기, 숫자 클수록 글자 크기 커짐</li>
+<li>mar: 아래, 왼쪽, 위쪽, 오른쪽 여백  </li>
+</ul>
+<h3 id="선-그리기"><a href="#선-그리기" class="headerlink" title="선 그리기"></a>선 그리기</h3><ul>
+<li><p>abline(h=위치, v=위치, col=colname)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow&#x3D;c(1,1))</span><br><span class="line">plot(wt, mpg, main &#x3D; &quot;abline on the scatterplot&quot;)</span><br><span class="line"># horizontal</span><br><span class="line">abline(h &#x3D; 20)</span><br><span class="line">abline(h &#x3D; 30) # 수평선을 y축 위치 20과 30에</span><br><span class="line"># vertical</span><br><span class="line">abline(v &#x3D; 3000, col&#x3D;&quot;blue&quot;) # 수직선을 x축 위치 3000에, 색은 파란색</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>abline(절편값, 기울기값, lty=1, lwd=1, col=colname)</p>
+<ul>
+<li>lty=1(직선), lty=2(점선), lwd=1 (line width, 숫자 클수록 선 굵어짐)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># y &#x3D; a + bx</span><br><span class="line">abline(a &#x3D; 40, b &#x3D; -0.0076, col&#x3D;&quot;red&quot;)</span><br><span class="line"># linear model coefficients, lty (line type), lwd (line with)</span><br><span class="line"># linear model (mpg&#x3D;f(wp))</span><br><span class="line">z &lt;- lm(mpg ~ wt, data &#x3D; car)</span><br><span class="line">z</span><br><span class="line">abline(z, lty &#x3D; 2, lwd &#x3D; 2, col&#x3D;&quot;green&quot;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="layout-함수"><a href="#layout-함수" class="headerlink" title="layout 함수"></a>layout 함수</h3><ul>
+<li><p>par(mfrow=c(2,2))</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 2*2 mulitple plot</span><br><span class="line">par(mfrow&#x3D;c(2,2))</span><br><span class="line">plot(wt, mpg)</span><br><span class="line">plot(disp, mpg)</span><br><span class="line">plot(hp, mpg)</span><br><span class="line">plot(accler, mpg)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>margin 조정: mar(아래, 왼쪽, 위쪽, 오른쪽)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 2*2 mulitple plot adjusting margin</span><br><span class="line">par(mfrow&#x3D;c(2,2), mar&#x3D;c(4,4,2,2))</span><br><span class="line">plot(wt, mpg)</span><br><span class="line">plot(disp, mpg)</span><br><span class="line">plot(hp, mpg)</span><br><span class="line">plot(accler, mpg)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>layout 조정</p>
+<ul>
+<li>layout 행렬 m<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># top 1 plot, bottom 2 plot</span><br><span class="line">(m &lt;- matrix(c(1, 1, 2, 3), ncol &#x3D; 2, byrow &#x3D; T))</span><br><span class="line">layout(mat &#x3D; m)</span><br><span class="line">plot(car$wt, car$mpg, main &#x3D; &quot;scatter plot of autompg&quot;, pch &#x3D; 19, col &#x3D; 4)</span><br><span class="line">hist(car$wt)</span><br><span class="line">hist(car$mpg)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="legend-달기"><a href="#legend-달기" class="headerlink" title="legend 달기"></a>legend 달기</h3><ul>
+<li>legend(x축 위치, y축 위치, legend=범례라벨, pch=1, col=c(번호 혹은 색으로 지정), lty=1)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># scatterplot coloring group variable</span><br><span class="line">par(mfrow&#x3D;c(1,1), mar&#x3D;c(4,4,4,4))</span><br><span class="line">plot(wt, mpg,  col&#x3D;as.integer(car$cyl))</span><br><span class="line">labels &#x3D; c(&quot;3cyl&quot;, &quot;4cyl&quot;, &quot;5cyl&quot;, &quot;6cyl&quot;,&quot;8cyl&quot;)</span><br><span class="line">legend(4000, 45, legend &#x3D; labels, pch &#x3D; 1, col &#x3D;c(3,4,5,6,8), lty &#x3D;1)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="R-그래픽"><a href="#R-그래픽" class="headerlink" title="R 그래픽"></a>R 그래픽</h3><ul>
+<li><p>히스토그램과 밀도함수(histogram and density)</p>
+</li>
+<li><p>상자그림(boxplot)</p>
+</li>
+<li><p>파이차트(pie chart), 막대그림(bar plot)</p>
+</li>
+<li><p>산점도(scatterplot)</p>
+</li>
+<li><p>ggplot2를 이용한 그래픽</p>
+</li>
+<li><p>덴드로그램, 애니메이션</p>
+</li>
+<li><p>지도분석(map)</p>
+</li>
+<li><p>3D, 히트맵</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ne-choi.github.io/2020/12/06/%E2%85%A3_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A0/" data-id="ckid2q7wt00003kuec0925qpi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/boxplot/" rel="tag">boxplot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ggplot2/" rel="tag">ggplot2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%82%B0%EC%A0%90%EB%8F%84/" rel="tag">산점도</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" rel="tag">시각화</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/04/ch06_%EC%B0%A8%EC%9B%90_%EC%B6%95%EC%86%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">ch06. 차원 축소</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Naeun Choi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> with 
+      theme_by <a href="http://hexo.io/" target="_blank">mango</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
