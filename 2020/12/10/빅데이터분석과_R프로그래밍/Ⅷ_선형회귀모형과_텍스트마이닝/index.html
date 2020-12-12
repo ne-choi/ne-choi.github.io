@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝 | Naeun Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)   POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅷ. 선형회귀모형과 텍스트마이닝1. 상관분석상관계수 상관계수: cor(변수1, 변수2)  1234car &lt;- read.csv(&quot;week8_1&#x2F;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝">
+<meta property="og:url" content="https://ne-choi.github.io/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/index.html">
+<meta property="og:site_name" content="Naeun Blog">
+<meta property="og:description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)   POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅷ. 선형회귀모형과 텍스트마이닝1. 상관분석상관계수 상관계수: cor(변수1, 변수2)  1234car &lt;- read.csv(&quot;week8_1&#x2F;a">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-09T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-12T05:46:49.296Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech_MOOC">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Naeun Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Naeun Blog</a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/about/">about</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-빅데이터분석과_R프로그래밍/Ⅷ_선형회귀모형과_텍스트마이닝" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  </li>
+</ul>
+<h1 id="Ⅷ-선형회귀모형과-텍스트마이닝"><a href="#Ⅷ-선형회귀모형과-텍스트마이닝" class="headerlink" title="Ⅷ. 선형회귀모형과 텍스트마이닝"></a>Ⅷ. 선형회귀모형과 텍스트마이닝</h1><h2 id="1-상관분석"><a href="#1-상관분석" class="headerlink" title="1. 상관분석"></a>1. 상관분석</h2><h3 id="상관계수"><a href="#상관계수" class="headerlink" title="상관계수"></a>상관계수</h3><ul>
+<li>상관계수: cor(변수1, 변수2)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">car &lt;- read.csv(&quot;week8_1&#x2F;autompg.csv&quot;)</span><br><span class="line"></span><br><span class="line">car1 &lt;- subset(car, cyl&#x3D;&#x3D;4 | cyl&#x3D;&#x3D;6 | cyl&#x3D;&#x3D;8)</span><br><span class="line">attach(car1)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>cor의 디폴트는 pearson의 상관계수   <ul>
+<li>kendall 상관계수 or spearman의 상관계수를 구할 때: cor(변수1, 변수2, method=c(“spearman”))</li>
+</ul>
+</li>
+</ul>
+<h3 id="상관계수와-산점도"><a href="#상관계수와-산점도" class="headerlink" title="상관계수와 산점도"></a>상관계수와 산점도</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># new variable lists</span><br><span class="line">vars1&lt;-c(&quot;disp&quot;, &quot;wt&quot;, &quot;accler&quot;, &quot;mpg&quot;)</span><br><span class="line"># pariwise plot</span><br><span class="line">pairs(car1[vars1], main &#x3D;&quot;Autompg&quot;,cex&#x3D;1, col&#x3D;as.integer(car1$cyl),pch &#x3D;substring((car1$cyl),1,1))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>차량 무게와 배기량은 정비례관계 = 양의 상관계수</li>
+<li>mpg(연비)와 (wt, disp)는 상관성이 높음 = 반비례, 음의 상관계수</li>
+<li>cylinder별로 색상 표시(파랑: 4, 핑크: 6, 회색: 8)</li>
+</ul>
+</li>
+</ul>
+<h3 id="상관분석"><a href="#상관분석" class="headerlink" title="상관분석"></a>상관분석</h3><ul>
+<li>상관계수(r)은 절댓값이 0-1 사이<ul>
+<li>절댓값이 0에 가까울수록 상관관계가 없음</li>
+<li>절댓값이 1에 가까울수록 강한 상관성이 있음</li>
+</ul>
+</li>
+</ul>
+<h3 id="통계치와-그래프"><a href="#통계치와-그래프" class="headerlink" title="통계치와 그래프"></a>통계치와 그래프</h3><ul>
+<li>Monkey 데이터 + King Kong 한 마리<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">## Monkey data</span><br><span class="line">monkey&lt;-read.csv(&quot;week8_1&#x2F;monkey.csv&quot;)</span><br><span class="line">attach(monkey)</span><br><span class="line"></span><br><span class="line"># correlation coefficients</span><br><span class="line">cor(height, weight)</span><br><span class="line"></span><br><span class="line"># scatterplot for weight and height</span><br><span class="line">par(mfrow&#x3D;c(1, 1))</span><br><span class="line">plot(height, weight, pch&#x3D;16, col&#x3D;3,main&#x3D;&quot;Monkey data&quot;)</span><br><span class="line"></span><br><span class="line"># add the best fit linear line (lec4_3.R)</span><br><span class="line">abline(lm(weight~height), col&#x3D;&quot;blue&quot;, lwd&#x3D;2, lty&#x3D;1)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># linear model and summary of linear model</span><br><span class="line">m1&lt;-lm(weight~height)</span><br><span class="line">summary(m1)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">## Monkey data + Kingkong</span><br><span class="line">monkey1 &lt;- read.csv(&quot;week8_1&#x2F;monkey_k.csv&quot;)</span><br><span class="line">head(monkey1)</span><br><span class="line">dim(monkey1)</span><br><span class="line">attach(monkey1)</span><br><span class="line"></span><br><span class="line"># correlation coefficients</span><br><span class="line">cor(height, weight)</span><br><span class="line"># scatterplot for weight and height</span><br><span class="line">par(mfrow&#x3D;c(1, 1))</span><br><span class="line">plot(height, weight, pch&#x3D;16, col&#x3D;3,main&#x3D;&quot;Monkey data&quot;)</span><br><span class="line"></span><br><span class="line"># add the best fit linear line (lec4_3.R)</span><br><span class="line">abline(lm(weight~height), col&#x3D;&quot;red&quot;, lwd&#x3D;2, lty&#x3D;1)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Monkey 데이터에 King Kong 한 마리 데이터 추가<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># linear model and summary of linear model for monkey+king kong</span><br><span class="line">m2&lt;-lm(weight~height)</span><br><span class="line">summary(m2)</span><br></pre></td></tr></table></figure></li>
+<li>결과 해석<ul>
+<li>한 마리의 킹콩 데이터가 몸무게와 신장의 상관관계 해석을 완전히 바꿀 수 있음</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-선형회귀모형"><a href="#2-선형회귀모형" class="headerlink" title="2. 선형회귀모형"></a>2. 선형회귀모형</h2><h3 id="회귀분석-단순회귀모형"><a href="#회귀분석-단순회귀모형" class="headerlink" title="회귀분석: 단순회귀모형"></a>회귀분석: 단순회귀모형</h3><ul>
+<li>단순회귀모형: lm(y변수~x변수, data= )<ul>
+<li>종속변수: mpg(연비), 독립변수: wt(차량 무게)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r1&lt;-lm(mpg~wt, data&#x3D;car1)</span><br><span class="line">summary(r1)</span><br><span class="line">anova(r1)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>선형회귀식: y(mpg)= 46.60 - 0.0077(wt)</li>
+<li>선형회귀식의 결정계수: R^2^= 0.709  </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>산점도에 회귀선 그리기<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># scatterplot with best fit lines</span><br><span class="line">par(mfrow&#x3D;c(1,1))</span><br><span class="line">plot(wt, mpg,  col&#x3D;as.integer(car1$cyl), pch&#x3D;19)</span><br><span class="line"># best fit linear line</span><br><span class="line">abline(lm(mpg~wt), col&#x3D;&quot;red&quot;, lwd&#x3D;2, lty&#x3D;1)</span><br></pre></td></tr></table></figure></li>
+<li>코드 해석<ul>
+<li>col=as.factor(cyl): 배기통별로 컬러를 칠해라</li>
+<li>plot(x축변수, y축변수)</li>
+<li>abline: add line(선 추가 함수)</li>
+<li>lm(y변수~x변수) lm = linear model(선형모형)</li>
+</ul>
+</li>
+</ul>
+<h3 id="회귀분석의-목적"><a href="#회귀분석의-목적" class="headerlink" title="회귀분석의 목적"></a>회귀분석의 목적</h3><ul>
+<li>예측(prediction)과 추정(estimation)<ul>
+<li>선형모형: 독립변수와 종속변수 관계가 선형식으로 적합</li>
+<li>최소자승법(least squares method): 예측값과 관측치간의 오차를 최소화하는 회귀계수를 추정</li>
+</ul>
+</li>
+</ul>
+<h3 id="휘귀분석-모형-적합도"><a href="#휘귀분석-모형-적합도" class="headerlink" title="휘귀분석: 모형 적합도"></a>휘귀분석: 모형 적합도</h3><ul>
+<li><p>회귀식에 의해 설명되는 부분(SSR), 설명되지 않는 부분(SSE)</p>
+<ul>
+<li><p>R^2^ = $\frac{SSR}{SST}$ = %\frac{17029}{24017} = 0.709</p>
+<ul>
+<li>R^2^는 1에 가까울수록 회귀식에 의해 적합되는 부분이 높음</li>
+<li>R^2^는 0에 가까우면 주어진 독립변수들에 의해 설명(예측 혹 적합)되는 부분이 없다고 할 수 있음</li>
+</ul>
+</li>
+<li><p>참고</p>
+<ul>
+<li>SST = Total Sum of Squares</li>
+<li>SSR = Regression Sum of Squares</li>
+<li>SSE = error(residual) sum of squares</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>모형의 적합도와 결정계수</p>
+<ul>
+<li>R^2^: 0 ≤ R^2^ ≤ 1</li>
+</ul>
+</li>
+</ul>
+<h3 id="회귀모형-단순회귀모형"><a href="#회귀모형-단순회귀모형" class="headerlink" title="회귀모형: 단순회귀모형"></a>회귀모형: 단순회귀모형</h3><ul>
+<li>종속변수: mpg(연비), 독립변수: disp(배기량)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r2&lt;-lm(mpg~disp, data&#x3D;car1)</span><br><span class="line">summary(r2)</span><br><span class="line">anova(r2)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>선형회귀식 y(mpg) = 35.49 - 0.0614(disp)</li>
+<li>선형회귀식의 결정계수: R^2^ = 0.67</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>pariwise scatterplot<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># pariwise plot</span><br><span class="line">pairs(car1[,1:6], main &#x3D;&quot;Autompg&quot;,cex&#x3D;1, col&#x3D;as.integer(car1$cyl),pch &#x3D;substring((car1$cyl),1,1))</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><p>r1&lt;-lm(mpg~wt, data=car1)</p>
+<p>summary(r1) </p>
+<p>r3 &lt;-lm(mpg~wt+accler, data=car1)</p>
+<p>summary(r3)</p>
+<h2 id="3-다중회귀모형"><a href="#3-다중회귀모형" class="headerlink" title="3. 다중회귀모형"></a>3. 다중회귀모형</h2><ul>
+<li>다중회귀모형: lm(y~x1+x2+x3, data= )<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># multiple Regression</span><br><span class="line">r2&lt;-lm(mpg~wt+accler, data&#x3D;car1)</span><br><span class="line">summary(r2)</span><br><span class="line">anova(r2)</span><br></pre></td></tr></table></figure></li>
+<li>결과 해석<ul>
+<li>선형회귀식 y(mpg) = 44.03 - 0.0057(wt) - 0.0176(disp)</li>
+<li>p-value도 매우 적은 값<br>→ 두 변수 모두 유의함</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r1 &lt;- lm(mpg~wt+disp, data&#x3D;car1)</span><br><span class="line">summary(r1)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>선형회귀식의 결정계수</li>
+<li>R^2^ = 0.7159 (비교: 단순회귀 wt, R^2^=0.709)</li>
+</ul>
+</li>
+</ul>
+<h3 id="회귀분석-잔차의-산점도"><a href="#회귀분석-잔차의-산점도" class="headerlink" title="회귀분석: 잔차의 산점도"></a>회귀분석: 잔차의 산점도</h3><ul>
+<li><p>잔차산점도: 오차의 가정에 대한 적합성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># residual diagnostic plot</span><br><span class="line">layout(matrix(c(1,2,3,4),2,2)) # optrional 4 graphs&#x2F;page</span><br><span class="line">plot(r2)</span><br></pre></td></tr></table></figure></li>
+<li><p>오차에 대한 가정</p>
+<ul>
+<li>잔차가 정규분포한다</li>
+<li>평균은 0, 분산은 모두 동일하다 (선형회귀의 가정)</li>
+</ul>
+</li>
+<li><p>정규확률도(Normal Q-Q)</p>
+<ul>
+<li>점선에 거의 붙어있으면 정규분포한다고 함</li>
+</ul>
+</li>
+<li><p>Residuals vs Leverage</p>
+<ul>
+<li>outlier를 찾아낼 때 사용</li>
+</ul>
+</li>
+<li><p>Residuals vs Fitted</p>
+<ul>
+<li>분포 정도를 살펴봄</li>
+</ul>
+</li>
+</ul>
+<h3 id="그룹별-회귀모형"><a href="#그룹별-회귀모형" class="headerlink" title="그룹별 회귀모형"></a>그룹별 회귀모형</h3><ul>
+<li>mpg=f(wt), cylinder별<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># filtered data : regression by group</span><br><span class="line">car2&lt;-filter(car, cyl&#x3D;&#x3D;4 | cyl&#x3D;&#x3D;6 )</span><br><span class="line">car3&lt;-filter(car, cyl&#x3D;&#x3D;8)</span><br><span class="line"></span><br><span class="line"># car cyl&#x3D;4,6 vs cyl&#x3D;8 </span><br><span class="line">par(mfrow&#x3D;c(1,2))</span><br><span class="line">plot(car2$wt, car2$mpg, col&#x3D;as.integer(car2$cyl), pch&#x3D;19, main&#x3D;&quot;cyl&#x3D;4 or 6&quot;)</span><br><span class="line"># best fit linear line</span><br><span class="line">abline(lm(car2$mpg~car2$wt), col&#x3D;&quot;red&quot;, lwd&#x3D;2, lty&#x3D;1)</span><br><span class="line"></span><br><span class="line">plot(car3$wt, car3$mpg, col&#x3D;&quot;green&quot;, pch&#x3D;19, main&#x3D;&quot;cyl&#x3D;8&quot;)</span><br><span class="line"># best fit linear line</span><br><span class="line">abline(lm(car3$mpg~car3$wt), col&#x3D;&quot;red&quot;, lwd&#x3D;2, lty&#x3D;1)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># compare with total </span><br><span class="line">m2 &lt;- lm(mpg~wt, data&#x3D;car2)</span><br><span class="line">summary(m2)</span><br><span class="line"></span><br><span class="line">m3&lt;-lm(mpg~wt, data&#x3D;car3)</span><br><span class="line">summary(m3)</span><br><span class="line"></span><br><span class="line">m0&lt;-lm(mpg~wt, data&#x3D;car1)</span><br><span class="line">summary(m0)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="4-회귀분석의-진단과-평가"><a href="#4-회귀분석의-진단과-평가" class="headerlink" title="4. 회귀분석의 진단과 평가"></a>4. 회귀분석의 진단과 평가</h2><h3 id="회귀분석-데이터"><a href="#회귀분석-데이터" class="headerlink" title="회귀분석 데이터"></a>회귀분석 데이터</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># subset of flight data in SFO (n&#x3D;2974)</span><br><span class="line"># dest&#x3D;&quot;SFO&quot;, origin&#x3D;&#x3D;&quot;JFK&quot;, arr_delay&lt;420, arr_delay&gt;0</span><br><span class="line">SF&lt;-read.csv(&quot;week8_4&#x2F;SF_2974.csv&quot;, stringsAsFactors &#x3D; TRUE)</span><br><span class="line">attach(SF)</span><br><span class="line"></span><br><span class="line">library(ggplot2)</span><br><span class="line">library(dplyr)</span><br></pre></td></tr></table></figure>
+
+<h3 id="데이터-기술통계치"><a href="#데이터-기술통계치" class="headerlink" title="데이터 기술통계치"></a>데이터 기술통계치</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head(SF)</span><br><span class="line">str(SF)</span><br><span class="line">dim(SF)</span><br></pre></td></tr></table></figure>
+
+<h3 id="데이터-산점도"><a href="#데이터-산점도" class="headerlink" title="데이터 산점도"></a>데이터 산점도</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 1. graphic analytics</span><br><span class="line">SF %&gt;% </span><br><span class="line">  ggplot(aes(arr_delay)) + geom_histogram(binwidth &#x3D; 15)</span><br><span class="line"></span><br><span class="line"># 2. graphic analytics</span><br><span class="line">SF %&gt;%</span><br><span class="line">  ggplot(aes(x &#x3D; hour, y &#x3D; arr_delay)) +</span><br><span class="line">  geom_boxplot(alpha &#x3D; 0.1, aes(group &#x3D; hour)) + geom_smooth(method &#x3D; &quot;lm&quot;) + </span><br><span class="line">  xlab(&quot;Scheduled hour of departure&quot;) + ylab(&quot;Arrival delay (minutes)&quot;) + </span><br><span class="line">  coord_cartesian(ylim &#x3D; c(0, 120))</span><br></pre></td></tr></table></figure>
+
+<h3 id="회귀분석-단순회귀모형-1"><a href="#회귀분석-단순회귀모형-1" class="headerlink" title="회귀분석: 단순회귀모형"></a>회귀분석: 단순회귀모형</h3><ul>
+<li>종속변수: arr_delay, 독립변수: hour(출발시간)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># linear regression</span><br><span class="line">m1&lt;- lm(arr_delay ~ hour , data &#x3D; SF)</span><br><span class="line">summary(m1)</span><br></pre></td></tr></table></figure></li>
+<li>결과 해석<ul>
+<li>선형회귀식 y(arr_delay) = 7.54 + 2.55(hour)</li>
+<li>R^2^ = 0.03965 설명력이 높다고 하기 어려움</li>
+</ul>
+</li>
+</ul>
+<h3 id="산점도에-회귀선-그리기"><a href="#산점도에-회귀선-그리기" class="headerlink" title="산점도에 회귀선 그리기"></a>산점도에 회귀선 그리기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># scatterplot with best fit lines</span><br><span class="line">library(dplyr)</span><br><span class="line"></span><br><span class="line">par(mfrow&#x3D;c(1,1))</span><br><span class="line">SF %&gt;%</span><br><span class="line">  plot(hour, arr_delay, col&#x3D;as.integer(SF$carrier), pch&#x3D;19)%&gt;% </span><br><span class="line">  # best fit linear line</span><br><span class="line">  abline(lm(arr_delay~hour), col&#x3D;&quot;red&quot;, lwd&#x3D;2, lty&#x3D;1)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>출발 시간이 도착 지연 시간을 정확히 나타내지는 않음</li>
+</ul>
+</li>
+</ul>
+<h3 id="회귀분석-잔차의-산점도-1"><a href="#회귀분석-잔차의-산점도-1" class="headerlink" title="회귀분석: 잔차의 산점도"></a>회귀분석: 잔차의 산점도</h3><ul>
+<li>회귀분석의 가정과 진단<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># residual diagnostic plot </span><br><span class="line">layout(matrix(c(1,2,3,4),2,2)) # optional 4 graphs&#x2F;page </span><br><span class="line">plot(m1)</span><br></pre></td></tr></table></figure></li>
+<li>잔차에 대한 해석을 하고 선형회귀모형을 적욯해도 되는지 확인하기</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># pariwise plot</span><br><span class="line">pairs(car1[,1:6], main &#x3D;&quot;Autompg&quot;,cex&#x3D;1, col&#x3D;as.integer(car1$cyl),pch &#x3D;substring((car1$cyl),1,1))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ne-choi.github.io/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" data-id="ckila27r6000o1cue0mo29f0f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Naeun Choi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> with 
+      theme_by <a href="http://hexo.io/" target="_blank">mango</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
