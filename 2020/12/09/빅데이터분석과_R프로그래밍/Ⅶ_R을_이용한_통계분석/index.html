@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석 | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Postech_MOOC" />
+    
+    <meta name="description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)   POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정 t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균">
+<meta property="og:type" content="article">
+<meta property="og:title" content="빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석">
+<meta property="og:url" content="https://ne-choi.github.io/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)   POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정 t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-08T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-12T05:46:37.345Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech_MOOC">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-빅데이터분석과_R프로그래밍/Ⅶ_R을_이용한_통계분석" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="article-date">
+       <time datetime="2020-12-08T15:00:00.000Z" itemprop="datePublished">2020-12-09</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="article-date">
+     <time datetime="2020-12-12T05:46:37.345Z" itemprop="dateModified">2020-12-12</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  </li>
+</ul>
+<h1 id="Ⅶ-R을-이용한-통계분석"><a href="#Ⅶ-R을-이용한-통계분석" class="headerlink" title="Ⅶ. R을 이용한 통계분석"></a>Ⅶ. R을 이용한 통계분석</h1><h2 id="1-두-그룹간-평균비교-t-test"><a href="#1-두-그룹간-평균비교-t-test" class="headerlink" title="1. 두 그룹간 평균비교(t-test)"></a>1. 두 그룹간 평균비교(t-test)</h2><h3 id="단일표본의-평균검정"><a href="#단일표본의-평균검정" class="headerlink" title="단일표본의 평균검정"></a>단일표본의 평균검정</h3><ul>
+<li><p>t.test(변수, mu=검정하고자 하는 평균값)</p>
+<ol>
+<li>가설 1: G3(최종성적)의 평균은 10인가?<ul>
+<li>H<del>0</del>(null Hypothesis: 귀무가설): μ = 10<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stud&lt;-read.csv(&quot;week7_1&#x2F;stud_math.csv&quot;,stringsAsFactors &#x3D; TRUE)</span><br><span class="line"></span><br><span class="line">attach(stud)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># single t-test</span><br><span class="line">t.test(G3, mu&#x3D;10)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>t: t검정통계량, df: 자유도, p-value<ul>
+<li>p-value 유의 수준 0.05에서는 G3 평균이 10이라고 할 수 있는 근거가 있음</li>
+</ul>
+</li>
+<li>alternative hypothesis 대립가설: 모형균은 10이 아니다</li>
+<li>95% 신뢰구간: (9.96, 10.86), 표본평균값: 10.415</li>
+</ul>
+</li>
+</ul>
+<h3 id="두-집단의-평균검정"><a href="#두-집단의-평균검정" class="headerlink" title="두 집단의 평균검정"></a>두 집단의 평균검정</h3><ul>
+<li><p>두 평균 차이 비교</p>
+</li>
+<li><p>두 집단 표본평균 비교검정: t.test(타겟변수~범주형변수, data= )</p>
+<ol start="2">
+<li>가설 2: 거주지역(R, U)에 따른 G3(최종성적) 평균에 차이가 있는가?</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># to test whether or not mean of G3 is same between Urban and Rural </span><br><span class="line">t.test(G3~address, data&#x3D;stud)</span><br><span class="line">boxplot(G3~address, boxwet&#x3D;0.5, col&#x3D;c(&quot;yellow&quot;, &quot;coral&quot;))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>p-value=0.03으로 유의수준 0.05에서 거주지역에 따라 G3은 유의한 차이가 있다고 할 수 있음  </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>단측검정: 기각역이 한 쪽에만 있는 경우, alternative=c(“less”) or alternative=c(“greater”)<ul>
+<li>같으냐 다르냐가 아니라, 도심지역이 더 높으냐에 관해 test 하고 싶은 경우<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># alternative H : mu(Rural)&lt; mu(Urban)</span><br><span class="line">t.test(G3~address, data&#x3D;stud, alternative &#x3D; c(&quot;less&quot;))</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>결과 해석<ul>
+<li>p-value=0.018로 유의수준을 0.05로 했을 때, 성적(Rural) &lt; 성적(Urban)이라고 할 수 있음</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>가설 3: 방과후 활동 여부(yes, no)에 따른 G3(최종성적) 평균에 차이가 있는가?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># to test whether or not mean of G3 is equal for activities </span><br><span class="line">t.test(G3~activities, data&#x3D;stud)</span><br><span class="line">boxplot(G3~activities, boxwex &#x3D; 0.5, col &#x3D; c(&quot;blue&quot;, &quot;red&quot;))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>p-value=0.75로 유의수준 0.05보다 많이 큼<br>= 검정통계량 값이 기각역에 있지 않다<br>= 귀무가설(평균이 같다)을 기각할 수 없다<br>= 방과후 활동 여부는 G3에 유의한 영향이 없다는 결론</li>
+<li>신뢰구간(-1.05, 0.79) 사이에 0값이 있으면 차이가 없음을 의미</li>
+</ul>
+<h3 id="두-집단의-비모수적-비교검정"><a href="#두-집단의-비모수적-비교검정" class="headerlink" title="두 집단의 비모수적 비교검정"></a>두 집단의 비모수적 비교검정</h3><ul>
+<li>두 모집단의 비모수적 방법(Wilcoxon rank sum Test): wilcox.test(x,y)<ul>
+<li>wilcos.test는 타겟변수가 등간척도(통증 정도, 만족도,,)일 때 사용 가능</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># wilcoxon signed-rank test</span><br><span class="line"># wilcox.test(G3, mu&#x3D;10)</span><br><span class="line">wilcox.test(G3~address)</span><br></pre></td></tr></table></figure>
+
+<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t.test(G3~internet, data&#x3D;stud) </span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-짝을-이룬-그룹-간-비교"><a href="#2-짝을-이룬-그룹-간-비교" class="headerlink" title="2. 짝을 이룬 그룹 간 비교"></a>2. 짝을 이룬 그룹 간 비교</h2><h3 id="짝을-이룬-그룹-간-비교-paired-t-test"><a href="#짝을-이룬-그룹-간-비교-paired-t-test" class="headerlink" title="짝을 이룬 그룹 간 비교(paired t-test)"></a>짝을 이룬 그룹 간 비교(paired t-test)</h3><ul>
+<li><p>paired t-test: t.test(before, after, mu=0, paired=T)</p>
+<ul>
+<li>특정 처리(treatment)의 효과를 비교분석할 때 사용</li>
+<li>동일한 실험표본 before &amp; after 측정</li>
+<li>예제: 혈압강하제 투약 효과, 방과후 프로그램 성과, 다이어트 프로그램 효과, 직무교육 후 생산성 향상 효과</li>
+<li>방식: Before/After 차이를 구한 뒤, 평균과 편차를 계산해서 검정통계량을 구함</li>
+</ul>
+</li>
+<li><p>paired: 양측 검정, 유의한 차이가 있는지 없는지를 검정</p>
+</li>
+</ul>
+<ul>
+<li>예제 1: 고혈압 환자 10명에게 혈압강하제를 12주 동안 투여한 후, 복용 전의 혈압과 복용 후의 혈압을 비교하였다. 새로운 혈압강하제가 효과 있다고 말할 수 있는가?</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bp&lt;-read.csv(&quot;week7_2&#x2F;bp.csv&quot;) </span><br><span class="line">attach(bp)</span><br><span class="line"></span><br><span class="line"># two-sided</span><br><span class="line">t.test(bp_pre, bp_post, mu&#x3D;0, paired&#x3D;T)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>p-value = 0.0015(매우 작음)로 유의수준 0.05보다 작기 때문에 H<del>0</del>를 기각<br>→ 투약 전과 투약 후 혈압에 유의한 차이가 있다고 볼 수 있음  </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>단측검정 옵션 주기<ul>
+<li>paired t-test: t.test(before, after, mu=0, <strong>alternative=”greater”</strong>, paired=T)</li>
+<li>혈압(투약 전 - 투약 후) 차이가 0보다 큰가?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># paired t-test (one-sided)</span><br><span class="line">t.test(bp_pre, bp_post, mu&#x3D;0, alternative&#x3D;&quot;greater&quot;, paired&#x3D;T)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>결과 해석<ul>
+<li>p-value=0.0007로 유의수준 0.05보다 매우 작으므로 H<del>0</del>를 기간<br>→ 투약효과가 매우 유의하다고 볼 수 있음</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>예제 2: 비만 대상자(성인)들에게 12주 동안 극저 칼로리 식이요법(very low-calorie diet: VLCD)을 실시한 후 효과를 비교하였다. 이 프로그램에 체중감소에 효과가 있다고 할 수 있는가?</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">diet &lt;- read.csv(&quot;week7_2&#x2F;weight.csv&quot;)</span><br><span class="line">attach(diet)</span><br><span class="line"></span><br><span class="line"># paired t-test</span><br><span class="line"># 양측 검정: 극저칼로리 식이요법이 체중감량에 유의한 효과가 있는지 없는지에 관한 검정</span><br><span class="line">t.test(wt_pre, wt_post, mu&#x3D;0, paired&#x3D;T)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>p-value: 0.000001357 (0.001 = 1e-3)</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-분산분석-ANOVA"><a href="#3-분산분석-ANOVA" class="headerlink" title="3. 분산분석(ANOVA)"></a>3. 분산분석(ANOVA)</h2><h3 id="분산분석의-개념"><a href="#분산분석의-개념" class="headerlink" title="분산분석의 개념"></a>분산분석의 개념</h3><ul>
+<li>ANOVA(Analysis of Variance)<ul>
+<li>전체 분산(variance)을 분할(분석, analysis)하여 어떤 요인(factor)의 영향이 유의(significant)한지 검정하는 방법</li>
+</ul>
+</li>
+</ul>
+<h3 id="factor가-한-개일-때"><a href="#factor가-한-개일-때" class="headerlink" title="factor가 한 개일 때"></a>factor가 한 개일 때</h3><ul>
+<li>분산분석모형 적용<ol>
+<li>거주 지역에 따른 학업성취도: 거주지역(factor: R/U), 학업성적(1-20)<ul>
+<li>가설 1: 거주지역에 따라 G3에 유의한 차이가 있나?</li>
+<li>aov(타겟변수~factor)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># ANOVA</span><br><span class="line">a1 &lt;- aov(G3~address)</span><br><span class="line">summary(a1)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>결과 해석<ul>
+<li>p-value=0.035로 유의수준을 0.05로 할 때, 0,05보다 작으므로 거주지역에 따른 학업성적에 유의한 차이가 있다고 할 수 있음</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># tapply - give FUN value by address</span><br><span class="line">round(tapply(G3, address, mean),2)</span><br></pre></td></tr></table></figure>
+
+
+<ol start="2">
+<li>통학 시간에 따른 학업성취도: 통학시간(factor: 1-4), 학업성적(1-20)<ul>
+<li>가설 2: 통학 시간에 따라 G3에는 유의한 차이가 있나?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">traveltime&lt;-as.factor(traveltime)</span><br><span class="line"></span><br><span class="line">a2 &lt;- aov(G3~traveltime)</span><br><span class="line">summary(a2)</span><br></pre></td></tr></table></figure></li>
+<li>결과 해석</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>p-value=0.139로 유의수준 0.05 하에서는 통학 시간에 따른 학업성적에는 유의한 차이가 없다고 할 수 있음</li>
+<li>단, p-value가 0.139로 너무 크지 않기 때문에 어느정도 차이가 존재함을 알 수 있음</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># tapply - give FUN value by address</span><br><span class="line">round(tapply(G3, traveltime, mean),2)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="사후검정-post-hoc-analysis"><a href="#사후검정-post-hoc-analysis" class="headerlink" title="사후검정(post-hoc analysis)"></a>사후검정(post-hoc analysis)</h3><ul>
+<li>사후검정: ANOVA에서 어떤 factor의 유의성이 검정되면, 그 이후에 하는 검정<ul>
+<li>Tukey’s Honest Significant Difference Test<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># should be foctor for Tukey&#39;s Honest Significant Difference test</span><br><span class="line">TukeyHSD(a2, &quot;traveltime&quot;, ordered&#x3D;TRUE)</span><br><span class="line">plot(TukeyHSD(a2, &quot;traveltime&quot;))</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>결과 해석<ul>
+<li>모든 pairwise 신뢰구간에 0이 포함됨<br>→ 유의한 차이가 없음</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>추가 예제: 분산분석<ul>
+<li>연애경험 여부에 따른 학업성취도: 연애경험(yes, no), 학업성적(1-20)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 4. ANOVA by romantic </span><br><span class="line">a4 &lt;- aov(G3~romantic)</span><br><span class="line">summary(a4)</span><br><span class="line"></span><br><span class="line"># tapply - give FUN value by address</span><br><span class="line">round(tapply(G3,romantic, mean),2)</span><br><span class="line"></span><br><span class="line"># boxplot</span><br><span class="line">boxplot(G3~romantic, boxwex &#x3D; 0.5, col &#x3D; c(&quot;yellow&quot;, &quot;coral&quot;), main&#x3D;&quot;G3 by romantic&quot;)</span><br><span class="line"></span><br><span class="line"># posthoc analysis</span><br><span class="line">TukeyHSD(a4, &quot;romantic&quot;, ordered&#x3D;TRUE)</span><br><span class="line">plot(TukeyHSD(a4, &quot;romantic&quot;))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="퀴즈-1"><a href="#퀴즈-1" class="headerlink" title="퀴즈"></a>퀴즈</h3><p>studytime &lt;- as.factor(studytime)</p>
+<p>a0 &lt;- aov(G3~studytime)<br>summary(a0)</p>
+<p>tapply(G3, studytime, mean)</p>
+<h2 id="4-이원분산분석"><a href="#4-이원분산분석" class="headerlink" title="4. 이원분산분석"></a>4. 이원분산분석</h2><ul>
+<li><p>이원분산분석(two-way ANOVA)</p>
+</li>
+<li><p>데이터: High-Density Lipoprotein (HDL) 콜레스테롤</p>
+<ul>
+<li>HDL(고밀도 리포 단백질): 높을수록 좋은 것으로 알려진 콜레스테롤, 40mg/dl 이상이 정상 범위  </li>
+</ul>
+</li>
+<li><p>factor가 2개</p>
+<ol>
+<li>투약효과가 있는가? 5mg, 10mg, 위약</li>
+<li>연령그룹(young/old)에 따른 영향이 있는가?<ul>
+<li>가설 1. 신약 투약효과가 있나? HDL을 상승시키는 효과가 있나?</li>
+<li>가설 2. 연령그룹에 따라 투약효과(HDL변화)에 차이가 있나?</li>
+<li>가설 3. 신약의 투약과 연령그룹 간 상호작용 효과가 있나?  </li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>이원분산분석: aov(타겟변수~factor1 + factor2)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dat &lt;- read.csv(&quot;week7_4&#x2F;chol_ex.csv&quot;)</span><br><span class="line">attach(dat)</span><br><span class="line"></span><br><span class="line"># two-way ANOVA</span><br><span class="line">a6 &lt;- aov(value ~ drug + age)</span><br><span class="line">summary(a6)</span><br></pre></td></tr></table></figure></li>
+<li><p>결과 해석</p>
+<ul>
+<li>drug effect: p-value~0이므로 HDL값에 통계적으로 유의한 차이가 있음</li>
+<li>age: p-value=0.19로 유의수준 0.05에서 유의한 차이는 없음  </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>aov(타겟변수~factor1 + factor2 + 상호작용)<ul>
+<li>두 개의 factor 간 상호작용의 유의성을 검정하기 위한 분석<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># two-way ANOVA with interaction</span><br><span class="line">a7 &lt;- aov(value ~ drug + age+ drug*age)</span><br><span class="line">summary(a7)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>결과 해석<ul>
+<li>drug와 age 그룹 간 상호작용: p-value=0.286으로 유의수준 0.05에서 유의한 차이는 없음</li>
+</ul>
+</li>
+</ul>
+<h3 id="두-요인의-상자그림"><a href="#두-요인의-상자그림" class="headerlink" title="두 요인의 상자그림"></a>두 요인의 상자그림</h3><ul>
+<li>투약용량과 연령그룹에 따른 상자그림<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># two-way ANOVA</span><br><span class="line">par(mfrow&#x3D;c(1,2))</span><br><span class="line">boxplot(value ~ drug, boxwex &#x3D; 0.7, main&#x3D;&quot;HDL by drug dose&quot;, col &#x3D; c(&quot;yellow&quot;,&quot;orange&quot;, &quot;green&quot;))</span><br><span class="line">boxplot(value ~ age, boxwex &#x3D; 0.5, main&#x3D;&quot;HDL by Age&quot;, col &#x3D; c(&quot;blue&quot;, &quot;coral&quot;))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>drug effect: 10mg인 경우, HDL 상승효과가 가장 높음</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># tapply - give FUN value by drug</span><br><span class="line">round(tapply(value, drug, mean),2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>age: young 그룹(18-40)의 HDL 상승효과가 더 높음</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># tapply - give FUN value by age</span><br><span class="line">round(tapply(value, age, mean),2)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="상호작용-그래프"><a href="#상호작용-그래프" class="headerlink" title="상호작용 그래프"></a>상호작용 그래프</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># interaction plot</span><br><span class="line">par(mfrow&#x3D;c(1,2))</span><br><span class="line">interaction.plot(drug, age, value)</span><br><span class="line">interaction.plot(age, drug, value)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과 해석<ul>
+<li>투약용량 10mg에서 young 그룹 상승효과가 old 그룹보다 훨씬 높음</li>
+<li>5mg에서와 placebo에서는 연령그룹 차이가 거의 없음</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Create an interaction plot for the HDL data</span><br><span class="line">par(mfrow&#x3D;c(1,2))</span><br><span class="line">interaction.plot(dat$drug, dat$age, dat$value)</span><br><span class="line">interaction.plot(dat$age, dat$drug, dat$value)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># two-way ANOVA model with interaction</span><br><span class="line">results &#x3D; lm(value ~ drug + age + drug*age, data&#x3D;dat)</span><br><span class="line">anova(results)</span><br></pre></td></tr></table></figure>
+
+<h3 id="퀴즈-2"><a href="#퀴즈-2" class="headerlink" title="퀴즈"></a>퀴즈</h3><p>a00 &lt;- aov(G3<del>studytime+sex)<br>summary(a00)<br>boxplot(G3</del>sex, boxwex = 0.5, col = c(“yellow”, “coral”))</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" data-id="ckk2mkvhg000cioue9eotd3yk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석",
+        "image": "https://ne-choi.github.io",
+        "keywords": "Postech_MOOC",
+        "genre": "",
+        "datePublished": "2020-12-09",
+        "dateCreated": "2020-12-09",
+        "dateModified": "2020-12-12",
+        "url": "https://ne-choi.github.io//2020/12/09/빅데이터분석과_R프로그래밍/Ⅶ_R을_이용한_통계분석/",
+        "description": "setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)
+
+
+POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  
+
+Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정
+t.test(변수, mu=검정하고자 하는 평균값)
+
+가설 1: G3(최종성적)의 평균",
+        "wordCount": 1224
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">빅데이터 분석과 R 프로그래밍 2: Ⅵ. 데이터 탐색</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/07/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/kaggle_survey_2020/output_16_0.png)" alt="Kaggle: The future of ML(Americans vs Indians)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/01/07/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="title">Kaggle: The future of ML(Americans vs Indians)</a></p>
+                            <p class="item-date"><time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝</a></p>
+                            <p class="item-date"><time datetime="2020-12-09T15:00:00.000Z" itemprop="datePublished">2020-12-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석</a></p>
+                            <p class="item-date"><time datetime="2020-12-08T15:00:00.000Z" itemprop="datePublished">2020-12-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅵ. 데이터 탐색</a></p>
+                            <p class="item-date"><time datetime="2020-12-07T15:00:00.000Z" itemprop="datePublished">2020-12-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/07/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/07/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅴ. R 그래픽 Ⅱ</a></p>
+                            <p class="item-date"><time datetime="2020-12-06T15:00:00.000Z" itemprop="datePublished">2020-12-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/10-Minutes-to-Pandas/" rel="tag">10 Minutes to Pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSP%EC%9E%90%EA%B2%A9%EC%A6%9D/" rel="tag">ADSP자격증</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADsP/" rel="tag">ADsP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/" rel="tag">EDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" rel="tag">F1스코어</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/" rel="tag">Kaggle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-EDA/" rel="tag">Kaggle EDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-beginner/" rel="tag">Kaggle beginner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-survey-competition/" rel="tag">Kaggle survey competition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-titanic/" rel="tag">Kaggle titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LDA/" rel="tag">LDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NMF/" rel="tag">NMF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R-programming/" rel="tag">R programming</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVD/" rel="tag">SVD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Titanic/" rel="tag">Titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vector-Array/" rel="tag">Vector&Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boxplot/" rel="tag">boxplot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary-in-python/" rel="tag">dictionary in python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dplyr/" rel="tag">dplyr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for-loop/" rel="tag">for loop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggplot2/" rel="tag">ggplot2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle-data/" rel="tag">kaggle data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lists-vs-tuples/" rel="tag">lists vs tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-list/" rel="tag">python list</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-tuples/" rel="tag">python tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r-data/" rel="tag">r data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/read-csv/" rel="tag">read csv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/titanic/" rel="tag">titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip/" rel="tag">unzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip-multiple-files/" rel="tag">unzip multiple files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/while-loop/" rel="tag">while loop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" rel="tag">결정트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" rel="tag">과적합과소적합</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" rel="tag">데이터분석준전문가</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" rel="tag">랜덤포레스트</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" rel="tag">로지스틱회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" rel="tag">릿지라쏘엘라스틱넷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%B6%84%EB%A5%98/" rel="tag">분류</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0/" rel="tag">사이킷런</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%B0%EC%A0%90%EB%8F%84/" rel="tag">산점도</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" rel="tag">선형회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" rel="tag">시각화</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" rel="tag">앙상블학습</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" rel="tag">재현율</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" rel="tag">정확도</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" rel="tag">주성분분석</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" rel="tag">차원축소</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/" rel="tag">파이썬머신러닝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" rel="tag">파이썬머신러닝완벽가이드</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8F%89%EA%B0%80/" rel="tag">평가</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%9A%8C%EA%B7%80/" rel="tag">회귀</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADSP%EC%9E%90%EA%B2%A9%EC%A6%9D/" style="font-size: 16px;">ADSP자격증</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/EDA/" style="font-size: 10px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-EDA/" style="font-size: 10px;">Kaggle EDA</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Kaggle-survey-competition/" style="font-size: 10px;">Kaggle survey competition</a> <a href="/tags/Kaggle-titanic/" style="font-size: 10px;">Kaggle titanic</a> <a href="/tags/LDA/" style="font-size: 10px;">LDA</a> <a href="/tags/NMF/" style="font-size: 10px;">NMF</a> <a href="/tags/Postech-MOOC/" style="font-size: 20px;">Postech_MOOC</a> <a href="/tags/R-programming/" style="font-size: 12px;">R programming</a> <a href="/tags/SVD/" style="font-size: 10px;">SVD</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector-Array/" style="font-size: 10px;">Vector&Array</a> <a href="/tags/boxplot/" style="font-size: 10px;">boxplot</a> <a href="/tags/dictionary-in-python/" style="font-size: 10px;">dictionary in python</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for-loop/" style="font-size: 10px;">for loop</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/kaggle-data/" style="font-size: 10px;">kaggle data</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/python-list/" style="font-size: 10px;">python list</a> <a href="/tags/python-tuples/" style="font-size: 10px;">python tuples</a> <a href="/tags/r-data/" style="font-size: 10px;">r data</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while-loop/" style="font-size: 10px;">while loop</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0/" style="font-size: 10px;">사이킷런</a> <a href="/tags/%EC%82%B0%EC%A0%90%EB%8F%84/" style="font-size: 10px;">산점도</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 10px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 10px;">차원축소</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">파이썬머신러닝</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8F%89%EA%B0%80/" style="font-size: 10px;">평가</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Ch03(1&amp;2): Lists, Tuples, and Dictionary | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,lists vs tuples,dictionary in python,python list,python tuples" />
+    
+    <meta name="description" content="Lists, Tuples, and Dictionary* 출처: dschloe.github.io Lists List는 [] 형태로 정의 List는 정렬(ordered)됨 List는 다양한 형태의 데이터 유형을 담을 수 있음 List 안에 있는 값에는 인덱스로 접근 List 안에 또 List를 담을 수 있음 List는 변하기 쉬움 List는 동적임  1) Li">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ch03(1&amp;2): Lists, Tuples, and Dictionary">
+<meta property="og:url" content="https://ne-choi.github.io/2020/11/09/ch3_1&2_lists_tuples_and_dictionary/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="Lists, Tuples, and Dictionary* 출처: dschloe.github.io Lists List는 [] 형태로 정의 List는 정렬(ordered)됨 List는 다양한 형태의 데이터 유형을 담을 수 있음 List 안에 있는 값에는 인덱스로 접근 List 안에 또 List를 담을 수 있음 List는 변하기 쉬움 List는 동적임  1) Li">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-09T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-10T03:15:59.171Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="lists vs tuples">
+<meta property="article:tag" content="dictionary in python">
+<meta property="article:tag" content="python list">
+<meta property="article:tag" content="python tuples">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-ch3_1&amp;2_lists_tuples_and_dictionary" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Ch03(1&amp;2): Lists, Tuples, and Dictionary
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/11/09/ch3_1&2_lists_tuples_and_dictionary/" class="article-date">
+       <time datetime="2020-11-09T00:00:00.000Z" itemprop="datePublished">2020-11-09</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/11/09/ch3_1&2_lists_tuples_and_dictionary/" class="article-date">
+     <time datetime="2021-01-10T03:15:59.171Z" itemprop="dateModified">2021-01-10</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/dictionary-in-python/" rel="tag">dictionary in python</a>, <a class="tag-link-link" href="/tags/lists-vs-tuples/" rel="tag">lists vs tuples</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-link-link" href="/tags/python-list/" rel="tag">python list</a>, <a class="tag-link-link" href="/tags/python-tuples/" rel="tag">python tuples</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="Lists-Tuples-and-Dictionary"><a href="#Lists-Tuples-and-Dictionary" class="headerlink" title="Lists, Tuples, and Dictionary"></a><strong>Lists, Tuples, and Dictionary</strong></h1><p><a target="_blank" rel="noopener" href="https://dschloe.github.io/python/python_edu/01_basic/chapter_3_1_lists_and_tuples">* 출처: dschloe.github.io</a></p>
+<h2 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h2><ul>
+<li>List는 [] 형태로 정의</li>
+<li>List는 정렬(ordered)됨</li>
+<li>List는 다양한 형태의 데이터 유형을 담을 수 있음</li>
+<li>List 안에 있는 값에는 인덱스로 접근</li>
+<li>List 안에 또 List를 담을 수 있음</li>
+<li>List는 변하기 쉬움</li>
+<li>List는 동적임</li>
+</ul>
+<h3 id="1-List는-정렬-ordered-됨"><a href="#1-List는-정렬-ordered-됨" class="headerlink" title="1) List는 정렬(ordered)됨"></a>1) List는 정렬(ordered)됨</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 파이썬의 기초 자료형</span></span><br><span class="line">alphabet = [[<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>], [<span class="string">&quot;c&quot;</span>, <span class="string">&quot;d&quot;</span>]]</span><br><span class="line">print(alphabet)</span><br><span class="line"></span><br><span class="line"><span class="comment"># List 자료형은 Matplolib 시각화에, Numpy 기초 자료(행렬, 딥러닝 연산에 자주 활용)로 활용됨</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;, &#39;d&#39;]]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a1 = a2?</span></span><br><span class="line">a1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">a2 = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">a1 == a2</span><br><span class="line"><span class="comment"># False가 나온 이유? 순서가 다르면 서로 다른 자료</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>False</code></pre>
+<h3 id="2-다양한-형태의-List"><a href="#2-다양한-형태의-List" class="headerlink" title="2) 다양한 형태의 List"></a>2) 다양한 형태의 List</h3><ul>
+<li>리스트 하나에 여러 형태의 자료를 담을 수 있다</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">multi_values = [<span class="number">11.1</span>, <span class="string">&#x27;foo&#x27;</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="literal">True</span>]</span><br><span class="line">print(multi_values)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[11.1, &#39;foo&#39;, 3, 5, True]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span> <span class="comment"># 하나의 함수이자 클래스, List에 담을 수도 있음</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>float</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span> <span class="comment"># 값의 길이, 값이 몇 개인지 표시, 하나의 함수지만 List에 담을 수 있음</span></span><br><span class="line"><span class="built_in">len</span>(multi_values)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>5</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 사용자 정의 함수, List에 담을 수 있음</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">temp</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;function __main__.temp()&gt;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 리스트에 다양한 형태 담아보기</span></span><br><span class="line">fun_list = [<span class="built_in">float</span>, temp, <span class="built_in">len</span>]</span><br><span class="line">print(fun_list)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[&lt;class &#39;float&#39;&gt;, &lt;function temp at 0x000001D5446B4700&gt;, &lt;built-in function len&gt;]</code></pre>
+<h3 id="3-List-접근-방법-index"><a href="#3-List-접근-방법-index" class="headerlink" title="3) List 접근 방법_index"></a>3) List 접근 방법_index</h3><ul>
+<li>순서는 <code>0</code>부터 시작</li>
+<li>역순으로 할 경우 <code>-1</code>부터 시작</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alphabet_temp = [<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>, <span class="string">&quot;D&quot;</span>, <span class="string">&quot;E&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># python에서 순서는 &#x27;0&#x27;부터 시작</span></span><br><span class="line">alphabet_temp[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;A&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Negative List</span></span><br><span class="line"><span class="comment"># python에서 거꾸로 지시하는 순서는 &#x27;&#x27;-1&#x27;부터 시작</span></span><br><span class="line">alphabet_temp[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;E&#39;</code></pre>
+<p>*** 슬라이싱**</p>
+<ul>
+<li>‘:’ 기호를 이용해 연속한 데이터를 슬라이싱해서 추출</li>
+<li>temp[M:N]: M번째부터 N 미만까지 값을 가져옴</li>
+<li>i.g temp[0:5]를 해야 알파벳 5개를 모두 가져올 수 있음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># alphabet 슬라이싱으로 추출해보기</span></span><br><span class="line">alphabet_temp[<span class="number">2</span>:<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;C&#39;, &#39;D&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alphabet_temp[<span class="number">0</span>:<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;]</code></pre>
+<h3 id="4-List-안에-List-담기"><a href="#4-List-안에-List-담기" class="headerlink" title="4) List 안에 List 담기"></a>4) List 안에 List 담기</h3><ul>
+<li>List 안에 다양한 데이터를 넣을 수 있는데, 여기에는 List도 포함됨</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="string">&#x27;a&#x27;</span>, [<span class="string">&#x27;bb&#x27;</span>, [<span class="string">&#x27;ccc&#x27;</span>, <span class="string">&#x27;ddd&#x27;</span>], <span class="string">&#x27;ee&#x27;</span>, <span class="string">&#x27;ff&#x27;</span>], <span class="string">&#x27;g&#x27;</span>, [<span class="string">&#x27;hh&#x27;</span>, <span class="string">&#x27;ii&#x27;</span>], <span class="string">&#x27;j&#x27;</span>]</span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;a&#39;, [&#39;bb&#39;, [&#39;ccc&#39;, &#39;ddd&#39;], &#39;ee&#39;, &#39;ff&#39;], &#39;g&#39;, [&#39;hh&#39;, &#39;ii&#39;], &#39;j&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 인덱스로 접근해보기</span></span><br><span class="line">x[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;a&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;bb&#39;, [&#39;ccc&#39;, &#39;ddd&#39;], &#39;ee&#39;, &#39;ff&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x[<span class="number">1</span>][<span class="number">0</span>] <span class="comment"># x의 2번째 list 중 1번째 값 불러오기</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;bb&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x[<span class="number">1</span>][<span class="number">1</span>][<span class="number">0</span>] <span class="comment"># x의 2번째 list 중, 2번째 list의 1번째 값 불러오기</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;ccc&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x[<span class="number">3</span>][<span class="number">0</span>] <span class="comment"># x의 5번째 list 중, 1번째 값 불러오기</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;hh&#39;</code></pre>
+<h3 id="5-List는-변하기-쉬움"><a href="#5-List는-변하기-쉬움" class="headerlink" title="5) List는 변하기 쉬움"></a>5) List는 변하기 쉬움</h3><ul>
+<li>Mutable</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message = <span class="string">&quot;string immutable&quot;</span></span><br><span class="line">message[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;s&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 문자열은 바로 치환되지 않아 에러가 나타남 = Immutable</span></span><br><span class="line">message[<span class="number">0</span>] = <span class="string">&#x27;p&#x27;</span></span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-45-e59a77b7a4e6&gt; in &lt;module&gt;
+      1 # 문자열은 바로 치환되지 않아 에러가 나타남 = Immutable
+----&gt; 2 message[0] = &#39;p&#39;
+      3 print(message)
+
+
+TypeError: &#39;str&#39; object does not support item assignment</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List의 경우 살펴보기</span></span><br><span class="line">a = [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz&#x27;</span>, <span class="string">&#x27;qux&#x27;</span>, <span class="string">&#x27;quux&#x27;</span>, <span class="string">&#x27;corge&#x27;</span>]</span><br><span class="line">a[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;bar&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">1</span>]=<span class="number">10</span></span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;foo&#39;, 10, &#39;baz&#39;, &#39;qux&#39;, &#39;quux&#39;, &#39;corge&#39;]</code></pre>
+<ul>
+<li>string에서 바뀌지 않던 것이 list에서는 쉽게 바뀜</li>
+<li>쉽게 바뀌는 list의 성질을 <code>Mutable</code>이라고 표현<br>(Tuple은 immutable)</li>
+</ul>
+<h3 id="6-List는-동적임"><a href="#6-List는-동적임" class="headerlink" title="6) List는 동적임"></a>6) List는 동적임</h3><ul>
+<li>Mutable이라는 뜻 자체가 매우 동적임을 나타냄</li>
+<li>다양한 형태로 작업이 가능함</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>]</span><br><span class="line">temp[<span class="number">3</span>:<span class="number">3</span>] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, 1, 2, 3, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list에 값 추가하기</span></span><br><span class="line">temp += [<span class="number">1000</span>]</span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, 1, 2, 3, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, 1000]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list에서 값 삭제하기</span></span><br><span class="line">temp[<span class="number">3</span>:<span class="number">6</span>] = []</span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, 1000]</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> temp[<span class="number">6</span>]</span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]</code></pre>
+<h2 id="Tuples"><a href="#Tuples" class="headerlink" title="Tuples"></a>Tuples</h2><ul>
+<li>Lists와 비슷하지만 세부 특성이 다름</li>
+<li>List는 []로 표현하나, Tuple은 ()라고 표현</li>
+<li>Tuple은 immutable: 처음부터 바꾸는 것 외에는 방법이 없음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">temp = (<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>)</span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># immutable이기 때문에 바뀌지 않음</span></span><br><span class="line">temp[<span class="number">2</span>] = <span class="string">&quot;Cat&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-75-266ec228a7d8&gt; in &lt;module&gt;
+      1 # immutable이기 때문에 바뀌지 않음
+----&gt; 2 temp[2] = &quot;Cat&quot;
+
+
+TypeError: &#39;tuple&#39; object does not support item assignment</code></pre>
+<h3 id="1-Tuples을-사용하는-이유"><a href="#1-Tuples을-사용하는-이유" class="headerlink" title="1) Tuples을 사용하는 이유?"></a>1) Tuples을 사용하는 이유?</h3><ul>
+<li>데이터 분석에서 접근하면, 특정 데이터가 변하지 않도록 방지하는 기법</li>
+<li>프로그래밍적으로 Tuple이 List보다 연산 속도가 빠름</li>
+<li>Dictionary도 문자열과 같은 immutable type을 요구</li>
+<li>Tuples은 Packing &amp; Unpacking 기법이 강력함(일종의 여행용 가방)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="string">&quot;foo&quot;</span>, <span class="string">&quot;bar&quot;</span>, <span class="string">&quot;hey&quot;</span>, <span class="string">&quot;yeah&quot;</span>)</span><br><span class="line">t</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&#39;foo&#39;, &#39;bar&#39;, &#39;hey&#39;, &#39;yeah&#39;)</code></pre>
+<ul>
+<li><strong>Unpacking</strong>: 각각의 <code>element</code>를 다른 이름으로 저장해보기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(s1, s2, s3, s4) = t</span><br><span class="line">s2</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;bar&#39;</code></pre>
+<ul>
+<li>이때, 반드시 좌우 값이 동일하게 작동해야 함</li>
+<li>만약 좌우 값이 일치하지 않으면 에러가 발생</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 코드를 통해 확인</span></span><br><span class="line">(a1, a2, a3) = t</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-89-76bce831b49d&gt; in &lt;module&gt;
+----&gt; 1 (a1, a2, a3) = t
+
+
+ValueError: too many values to unpack (expected 3)</code></pre>
+<h3 id="2-swap"><a href="#2-swap" class="headerlink" title="2) swap"></a>2) swap</h3><ul>
+<li>스왑은 맞바꾸다의 뜻</li>
+<li><code>Tuple</code>에서는 매우 쉽게 <code>swap</code>이 가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a1 = <span class="string">&quot;chloe&quot;</span></span><br><span class="line">v1 = <span class="string">&quot;loves&quot;</span></span><br><span class="line">a2 = <span class="string">&quot;evan&quot;</span></span><br><span class="line"></span><br><span class="line">temp = a1, v1, a2 <span class="comment"># Tuple 형태로 표시됨</span></span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&#39;chloe&#39;, &#39;loves&#39;, &#39;evan&#39;)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a1, a2 = a2, a1</span><br><span class="line">temp = a1, v1, a2 <span class="comment"># Tuple 형태로 표시</span></span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(&#39;evan&#39;, &#39;loves&#39;, &#39;chloe&#39;)</code></pre>
+<h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><ul>
+<li>영어 원뜻 그대로 <code>사전</code>이라는 개념</li>
+<li>Dictionary는 {}로 표현</li>
+<li>List와 유사한 부분이 많음<ul>
+<li>Mutable이라는 뜻을 포함</li>
+<li>다른 Dictionary, List 등을 포함할 수 있음</li>
+</ul>
+</li>
+<li>List와의 차이<ul>
+<li>List에서 각 원소에 접근하기 위해 index를 사용</li>
+<li>Dictionary에서는 각 원소에 접근하기 위해 key를 사용</li>
+</ul>
+</li>
+<li>Rename할 때 자주 사용</li>
+</ul>
+<h3 id="1-Dictionary-정의"><a href="#1-Dictionary-정의" class="headerlink" title="1) Dictionary 정의"></a>1) Dictionary 정의</h3><ul>
+<li>Dictionary의 기본적인 문법<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;</span><br><span class="line">    &lt;키&gt;: &lt;값&gt;,</span><br><span class="line">    &lt;키&gt;: &lt;값&gt;,</span><br><span class="line">      .</span><br><span class="line">      .</span><br><span class="line">      .</span><br><span class="line">    &lt;키&gt;: &lt;값&gt;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 국내 야구팀을 Dictionary 형태로 만들기</span></span><br><span class="line">kbo = &#123;</span><br><span class="line">    <span class="string">&quot;인천&quot;</span> : <span class="string">&quot;SK&quot;</span>,</span><br><span class="line">    <span class="string">&quot;수원&quot;</span> : <span class="string">&quot;KT&quot;</span>,</span><br><span class="line">    <span class="string">&quot;광주&quot;</span> : <span class="string">&quot;기아&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print(kbo)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&#123;&#39;인천&#39;: &#39;SK&#39;, &#39;수원&#39;: &#39;KT&#39;, &#39;광주&#39;: &#39;기아&#39;&#125;</code></pre>
+<h3 id="2-Dictionary-접근법"><a href="#2-Dictionary-접근법" class="headerlink" title="2) Dictionary 접근법"></a>2) Dictionary 접근법</h3><ul>
+<li>indexing이 아닌 <code>key 값</code>으로 접근 가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(kbo[<span class="number">1</span>]) <span class="comment"># index로 추출할 수 없음</span></span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&lt;ipython-input-81-8f1aa6e7486b&gt; in &lt;module&gt;
+----&gt; 1 print(kbo[1]) # index로 추출할 수 없음
+
+
+KeyError: 1</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dictionary는 key 값을 넣어줘야 호출할 수 있음</span></span><br><span class="line">print(kbo[<span class="string">&quot;수원&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>KT</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dictionary에 값 추가하기</span></span><br><span class="line">kbo[<span class="string">&quot;대구&quot;</span>] = <span class="string">&quot;삼성&quot;</span></span><br><span class="line">print(kbo)</span><br></pre></td></tr></table></figure>
+
+<pre><code>&#123;&#39;인천&#39;: &#39;SK&#39;, &#39;수원&#39;: &#39;KT&#39;, &#39;광주&#39;: &#39;기아&#39;, &#39;대구&#39;: &#39;삼성&#39;&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dictionary에서 값 삭제하기</span></span><br><span class="line"><span class="keyword">del</span> kbo[<span class="string">&quot;대구&quot;</span>]</span><br><span class="line">kbo</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;&#39;인천&#39;: &#39;SK&#39;, &#39;수원&#39;: &#39;KT&#39;, &#39;광주&#39;: &#39;기아&#39;&#125;</code></pre>
+<h3 id="3-Dictionary-Using-Integer"><a href="#3-Dictionary-Using-Integer" class="headerlink" title="3) Dictionary Using Integer"></a>3) Dictionary Using Integer</h3><ul>
+<li>이전까지 접근한 것은 문자를 이요해 접근</li>
+<li><code>Integer</code>로 활용하는 방법은?</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="number">0</span>: <span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>: <span class="string">&#x27;d&#x27;</span>&#125;</span><br><span class="line">dic</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;0: &#39;a&#39;, 1: &#39;b&#39;, 2: &#39;c&#39;, 3: &#39;d&#39;&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(dic[<span class="number">0</span>])</span><br><span class="line">print(dic[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>a
+b</code></pre>
+<p>*** 주의할 점**</p>
+<ul>
+<li>dic는 <code>list</code>가 아님</li>
+<li>list에서 할 수 있던, sclicing이나 append를 사용할 수 없음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 에러 1: dictionary에는 append라는 속성값이 없음</span></span><br><span class="line">dic.append(<span class="string">&quot;e&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-101-ea0dea029ae5&gt; in &lt;module&gt;
+      1 # 에러 1: dictionary에는 append라는 속성값이 없음
+----&gt; 2 dic.append(&quot;e&quot;)
+
+
+AttributeError: &#39;dict&#39; object has no attribute &#39;append&#39;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 에러 2: slice 작동하지 않음</span></span><br><span class="line">dic[<span class="number">0</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-103-4e3c8d53df26&gt; in &lt;module&gt;
+      1 # 에러 2: slice 작동하지 않음
+----&gt; 2 dic[0:2]
+
+
+TypeError: unhashable type: &#39;slice&#39;</code></pre>
+<h3 id="4-Dictionary와-관련된-함수-소개"><a href="#4-Dictionary와-관련된-함수-소개" class="headerlink" title="4) Dictionary와 관련된 함수 소개"></a>4) Dictionary와 관련된 함수 소개</h3><ul>
+<li>Dictionary와 함께 사용하면 좋은 함수들</li>
+</ul>
+<h4 id="d-clear"><a href="#d-clear" class="headerlink" title="d.clear()"></a>d.clear()</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="string">&#x27;A&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;B&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;C&#x27;</span>: <span class="number">3</span>&#125;</span><br><span class="line">dic</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;&#39;A&#39;: 1, &#39;B&#39;: 2, &#39;C&#39;: 3&#125;</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># clear() 함수 적용 뒤 결괏값 확인</span></span><br><span class="line">dic.clear()</span><br><span class="line">dic</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;&#125;</code></pre>
+<h4 id="d-get"><a href="#d-get" class="headerlink" title="d.get()"></a>d.get()</h4><ul>
+<li><code>key</code> 값을 활용해서 <code>value</code> 값을 가져오는 함수</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="string">&#x27;A&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;B&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;C&#x27;</span>: <span class="number">3</span>&#125;</span><br><span class="line">print(dic.get(<span class="string">&#x27;B&#x27;</span>))</span><br><span class="line">print(dic.get(<span class="string">&#x27;Z&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>2
+None</code></pre>
+<ul>
+<li>.get(‘B’)에 해당하는 Dictionary값이 존재하기 때문에 2를 반환</li>
+<li>.get(‘Z’)에 해당하는 Dictionary값이 존재하지 않기 때문에 None을 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># None 반환보다 특정 숫자나 문자로 출력하고 싶은 경우</span></span><br><span class="line">print(dic.get(<span class="string">&#x27;z&#x27;</span>, <span class="number">0</span>))</span><br><span class="line">print(dic.get(<span class="string">&#x27;z&#x27;</span>, <span class="string">&quot;없음&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0
+없음</code></pre>
+<h3 id="d-keys"><a href="#d-keys" class="headerlink" title="d.keys()"></a>d.keys()</h3><ul>
+<li>Dictionary는 key와 value로 구성되어 있는데, keys()의 뜻은 현재 구성된 Dictionary에서 keys()를 dict_keys 형태로 반환<ul>
+<li>이때, list로 변환하려면 list()를 활용하면 됨</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="string">&#x27;A&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;B&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;C&#x27;</span>: <span class="number">3</span>&#125;</span><br><span class="line">print(dic.keys())</span><br><span class="line">print(<span class="built_in">list</span>(dic.keys()))</span><br></pre></td></tr></table></figure>
+
+<pre><code>dict_keys([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;])
+[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]</code></pre>
+<h4 id="d-values"><a href="#d-values" class="headerlink" title="d.values()"></a>d.values()</h4><ul>
+<li>keys()를 활용하여 key를 반환한 것처럼, values()를 활용하여 value 진행 가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="string">&#x27;A&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;B&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;C&#x27;</span>: <span class="number">3</span>&#125;</span><br><span class="line">print(dic.values())</span><br><span class="line">print(<span class="built_in">list</span>(dic.values()))</span><br></pre></td></tr></table></figure>
+
+<pre><code>dict_values([1, 2, 3])
+[1, 2, 3]</code></pre>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2020/11/09/ch3_1&2_lists_tuples_and_dictionary/" data-id="ckk2mkvh40004ioue39m26pdg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "Ch03(1&amp;2): Lists, Tuples, and Dictionary",
+        "image": "https://ne-choi.github.io",
+        "keywords": "python lists vs tuples dictionary in python python list python tuples",
+        "genre": "",
+        "datePublished": "2020-11-09",
+        "dateCreated": "2020-11-09",
+        "dateModified": "2021-01-10",
+        "url": "https://ne-choi.github.io//2020/11/09/ch3_1&2_lists_tuples_and_dictionary/",
+        "description": "Lists, Tuples, and Dictionary* 출처: dschloe.github.io
+Lists
+List는 [] 형태로 정의
+List는 정렬(ordered)됨
+List는 다양한 형태의 데이터 유형을 담을 수 있음
+List 안에 있는 값에는 인덱스로 접근
+List 안에 또 List를 담을 수 있음
+List는 변하기 쉬움
+List는 동적임
+
+1) Li",
+        "wordCount": 1915
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/11/10/Pandas_10%EB%B6%84_%EC%99%84%EC%84%B1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Pandas 10분 완성(10 Minutes to Pandas)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/11/05/How%20to%20unzip%20multiple%20zip%20files%20at%20once/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Unzip multiples files in Python</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/07/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/kaggle_survey_2020/output_16_0.png)" alt="Kaggle: The future of ML(Americans vs Indians)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/01/07/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="title">Kaggle: The future of ML(Americans vs Indians)</a></p>
+                            <p class="item-date"><time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝</a></p>
+                            <p class="item-date"><time datetime="2020-12-09T15:00:00.000Z" itemprop="datePublished">2020-12-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석</a></p>
+                            <p class="item-date"><time datetime="2020-12-08T15:00:00.000Z" itemprop="datePublished">2020-12-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅵ. 데이터 탐색</a></p>
+                            <p class="item-date"><time datetime="2020-12-07T15:00:00.000Z" itemprop="datePublished">2020-12-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/07/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/07/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅴ. R 그래픽 Ⅱ</a></p>
+                            <p class="item-date"><time datetime="2020-12-06T15:00:00.000Z" itemprop="datePublished">2020-12-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/10-Minutes-to-Pandas/" rel="tag">10 Minutes to Pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSP%EC%9E%90%EA%B2%A9%EC%A6%9D/" rel="tag">ADSP자격증</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADsP/" rel="tag">ADsP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/" rel="tag">EDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" rel="tag">F1스코어</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/" rel="tag">Kaggle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-EDA/" rel="tag">Kaggle EDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-beginner/" rel="tag">Kaggle beginner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-survey-competition/" rel="tag">Kaggle survey competition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-titanic/" rel="tag">Kaggle titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LDA/" rel="tag">LDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NMF/" rel="tag">NMF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R-programming/" rel="tag">R programming</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVD/" rel="tag">SVD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Titanic/" rel="tag">Titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vector-Array/" rel="tag">Vector&Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boxplot/" rel="tag">boxplot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary-in-python/" rel="tag">dictionary in python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dplyr/" rel="tag">dplyr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for-loop/" rel="tag">for loop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggplot2/" rel="tag">ggplot2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle-data/" rel="tag">kaggle data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lists-vs-tuples/" rel="tag">lists vs tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-list/" rel="tag">python list</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-tuples/" rel="tag">python tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r-data/" rel="tag">r data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/read-csv/" rel="tag">read csv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/titanic/" rel="tag">titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip/" rel="tag">unzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip-multiple-files/" rel="tag">unzip multiple files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/while-loop/" rel="tag">while loop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" rel="tag">결정트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" rel="tag">과적합과소적합</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" rel="tag">데이터분석준전문가</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" rel="tag">랜덤포레스트</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" rel="tag">로지스틱회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" rel="tag">릿지라쏘엘라스틱넷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%B6%84%EB%A5%98/" rel="tag">분류</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0/" rel="tag">사이킷런</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%B0%EC%A0%90%EB%8F%84/" rel="tag">산점도</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" rel="tag">선형회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" rel="tag">시각화</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" rel="tag">앙상블학습</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" rel="tag">재현율</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" rel="tag">정확도</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" rel="tag">주성분분석</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" rel="tag">차원축소</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/" rel="tag">파이썬머신러닝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" rel="tag">파이썬머신러닝완벽가이드</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8F%89%EA%B0%80/" rel="tag">평가</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%9A%8C%EA%B7%80/" rel="tag">회귀</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADSP%EC%9E%90%EA%B2%A9%EC%A6%9D/" style="font-size: 16px;">ADSP자격증</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/EDA/" style="font-size: 10px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-EDA/" style="font-size: 10px;">Kaggle EDA</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Kaggle-survey-competition/" style="font-size: 10px;">Kaggle survey competition</a> <a href="/tags/Kaggle-titanic/" style="font-size: 10px;">Kaggle titanic</a> <a href="/tags/LDA/" style="font-size: 10px;">LDA</a> <a href="/tags/NMF/" style="font-size: 10px;">NMF</a> <a href="/tags/Postech-MOOC/" style="font-size: 20px;">Postech_MOOC</a> <a href="/tags/R-programming/" style="font-size: 12px;">R programming</a> <a href="/tags/SVD/" style="font-size: 10px;">SVD</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector-Array/" style="font-size: 10px;">Vector&Array</a> <a href="/tags/boxplot/" style="font-size: 10px;">boxplot</a> <a href="/tags/dictionary-in-python/" style="font-size: 10px;">dictionary in python</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for-loop/" style="font-size: 10px;">for loop</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/kaggle-data/" style="font-size: 10px;">kaggle data</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/python-list/" style="font-size: 10px;">python list</a> <a href="/tags/python-tuples/" style="font-size: 10px;">python tuples</a> <a href="/tags/r-data/" style="font-size: 10px;">r data</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while-loop/" style="font-size: 10px;">while loop</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0/" style="font-size: 10px;">사이킷런</a> <a href="/tags/%EC%82%B0%EC%A0%90%EB%8F%84/" style="font-size: 10px;">산점도</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 10px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 10px;">차원축소</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">파이썬머신러닝</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8F%89%EA%B0%80/" style="font-size: 10px;">평가</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2020/11/09/ch3_1&amp;2_lists_tuples_and_dictionary/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

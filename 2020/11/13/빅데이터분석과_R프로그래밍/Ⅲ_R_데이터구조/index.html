@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>빅데이터 분석과 R 프로그래밍 1: Ⅲ. R 데이터구조 | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Postech_MOOC,R programming,r data,dplyr,read csv" />
+    
+    <meta name="description" content="POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.  1. R 데이터 생성파일 불러들이기 csv  brain &lt;- read.csv(“week3_2&#x2F;brain2210.csv”, header&#x3D;T)   xls      *.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한  다음 re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="빅데이터 분석과 R 프로그래밍 1: Ⅲ. R 데이터구조">
+<meta property="og:url" content="https://ne-choi.github.io/2020/11/13/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.  1. R 데이터 생성파일 불러들이기 csv  brain &lt;- read.csv(“week3_2&#x2F;brain2210.csv”, header&#x3D;T)   xls      *.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한  다음 re">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ne-choi.github.io/images/mooc/r_programming/unnamed-chunk-7-1.png">
+<meta property="article:published_time" content="2020-11-13T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-06T11:58:22.387Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech_MOOC">
+<meta property="article:tag" content="R programming">
+<meta property="article:tag" content="r data">
+<meta property="article:tag" content="dplyr">
+<meta property="article:tag" content="read csv">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ne-choi.github.io/images/mooc/r_programming/unnamed-chunk-7-1.png">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-빅데이터분석과_R프로그래밍/Ⅲ_R_데이터구조" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        빅데이터 분석과 R 프로그래밍 1: Ⅲ. R 데이터구조
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/11/13/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/" class="article-date">
+       <time datetime="2020-11-13T00:00:00.000Z" itemprop="datePublished">2020-11-13</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/11/13/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/" class="article-date">
+     <time datetime="2020-12-06T11:58:22.387Z" itemprop="dateModified">2020-12-06</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a>, <a class="tag-link-link" href="/tags/R-programming/" rel="tag">R programming</a>, <a class="tag-link-link" href="/tags/dplyr/" rel="tag">dplyr</a>, <a class="tag-link-link" href="/tags/r-data/" rel="tag">r data</a>, <a class="tag-link-link" href="/tags/read-csv/" rel="tag">read csv</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <ul>
+<li>  POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.</li>
+</ul>
+<h2 id="1-R-데이터-생성"><a href="#1-R-데이터-생성" class="headerlink" title="1. R 데이터 생성"></a>1. R 데이터 생성</h2><h3 id="파일-불러들이기"><a href="#파일-불러들이기" class="headerlink" title="파일 불러들이기"></a>파일 불러들이기</h3><ol>
+<li><p>csv</p>
+<p> brain &lt;- read.csv(“week3_2/brain2210.csv”, header=T)</p>
+</li>
+<li><p> xls  </p>
+</li>
+</ol>
+<ul>
+<li>*.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한<br>  다음 read.csv 함수를 사용해 r로 불러들이는 게 편리  </li>
+<li>  readxl로도 가능함</li>
+</ul>
+<ol>
+<li> txt</li>
+</ol>
+<pre><code>파일을 부를 이름 &lt;- read.table(file = &quot;파일명.txt, na = &quot; &quot;, header = TRUE)</code></pre>
+<h3 id="데이터-저장-폴더"><a href="#데이터-저장-폴더" class="headerlink" title="데이터 저장 폴더"></a>데이터 저장 폴더</h3><ul>
+<li>데이터와 프로그램 저장 폴더 지정<ul>
+<li>  폴더 이름은 영문으로 생성할 것</li>
+</ul>
+</li>
+<li>  r 프로그램의 기본 경로 지정하는 명령어</li>
+</ul>
+<pre><code># change working directory
+#set working directory
+setwd(&quot;경로&quot;) 
+
+# check the current working directory
+getwd()</code></pre>
+<h3 id="데이터와-변수-이름"><a href="#데이터와-변수-이름" class="headerlink" title="데이터와 변수 이름"></a>데이터와 변수 이름</h3><p>attach를 사용하면 정의된 파일 이름 입력 없이 바로 항목 조회가 가능</p>
+<pre><code># attach 사용  
+attach(brain)  
+
+# 원래대로라면  
+table(brain$sex)  
+
+## 
+##   f   m 
+##  77 108
+
+# attach를 쓰고 나면  
+table(sex)  
+
+## sex
+##   f   m 
+##  77 108</code></pre>
+<h2 id="2-R-데이터-활용-Ⅰ"><a href="#2-R-데이터-활용-Ⅰ" class="headerlink" title="2. R 데이터 활용 Ⅰ"></a>2. R 데이터 활용 Ⅰ</h2><h3 id="데이터-추출-subset"><a href="#데이터-추출-subset" class="headerlink" title="데이터 추출_subset"></a>데이터 추출_subset</h3><ul>
+<li>subset(데이터 이름, 조건)<br>  예제 1. brain 데이터에서 female만 있는 subset 데이터 생성</li>
+</ul>
+<pre><code>brainf &lt;- subset(brain, sex = &quot;f&quot;)
+mean(brainf$wt)
+
+## [1] 1206.822</code></pre>
+<p>예제 2. brain 데이터에서 wt &lt; 1300 이하인 데이터 생성</p>
+<pre><code># subset with wt &lt; 1300
+brain1300 &lt;- subset(brain, brain$wt &lt; 1300)
+
+# same subset of brain1300
+# brain1300 &lt;- subset(brain, !brain@wt =&gt; 1300)
+summary(brain1300)
+
+##        wt           sex           
+##  Min.   : 915   Length:138        
+##  1st Qu.:1074   Class :character  
+##  Median :1155   Mode  :character  
+##  Mean   :1145                     
+##  3rd Qu.:1230                     
+##  Max.   :1289
+
+# subset with female
+# brainf &lt;- subset(brain, sex = &quot;f&quot;)
+brainf &lt;- subset(brain, sex == &quot;f&quot;)
+mean(brainf$wt)
+
+## [1] 1117.169
+
+sd(brainf$wt)
+
+## [1] 98.97094
+
+# subset with male
+brainm &lt;- subset(brain, sex == &quot;m&quot;)
+mean(brainm$wt)
+
+## [1] 1270.741
+
+sd(brainm$wt)
+
+## [1] 129.22</code></pre>
+<h3 id="요약통계치-그룹별-aggregate"><a href="#요약통계치-그룹별-aggregate" class="headerlink" title="요약통계치 (그룹별)_aggregate"></a>요약통계치 (그룹별)_aggregate</h3><ul>
+<li>  aggregate(변수~그룹, 데이터, 함수)</li>
+</ul>
+<pre><code># &#39;aggregate&#39; for statistics by group
+aggregate(wt~sex, data = brain, FUN = mean)
+
+##   sex       wt
+## 1   f 1117.169
+## 2   m 1270.741
+
+aggregate(wt~sex, data = brain, FUN = sd)
+
+##   sex        wt
+## 1   f  98.97094
+## 2   m 129.21997</code></pre>
+<ul>
+<li>  추출한 데이터의 활용 (그룹별 히스토그램)</li>
+</ul>
+<pre><code># histogram for female and male
+# 2*2 multiple plot
+par(mfrow=c(2,2))
+brainf&lt;-subset(brain,brain$sex==&#39;f&#39;) 
+hist(brainf$wt, breaks = 12,col = &quot;green&quot;,cex=0.7, main=&quot;Histogram (Female)&quot; ,xlab=&quot;brain weight&quot;)
+
+# subset with male
+brainm&lt;-subset(brain,brain$sex==&#39;m&#39;) 
+hist(brainm$wt, breaks = 12,col = &quot;orange&quot;, main=&quot;Histogram with (Male)&quot; ,  xlab=&quot;brain weight&quot;)</code></pre>
+<p><img src="/images/mooc/r_programming/unnamed-chunk-7-1.png"></p>
+<ul>
+<li>  추출한 데이터의 활용</li>
+</ul>
+<pre><code># histogram with same scale
+hist(brainf$wt, breaks = 12,col = &quot;green&quot;,cex=0.7, main=&quot;Histogram with Normal Curve (Female)&quot; , xlim=c(900,1700),ylim=c(0,25), xlab=&quot;brain weight&quot;)</code></pre>
+<p><img src="/images/mooc/r_programming/unnamed-chunk-8-1.png"></p>
+<pre><code>hist(brainm$wt, breaks = 12,col = &quot;orange&quot;, main=&quot;Histogram with Normal Curve (Male)&quot; , xlim=c(900,1700), ylim=c(0,25),xlab=&quot;brain weight&quot;)</code></pre>
+<p><img src="/images/mooc/r_programming/unnamed-chunk-8-2.png"></p>
+<ul>
+<li>  csv로 내보내기</li>
+</ul>
+<pre><code># plot margin
+# par(mar=c(2,2,2,2))
+
+# export csv file - write out to csv file 
+write.table(brainf,file=&quot;week3_2/brainf.csv&quot;, row.names = FALSE, sep=&quot;,&quot;, na=&quot; &quot;)
+
+write.csv(brainf,file=&quot;week3_2/brainf.csv&quot;, row.names = FALSE)
+
+# export txt file 
+write.table(brainm, file=&quot;week3_2/brainm.txt&quot;, row.names = FALSE,  na=&quot; &quot;)</code></pre>
+<ul>
+<li>퀴즈<br>  brain1000 &lt;- subset(brain, brain$wt &lt; 1000) brain1000</li>
+</ul>
+<p>table(brain1000)</p>
+<h2 id="3-R-데이터-활용-Ⅱ"><a href="#3-R-데이터-활용-Ⅱ" class="headerlink" title="3. R 데이터 활용 Ⅱ"></a>3. R 데이터 활용 Ⅱ</h2><h3 id="dplyr-패키지"><a href="#dplyr-패키지" class="headerlink" title="dplyr 패키지"></a>dplyr 패키지</h3><pre><code>library(dplyr)
+
+## 
+## Attaching package: &#39;dplyr&#39;
+
+## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag
+
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union
+
+car &lt;- read.csv(&quot;week3_3/autompg.csv&quot;)
+head(car)
+
+##   mpg cyl disp hp   wt accler year origin                   carname
+## 1  18   8  307 17 3504   12.0   70      1 chevrolet chevelle malibu
+## 2  15   8  350 35 3693   11.5   70      1         buick skylark 320
+## 3  18   8  318 29 3436   11.0   70      1        plymouth satellite
+## 4  16   8  304 29 3433   12.0   70      1             amc rebel sst
+## 5  17   8  302 24 3449   10.5   70      1               ford torino
+## 6  15   8  429 42 4341   10.0   70      1          ford galaxie 500</code></pre>
+<p>데이터 구조 파악하기</p>
+<pre><code># 데이터의 수와 변수는?
+dim(car)
+
+## [1] 398   9
+
+# 데이터 수: 398개, 변수: 9개
+
+# 데이터 전체 주고 파악하기: str 함수
+str(car)
+
+## &#39;data.frame&#39;:    398 obs. of  9 variables:
+##  $ mpg    : num  18 15 18 16 17 15 14 14 14 15 ...
+##  $ cyl    : int  8 8 8 8 8 8 8 8 8 8 ...
+##  $ disp   : num  307 350 318 304 302 429 454 440 455 390 ...
+##  $ hp     : num  17 35 29 29 24 42 47 46 48 40 ...
+##  $ wt     : int  3504 3693 3436 3433 3449 4341 4354 4312 4425 3850 ...
+##  $ accler : num  12 11.5 11 12 10.5 10 9 8.5 10 8.5 ...
+##  $ year   : int  70 70 70 70 70 70 70 70 70 70 ...
+##  $ origin : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ carname: chr  &quot;chevrolet chevelle malibu&quot; &quot;buick skylark 320&quot; &quot;plymouth satellite&quot; &quot;amc rebel sst&quot; ...
+
+# num: 실수, int: 정수
+
+# 데이터 요약하기: summary 함수
+summary(car)
+
+##       mpg             cyl             disp             hp              wt      
+##  Min.   : 9.00   Min.   :3.000   Min.   : 68.0   Min.   : 1.00   Min.   :1613  
+##  1st Qu.:17.50   1st Qu.:4.000   1st Qu.:104.2   1st Qu.:26.00   1st Qu.:2224  
+##  Median :23.00   Median :4.000   Median :148.5   Median :60.50   Median :2804  
+##  Mean   :23.51   Mean   :5.455   Mean   :193.4   Mean   :51.39   Mean   :2970  
+##  3rd Qu.:29.00   3rd Qu.:8.000   3rd Qu.:262.0   3rd Qu.:79.00   3rd Qu.:3608  
+##  Max.   :46.60   Max.   :8.000   Max.   :455.0   Max.   :94.00   Max.   :5140  
+##      accler           year           origin        carname         
+##  Min.   : 8.00   Min.   :70.00   Min.   :1.000   Length:398        
+##  1st Qu.:13.82   1st Qu.:73.00   1st Qu.:1.000   Class :character  
+##  Median :15.50   Median :76.00   Median :1.000   Mode  :character  
+##  Mean   :15.57   Mean   :76.01   Mean   :1.573                     
+##  3rd Qu.:17.18   3rd Qu.:79.00   3rd Qu.:2.000                     
+##  Max.   :24.80   Max.   :82.00   Max.   :3.000
+
+# 데이터 요약통계치(빈도 구하기): table 함수
+attach(car) # attach를 쓰면 변수에 이름을 안 써도 됨
+
+## The following object is masked from brain:
+## 
+##     wt
+
+table(origin)
+
+## origin
+##   1   2   3 
+## 249  70  79
+
+table(year)
+
+## year
+## 70 71 72 73 74 75 76 77 78 79 80 81 82 
+## 29 28 28 40 27 30 34 28 36 29 29 29 31
+
+# 데이터 요약통계치 (평균, 표준편차): mean
+mean(mpg)
+
+## [1] 23.51457
+
+mean(hp)
+
+## [1] 51.38945
+
+mean(wt)
+
+## [1] 2970.425</code></pre>
+<h2 id="4-데이터-핸들링"><a href="#4-데이터-핸들링" class="headerlink" title="4. 데이터 핸들링"></a>4. 데이터 핸들링</h2><h3 id="dplyr-활용"><a href="#dplyr-활용" class="headerlink" title="dplyr 활용"></a>dplyr 활용</h3><p>dplyr: 전처리 과정을 하기 위한 편리한 기능</p>
+<pre><code>library(dplyr)
+
+attach(car)
+
+## The following objects are masked from car (pos = 3):
+## 
+##     accler, carname, cyl, disp, hp, mpg, origin, wt, year
+
+## The following object is masked from brain:
+## 
+##     wt
+
+str(car)
+
+## &#39;data.frame&#39;:    398 obs. of  9 variables:
+##  $ mpg    : num  18 15 18 16 17 15 14 14 14 15 ...
+##  $ cyl    : int  8 8 8 8 8 8 8 8 8 8 ...
+##  $ disp   : num  307 350 318 304 302 429 454 440 455 390 ...
+##  $ hp     : num  17 35 29 29 24 42 47 46 48 40 ...
+##  $ wt     : int  3504 3693 3436 3433 3449 4341 4354 4312 4425 3850 ...
+##  $ accler : num  12 11.5 11 12 10.5 10 9 8.5 10 8.5 ...
+##  $ year   : int  70 70 70 70 70 70 70 70 70 70 ...
+##  $ origin : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ carname: chr  &quot;chevrolet chevelle malibu&quot; &quot;buick skylark 320&quot; &quot;plymouth satellite&quot; &quot;amc rebel sst&quot; ...</code></pre>
+<h3 id="변수-추출-select"><a href="#변수-추출-select" class="headerlink" title="변수 추출: select"></a>변수 추출: select</h3><p>car 데이터에서 mpg, hp 변수만 추출</p>
+<pre><code># Data handling usin &quot;dplyr&quot;
+# 1 subset data: selecting a few variables
+set1 &lt;- select(car, mpg, hp)
+head(set1)
+
+##   mpg hp
+## 1  18 17
+## 2  15 35
+## 3  18 29
+## 4  16 29
+## 5  17 24
+## 6  15 42</code></pre>
+<p>car 데이터에서 mpg로 시작하는 변수를 제외</p>
+<pre><code># 2 subset data: drop variables with -
+set2 &lt;- select(car, -starts_with(&quot;mpg&quot;))
+head(set2)
+
+##   cyl disp hp   wt accler year origin                   carname
+## 1   8  307 17 3504   12.0   70      1 chevrolet chevelle malibu
+## 2   8  350 35 3693   11.5   70      1         buick skylark 320
+## 3   8  318 29 3436   11.0   70      1        plymouth satellite
+## 4   8  304 29 3433   12.0   70      1             amc rebel sst
+## 5   8  302 24 3449   10.5   70      1               ford torino
+## 6   8  429 42 4341   10.0   70      1          ford galaxie 500</code></pre>
+<h3 id="데이터-추출-filter"><a href="#데이터-추출-filter" class="headerlink" title="데이터 추출: filter"></a>데이터 추출: filter</h3><ul>
+<li>조건에 맞는 데이터 추출: filter(데이터, 변수 조건, …)<br>  car 데이터에서 mpg가 30보다 큰 행 추출</li>
+</ul>
+<pre><code># 3 subset data: filter mpg &gt; 50
+set3 &lt;- filter(car, mpg &gt; 30)
+head(set3)
+
+##   mpg cyl disp hp   wt accler year origin             carname
+## 1  31   4   71 62 1773   19.0   71      3 toyota corolla 1200
+## 2  35   4   72 66 1613   18.0   71      3         datsun 1200
+## 3  31   4   79 64 1950   19.0   74      3         datsun b210
+## 4  32   4   71 62 1836   21.0   74      3 toyota corolla 1200
+## 5  31   4   76 53 1649   16.5   74      3       toyota corona
+## 6  32   4   83 58 2003   19.0   74      3          datsun 710</code></pre>
+<h3 id="변수-생성-mutate"><a href="#변수-생성-mutate" class="headerlink" title="변수 생성: mutate"></a>변수 생성: mutate</h3><ul>
+<li>  mutate(새로운 변수 이름 = 기존 변수 활용)</li>
+<li>  <strong>%&gt;% 파이프 연산자</strong>: 연산자 사용하여 연결</li>
+</ul>
+<pre><code># create a derived variable
+set4 &lt;- car %&gt;%
+   filter(!is.na(mpg)) %&gt;%
+   mutate(mpg_km = mpg*1.609)
+head(set4)
+
+##   mpg cyl disp hp   wt accler year origin                   carname mpg_km
+## 1  18   8  307 17 3504   12.0   70      1 chevrolet chevelle malibu 28.962
+## 2  15   8  350 35 3693   11.5   70      1         buick skylark 320 24.135
+## 3  18   8  318 29 3436   11.0   70      1        plymouth satellite 28.962
+## 4  16   8  304 29 3433   12.0   70      1             amc rebel sst 25.744
+## 5  17   8  302 24 3449   10.5   70      1               ford torino 27.353
+## 6  15   8  429 42 4341   10.0   70      1          ford galaxie 500 24.135
+
+# filter: car 데이터 mpg열의 NA가 아닌 모든 데이터 추출
+# mutate: 기존 mpg열을 사용해 새로운 mpg_km열 생성</code></pre>
+<h3 id="데이터-요약-통계치-평균"><a href="#데이터-요약-통계치-평균" class="headerlink" title="데이터 요약 통계치(평균)"></a>데이터 요약 통계치(평균)</h3><ul>
+<li>  summarize(mean(변수이름))</li>
+</ul>
+<pre><code># mean and standard deviation
+car %&gt;%
+   summarize(mean(mpg), mean(hp), mean(wt))
+
+##   mean(mpg) mean(hp) mean(wt)
+## 1  23.51457 51.38945 2970.425
+
+# 몇 개 변수의 평균값 한 번에 구하기
+select(car, 1:6) %&gt;%
+   colMeans() # 데이터를 열로 재구성하여 평균값 구함
+
+##         mpg         cyl        disp          hp          wt      accler 
+##   23.514573    5.454774  193.425879   51.389447 2970.424623   15.568090</code></pre>
+<h3 id="백터화-요약치-summarize-all-FUN"><a href="#백터화-요약치-summarize-all-FUN" class="headerlink" title="백터화 요약치: summarize_all(FUN)"></a>백터화 요약치: summarize_all(FUN)</h3><ul>
+<li>  열추출하여 기술통계치 구하고 요약치 보기</li>
+</ul>
+<pre><code>a1 &lt;- select(car, 1:6) %&gt;% summarize_all(mean)
+a2 &lt;- select(car, 1:6) %&gt;% summarize_all(sd)
+a3 &lt;- select(car, 1:6) %&gt;% summarize_all(min)
+a4 &lt;- select(car, 1:6) %&gt;% summarize_all(max)
+
+table1 &lt;- data.frame(rbind(a1,a2,a3,a4))
+rownames(table1) &lt;- c(&quot;mean&quot;, &quot;sd&quot;, &quot;min&quot;, &quot;max&quot;) # data.frame을 tbl_df로 전환시켰으므로 data.frame으로 원상복귀하여 행 이름을 바꿈
+
+table1
+
+##            mpg      cyl     disp       hp        wt    accler
+## mean 23.514573 5.454774 193.4259 51.38945 2970.4246 15.568090
+## sd    7.815984 1.701004 104.2698 29.93236  846.8418  2.757689
+## min   9.000000 3.000000  68.0000  1.00000 1613.0000  8.000000
+## max  46.600000 8.000000 455.0000 94.00000 5140.0000 24.800000</code></pre>
+<h3 id="그룹별-통계량-group-by"><a href="#그룹별-통계량-group-by" class="headerlink" title="그룹별 통계량: group_by"></a>그룹별 통계량: group_by</h3><ul>
+<li>  group_by(변수), summarize(__=FUN()) 그룹별 요약통계량 구하기</li>
+</ul>
+<pre><code># summary statistics by group variable
+car %&gt;%
+   group_by(cyl) %&gt;%
+   summarize(mean_mpg = mean(mpg), na.rm = TRUE)
+
+## `summarise()` ungrouping output (override with `.groups` argument)
+
+## # A tibble: 5 x 3
+##     cyl mean_mpg na.rm
+##   &lt;int&gt;    &lt;dbl&gt; &lt;lgl&gt;
+## 1     3     20.6 TRUE 
+## 2     4     29.3 TRUE 
+## 3     5     27.4 TRUE 
+## 4     6     20.0 TRUE 
+## 5     8     15.0 TRUE
+
+# group_by: car 데이터의 cyl열을 그룹으로 묶음
+# summarize: cyl그룹의 mpg 평균을 구함
+# na.rm = TURE: 통계 분석 시 결측값을 제외</code></pre>
+<ul>
+<li>  퀴즈</li>
+</ul>
+<pre><code>height &lt;- c(165, 170, 155, 185)  
+weight &lt;- c(55, 65, 50, 110)  
+gender &lt;- c(&quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;Male&quot;)
+
+df &lt;- data.frame(height, weight, gender)
+
+df
+
+##   height weight gender
+## 1    165     55 Female
+## 2    170     65   Male
+## 3    155     50 Female
+## 4    185    110   Male
+
+df %&gt;% 
+   group_by(height) %&gt;%
+   summarize(result = mean(gender))
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+## `summarise()` ungrouping output (override with `.groups` argument)
+
+## # A tibble: 4 x 2
+##   height result
+##    &lt;dbl&gt;  &lt;dbl&gt;
+## 1    155     NA
+## 2    165     NA
+## 3    170     NA
+## 4    185     NA
+
+summarize(group_by(df, gender), result=mean(height))
+
+## `summarise()` ungrouping output (override with `.groups` argument)
+
+## # A tibble: 2 x 2
+##   gender result
+##   &lt;chr&gt;   &lt;dbl&gt;
+## 1 Female   160 
+## 2 Male     178.
+
+filter(df, gender = c(&quot;Male&quot;, &quot;Female&quot;)) %&gt;%
+   summarize(result = mean())
+
+## Error: Problem with `filter()` input `..1`.
+## x Input `..1` is named.
+## i This usually means that you&#39;ve used `=` instead of `==`.
+## i Did you mean `gender == c(&quot;Male&quot;, &quot;Female&quot;)`?
+
+df %&gt;%
+   select(height) %&gt;%
+   summarize(result = mean(gender))
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+##   result
+## 1     NA</code></pre>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2020/11/13/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/" data-id="ckk2mkvhc0008iouegumr4fuv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "빅데이터 분석과 R 프로그래밍 1: Ⅲ. R 데이터구조",
+        "image": "https://ne-choi.github.io/images/mooc/r_programming/unnamed-chunk-7-1.png",
+        "keywords": "Postech_MOOC R programming r data dplyr read csv",
+        "genre": "",
+        "datePublished": "2020-11-13",
+        "dateCreated": "2020-11-13",
+        "dateModified": "2020-12-06",
+        "url": "https://ne-choi.github.io//2020/11/13/빅데이터분석과_R프로그래밍/Ⅲ_R_데이터구조/",
+        "description": "
+  POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.
+
+1. R 데이터 생성파일 불러들이기
+csv
+ brain &lt;- read.csv(“week3_2/brain2210.csv”, header=T)
+
+ xls  
+
+
+
+*.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한  다음 re",
+        "wordCount": 3320
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/11/14/ADsP/Part02_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_%EA%B8%B0%ED%9A%8D/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            ADsP 자격증: Part02. 데이터 분석 기획
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/11/12/ADsP/Part01_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%9D%B4%ED%95%B4/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">ADsP 자격증: Part01. 데이터 이해</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/07/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/kaggle_survey_2020/output_16_0.png)" alt="Kaggle: The future of ML(Americans vs Indians)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/01/07/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="title">Kaggle: The future of ML(Americans vs Indians)</a></p>
+                            <p class="item-date"><time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝</a></p>
+                            <p class="item-date"><time datetime="2020-12-09T15:00:00.000Z" itemprop="datePublished">2020-12-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석</a></p>
+                            <p class="item-date"><time datetime="2020-12-08T15:00:00.000Z" itemprop="datePublished">2020-12-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅵ. 데이터 탐색</a></p>
+                            <p class="item-date"><time datetime="2020-12-07T15:00:00.000Z" itemprop="datePublished">2020-12-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/07/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/07/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅴ. R 그래픽 Ⅱ</a></p>
+                            <p class="item-date"><time datetime="2020-12-06T15:00:00.000Z" itemprop="datePublished">2020-12-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/10-Minutes-to-Pandas/" rel="tag">10 Minutes to Pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADSP%EC%9E%90%EA%B2%A9%EC%A6%9D/" rel="tag">ADSP자격증</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADsP/" rel="tag">ADsP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/" rel="tag">EDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" rel="tag">F1스코어</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/" rel="tag">Kaggle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-EDA/" rel="tag">Kaggle EDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-beginner/" rel="tag">Kaggle beginner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-survey-competition/" rel="tag">Kaggle survey competition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-titanic/" rel="tag">Kaggle titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LDA/" rel="tag">LDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NMF/" rel="tag">NMF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R-programming/" rel="tag">R programming</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVD/" rel="tag">SVD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Titanic/" rel="tag">Titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vector-Array/" rel="tag">Vector&Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boxplot/" rel="tag">boxplot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary-in-python/" rel="tag">dictionary in python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dplyr/" rel="tag">dplyr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for-loop/" rel="tag">for loop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggplot2/" rel="tag">ggplot2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle-data/" rel="tag">kaggle data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lists-vs-tuples/" rel="tag">lists vs tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-list/" rel="tag">python list</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-tuples/" rel="tag">python tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r-data/" rel="tag">r data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/read-csv/" rel="tag">read csv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/titanic/" rel="tag">titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip/" rel="tag">unzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip-multiple-files/" rel="tag">unzip multiple files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/while-loop/" rel="tag">while loop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" rel="tag">결정트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" rel="tag">과적합과소적합</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" rel="tag">데이터분석준전문가</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" rel="tag">랜덤포레스트</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" rel="tag">로지스틱회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" rel="tag">릿지라쏘엘라스틱넷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%B6%84%EB%A5%98/" rel="tag">분류</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0/" rel="tag">사이킷런</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%B0%EC%A0%90%EB%8F%84/" rel="tag">산점도</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" rel="tag">선형회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" rel="tag">시각화</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" rel="tag">앙상블학습</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" rel="tag">재현율</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" rel="tag">정확도</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" rel="tag">주성분분석</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" rel="tag">차원축소</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/" rel="tag">파이썬머신러닝</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" rel="tag">파이썬머신러닝완벽가이드</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8F%89%EA%B0%80/" rel="tag">평가</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%9A%8C%EA%B7%80/" rel="tag">회귀</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADSP%EC%9E%90%EA%B2%A9%EC%A6%9D/" style="font-size: 16px;">ADSP자격증</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/EDA/" style="font-size: 10px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-EDA/" style="font-size: 10px;">Kaggle EDA</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Kaggle-survey-competition/" style="font-size: 10px;">Kaggle survey competition</a> <a href="/tags/Kaggle-titanic/" style="font-size: 10px;">Kaggle titanic</a> <a href="/tags/LDA/" style="font-size: 10px;">LDA</a> <a href="/tags/NMF/" style="font-size: 10px;">NMF</a> <a href="/tags/Postech-MOOC/" style="font-size: 20px;">Postech_MOOC</a> <a href="/tags/R-programming/" style="font-size: 12px;">R programming</a> <a href="/tags/SVD/" style="font-size: 10px;">SVD</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector-Array/" style="font-size: 10px;">Vector&Array</a> <a href="/tags/boxplot/" style="font-size: 10px;">boxplot</a> <a href="/tags/dictionary-in-python/" style="font-size: 10px;">dictionary in python</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for-loop/" style="font-size: 10px;">for loop</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/kaggle-data/" style="font-size: 10px;">kaggle data</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/python-list/" style="font-size: 10px;">python list</a> <a href="/tags/python-tuples/" style="font-size: 10px;">python tuples</a> <a href="/tags/r-data/" style="font-size: 10px;">r data</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while-loop/" style="font-size: 10px;">while loop</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0/" style="font-size: 10px;">사이킷런</a> <a href="/tags/%EC%82%B0%EC%A0%90%EB%8F%84/" style="font-size: 10px;">산점도</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 10px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 10px;">차원축소</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">파이썬머신러닝</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8F%89%EA%B0%80/" style="font-size: 10px;">평가</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2020/11/13/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
