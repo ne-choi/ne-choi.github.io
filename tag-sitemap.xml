@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>https://ne-choi.github.io/tags/EDA/</loc>
+        <lastmod>2021-01-20T04:42:31.814Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/Kaggle-beginner/</loc>
+        <lastmod>2021-01-20T04:42:31.814Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/Kaggle/</loc>
+        <lastmod>2021-01-20T04:42:31.814Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://ne-choi.github.io/tags/unzip-multiple-files/</loc>
         <lastmod>2021-01-20T04:37:01.961Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,27 +40,6 @@
     <url>
         <loc>https://ne-choi.github.io/tags/kaggle/</loc>
         <lastmod>2021-01-20T04:37:01.961Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/EDA/</loc>
-        <lastmod>2021-01-20T04:36:18.935Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Kaggle-beginner/</loc>
-        <lastmod>2021-01-20T04:36:18.935Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Kaggle/</loc>
-        <lastmod>2021-01-20T04:36:18.935Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
