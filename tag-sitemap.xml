@@ -3,6 +3,237 @@
 
 
     <url>
+        <loc>https://ne-choi.github.io/tags/unzip-multiple-files/</loc>
+        <lastmod>2021-01-20T04:37:01.961Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/unzip/</loc>
+        <lastmod>2021-01-20T04:37:01.961Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/kaggle/</loc>
+        <lastmod>2021-01-20T04:37:01.961Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/EDA/</loc>
+        <lastmod>2021-01-20T04:36:18.935Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/Kaggle-beginner/</loc>
+        <lastmod>2021-01-20T04:36:18.935Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/Kaggle/</loc>
+        <lastmod>2021-01-20T04:36:18.935Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/matplotlib/</loc>
+        <lastmod>2021-01-20T04:00:59.832Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/numpy/</loc>
+        <lastmod>2021-01-20T04:00:59.832Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/pandas/</loc>
+        <lastmod>2021-01-20T04:00:59.832Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/10-Minutes-to-Pandas/</loc>
+        <lastmod>2021-01-20T04:00:59.832Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/python/</loc>
+        <lastmod>2021-01-20T04:00:59.832Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/</loc>
+        <lastmod>2021-01-20T03:58:12.366Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/</loc>
+        <lastmod>2021-01-20T03:58:12.366Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EC%A0%95%ED%99%95%EB%8F%84/</loc>
+        <lastmod>2021-01-20T03:58:12.366Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/</loc>
+        <lastmod>2021-01-20T03:58:12.366Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/Titanic/</loc>
+        <lastmod>2021-01-20T03:58:12.354Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/</loc>
+        <lastmod>2021-01-20T03:58:12.339Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/</loc>
+        <lastmod>2021-01-20T03:58:12.339Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/</loc>
+        <lastmod>2021-01-20T03:58:12.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/</loc>
+        <lastmod>2021-01-20T03:58:12.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/</loc>
+        <lastmod>2021-01-20T03:58:12.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EB%B6%84%EB%A5%98/</loc>
+        <lastmod>2021-01-20T03:58:12.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/</loc>
+        <lastmod>2021-01-20T03:58:12.188Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/</loc>
+        <lastmod>2021-01-20T03:58:12.188Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/</loc>
+        <lastmod>2021-01-20T03:58:12.188Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/</loc>
+        <lastmod>2021-01-20T03:58:12.188Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%ED%9A%8C%EA%B7%80/</loc>
+        <lastmod>2021-01-20T03:58:12.188Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/</loc>
+        <lastmod>2021-01-20T03:39:16.974Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/ADsP/</loc>
+        <lastmod>2021-01-20T03:39:16.974Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/tuples/</loc>
+        <lastmod>2021-01-20T03:24:43.310Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/list/</loc>
+        <lastmod>2021-01-20T03:24:43.310Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/dictionary/</loc>
+        <lastmod>2021-01-20T03:24:43.310Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/lists-vs-tuples/</loc>
+        <lastmod>2021-01-20T03:24:43.310Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://ne-choi.github.io/tags/lattice/</loc>
         <lastmod>2021-01-18T15:31:34.402Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -52,323 +283,8 @@
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/tags/Kaggle-EDA/</loc>
-        <lastmod>2021-01-10T03:17:41.744Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Kaggle-beginner/</loc>
-        <lastmod>2021-01-10T03:17:41.744Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Kaggle-survey-competition/</loc>
-        <lastmod>2021-01-10T03:17:41.744Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Kaggle/</loc>
-        <lastmod>2021-01-10T03:17:41.744Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/unzip-multiple-files/</loc>
-        <lastmod>2021-01-10T03:16:32.127Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/ubuntu/</loc>
-        <lastmod>2021-01-10T03:16:32.127Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/unzip/</loc>
-        <lastmod>2021-01-10T03:16:32.127Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/kaggle-data/</loc>
-        <lastmod>2021-01-10T03:16:32.127Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/kaggle/</loc>
-        <lastmod>2021-01-10T03:16:32.127Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/python-tuples/</loc>
-        <lastmod>2021-01-10T03:15:59.171Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/python-list/</loc>
-        <lastmod>2021-01-10T03:15:59.171Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/dictionary-in-python/</loc>
-        <lastmod>2021-01-10T03:15:59.171Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/lists-vs-tuples/</loc>
-        <lastmod>2021-01-10T03:15:59.171Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/python/</loc>
-        <lastmod>2021-01-10T03:15:59.171Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/</loc>
-        <lastmod>2020-12-04T07:26:38.700Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/</loc>
-        <lastmod>2020-12-04T07:26:38.700Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/</loc>
-        <lastmod>2020-12-04T07:26:38.700Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/</loc>
-        <lastmod>2020-12-04T07:26:38.700Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%ED%9A%8C%EA%B7%80/</loc>
-        <lastmod>2020-12-04T07:26:38.700Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/</loc>
-        <lastmod>2020-12-04T07:26:38.700Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/NMF/</loc>
-        <lastmod>2020-12-04T07:25:15.200Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/SVD/</loc>
-        <lastmod>2020-12-04T07:25:15.200Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/LDA/</loc>
-        <lastmod>2020-12-04T07:25:15.200Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/</loc>
-        <lastmod>2020-12-04T07:25:15.200Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/</loc>
-        <lastmod>2020-12-04T07:25:15.200Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/</loc>
-        <lastmod>2020-12-03T08:49:48.249Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/ADSP%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
-        <lastmod>2020-12-03T08:49:48.249Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/ADsP/</loc>
-        <lastmod>2020-12-03T08:49:48.249Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/</loc>
-        <lastmod>2020-12-02T07:05:51.511Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/</loc>
-        <lastmod>2020-12-02T07:05:51.511Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/</loc>
-        <lastmod>2020-12-02T07:05:51.511Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EB%B6%84%EB%A5%98/</loc>
-        <lastmod>2020-12-02T07:05:51.511Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Kaggle-titanic/</loc>
-        <lastmod>2020-12-02T07:02:54.382Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Titanic/</loc>
-        <lastmod>2020-12-02T07:02:54.382Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0/</loc>
-        <lastmod>2020-12-02T07:02:54.382Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/</loc>
-        <lastmod>2020-12-02T07:02:54.382Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/</loc>
-        <lastmod>2020-12-01T06:27:29.586Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/</loc>
-        <lastmod>2020-12-01T06:27:29.586Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%EC%A0%95%ED%99%95%EB%8F%84/</loc>
-        <lastmod>2020-12-01T06:27:29.586Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/%ED%8F%89%EA%B0%80/</loc>
-        <lastmod>2020-12-01T06:27:29.586Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/EDA/</loc>
-        <lastmod>2020-11-14T15:18:46.498Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://ne-choi.github.io/tags/titanic/</loc>
         <lastmod>2020-11-14T15:18:46.498Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/matplotlib/</loc>
-        <lastmod>2020-11-13T03:05:43.429Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/numpy/</loc>
-        <lastmod>2020-11-13T03:05:43.429Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/pandas/</loc>
-        <lastmod>2020-11-13T03:05:43.429Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/10-Minutes-to-Pandas/</loc>
-        <lastmod>2020-11-13T03:05:43.429Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

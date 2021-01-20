@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Kaggle: The future of ML(Americans vs Indians) | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Kaggle,Kaggle beginner,EDA" />
+    
+    <meta name="description" content="View to Kaggle The future of ML (Americans vs Indians)Since I started Kaggle competitions, I have a question. I called it beginner’s curiosity.    “Have you ever thought about which countries have the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kaggle: The future of ML(Americans vs Indians)">
+<meta property="og:url" content="https://ne-choi.github.io/2021/01/07/Projects/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="View to Kaggle The future of ML (Americans vs Indians)Since I started Kaggle competitions, I have a question. I called it beginner’s curiosity.    “Have you ever thought about which countries have the">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ne-choi.github.io/images/kaggle_survey_2020/output_16_0.png">
+<meta property="article:published_time" content="2021-01-07T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-20T04:36:18.935Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Kaggle">
+<meta property="article:tag" content="Kaggle beginner">
+<meta property="article:tag" content="EDA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ne-choi.github.io/images/kaggle_survey_2020/output_16_0.png">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Project/">Project</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Projects/Kaggle Competition-The_future_of_ML_americans_vs_indians" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Kaggle: The future of ML(Americans vs Indians)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/01/07/Projects/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="article-date">
+       <time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/01/07/Projects/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="article-date">
+     <time datetime="2021-01-20T04:36:18.935Z" itemprop="dateModified">2021-01-20</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/EDA/" rel="tag">EDA</a>, <a class="tag-link-link" href="/tags/Kaggle/" rel="tag">Kaggle</a>, <a class="tag-link-link" href="/tags/Kaggle-beginner/" rel="tag">Kaggle beginner</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p><a target="_blank" rel="noopener" href="https://www.kaggle.com/nechoi/the-future-of-ml-americans-vs-indians">View to Kaggle</a></p>
+<h1 id="The-future-of-ML-Americans-vs-Indians"><a href="#The-future-of-ML-Americans-vs-Indians" class="headerlink" title="The future of ML (Americans vs Indians)"></a><strong>The future of ML (Americans vs Indians)</strong></h1><p>Since I started Kaggle competitions, I have a question. I called it beginner’s curiosity.   </p>
+<p><strong>“Have you ever thought about which countries have the biggest impact on Kaggle competition?”</strong>  </p>
+<p>As everybody knows, USA is an obvious IT powerhouse along with Silicon Valley. It has the largest number of Kaggle Grandmaster Champions. There is no doubt that the USA has the most influence on Kaggle competitions.  </p>
+<p>You can also see a lot of Indians on the list of participants. India, known as the rising IT powerhouse, is interested in the Kaggle competitions. It can be confirmed easily by checking a percentage of respondents to the 《2020 Kaggle Machine Learning &amp; data Science Survey》. The response rate for Indians is the highest about 29.2%(5,850 people). It is higher than the second-ranked country, which I would explain. </p>
+<p>In addition, a few years ago, every country emphasized the importance of machine learning because It can be used in lots of fields in the world. I also wondered about the future of machine learning, so I decided to look into the future of Machine Learning through responses from two leader countries. Actually, if we look at the current trend of machine learning, we can easily discover it.  </p>
+<p><strong>“Do you know the future of Machine Learning?”</strong>  </p>
+<p>To sum up, I will compare the responses of American and Indian especially about Machine Learning in the order below.  </p>
+<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><p><a href="#chapter1">1. Responses Rate by Country</a><br><a href="#chapter2">2. Percentage by age &amp; gender</a><br><a href="#chapter3">3. Education &amp; Job</a><br><a href="#chapter4">4. Development Environment</a><br><a href="#chapter5">5. Basic of Machine Learning</a><br><a href="#chapter6">6. CV &amp; NLP</a><br><a href="#chapter7">7. Machine Learning in the business</a><br><a href="#chapter8">8. Want to learn machine learning product</a>  </p>
+<h2 id="Library-amp-Data-Import"><a href="#Library-amp-Data-Import" class="headerlink" title="Library &amp; Data Import"></a>Library &amp; Data Import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># Visualization</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> rcParams</span><br><span class="line">plt.rcParams[<span class="string">&#x27;figure.dpi&#x27;</span>] = <span class="number">200</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;lines.linewidth&#x27;</span>] = <span class="number">2</span></span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> style</span><br><span class="line">style.use(<span class="string">&#x27;fivethirtyeight&#x27;</span>)</span><br><span class="line"><span class="keyword">import</span> plotly.express <span class="keyword">as</span> px</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.set_style(<span class="string">&quot;whitegrid&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>, category=FutureWarning)</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>, category=DeprecationWarning)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pd.set_option(<span class="string">&#x27;mode.chained_assignment&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line">survey = pd.read_csv(<span class="string">&#x27;../input/kaggle-survey-2020/kaggle_survey_2020_responses.csv&#x27;</span>)</span><br><span class="line">question = survey.iloc[<span class="number">0</span>,:].T</span><br><span class="line">full_df = survey.iloc[<span class="number">1</span>:,:]</span><br><span class="line"></span><br><span class="line">full_df[full_df.columns[<span class="number">3</span>]].replace(&#123;<span class="string">&#x27;United States of America&#x27;</span>:<span class="string">&#x27;USA&#x27;</span>,</span><br><span class="line">                                         <span class="string">&#x27;United Kingdom of Great Britain and Northern Ireland&#x27;</span>:<span class="string">&#x27;UK&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">df = full_df[(full_df[<span class="string">&#x27;Q3&#x27;</span>]==<span class="string">&#x27;India&#x27;</span>)|(full_df[<span class="string">&#x27;Q3&#x27;</span>]==<span class="string">&#x27;USA&#x27;</span>)]</span><br><span class="line">df = df.iloc[<span class="number">1</span>:,:]</span><br><span class="line">df.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">df = df[(df[<span class="string">&#x27;Q2&#x27;</span>]==<span class="string">&#x27;Man&#x27;</span>)|(df[<span class="string">&#x27;Q2&#x27;</span>]==<span class="string">&#x27;Woman&#x27;</span>)]</span><br><span class="line">df = df.iloc[<span class="number">1</span>:,:]</span><br><span class="line">df.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>/opt/conda/lib/python3.7/site-packages/IPython/core/interactiveshell.py:3063: DtypeWarning: Columns (0) have mixed types.Specify dtype option on import or set low_memory=False.
+  interactivity=interactivity, compiler=compiler, result=result)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extract data by country</span></span><br><span class="line">India = df[df[<span class="string">&#x27;Q3&#x27;</span>]==<span class="string">&#x27;India&#x27;</span>]</span><br><span class="line">India = India.iloc[<span class="number">1</span>:,:]</span><br><span class="line">India.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">USA = df[df[<span class="string">&#x27;Q3&#x27;</span>]==<span class="string">&#x27;USA&#x27;</span>]</span><br><span class="line">USA = USA.iloc[<span class="number">1</span>:,:]</span><br><span class="line">USA.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">question.head()</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>Time from Start to Finish (seconds)                                Duration (in seconds)
+Q1                                                           What is your age (# years)?
+Q2                                                What is your gender? - Selected Choice
+Q3                                             In which country do you currently reside?
+Q4                                     What is the highest level of formal education ...
+Name: 0, dtype: object</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">full_df.head()</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-Responses-Rate-by-Country"><a href="#1-Responses-Rate-by-Country" class="headerlink" title="1. Responses Rate by Country "></a>1. Responses Rate by Country <a class="anchor" id="chapter1"></a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">full_pie = px.pie(full_df, full_df.columns[<span class="number">3</span>],</span><br><span class="line">                 title=<span class="string">&#x27;Survey Responses Rate by Country&#x27;</span>,</span><br><span class="line">                 template=<span class="string">&#x27;seaborn&#x27;</span>, hole=<span class="number">0.5</span>)</span><br><span class="line">full_pie.update_traces(textposition=<span class="string">&#x27;inside&#x27;</span>, textinfo=<span class="string">&#x27;percent+label&#x27;</span>)</span><br><span class="line">full_pie.update_layout(uniformtext_minsize=<span class="number">10</span>, uniformtext_mode=<span class="string">&#x27;hide&#x27;</span>)</span><br><span class="line">full_pie.show()</span><br></pre></td></tr></table></figure>
+
+<p>The response rate for Indians is the highest which is about 29.2% or 5,850 people. It is about 2.6 times higher than USA, a second-ranked country. Based on the response of the Americans and Indians for this report, I extracted the data by 2 using the two countries.</p>
+<h2 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h2><p>To organize the data neatly, I pre-processed a gender column in which only females and males would remain. (146 responses will be deleted)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df = df[(df[df.columns[<span class="number">2</span>]]==<span class="string">&#x27;Man&#x27;</span>)|(df[df.columns[<span class="number">2</span>]]==<span class="string">&#x27;Woman&#x27;</span>)]</span><br><span class="line">df = df.iloc[<span class="number">1</span>:,:]</span><br><span class="line">df.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">df.shape</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>(7940, 355)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&quot;- Valid American Response: &quot;</span>,<span class="built_in">len</span>(df[df[<span class="string">&#x27;Q3&#x27;</span>]==<span class="string">&#x27;USA&#x27;</span>]))</span><br><span class="line">print(<span class="string">&quot;- Valid Indian Response: &quot;</span>,<span class="built_in">len</span>(df[df[<span class="string">&#x27;Q3&#x27;</span>]==<span class="string">&#x27;India&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+<pre><code>- Valid American Response:  2161
+- Valid Indian Response:  5779</code></pre>
+<p>I also made each data set(‘USA’, ‘India’) to make pie graphs.</p>
+<h2 id="2-Percentage-by-age-amp-gender"><a href="#2-Percentage-by-age-amp-gender" class="headerlink" title="2. Percentage by age &amp; gender "></a>2. Percentage by age &amp; gender <a class="anchor" id="chapter2"></a></h2><p>To see their interest in coding, let’s look at the age and gender data.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">legend_list = [<span class="string">&#x27;USA&#x27;</span>, <span class="string">&#x27;India&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countplot_</span>(<span class="params">data, col_name, q_order</span>):</span></span><br><span class="line">  values = data[col_name].value_counts()[q_order].values</span><br><span class="line">  ax = sns.countplot(x = col_name, hue=data.columns[<span class="number">3</span>], data=data, hue_order = legend_list, palette = <span class="string">&quot;husl&quot;</span>,</span><br><span class="line">                    order = [<span class="string">&#x27;18-21&#x27;</span>,<span class="string">&#x27;22-24&#x27;</span>,<span class="string">&#x27;25-29&#x27;</span>,<span class="string">&#x27;30-34&#x27;</span>,<span class="string">&#x27;35-39&#x27;</span>,<span class="string">&#x27;40-44&#x27;</span>,<span class="string">&#x27;45-49&#x27;</span>,<span class="string">&#x27;50-54&#x27;</span>,<span class="string">&#x27;55-59&#x27;</span>,<span class="string">&#x27;60-69&#x27;</span>,<span class="string">&#x27;70+&#x27;</span>])</span><br><span class="line">  <span class="keyword">for</span> p <span class="keyword">in</span> ax.patches:</span><br><span class="line">    height = p.get_height()</span><br><span class="line">    ax.text(p.get_x() + p.get_width()/<span class="number">2.</span>,</span><br><span class="line">            height+<span class="number">3</span>, height, ha=<span class="string">&#x27;center&#x27;</span>, size=<span class="number">6</span>)</span><br><span class="line">  ax.set_ylim([<span class="number">0</span>, <span class="number">2200</span>])</span><br><span class="line">  plt.xticks(rotation=<span class="number">0</span>, fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.xlabel(<span class="string">&#x27;age group&#x27;</span>, fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.yticks(fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.legend(fontsize=<span class="number">8</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">  plt.title(<span class="string">&#x27;Age Distribution&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">  plt.show()</span><br><span class="line">q1_order = [<span class="string">&#x27;18-21&#x27;</span>,<span class="string">&#x27;22-24&#x27;</span>,<span class="string">&#x27;25-29&#x27;</span>,<span class="string">&#x27;30-34&#x27;</span>,<span class="string">&#x27;35-39&#x27;</span>,<span class="string">&#x27;40-44&#x27;</span>,<span class="string">&#x27;45-49&#x27;</span>,<span class="string">&#x27;50-54&#x27;</span>,<span class="string">&#x27;55-59&#x27;</span>,<span class="string">&#x27;60-69&#x27;</span>,<span class="string">&#x27;70+&#x27;</span>]</span><br><span class="line">col_name = <span class="string">&quot;Q1&quot;</span></span><br><span class="line">countplot_(df, col_name, q1_order)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_16_0.png" alt="png"></p>
+<p>You can easily notice in USA the distribution of age groups is more regular than India. It represents the cording fever especially among young Indians. It can be interpreted that India has a craze for coding.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">q3_order = df[<span class="string">&#x27;Q3&#x27;</span>].value_counts()[:<span class="number">11</span>].index</span><br><span class="line">df_q2q3 = df[[<span class="string">&#x27;Q2&#x27;</span>,<span class="string">&#x27;Q3&#x27;</span>]].groupby(<span class="string">&#x27;Q3&#x27;</span>)[<span class="string">&#x27;Q2&#x27;</span>].value_counts().unstack().loc[q3_order]</span><br><span class="line">df_q2q3[<span class="string">&#x27;sum&#x27;</span>] = df_q2q3.<span class="built_in">sum</span>(axis=<span class="number">1</span>)</span><br><span class="line">df_q2q3_ratio = (df_q2q3.T / df_q2q3[<span class="string">&#x27;sum&#x27;</span>]).T[[<span class="string">&#x27;Man&#x27;</span>,<span class="string">&#x27;Woman&#x27;</span>]][::<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(<span class="number">1</span>,<span class="number">1</span>,figsize=(<span class="number">10</span>, <span class="number">1.5</span>))</span><br><span class="line"></span><br><span class="line">ax.barh(df_q2q3_ratio.index, df_q2q3_ratio[<span class="string">&#x27;Man&#x27;</span>], alpha=<span class="number">0.5</span>, label=<span class="string">&#x27;Man&#x27;</span>)</span><br><span class="line">ax.barh(df_q2q3_ratio.index, df_q2q3_ratio[<span class="string">&#x27;Woman&#x27;</span>],</span><br><span class="line">        left=df_q2q3_ratio[<span class="string">&#x27;Man&#x27;</span>], alpha=<span class="number">0.5</span>, label=<span class="string">&#x27;Woman&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax.set_xlim(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">ax.set_xticks([])</span><br><span class="line">ax.set_yticklabels(df_q2q3_ratio.index, fontsize=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># male percentage</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> df_q2q3_ratio.index:</span><br><span class="line">    ax.annotate(<span class="string">f&quot;<span class="subst">&#123;df_q2q3_ratio[<span class="string">&#x27;Man&#x27;</span>][i]*<span class="number">100</span>:<span class="number">.3</span>&#125;</span>%&quot;</span>, </span><br><span class="line">                   xy=(df_q2q3_ratio[<span class="string">&#x27;Man&#x27;</span>][i]/<span class="number">2</span>, i), fontsize=<span class="number">12</span>, va=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> df_q2q3_ratio.index:</span><br><span class="line">    ax.annotate(<span class="string">f&quot;<span class="subst">&#123;df_q2q3_ratio[<span class="string">&#x27;Woman&#x27;</span>][i]*<span class="number">100</span>:<span class="number">.3</span>&#125;</span>%&quot;</span>, </span><br><span class="line">                   xy=(df_q2q3_ratio[<span class="string">&#x27;Man&#x27;</span>][i]+df_q2q3_ratio[<span class="string">&#x27;Woman&#x27;</span>][i]/<span class="number">2</span>, i),</span><br><span class="line">                   va=<span class="string">&#x27;center&#x27;</span>, ha=<span class="string">&#x27;center&#x27;</span>, fontsize=<span class="number">12</span>)</span><br><span class="line">    </span><br><span class="line">plt.title(<span class="string">&#x27;Gender Distribution&#x27;</span>, fontsize=<span class="number">20</span>)   </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> [<span class="string">&#x27;top&#x27;</span>, <span class="string">&#x27;left&#x27;</span>, <span class="string">&#x27;right&#x27;</span>, <span class="string">&#x27;bottom&#x27;</span>]:</span><br><span class="line">    ax.spines[s].set_visible(<span class="literal">False</span>)</span><br><span class="line">    </span><br><span class="line">ax.legend(loc=<span class="string">&#x27;lower center&#x27;</span>, ncol=<span class="number">2</span>, bbox_to_anchor=(<span class="number">0.5</span>, <span class="number">-0.40</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_18_0.png" alt="png"></p>
+<p>The gender ratio of two countries is alike. In both countries, male respondents are about 3.4 times more than female respondents.</p>
+<h2 id="3-Education-amp-Job"><a href="#3-Education-amp-Job" class="headerlink" title="3. Education &amp; Job "></a>3. Education &amp; Job <a class="anchor" id="chapter3"></a></h2><p>Then I checked their education level and their current job.</p>
+<h3 id="3-1-Level-of-Education"><a href="#3-1-Level-of-Education" class="headerlink" title="3-1. Level of Education"></a>3-1. Level of Education</h3><p>Please notice that I can just confirm their degree level, not major. However, many respondents study above bachelor’s degree, so I think it is okay to assume that their major is related to coding or programming.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;Q4&#x27;</span>] = df[<span class="string">&#x27;Q4&#x27;</span>].<span class="built_in">str</span>.replace(<span class="string">&quot;[^A-Za-z0-9-\s]+&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">df[<span class="string">&#x27;Q4&#x27;</span>].replace(&#123;<span class="string">&#x27;No formal education past high school&#x27;</span>:<span class="string">&#x27;~ High school&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;I prefer not to answer&#x27;</span>:<span class="string">&#x27;Not answer&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;Some collegeuniversity study without earning a bachelors degree&#x27;</span>:<span class="string">&#x27;Study without a BD&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;Masters degree&#x27;</span>:<span class="string">&quot;Master&#x27;s degree&quot;</span>,</span><br><span class="line">                   <span class="string">&#x27;Bachelors degree&#x27;</span>:<span class="string">&quot;Bachelor&#x27;s degree&quot;</span>,</span><br><span class="line">                   <span class="string">&#x27; High school&#x27;</span>:<span class="string">&#x27;~ High school&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countplot_</span>(<span class="params">data, col_name, q_order</span>):</span></span><br><span class="line">  values = data[col_name].value_counts()[q_order].values</span><br><span class="line">  ax = sns.countplot(x = col_name, hue=data.columns[<span class="number">3</span>], data=data, hue_order = legend_list, palette = <span class="string">&quot;husl&quot;</span>,</span><br><span class="line">                    order = [<span class="string">&#x27;~ High school&#x27;</span>, <span class="string">&#x27;Professional degree&#x27;</span>, <span class="string">&#x27;Study without a BD&#x27;</span>, <span class="string">&quot;Bachelor&#x27;s degree&quot;</span>,<span class="string">&quot;Master&#x27;s degree&quot;</span>,<span class="string">&#x27;Doctoral degree&#x27;</span>, <span class="string">&#x27;Not answer&#x27;</span>])</span><br><span class="line">  <span class="keyword">for</span> p <span class="keyword">in</span> ax.patches:</span><br><span class="line">    height = p.get_height()</span><br><span class="line">    ax.text(p.get_x() + p.get_width()/<span class="number">2.</span>,</span><br><span class="line">            height+<span class="number">3</span>, height, ha=<span class="string">&#x27;center&#x27;</span>, size=<span class="number">6</span>)</span><br><span class="line">  ax.set_ylim([<span class="number">0</span>, <span class="number">3200</span>])</span><br><span class="line">  plt.xticks(rotation=<span class="number">15</span>, fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.xlabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.yticks(fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.legend(fontsize=<span class="number">8</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">  plt.title(<span class="string">&#x27;Level of Education &#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">  plt.show()</span><br><span class="line">q4_order = [<span class="string">&#x27;~ High school&#x27;</span>, <span class="string">&#x27;Professional degree&#x27;</span>, <span class="string">&#x27;Study without a BD&#x27;</span>, <span class="string">&quot;Bachelor&#x27;s degree&quot;</span>,<span class="string">&quot;Master&#x27;s degree&quot;</span>,<span class="string">&#x27;Doctoral degree&#x27;</span>, <span class="string">&#x27;Not answer&#x27;</span>]</span><br><span class="line">col_name = <span class="string">&quot;Q4&quot;</span></span><br><span class="line">countplot_(df, col_name, q4_order)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_21_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_normalize4 = df.groupby([<span class="string">&#x27;Q3&#x27;</span>])[<span class="string">&#x27;Q4&#x27;</span>].value_counts(dropna=<span class="literal">False</span>, normalize=<span class="literal">True</span>, ascending=<span class="literal">False</span>)</span><br><span class="line">df_normalize4 = pd.DataFrame(df_normalize4)</span><br><span class="line">df_normalize4</span><br></pre></td></tr></table></figure>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Q4</th>
+    </tr>
+    <tr>
+      <th>Q3</th>
+      <th>Q4</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="8" valign="top">India</th>
+      <th>Bachelor's degree</th>
+      <td>0.518602</td>
+    </tr>
+    <tr>
+      <th>Master's degree</th>
+      <td>0.316145</td>
+    </tr>
+    <tr>
+      <th>Doctoral degree</th>
+      <td>0.046548</td>
+    </tr>
+    <tr>
+      <th>Professional degree</th>
+      <td>0.036512</td>
+    </tr>
+    <tr>
+      <th>Study without a BD</th>
+      <td>0.035127</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>0.021284</td>
+    </tr>
+    <tr>
+      <th>Not answer</th>
+      <td>0.020938</td>
+    </tr>
+    <tr>
+      <th>~ High school</th>
+      <td>0.004845</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">USA</th>
+      <th>Master's degree</th>
+      <td>0.469227</td>
+    </tr>
+    <tr>
+      <th>Bachelor's degree</th>
+      <td>0.256826</td>
+    </tr>
+    <tr>
+      <th>Doctoral degree</th>
+      <td>0.184174</td>
+    </tr>
+    <tr>
+      <th>Study without a BD</th>
+      <td>0.056918</td>
+    </tr>
+    <tr>
+      <th>Professional degree</th>
+      <td>0.017122</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>0.006941</td>
+    </tr>
+    <tr>
+      <th>~ High school</th>
+      <td>0.004627</td>
+    </tr>
+    <tr>
+      <th>Not answer</th>
+      <td>0.004165</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>In the case of master and doctor, the percentage of Americans(46.9%, 18.4%) is higher than Indians (31.6%, 4.7%). Many Indians obtained their bachelor’s degree(51.9%) and I also noticed that 3.7% of the Indians had a professional degree.  </p>
+<p>It shows that USA already has many IT technicians that are highly educated, and India’s level of coding education is growing.</p>
+<h3 id="3-2-Current-Job"><a href="#3-2-Current-Job" class="headerlink" title="3-2. Current Job"></a>3-2. Current Job</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;Q5&#x27;</span>].replace(&#123;<span class="string">&#x27;Currently not employed&#x27;</span>:<span class="string">&#x27;Not employed&#x27;</span>&#125;,inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countplot_</span>(<span class="params">data, col_name, q_order</span>):</span></span><br><span class="line">  values = data[col_name].value_counts()[q_order].values</span><br><span class="line">  ax = sns.countplot(x = col_name, hue=data.columns[<span class="number">3</span>], data=data, hue_order = legend_list, palette = <span class="string">&quot;husl&quot;</span>,</span><br><span class="line">                    order = [<span class="string">&#x27;Business Analyst&#x27;</span>,<span class="string">&#x27;Data Analyst&#x27;</span>,<span class="string">&#x27;Data Engineer&#x27;</span>,<span class="string">&#x27;Data Scientist&#x27;</span>,</span><br><span class="line">                             <span class="string">&#x27;DBA/Database Engineer&#x27;</span>,<span class="string">&#x27;Machine Learning Engineer&#x27;</span>,<span class="string">&#x27;Product/Project Manager&#x27;</span>,</span><br><span class="line">                             <span class="string">&#x27;Research Scientist&#x27;</span>,<span class="string">&#x27;Software Engineer&#x27;</span>,<span class="string">&#x27;Statistician&#x27;</span>,<span class="string">&#x27;Student&#x27;</span>,<span class="string">&#x27;Not employed&#x27;</span>,<span class="string">&#x27;Other&#x27;</span>])</span><br><span class="line">  <span class="keyword">for</span> p <span class="keyword">in</span> ax.patches:</span><br><span class="line">    height = p.get_height()</span><br><span class="line">    ax.text(p.get_x() + p.get_width()/<span class="number">2.</span>,</span><br><span class="line">            height+<span class="number">3</span>, height, ha=<span class="string">&#x27;center&#x27;</span>, size=<span class="number">6</span>)</span><br><span class="line">  ax.set_ylim([<span class="number">0</span>, <span class="number">2400</span>])</span><br><span class="line">  plt.xticks(rotation=<span class="number">20</span>, fontsize=<span class="number">6</span>)</span><br><span class="line">  plt.xlabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.yticks(fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.legend(fontsize=<span class="number">8</span>, loc=<span class="string">&#x27;upper left&#x27;</span>)</span><br><span class="line">  plt.title(<span class="string">&#x27;Current Job&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">  plt.show()</span><br><span class="line">q5_order = [<span class="string">&#x27;Business Analyst&#x27;</span>,<span class="string">&#x27;Data Analyst&#x27;</span>,<span class="string">&#x27;Data Engineer&#x27;</span>,<span class="string">&#x27;Data Scientist&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;DBA/Database Engineer&#x27;</span>,<span class="string">&#x27;Machine Learning Engineer&#x27;</span>,<span class="string">&#x27;Product/Project Manager&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;Research Scientist&#x27;</span>,<span class="string">&#x27;Software Engineer&#x27;</span>,<span class="string">&#x27;Statistician&#x27;</span>,<span class="string">&#x27;Student&#x27;</span>,<span class="string">&#x27;Not employed&#x27;</span>,<span class="string">&#x27;Other&#x27;</span>]</span><br><span class="line">col_name = <span class="string">&quot;Q5&quot;</span></span><br><span class="line">countplot_(df, col_name, q5_order)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_25_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_normalize5 = df.groupby([<span class="string">&#x27;Q3&#x27;</span>])[<span class="string">&#x27;Q5&#x27;</span>].value_counts(dropna=<span class="literal">False</span>, normalize=<span class="literal">True</span>, ascending=<span class="literal">False</span>)</span><br><span class="line">df_normalize5 = pd.DataFrame(df_normalize5)</span><br><span class="line">df_normalize5</span><br></pre></td></tr></table></figure>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Q5</th>
+    </tr>
+    <tr>
+      <th>Q3</th>
+      <th>Q5</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="14" valign="top">India</th>
+      <th>Student</th>
+      <td>0.383803</td>
+    </tr>
+    <tr>
+      <th>Software Engineer</th>
+      <td>0.102094</td>
+    </tr>
+    <tr>
+      <th>Data Scientist</th>
+      <td>0.099844</td>
+    </tr>
+    <tr>
+      <th>Not employed</th>
+      <td>0.097076</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>0.069389</td>
+    </tr>
+    <tr>
+      <th>Data Analyst</th>
+      <td>0.058661</td>
+    </tr>
+    <tr>
+      <th>Machine Learning Engineer</th>
+      <td>0.050874</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>0.035473</td>
+    </tr>
+    <tr>
+      <th>Business Analyst</th>
+      <td>0.033916</td>
+    </tr>
+    <tr>
+      <th>Research Scientist</th>
+      <td>0.023707</td>
+    </tr>
+    <tr>
+      <th>Product/Project Manager</th>
+      <td>0.021457</td>
+    </tr>
+    <tr>
+      <th>Data Engineer</th>
+      <td>0.013497</td>
+    </tr>
+    <tr>
+      <th>Statistician</th>
+      <td>0.005883</td>
+    </tr>
+    <tr>
+      <th>DBA/Database Engineer</th>
+      <td>0.004326</td>
+    </tr>
+    <tr>
+      <th rowspan="14" valign="top">USA</th>
+      <th>Data Scientist</th>
+      <td>0.173994</td>
+    </tr>
+    <tr>
+      <th>Student</th>
+      <td>0.156872</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>0.132346</td>
+    </tr>
+    <tr>
+      <th>Software Engineer</th>
+      <td>0.097640</td>
+    </tr>
+    <tr>
+      <th>Data Analyst</th>
+      <td>0.086997</td>
+    </tr>
+    <tr>
+      <th>Not employed</th>
+      <td>0.074965</td>
+    </tr>
+    <tr>
+      <th>Research Scientist</th>
+      <td>0.061083</td>
+    </tr>
+    <tr>
+      <th>Product/Project Manager</th>
+      <td>0.052753</td>
+    </tr>
+    <tr>
+      <th>Business Analyst</th>
+      <td>0.047200</td>
+    </tr>
+    <tr>
+      <th>Machine Learning Engineer</th>
+      <td>0.043961</td>
+    </tr>
+    <tr>
+      <th>Data Engineer</th>
+      <td>0.031004</td>
+    </tr>
+    <tr>
+      <th>Statistician</th>
+      <td>0.017584</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>0.016659</td>
+    </tr>
+    <tr>
+      <th>DBA/Database Engineer</th>
+      <td>0.006941</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>Most noticeably, more than 38% of Indians are students. That’s because 61.2% of the respondents in India are under 25. In the USA, there are lots of Data Scientists(17.4%), and Software Engineers(9.8%). Likewise, India has a lot of Sotfware Engineers(10.2%), and Data Scientists(10.0%). The results of the fewest jobs are the same, too. Both of the countries have few DBA/Database Engineers and Statisticians.</p>
+<h2 id="4-Development-Environment"><a href="#4-Development-Environment" class="headerlink" title="4. Development Environment "></a>4. Development Environment <a class="anchor" id="chapter4"></a></h2><p>In this part, I examined a more detailed part of the development environment. Compared to the period of coding, I discovered each country’s interest in writing code or programming. Furthermore, I will check their basic programming languages and the languages recommended by people who already used it.</p>
+<h3 id="4-1-Period-of-coding"><a href="#4-1-Period-of-coding" class="headerlink" title="4-1. Period of coding"></a>4-1. Period of coding</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;Q6&#x27;</span>].replace(&#123;<span class="string">&#x27;I have never written code&#x27;</span>:<span class="string">&#x27;Never&#x27;</span>,</span><br><span class="line">                  <span class="string">&#x27;&lt; 1 years&#x27;</span>:<span class="string">&#x27;&lt; 1 year&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countplot_</span>(<span class="params">data, col_name, q_order</span>):</span></span><br><span class="line">  values = data[col_name].value_counts()[q_order].values</span><br><span class="line">  ax = sns.countplot(x = col_name, hue=data.columns[<span class="number">3</span>], data=data, hue_order = legend_list, palette = <span class="string">&quot;husl&quot;</span>,</span><br><span class="line">                    order = [<span class="string">&#x27;&lt; 1 year&#x27;</span>,<span class="string">&#x27;1-2 years&#x27;</span>,<span class="string">&#x27;3-5 years&#x27;</span>,<span class="string">&#x27;5-10 years&#x27;</span>,<span class="string">&#x27;10-20 years&#x27;</span>,<span class="string">&#x27;20+ years&#x27;</span>,<span class="string">&#x27;Never&#x27;</span>])</span><br><span class="line">  <span class="keyword">for</span> p <span class="keyword">in</span> ax.patches:</span><br><span class="line">    height = p.get_height()</span><br><span class="line">    ax.text(p.get_x() + p.get_width()/<span class="number">2.</span>,</span><br><span class="line">            height+<span class="number">3</span>, height, ha=<span class="string">&#x27;center&#x27;</span>, size=<span class="number">6</span>)</span><br><span class="line">  ax.set_ylim([<span class="number">0</span>, <span class="number">1850</span>])</span><br><span class="line">  plt.xticks(rotation=<span class="number">0</span>, fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.xlabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.yticks(fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.legend(fontsize=<span class="number">8</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">  plt.title(<span class="string">&#x27;Period of Coding&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">  plt.show()</span><br><span class="line">q6_order = [<span class="string">&#x27;&lt; 1 year&#x27;</span>,<span class="string">&#x27;1-2 years&#x27;</span>,<span class="string">&#x27;3-5 years&#x27;</span>,<span class="string">&#x27;5-10 years&#x27;</span>,<span class="string">&#x27;10-20 years&#x27;</span>,<span class="string">&#x27;20+ years&#x27;</span>,<span class="string">&#x27;Never&#x27;</span>]</span><br><span class="line">col_name = <span class="string">&quot;Q6&quot;</span></span><br><span class="line">countplot_(df, col_name, q6_order)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_29_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_normalize6 = df.groupby([<span class="string">&#x27;Q3&#x27;</span>])[<span class="string">&#x27;Q6&#x27;</span>].value_counts(dropna=<span class="literal">False</span>, normalize=<span class="literal">True</span>, ascending=<span class="literal">False</span>)</span><br><span class="line">df_normalize6 = pd.DataFrame(df_normalize6)</span><br><span class="line">df_normalize6</span><br></pre></td></tr></table></figure>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Q6</th>
+    </tr>
+    <tr>
+      <th>Q3</th>
+      <th>Q6</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="8" valign="top">India</th>
+      <th>1-2 years</th>
+      <td>0.305416</td>
+    </tr>
+    <tr>
+      <th>3-5 years</th>
+      <td>0.243295</td>
+    </tr>
+    <tr>
+      <th>&lt; 1 year</th>
+      <td>0.198131</td>
+    </tr>
+    <tr>
+      <th>5-10 years</th>
+      <td>0.091711</td>
+    </tr>
+    <tr>
+      <th>Never</th>
+      <td>0.061429</td>
+    </tr>
+    <tr>
+      <th>10-20 years</th>
+      <td>0.045856</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>0.043087</td>
+    </tr>
+    <tr>
+      <th>20+ years</th>
+      <td>0.011075</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">USA</th>
+      <th>3-5 years</th>
+      <td>0.229986</td>
+    </tr>
+    <tr>
+      <th>5-10 years</th>
+      <td>0.174456</td>
+    </tr>
+    <tr>
+      <th>20+ years</th>
+      <td>0.164276</td>
+    </tr>
+    <tr>
+      <th>1-2 years</th>
+      <td>0.143915</td>
+    </tr>
+    <tr>
+      <th>10-20 years</th>
+      <td>0.136974</td>
+    </tr>
+    <tr>
+      <th>&lt; 1 year</th>
+      <td>0.089311</td>
+    </tr>
+    <tr>
+      <th>Never</th>
+      <td>0.037483</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>0.023600</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>In the case of the USA respondents, the number of people who have never coded nor programmed is less than that of other groups. It show us that Americans have always been interested in it. More than 30.1% of the respondents are experts who have coded for more than 10 years. Additionally, it is noticeable that the number of beginners is decreasing.</p>
+<p>India, on the other hand, has about 6.1% of respondents who have never done coding nor programming. Plus, there are numerous beginners. Almost 74.6% of Indians studied coding for less than 5 years, and about half of the respondents in India coded for less than 3 years.</p>
+<p>This graph also shows that there are already lots of coding masters in the USA, and that there are many beginners in India.</p>
+<h3 id="4-2-Basic-programming-language-multiple"><a href="#4-2-Basic-programming-language-multiple" class="headerlink" title="4-2. Basic programming language (multiple)"></a>4-2. Basic programming language (multiple)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preprocess Basic programming language data</span></span><br><span class="line">USA7 = (USA[<span class="string">&#x27;Q7_Part_1&#x27;</span>], USA[<span class="string">&#x27;Q7_Part_2&#x27;</span>], USA[<span class="string">&#x27;Q7_Part_3&#x27;</span>], USA[<span class="string">&#x27;Q7_Part_4&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q7_Part_5&#x27;</span>], USA[<span class="string">&#x27;Q7_Part_6&#x27;</span>], USA[<span class="string">&#x27;Q7_Part_7&#x27;</span>], USA[<span class="string">&#x27;Q7_Part_8&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q7_OTHER&#x27;</span>])</span><br><span class="line">USA7 = pd.concat(USA7)</span><br><span class="line"></span><br><span class="line">India7 = (India[<span class="string">&#x27;Q7_Part_1&#x27;</span>], India[<span class="string">&#x27;Q7_Part_2&#x27;</span>], India[<span class="string">&#x27;Q7_Part_3&#x27;</span>], India[<span class="string">&#x27;Q7_Part_4&#x27;</span>],</span><br><span class="line">          India[<span class="string">&#x27;Q7_Part_5&#x27;</span>], India[<span class="string">&#x27;Q7_Part_6&#x27;</span>], India[<span class="string">&#x27;Q7_Part_7&#x27;</span>], India[<span class="string">&#x27;Q7_Part_8&#x27;</span>],</span><br><span class="line">          India[<span class="string">&#x27;Q7_OTHER&#x27;</span>])</span><br><span class="line">India7 = pd.concat(India7)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">mpl.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">USA7.replace(&#123;<span class="string">&#x27;General purpose image/video tools (PIL, cv2, skimage, etc)&#x27;</span>:<span class="string">&#x27;General image/video&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Image segmentation methods (U-Net, Mask R-CNN, etc)&#x27;</span>:<span class="string">&#x27;Image segmentation methods&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Object detection methods (YOLOv3, RetinaNet, etc)&#x27;</span>:<span class="string">&#x27;Object detection methods&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Image classification and other general purpose networks (VGG, Inception, ResNet, ResNeXt, NASNet, EfficientNet, etc)&#x27;</span>:<span class="string">&#x27;Image classification &amp; networks&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Generative Networks (GAN, VAE, etc)&#x27;</span>:<span class="string">&#x27;Generative Networks&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line">               </span><br><span class="line">India7.replace(&#123;<span class="string">&#x27;General purpose image/video tools (PIL, cv2, skimage, etc)&#x27;</span>:<span class="string">&#x27;General image/video&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Image segmentation methods (U-Net, Mask R-CNN, etc)&#x27;</span>:<span class="string">&#x27;Image segmentation methods&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Object detection methods (YOLOv3, RetinaNet, etc)&#x27;</span>:<span class="string">&#x27;Object detection methods&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Image classification and other general purpose networks (VGG, Inception, ResNet, ResNeXt, NASNet, EfficientNet, etc)&#x27;</span>:<span class="string">&#x27;Image classification &amp; networks&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Generative Networks (GAN, VAE, etc)&#x27;</span>:<span class="string">&#x27;Generative Networks&#x27;</span>&#125;, inplace=<span class="literal">True</span>)   </span><br><span class="line"></span><br><span class="line">USA7.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Basic Program Language in USA&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">India7.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Basic Program Language in India&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_34_0.png" alt="png"></p>
+<p>Both countries use Python the most. The next is SQL. A noticeable difference is shown in the 3rd most used language. In the USA, 14.6% of respondents use R, but in India the 3rd most used programming language is C. In India, R is the third- lowest programming language used whereas in the USA, C is the second-lowest.</p>
+<p>Nevertheless, it is clear that the most commonly used languages of both countries are Python and SQL.</p>
+<h3 id="4-3-Recommend-programming-language-for-starter"><a href="#4-3-Recommend-programming-language-for-starter" class="headerlink" title="4-3. Recommend programming language for starter"></a>4-3. Recommend programming language for starter</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countplot_</span>(<span class="params">data, col_name, q_order</span>):</span></span><br><span class="line">  values = data[col_name].value_counts()[q_order].values</span><br><span class="line">  ax = sns.countplot(x = col_name, hue=data.columns[<span class="number">3</span>], data=data, hue_order = legend_list, palette = <span class="string">&quot;husl&quot;</span>)</span><br><span class="line">  <span class="keyword">for</span> p <span class="keyword">in</span> ax.patches:</span><br><span class="line">    height = p.get_height()</span><br><span class="line">    ax.text(p.get_x() + p.get_width()/<span class="number">2.</span>,</span><br><span class="line">            height+<span class="number">3</span>, height, ha=<span class="string">&#x27;center&#x27;</span>, size=<span class="number">6</span>)</span><br><span class="line">  ax.set_ylim([<span class="number">0</span>, <span class="number">4500</span>])</span><br><span class="line">  plt.xticks(rotation=<span class="number">0</span>, fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.xlabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.yticks(fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.legend(fontsize=<span class="number">8</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">  plt.title(<span class="string">&#x27;Recommend Language for Starter&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">  plt.show()</span><br><span class="line">q8_order = []</span><br><span class="line">col_name = <span class="string">&quot;Q8&quot;</span></span><br><span class="line">countplot_(df, col_name, q8_order)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_37_0.png" alt="png"></p>
+<p>The graph shows that Python has an overwhelming proportion. What is unusual is that Indians who use relatively less R recommended R.</p>
+<h3 id="4-4-Integrated-development-environments-multiple"><a href="#4-4-Integrated-development-environments-multiple" class="headerlink" title="4-4. Integrated development environments (multiple)"></a>4-4. Integrated development environments (multiple)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preprocess integrated development environments data</span></span><br><span class="line">USA9 = (USA[<span class="string">&#x27;Q9_Part_1&#x27;</span>], USA[<span class="string">&#x27;Q9_Part_2&#x27;</span>], USA[<span class="string">&#x27;Q9_Part_3&#x27;</span>], USA[<span class="string">&#x27;Q9_Part_4&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q9_Part_5&#x27;</span>], USA[<span class="string">&#x27;Q9_Part_6&#x27;</span>], USA[<span class="string">&#x27;Q9_Part_7&#x27;</span>], USA[<span class="string">&#x27;Q9_Part_8&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q9_Part_9&#x27;</span>], USA[<span class="string">&#x27;Q9_Part_10&#x27;</span>], USA[<span class="string">&#x27;Q9_Part_11&#x27;</span>], USA[<span class="string">&#x27;Q9_OTHER&#x27;</span>])</span><br><span class="line">USA9 = pd.concat(USA9)</span><br><span class="line"></span><br><span class="line">India9 = (India[<span class="string">&#x27;Q9_Part_1&#x27;</span>], India[<span class="string">&#x27;Q9_Part_2&#x27;</span>], India[<span class="string">&#x27;Q9_Part_3&#x27;</span>], India[<span class="string">&#x27;Q9_Part_4&#x27;</span>],</span><br><span class="line">        India[<span class="string">&#x27;Q9_Part_5&#x27;</span>], India[<span class="string">&#x27;Q9_Part_6&#x27;</span>], India[<span class="string">&#x27;Q9_Part_7&#x27;</span>], India[<span class="string">&#x27;Q9_Part_8&#x27;</span>],</span><br><span class="line">        India[<span class="string">&#x27;Q9_Part_9&#x27;</span>], India[<span class="string">&#x27;Q9_Part_10&#x27;</span>], India[<span class="string">&#x27;Q9_Part_11&#x27;</span>], India[<span class="string">&#x27;Q9_OTHER&#x27;</span>])</span><br><span class="line">India9 = pd.concat(India9)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mpl.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">13</span></span><br><span class="line"></span><br><span class="line">USA9.replace(&#123;<span class="string">&#x27;Jupyter (JupyterLab, Jupyter Notebooks, etc) &#x27;</span>:<span class="string">&#x27;Jupyter&#x27;</span>,</span><br><span class="line">              <span class="string">&#x27;Visual Studio Code (VSCode)&#x27;</span>:<span class="string">&#x27;VSCode&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">India9.replace(&#123;<span class="string">&#x27;Jupyter (JupyterLab, Jupyter Notebooks, etc) &#x27;</span>:<span class="string">&#x27;Jupyter&#x27;</span>,</span><br><span class="line">              <span class="string">&#x27;Visual Studio Code (VSCode)&#x27;</span>:<span class="string">&#x27;VSCode&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line">    </span><br><span class="line">USA9.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Using IDE in USA&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">India9.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Using IDE in India&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_41_0.png" alt="png"></p>
+<p>The development environment used frequently is similar except for RStudio. As we saw in 4-2, the reason why the ratio of RStudio in India is not high is Indian less use R.</p>
+<ul>
+<li><h2 id="5-Basic-of-Machine-Learning"><a href="#5-Basic-of-Machine-Learning" class="headerlink" title="5. Basic of Machine Learning "></a>5. Basic of Machine Learning <a class="anchor" id="chapter5"></a></h2></li>
+</ul>
+<p>It’s time to check the machine learning section. First, I check to period of using machine learning in each country. And then, let’s look at the machine learning framework and algorithms that they use.</p>
+<h3 id="5-1-Period-of-Using-Machine-Learning"><a href="#5-1-Period-of-Using-Machine-Learning" class="headerlink" title="5-1. Period of Using Machine Learning"></a>5-1. Period of Using Machine Learning</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;Q15&#x27;</span>].replace(&#123;<span class="string">&#x27;Under 1 year&#x27;</span>:<span class="string">&#x27;&lt; 1 year&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;20 or more years&#x27;</span>:<span class="string">&#x27;20+ years&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;I do not use machine learning methods&#x27;</span>:<span class="string">&#x27;Never&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countplot_</span>(<span class="params">data, col_name, q_order</span>):</span></span><br><span class="line">  values = data[col_name].value_counts()[q_order].values</span><br><span class="line">  ax = sns.countplot(x = col_name, hue=data.columns[<span class="number">3</span>], data=data, hue_order = legend_list, palette = <span class="string">&quot;husl&quot;</span>,</span><br><span class="line">                    order = [<span class="string">&#x27;&lt; 1 year&#x27;</span>,<span class="string">&#x27;1-2 years&#x27;</span>,<span class="string">&#x27;2-3 years&#x27;</span>,<span class="string">&#x27;3-4 years&#x27;</span>,<span class="string">&#x27;4-5 years&#x27;</span>,<span class="string">&#x27;5-10 years&#x27;</span>,<span class="string">&#x27;10-20 years&#x27;</span>,<span class="string">&#x27;20+ years&#x27;</span>,<span class="string">&#x27;Never&#x27;</span>])</span><br><span class="line">  <span class="keyword">for</span> p <span class="keyword">in</span> ax.patches:</span><br><span class="line">    height = p.get_height()</span><br><span class="line">    ax.text(p.get_x() + p.get_width()/<span class="number">2.</span>,</span><br><span class="line">            height+<span class="number">3</span>, height, ha=<span class="string">&#x27;center&#x27;</span>, size=<span class="number">6</span>)</span><br><span class="line">  ax.set_ylim([<span class="number">0</span>, <span class="number">2400</span>])</span><br><span class="line">  plt.xticks(rotation=<span class="number">0</span>, fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.xlabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.yticks(fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.legend(fontsize=<span class="number">8</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">  plt.title(<span class="string">&#x27;Period of Using Machine Learning&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">  plt.show()</span><br><span class="line">q15_order = [<span class="string">&#x27;&lt; 1 year&#x27;</span>,<span class="string">&#x27;1-2 years&#x27;</span>,<span class="string">&#x27;2-3 years&#x27;</span>,<span class="string">&#x27;3-4 years&#x27;</span>,<span class="string">&#x27;4-5 years&#x27;</span>,<span class="string">&#x27;5-10 years&#x27;</span>,<span class="string">&#x27;10-20 years&#x27;</span>,<span class="string">&#x27;20+ years&#x27;</span>,<span class="string">&#x27;Never&#x27;</span>]</span><br><span class="line">col_name = <span class="string">&quot;Q15&quot;</span></span><br><span class="line">countplot_(df, col_name, q15_order)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_44_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_normalize15 = df.groupby([<span class="string">&#x27;Q3&#x27;</span>])[<span class="string">&#x27;Q15&#x27;</span>].value_counts(dropna=<span class="literal">False</span>, normalize=<span class="literal">True</span>, ascending=<span class="literal">False</span>)</span><br><span class="line">df_normalize15 = pd.DataFrame(df_normalize15)</span><br><span class="line">df_normalize15</span><br></pre></td></tr></table></figure>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Q15</th>
+    </tr>
+    <tr>
+      <th>Q3</th>
+      <th>Q15</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="10" valign="top">India</th>
+      <th>&lt; 1 year</th>
+      <td>0.395224</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>0.201938</td>
+    </tr>
+    <tr>
+      <th>1-2 years</th>
+      <td>0.179270</td>
+    </tr>
+    <tr>
+      <th>Never</th>
+      <td>0.100536</td>
+    </tr>
+    <tr>
+      <th>2-3 years</th>
+      <td>0.060391</td>
+    </tr>
+    <tr>
+      <th>3-4 years</th>
+      <td>0.025091</td>
+    </tr>
+    <tr>
+      <th>4-5 years</th>
+      <td>0.017996</td>
+    </tr>
+    <tr>
+      <th>5-10 years</th>
+      <td>0.015747</td>
+    </tr>
+    <tr>
+      <th>10-20 years</th>
+      <td>0.003461</td>
+    </tr>
+    <tr>
+      <th>20+ years</th>
+      <td>0.000346</td>
+    </tr>
+    <tr>
+      <th rowspan="10" valign="top">USA</th>
+      <th>&lt; 1 year</th>
+      <td>0.213790</td>
+    </tr>
+    <tr>
+      <th>1-2 years</th>
+      <td>0.159186</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>0.127256</td>
+    </tr>
+    <tr>
+      <th>Never</th>
+      <td>0.116613</td>
+    </tr>
+    <tr>
+      <th>2-3 years</th>
+      <td>0.109671</td>
+    </tr>
+    <tr>
+      <th>5-10 years</th>
+      <td>0.084683</td>
+    </tr>
+    <tr>
+      <th>3-4 years</th>
+      <td>0.071263</td>
+    </tr>
+    <tr>
+      <th>4-5 years</th>
+      <td>0.068024</td>
+    </tr>
+    <tr>
+      <th>10-20 years</th>
+      <td>0.027765</td>
+    </tr>
+    <tr>
+      <th>20+ years</th>
+      <td>0.021749</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>The results of this graph shows the two countries similar. In the USA, many people have been coding for a long time, but there are many beginners in machine learning. Expecially in India, there are about 57.4% of respondents using machine learning. It can be said that <strong>India’s coding craze began with the development of machine learning.</strong></p>
+<h3 id="5-2-Using-machine-learning-framework-multiple"><a href="#5-2-Using-machine-learning-framework-multiple" class="headerlink" title="5-2. Using machine learning framework (multiple)"></a>5-2. Using machine learning framework (multiple)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preprocess machine learning framework data</span></span><br><span class="line">USA16 = (USA[<span class="string">&#x27;Q16_Part_1&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_2&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_3&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_4&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q16_Part_5&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_6&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_7&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_8&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q16_Part_9&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_10&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_11&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_12&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q16_Part_13&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_14&#x27;</span>], USA[<span class="string">&#x27;Q16_Part_15&#x27;</span>], USA[<span class="string">&#x27;Q16_OTHER&#x27;</span>])</span><br><span class="line">USA16 = pd.concat(USA16)</span><br><span class="line"></span><br><span class="line">India16 = (India[<span class="string">&#x27;Q16_Part_1&#x27;</span>], India[<span class="string">&#x27;Q16_Part_2&#x27;</span>], India[<span class="string">&#x27;Q16_Part_3&#x27;</span>], India[<span class="string">&#x27;Q16_Part_4&#x27;</span>],</span><br><span class="line">        India[<span class="string">&#x27;Q16_Part_5&#x27;</span>], India[<span class="string">&#x27;Q16_Part_6&#x27;</span>], India[<span class="string">&#x27;Q16_Part_7&#x27;</span>], India[<span class="string">&#x27;Q16_Part_8&#x27;</span>],</span><br><span class="line">        India[<span class="string">&#x27;Q16_Part_9&#x27;</span>], India[<span class="string">&#x27;Q16_Part_10&#x27;</span>], India[<span class="string">&#x27;Q16_Part_11&#x27;</span>], India[<span class="string">&#x27;Q16_Part_12&#x27;</span>],</span><br><span class="line">        India[<span class="string">&#x27;Q16_Part_13&#x27;</span>], India[<span class="string">&#x27;Q16_Part_14&#x27;</span>], India[<span class="string">&#x27;Q16_Part_15&#x27;</span>], India[<span class="string">&#x27;Q16_OTHER&#x27;</span>])</span><br><span class="line">India16 = pd.concat(India16)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mpl.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">13</span></span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line">    </span><br><span class="line">USA16.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Machine Learning Framework in USA&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">India16.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Machine Learning Framework in India&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_49_0.png" alt="png"></p>
+<p>The ranking of machine learning framework of both countries is almost similar. There is a difference between the rank 4th and 5th graphs  which is PyTorch and Xgboost. The most popular framework used is Scikit-learn, with about 25.9% in the USA and about 27.6% in India. TensorFlow and Keras showed about 14.5%, and about 13.4% in the USA and in India about 19.0% and about 17.3% are observed. It shows that more than three quarters of people uses 5 types of framework and one quarter of people uses various framework which occupy less than about 10% each.</p>
+<h3 id="5-3-Using-machine-learning-algorithm-multiple"><a href="#5-3-Using-machine-learning-algorithm-multiple" class="headerlink" title="5-3. Using machine learning algorithm (multiple)"></a>5-3. Using machine learning algorithm (multiple)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preprocess machine learning algorithm data</span></span><br><span class="line">USA17 = (USA[<span class="string">&#x27;Q17_Part_1&#x27;</span>], USA[<span class="string">&#x27;Q17_Part_2&#x27;</span>], USA[<span class="string">&#x27;Q17_Part_3&#x27;</span>], USA[<span class="string">&#x27;Q17_Part_4&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q17_Part_5&#x27;</span>], USA[<span class="string">&#x27;Q17_Part_6&#x27;</span>], USA[<span class="string">&#x27;Q17_Part_7&#x27;</span>], USA[<span class="string">&#x27;Q17_Part_8&#x27;</span>],</span><br><span class="line">        USA[<span class="string">&#x27;Q17_Part_9&#x27;</span>], USA[<span class="string">&#x27;Q17_Part_10&#x27;</span>], USA[<span class="string">&#x27;Q17_Part_11&#x27;</span>], USA[<span class="string">&#x27;Q17_OTHER&#x27;</span>])</span><br><span class="line">USA17 = pd.concat(USA17)</span><br><span class="line"></span><br><span class="line">India17 = (India[<span class="string">&#x27;Q17_Part_1&#x27;</span>], India[<span class="string">&#x27;Q17_Part_2&#x27;</span>], India[<span class="string">&#x27;Q17_Part_3&#x27;</span>], India[<span class="string">&#x27;Q17_Part_4&#x27;</span>],</span><br><span class="line">        India[<span class="string">&#x27;Q17_Part_5&#x27;</span>], India[<span class="string">&#x27;Q17_Part_6&#x27;</span>], India[<span class="string">&#x27;Q17_Part_7&#x27;</span>], India[<span class="string">&#x27;Q17_Part_8&#x27;</span>],</span><br><span class="line">        India[<span class="string">&#x27;Q17_Part_9&#x27;</span>], India[<span class="string">&#x27;Q17_Part_10&#x27;</span>], India[<span class="string">&#x27;Q17_Part_11&#x27;</span>], India[<span class="string">&#x27;Q17_OTHER&#x27;</span>])</span><br><span class="line">India17 = pd.concat(India17)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">mpl.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">USA17.replace(&#123;<span class="string">&#x27;Gradient Boosting Machines (xgboost, lightgbm, etc)&#x27;</span>:<span class="string">&#x27;Gradient Boosting Machines&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Dense Neural Networks (MLPs, etc)&#x27;</span>:<span class="string">&#x27;Dense Neural Networks&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Transformer Networks (BERT, gpt-3, etc)&#x27;</span>:<span class="string">&#x27;Transformer Networks&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">India17.replace(&#123;<span class="string">&#x27;Gradient Boosting Machines (xgboost, lightgbm, etc)&#x27;</span>:<span class="string">&#x27;Gradient Boosting Machines&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Dense Neural Networks (MLPs, etc)&#x27;</span>:<span class="string">&#x27;Dense Neural Networks&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Transformer Networks (BERT, gpt-3, etc)&#x27;</span>:<span class="string">&#x27;Transformer Networks&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">USA17.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Machine Learning Algorithm in USA&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">India17.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Machine Learning Algorithm in India&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_53_0.png" alt="png"></p>
+<p>The ranking of used machine learning algorithm of both countries is almost similar, too. Linear or logistic regression and decision trees or random forests are most popular in two countries. And there are no significant thing because the result of both countries is alike.</p>
+<h2 id="6-CV-amp-NLP"><a href="#6-CV-amp-NLP" class="headerlink" title="6. CV &amp; NLP "></a>6. CV &amp; NLP <a class="anchor" id="chapter6"></a></h2><p>Then, I check about Computer Vision and Natural Language Processing because it is importance part of machine learning. Therefore I assumed lots of beginners and exports are interested in this field. In this part, the difference between the USA and India is not visible clearly, so I just show you the ratio graphs.</p>
+<h3 id="6-1-Computer-Vision-multiple"><a href="#6-1-Computer-Vision-multiple" class="headerlink" title="6-1. Computer Vision (multiple)"></a>6-1. Computer Vision (multiple)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preprocess CV data</span></span><br><span class="line">USA18 = (USA[<span class="string">&#x27;Q18_Part_1&#x27;</span>], USA[<span class="string">&#x27;Q18_Part_2&#x27;</span>], USA[<span class="string">&#x27;Q18_Part_3&#x27;</span>],</span><br><span class="line">                  USA[<span class="string">&#x27;Q18_Part_4&#x27;</span>], USA[<span class="string">&#x27;Q18_Part_5&#x27;</span>], USA[<span class="string">&#x27;Q18_Part_6&#x27;</span>],</span><br><span class="line">                  USA[<span class="string">&#x27;Q18_OTHER&#x27;</span>])</span><br><span class="line">USA18 = pd.concat(USA18)</span><br><span class="line"></span><br><span class="line">India18 = (India[<span class="string">&#x27;Q18_Part_1&#x27;</span>], India[<span class="string">&#x27;Q18_Part_2&#x27;</span>], India[<span class="string">&#x27;Q18_Part_3&#x27;</span>],</span><br><span class="line">                  India[<span class="string">&#x27;Q18_Part_4&#x27;</span>], India[<span class="string">&#x27;Q18_Part_5&#x27;</span>], India[<span class="string">&#x27;Q18_Part_6&#x27;</span>],</span><br><span class="line">                  India[<span class="string">&#x27;Q18_OTHER&#x27;</span>])</span><br><span class="line">India18 = pd.concat(India18)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Preprocess NLP data</span></span><br><span class="line">USA19 = (USA[<span class="string">&#x27;Q19_Part_1&#x27;</span>], USA[<span class="string">&#x27;Q19_Part_2&#x27;</span>], USA[<span class="string">&#x27;Q19_Part_3&#x27;</span>],</span><br><span class="line">                  USA[<span class="string">&#x27;Q19_Part_4&#x27;</span>], USA[<span class="string">&#x27;Q19_Part_5&#x27;</span>], USA[<span class="string">&#x27;Q19_OTHER&#x27;</span>])</span><br><span class="line">USA19 = pd.concat(USA19)</span><br><span class="line"></span><br><span class="line">India19 = (India[<span class="string">&#x27;Q19_Part_1&#x27;</span>], India[<span class="string">&#x27;Q19_Part_2&#x27;</span>], India[<span class="string">&#x27;Q19_Part_3&#x27;</span>],</span><br><span class="line">                  India[<span class="string">&#x27;Q19_Part_4&#x27;</span>], India[<span class="string">&#x27;Q19_Part_5&#x27;</span>], India[<span class="string">&#x27;Q19_OTHER&#x27;</span>])</span><br><span class="line">India19 = pd.concat(India19)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">mpl.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">USA18.replace(&#123;<span class="string">&#x27;General purpose image/video tools (PIL, cv2, skimage, etc)&#x27;</span>:<span class="string">&#x27;General image/video&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Image segmentation methods (U-Net, Mask R-CNN, etc)&#x27;</span>:<span class="string">&#x27;Image segmentation methods&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Object detection methods (YOLOv3, RetinaNet, etc)&#x27;</span>:<span class="string">&#x27;Object detection methods&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Image classification and other general purpose networks (VGG, Inception, ResNet, ResNeXt, NASNet, EfficientNet, etc)&#x27;</span>:<span class="string">&#x27;Image classification &amp; networks&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Generative Networks (GAN, VAE, etc)&#x27;</span>:<span class="string">&#x27;Generative Networks&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line">               </span><br><span class="line">India18.replace(&#123;<span class="string">&#x27;General purpose image/video tools (PIL, cv2, skimage, etc)&#x27;</span>:<span class="string">&#x27;General image/video&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Image segmentation methods (U-Net, Mask R-CNN, etc)&#x27;</span>:<span class="string">&#x27;Image segmentation methods&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Object detection methods (YOLOv3, RetinaNet, etc)&#x27;</span>:<span class="string">&#x27;Object detection methods&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Image classification and other general purpose networks (VGG, Inception, ResNet, ResNeXt, NASNet, EfficientNet, etc)&#x27;</span>:<span class="string">&#x27;Image classification &amp; networks&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Generative Networks (GAN, VAE, etc)&#x27;</span>:<span class="string">&#x27;Generative Networks&#x27;</span>&#125;, inplace=<span class="literal">True</span>)   </span><br><span class="line">    </span><br><span class="line">USA18.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;CV Method in USA&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">India18.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;CV Method in India&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_57_0.png" alt="png"></p>
+<h3 id="6-2-Natural-Language-Processing-multiple"><a href="#6-2-Natural-Language-Processing-multiple" class="headerlink" title="6-2. Natural Language Processing (multiple)"></a>6-2. Natural Language Processing (multiple)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">mpl.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">USA19.replace(&#123;<span class="string">&#x27;Word embeddings/vectors (GLoVe, fastText, word2vec)&#x27;</span>:<span class="string">&#x27;Word embeddings/vectors&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Encoder-decorder models (seq2seq, vanilla transformers)&#x27;</span>:<span class="string">&#x27;Encoder-decoder models&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Contextualized embeddings (ELMo, CoVe)&#x27;</span>:<span class="string">&#x27;Contextualized embeddings&#x27;</span>,</span><br><span class="line">               <span class="string">&#x27;Transformer language models (GPT-3, BERT, XLnet, etc)&#x27;</span>:<span class="string">&#x27;Transformer language models&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">India19.replace(&#123;<span class="string">&#x27;Word embeddings/vectors (GLoVe, fastText, word2vec)&#x27;</span>:<span class="string">&#x27;Word embeddings/vectors&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Encoder-decorder models (seq2seq, vanilla transformers)&#x27;</span>:<span class="string">&#x27;Encoder-decoder models&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Contextualized embeddings (ELMo, CoVe)&#x27;</span>:<span class="string">&#x27;Contextualized embeddings&#x27;</span>,</span><br><span class="line">                 <span class="string">&#x27;Transformer language models (GPT-3, BERT, XLnet, etc)&#x27;</span>:<span class="string">&#x27;Transformer language models&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">USA19.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;NLP Method in USA&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">India19.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;NLP Method in India&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_59_0.png" alt="png"></p>
+<h2 id="7-Machine-Learning-in-the-business"><a href="#7-Machine-Learning-in-the-business" class="headerlink" title="7. Machine Learning in the business "></a>7. Machine Learning in the business <a class="anchor" id="chapter7"></a></h2><p>I wondered if the company actually uses machine learning in their business, so I choose this question. Unfortunately, there are few answers that could be used because there are many missing values.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">df = df.dropna(subset=[<span class="string">&#x27;Q22&#x27;</span>]) <span class="comment"># drop NaN</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;Q22&#x27;</span>].replace(&#123;<span class="string">&#x27;We are exploring ML methods (and may one day put a model into production)&#x27;</span>:<span class="string">&#x27;Exploring step&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;We use ML methods for generating insights (but do not put working models into production)&#x27;</span>:<span class="string">&#x27;Use for insights&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;We recently started using ML methods (i.e., models in production for less than 2 years)&#x27;</span>:<span class="string">&#x27;Started using ML methods&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;We have well established ML methods (i.e., models in production for more than 2 years)&#x27;</span>:<span class="string">&#x27;Have well established ML methods&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;No (we do not use ML methods)&#x27;</span>:<span class="string">&#x27;Do not use&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;I do not know&#x27;</span>:<span class="string">&#x27;Do not know&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countplot_</span>(<span class="params">data, col_name, q_order</span>):</span></span><br><span class="line">  values = data[col_name].value_counts()[q_order].values</span><br><span class="line">  ax = sns.countplot(x = col_name, hue=data.columns[<span class="number">3</span>], data=data, hue_order = legend_list, palette = <span class="string">&quot;husl&quot;</span>,</span><br><span class="line">                    order = [<span class="string">&#x27;Exploring step&#x27;</span>,<span class="string">&#x27;Use for insights&#x27;</span>,<span class="string">&#x27;Started using ML methods&#x27;</span>,<span class="string">&#x27;Have well established ML methods&#x27;</span>,<span class="string">&#x27;Do not use&#x27;</span>,<span class="string">&#x27;Do not know&#x27;</span>])</span><br><span class="line">  <span class="keyword">for</span> p <span class="keyword">in</span> ax.patches:</span><br><span class="line">    height = p.get_height()</span><br><span class="line">    ax.text(p.get_x() + p.get_width()/<span class="number">2.</span>,</span><br><span class="line">            height+<span class="number">3</span>, height, ha=<span class="string">&#x27;center&#x27;</span>, size=<span class="number">6</span>)</span><br><span class="line">  ax.set_ylim([<span class="number">0</span>, <span class="number">550</span>])</span><br><span class="line">  plt.xticks(rotation=<span class="number">20</span>, fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.xlabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.yticks(fontsize=<span class="number">8</span>)</span><br><span class="line">  plt.ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  plt.legend(fontsize=<span class="number">8</span>, loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">  plt.title(<span class="string">&#x27;Using ML in the business&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">  plt.show()</span><br><span class="line">q22_order = [<span class="string">&#x27;Exploring step&#x27;</span>,<span class="string">&#x27;Use for insights&#x27;</span>,<span class="string">&#x27;Started using ML methods&#x27;</span>,<span class="string">&#x27;Have well established ML methods&#x27;</span>,<span class="string">&#x27;Do not use&#x27;</span>,<span class="string">&#x27;Do not know&#x27;</span>]</span><br><span class="line">col_name = <span class="string">&quot;Q22&quot;</span></span><br><span class="line">countplot_(df, col_name, q22_order)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_61_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_normalize22 = df.groupby([<span class="string">&#x27;Q3&#x27;</span>])[<span class="string">&#x27;Q22&#x27;</span>].value_counts(dropna=<span class="literal">False</span>, normalize=<span class="literal">True</span>, ascending=<span class="literal">False</span>)</span><br><span class="line">df_normalize22 = pd.DataFrame(df_normalize22)</span><br><span class="line">df_normalize22</span><br></pre></td></tr></table></figure>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Q22</th>
+    </tr>
+    <tr>
+      <th>Q3</th>
+      <th>Q22</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="6" valign="top">India</th>
+      <th>Exploring step</th>
+      <td>0.217248</td>
+    </tr>
+    <tr>
+      <th>Have well established ML methods</th>
+      <td>0.179466</td>
+    </tr>
+    <tr>
+      <th>Do not know</th>
+      <td>0.177823</td>
+    </tr>
+    <tr>
+      <th>Started using ML methods</th>
+      <td>0.165092</td>
+    </tr>
+    <tr>
+      <th>Do not use</th>
+      <td>0.156468</td>
+    </tr>
+    <tr>
+      <th>Use for insights</th>
+      <td>0.103901</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">USA</th>
+      <th>Have well established ML methods</th>
+      <td>0.262517</td>
+    </tr>
+    <tr>
+      <th>Exploring step</th>
+      <td>0.165088</td>
+    </tr>
+    <tr>
+      <th>Started using ML methods</th>
+      <td>0.163058</td>
+    </tr>
+    <tr>
+      <th>Do not use</th>
+      <td>0.146143</td>
+    </tr>
+    <tr>
+      <th>Do not know</th>
+      <td>0.132612</td>
+    </tr>
+    <tr>
+      <th>Use for insights</th>
+      <td>0.130582</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>There are so many NaN. I think they didn’t know about it, so they just skipped that question. I dropped all NaN in this question.</p>
+<p>In the USA, there are about 72.3% of respondents’s firm use machine learning for their business. In India there are about 66.4% of respondents’s firm use it for their business. It is noticeable that the ratio of using machine learning in the business in both counrty is not big different.</p>
+<p>However, it may be an uncertain value because all missing values are deleted. Therefore if you wondered about it, I strongly recommend find some useful reports.</p>
+<h2 id="8-Want-to-learn-machine-learning-product-multiple"><a href="#8-Want-to-learn-machine-learning-product-multiple" class="headerlink" title="8. Want to learn machine learning product (multiple) "></a>8. Want to learn machine learning product (multiple) <a class="anchor" id="chapter8"></a></h2><p>Finally, I comfirm that the machine learning products what Americans and Indians want to learn. Because the importance and potential of machine learning is continuosly emphasized, I feel like it help us to understand the trend of indusrty.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preprocess data</span></span><br><span class="line">USA28b = (USA[<span class="string">&#x27;Q28_B_Part_1&#x27;</span>], USA[<span class="string">&#x27;Q28_B_Part_2&#x27;</span>], USA[<span class="string">&#x27;Q28_B_Part_3&#x27;</span>],</span><br><span class="line">          USA[<span class="string">&#x27;Q28_B_Part_4&#x27;</span>], USA[<span class="string">&#x27;Q28_B_Part_5&#x27;</span>], USA[<span class="string">&#x27;Q28_B_Part_6&#x27;</span>],</span><br><span class="line">          USA[<span class="string">&#x27;Q28_B_Part_7&#x27;</span>], USA[<span class="string">&#x27;Q28_B_Part_8&#x27;</span>], USA[<span class="string">&#x27;Q28_B_Part_9&#x27;</span>], USA[<span class="string">&#x27;Q28_B_OTHER&#x27;</span>])</span><br><span class="line">USA28b = pd.concat(USA28b)</span><br><span class="line"></span><br><span class="line">India28b = (India[<span class="string">&#x27;Q28_B_Part_1&#x27;</span>], India[<span class="string">&#x27;Q28_B_Part_2&#x27;</span>], India[<span class="string">&#x27;Q28_B_Part_3&#x27;</span>],</span><br><span class="line">            India[<span class="string">&#x27;Q28_B_Part_4&#x27;</span>], India[<span class="string">&#x27;Q28_B_Part_5&#x27;</span>], India[<span class="string">&#x27;Q28_B_Part_6&#x27;</span>],</span><br><span class="line">            India[<span class="string">&#x27;Q28_B_Part_7&#x27;</span>], India[<span class="string">&#x27;Q28_B_Part_8&#x27;</span>], India[<span class="string">&#x27;Q28_B_Part_9&#x27;</span>], India[<span class="string">&#x27;Q28_B_OTHER&#x27;</span>])</span><br><span class="line">India28b = pd.concat(India28b)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">mpl.rcParams[<span class="string">&#x27;font.size&#x27;</span>] = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize = (<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">USA28b.replace(&#123;<span class="string">&#x27; Azure Machine Learning Studio &#x27;</span>:<span class="string">&#x27;Azure ML Studio&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27; Google Cloud AI Platform / Google Cloud ML Engine&#x27;</span>:<span class="string">&#x27;Google Cloud AI Platform/ML Engine&#x27;</span>&#125;, inplace=<span class="literal">True</span>)    </span><br><span class="line">India28b.replace(&#123;<span class="string">&#x27; Azure Machine Learning Studio &#x27;</span>:<span class="string">&#x27;Azure ML Studio&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27; Google Cloud AI Platform / Google Cloud ML Engine&#x27;</span>:<span class="string">&#x27;Google Cloud AI Platform/ML Engine&#x27;</span>&#125;, inplace=<span class="literal">True</span>)                </span><br><span class="line">    </span><br><span class="line">USA28b.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Want to learn in USA&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">India28b.value_counts().plot.pie(autopct=<span class="string">&#x27;%.1f%%&#x27;</span>, ax = ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Want to learn in India&#x27;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/kaggle_survey_2020/output_66_0.png" alt="png"></p>
+<p>Everything was chosen by similarly ratio. Above all, Google Cloud AI Platform / Google Cloud ML Engine is the most popular among beginners in two countries.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a><strong>Conclusion</strong></h3><p>Through exploratory data analysis of 《2020 Kaggle Machine Learning &amp; df Science Survey》, we were able to learn about trends of coding and machine learning. Comparing with an obvious IT powerhouse country, the USA and the rising IT powerhouse India is very meaningful to explore trends of it. Most noticeable is that the USA has been interested in coding and programs from long ago, and India is a country with coding craze especially among young ages. It is amazing that the two countries’ response are very similar in the part of machine learning surveys. I think it is proven the importance of machine learning these days. It was an interesting work.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2021/01/07/Projects/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" data-id="ckk4wquyr001nlcuedznoc57b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "Kaggle: The future of ML(Americans vs Indians)",
+        "image": "https://ne-choi.github.io/images/kaggle_survey_2020/output_16_0.png",
+        "keywords": "Kaggle Kaggle beginner EDA",
+        "genre": "Project",
+        "datePublished": "2021-01-07",
+        "dateCreated": "2021-01-07",
+        "dateModified": "2021-01-20",
+        "url": "https://ne-choi.github.io//2021/01/07/Projects/Kaggle Competition-The_future_of_ML_americans_vs_indians/",
+        "description": "View to Kaggle
+The future of ML (Americans vs Indians)Since I started Kaggle competitions, I have a question. I called it beginner’s curiosity.   
+“Have you ever thought about which countries have the",
+        "wordCount": 9807
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Project/">Project</a></p>
+                            <p class="item-title"><a href="/2021/01/07/Projects/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="title">Kaggle: The future of ML(Americans vs Indians)</a></p>
+                            <p class="item-date"><time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝</a></p>
+                            <p class="item-date"><time datetime="2020-12-09T15:00:00.000Z" itemprop="datePublished">2020-12-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석</a></p>
+                            <p class="item-date"><time datetime="2020-12-08T15:00:00.000Z" itemprop="datePublished">2020-12-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅵ. 데이터 탐색</a></p>
+                            <p class="item-date"><time datetime="2020-12-07T15:00:00.000Z" itemprop="datePublished">2020-12-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/07/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅴ. R 그래픽 Ⅱ</a></p>
+                            <p class="item-date"><time datetime="2020-12-06T15:00:00.000Z" itemprop="datePublished">2020-12-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/10-Minutes-to-Pandas/" rel="tag">10 Minutes to Pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADsP/" rel="tag">ADsP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/" rel="tag">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/" rel="tag">EDA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" rel="tag">F1스코어</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/" rel="tag">Kaggle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-beginner/" rel="tag">Kaggle beginner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Titanic/" rel="tag">Titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vector/" rel="tag">Vector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/" rel="tag">dictionary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dplyr/" rel="tag">dplyr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggplot2/" rel="tag">ggplot2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lattice/" rel="tag">lattice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list/" rel="tag">list</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lists-vs-tuples/" rel="tag">lists vs tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/read-csv/" rel="tag">read csv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/titanic/" rel="tag">titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuples/" rel="tag">tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip/" rel="tag">unzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip-multiple-files/" rel="tag">unzip multiple files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" rel="tag">결정트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" rel="tag">과적합과소적합</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" rel="tag">데이터분석준전문가</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" rel="tag">랜덤포레스트</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" rel="tag">로지스틱회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" rel="tag">릿지라쏘엘라스틱넷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%B6%84%EB%A5%98/" rel="tag">분류</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" rel="tag">선형회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" rel="tag">앙상블학습</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" rel="tag">재현율</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" rel="tag">정확도</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" rel="tag">주성분분석</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" rel="tag">차원축소</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" rel="tag">파이썬머신러닝완벽가이드</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%9A%8C%EA%B7%80/" rel="tag">회귀</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 12px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech-MOOC/" style="font-size: 20px;">Postech_MOOC</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 10px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 10px;">차원축소</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2021/01/07/Projects/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

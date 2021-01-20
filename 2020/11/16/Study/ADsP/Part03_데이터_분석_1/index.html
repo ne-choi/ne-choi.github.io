@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>ADsP 자격증: Part03. 데이터 분석_1 | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="ADsP,데이터분석준전문가" />
+    
+    <meta name="description" content="해당 자료는 ADsP 데이터분석 준전문가 2020 완전 개정판 요약본으로 저작권은 DATA EDU에 있습니다.  1장. 데이터 분석 개요1절. 데이터 분석 기법의 이해1. 데이터 처리 데이터 분석  통계 기반이나, 통계지식과 복잡한 가정이 상대적으로 적은 실용적인 분야     활용  대기업은 데이터 웨어하우스(DW)와 데이터마트(DM)를 통해 분석 데이터">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ADsP 자격증: Part03. 데이터 분석_1">
+<meta property="og:url" content="https://ne-choi.github.io/2020/11/16/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_1/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="해당 자료는 ADsP 데이터분석 준전문가 2020 완전 개정판 요약본으로 저작권은 DATA EDU에 있습니다.  1장. 데이터 분석 개요1절. 데이터 분석 기법의 이해1. 데이터 처리 데이터 분석  통계 기반이나, 통계지식과 복잡한 가정이 상대적으로 적은 실용적인 분야     활용  대기업은 데이터 웨어하우스(DW)와 데이터마트(DM)를 통해 분석 데이터">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-15T15:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-20T03:39:04.060Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="ADsP">
+<meta property="article:tag" content="데이터분석준전문가">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/ADsP/">ADsP</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Study/ADsP/Part03_데이터_분석_1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        ADsP 자격증: Part03. 데이터 분석_1
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/11/16/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_1/" class="article-date">
+       <time datetime="2020-11-15T15:00:00.000Z" itemprop="datePublished">2020-11-16</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/11/16/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_1/" class="article-date">
+     <time datetime="2021-01-20T03:39:04.060Z" itemprop="dateModified">2021-01-20</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/ADsP/" rel="tag">ADsP</a>, <a class="tag-link-link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" rel="tag">데이터분석준전문가</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <ul>
+<li>해당 자료는 <a target="_blank" rel="noopener" href="http://www.dataedu.kr/product/adsp-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80-2020-%EC%99%84%EC%A0%84%EA%B0%9C%EC%A0%95%ED%8C%90/">ADsP 데이터분석 준전문가 2020 완전 개정판</a> 요약본으로 저작권은 DATA EDU에 있습니다.</li>
+</ul>
+<h1 id="1장-데이터-분석-개요"><a href="#1장-데이터-분석-개요" class="headerlink" title="1장. 데이터 분석 개요"></a>1장. 데이터 분석 개요</h1><h2 id="1절-데이터-분석-기법의-이해"><a href="#1절-데이터-분석-기법의-이해" class="headerlink" title="1절. 데이터 분석 기법의 이해"></a>1절. 데이터 분석 기법의 이해</h2><h3 id="1-데이터-처리"><a href="#1-데이터-처리" class="headerlink" title="1. 데이터 처리"></a>1. 데이터 처리</h3><ul>
+<li><p>데이터 분석</p>
+<ul>
+<li>통계 기반이나, 통계지식과 복잡한 가정이 상대적으로 적은 실용적인 분야  </li>
+</ul>
+</li>
+<li><p>활용</p>
+<ul>
+<li>대기업은 데이터 웨어하우스(DW)와 데이터마트(DM)를 통해 분석 데이터를 가져와 사용</li>
+<li>신규 시스템이나 DW에 포함되지 못한 자료는, 기존 운영 시스템(Legacy)나 스테이징 영역(staging area)과 ODS(Operational Data Store)에서 데이터를 가져와 DW에서 가져온 내용과 결합하여 활용 가능</li>
+<li>단, 운영시스템에 직접 접근해 데이터를 활용하는 것은 매우 위험 → 스테이징 영역 데이터는 운영시스템에서 임시로 저장된 데이터기에 가급적 클린징 영역인 ODS에서 데이터 전처리를 하여 DW나 DM과 결합해 사용  </li>
+</ul>
+</li>
+<li><p>최종 데이터 구조로 가공</p>
+<ul>
+<li><p><strong>데이터 마이닝 분류</strong></p>
+<ul>
+<li>분류값과 입력변수를 연관시켜 인구통계, 요약변수, 파생벽수 등 산출  </li>
+</ul>
+</li>
+<li><p><strong>정형화된 패턴 처리</strong></p>
+<ul>
+<li>비정형 데이터나 소셜 데이터는 정형화된 패턴으로 처리해야 함</li>
+</ul>
+<ol>
+<li><p><strong>비정형 데이터</strong></p>
+<ul>
+<li>DMBS에 저장됐다가 텍스트 마이닝을 거쳐 데이터 마트와 통합</li>
+</ul>
+</li>
+<li><p><strong>관계형 데이터</strong></p>
+<ul>
+<li>DBMS에 저장되어 사회 신경망 분석을 거쳐 분석 결과 통계값이 마트와 통합되어 활용  </li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-시각화-시각화-그래프"><a href="#2-시각화-시각화-그래프" class="headerlink" title="2. 시각화(시각화 그래프)"></a>2. 시각화(시각화 그래프)</h3><ul>
+<li>가장 낮은 수준의 분석이지만, 제대로 사용하면 복잡한 분석보다도 효율적</li>
+<li>대용량 데이터를 다루는 빅데이터 분석에서 시각화는 필수</li>
+<li>탐색적 분석을 할 때, 시각화는 필수</li>
+<li>SNA 분석(사회연결망 분석)을 할 때, 자주 활용</li>
+</ul>
+<h3 id="3-공간분석-GIS"><a href="#3-공간분석-GIS" class="headerlink" title="3. 공간분석(GIS)"></a>3. 공간분석(GIS)</h3><ul>
+<li><strong>공간분석(Spatial Analysis)</strong>: 공간적 차원과 관련된 속성을 시각화하는 분석</li>
+<li>지도 위에 관련 속성을 생성하고 크기, 모양, 선, 굵기 등으로 구분하여 인사이트를 얻음</li>
+</ul>
+<h3 id="4-탐색적-자료-분석-EDA"><a href="#4-탐색적-자료-분석-EDA" class="headerlink" title="4. 탐색적 자료 분석(EDA)"></a>4. 탐색적 자료 분석(EDA)</h3><ul>
+<li><p>탐색적 분석</p>
+<ul>
+<li>다양한 차원과 값을 조합하며 특이점이나 의미 있는 사실을 도출하여 분석의 최종 목적을 달성하는 과정</li>
+<li>데이터의 특징과 내재하는 구조적 관계를 알아내기 위한 기법의 통칭</li>
+</ul>
+</li>
+<li><p><strong>EDA의 4가지 주제</strong></p>
+<ul>
+<li><strong>저항성의 강조, 잔차 계산, 자료변수의 재표현, 그래프를 통한 현시성</strong></li>
+</ul>
+</li>
+<li><p>탐색적 분석 효율 예시<br>-데이터 이해 단계, 변수 생성 단계, 변수 선택 단계에서 활용</p>
+</li>
+</ul>
+<h3 id="5-통계분석"><a href="#5-통계분석" class="headerlink" title="5. 통계분석"></a>5. 통계분석</h3><ul>
+<li><p><strong>통계</strong></p>
+<ul>
+<li>어떤 현상을 종합적으로 알아보기 쉽게 일정한 체계에 따라 숫자, 표, 그림 형태로 나타낸 것</li>
+</ul>
+</li>
+<li><p><strong>기술통계(descriptive statistics)</strong></p>
+<ul>
+<li>모집단으로부터 표본을 추출하고 표본이 가진 정보를 쉽게 파악하도록 데이터를 정리하거나 요약하기 위해 하나의 숫자 또는 그래프 형태로 표현하는 절차</li>
+</ul>
+</li>
+<li><p><strong>추측(추론)통계(inferential statistics)</strong></p>
+<ul>
+<li>모집단으로부터 추출된 표본의 표본통계량으로부터 모집단 특성인 모수에 관해 통계적으로 추론하는 절차</li>
+</ul>
+</li>
+<li><p>활용 분야</p>
+<ul>
+<li>정부 경제정책 수립 / 평가 근거자료(통계청 실업률, 고용률, 물가지수)</li>
+<li>농업(가뭄, 수해, 병충해에 강한 품종 개발 및 개량)</li>
+<li>의학(치료 방법의 효과나 신약 개발을 위한 임상실험 결과 분석)</li>
+<li>경영(제품 개발, 품질관리, 시장조사, 영업관리)</li>
+<li>스포츠(선수 체질향상, 경기 분석, 전략 분석, 선수 평가, 기용)</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-데이터-마이닝"><a href="#6-데이터-마이닝" class="headerlink" title="6. 데이터 마이닝"></a>6. 데이터 마이닝</h3><ul>
+<li><p>데이터 마이닝</p>
+<ul>
+<li>대표적인 고급 데이터 분석법</li>
+<li>대용량 자료를 요약하고 미래 예측을 목표로 자료의 관계, 패턴, 규칙을 탐색하고 모형화</li>
+<li>이전에 알려지지 않은 유용한 지식을 추출하는 분석</li>
+</ul>
+</li>
+<li><p>방법론</p>
+<ul>
+<li><p><strong>데이터베이스</strong>에서의 지식 탐색</p>
+<ul>
+<li>데이터 웨어하우스에서 데이터 마트를 생성하면서 각 데이터 속성을 사전분석하여 지식을 얻는 방법  </li>
+</ul>
+</li>
+<li><p><strong>기계학습</strong>(machine learning)</p>
+<ul>
+<li>인공지능의 한 분야</li>
+<li>컴퓨터가 학습할 수 있도록 알고리즘과 기술을 개발하는 분야</li>
+<li>인공신경망, 의사결정나무, 클러스터링, 베이지안 분류, SVM 등</li>
+</ul>
+</li>
+<li><p><strong>패턴인식</strong>(pattern recognition)</p>
+<ul>
+<li>원자료를 이용하여 사전지식, 패턴에서 추출된 통계 정보를 기반으로 자료 또는 패턴을 분류</li>
+<li>장바구니 분석, 연관 규칙</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>활용 분야</p>
+<ul>
+<li>데이터베이스 마케팅(고객 행동정보를 활용한 목표 마케팅, 고객 세분화, 장바구니 분석, 추천 시스템)</li>
+<li>신용평가 및 조기경보시스템(금융기관에서 신용카드 발급, 보험, 대출 발생 시)</li>
+<li>생물정보학(세포 유전자 분석으로 질병 진단과 치료법, 신약 개발)</li>
+<li>텍스트마이닝(전자우편, SNS 등 디지털 텍스트 정보로 고객성향, 감정, 사회관계망 분석)  </li>
+</ul>
+</li>
+</ul>
+<h1 id="2장-R-프로그래밍-기초"><a href="#2장-R-프로그래밍-기초" class="headerlink" title="2장. R 프로그래밍 기초"></a>2장. R 프로그래밍 기초</h1><h2 id="1절-R-소개"><a href="#1절-R-소개" class="headerlink" title="1절. R 소개"></a>1절. R 소개</h2><h3 id="1-데이터-분석-도구의-현황"><a href="#1-데이터-분석-도구의-현황" class="headerlink" title="1. 데이터 분석 도구의 현황"></a>1. 데이터 분석 도구의 현황</h3><ul>
+<li><p>R의 탄생</p>
+<ul>
+<li>오픈소스 프로그램으로 통계, 데이터 마이닝과 그래프를 위한 언어</li>
+<li>최신 통계 분석과 마이닝 기능 제공</li>
+<li>세계적인 사용자와 다양한 예제 공유 가능</li>
+<li>패키지가 수시로 업데이트 됨</li>
+</ul>
+</li>
+<li><p>분석 도구 비교</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>SAS</th>
+<th>SPSS</th>
+<th>오픈소스 R</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>프로그램 비용</td>
+<td>유료, 고가</td>
+<td>유료, 고가</td>
+<td>오픈소스</td>
+</tr>
+<tr>
+<td>설치 용량</td>
+<td>대용량</td>
+<td>대용량</td>
+<td>모듈화로 간단함</td>
+</tr>
+<tr>
+<td>다양한 모듈 지원 및 비용</td>
+<td>별도 구매</td>
+<td>별도 구매</td>
+<td>오픈 소스</td>
+</tr>
+<tr>
+<td>최근 알고리즘 및 기술 반양</td>
+<td>느림</td>
+<td>다소 느림</td>
+<td>매우 빠름</td>
+</tr>
+<tr>
+<td>학습자료 입수 편의성</td>
+<td>유료 도서 위주</td>
+<td>유료 도서 위주</td>
+<td>공개 논문 및 자료 많음</td>
+</tr>
+<tr>
+<td>질의용 공개 커뮤니티</td>
+<td>NA</td>
+<td>NA</td>
+<td>매우 활발</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>R의 특징</p>
+<ol>
+<li><p>오픈소스 프로그램</p>
+<ul>
+<li>사용자 커뮤니티에 도움 요청이 많음</li>
+<li>많은 패키지가 수시 업데이트</li>
+</ul>
+</li>
+<li><p>그래픽 및 성능</p>
+<ul>
+<li>프로그래밍, 그래픽 측명 등 사용 프로그램과 대등하거나 월등함</li>
+</ul>
+</li>
+<li><p>시스템 데이터 저장 방식</p>
+<ul>
+<li>각 세션 사이마다 시스템에 데이터셋을 저장 → 매번 데이터 로딩 필요가 없음</li>
+<li>명령어 스토리 저장 가능</li>
+</ul>
+</li>
+<li><p>모든 운영체제</p>
+<ul>
+<li>윈도우, 맥, 리눅스 운영체제에서 사용 가능</li>
+</ul>
+</li>
+<li><p>표준 플랫폼</p>
+<ul>
+<li>S 통계 언어 기반으로 구현</li>
+<li>R/S 플랫폼은 통계전문가의 사실상 표준 플랫폼</li>
+</ul>
+</li>
+<li><p>객체지향 언어이며 함수형 언어</p>
+<ul>
+<li><p>통계 기능뿐 아니라 일반 프로그래밍 언어처럼 자동화하거나 새로운 함수 생성 가능</p>
+</li>
+<li><p><strong>객체지향 언어의 특징</strong></p>
+<ul>
+<li>SAS, SPSS 회귀 분석 시, 화면에 결과가 나와 추가 작업이 필요</li>
+<li>R은 추정계수, 표준오차, 잔차 등 결괏값을 객체에 저장할 수 있어서 활용이 쉬움</li>
+</ul>
+</li>
+<li><p><strong>함수형 언어의 특징</strong></p>
+<ul>
+<li>깔끔하고 단축된 코드</li>
+<li>코드 실행이 빠름</li>
+<li>단순한 코드로 디버깅 노력 감소</li>
+<li>병렬 프로그래밍으로의 전환 용이</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>R 스튜디오</p>
+<ul>
+<li>오픈소스이며 다양한 운영체계 지원</li>
+<li>메모리에 변수가 어떻게 되어 있는지, 타입이 무엇인지를 볼 수 있음</li>
+<li>스크립트 관리와 도큐먼테이션이 편리</li>
+<li>코딩은 스크립트용 프로그래밍으로 어렵지 않게 자동화 가능</li>
+<li>래틀(Rattle)은 GUI가 패키지와 긴밀하게 결합외어 있어 정해진 기능만 사용 가능 → 업그레이드가 제대로 되지 않으면 통합성에 문제 발생  </li>
+</ul>
+</li>
+<li><p>R 기반 작업 환경</p>
+<ul>
+<li>R 메모리: 64bit 유닉스- 무제한, x86 64bit- 128TB, 64bit 윈도우- 8TB</li>
+</ul>
+</li>
+</ul>
+<h2 id="2절-R-기초"><a href="#2절-R-기초" class="headerlink" title="2절. R 기초"></a>2절. R 기초</h2><ul>
+<li>교재 참고</li>
+</ul>
+<h2 id="3절-입력과-출력"><a href="#3절-입력과-출력" class="headerlink" title="3절. 입력과 출력"></a>3절. 입력과 출력</h2><h3 id="1-데이터-분석-과정"><a href="#1-데이터-분석-과정" class="headerlink" title="1. 데이터 분석 과정"></a>1. 데이터 분석 과정</h3><ul>
+<li>분석자가 분석 목적에 맞는 방법론을 선택하여 얻은 결과를 해석하는 과정</li>
+<li>INPUT → ANALYSIS → OUTPUT</li>
+</ul>
+<h3 id="2-R에서의-데이터-입력과-출력"><a href="#2-R에서의-데이터-입력과-출력" class="headerlink" title="2. R에서의 데이터 입력과 출력"></a>2. R에서의 데이터 입력과 출력</h3><ul>
+<li>R에서 다룰 수 있는 파일 타입<ul>
+<li>Tab-delimited text, Comma-separated text, Excel file, JSON file, HTML/XML file, Database, (other) Statistical SW’s file</li>
+</ul>
+</li>
+</ul>
+<h2 id="4절-데이터-구조와-데이터-프레임-1"><a href="#4절-데이터-구조와-데이터-프레임-1" class="headerlink" title="4절. 데이터 구조와 데이터 프레임 1"></a>4절. 데이터 구조와 데이터 프레임 1</h2><h3 id="1-백터-Vector"><a href="#1-백터-Vector" class="headerlink" title="1. 백터(Vector)"></a>1. 백터(Vector)</h3><ul>
+<li><p>백터들은 동질적</p>
+<ul>
+<li>한 백터의 모든 원소는 같은 자료형 또는 같은 모드(mode)를 가짐</li>
+</ul>
+</li>
+<li><p>백터는 위치로 인덱스 됨</p>
+<ul>
+<li>V[2]는 V 백터의 2번째 원소</li>
+</ul>
+</li>
+<li><p>백터는 인덱스를 통해 여러 개 원소로 구성된 하위 백터를 반환할 수 있음</p>
+<ul>
+<li>V[c(2,3)]은 V 백터의 2번째, 3번째 원소로 구성된 하위 백터</li>
+</ul>
+</li>
+<li><p>백터 원소들은 이름을 가질 수 있음</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">V &lt;- c(10,20,30); names(v) &lt;- c(&quot;Moe&quot;, &quot;Larry&quot;, &quot;Curly&quot;)</span><br><span class="line">v[&quot;Larry&quot;]  </span><br><span class="line">Larry  </span><br><span class="line">20</span><br></pre></td></tr></table></figure>
+<h3 id="2-리스트-Lists"><a href="#2-리스트-Lists" class="headerlink" title="2. 리스트(Lists)"></a>2. 리스트(Lists)</h3></li>
+<li><p>리스트는 이질적</p>
+<ul>
+<li>여러 자료형 원소가 포함될 수 있음</li>
+</ul>
+</li>
+<li><p>리스트는 위치로 인덱스 됨</p>
+<ul>
+<li>L[[2]]는 L 리스트의 2번째 원소</li>
+</ul>
+</li>
+<li><p>리스트에서 하위 리스트 추출 가능</p>
+<ul>
+<li>L[c(2,3)]은 L 리스트의 2번째, 3번째 원소로 이루어진 하위 리스트</li>
+</ul>
+</li>
+<li><p>리스트의 원소들은 이름을 가질 수 있음</p>
+<ul>
+<li>L[[“Moe”]]와 L$Moe는 둘 다 “Moe”라는 이름의 원소를 지칭</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-R에서의-자료-형태-mode"><a href="#3-R에서의-자료-형태-mode" class="headerlink" title="3. R에서의 자료 형태(mode)"></a>3. R에서의 자료 형태(mode)</h3><table>
+<thead>
+<tr>
+<th>객체</th>
+<th>예시</th>
+<th>모드</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>숫자</strong></td>
+<td>3.1415</td>
+<td>수치형(numeric)</td>
+</tr>
+<tr>
+<td><strong>숫자 백터</strong></td>
+<td>c(2,3,4,5,5)</td>
+<td>수치형(numeric)</td>
+</tr>
+<tr>
+<td><strong>문자열</strong></td>
+<td>“Tom”</td>
+<td>문자형(character)</td>
+</tr>
+<tr>
+<td><strong>문자열 백터</strong></td>
+<td>c(“Tom”,”Yoon”,”Kim”)</td>
+<td>문자형(character)</td>
+</tr>
+<tr>
+<td><strong>요인</strong></td>
+<td>factor(c(“A”,”B”,”C”))</td>
+<td><strong>수치형(numeric)</strong></td>
+</tr>
+<tr>
+<td><strong>리스트</strong></td>
+<td>list(“Tom”,”Yoon”,”Kim”)</td>
+<td>리스트(list)</td>
+</tr>
+<tr>
+<td><strong>데이터 프레임</strong></td>
+<td>data.frame(x=1:3, y=c(“Tom”,”Yoon”,”Kim”))</td>
+<td>리스트(list)</td>
+</tr>
+<tr>
+<td><strong>함수</strong></td>
+<td>print</td>
+<td>함수(function)</td>
+</tr>
+</tbody></table>
+<h3 id="4-데이터-프레임-data-frames"><a href="#4-데이터-프레임-data-frames" class="headerlink" title="4. 데이터 프레임(data frames)"></a>4. 데이터 프레임(data frames)</h3><ul>
+<li><p>강력하고 유연한 구조, SAS 데이터셋을 모방해서 만들어짐</p>
+</li>
+<li><p>데이터 프레임의 리스트 원소는 백터 또는 요인</p>
+</li>
+<li><p>백터와 요인은 데이터 프레임의 열</p>
+</li>
+<li><p>백터와 요인은 동일한 길이</p>
+</li>
+<li><p>데이터 프레임은 표 형태의 데이터 구조, 열별로 다른 데이터 형식을 가질 수 있음</p>
+</li>
+<li><p>열에는 이름이 있어야 함</p>
+</li>
+<li><p>데이터 프레임 원소 접근 방법</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b[1]; b[&quot;empno&quot;]</span><br><span class="line">  b[[i]]; b[[&quot;empno&quot;]]</span><br><span class="line">  b$empno</span><br></pre></td></tr></table></figure>
+<h3 id="5-그밖의-데이터-구조"><a href="#5-그밖의-데이터-구조" class="headerlink" title="5. 그밖의 데이터 구조"></a>5. 그밖의 데이터 구조</h3></li>
+<li><p>단일값(Scalars)</p>
+<ul>
+<li>R에서는 원소가 하나인 백터로 인식/처리<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pi</span><br><span class="line">length(pi)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>행렬(Matrix)</p>
+<ul>
+<li>R에서는 차원을 가진 백터로 인식<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &lt;- 1:9</span><br><span class="line">dim(a) &lt;- c(3,3)</span><br><span class="line">a</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>배열(Arrays)</p>
+<ul>
+<li>행렬에 3차원 또는 n차원까지 확장된 형태</li>
+<li>주어진 백터에 더 많은 차원을 부여해 배열 생성<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b &lt;- 1:12</span><br><span class="line">dim(b) &lt;- c(2,3,2)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>요인(Factors)</p>
+<ul>
+<li>백터처럼 생겼지만, R에서는 백터에 있는 고유값(unique key) 정보를 얻는데, 고유값들을 요인의 수준(level)이라고 함</li>
+<li>요인의 주된 2가지 사용처: 범주형 변수, 집단 분류</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-백터-리스트-행렬-다루기"><a href="#6-백터-리스트-행렬-다루기" class="headerlink" title="6. 백터, 리스트, 행렬 다루기"></a>6. 백터, 리스트, 행렬 다루기</h3><ul>
+<li>행렬(Matrix)은 R에서 차원을 가진 백터이며, 텍스트마이닝과 소셜 네트워크 분석 등에 활용</li>
+<li>재활용 규칙(Recycling Rule)<ul>
+<li>길이가 다른 두 백터 연산을 할 때, R은 짧은 백터의 처음으로 돌아가 연산이 끝날 때까지 원소를 재활용</li>
+</ul>
+</li>
+</ul>
+<h1 id="3장-데이터-마트"><a href="#3장-데이터-마트" class="headerlink" title="3장. 데이터 마트"></a>3장. 데이터 마트</h1><h2 id="1절-데이터-변경-및-요약"><a href="#1절-데이터-변경-및-요약" class="headerlink" title="1절. 데이터 변경 및 요약"></a>1절. 데이터 변경 및 요약</h2><h3 id="1-R-reshape를-이용한-데이터-마트-개발"><a href="#1-R-reshape를-이용한-데이터-마트-개발" class="headerlink" title="1. R reshape를 이용한 데이터 마트 개발"></a>1. R reshape를 이용한 데이터 마트 개발</h3><ul>
+<li><p><strong>데이터 마트</strong></p>
+<ul>
+<li><strong>데이터 웨어하우스와 사용자 사이의 중간층</strong>에 위치한 것</li>
+<li>하나의 주제 또는 하나의 부서 중심의 데이터 웨어하우스</li>
+<li>데이터 마트 내 대부분의 데이터는 데이터 웨어하우스로부터 복제</li>
+<li>또는 자체적으로 수집되거나 관계형/다차원 데이터 베이스를 이용해 구축</li>
+<li>CRM 관련 업무 중 핵심: 고객 데이터 마트 구축</li>
+<li>동일한 데이터셋 활용 시, 데이터 마트를 어떻게 구축하느냐에 분석 효과 차이를 만듦</li>
+</ul>
+</li>
+<li><p><strong>요약변수</strong></p>
+<ul>
+<li>수집된 정보를 분석에 맞게 종합한 변수</li>
+<li>가장 기본적인 변수로 총 구매 금액, 금액, 횟수, 구매여부 등 데이터 분석을 위해 만들어지는 변수</li>
+<li>많은 모델을 공통으로 사용할 수 있어 재활용성이 높음</li>
+<li>합계, 횟수와 같이 간단한 구조이므로 자동화하여 구측 가능</li>
+<li><strong>단점</strong>: 얼마 이상이면 구매하더라도 기준값 의미 해석이 애매할 수 있음 → 연속형 변수를 그룹핑해 사용하는 것이 좋음</li>
+</ul>
+</li>
+<li><p><strong>파생변수</strong></p>
+<ul>
+<li>사용자(분석자)가 특정 조건을 만족하거나 특정 함수에 의해 값을 만들어 의미를 부여한 변수</li>
+<li>매우 주관적일 수 있으므로 논리적 타당성을 갖추어 개발해야 함</li>
+<li>세분화, 고객행동 예측, 캠페인 반응 예측에 활용</li>
+<li>파생변수는 상황에 따라 특정 상황에만 유의미하지 않고 대표성을 띄게 해야 함</li>
+</ul>
+</li>
+<li><p><strong>reshape의 활용</strong></p>
+<ul>
+<li>reshape 패키지에는 melt()와 cast()라는 2개 핵심 함수가 있음<ul>
+<li><strong>melt(): 쉬운 casting을 위해 적당한 형태로 만들어주는 함수</strong></li>
+<li>melt(data, id=…)</li>
+<li><strong>cast(): 데이터를 원하는 형태로 계산, 변형하는 함수</strong></li>
+<li>cast(data, formula=… ~ variable, fun)</li>
+</ul>
+</li>
+<li>변수를 조합해 변수명을 만들고 변수를 시간, 상품 등 차원과 결합해 다양한 요약변수와 파생변수를 쉽게 생성하여 데이터 마트를 구성할 수 있게 함</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-sqldf를-이용한-데이터-분석"><a href="#2-sqldf를-이용한-데이터-분석" class="headerlink" title="2. sqldf를 이용한 데이터 분석"></a>2. sqldf를 이용한 데이터 분석</h3><ul>
+<li>sqldf는 R에서 sql 명령어를 사용 가능하게 하는 패키지</li>
+<li>SAS에서의 proc sql과 같은 역할을 하는 패키지</li>
+<li>명령어 차이(sql, R)<ul>
+<li>sql: select * from [data frame], R: sqldf(“select * from [data frame]”)</li>
+<li>sql: select * from [data frame] numrows 10, R: sqldf(“select * from [data frame] limit 10”)</li>
+<li>sql: select * from [data frame] where [col] = ‘char%’, R: sqldf(“select * from [data frame] where [col] like ‘char%’ “)</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-plyr을-이용한-데이터-분석"><a href="#3-plyr을-이용한-데이터-분석" class="headerlink" title="3. plyr을 이용한 데이터 분석"></a>3. plyr을 이용한 데이터 분석</h3><ul>
+<li>apply 함수에 기반해 데이터와 출력변수를 동시에 배열로 치환하여 처리하는 패키지</li>
+<li>split - apply - combine: 데이터 분리, 처리, 결합 등 필수적인 처리 기능 제공</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>array</th>
+<th>data frame</th>
+<th>list</th>
+<th>nothing</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>array</td>
+<td>aaply</td>
+<td>adply</td>
+<td>alply</td>
+<td>a_ply</td>
+</tr>
+<tr>
+<td>data frame</td>
+<td>daply</td>
+<td>ddply</td>
+<td>dlply</td>
+<td>d_ply</td>
+</tr>
+<tr>
+<td>list</td>
+<td>laply</td>
+<td>ldply</td>
+<td>llply</td>
+<td>l_ply</td>
+</tr>
+<tr>
+<td>n replicates</td>
+<td>raply</td>
+<td>rdply</td>
+<td>rlply</td>
+<td>r_ply</td>
+</tr>
+<tr>
+<td>function arguments</td>
+<td>maply</td>
+<td>mdply</td>
+<td>mlply</td>
+<td>m_ply</td>
+</tr>
+</tbody></table>
+<h3 id="4-데이터-테이블"><a href="#4-데이터-테이블" class="headerlink" title="4. 데이터 테이블"></a>4. 데이터 테이블</h3><ul>
+<li>data.table 패키지는 R에서 가장 많이 사용하는 데이터 핸들링 패키지 중 하나</li>
+<li>data.table은 큰 데이터를 탐색, 연산, 병합하는 데 유용</li>
+<li>기존 data.frame 방식보다 월등히 빠른 속도</li>
+<li>특정 column을 key 값으로 색인 지정 후, 데이터 처리</li>
+<li>빠른 그루핑과 ordering, 짧은 문장 지원 측면에서 데이터프레임보다 유용(속도차 큼)</li>
+</ul>
+<h2 id="2절-데이터-가공"><a href="#2절-데이터-가공" class="headerlink" title="2절. 데이터 가공"></a>2절. 데이터 가공</h2><h3 id="1-Data-Exploration"><a href="#1-Data-Exploration" class="headerlink" title="1. Data Exploration"></a>1. Data Exploration</h3><ul>
+<li><p>Data Exploration</p>
+<ul>
+<li>데이터 분석을 위해 구성된 데이터 변수들의 상태를 파악</li>
+</ul>
+</li>
+<li><p>종류</p>
+<ol>
+<li>head(데이터셋), tail(데이터셋)</li>
+<li>summary(데이터셋)<ul>
+<li>수치형변수: 최대값, 최소값, 평균, 1사분위수, 2사분위수(중앙값), 3사분위수</li>
+<li>명목형변수: 명목값, 데이터 개수</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-변수-중요도"><a href="#2-변수-중요도" class="headerlink" title="2. 변수 중요도"></a>2. 변수 중요도</h3><ul>
+<li><p>변수 중요도</p>
+<ul>
+<li>변수 선택법과 유사한 개념으로 모형을 생성하여 사용된 변수의 중요도를 살피는 과정</li>
+</ul>
+</li>
+<li><p>종류</p>
+<ul>
+<li>klaR 패키지<ul>
+<li>특정 변수가 주어졌을 때, 클래스가 어떻게 분류되는지에 관한 에러율을 계산하고 그래픽으로 결과를 보여주는 기능</li>
+<li>greedy.wilks(): 세분화를 위한 stepwise forward 변수 선택을 위한 패키지, 종속변수에 가장 영향력을 미치는 변수를 wilks lambda를 활용하여 변수 중요도 정리 <strong>(Wilk’s Lambda = 집단내분산/총분산)</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-변수의-구간화"><a href="#3-변수의-구간화" class="headerlink" title="3. 변수의 구간화"></a>3. 변수의 구간화</h3><ul>
+<li><p>변수의 구간화</p>
+<ul>
+<li><strong>연속형 변수</strong>를 분석 목적에 맞게 활용하기 위해 구간화하여 모델링에 적용</li>
+<li>일반적으로 10진수 단위로 구간화, 구간을 5개로 나누는 것이 보통이며 7개 이상의 구간을 만들지 않음</li>
+<li>신용 평가 모형, 고객 세분화 같은 시스템에서 모형에 활용하는 각 변수를 구간화해서 구간별로 점수를 적용하는 스코어링 방식으로 활용</li>
+</ul>
+</li>
+<li><p>구간화 방법</p>
+<ol>
+<li><p>binning</p>
+<ul>
+<li>신용평가모형 개발에서 연속형 변수(부채비율 등)를 범주형 변수로 구간화하는데 자주 활용</li>
+</ul>
+</li>
+<li><p>의사결정나무</p>
+<ul>
+<li>세분화 또는 예측에 활용되는 의사결정나무 모형을 사용해 입력변수 구간화 가능</li>
+<li>동일한 변수를 여러 번의 분리 기준으로 사용 가능하기 때문에, 연속변수가 반복적으로 선택될 경우 각각 분리 기준값으로 연속형 변수를 구간화할 수 있음</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="3절-기초-분석-및-데이터-관리"><a href="#3절-기초-분석-및-데이터-관리" class="headerlink" title="3절. 기초 분석 및 데이터 관리"></a>3절. 기초 분석 및 데이터 관리</h2><h3 id="1-데이터-EDA-탐색적-자료-분석"><a href="#1-데이터-EDA-탐색적-자료-분석" class="headerlink" title="1. 데이터 EDA(탐색적 자료 분석)"></a>1. 데이터 EDA(탐색적 자료 분석)</h3><ul>
+<li>데이터 분석에 앞서 전체적으로 데이터 특징을 파악하고 다양한 각도로 데이터에 접근</li>
+<li>summary()를 이용해 데이터의 기초통계량 확인</li>
+</ul>
+<h3 id="2-결측값-인식"><a href="#2-결측값-인식" class="headerlink" title="2. 결측값 인식"></a>2. 결측값 인식</h3><ul>
+<li>결측값은 NA, 99999999, ‘ ‘(공백), Not Answer 등으로 표현</li>
+<li>결측값 자체에 의미가 있는 경우도 있음: 쇼핑몰 중 특정 거래 자체가 존재하지 않는 경우, 아주 부자이거나 아주 가난한 경우 정보를 잘 채우지 않음</li>
+<li>결측값 처리는 전체 작업속도에 많은 영향을 줌</li>
+</ul>
+<h3 id="3-결측값-처리-방법"><a href="#3-결측값-처리-방법" class="headerlink" title="3. 결측값 처리 방법"></a>3. 결측값 처리 방법</h3><ul>
+<li><p><strong>단순 대치법(Single Imputation)</strong></p>
+<ol>
+<li><p>completes analysis</p>
+<ul>
+<li>결측값이 존재하는 레코드 삭제</li>
+</ul>
+</li>
+<li><p>평균 대치법(Mean Imputation)</p>
+<ul>
+<li>관측 또는 실험을 통해 얻어진 데이터의 평균으로 대치</li>
+<li>비조건부 평균 대치법: 관측 데이터 평균으로 대치</li>
+<li>조건부 평균 대치법(regression imputation): 회귀분석을 활용한 대치법</li>
+</ul>
+</li>
+<li><p>단순확률 대치법(Single Stochastic Imputation)</p>
+<ul>
+<li>평균 대치법에서 추정량 표준 오차의 과소 추정문제를 보완하고자 고안된 방법</li>
+<li>Hot-deck 방법, nearest neighbor 방법 등</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>다중 대치법(Multiple Imputation)</strong></p>
+<ul>
+<li>m번의 대치를 통해 m개의 가상적 완전 자료를 만드는 방법</li>
+<li>1단계: 대치(imputation step), 2단계: 분석(Analysis step), 3단계: 결합(combination step)</li>
+<li>Amelia-time series cross sectional data set(여러 국가에서 매년 측정된 자료)에서 boostrapping based algorithm을 활용한 다중 대치법</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-R에서-결측값-처리"><a href="#4-R에서-결측값-처리" class="headerlink" title="4. R에서 결측값 처리"></a>4. R에서 결측값 처리</h3><ul>
+<li>관련 함수</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>함수</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>complete.cases()</td>
+<td>데이터 내 레코드에 결측값 있으면 FALSE, 있으면 TRUE로 반환</td>
+</tr>
+<tr>
+<td>is.na()</td>
+<td>결측값을 NA로 인식하여 결측값 있으면 TRUE, 없으면 FALSE로 반환</td>
+</tr>
+<tr>
+<td>DMwR 패키지의 centrallmputation()</td>
+<td>NA 값에 가운데 값(central value)으로 대치, 숫자는 중위수, 요인(factor)은 최빈값으로 대치</td>
+</tr>
+<tr>
+<td>DMwR 패키지의 knnlmputation</td>
+<td>NA 값을 k 최근 이웃 분류 알고리즘을 사용하여 대치, k개 주변 이웃까지의 거리를 고려하여 가중 평균한 값 사용</td>
+</tr>
+<tr>
+<td>Amelia 패키지의 amelia()</td>
+<td>time-series-cross-sectional data set에서 활용(랜덤포레스트 모델은 결측값 돈재할 경우 바로 에러 발생), ramdomForest 패키지의 rflmpute() 함수를 활용해 NA 결측값을 대치한 후 알고리즘에 적용</td>
+</tr>
+</tbody></table>
+<h3 id="5-이상값-Outlier-인식과-처리"><a href="#5-이상값-Outlier-인식과-처리" class="headerlink" title="5. 이상값(Outlier) 인식과 처리"></a>5. 이상값(Outlier) 인식과 처리</h3><ul>
+<li><p>이상값이란?</p>
+<ul>
+<li>의도하지 않게 잘못 입력한 경우 (Bad data)</li>
+<li>의도하지 않게 입력되었으나 분석 목접에 부합되지 않아 제거해야 하는 경우 (Bad data)</li>
+<li>의도하지 않은 현상이지만 분석에 포함해야 하는 경우</li>
+<li>의도된 이상값(fraud, 불량)인 경우</li>
+<li>이상값을 꼭 제거해야 하는 것은 아님</li>
+</ul>
+</li>
+<li><p>이상값 인식 방법</p>
+<ol>
+<li><p><strong>ESD(Extreme Studentized Deviation)</strong></p>
+<ul>
+<li>평균으로부터 3 표준편차 떨어진 값(각 0.15%)</li>
+</ul>
+</li>
+<li><p>기하평균 -2.5 x 표준편차 &lt; data &lt; 기하평균 +2.5 x 표준편차</p>
+</li>
+<li><p>사분위수 이용하여 제거하기(상자 그림의 outer fence 밖에 있는 값 제거)</p>
+<ul>
+<li>이상값 정의: Q1 - 1.5(Q3 - Q1) &lt; data &lt; Q3 + 1.5(Q3 - Q1)을 벗어나는 데이터</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>극단값 절단(trimming) 방법</strong></p>
+<ol>
+<li><p>기하평균을 이용한 제거</p>
+<ul>
+<li>geo_mean</li>
+</ul>
+</li>
+<li><p>하단, 상단 % 이용한 제거</p>
+<ul>
+<li>10% 절단(상하위 5%에 해당되는 데이터 제거)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>극단값 조정(winsorizing) 방법</strong></p>
+<ul>
+<li>상한값과 하한값을 벗어나는 값들을 상한, 하한값으로 바꾸어 활용</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2020/11/16/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_1/" data-id="ckk4wquyp001mlcue82cecsts" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "ADsP 자격증: Part03. 데이터 분석_1",
+        "image": "https://ne-choi.github.io",
+        "keywords": "ADsP 데이터분석준전문가",
+        "genre": "Study ADsP",
+        "datePublished": "2020-11-16",
+        "dateCreated": "2020-11-16",
+        "dateModified": "2021-01-20",
+        "url": "https://ne-choi.github.io//2020/11/16/Study/ADsP/Part03_데이터_분석_1/",
+        "description": "
+해당 자료는 ADsP 데이터분석 준전문가 2020 완전 개정판 요약본으로 저작권은 DATA EDU에 있습니다.
+
+1장. 데이터 분석 개요1절. 데이터 분석 기법의 이해1. 데이터 처리
+데이터 분석
+
+통계 기반이나, 통계지식과 복잡한 가정이 상대적으로 적은 실용적인 분야  
+
+
+활용
+
+대기업은 데이터 웨어하우스(DW)와 데이터마트(DM)를 통해 분석 데이터",
+        "wordCount": 2014
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/11/17/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_2/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            ADsP 자격증: Part03. 데이터 분석_2
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/11/14/Study/ADsP/Part02_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_%EA%B8%B0%ED%9A%8D/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">ADsP 자격증: Part02. 데이터 분석 기획</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Project/">Project</a></p>
+                            <p class="item-title"><a href="/2021/01/07/Projects/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/" class="title">Kaggle: The future of ML(Americans vs Indians)</a></p>
+                            <p class="item-date"><time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/10/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅷ. 선형회귀모형과 텍스트마이닝</a></p>
+                            <p class="item-date"><time datetime="2020-12-09T15:00:00.000Z" itemprop="datePublished">2020-12-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석</a></p>
+                            <p class="item-date"><time datetime="2020-12-08T15:00:00.000Z" itemprop="datePublished">2020-12-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/08/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅵ. 데이터 탐색</a></p>
+                            <p class="item-date"><time datetime="2020-12-07T15:00:00.000Z" itemprop="datePublished">2020-12-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/07/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" class="title">빅데이터 분석과 R 프로그래밍 2: Ⅴ. R 그래픽 Ⅱ</a></p>
+                            <p class="item-date"><time datetime="2020-12-06T15:00:00.000Z" itemprop="datePublished">2020-12-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/10-Minutes-to-Pandas/" rel="tag">10 Minutes to Pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ADsP/" rel="tag">ADsP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/" rel="tag">Array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/" rel="tag">EDA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" rel="tag">F1스코어</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/" rel="tag">Kaggle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle-beginner/" rel="tag">Kaggle beginner</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postech-MOOC/" rel="tag">Postech_MOOC</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Titanic/" rel="tag">Titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vector/" rel="tag">Vector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/" rel="tag">dictionary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dplyr/" rel="tag">dplyr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ggplot2/" rel="tag">ggplot2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kaggle/" rel="tag">kaggle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lattice/" rel="tag">lattice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list/" rel="tag">list</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lists-vs-tuples/" rel="tag">lists vs tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/read-csv/" rel="tag">read csv</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/titanic/" rel="tag">titanic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuples/" rel="tag">tuples</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip/" rel="tag">unzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unzip-multiple-files/" rel="tag">unzip multiple files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" rel="tag">결정트리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" rel="tag">과적합과소적합</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" rel="tag">데이터분석준전문가</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" rel="tag">랜덤포레스트</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" rel="tag">로지스틱회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" rel="tag">릿지라쏘엘라스틱넷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%B6%84%EB%A5%98/" rel="tag">분류</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" rel="tag">선형회귀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" rel="tag">앙상블학습</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" rel="tag">재현율</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" rel="tag">정확도</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" rel="tag">주성분분석</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" rel="tag">차원축소</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" rel="tag">파이썬머신러닝완벽가이드</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%9A%8C%EA%B7%80/" rel="tag">회귀</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 12px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech-MOOC/" style="font-size: 20px;">Postech_MOOC</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 10px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 10px;">차원축소</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2020/11/16/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
