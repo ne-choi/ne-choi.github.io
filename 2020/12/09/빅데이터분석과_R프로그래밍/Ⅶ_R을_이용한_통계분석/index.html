@@ -12,15 +12,15 @@
     
     <meta name="keywords" content="Postech_MOOC" />
     
-    <meta name="description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정 t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균은">
+    <meta name="description" content="POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정 t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균은 10인가? H0(null Hypothesis: 귀무가설): μ &#x3D; 10123stud&lt;-rea">
 <meta property="og:type" content="article">
 <meta property="og:title" content="빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정 t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균은">
+<meta property="og:description" content="POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정 t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균은 10인가? H0(null Hypothesis: 귀무가설): μ &#x3D; 10123stud&lt;-rea">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-08T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-12T05:46:37.345Z">
+<meta property="article:modified_time" content="2021-01-30T11:26:42.698Z">
 <meta property="article:author" content="Naeun Choi">
 <meta property="article:tag" content="Postech_MOOC">
 <meta name="twitter:card" content="summary">
@@ -193,7 +193,7 @@ ga('send', 'pageview');
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" class="article-date">
-     <time datetime="2020-12-12T05:46:37.345Z" itemprop="dateModified">2020-12-12</time>
+     <time datetime="2021-01-30T11:26:42.698Z" itemprop="dateModified">2021-01-30</time>
   </a>
 </div>
 
@@ -220,8 +220,7 @@ ga('send', 'pageview');
 
             
 
-            <figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
-<ul>
+            <ul>
 <li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  </li>
 </ul>
 <h1 id="Ⅶ-R을-이용한-통계분석"><a href="#Ⅶ-R을-이용한-통계분석" class="headerlink" title="Ⅶ. R을 이용한 통계분석"></a>Ⅶ. R을 이용한 통계분석</h1><h2 id="1-두-그룹간-평균비교-t-test"><a href="#1-두-그룹간-평균비교-t-test" class="headerlink" title="1. 두 그룹간 평균비교(t-test)"></a>1. 두 그룹간 평균비교(t-test)</h2><h3 id="단일표본의-평균검정"><a href="#단일표본의-평균검정" class="headerlink" title="단일표본의 평균검정"></a>단일표본의 평균검정</h3><ul>
@@ -453,7 +452,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" data-id="ckkgaxe6t000jskuedglc4cr6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/09/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B3%BC_R%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" data-id="ckkjmrp67000fukuehfe31fbp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -529,17 +528,17 @@ ga('send', 'pageview');
         "genre": "",
         "datePublished": "2020-12-09",
         "dateCreated": "2020-12-09",
-        "dateModified": "2020-12-12",
+        "dateModified": "2021-01-30",
         "url": "https://ne-choi.github.io//2020/12/09/빅데이터분석과_R프로그래밍/Ⅶ_R을_이용한_통계분석/",
-        "description": "setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)
-
+        "description": "
 POSTECH에서 제공하는 MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  
 
 Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정
 t.test(변수, mu=검정하고자 하는 평균값)
 
-가설 1: G3(최종성적)의 평균은",
-        "wordCount": 1224
+가설 1: G3(최종성적)의 평균은 10인가?
+H0(null Hypothesis: 귀무가설): μ = 10123stud&lt;-rea",
+        "wordCount": 1215
     }
 </script>
 

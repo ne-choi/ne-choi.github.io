@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://ne-choi.github.io/tags/Postech-MOOC/</loc>
+        <lastmod>2021-01-30T11:26:48.924Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/lattice/</loc>
+        <lastmod>2021-01-30T11:26:28.893Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://ne-choi.github.io/tags/unzip-multiple-files/</loc>
         <lastmod>2021-01-27T01:28:11.323Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -243,20 +257,6 @@
     <url>
         <loc>https://ne-choi.github.io/tags/lists-vs-tuples/</loc>
         <lastmod>2021-01-20T03:24:43.310Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/lattice/</loc>
-        <lastmod>2021-01-18T15:31:34.402Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Postech-MOOC/</loc>
-        <lastmod>2021-01-18T15:31:34.402Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
