@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>머신러닝 기법과 R 프로그래밍 1: XⅡ. 의사결정나무와 랜덤 포레스트 | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Postech,의사결정나무,랜덤포레스트" />
+    
+    <meta name="description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석">
+<meta property="og:type" content="article">
+<meta property="og:title" content="머신러닝 기법과 R 프로그래밍 1: XⅡ. 의사결정나무와 랜덤 포레스트">
+<meta property="og:url" content="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-13T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-01T00:44:48.244Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech">
+<meta property="article:tag" content="의사결정나무">
+<meta property="article:tag" content="랜덤포레스트">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-187747665-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/feed.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Contest/">Contest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Kaggle/">Kaggle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Postech/">Postech</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/Programming/">Programming</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/">Postech</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/ML/">ML</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Study/Postech/머신러닝R/XⅡ_의사결정나무와_랜덤_포레스트" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        머신러닝 기법과 R 프로그래밍 1: XⅡ. 의사결정나무와 랜덤 포레스트
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" class="article-date">
+       <time datetime="2020-12-13T00:00:00.000Z" itemprop="datePublished">2020-12-13</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" class="article-date">
+     <time datetime="2021-02-01T00:44:48.244Z" itemprop="dateModified">2021-02-01</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Postech/" rel="tag">Postech</a>, <a class="tag-link-link" href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" rel="tag">랜덤포레스트</a>, <a class="tag-link-link" href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" rel="tag">의사결정나무</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  </li>
+</ul>
+<h1 id="XⅡ-의사결정나무와-랜덤-포레스트"><a href="#XⅡ-의사결정나무와-랜덤-포레스트" class="headerlink" title="XⅡ. 의사결정나무와 랜덤 포레스트"></a>XⅡ. 의사결정나무와 랜덤 포레스트</h1><h2 id="1-의사결정나무-Ⅰ"><a href="#1-의사결정나무-Ⅰ" class="headerlink" title="1. 의사결정나무 Ⅰ"></a>1. 의사결정나무 Ⅰ</h2><h3 id="의사결정나무"><a href="#의사결정나무" class="headerlink" title="의사결정나무"></a>의사결정나무</h3><ul>
+<li><p>Decision Tree</p>
+<ul>
+<li>기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법<ul>
+<li>분석과정이 직관적이고 이해하기 쉬움</li>
+<li>연속형/범주형 변수를 모두 사용할 수 있음</li>
+<li>분지규칙은 불순도(범주가 섞여 있는 정도)를 최소화함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>과정</p>
+<ol>
+<li>tree 형성(Growing tree): 너무 많이 키워서 분류하면 과적합 문제가 생김</li>
+<li>tree 가지치기(Pruning tree): 과적합 예방을 위해</li>
+<li>최적 tree로 분류(Classification)</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#decision tree packages download</span><br><span class="line">#install.packages(&quot;tree&quot;)</span><br><span class="line">#load library</span><br><span class="line">library(tree)</span><br><span class="line"></span><br><span class="line">#package for confusion matrix</span><br><span class="line">#install.packages(&quot;caret&quot;)</span><br><span class="line">library(caret)</span><br><span class="line"></span><br><span class="line"># read csv file</span><br><span class="line">iris&lt;-read.csv(&quot;data&#x2F;week12_1&#x2F;iris.csv&quot;)</span><br><span class="line">attach(iris)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>학습데이터 / 검증데이터 분할<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># training (n&#x3D;100)&#x2F; test data(n&#x3D;50) </span><br><span class="line">set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">N&lt;-nrow(iris)</span><br><span class="line">tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"># split train data and test data</span><br><span class="line">train&lt;-iris[tr.idx,]</span><br><span class="line">test&lt;-iris[-tr.idx,]</span><br><span class="line">#dim(train)</span><br><span class="line">#dim(test)</span><br></pre></td></tr></table></figure>
+<h3 id="의사결정나무-함수"><a href="#의사결정나무-함수" class="headerlink" title="의사결정나무 함수"></a>의사결정나무 함수</h3>tree(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용</li>
+</ul>
+<h3 id="step-1-Growing-tree"><a href="#step-1-Growing-tree" class="headerlink" title="step 1: Growing tree"></a>step 1: Growing tree</h3><ul>
+<li>학습데이터의 tree 결과<ul>
+<li>마디 6에서는 더이상 분지할 필요 없음<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">treemod &lt;- tree(Species~., data&#x3D;train)</span><br><span class="line">treemod</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plot(treemod)</span><br><span class="line">text(treemod,cex&#x3D;1.5)</span><br><span class="line"></span><br><span class="line">table(train$Species)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-2-Pruning"><a href="#step-2-Pruning" class="headerlink" title="step 2. Pruning"></a>step 2. Pruning</h3><ul>
+<li>cv.tree(tree모형결과, FUN= )</li>
+<li>최적 tree 모형을 위한 가지치기</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cv.trees &lt;- cv.tree(treemod, FUN&#x3D;prune.misclass)</span><br><span class="line">cv.trees</span><br><span class="line">plot(cv.trees)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>최종 트리모형<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># final tree model with the optimal node </span><br><span class="line">prune.trees&lt;-prune.misclass(treemod, best&#x3D;3)</span><br><span class="line">plot(prune.trees)</span><br><span class="line">text(prune.trees,pretty&#x3D;0, cex&#x3D;1.5)</span><br><span class="line">#help(prune.misclass)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3."></a>step 3.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># step 3: classify test data </span><br><span class="line">treepred&lt;-predict(prune.trees,test,type&#x3D;&#39;class&#39;)</span><br><span class="line"># classification accuracy</span><br><span class="line">confusionMatrix(treepred,test$Species)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-의사결정나무-Ⅱ"><a href="#2-의사결정나무-Ⅱ" class="headerlink" title="2. 의사결정나무 Ⅱ"></a>2. 의사결정나무 Ⅱ</h2><h3 id="rpart-패키지"><a href="#rpart-패키지" class="headerlink" title="rpart 패키지"></a>rpart 패키지</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># other package for tree</span><br><span class="line"># install.packages(&quot;rpart&quot;)</span><br><span class="line"># install.packages(&quot;party&quot;)</span><br><span class="line">library(rpart)</span><br><span class="line">library(party)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>rpart(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cl1&lt;-rpart(Species~., data&#x3D;train)</span><br><span class="line">plot(cl1)</span><br><span class="line">text(cl1, cex&#x3D;1.5)</span><br></pre></td></tr></table></figure></li>
+<li>Prunning<ul>
+<li>rpart 패키지는 과적합 우려가 있음(iris의 경우에는 필요 x)</li>
+<li>printcp에서 xerror(cross validation error) 값이 최소가 되는 마디를 선택<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#pruning (cross-validation)-rpart</span><br><span class="line">printcp(cl1)</span><br><span class="line">plotcp(cl1)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>rpart를 사용한 최종 tree 모형<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pcl1&lt;-prune(cl1, cp&#x3D;cl1$cptable[which.min(cl1$cptable[,&quot;xerror&quot;]),&quot;CP&quot;])</span><br><span class="line">plot(pcl1)</span><br><span class="line">text(pcl1)</span><br></pre></td></tr></table></figure></li>
+<li>결과 해석<ul>
+<li>tree 함수를 이용했을 때와 동일한 결과</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>정확도<ul>
+<li>test data에 대한 정확도<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#measure accuracy(rpart)</span><br><span class="line">#package for confusion matrix</span><br><span class="line">#install.packages(&quot;caret&quot;)</span><br><span class="line">library(caret)</span><br><span class="line"></span><br><span class="line">pred2&lt;- predict(cl1,test, type&#x3D;&#39;class&#39;)</span><br><span class="line">confusionMatrix(pred2,test$Species)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="party-패키지"><a href="#party-패키지" class="headerlink" title="party 패키지"></a>party 패키지</h3><ul>
+<li>ctree(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<ul>
+<li>p-value를 기준으로 분지되는 포인트를 잡음<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#decision tree(party)-unbiased recursive partioning based on permutation test</span><br><span class="line">partymod&lt;-ctree(Species~.,data&#x3D;train)</span><br><span class="line">plot(partymod)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-랜덤-포레스트"><a href="#3-랜덤-포레스트" class="headerlink" title="3. 랜덤 포레스트"></a>3. 랜덤 포레스트</h2><h3 id="랜덤-포레스트"><a href="#랜덤-포레스트" class="headerlink" title="랜덤 포레스트"></a>랜덤 포레스트</h3><ul>
+<li>Random Forest<ul>
+<li>2001년 Leo Breiman이 제안</li>
+<li>의사결정나무의 단점(과적합)을 개선한 알고리즘</li>
+<li>앙상블(Ensemble, 결합) 기법을 사용한 모델로, 주어진 데이터를 리샘플링하여 다수의 의사결정나무를 만든 다음, 여러 모델의 예측 결과를 종합해 정확도를 높이는 방법</li>
+</ul>
+</li>
+</ul>
+<h3 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h3><ul>
+<li>Bagging(Bootstrap Aggregating)<ul>
+<li>전체 데이터에서 학습데이터를 복원추출(resampling)하여 트리 구성</li>
+<li>Training Data에서 Random Sampling</li>
+<li>클래스 값 중 가장 많이 voting된 값이 결정</li>
+</ul>
+</li>
+</ul>
+<h3 id="랜덤-포레스트-패키지"><a href="#랜덤-포레스트-패키지" class="headerlink" title="랜덤 포레스트 패키지"></a>랜덤 포레스트 패키지</h3><ul>
+<li><p>randomForest</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install.packages(&quot;randomForest&quot;)</span><br><span class="line">library(randomForest)</span><br></pre></td></tr></table></figure></li>
+<li><p>iris 데이터 사용</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">iris&lt;-read.csv(&quot;data&#x2F;week12_3&#x2F;iris.csv&quot;)</span><br><span class="line">attach(iris)</span><br><span class="line"></span><br><span class="line"># training&#x2F; test data : n &#x3D; 150</span><br><span class="line">set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">N&lt;-nrow(iris)</span><br><span class="line">tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"></span><br><span class="line"># split training and test data</span><br><span class="line">train&lt;-iris[tr.idx,]</span><br><span class="line">test&lt;-iris[-tr.idx,]</span><br><span class="line">#dim(train)</span><br><span class="line">#dim(test)</span><br></pre></td></tr></table></figure></li>
+<li><p>랜덤포레스트 함수</p>
+<ul>
+<li>ramdomForest(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#Random Forest : mtry&#x3D;2 (default&#x3D;sqrt(p))</span><br><span class="line">iris$Species &lt;- as.numeric(iris@Species)</span><br><span class="line"></span><br><span class="line">rf_out1&lt;-randomForest(Species~.,data&#x3D;train,importance&#x3D;T)</span><br><span class="line">rf_out1</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>변수의 중요도: ramdom forest 결과로부터 중요 변수 확인</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># important variables for RF</span><br><span class="line">round(importance(rf_out1), 2)</span><br></pre></td></tr></table></figure></li>
+<li><p>추가</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#Random Forest : mtry&#x3D;4</span><br><span class="line">rf_out2&lt;-randomForest(Species~.,data&#x3D;train,importance&#x3D;T, mtry&#x3D;4)</span><br><span class="line">rf_out2</span><br><span class="line"></span><br><span class="line"># important variables for RF</span><br><span class="line">round(importance(rf_out2), 2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>정확도</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#measuring accuracy(rf)</span><br><span class="line">rfpred&lt;-predict(rf_out2,test)</span><br><span class="line">confusionMatrix(rfpred,test$Species)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" data-id="ckklvd2kh0009m8ue63enehzh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "머신러닝 기법과 R 프로그래밍 1: XⅡ. 의사결정나무와 랜덤 포레스트",
+        "image": "https://ne-choi.github.io",
+        "keywords": "Postech 의사결정나무 랜덤포레스트",
+        "genre": "Study Postech ML",
+        "datePublished": "2020-12-13",
+        "dateCreated": "2020-12-13",
+        "dateModified": "2021-02-01",
+        "url": "https://ne-choi.github.io//2020/12/13/Study/Postech/머신러닝R/XⅡ_의사결정나무와_랜덤_포레스트/",
+        "description": "setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)
+
+POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  
+
+XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무
+Decision Tree
+
+기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법
+분석",
+        "wordCount": 654
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            머신러닝 기법과 R 프로그래밍 1: Ⅹ. k-인접기법과 판별분석
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A8_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%A7%88%EC%9D%B4%EB%8B%9D_%EA%B8%B0%EC%B4%88/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">머신러닝 기법과 R 프로그래밍 1: Ⅸ. 데이터 마이닝 기초</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/14/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A7_%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅷ. 회귀분석을 이용한 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-14T00:00:00.000Z" itemprop="datePublished">2021-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/13/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A6_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C%EC%99%80_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅵ. 현업 데이터 특성과 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-13T00:00:00.000Z" itemprop="datePublished">2021-01-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/12/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A5_%ED%98%84%EC%97%85_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%8A%B9%EC%84%B1%EA%B3%BC_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅵ. 현업 데이터 특성과 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-12T00:00:00.000Z" itemprop="datePublished">2021-01-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/11/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A4_%ED%86%B5%EA%B3%84%EA%B2%80%EC%A0%95%EB%B0%A9%EB%B2%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅴ. 통계검정방법</a></p>
+                            <p class="item-date"><time datetime="2021-01-11T00:00:00.000Z" itemprop="datePublished">2021-01-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/07/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A3_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D%EC%97%90%EC%84%9C_%ED%99%95%EB%A5%A0%EA%B3%BC_%EB%B6%84%ED%8F%AC/" class="title">데이터사이언스를 위한 통계학입문 1: Ⅳ. 빅데이터 분석에서 확률과 분포</a></p>
+                            <p class="item-date"><time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

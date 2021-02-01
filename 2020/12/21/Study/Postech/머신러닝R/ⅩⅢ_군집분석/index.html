@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>머신러닝 기법과 R 프로그래밍 2: ⅩⅢ. 군집분석 | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Postech,k-인접기법,판별분석" />
+    
+    <meta name="description" content="POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅢ. 군집분석1. 군집분석과 유사성 척도군집분석 군집분석은 비지도학습(Unsupervised Learning)  주어진 데이터(X 변수들)의 속성으로 군집화 계층형 군집 분석 k-means     유사한 속성을 가진 객체를 군집(cluster)으로 묶는 데이터 마이">
+<meta property="og:type" content="article">
+<meta property="og:title" content="머신러닝 기법과 R 프로그래밍 2: ⅩⅢ. 군집분석">
+<meta property="og:url" content="https://ne-choi.github.io/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅢ. 군집분석1. 군집분석과 유사성 척도군집분석 군집분석은 비지도학습(Unsupervised Learning)  주어진 데이터(X 변수들)의 속성으로 군집화 계층형 군집 분석 k-means     유사한 속성을 가진 객체를 군집(cluster)으로 묶는 데이터 마이">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-21T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-01T00:50:02.752Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech">
+<meta property="article:tag" content="k-인접기법">
+<meta property="article:tag" content="판별분석">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-187747665-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/feed.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Contest/">Contest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Kaggle/">Kaggle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Postech/">Postech</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/Programming/">Programming</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/">Postech</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/ML/">ML</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Study/Postech/머신러닝R/ⅩⅢ_군집분석" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        머신러닝 기법과 R 프로그래밍 2: ⅩⅢ. 군집분석
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/" class="article-date">
+       <time datetime="2020-12-21T00:00:00.000Z" itemprop="datePublished">2020-12-21</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/" class="article-date">
+     <time datetime="2021-02-01T00:50:02.752Z" itemprop="dateModified">2021-02-01</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Postech/" rel="tag">Postech</a>, <a class="tag-link-link" href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" rel="tag">k-인접기법</a>, <a class="tag-link-link" href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" rel="tag">판별분석</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <ul>
+<li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  </li>
+</ul>
+<h1 id="ⅩⅢ-군집분석"><a href="#ⅩⅢ-군집분석" class="headerlink" title="ⅩⅢ. 군집분석"></a>ⅩⅢ. 군집분석</h1><h2 id="1-군집분석과-유사성-척도"><a href="#1-군집분석과-유사성-척도" class="headerlink" title="1. 군집분석과 유사성 척도"></a>1. 군집분석과 유사성 척도</h2><h3 id="군집분석"><a href="#군집분석" class="headerlink" title="군집분석"></a>군집분석</h3><ul>
+<li><p>군집분석은 비지도학습(Unsupervised Learning)</p>
+<ul>
+<li>주어진 데이터(X 변수들)의 속성으로 군집화<ul>
+<li>계층형 군집 분석</li>
+<li>k-means</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>유사한 속성을 가진 객체를 군집(cluster)으로 묶는 데이터 마이닝 기법</p>
+<ul>
+<li>예제: 고객 구매패턴을 반영하는 속성 데이터가 수집된다고 할 때, 군집분석을 통해 유사한 구매패턴을 보이는 고객을 군집화하고 판매전략을 도출(소득/충성정도 등)</li>
+</ul>
+</li>
+</ul>
+<h3 id="군집분석-종류"><a href="#군집분석-종류" class="headerlink" title="군집분석 종류"></a>군집분석 종류</h3><ol>
+<li><p>계층적 군집(Hierarchical Clustering)</p>
+<ul>
+<li>사전에 군집 수 k를 정하지 않고 단계적으로 군집 트를 제공</li>
+</ul>
+</li>
+<li><p>비계층적 군집(Non-hierarchical Clustering)</p>
+<ul>
+<li>사전에 군집 수 k를 정한 후 각 객체를 k개 중 하나의 군집에 배정</li>
+</ul>
+</li>
+</ol>
+<h3 id="유사성-척도"><a href="#유사성-척도" class="headerlink" title="유사성 척도"></a>유사성 척도</h3><ul>
+<li>객체 간의 유사성 정도를 정량적으로 나타내기 위해 척도가 필요<ul>
+<li>거리(distance) 척도<ul>
+<li>거리가 가까울수록 유사성이 커짐</li>
+</ul>
+</li>
+<li>상관계수척도<ul>
+<li>객체 간 상관계수가 클수록 유사성이 커짐  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># similarity measures - distance</span><br><span class="line">m1 &lt;- matrix(</span><br><span class="line">  c(150, 50, 130, 55, 80, 80, 100, 85, 95, 91),</span><br><span class="line">  nrow &#x3D; 5,</span><br><span class="line">  ncol &#x3D; 2,</span><br><span class="line">  byrow &#x3D; TRUE)</span><br><span class="line"># m1 is a matrix</span><br><span class="line">m1</span><br><span class="line">is.data.frame(m1)</span><br><span class="line"># m1 is defined as dataframe</span><br><span class="line">m1&lt;-as.data.frame(m1)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>거리척도</strong></p>
+<ul>
+<li><p>객체 i의 p차원 공간에서의 좌표는 열벡터로 표현</p>
+<ul>
+<li>p개의 속상을 가진 객체 i에 관해, j번째 속성은 X<del>ji</del>로 표현  </li>
+</ul>
+</li>
+<li><p>거리 계산 함수: dist(데이터, method= ), default는 “euclidean”  </p>
+</li>
+</ul>
+<ol>
+<li>유클리디안 거리(Euclidean distance)<ul>
+<li>Distance = $\sqrt{(x<del>12</del> - x<del>11</del>)^2^ + (x<del>21</del> - x<del>22</del>)^2^}$<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 1. Euclidean distance</span><br><span class="line">D1 &lt;- dist(m1)</span><br><span class="line">D1</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>민코프스키 거리(Minkowski distance<ul>
+<li>유클리디안 거리의 일반화된 방법(m = 2일 때는 유클리디안 거리와 동일)</li>
+<li>d(x<del>i</del>,x<del>j</del>) = (시그마|X<del>ki</del> - X<del>kj</del>|^m^)^1/m^<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 2. Minkowski distance</span><br><span class="line">D2&lt;- dist(m1, method&#x3D;&quot;minkowski&quot;, p&#x3D;3) </span><br><span class="line">D2</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>마할라노비스 거리(Mahalanobis distance)<ul>
+<li>변수 간의 상관관계가 존재할 때 사용</li>
+<li>d(x<del>i</del>,x<del>j</del>) = $\sqrt{(x<del>i</del> - x<del>j</del>)^T^S^-1^(x<del>i</del> - x<del>j</del>)}$</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="상관계수를-유사성-척도로-사용"><a href="#상관계수를-유사성-척도로-사용" class="headerlink" title="상관계수를 유사성 척도로 사용"></a>상관계수를 유사성 척도로 사용</h3><ul>
+<li>상관관계가 클수록 두 객체의 유사성이 크다고 추정<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 3. correlation coefficient</span><br><span class="line">m2 &lt;- matrix(</span><br><span class="line">  c(20, 6, 14, 30, 7, 15, 46, 4, 2),</span><br><span class="line">  nrow &#x3D; 3,</span><br><span class="line">  ncol &#x3D; 3,</span><br><span class="line">  byrow &#x3D; TRUE,</span><br><span class="line">  dimnames &#x3D; list(</span><br><span class="line">     c(&quot;obs1&quot;, &quot;obs2&quot;, &quot;obs3&quot;),</span><br><span class="line">     c(&quot;age&quot;, &quot;exp&quot;, &quot;time&quot;)))</span><br><span class="line">m2</span><br></pre></td></tr></table></figure></li>
+<li>상관계쑤 측정<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># correlation between Obs1~Obs2</span><br><span class="line">cor(m2[1,],m2[2,]) </span><br><span class="line"># correlation between Obs1~Obs3</span><br><span class="line">cor(m2[1,],m2[3,])</span><br></pre></td></tr></table></figure></li>
+<li>결과 해석<ul>
+<li>객체 1(obs1)과 객체 2의 유사성이, 객체 1과 객체 3 간 유사성보다 큼(0.9674 &gt; 0.7984)</li>
+</ul>
+</li>
+</ul>
+<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 2. Minkowski distance</span><br><span class="line">D4&lt;- dist(m1, method&#x3D;&quot;manhattan&quot;) </span><br><span class="line">D4</span><br></pre></td></tr></table></figure>
+<h2 id="2-계층적-군집분석"><a href="#2-계층적-군집분석" class="headerlink" title="2. 계층적 군집분석"></a>2. 계층적 군집분석</h2><h3 id="계측적-군집분석"><a href="#계측적-군집분석" class="headerlink" title="계측적 군집분석"></a>계측적 군집분석</h3><ul>
+<li>사전에 군집 수 k를 정하지 않고 단계적으로 군집 형성<ul>
+<li>유사한 객체를 군집으로 묶고, 그 군집을 기반으로 유사한 군집을 새로운 군집으로 묶어가면서 군집을 계층적으로 구성</li>
+<li>단일연결법(single linkage method)</li>
+<li>완전연결법(complete linkage method)</li>
+<li>평균연결법(average linkage method)</li>
+<li>중심연결법(centroid linkage method)  </li>
+</ul>
+</li>
+</ul>
+<p><strong>1. 단일연결법</strong></p>
+<ul>
+<li>군집 i와 군집 j의 유사성 척도로 두 군집의 모든 객체 쌍의 거리 중 <strong>가장 가까운 거리</strong>를 사용<ul>
+<li>객체 쌍이 가장 짧은 거리가 유사할수록 두 군집이 더 유사하다고 평가</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. 완전연결법</strong></p>
+<ul>
+<li>두 군집의 모든 객체 쌍의 거리 중 <strong>가장 먼 거리</strong>를 사용</li>
+</ul>
+<p><strong>3. 평균연결법</strong></p>
+<ul>
+<li>두 군집의 모든 객체 쌍의 <strong>평균 거리</strong>를 사용</li>
+</ul>
+<p><strong>4. 중심연결법</strong></p>
+<ul>
+<li>두 군집의 <strong>중심 좌표</strong> (무게 중심, 객체가 아닌 위치)</li>
+</ul>
+<h3 id="완전연결법-vs-평균연결법"><a href="#완전연결법-vs-평균연결법" class="headerlink" title="완전연결법 vs 평균연결법"></a>완전연결법 vs 평균연결법</h3><ul>
+<li>데이터 설명<ul>
+<li>1833년 영국 Lancashire 방직 공장 임금</li>
+<li>DAAG package built in 데이터</li>
+<li>총 51개 객체</li>
+<li>객체별 5개 속성<ul>
+<li>나이(age), 남성 근로자 수(mnum), 남성 근로자 평균 임금(mwage), 여성 근로자 수(fnum), 여성 근로자 평균 임금(fwage)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># needs &quot;lattice&quot;, &quot;DAAG&quot; package for loading dataset</span><br><span class="line"># install.packages(&quot;lattice&quot;)</span><br><span class="line"># install.packages(&quot;DAAG&quot;)</span><br><span class="line">library(lattice)</span><br><span class="line">library(DAAG)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>데이터 불러오기(DAAG 패키지 안에 든 데이터)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">wages1833&lt;-read.csv(file&#x3D;&quot;data&#x2F;week13_2&#x2F;wages1833.csv&quot;)</span><br><span class="line">head(wages1833)</span><br><span class="line"></span><br><span class="line"># remove observations with the missing values</span><br><span class="line">dat1&lt;-wages1833</span><br><span class="line">dat1&lt;-na.omit(dat1)</span><br><span class="line">str(dat1)</span><br></pre></td></tr></table></figure></li>
+<li>계층적 군집분석: hclust(거리계산결과, method=” “)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># calculate distance between each nodes</span><br><span class="line">dist_data&lt;-dist(dat1)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol>
+<li>완전연결법 적용 결과(거리 계산은 유클리디안)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># prepare hierarchical cluster</span><br><span class="line"># complete linkage method</span><br><span class="line">hc_a &lt;- hclust(dist_data, method &#x3D; &quot;complete&quot;)</span><br><span class="line">plot(hc_a, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;complete&quot;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>설명<ul>
+<li>single: 단일, complete: 완전, average: 평균, centriod: 중심  </li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>평균연결법 적용 결과(거리 계산은 유클리디안)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># average linkage method</span><br><span class="line"># check how different from complete method</span><br><span class="line">hc_c &lt;- hclust(dist_data, method &#x3D; &quot;average&quot;)</span><br><span class="line">plot(hc_c, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;average&quot;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="와드-연결방법"><a href="#와드-연결방법" class="headerlink" title="와드 연결방법"></a>와드 연결방법</h3><ul>
+<li>Ward’s method</li>
+<li>많이 사용됨  </li>
+</ul>
+<ol start="3">
+<li>와드방법을 적용한 결과(거리계산은 유클리디안)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Ward&#39;s method</span><br><span class="line">hc_c &lt;- hclust(dist_data, method &#x3D; &quot;ward.D2&quot;)</span><br><span class="line">plot(hc_c, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;Ward&#39;s method&quot;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="3-비계층적-군집분석"><a href="#3-비계층적-군집분석" class="headerlink" title="3. 비계층적 군집분석"></a>3. 비계층적 군집분석</h2><h3 id="비계층적-군집분석"><a href="#비계층적-군집분석" class="headerlink" title="비계층적 군집분석"></a>비계층적 군집분석</h3><ul>
+<li>사전에 군집 수 k를 정한 후, 각 객체를 k개 중 하나의 군집에 배정<ul>
+<li>비계층적 군집(Non-hierarchical Clustering)<ul>
+<li>K-means 알고리즘</li>
+<li>K-medoids 알고리즘<ul>
+<li>PAM(Partitioning Around Medoids)</li>
+<li>CLARA(Clustering LARge Applications)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="k-means-군집분석"><a href="#k-means-군집분석" class="headerlink" title="k-means 군집분석"></a>k-means 군집분석</h3><ul>
+<li>비계층적 군집분석 중 가장 널리 사용<ul>
+<li>k개 군집의 중심좌표를 고려하여 각 객체를 가장 가까운 군집에 배정하는 것을 반복<ul>
+<li>0단계. 초기 객체 선정: k개 객체 좌표를 초기 군집 중심좌표로 선정  </li>
+<li>1단계. 객체 군집 배정: 각 객체와 k개 중심좌표와의 거리 산출 후, 가장 가까운 군집에 객체 배정  </li>
+<li>2단계. 군집 중심좌표 산출: 새로운 군집의 중심좌표 산출  </li>
+<li>3단계. 수렴 조건 점검: 새로 산출된 중심 좌표값과 이전 좌표값을 비교하여 수렴 조건 내에 들면 종료, 아니면 단계 1 반복</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="k-means-군집분석-예제"><a href="#k-means-군집분석-예제" class="headerlink" title="k-means 군집분석 예제"></a>k-means 군집분석 예제</h3><ul>
+<li><p>데이터 불러오기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">wages1833&lt;-read.csv(file&#x3D;&quot;data&#x2F;week13_3&#x2F;wages1833.csv&quot;)</span><br><span class="line">head(wages1833)</span><br><span class="line"></span><br><span class="line"># preprocessing</span><br><span class="line">dat1&lt;-wages1833</span><br><span class="line">dat1&lt;-na.omit(dat1)</span><br><span class="line">head(dat1, n&#x3D;5)</span><br></pre></td></tr></table></figure></li>
+<li><p>군집수 k결정</p>
+<ul>
+<li>최적 군집수에 관한 시각화</li>
+<li>최적값은 “silhouette(실루엣)”, “gap_stat”, “wss(그룹내합계제곱)”으로 산출</li>
+<li>그래프가 완만해지는 지점을 k의 값으로 추정<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># to choose the optimal k</span><br><span class="line"># install.packages(&quot;factoextra&quot;)</span><br><span class="line">library(factoextra)</span><br><span class="line">fviz_nbclust(dat1, kmeans, method &#x3D; &quot;wss&quot;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>결과 해석</p>
+<ul>
+<li>최적 k = 3  </li>
+</ul>
+</li>
+<li><p>k-means (k=3)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># compute kmeans</span><br><span class="line">set.seed(123,sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">km &lt;- kmeans(dat1, 3, nstart &#x3D; 25) # random set의 수 (nstart)</span><br><span class="line">km</span><br><span class="line"></span><br><span class="line"># visualize</span><br><span class="line">fviz_cluster(km, data &#x3D; dat1, </span><br><span class="line">             ellipse.type&#x3D;&quot;convex&quot;, # Convex 모양으로 구역 표시</span><br><span class="line">             repel &#x3D; TRUE) # repel을 통해 관측치 표기</span><br></pre></td></tr></table></figure>
+<h3 id="K-medoids-군집분석"><a href="#K-medoids-군집분석" class="headerlink" title="K-medoids 군집분석"></a>K-medoids 군집분석</h3></li>
+<li><p>K-medoids 군집분석은 각 군집의 대표 객체(medoid)를 고려</p>
+<ul>
+<li>군집의 대표 객체란, 군집 내 다른 객체들과의 거리가 최소가 되는 객체</li>
+<li>K-medoids 군집분석은 객체를 k개의 군집으로 구분하는데, 객체와 속하는 군집의 대표 객체와의 거리 총합을 최소로 하는 방법<ul>
+<li><strong>PAM(Partitioning Around Medoids) 알고리즘</strong>: 모든 객체에 관해 대표 객체가 변했을 때 발생하는 거리 총합의 변화를 계산, 데이터 수가 많아질수록 연산량이 크게 증가</li>
+<li><strong>CLARA 알고리즘</strong>: 적절한 수의 객체를 샘플링한 후, PAM 알고리즘을 적용해 대표 객체 선정, 샘플링을 여러 번 한 후 가장 좋은 결과를 선택, 편향된 샘플링은 잘못된 결괏값을 도출할 수 있음  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>PAM 알고리즘 살펴보기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># compute PAM</span><br><span class="line">library(&quot;cluster&quot;)</span><br><span class="line">pam_out &lt;- pam(dat1, 3)</span><br><span class="line">pam_out</span><br><span class="line"></span><br><span class="line"># freq of each cluster</span><br><span class="line">table(pam_out$clustering)</span><br><span class="line"></span><br><span class="line"># visualize</span><br><span class="line">fviz_cluster(pam_out, data &#x3D; dat1,</span><br><span class="line">             ellipse.type&#x3D;&quot;convex&quot;, </span><br><span class="line">             repel &#x3D; TRUE)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/" data-id="ckklvd2kk000em8uecjqd2tqz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "머신러닝 기법과 R 프로그래밍 2: ⅩⅢ. 군집분석",
+        "image": "https://ne-choi.github.io",
+        "keywords": "Postech k-인접기법 판별분석",
+        "genre": "Study Postech ML",
+        "datePublished": "2020-12-21",
+        "dateCreated": "2020-12-21",
+        "dateModified": "2021-02-01",
+        "url": "https://ne-choi.github.io//2020/12/21/Study/Postech/머신러닝R/ⅩⅢ_군집분석/",
+        "description": "
+POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  
+
+ⅩⅢ. 군집분석1. 군집분석과 유사성 척도군집분석
+군집분석은 비지도학습(Unsupervised Learning)
+
+주어진 데이터(X 변수들)의 속성으로 군집화
+계층형 군집 분석
+k-means
+
+
+
+
+유사한 속성을 가진 객체를 군집(cluster)으로 묶는 데이터 마이",
+        "wordCount": 1180
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/12/22/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A3_%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99%EA%B3%BC_%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            머신러닝 기법과 R 프로그래밍 2: ⅩⅣ. 연관규칙과 로지스틱회귀분석
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">머신러닝 기법과 R 프로그래밍 1: Ⅹ. k-인접기법과 판별분석</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/14/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A7_%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅷ. 회귀분석을 이용한 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-14T00:00:00.000Z" itemprop="datePublished">2021-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/13/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A6_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C%EC%99%80_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅵ. 현업 데이터 특성과 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-13T00:00:00.000Z" itemprop="datePublished">2021-01-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/12/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A5_%ED%98%84%EC%97%85_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%8A%B9%EC%84%B1%EA%B3%BC_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅵ. 현업 데이터 특성과 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-12T00:00:00.000Z" itemprop="datePublished">2021-01-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/11/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A4_%ED%86%B5%EA%B3%84%EA%B2%80%EC%A0%95%EB%B0%A9%EB%B2%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅴ. 통계검정방법</a></p>
+                            <p class="item-date"><time datetime="2021-01-11T00:00:00.000Z" itemprop="datePublished">2021-01-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/07/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A3_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D%EC%97%90%EC%84%9C_%ED%99%95%EB%A5%A0%EA%B3%BC_%EB%B6%84%ED%8F%AC/" class="title">데이터사이언스를 위한 통계학입문 1: Ⅳ. 빅데이터 분석에서 확률과 분포</a></p>
+                            <p class="item-date"><time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

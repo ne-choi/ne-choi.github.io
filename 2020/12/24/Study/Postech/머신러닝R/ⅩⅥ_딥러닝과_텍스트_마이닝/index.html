@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>머신러닝 기법과 R 프로그래밍 2: ⅩⅥ. 딥러닝과 텍스트 마이닝 | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Postech,딥러닝,텍스트마이닝" />
+    
+    <meta name="description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅥ. 딥러닝과 텍스트 마이닝1. Neural NetworksConcepts 인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나 컴퓨터">
+<meta property="og:type" content="article">
+<meta property="og:title" content="머신러닝 기법과 R 프로그래밍 2: ⅩⅥ. 딥러닝과 텍스트 마이닝">
+<meta property="og:url" content="https://ne-choi.github.io/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅥ. 딥러닝과 텍스트 마이닝1. Neural NetworksConcepts 인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나 컴퓨터">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-24T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-01T00:52:03.208Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech">
+<meta property="article:tag" content="딥러닝">
+<meta property="article:tag" content="텍스트마이닝">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-187747665-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/feed.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Contest/">Contest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Kaggle/">Kaggle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Postech/">Postech</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/Programming/">Programming</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/">Postech</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/ML/">ML</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Study/Postech/머신러닝R/ⅩⅥ_딥러닝과_텍스트_마이닝" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        머신러닝 기법과 R 프로그래밍 2: ⅩⅥ. 딥러닝과 텍스트 마이닝
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="article-date">
+       <time datetime="2020-12-24T00:00:00.000Z" itemprop="datePublished">2020-12-24</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/" class="article-date">
+     <time datetime="2021-02-01T00:52:03.208Z" itemprop="dateModified">2021-02-01</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Postech/" rel="tag">Postech</a>, <a class="tag-link-link" href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" rel="tag">딥러닝</a>, <a class="tag-link-link" href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" rel="tag">텍스트마이닝</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  </li>
+</ul>
+<h1 id="ⅩⅥ-딥러닝과-텍스트-마이닝"><a href="#ⅩⅥ-딥러닝과-텍스트-마이닝" class="headerlink" title="ⅩⅥ. 딥러닝과 텍스트 마이닝"></a>ⅩⅥ. 딥러닝과 텍스트 마이닝</h1><h2 id="1-Neural-Networks"><a href="#1-Neural-Networks" class="headerlink" title="1. Neural Networks"></a>1. Neural Networks</h2><h3 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h3><ul>
+<li>인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나</li>
+<li>컴퓨터 비전, 자연어 처리, 음석 인식 등 영역에서 사용</li>
+<li>AI ⊂ Machine Learning ⊂ Neural Network  </li>
+</ul>
+<ul>
+<li><strong>신경망 모델(Neural Network)</strong><ul>
+<li>Perceptron을 한 단위로 하는 네트워크를 구축하여, 인간의 신경세포(Neuron)와 유사한 기능을 하도록 제안</li>
+</ul>
+</li>
+</ul>
+<h3 id="Perceptron-Single-Layer"><a href="#Perceptron-Single-Layer" class="headerlink" title="Perceptron - Single Layer"></a>Perceptron - Single Layer</h3><ul>
+<li>하나의 Perceptron은 단순히 다수의 입력과 가중치의 선형 결합을 계산하는 역할을 수행</li>
+<li>Activation 함수에 따라 선형결합으로 생성되는 출력값이 결정<ul>
+<li>Binary Threshold</li>
+<li>Sigmoid</li>
+<li>ReLU(Rectified Linear Unit)</li>
+<li>tanh</li>
+</ul>
+</li>
+</ul>
+<h3 id="Multi-layer-perceptron"><a href="#Multi-layer-perceptron" class="headerlink" title="Multi-layer perceptron"></a>Multi-layer perceptron</h3><ul>
+<li><p>Perceptron으로 구성된 Single Layer들이 Multi-layer를 만듦</p>
+<ul>
+<li>Input layer와 Output layer 사이에는 Hidden layer가 존재하여 Non-linear transformation 수행</li>
+</ul>
+</li>
+<li><p>Output layer에서 Softmax 함수를 통해 가장 큰 값을 손쉽게 알 수 있음</p>
+<ul>
+<li>Exponential 함수로 항상 양수 결과치가 도출되고 이를 통해 확률값을 도출</li>
+</ul>
+</li>
+</ul>
+<h3 id="Neural-Network-수행"><a href="#Neural-Network-수행" class="headerlink" title="Neural Network 수행"></a>Neural Network 수행</h3><ul>
+<li>mxnet 패키지는 R4.0 버전 이후부터 실행 불가</li>
+<li>R 3.6.2버전 설치해서 실행 필요<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># require mxnet</span><br><span class="line">install.packages(&quot;https:&#x2F;&#x2F;github.com&#x2F;jeremiedb&#x2F;mxnet_winbin&#x2F;raw&#x2F;master&#x2F;mxnet.zip&quot;,repos &#x3D; NULL)</span><br><span class="line">library(mxnet)</span><br><span class="line"></span><br><span class="line"># If you have Error message &quot;no package called XML or DiagrmmeR&quot;, then install</span><br><span class="line">install.packages(&quot;XML&quot;)</span><br><span class="line">install.packages(&quot;DiagrammeR&quot;)</span><br><span class="line">#library(XML)</span><br><span class="line">#library(DiagrammeR)</span><br><span class="line"></span><br><span class="line">#devtools::install_github(&quot;rich-iannone&#x2F;DiagrammeR&quot;)</span><br><span class="line"></span><br><span class="line">#install.packages(&#39;devtools&#39;)</span><br><span class="line">#library(devtools)</span><br></pre></td></tr></table></figure></li>
+<li>데이터 불러오기<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">iris&lt;-read.csv(&quot;data&#x2F;week16_1&#x2F;iris.csv&quot;)</span><br><span class="line">attach(iris)</span><br><span class="line"></span><br><span class="line"># change to numeric from character variable : Species</span><br><span class="line">iris[,5] &#x3D; as.numeric(iris[,5])-1</span><br><span class="line">table(Species)</span><br><span class="line"># check the data</span><br><span class="line">head(iris, n&#x3D;10)</span><br></pre></td></tr></table></figure></li>
+<li>학습데이터와 검증데이터<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># split train &amp; test dataset</span><br><span class="line"># training (n&#x3D;100)&#x2F; test data(n&#x3D;50) </span><br><span class="line">set.seed(1000,sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">N&lt;-nrow(iris)</span><br><span class="line">tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"></span><br><span class="line"># split train data and test data</span><br><span class="line">train&lt;-data.matrix(iris[tr.idx,])</span><br><span class="line">test&lt;-data.matrix(iris[-tr.idx,])</span><br><span class="line"></span><br><span class="line"># feature &amp; Labels</span><br><span class="line"># 객체별 Feature와 Label로 분리</span><br><span class="line"># Label은 5번째 열에 위치</span><br><span class="line">train_feature&lt;-train[,-5]</span><br><span class="line">trainLabels&lt;-train[,5]</span><br><span class="line">test_feature&lt;-test[,-5]</span><br><span class="line">testLabels &lt;-test[,5]</span><br></pre></td></tr></table></figure></li>
+<li>Hidden Layer 구성<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Build nn model</span><br><span class="line"># first layers</span><br><span class="line">require(mxnet)</span><br><span class="line">my_input &#x3D; mx.symbol.Variable(&#39;data&#39;)</span><br><span class="line">fc1 &#x3D; mx.symbol.FullyConnected(data&#x3D;my_input, num.hidden &#x3D; 200, name&#x3D;&#39;fc1&#39;) # 200개의 뉴런 형성</span><br><span class="line">relu1 &#x3D; mx.symbol.Activation(data&#x3D;fc1, act.type&#x3D;&#39;relu&#39;, name&#x3D;&#39;relu1&#39;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># second layers</span><br><span class="line">fc2 &#x3D; mx.symbol.FullyConnected(data&#x3D;relu1, num.hidden &#x3D; 100, name&#x3D;&#39;fc2&#39;) # 100개의 뉴런 형성</span><br><span class="line">relu2 &#x3D; mx.symbol.Activation(data&#x3D;fc2, act.type&#x3D;&#39;relu&#39;, name&#x3D;&#39;relu2&#39;)</span><br></pre></td></tr></table></figure></li>
+<li>Output Layer 구성<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># third layers</span><br><span class="line">fc3 &#x3D; mx.symbol.FullyConnected(data&#x3D;relu2, num.hidden &#x3D; 3, name&#x3D;&#39;fc3&#39;) # 3개로 분류(0,1,2)해야 하므로 3개의 Output 뉴런 생성</span><br><span class="line"></span><br><span class="line"># softmax</span><br><span class="line">softmax &#x3D; mx.symbol.SoftmaxOutput(data&#x3D;fc3, name&#x3D;&#39;sm&#39;)</span><br><span class="line"># sofrmax 결과를 통해 가장 큰 값 선택</span><br></pre></td></tr></table></figure></li>
+<li>모델 학습<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># training</span><br><span class="line">mx.set.seed(123, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">device &lt;- mx.cpu()</span><br><span class="line">model &lt;- mx.model.FeedForward.create(softmax,</span><br><span class="line">                                     optimizer &#x3D; &quot;sgd&quot;, # Stochastic Gradient Descent</span><br><span class="line">                                     array.batch.size&#x3D;10, # 총 10개 그룹</span><br><span class="line">                                     num.round &#x3D; 500, learning.rate&#x3D;0.1,</span><br><span class="line">                                     X&#x3D;train_feature, y&#x3D;trainLabels, ctx&#x3D;device,</span><br><span class="line">                                     eval.metric &#x3D; mx.metric.accuracy,</span><br><span class="line">                                     array.layout &#x3D; &quot;rowmajor&quot;,</span><br><span class="line">                                     epoch.end.callback&#x3D;mx.callback.log.train.metric(100))</span><br><span class="line">graph.viz(model$symbol)</span><br></pre></td></tr></table></figure></li>
+<li>모델 테스트<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># testing</span><br><span class="line">predict_probs &lt;- predict(model, test_feature, array.layout &#x3D; &quot;rowmajor&quot;)</span><br><span class="line">predicted_labels &lt;- max.col(t(predict_probs)) - 1</span><br><span class="line">table(testLabels, predicted_labels)</span><br><span class="line">sum(diag(table(testLabels, predicted_labels)))&#x2F;length(predicted_labels)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-Convolutional-Neural-Networks"><a href="#2-Convolutional-Neural-Networks" class="headerlink" title="2. Convolutional Neural Networks"></a>2. Convolutional Neural Networks</h2><h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
+<li>신경망 모델(Neural Net)<ul>
+<li>입력값으로 객체의 특성(feature)을 받고, 출력된 값과 실제 값을 비교하는 과정을 거침(지도학습; Supervised Learning)</li>
+<li>하나의 이미지는 수많은 픽셀들이 모여 형성하며, 특정 색에 해당하는 특정 값을 가짐<ul>
+<li>이미지의 모든 픽셀값을 입력값으로 갖는 신경망 모델을 만들 수 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Intuitions"><a href="#Intuitions" class="headerlink" title="Intuitions"></a>Intuitions</h3><ul>
+<li><p>고해상도 이미지의 경우 특성 feature 수가 너무 많아짐</p>
+<ul>
+<li>모든 뉴런이 모든 픽셀과 연결(fully connected)되어 있을 경우, 모델 학습에 큰 어려움이 있음</li>
+<li>각 뉴런들이 이미지의 일부 특성 feature에만 연결될 수 있는 구조가 더 더 적합함</li>
+<li>Convolution operation을 통해 구현 가능</li>
+</ul>
+</li>
+<li><p>Convolutional Neural Network</p>
+<ul>
+<li>Feed forward Network: x<del>i</del>^n^을 구함<ul>
+<li>Convilution</li>
+<li>Max Pooling</li>
+<li>Activation function</li>
+</ul>
+</li>
+<li>Backpropagation: Error 최소화</li>
+</ul>
+</li>
+</ul>
+<h3 id="Concolution-Operation"><a href="#Concolution-Operation" class="headerlink" title="Concolution Operation"></a>Concolution Operation</h3><ul>
+<li>임의의 값으로 설정된 filter가 전체 이미지 중 일부의 선형 결합을 계산<ul>
+<li>각각 결괏값은 하나의 Neuron이 되며, filter는 해당 Neuron의 가중치과 됨</li>
+<li>결괏값의 사이즈를 정하기 위해서는 Stride, Padding, Depth 고려 필요<ul>
+<li>Stride: filter를 몇 칸 이동할지 결정</li>
+<li>Padding: input 주변에 0으로 padding을 삽입</li>
+<li>Depth number of filter: 3차원상의 neuron의 깊이를 결정</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Pooling"><a href="#Pooling" class="headerlink" title="Pooling"></a>Pooling</h3><ul>
+<li>Convolutional Layer 사이에 Pooling Layer를 넣는 방법이 많이 사용됨<ul>
+<li>추출한 이미지에서 지역적인 부분 특징만 뽑아 다음 layer로 넘겨줌</li>
+<li>이를 통해 ① 가중치의 수를 줄일 수 있으며, ② 과적합(overfitting)을 방지할 수 있음</li>
+<li>대표적으로 가장 큰 값(Local Maxima)만을 뽑아내는 Max Pooling이 많이 사용됨</li>
+</ul>
+</li>
+</ul>
+<h3 id="MNIST"><a href="#MNIST" class="headerlink" title="MNIST"></a>MNIST</h3><ul>
+<li>Modified National Institute of Standards and Technology</li>
+<li>손으로 쓴 숫자를 인식하기 위해 사용되는 데이터<ul>
+<li>28x28 pixel(784)의 흑백 이미지(0-255)들이 있음</li>
+<li>0부터 9까지 총 70,000개의 손글씨 이미지가 있음</li>
+</ul>
+</li>
+</ul>
+<h3 id="CNN-in-R"><a href="#CNN-in-R" class="headerlink" title="CNN in R"></a>CNN in R</h3><ul>
+<li>신경망 모델 생성을 위한 패키지: mxnet<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># Load MNIST mn1</span><br><span class="line"># 28*28, 1 channel images</span><br><span class="line">mn1 &lt;- read.csv(&quot;mini_mnist.csv&quot;)</span><br><span class="line">set.seed(123,sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">N&lt;-nrow(mn1)</span><br><span class="line">tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"></span><br><span class="line"># split train data and test data</span><br><span class="line">train_data&lt;-data.matrix(mn1[tr.idx,])</span><br><span class="line">test_data&lt;-data.matrix(mn1[-tr.idx,])</span><br><span class="line"></span><br><span class="line"># 0과 1 사이에 분포하도록 Nomalized(0: 검정색 &#x2F; 255: 흰색)</span><br><span class="line">test&lt;-t(test_data[,-1]&#x2F;255)</span><br><span class="line">features&lt;-t(train_data[,-1]&#x2F;255)</span><br><span class="line">labels&lt;-train_data[,1]</span><br><span class="line"></span><br><span class="line"># data preprocession</span><br><span class="line">features_array &lt;- features</span><br><span class="line"># 입력 데이터의 차원을 설정(픽셀*객체 개수)</span><br><span class="line"># ncol(features): 학습 데이터 수(866)</span><br><span class="line">dim(features_array) &lt;- c(28,28,1,ncol(features))</span><br><span class="line">test_array &lt;- test</span><br><span class="line">dim(test_array) &lt;- c(28,28,1,ncol(test))</span><br><span class="line"></span><br><span class="line">ncol(features)</span><br><span class="line">table(labels)</span><br></pre></td></tr></table></figure></li>
+<li>Convolutional Layer 구성<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"># Build cnn model</span><br><span class="line"># first conv layers</span><br><span class="line">my_input &#x3D; mx.symbol.Variable(&#39;data&#39;)</span><br><span class="line">conv1 &#x3D; mx.symbol.Convolution(data&#x3D;my_input, kernel&#x3D;c(4,4), stride&#x3D;c(2,2), pad&#x3D;c(1,1), num.filter &#x3D; 20, name&#x3D;&#39;conv1&#39;)</span><br><span class="line">relu1 &#x3D; mx.symbol.Activation(data&#x3D;conv1, act.type&#x3D;&#39;relu&#39;, name&#x3D;&#39;relu1&#39;)</span><br><span class="line">mp1 &#x3D; mx.symbol.Pooling(data&#x3D;relu1, kernel&#x3D;c(2,2), stride&#x3D;c(2,2), pool.type&#x3D;&#39;max&#39;, name&#x3D;&#39;pool1&#39;)</span><br><span class="line"></span><br><span class="line"># second conv layers</span><br><span class="line">conv2 &#x3D; mx.symbol.Convolution(data&#x3D;mp1, kernel&#x3D;c(3,3), stride&#x3D;c(2,2), pad&#x3D;c(1,1), num.filter &#x3D; 40, name&#x3D;&#39;conv2&#39;)</span><br><span class="line">relu2 &#x3D; mx.symbol.Activation(data&#x3D;conv2, act.type&#x3D;&#39;relu&#39;, name&#x3D;&#39;relu2&#39;)</span><br><span class="line">mp2 &#x3D; mx.symbol.Pooling(data&#x3D;relu2, kernel&#x3D;c(2,2), stride&#x3D;c(2,2), pool.type&#x3D;&#39;max&#39;, name&#x3D;&#39;pool2&#39;)</span><br><span class="line"></span><br><span class="line"># fully connected</span><br><span class="line">fc1 &#x3D; mx.symbol.FullyConnected(data&#x3D;mp2, num.hidden &#x3D; 1000, name&#x3D;&#39;fc1&#39;)</span><br><span class="line">relu3 &#x3D; mx.symbol.Activation(data&#x3D;fc1, act.type&#x3D;&#39;relu&#39;, name&#x3D;&#39;relu3&#39;)</span><br><span class="line">fc2 &#x3D; mx.symbol.FullyConnected(data&#x3D;relu3, num.hidden &#x3D; 3, name&#x3D;&#39;fc2&#39;)</span><br><span class="line"></span><br><span class="line"># softmax</span><br><span class="line">sm &#x3D; mx.symbol.SoftmaxOutput(data&#x3D;fc2, name&#x3D;&#39;sm&#39;)</span><br><span class="line"></span><br><span class="line"># training</span><br><span class="line">mx.set.seed(100,sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">device &lt;- mx.cpu()</span><br><span class="line">model &lt;- mx.model.FeedForward.create(symbol&#x3D;sm, </span><br><span class="line">                                     optimizer &#x3D; &quot;sgd&quot;,</span><br><span class="line">                                     array.batch.size&#x3D;30,</span><br><span class="line">                                     num.round &#x3D; 70, learning.rate&#x3D;0.1,</span><br><span class="line">                                     X&#x3D;features_array, y&#x3D;labels, ctx&#x3D;device,</span><br><span class="line">                                     eval.metric &#x3D; mx.metric.accuracy,</span><br><span class="line">                                     epoch.end.callback&#x3D;mx.callback.log.train.metric(100))</span><br><span class="line">graph.viz(model$symbol)</span><br><span class="line"></span><br><span class="line"># test</span><br><span class="line">predict_probs &lt;- predict(model, test_array)</span><br><span class="line">predicted_labels &lt;- max.col(t(predict_probs)) - 1</span><br><span class="line">table(test_data[, 1], predicted_labels)</span><br><span class="line">sum(diag(table(test_data[, 1], predicted_labels)))&#x2F;length(predicted_labels)</span><br></pre></td></tr></table></figure></li>
+<li>네트워크 시각화 함수: graph.viz(model$symbol)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graph.viz(model$symbol)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-텍스트-마이닝"><a href="#3-텍스트-마이닝" class="headerlink" title="3. 텍스트 마이닝"></a>3. 텍스트 마이닝</h2><h3 id="텍스트-마이닝이란"><a href="#텍스트-마이닝이란" class="headerlink" title="텍스트 마이닝이란?"></a>텍스트 마이닝이란?</h3><ul>
+<li>텍스트마이닝(Text mining)<ul>
+<li>웹페이지, 이메일, 소셜네트워크 기록 등 전자문서 파일로부터 특정 연관성(동시적으로 빈도 높은 단어 추출)을 분석하는 방법</li>
+<li>다양한 방식의 알고리즘을 이용해 대용량의 텍스트로부터 트렌드와 관심어를 찾아내는 기법으로 사용</li>
+</ul>
+</li>
+</ul>
+<h3 id="텍스트-마이닝-필요-패키지"><a href="#텍스트-마이닝-필요-패키지" class="headerlink" title="텍스트 마이닝 필요 패키지"></a>텍스트 마이닝 필요 패키지</h3><ul>
+<li>Natural language processing<ul>
+<li>install.packages(‘NLP’)</li>
+</ul>
+</li>
+<li>text mining package<ul>
+<li>install.packages(‘tm’)</li>
+</ul>
+</li>
+<li>visualizing<ul>
+<li>install.packages(‘wordcloud’)</li>
+</ul>
+</li>
+<li>color displaying<ul>
+<li>install.packages(‘RColorBrewer’)</li>
+</ul>
+</li>
+<li>Korean processing<ul>
+<li>install.packages(‘KoNLP’)</li>
+</ul>
+</li>
+<li>import twitter data<ul>
+<li>install.packages(‘twitteR’)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># set library (set in order)</span><br><span class="line">library(NLP)</span><br><span class="line">library(tm)</span><br><span class="line">library(RColorBrewer)</span><br><span class="line">library(wordcloud)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>사용 데이터: tm에 포함된 crude<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 20 new articles from Reuter- 21578 data set</span><br><span class="line">data(crude)</span><br><span class="line"># To know abour crude data</span><br><span class="line">help(crude)</span><br></pre></td></tr></table></figure>
+<h3 id="텍스트-마이닝-함수"><a href="#텍스트-마이닝-함수" class="headerlink" title="텍스트 마이닝- 함수"></a>텍스트 마이닝- 함수</h3></li>
+</ul>
+<p>함수|설명 및 예제코드<br>|—|—|<br>str(x[[1]])|데이터 구조 정보(첫 번째 파일 구조) / str(crude[[1]])<br>content(x[[1]])|문서 내용(첫 번째 분서 내용)<br>meta(X)|메타정보(x에 기록된 저자, 날짜, id 등 정보) / meta(ctude[[1]])<br>inspect(X)|코퍼스, 텍스트, 문서행렬 등 정보 제공 / data(crude), inspect(crude[1:3]), inspect(crude[[1]]), tdm &lt;- TermDocumentMatrix(crude), inspect(tdm)<br>lapply(x, content)|파일 내용을 보여줌 / lapply(crude, content)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># information about the first file in crude data</span><br><span class="line">str(crude[[1]])</span><br><span class="line">content(crude[[1]])</span><br><span class="line">meta(crude[[1]])</span><br><span class="line">lapply(crude, content)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># inspect function</span><br><span class="line">inspect(crude[1:3]) </span><br><span class="line">inspect(crude[[1]]) </span><br></pre></td></tr></table></figure>
+<h3 id="텍스트-마이닝-전처리-함수"><a href="#텍스트-마이닝-전처리-함수" class="headerlink" title="텍스트 마이닝- 전처리 함수"></a>텍스트 마이닝- 전처리 함수</h3><p>함수|설명<br>|—|—|<br>tm_map(x, removePunctuation)|문장부호 제거(. , “” ‘’)<br>tm_map(x, stripWhitespace)|공백문자 제거<br>tm_map(x, removeNumbers)|숫자 제거</p>
+<h3 id="텍스트-마이닝-실습"><a href="#텍스트-마이닝-실습" class="headerlink" title="텍스트 마이닝 실습"></a>텍스트 마이닝 실습</h3><ul>
+<li><p>문장부호 없애기: tm_map(x, removePunctuation)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 1. remove punctuation in documnet</span><br><span class="line">crude&lt;-tm_map(crude, removePunctuation)</span><br><span class="line">content(crude[[1]])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>숫자 제거: tm_map(x, removeNumbers)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 2. remove numbers</span><br><span class="line">crude&lt;-tm_map(crude, removeNumbers)</span><br><span class="line">content(crude[[1]])</span><br></pre></td></tr></table></figure></li>
+<li><p>스톱워즈 제거: 언어별로 다르며 별도 지정 가능</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 3. remove stopwords</span><br><span class="line">crude&lt;-tm_map(crude, function(x) removeWords(x,stopwords()))</span><br><span class="line">content(crude[[1]])</span><br></pre></td></tr></table></figure></li>
+<li><p>참고: 스톱워즈 리스트</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stopwords() #stopwords(&quot;en&quot;) 174개, stopwords(&quot;SMART&quot;)&quot; 517개</span><br></pre></td></tr></table></figure></li>
+<li><p>문서 행렬 구성: TermDocumentMatrix(문서이름)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 4. contruct term-doucument matrix </span><br><span class="line">tdm&lt;-TermDocumentMatrix(crude)</span><br><span class="line">inspect(tdm)</span><br></pre></td></tr></table></figure></li>
+<li><p>결과 해석</p>
+<ul>
+<li>DOCS 144: crude 문서 번호 144에 나오는 단어들의 빈도</li>
+</ul>
+</li>
+<li><p>문서 행렬을 행렬로 변환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 5. read tdm as a matrix</span><br><span class="line">m&lt;-as.matrix(tdm)</span><br><span class="line">head(m)</span><br></pre></td></tr></table></figure></li>
+<li><p>단어의 빈도 순서로 정렬</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 6. sorting in high frequency to low frequency </span><br><span class="line">v&lt;-sort(rowSums(m), decreasing&#x3D;TRUE)</span><br><span class="line">v[1:10] # 가장 높은 것부터 [1:10]번까지</span><br></pre></td></tr></table></figure></li>
+<li><p>텍스트마이닝 수행</p>
+<ul>
+<li>단어 이름과 빈도를 결합한 행렬을 데이터 프레임으로 저장</li>
+<li>crude 관련 기사 파일로부터 962개 단어를 분류해 빈도 계산<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 7. match with freq and word names</span><br><span class="line">d&lt;-data.frame(word&#x3D;names(v), freq&#x3D;v)</span><br><span class="line">head(d) #가장 빈도 높은 단어 6개</span><br><span class="line">d[957:962, ] #가장 빈도 낮은 단어 6개</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>텍스트마이닝 결과 그리기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 7. plot a word cloud</span><br><span class="line">wordcloud(d$word, d$freq)</span><br><span class="line"># help(wordcloud)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 7-1. Now lets try it with frequent words plotted first</span><br><span class="line"># par(mfrow &#x3D; c(1, 1),mar&#x3D;c(1,2,3,1))</span><br><span class="line">wordcloud(d$word,d$freq,c(8,.3),2,,FALSE,.1)</span><br><span class="line"></span><br><span class="line"># 7-2. color plot with frequent words plotted first</span><br><span class="line">pal &lt;- brewer.pal(9,&quot;BuGn&quot;)</span><br><span class="line">pal &lt;- pal[-(1:4)]</span><br><span class="line">wordcloud(d$word,d$freq,c(8,.3),2,,FALSE,,.15,pal)</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/" data-id="ckklvd2kq000om8ue0342dprb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "머신러닝 기법과 R 프로그래밍 2: ⅩⅥ. 딥러닝과 텍스트 마이닝",
+        "image": "https://ne-choi.github.io",
+        "keywords": "Postech 딥러닝 텍스트마이닝",
+        "genre": "Study Postech ML",
+        "datePublished": "2020-12-24",
+        "dateCreated": "2020-12-24",
+        "dateModified": "2021-02-01",
+        "url": "https://ne-choi.github.io//2020/12/24/Study/Postech/머신러닝R/ⅩⅥ_딥러닝과_텍스트_마이닝/",
+        "description": "setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)
+
+POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  
+
+ⅩⅥ. 딥러닝과 텍스트 마이닝1. Neural NetworksConcepts
+인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나
+컴퓨터",
+        "wordCount": 1984
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/01/04/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A0_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B3%BC%ED%95%99%EA%B3%BC_%ED%86%B5%EA%B3%84/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            데이터사이언스를 위한 통계학입문 1: Ⅰ. 데이터과학과 통계
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/12/23/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A4_%EC%A3%BC%EC%84%B1%EB%B6%84_%EB%B6%84%EC%84%9D%EA%B3%BC_%EB%B6%80%EB%B6%84_%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">머신러닝 기법과 R 프로그래밍 2: ⅩⅤ. 주성분 분석과 부분 최소자승법</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/14/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A7_%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅷ. 회귀분석을 이용한 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-14T00:00:00.000Z" itemprop="datePublished">2021-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/13/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A6_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C%EC%99%80_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅵ. 현업 데이터 특성과 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-13T00:00:00.000Z" itemprop="datePublished">2021-01-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/12/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A5_%ED%98%84%EC%97%85_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%8A%B9%EC%84%B1%EA%B3%BC_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅵ. 현업 데이터 특성과 예측모형</a></p>
+                            <p class="item-date"><time datetime="2021-01-12T00:00:00.000Z" itemprop="datePublished">2021-01-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/11/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A4_%ED%86%B5%EA%B3%84%EA%B2%80%EC%A0%95%EB%B0%A9%EB%B2%95/" class="title">데이터사이언스를 위한 통계학입문 2: Ⅴ. 통계검정방법</a></p>
+                            <p class="item-date"><time datetime="2021-01-11T00:00:00.000Z" itemprop="datePublished">2021-01-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Postech/">Postech</a></p>
+                            <p class="item-title"><a href="/2021/01/07/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A3_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D%EC%97%90%EC%84%9C_%ED%99%95%EB%A5%A0%EA%B3%BC_%EB%B6%84%ED%8F%AC/" class="title">데이터사이언스를 위한 통계학입문 1: Ⅳ. 빅데이터 분석에서 확률과 분포</a></p>
+                            <p class="item-date"><time datetime="2021-01-07T00:00:00.000Z" itemprop="datePublished">2021-01-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
