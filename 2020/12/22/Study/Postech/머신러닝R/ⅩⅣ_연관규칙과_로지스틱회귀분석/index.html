@@ -12,15 +12,15 @@
     
     <meta name="keywords" content="Postech,연관규칙,로지스틱회귀분석" />
     
-    <meta name="description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅣ. 연관규칙과 로지스틱회귀분석1. 연관규칙 분석 Ⅰ연관규칙 연관규칙(Association Rule)  대용량 데이터베이스의 트랜잭션에서 빈번하게 발생하는 패턴을 발견">
+    <meta name="description" content="POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅣ. 연관규칙과 로지스틱회귀분석1. 연관규칙 분석 Ⅰ연관규칙 연관규칙(Association Rule)  대용량 데이터베이스의 트랜잭션에서 빈번하게 발생하는 패턴을 발견 거래 간의 상호 관련성을 분석   연관규칙 예시  신발을 구매하는 고객의 10%는 양말을 동시에">
 <meta property="og:type" content="article">
 <meta property="og:title" content="머신러닝 기법과 R 프로그래밍 2: ⅩⅣ. 연관규칙과 로지스틱회귀분석">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/22/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A3_%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99%EA%B3%BC_%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅣ. 연관규칙과 로지스틱회귀분석1. 연관규칙 분석 Ⅰ연관규칙 연관규칙(Association Rule)  대용량 데이터베이스의 트랜잭션에서 빈번하게 발생하는 패턴을 발견">
+<meta property="og:description" content="POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅣ. 연관규칙과 로지스틱회귀분석1. 연관규칙 분석 Ⅰ연관규칙 연관규칙(Association Rule)  대용량 데이터베이스의 트랜잭션에서 빈번하게 발생하는 패턴을 발견 거래 간의 상호 관련성을 분석   연관규칙 예시  신발을 구매하는 고객의 10%는 양말을 동시에">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-22T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-01T00:51:32.417Z">
+<meta property="article:modified_time" content="2021-02-01T01:09:49.587Z">
 <meta property="article:author" content="Naeun Choi">
 <meta property="article:tag" content="Postech">
 <meta property="article:tag" content="연관규칙">
@@ -195,7 +195,7 @@ ga('send', 'pageview');
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2020/12/22/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A3_%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99%EA%B3%BC_%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" class="article-date">
-     <time datetime="2021-02-01T00:51:32.417Z" itemprop="dateModified">2021-02-01</time>
+     <time datetime="2021-02-01T01:09:49.587Z" itemprop="dateModified">2021-02-01</time>
   </a>
 </div>
 
@@ -222,8 +222,7 @@ ga('send', 'pageview');
 
             
 
-            <figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
-<ul>
+            <ul>
 <li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  </li>
 </ul>
 <h1 id="ⅩⅣ-연관규칙과-로지스틱회귀분석"><a href="#ⅩⅣ-연관규칙과-로지스틱회귀분석" class="headerlink" title="ⅩⅣ. 연관규칙과 로지스틱회귀분석"></a>ⅩⅣ. 연관규칙과 로지스틱회귀분석</h1><h2 id="1-연관규칙-분석-Ⅰ"><a href="#1-연관규칙-분석-Ⅰ" class="headerlink" title="1. 연관규칙 분석 Ⅰ"></a>1. 연관규칙 분석 Ⅰ</h2><h3 id="연관규칙"><a href="#연관규칙" class="headerlink" title="연관규칙"></a>연관규칙</h3><ul>
@@ -466,7 +465,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/22/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A3_%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99%EA%B3%BC_%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" data-id="ckklvd2ko000lm8ue5u8bh3mz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/22/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A3_%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99%EA%B3%BC_%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" data-id="ckklvm3eo0012v8uehpjn4gb9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -544,15 +543,20 @@ ga('send', 'pageview');
         "dateCreated": "2020-12-22",
         "dateModified": "2021-02-01",
         "url": "https://ne-choi.github.io//2020/12/22/Study/Postech/머신러닝R/ⅩⅣ_연관규칙과_로지스틱회귀분석/",
-        "description": "setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)
-
+        "description": "
 POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  
 
 ⅩⅣ. 연관규칙과 로지스틱회귀분석1. 연관규칙 분석 Ⅰ연관규칙
 연관규칙(Association Rule)
 
-대용량 데이터베이스의 트랜잭션에서 빈번하게 발생하는 패턴을 발견",
-        "wordCount": 1212
+대용량 데이터베이스의 트랜잭션에서 빈번하게 발생하는 패턴을 발견
+거래 간의 상호 관련성을 분석
+
+
+연관규칙 예시
+
+신발을 구매하는 고객의 10%는 양말을 동시에 ",
+        "wordCount": 1203
     }
 </script>
 
