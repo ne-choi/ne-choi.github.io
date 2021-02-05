@@ -3,6 +3,55 @@
 
 
     <url>
+        <loc>https://ne-choi.github.io/tags/Python/</loc>
+        <lastmod>2021-02-05T13:35:56.634Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/Postech/</loc>
+        <lastmod>2021-02-05T13:35:56.634Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%ED%95%A8%EC%88%98/</loc>
+        <lastmod>2021-02-05T13:35:40.483Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%ED%8A%9C%ED%94%8C/</loc>
+        <lastmod>2021-02-05T13:35:29.742Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/</loc>
+        <lastmod>2021-02-05T13:35:29.742Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/while%EB%AC%B8/</loc>
+        <lastmod>2021-02-05T13:34:14.569Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/tags/for%EB%AC%B8/</loc>
+        <lastmod>2021-02-05T13:34:14.569Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://ne-choi.github.io/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/</loc>
         <lastmod>2021-02-03T07:19:49.307Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -11,13 +60,6 @@
 
     <url>
         <loc>https://ne-choi.github.io/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/</loc>
-        <lastmod>2021-02-03T07:19:49.307Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/tags/Postech/</loc>
         <lastmod>2021-02-03T07:19:49.307Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

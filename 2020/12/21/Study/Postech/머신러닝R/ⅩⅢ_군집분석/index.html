@@ -266,7 +266,17 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># similarity measures - distance</span><br><span class="line">m1 &lt;- matrix(</span><br><span class="line">  c(150, 50, 130, 55, 80, 80, 100, 85, 95, 91),</span><br><span class="line">  nrow &#x3D; 5,</span><br><span class="line">  ncol &#x3D; 2,</span><br><span class="line">  byrow &#x3D; TRUE)</span><br><span class="line"># m1 is a matrix</span><br><span class="line">m1</span><br><span class="line">is.data.frame(m1)</span><br><span class="line"># m1 is defined as dataframe</span><br><span class="line">m1&lt;-as.data.frame(m1)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># similarity measures - distance
+m1 &lt;- matrix(
+  c(150, 50, 130, 55, 80, 80, 100, 85, 95, 91),
+  nrow &#x3D; 5,
+  ncol &#x3D; 2,
+  byrow &#x3D; TRUE)
+# m1 is a matrix
+m1
+is.data.frame(m1)
+# m1 is defined as dataframe
+m1&lt;-as.data.frame(m1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p><strong>거리척도</strong></p>
 <ul>
@@ -280,12 +290,16 @@ ga('send', 'pageview');
 </ul>
 <ol>
 <li>유클리디안 거리(Euclidean distance)<ul>
-<li>Distance = $\sqrt{(x<del>12</del> - x<del>11</del>)^2^ + (x<del>21</del> - x<del>22</del>)^2^}$<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 1. Euclidean distance</span><br><span class="line">D1 &lt;- dist(m1)</span><br><span class="line">D1</span><br></pre></td></tr></table></figure></li>
+<li>Distance = $\sqrt{(x<del>12</del> - x<del>11</del>)^2^ + (x<del>21</del> - x<del>22</del>)^2^}$<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 1. Euclidean distance
+D1 &lt;- dist(m1)
+D1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li>민코프스키 거리(Minkowski distance<ul>
 <li>유클리디안 거리의 일반화된 방법(m = 2일 때는 유클리디안 거리와 동일)</li>
-<li>d(x<del>i</del>,x<del>j</del>) = (시그마|X<del>ki</del> - X<del>kj</del>|^m^)^1/m^<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 2. Minkowski distance</span><br><span class="line">D2&lt;- dist(m1, method&#x3D;&quot;minkowski&quot;, p&#x3D;3) </span><br><span class="line">D2</span><br></pre></td></tr></table></figure></li>
+<li>d(x<del>i</del>,x<del>j</del>) = (시그마|X<del>ki</del> - X<del>kj</del>|^m^)^1/m^<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2. Minkowski distance
+D2&lt;- dist(m1, method&#x3D;&quot;minkowski&quot;, p&#x3D;3) 
+D2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li>마할라노비스 거리(Mahalanobis distance)<ul>
@@ -297,14 +311,28 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h3 id="상관계수를-유사성-척도로-사용"><a href="#상관계수를-유사성-척도로-사용" class="headerlink" title="상관계수를 유사성 척도로 사용"></a>상관계수를 유사성 척도로 사용</h3><ul>
-<li>상관관계가 클수록 두 객체의 유사성이 크다고 추정<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 3. correlation coefficient</span><br><span class="line">m2 &lt;- matrix(</span><br><span class="line">  c(20, 6, 14, 30, 7, 15, 46, 4, 2),</span><br><span class="line">  nrow &#x3D; 3,</span><br><span class="line">  ncol &#x3D; 3,</span><br><span class="line">  byrow &#x3D; TRUE,</span><br><span class="line">  dimnames &#x3D; list(</span><br><span class="line">     c(&quot;obs1&quot;, &quot;obs2&quot;, &quot;obs3&quot;),</span><br><span class="line">     c(&quot;age&quot;, &quot;exp&quot;, &quot;time&quot;)))</span><br><span class="line">m2</span><br></pre></td></tr></table></figure></li>
-<li>상관계쑤 측정<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># correlation between Obs1~Obs2</span><br><span class="line">cor(m2[1,],m2[2,]) </span><br><span class="line"># correlation between Obs1~Obs3</span><br><span class="line">cor(m2[1,],m2[3,])</span><br></pre></td></tr></table></figure></li>
+<li>상관관계가 클수록 두 객체의 유사성이 크다고 추정<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 3. correlation coefficient
+m2 &lt;- matrix(
+  c(20, 6, 14, 30, 7, 15, 46, 4, 2),
+  nrow &#x3D; 3,
+  ncol &#x3D; 3,
+  byrow &#x3D; TRUE,
+  dimnames &#x3D; list(
+     c(&quot;obs1&quot;, &quot;obs2&quot;, &quot;obs3&quot;),
+     c(&quot;age&quot;, &quot;exp&quot;, &quot;time&quot;)))
+m2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>상관계쑤 측정<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># correlation between Obs1~Obs2
+cor(m2[1,],m2[2,]) 
+# correlation between Obs1~Obs3
+cor(m2[1,],m2[3,])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>객체 1(obs1)과 객체 2의 유사성이, 객체 1과 객체 3 간 유사성보다 큼(0.9674 &gt; 0.7984)</li>
 </ul>
 </li>
 </ul>
-<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 2. Minkowski distance</span><br><span class="line">D4&lt;- dist(m1, method&#x3D;&quot;manhattan&quot;) </span><br><span class="line">D4</span><br></pre></td></tr></table></figure>
+<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2. Minkowski distance
+D4&lt;- dist(m1, method&#x3D;&quot;manhattan&quot;) 
+D4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-계층적-군집분석"><a href="#2-계층적-군집분석" class="headerlink" title="2. 계층적 군집분석"></a>2. 계층적 군집분석</h2><h3 id="계측적-군집분석"><a href="#계측적-군집분석" class="headerlink" title="계측적 군집분석"></a>계측적 군집분석</h3><ul>
 <li>사전에 군집 수 k를 정하지 않고 단계적으로 군집 형성<ul>
 <li>유사한 객체를 군집으로 묶고, 그 군집을 기반으로 유사한 군집을 새로운 군집으로 묶어가면서 군집을 계층적으로 구성</li>
@@ -346,13 +374,28 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># needs &quot;lattice&quot;, &quot;DAAG&quot; package for loading dataset</span><br><span class="line"># install.packages(&quot;lattice&quot;)</span><br><span class="line"># install.packages(&quot;DAAG&quot;)</span><br><span class="line">library(lattice)</span><br><span class="line">library(DAAG)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># needs &quot;lattice&quot;, &quot;DAAG&quot; package for loading dataset
+# install.packages(&quot;lattice&quot;)
+# install.packages(&quot;DAAG&quot;)
+library(lattice)
+library(DAAG)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>데이터 불러오기(DAAG 패키지 안에 든 데이터)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">wages1833&lt;-read.csv(file&#x3D;&quot;data&#x2F;week13_2&#x2F;wages1833.csv&quot;)</span><br><span class="line">head(wages1833)</span><br><span class="line"></span><br><span class="line"># remove observations with the missing values</span><br><span class="line">dat1&lt;-wages1833</span><br><span class="line">dat1&lt;-na.omit(dat1)</span><br><span class="line">str(dat1)</span><br></pre></td></tr></table></figure></li>
-<li>계층적 군집분석: hclust(거리계산결과, method=” “)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># calculate distance between each nodes</span><br><span class="line">dist_data&lt;-dist(dat1)</span><br></pre></td></tr></table></figure></li>
+<li>데이터 불러오기(DAAG 패키지 안에 든 데이터)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
+wages1833&lt;-read.csv(file&#x3D;&quot;data&#x2F;week13_2&#x2F;wages1833.csv&quot;)
+head(wages1833)
+
+# remove observations with the missing values
+dat1&lt;-wages1833
+dat1&lt;-na.omit(dat1)
+str(dat1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>계층적 군집분석: hclust(거리계산결과, method=” “)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># calculate distance between each nodes
+dist_data&lt;-dist(dat1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
 <ol>
-<li>완전연결법 적용 결과(거리 계산은 유클리디안)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># prepare hierarchical cluster</span><br><span class="line"># complete linkage method</span><br><span class="line">hc_a &lt;- hclust(dist_data, method &#x3D; &quot;complete&quot;)</span><br><span class="line">plot(hc_a, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;complete&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>완전연결법 적용 결과(거리 계산은 유클리디안)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># prepare hierarchical cluster
+# complete linkage method
+hc_a &lt;- hclust(dist_data, method &#x3D; &quot;complete&quot;)
+plot(hc_a, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;complete&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <ul>
 <li>설명<ul>
@@ -361,7 +404,10 @@ ga('send', 'pageview');
 </li>
 </ul>
 <ol start="2">
-<li>평균연결법 적용 결과(거리 계산은 유클리디안)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># average linkage method</span><br><span class="line"># check how different from complete method</span><br><span class="line">hc_c &lt;- hclust(dist_data, method &#x3D; &quot;average&quot;)</span><br><span class="line">plot(hc_c, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;average&quot;)</span><br></pre></td></tr></table></figure>
+<li>평균연결법 적용 결과(거리 계산은 유클리디안)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># average linkage method
+# check how different from complete method
+hc_c &lt;- hclust(dist_data, method &#x3D; &quot;average&quot;)
+plot(hc_c, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;average&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ol>
@@ -370,7 +416,9 @@ ga('send', 'pageview');
 <li>많이 사용됨  </li>
 </ul>
 <ol start="3">
-<li>와드방법을 적용한 결과(거리계산은 유클리디안)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Ward&#39;s method</span><br><span class="line">hc_c &lt;- hclust(dist_data, method &#x3D; &quot;ward.D2&quot;)</span><br><span class="line">plot(hc_c, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;Ward&#39;s method&quot;)</span><br></pre></td></tr></table></figure>
+<li>와드방법을 적용한 결과(거리계산은 유클리디안)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Ward&#39;s method
+hc_c &lt;- hclust(dist_data, method &#x3D; &quot;ward.D2&quot;)
+plot(hc_c, hang &#x3D; -1, cex&#x3D;0.7, main &#x3D; &quot;Ward&#39;s method&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ol>
@@ -402,12 +450,22 @@ ga('send', 'pageview');
 </ul>
 <h3 id="k-means-군집분석-예제"><a href="#k-means-군집분석-예제" class="headerlink" title="k-means 군집분석 예제"></a>k-means 군집분석 예제</h3><ul>
 <li><p>데이터 불러오기</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">wages1833&lt;-read.csv(file&#x3D;&quot;data&#x2F;week13_3&#x2F;wages1833.csv&quot;)</span><br><span class="line">head(wages1833)</span><br><span class="line"></span><br><span class="line"># preprocessing</span><br><span class="line">dat1&lt;-wages1833</span><br><span class="line">dat1&lt;-na.omit(dat1)</span><br><span class="line">head(dat1, n&#x3D;5)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
+wages1833&lt;-read.csv(file&#x3D;&quot;data&#x2F;week13_3&#x2F;wages1833.csv&quot;)
+head(wages1833)
+
+# preprocessing
+dat1&lt;-wages1833
+dat1&lt;-na.omit(dat1)
+head(dat1, n&#x3D;5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>군집수 k결정</p>
 <ul>
 <li>최적 군집수에 관한 시각화</li>
 <li>최적값은 “silhouette(실루엣)”, “gap_stat”, “wss(그룹내합계제곱)”으로 산출</li>
-<li>그래프가 완만해지는 지점을 k의 값으로 추정<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># to choose the optimal k</span><br><span class="line"># install.packages(&quot;factoextra&quot;)</span><br><span class="line">library(factoextra)</span><br><span class="line">fviz_nbclust(dat1, kmeans, method &#x3D; &quot;wss&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>그래프가 완만해지는 지점을 k의 값으로 추정<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># to choose the optimal k
+# install.packages(&quot;factoextra&quot;)
+library(factoextra)
+fviz_nbclust(dat1, kmeans, method &#x3D; &quot;wss&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>결과 해석</p>
@@ -416,7 +474,15 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>k-means (k=3)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># compute kmeans</span><br><span class="line">set.seed(123,sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">km &lt;- kmeans(dat1, 3, nstart &#x3D; 25) # random set의 수 (nstart)</span><br><span class="line">km</span><br><span class="line"></span><br><span class="line"># visualize</span><br><span class="line">fviz_cluster(km, data &#x3D; dat1, </span><br><span class="line">             ellipse.type&#x3D;&quot;convex&quot;, # Convex 모양으로 구역 표시</span><br><span class="line">             repel &#x3D; TRUE) # repel을 통해 관측치 표기</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># compute kmeans
+set.seed(123,sample.kind&#x3D;&quot;Rounding&quot;)
+km &lt;- kmeans(dat1, 3, nstart &#x3D; 25) # random set의 수 (nstart)
+km
+
+# visualize
+fviz_cluster(km, data &#x3D; dat1, 
+             ellipse.type&#x3D;&quot;convex&quot;, # Convex 모양으로 구역 표시
+             repel &#x3D; TRUE) # repel을 통해 관측치 표기<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="K-medoids-군집분석"><a href="#K-medoids-군집분석" class="headerlink" title="K-medoids 군집분석"></a>K-medoids 군집분석</h3></li>
 <li><p>K-medoids 군집분석은 각 군집의 대표 객체(medoid)를 고려</p>
 <ul>
@@ -429,7 +495,19 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>PAM 알고리즘 살펴보기</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># compute PAM</span><br><span class="line">library(&quot;cluster&quot;)</span><br><span class="line">pam_out &lt;- pam(dat1, 3)</span><br><span class="line">pam_out</span><br><span class="line"></span><br><span class="line"># freq of each cluster</span><br><span class="line">table(pam_out$clustering)</span><br><span class="line"></span><br><span class="line"># visualize</span><br><span class="line">fviz_cluster(pam_out, data &#x3D; dat1,</span><br><span class="line">             ellipse.type&#x3D;&quot;convex&quot;, </span><br><span class="line">             repel &#x3D; TRUE)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># compute PAM
+library(&quot;cluster&quot;)
+pam_out &lt;- pam(dat1, 3)
+pam_out
+
+# freq of each cluster
+table(pam_out$clustering)
+
+# visualize
+fviz_cluster(pam_out, data &#x3D; dat1,
+             ellipse.type&#x3D;&quot;convex&quot;, 
+             repel &#x3D; TRUE)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 
         </div>
@@ -438,7 +516,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/" data-id="ckknaf2ty000hh8uef27m5gcp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/" data-id="ckksc0xsf000onguegrmof57j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -530,7 +608,7 @@ k-means
 
 
 유사한 속성을 가진 객체를 군집(cluster)으로 묶는 데이터 마이",
-        "wordCount": 1180
+        "wordCount": 1024
     }
 </script>
 
@@ -609,7 +687,7 @@ k-means
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -619,7 +697,7 @@ k-means
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -629,7 +707,7 @@ k-means
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for%EB%AC%B8/" style="font-size: 10px;">for문</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while%EB%AC%B8/" style="font-size: 10px;">while문</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">리스트</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8A%9C%ED%94%8C/" style="font-size: 10px;">튜플</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%95%A8%EC%88%98/" style="font-size: 10px;">함수</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
         </div>
     </div>
 

@@ -245,19 +245,44 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3 id="lattice-설치와-활용"><a href="#lattice-설치와-활용" class="headerlink" title="lattice 설치와 활용"></a>lattice 설치와 활용</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&#39;lattice&#39;)</span><br><span class="line">library(lattice)</span><br><span class="line"></span><br><span class="line">ethanol&lt;-read.csv(&quot;week5_1&#x2F;ethanol.csv&quot;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># ethanol data in lattice</span><br><span class="line">help(&quot;ethanol&quot;)</span><br><span class="line"></span><br><span class="line">head(ethanol)</span><br><span class="line">dim(ethanol)</span><br><span class="line">str(ethanol)</span><br></pre></td></tr></table></figure>
+<h3 id="lattice-설치와-활용"><a href="#lattice-설치와-활용" class="headerlink" title="lattice 설치와 활용"></a>lattice 설치와 활용</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&#39;lattice&#39;)
+library(lattice)
+
+ethanol&lt;-read.csv(&quot;week5_1&#x2F;ethanol.csv&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># ethanol data in lattice
+help(&quot;ethanol&quot;)
+
+head(ethanol)
+dim(ethanol)
+str(ethanol)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>lattice 함수 xyplot을 이용한 그래프(기본 산점도와 동일)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># basic plot</span><br><span class="line">xyplot(NOx ~ E , data &#x3D; ethanol, main &#x3D; &quot;Single Panel by xyplot&quot;)</span><br></pre></td></tr></table></figure></li>
-<li>xyplot을 이용한 멀티패널 산점도: xyplot(y변수 ~ x변수|조건부변수, data=)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># multi panel graph</span><br><span class="line">xyplot(NOx ~ E | C , data &#x3D; ethanol, main &#x3D; &quot;NOx ~ E | C &quot;)</span><br></pre></td></tr></table></figure></li>
-<li>xyplot을 이용한 멀티패널 산점도: subset 데이터<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># multi panel graph for subset</span><br><span class="line">xyplot(NOx ~ E | C , data &#x3D; ethanol, subset &#x3D; C &gt; 8,</span><br><span class="line">       main &#x3D; &quot;NOx ~ E | C , data &#x3D; ethanol, subset &#x3D; C &gt; 8&quot;)</span><br></pre></td></tr></table></figure>
+<li>lattice 함수 xyplot을 이용한 그래프(기본 산점도와 동일)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># basic plot
+xyplot(NOx ~ E , data &#x3D; ethanol, main &#x3D; &quot;Single Panel by xyplot&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>xyplot을 이용한 멀티패널 산점도: xyplot(y변수 ~ x변수|조건부변수, data=)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># multi panel graph
+xyplot(NOx ~ E | C , data &#x3D; ethanol, main &#x3D; &quot;NOx ~ E | C &quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>xyplot을 이용한 멀티패널 산점도: subset 데이터<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># multi panel graph for subset
+xyplot(NOx ~ E | C , data &#x3D; ethanol, subset &#x3D; C &gt; 8,
+       main &#x3D; &quot;NOx ~ E | C , data &#x3D; ethanol, subset &#x3D; C &gt; 8&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
-<h2 id="2-R-그래픽-ggplot2의-활용"><a href="#2-R-그래픽-ggplot2의-활용" class="headerlink" title="2. R 그래픽: ggplot2의 활용"></a>2. R 그래픽: ggplot2의 활용</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">car&lt;-read.csv(&quot;week5_2&#x2F;autompg.csv&quot;)</span><br><span class="line">head(car)</span><br><span class="line">str(car)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># subset of car : cyl (4,6,8)</span><br><span class="line">car1&lt;-subset(car, cyl&#x3D;&#x3D;4 | cyl&#x3D;&#x3D;6 | cyl&#x3D;&#x3D;8)</span><br><span class="line">attach(car1)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 5-1 ggplot2 for scatterplot </span><br><span class="line"># Color and shape display by factor (categorical variable)</span><br><span class="line"># check the variable type(integer, numeric, factor) and define it</span><br><span class="line">str(car1)</span><br><span class="line">car1$cyl&lt;-as.factor(car1$cyl)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Now, you can draw one of plot using ggplot</span><br><span class="line">par(mfrow &#x3D; c(1, 1))</span><br><span class="line">ggplot(car1, aes(x&#x3D;wt, y&#x3D;disp, color&#x3D;cyl, shape&#x3D;cyl)) + </span><br><span class="line">  geom_point(size&#x3D;3, alpha&#x3D;0.6)</span><br></pre></td></tr></table></figure>
+<h2 id="2-R-그래픽-ggplot2의-활용"><a href="#2-R-그래픽-ggplot2의-활용" class="headerlink" title="2. R 그래픽: ggplot2의 활용"></a>2. R 그래픽: ggplot2의 활용</h2><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">library(ggplot2)
+
+car&lt;-read.csv(&quot;week5_2&#x2F;autompg.csv&quot;)
+head(car)
+str(car)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># subset of car : cyl (4,6,8)
+car1&lt;-subset(car, cyl&#x3D;&#x3D;4 | cyl&#x3D;&#x3D;6 | cyl&#x3D;&#x3D;8)
+attach(car1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 5-1 ggplot2 for scatterplot 
+# Color and shape display by factor (categorical variable)
+# check the variable type(integer, numeric, factor) and define it
+str(car1)
+car1$cyl&lt;-as.factor(car1$cyl)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Now, you can draw one of plot using ggplot
+par(mfrow &#x3D; c(1, 1))
+ggplot(car1, aes(x&#x3D;wt, y&#x3D;disp, color&#x3D;cyl, shape&#x3D;cyl)) + 
+  geom_point(size&#x3D;3, alpha&#x3D;0.6)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>객체 해석<ul>
 <li>ggplot 함수에 데이터는 car1을 이용하고, x축에는 wt(차의 무게)를, y축에는 disp(배기량)의 산점도를 그리고, 점 색상은 cyl(실린더 수)로 표현한다.</li>
@@ -266,7 +291,9 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h3 id="그래프-그리기"><a href="#그래프-그리기" class="headerlink" title="그래프 그리기"></a>그래프 그리기</h3><ul>
-<li>mpg 크기를 표시한 그래프<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># mapping (continuous variable : mpg) on the scatterplot for wt and disp</span><br><span class="line">ggplot(car1, aes(x&#x3D;wt, y&#x3D;disp, color&#x3D;mpg, size&#x3D;mpg)) + </span><br><span class="line">  geom_point(alpha&#x3D;0.6)</span><br></pre></td></tr></table></figure></li>
+<li>mpg 크기를 표시한 그래프<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># mapping (continuous variable : mpg) on the scatterplot for wt and disp
+ggplot(car1, aes(x&#x3D;wt, y&#x3D;disp, color&#x3D;mpg, size&#x3D;mpg)) + 
+  geom_point(alpha&#x3D;0.6)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li>그래프 설명<ul>
 <li>차 무게와 배기량의 산점도에 연비의 높고 낮음을 원의 크기와 색으로 표시한 그래프</li>
 </ul>
@@ -292,27 +319,65 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h3 id="ggplot2-그래프"><a href="#ggplot2-그래프" class="headerlink" title="ggplot2 그래프"></a>ggplot2 그래프</h3><ul>
-<li>geom_bar를 이용한 단계별 그래프 설명<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">p1 &lt;- ggplot(car1, aes(factor(cyl), fill &#x3D; factor(cyl)))</span><br><span class="line">p1</span><br><span class="line"></span><br><span class="line"># barplot define</span><br><span class="line">p1 &lt;- p1 + geom_bar(width&#x3D;5)</span><br><span class="line">p1</span><br><span class="line"></span><br><span class="line"># output by origin(1,2,3)</span><br><span class="line">p1 &lt;- p1 + facet_grid(. ~ origin)</span><br><span class="line">p1</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 위와 똑같은 그래프 그리는 법</span><br><span class="line">ggplot(car1, aes(factor(cyl), fill&#x3D;factor(cyl)))+ geom_bar(width&#x3D;.5)+ facet_grid(. ~ origin)</span><br></pre></td></tr></table></figure></li>
-<li>geom_bar를 이용한 누적 막대그래프<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># geom_bar : asethetic mapping (4,6,8 cyl)</span><br><span class="line">p &lt;- ggplot(data&#x3D;car1, aes(factor(cyl)))</span><br><span class="line">p + geom_bar(aes(fill&#x3D;factor(origin)), colour&#x3D;&quot;black&quot;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># for Korean title</span><br><span class="line"># 5-2-2 : geom_bar : asethetic mapping (4,6,8 cyl)</span><br><span class="line">par(family&#x3D;&quot;나눔고딕&quot;, cex&#x3D;1.3)</span><br><span class="line">p &lt;- ggplot(data&#x3D;car1, aes(factor(cyl)))</span><br><span class="line">p &lt;- p + geom_bar(aes(fill&#x3D;factor(origin)), colour&#x3D;&quot;black&quot;)</span><br><span class="line">p &lt;- p+ggtitle(&quot;자동차 데이터&quot;)</span><br><span class="line">p</span><br></pre></td></tr></table></figure></li>
-<li>ggplot 산점도에 회귀선 넣기<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># step1 : # Use hollow circles</span><br><span class="line">ggplot(car1, aes(x&#x3D;wt, y&#x3D;mpg))+geom_point(shape&#x3D;1)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># by default includes 95% confidence region</span><br><span class="line">ggplot(car1, aes(x&#x3D;wt, y&#x3D;mpg)) + geom_point(shape&#x3D;1) + geom_smooth(method&#x3D;lm)  </span><br></pre></td></tr></table></figure></li>
+<li>geom_bar를 이용한 단계별 그래프 설명<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">p1 &lt;- ggplot(car1, aes(factor(cyl), fill &#x3D; factor(cyl)))
+p1
+
+# barplot define
+p1 &lt;- p1 + geom_bar(width&#x3D;5)
+p1
+
+# output by origin(1,2,3)
+p1 &lt;- p1 + facet_grid(. ~ origin)
+p1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 위와 똑같은 그래프 그리는 법
+ggplot(car1, aes(factor(cyl), fill&#x3D;factor(cyl)))+ geom_bar(width&#x3D;.5)+ facet_grid(. ~ origin)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>geom_bar를 이용한 누적 막대그래프<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># geom_bar : asethetic mapping (4,6,8 cyl)
+p &lt;- ggplot(data&#x3D;car1, aes(factor(cyl)))
+p + geom_bar(aes(fill&#x3D;factor(origin)), colour&#x3D;&quot;black&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># for Korean title
+# 5-2-2 : geom_bar : asethetic mapping (4,6,8 cyl)
+par(family&#x3D;&quot;나눔고딕&quot;, cex&#x3D;1.3)
+p &lt;- ggplot(data&#x3D;car1, aes(factor(cyl)))
+p &lt;- p + geom_bar(aes(fill&#x3D;factor(origin)), colour&#x3D;&quot;black&quot;)
+p &lt;- p+ggtitle(&quot;자동차 데이터&quot;)
+p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>ggplot 산점도에 회귀선 넣기<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># step1 : # Use hollow circles
+ggplot(car1, aes(x&#x3D;wt, y&#x3D;mpg))+geom_point(shape&#x3D;1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># by default includes 95% confidence region
+ggplot(car1, aes(x&#x3D;wt, y&#x3D;mpg)) + geom_point(shape&#x3D;1) + geom_smooth(method&#x3D;lm)  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li>lm: linear model 선형 회귀식<ul>
 <li>선형식의 95% 신뢰구간이 dafault로 그려짐</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># excluding 95% confidence region</span><br><span class="line">ggplot(car1, aes(x&#x3D;wt, y&#x3D;mpg)) +</span><br><span class="line">  geom_point(shape&#x3D;1) +  geom_smooth(method&#x3D;lm, se&#x3D;FALSE) </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># excluding 95% confidence region
+ggplot(car1, aes(x&#x3D;wt, y&#x3D;mpg)) +
+  geom_point(shape&#x3D;1) +  geom_smooth(method&#x3D;lm, se&#x3D;FALSE) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>ggplot 산점도에 비선형회귀식 적합<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># geom_smooth() use loess </span><br><span class="line">ggplot(car1, aes(x&#x3D;wt, y&#x3D;mpg)) + geom_point(shape&#x3D;1) + geom_smooth(method&#x3D;&quot;loess&quot;) </span><br></pre></td></tr></table></figure></li>
+<li>ggplot 산점도에 비선형회귀식 적합<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># geom_smooth() use loess 
+ggplot(car1, aes(x&#x3D;wt, y&#x3D;mpg)) + geom_point(shape&#x3D;1) + geom_smooth(method&#x3D;&quot;loess&quot;) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li>loess: local polynomial regression</li>
 </ul>
-<h2 id="3-R-그래픽-3D와-히트맵"><a href="#3-R-그래픽-3D와-히트맵" class="headerlink" title="3. R 그래픽: 3D와 히트맵"></a>3. R 그래픽: 3D와 히트맵</h2><h3 id="3D-scatterplot"><a href="#3D-scatterplot" class="headerlink" title="3D scatterplot"></a>3D scatterplot</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">library(scatterplot3d)</span><br><span class="line"></span><br><span class="line"># 5-3 3D scatterplot with data trees</span><br><span class="line">data(trees)</span><br><span class="line"></span><br><span class="line">par(mfrow &#x3D; c(1, 1))</span><br><span class="line">s3d &lt;- scatterplot3d(trees, type&#x3D;&quot;h&quot;, highlight.3d&#x3D;TRUE,</span><br><span class="line">                     angle&#x3D;55, scale.y&#x3D;0.7, pch&#x3D;16, main&#x3D;&quot;scatterplot3d - 5&quot;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># to know about data &quot;trees&quot;</span><br><span class="line">help(trees)</span><br><span class="line">head(trees)</span><br><span class="line"></span><br><span class="line"># export to csv file</span><br><span class="line">write.csv(trees,file&#x3D;&quot;trees.csv&quot;, row.names &#x3D; FALSE)</span><br></pre></td></tr></table></figure>
+<h2 id="3-R-그래픽-3D와-히트맵"><a href="#3-R-그래픽-3D와-히트맵" class="headerlink" title="3. R 그래픽: 3D와 히트맵"></a>3. R 그래픽: 3D와 히트맵</h2><h3 id="3D-scatterplot"><a href="#3D-scatterplot" class="headerlink" title="3D scatterplot"></a>3D scatterplot</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">library(scatterplot3d)
+
+# 5-3 3D scatterplot with data trees
+data(trees)
+
+par(mfrow &#x3D; c(1, 1))
+s3d &lt;- scatterplot3d(trees, type&#x3D;&quot;h&quot;, highlight.3d&#x3D;TRUE,
+                     angle&#x3D;55, scale.y&#x3D;0.7, pch&#x3D;16, main&#x3D;&quot;scatterplot3d - 5&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># to know about data &quot;trees&quot;
+help(trees)
+head(trees)
+
+# export to csv file
+write.csv(trees,file&#x3D;&quot;trees.csv&quot;, row.names &#x3D; FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>3D 산점도에 선형식 추가</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">attach(trees)</span><br><span class="line"></span><br><span class="line">my.lm &lt;- lm(Volume ~ Girth + Height)</span><br><span class="line">s3d$plane3d(my.lm, lty.box &#x3D; &quot;solid&quot;)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">attach(trees)
+
+my.lm &lt;- lm(Volume ~ Girth + Height)
+s3d$plane3d(my.lm, lty.box &#x3D; &quot;solid&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="히트맵-heatmap"><a href="#히트맵-heatmap" class="headerlink" title="히트맵(heatmap)"></a>히트맵(heatmap)</h3></li>
 <li><p>히트맵: 통계치를 구한 후, 크기에 비례하여 그라데이션 색상으로 표현한 시각화 기법  </p>
 <ul>
@@ -320,29 +385,105 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>Autompg 데이터의 상관계수를 이용한 히트맵</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">attach(car)</span><br><span class="line"></span><br><span class="line">par(mfrow&#x3D;c(1, 1))</span><br><span class="line">cor.x&lt;-cor(car[,1:6])</span><br><span class="line">heatmap(cor.x, symm&#x3D;TRUE)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">attach(car)
+
+par(mfrow&#x3D;c(1, 1))
+cor.x&lt;-cor(car[,1:6])
+heatmap(cor.x, symm&#x3D;TRUE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>데이터: USArrest</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Crime rate by US State (1973)</span><br><span class="line"># Arrests per 100,000 residents for assault, murder, and rape </span><br><span class="line"># in each of the 50 US states in 1973</span><br><span class="line"></span><br><span class="line">help(USArrests)</span><br><span class="line">head(USArrests)</span><br><span class="line"></span><br><span class="line">cor(USArrests)</span><br><span class="line">round(cor(USArrests), 2)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># subset excluding 3th variable UrbanPop</span><br><span class="line"># matrix format for heatmap</span><br><span class="line">x  &lt;- as.matrix(USArrests[, -3])</span><br><span class="line">result &lt;- heatmap(x, scale&#x3D;&quot;column&quot;, Colv&#x3D;NA, cexCol&#x3D;1,</span><br><span class="line">                  main&#x3D;&quot;Violent Crime Rates by US State (1973)&quot;)</span><br><span class="line"></span><br><span class="line">row.names(USArrests)[result$rowInd[1:10]]</span><br><span class="line">row.names(USArrests)[result$rowInd[35:50]]</span><br></pre></td></tr></table></figure>
-<h2 id="4-R-그래픽-공간지도-분석"><a href="#4-R-그래픽-공간지도-분석" class="headerlink" title="4. R 그래픽: 공간지도 분석"></a>4. R 그래픽: 공간지도 분석</h2><h3 id="추가-패키지-설치"><a href="#추가-패키지-설치" class="headerlink" title="추가 패키지 설치"></a>추가 패키지 설치</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># maps : world map</span><br><span class="line">install.packages(&quot;maps&quot;)</span><br><span class="line">library(maps)</span><br><span class="line"></span><br><span class="line"># mapdata : more world map </span><br><span class="line">install.packages(&quot;mapdata&quot;)</span><br><span class="line">library(mapdata)</span><br><span class="line"></span><br><span class="line"># mapdata : latitude and longitude</span><br><span class="line">install.packages(&quot;mapproj&quot;)</span><br><span class="line">library(mapproj)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Crime rate by US State (1973)
+# Arrests per 100,000 residents for assault, murder, and rape 
+# in each of the 50 US states in 1973
+
+help(USArrests)
+head(USArrests)
+
+cor(USArrests)
+round(cor(USArrests), 2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># subset excluding 3th variable UrbanPop
+# matrix format for heatmap
+x  &lt;- as.matrix(USArrests[, -3])
+result &lt;- heatmap(x, scale&#x3D;&quot;column&quot;, Colv&#x3D;NA, cexCol&#x3D;1,
+                  main&#x3D;&quot;Violent Crime Rates by US State (1973)&quot;)
+
+row.names(USArrests)[result$rowInd[1:10]]
+row.names(USArrests)[result$rowInd[35:50]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-R-그래픽-공간지도-분석"><a href="#4-R-그래픽-공간지도-분석" class="headerlink" title="4. R 그래픽: 공간지도 분석"></a>4. R 그래픽: 공간지도 분석</h2><h3 id="추가-패키지-설치"><a href="#추가-패키지-설치" class="headerlink" title="추가 패키지 설치"></a>추가 패키지 설치</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># maps : world map
+install.packages(&quot;maps&quot;)
+library(maps)
+
+# mapdata : more world map 
+install.packages(&quot;mapdata&quot;)
+library(mapdata)
+
+# mapdata : latitude and longitude
+install.packages(&quot;mapproj&quot;)
+library(mapproj)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>나라 지도 추출</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 1. Korea Map </span><br><span class="line">par(mfrow &#x3D; c(1, 2),mar&#x3D;c(2,2,2,2))</span><br><span class="line">map(database &#x3D; &#39;world&#39;, region &#x3D; c(&#39;South Korea&#39;,&#39;North Korea&#39;), col&#x3D;&#39;green&#39;, fill &#x3D; TRUE)</span><br><span class="line">title(&quot;Korea&quot;)</span><br><span class="line"># using mapdata package</span><br><span class="line">map(database &#x3D; &#39;worldHires&#39;, region &#x3D; c(&#39;South Korea&#39;,&#39;North Korea&#39;), col&#x3D;&#39;green&#39;, fill &#x3D; TRUE)</span><br><span class="line">title(&quot;Korea&quot;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 2.Italy </span><br><span class="line">par(mfrow &#x3D; c(1, 1),mar&#x3D;c(2,2,2,2))</span><br><span class="line">map(database &#x3D; &#39;world&#39;, region &#x3D; c(&#39;Italy&#39;), col&#x3D;&#39;coral&#39;, fill &#x3D; TRUE)</span><br><span class="line">title(&quot;Italy&quot;)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 1. Korea Map 
+par(mfrow &#x3D; c(1, 2),mar&#x3D;c(2,2,2,2))
+map(database &#x3D; &#39;world&#39;, region &#x3D; c(&#39;South Korea&#39;,&#39;North Korea&#39;), col&#x3D;&#39;green&#39;, fill &#x3D; TRUE)
+title(&quot;Korea&quot;)
+# using mapdata package
+map(database &#x3D; &#39;worldHires&#39;, region &#x3D; c(&#39;South Korea&#39;,&#39;North Korea&#39;), col&#x3D;&#39;green&#39;, fill &#x3D; TRUE)
+title(&quot;Korea&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2.Italy 
+par(mfrow &#x3D; c(1, 1),mar&#x3D;c(2,2,2,2))
+map(database &#x3D; &#39;world&#39;, region &#x3D; c(&#39;Italy&#39;), col&#x3D;&#39;coral&#39;, fill &#x3D; TRUE)
+title(&quot;Italy&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>위도, 경도 활용하여 독도 표시</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 3. Dokdo using mapproj package</span><br><span class="line">library(mapproj)</span><br><span class="line">par(mfrow &#x3D; c(1, 1),mar&#x3D;c(2,2,2,2))</span><br><span class="line">map(&#39;world&#39;, proj &#x3D; &#39;azequalarea&#39;, orient &#x3D; c(37.24223, 131.8643, 0))</span><br><span class="line">map.grid(col &#x3D; 2)</span><br><span class="line">points(mapproject(list(y &#x3D; 37.24223, x &#x3D; 131.8643)), col &#x3D; &quot;blue&quot;, pch &#x3D; &quot;x&quot;, cex &#x3D; 2)</span><br><span class="line">title(&quot;Dokdo&quot;)</span><br><span class="line"># for reading Korean : encoding to UTF-8 </span><br><span class="line"># file menu: Tools_global options_code_saving</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 3. Dokdo using mapproj package
+library(mapproj)
+par(mfrow &#x3D; c(1, 1),mar&#x3D;c(2,2,2,2))
+map(&#39;world&#39;, proj &#x3D; &#39;azequalarea&#39;, orient &#x3D; c(37.24223, 131.8643, 0))
+map.grid(col &#x3D; 2)
+points(mapproject(list(y &#x3D; 37.24223, x &#x3D; 131.8643)), col &#x3D; &quot;blue&quot;, pch &#x3D; &quot;x&quot;, cex &#x3D; 2)
+title(&quot;Dokdo&quot;)
+# for reading Korean : encoding to UTF-8 
+# file menu: Tools_global options_code_saving<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="공간지도분석-예제-1"><a href="#공간지도분석-예제-1" class="headerlink" title="공간지도분석 예제 1"></a>공간지도분석 예제 1</h3></li>
 <li><p>국내 공항 및 노선 현황</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 4. Airport &amp; route data (source : https:&#x2F;&#x2F;www.data.go.kr&#x2F;)</span><br><span class="line">airport&lt;-read.csv(&quot;week5_4&#x2F;airport.csv&quot;)</span><br><span class="line">route &#x3D; read.csv(&quot;week5_4&#x2F;route.csv&quot;)</span><br><span class="line">head(airport)</span><br><span class="line">head(route)</span><br><span class="line"></span><br><span class="line">head(route[order(route$id),])</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(dplyr)</span><br><span class="line"></span><br><span class="line"># Korea map (kr.map) - using dplyr</span><br><span class="line">world.map &lt;- map_data(&quot;world&quot;)</span><br><span class="line">kr.map &lt;- world.map %&gt;% filter(region &#x3D;&#x3D; &quot;South Korea&quot;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 5. Domestic airport location </span><br><span class="line">ggplot() + </span><br><span class="line">  geom_polygon(data&#x3D;kr.map, aes(x&#x3D;long, y&#x3D;lat, group&#x3D;group)) +</span><br><span class="line">  geom_label(data&#x3D;airport, aes(x &#x3D; lon, y &#x3D; lat, label&#x3D;iata)) +</span><br><span class="line">  labs(title &#x3D; &quot;south korea airports&quot;)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 4. Airport &amp; route data (source : https:&#x2F;&#x2F;www.data.go.kr&#x2F;)
+airport&lt;-read.csv(&quot;week5_4&#x2F;airport.csv&quot;)
+route &#x3D; read.csv(&quot;week5_4&#x2F;route.csv&quot;)
+head(airport)
+head(route)
+
+head(route[order(route$id),])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">library(dplyr)
+
+# Korea map (kr.map) - using dplyr
+world.map &lt;- map_data(&quot;world&quot;)
+kr.map &lt;- world.map %&gt;% filter(region &#x3D;&#x3D; &quot;South Korea&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 5. Domestic airport location 
+ggplot() + 
+  geom_polygon(data&#x3D;kr.map, aes(x&#x3D;long, y&#x3D;lat, group&#x3D;group)) +
+  geom_label(data&#x3D;airport, aes(x &#x3D; lon, y &#x3D; lat, label&#x3D;iata)) +
+  labs(title &#x3D; &quot;south korea airports&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>ggplot은 레이어를 추가하는 방식으로 그래픽을 구현함</p>
 </li>
 </ul>
 <h3 id="공간지도분석-예제-2"><a href="#공간지도분석-예제-2" class="headerlink" title="공간지도분석 예제 2"></a>공간지도분석 예제 2</h3><ul>
 <li>미국 해엉 데이터: 지도 데이터베이스와 행정자료 결합(미국 1973년 범죄수 지도)</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 6. Assault in US (1973)</span><br><span class="line">par(mfrow &#x3D; c(1, 1), mar&#x3D;c(1,1,1,1))</span><br><span class="line"># library(maps)</span><br><span class="line"># excluding Alaska, Hawaii </span><br><span class="line">sub.usa &lt;- subset(USArrests,!rownames(USArrests) %in% c(&quot;Alaska&quot;, &quot;Hawaii&quot;))</span><br><span class="line"># data with State name, Assult count</span><br><span class="line">usa.data &lt;- data.frame(states &#x3D; rownames(sub.usa), Assault &#x3D; sub.usa$Assault)</span><br><span class="line"># legend</span><br><span class="line">col.level &lt;- cut(sub.usa[, 2], c(0, 100, 150, 200, 250, 300, 350))</span><br><span class="line">legends &lt;- levels(col.level)</span><br><span class="line"># displaying color for the size  </span><br><span class="line">levels(col.level) &lt;- sort(heat.colors(6), decreasing &#x3D; TRUE)</span><br><span class="line">usa.data &lt;- data.frame(usa.data, col.level &#x3D; col.level)</span><br><span class="line"># Map </span><br><span class="line">map(&#39;state&#39;, region &#x3D; usa.data$states, fill &#x3D; TRUE, col &#x3D; as.character(usa.data$col.level))</span><br><span class="line">title(&quot;USA Assault map&quot;)</span><br><span class="line">legend(-77, 34, legends, fill &#x3D; sort(heat.colors(6), decreasing &#x3D; TRUE), cex &#x3D; 0.7)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 6. Assault in US (1973)
+par(mfrow &#x3D; c(1, 1), mar&#x3D;c(1,1,1,1))
+# library(maps)
+# excluding Alaska, Hawaii 
+sub.usa &lt;- subset(USArrests,!rownames(USArrests) %in% c(&quot;Alaska&quot;, &quot;Hawaii&quot;))
+# data with State name, Assult count
+usa.data &lt;- data.frame(states &#x3D; rownames(sub.usa), Assault &#x3D; sub.usa$Assault)
+# legend
+col.level &lt;- cut(sub.usa[, 2], c(0, 100, 150, 200, 250, 300, 350))
+legends &lt;- levels(col.level)
+# displaying color for the size  
+levels(col.level) &lt;- sort(heat.colors(6), decreasing &#x3D; TRUE)
+usa.data &lt;- data.frame(usa.data, col.level &#x3D; col.level)
+# Map 
+map(&#39;state&#39;, region &#x3D; usa.data$states, fill &#x3D; TRUE, col &#x3D; as.character(usa.data$col.level))
+title(&quot;USA Assault map&quot;)
+legend(-77, 34, legends, fill &#x3D; sort(heat.colors(6), decreasing &#x3D; TRUE), cex &#x3D; 0.7)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
         </div>
@@ -351,7 +492,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/07/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" data-id="ckknaf2u8000zh8uehhir1f1o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/07/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/" data-id="ckksc0xsn0016ngue931u83r2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -437,7 +578,7 @@ R 기본 그래픽스(Base program)
 Lattice 그래픽스: 직교형태의 멀티패널 툴
 ggplot2 그래픽 시스템: Hadley Wickham이 구현
 Grammar of Graphic 개념은 그래픽 ",
-        "wordCount": 1449
+        "wordCount": 1167
     }
 </script>
 
@@ -516,7 +657,7 @@ Grammar of Graphic 개념은 그래픽 ",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -526,7 +667,7 @@ Grammar of Graphic 개념은 그래픽 ",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -536,7 +677,7 @@ Grammar of Graphic 개념은 그래픽 ",
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for%EB%AC%B8/" style="font-size: 10px;">for문</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while%EB%AC%B8/" style="font-size: 10px;">while문</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">리스트</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8A%9C%ED%94%8C/" style="font-size: 10px;">튜플</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%95%A8%EC%88%98/" style="font-size: 10px;">함수</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
         </div>
     </div>
 

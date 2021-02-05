@@ -270,18 +270,45 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>kNN 수행을 위한 패키지 설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># packages</span><br><span class="line"># install.packages(&quot;class&quot;) #no weighted value knn</span><br><span class="line"># install.packages(&quot;gmodels&quot;) #검증에 사용되는 cross table을 위한 패키지</span><br><span class="line"># install.packages(&quot;scales&quot;) #for graph</span><br><span class="line">library(class)</span><br><span class="line">library(gmodels)</span><br><span class="line">library(scales)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># packages
+# install.packages(&quot;class&quot;) #no weighted value knn
+# install.packages(&quot;gmodels&quot;) #검증에 사용되는 cross table을 위한 패키지
+# install.packages(&quot;scales&quot;) #for graph
+library(class)
+library(gmodels)
+library(scales)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>train/test 데이터 분할(cross-validation)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">iris &lt;- read.csv(&quot;data&#x2F;week10_1&#x2F;iris.csv&quot;)</span><br><span class="line"># head(iris)</span><br><span class="line"># str(iris)</span><br><span class="line">attach(iris)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># training&#x2F; test data : n&#x3D;150</span><br><span class="line">set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">N&#x3D;nrow(iris)</span><br><span class="line">tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"></span><br><span class="line"># attributes in training and test</span><br><span class="line">iris.train&lt;-iris[tr.idx,-5]</span><br><span class="line">iris.test&lt;-iris[-tr.idx,-5]</span><br><span class="line"># target value in training and test</span><br><span class="line">trainLabels&lt;-iris[tr.idx,5]</span><br><span class="line">testLabels&lt;-iris[-tr.idx,5]</span><br><span class="line"></span><br><span class="line">train&lt;-iris[tr.idx,]</span><br><span class="line">test&lt;-iris[-tr.idx,]</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
+iris &lt;- read.csv(&quot;data&#x2F;week10_1&#x2F;iris.csv&quot;)
+# head(iris)
+# str(iris)
+attach(iris)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training&#x2F; test data : n&#x3D;150
+set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)
+N&#x3D;nrow(iris)
+tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
+
+# attributes in training and test
+iris.train&lt;-iris[tr.idx,-5]
+iris.test&lt;-iris[-tr.idx,-5]
+# target value in training and test
+trainLabels&lt;-iris[tr.idx,5]
+testLabels&lt;-iris[-tr.idx,5]
+
+train&lt;-iris[tr.idx,]
+test&lt;-iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>kNN 수행과 결과</p>
 <ul>
-<li>kNN 함수: knn(train=학습데이터, test=검증데이터, cl=타겟변수, k= )<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># knn (5-nearest neighbor)</span><br><span class="line">md1 &lt;- knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;5)</span><br><span class="line">md1</span><br></pre></td></tr></table></figure></li>
+<li>kNN 함수: knn(train=학습데이터, test=검증데이터, cl=타겟변수, k= )<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># knn (5-nearest neighbor)
+md1 &lt;- knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;5)
+md1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>kNN(k=5)의 결과: 정확도</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># accuracy of 5-nearest neighbor classification</span><br><span class="line">CrossTable(x&#x3D;testLabels,y&#x3D;md1, prop.chisq&#x3D;FALSE)</span><br><span class="line"># x: 타겟변수의 실제값, y: 타겟변수의 예측값</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of 5-nearest neighbor classification
+CrossTable(x&#x3D;testLabels,y&#x3D;md1, prop.chisq&#x3D;FALSE)
+# x: 타겟변수의 실제값, y: 타겟변수의 예측값<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>결과 해석</p>
 <ul>
 <li>정확도: 47/50 → 94%</li>
@@ -294,8 +321,23 @@ ga('send', 'pageview');
 <h2 id="2-k-인접기법-가중치"><a href="#2-k-인접기법-가중치" class="headerlink" title="2. k-인접기법: 가중치"></a>2. k-인접기법: 가중치</h2><h3 id="kNN에서-최적-k-탐색"><a href="#kNN에서-최적-k-탐색" class="headerlink" title="kNN에서 최적 k 탐색"></a>kNN에서 최적 k 탐색</h3><ul>
 <li>최적 k의 탐색: 1 to nrow(tran_data)/2 (여기서는 1 to 50)</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># optimal k selection (1 to n&#x2F;2)</span><br><span class="line">accuracy_k &lt;- NULL</span><br><span class="line"># try k&#x3D;1 to nrow(train)&#x2F;2, may use nrow(train)&#x2F;3(or 4,5) depending the size of n in train data</span><br><span class="line">nnum&lt;-nrow(iris.train)&#x2F;2</span><br><span class="line">for(kk in c(1:nnum))</span><br><span class="line">&#123;</span><br><span class="line">  set.seed(1234, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">  knn_k&lt;-knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;kk)</span><br><span class="line">  accuracy_k&lt;-c(accuracy_k,sum(knn_k&#x3D;&#x3D;testLabels)&#x2F;length(testLabels))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># plot for k&#x3D;(1 to n&#x2F;2) and accuracy</span><br><span class="line">test_k&lt;-data.frame(k&#x3D;c(1:nnum), accuracy&#x3D;accuracy_k[c(1:nnum)])</span><br><span class="line">plot(formula&#x3D;accuracy~k, data&#x3D;test_k,type&#x3D;&quot;o&quot;,ylim&#x3D;c(0.5,1), pch&#x3D;20, col&#x3D;3, main&#x3D;&quot;validation-optimal k&quot;)</span><br><span class="line">with(test_k,text(accuracy~k,labels &#x3D; k,pos&#x3D;1,cex&#x3D;0.7))</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># minimum k for the highest accuracy</span><br><span class="line">min(test_k[test_k$accuracy %in% max(accuracy_k),&quot;k&quot;])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># optimal k selection (1 to n&#x2F;2)
+accuracy_k &lt;- NULL
+# try k&#x3D;1 to nrow(train)&#x2F;2, may use nrow(train)&#x2F;3(or 4,5) depending the size of n in train data
+nnum&lt;-nrow(iris.train)&#x2F;2
+for(kk in c(1:nnum))
+&#123;
+  set.seed(1234, sample.kind&#x3D;&quot;Rounding&quot;)
+  knn_k&lt;-knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;kk)
+  accuracy_k&lt;-c(accuracy_k,sum(knn_k&#x3D;&#x3D;testLabels)&#x2F;length(testLabels))
+&#125;
+
+# plot for k&#x3D;(1 to n&#x2F;2) and accuracy
+test_k&lt;-data.frame(k&#x3D;c(1:nnum), accuracy&#x3D;accuracy_k[c(1:nnum)])
+plot(formula&#x3D;accuracy~k, data&#x3D;test_k,type&#x3D;&quot;o&quot;,ylim&#x3D;c(0.5,1), pch&#x3D;20, col&#x3D;3, main&#x3D;&quot;validation-optimal k&quot;)
+with(test_k,text(accuracy~k,labels &#x3D; k,pos&#x3D;1,cex&#x3D;0.7))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># minimum k for the highest accuracy
+min(test_k[test_k$accuracy %in% max(accuracy_k),&quot;k&quot;])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>결과 해석<ul>
 <li>k=7에서 정확도(.98)가 가장 높음</li>
@@ -303,7 +345,9 @@ ga('send', 'pageview');
 </li>
 </ul>
 <ul>
-<li>최종 kNN 모형 (k=7)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#k&#x3D;7 knn</span><br><span class="line">md1&lt;-knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;7)</span><br><span class="line">CrossTable(x&#x3D;testLabels,y&#x3D;md1, prop.chisq&#x3D;FALSE)</span><br></pre></td></tr></table></figure></li>
+<li>최종 kNN 모형 (k=7)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#k&#x3D;7 knn
+md1&lt;-knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;7)
+CrossTable(x&#x3D;testLabels,y&#x3D;md1, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>정확도: 49/50 → 98%</li>
 <li>versicolor를 virginica로 오분류 (1개)</li>
@@ -312,7 +356,22 @@ ga('send', 'pageview');
 </li>
 </ul>
 <ul>
-<li>kNN(k=7)의 결과: 그래픽<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># graphic display</span><br><span class="line">plot(formula&#x3D;Petal.Length ~ Petal.Width,</span><br><span class="line">     data&#x3D;iris.train,col&#x3D;alpha(c(&quot;purple&quot;,&quot;blue&quot;,&quot;green&quot;),0.7)[trainLabels],</span><br><span class="line">     main&#x3D;&quot;knn(k&#x3D;7)&quot;)</span><br><span class="line">points(formula &#x3D; Petal.Length~Petal.Width,</span><br><span class="line">       data&#x3D;iris.test,</span><br><span class="line">       pch &#x3D; 17,</span><br><span class="line">       cex&#x3D; 1.2,</span><br><span class="line">       col&#x3D;alpha(c(&quot;purple&quot;,&quot;blue&quot;,&quot;green&quot;),0.7)[md1]</span><br><span class="line">)</span><br><span class="line">legend(&quot;bottomright&quot;,</span><br><span class="line">       c(paste(&quot;train&quot;,levels(trainLabels)),paste(&quot;test&quot;,levels(testLabels))),</span><br><span class="line">       pch&#x3D;c(rep(1,3),rep(17,3)),</span><br><span class="line">       col&#x3D;c(rep(alpha(c(&quot;purple&quot;,&quot;blue&quot;,&quot;green&quot;),0.7),2)),</span><br><span class="line">       cex&#x3D;0.9</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+<li>kNN(k=7)의 결과: 그래픽<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># graphic display
+plot(formula&#x3D;Petal.Length ~ Petal.Width,
+     data&#x3D;iris.train,col&#x3D;alpha(c(&quot;purple&quot;,&quot;blue&quot;,&quot;green&quot;),0.7)[trainLabels],
+     main&#x3D;&quot;knn(k&#x3D;7)&quot;)
+points(formula &#x3D; Petal.Length~Petal.Width,
+       data&#x3D;iris.test,
+       pch &#x3D; 17,
+       cex&#x3D; 1.2,
+       col&#x3D;alpha(c(&quot;purple&quot;,&quot;blue&quot;,&quot;green&quot;),0.7)[md1]
+)
+legend(&quot;bottomright&quot;,
+       c(paste(&quot;train&quot;,levels(trainLabels)),paste(&quot;test&quot;,levels(testLabels))),
+       pch&#x3D;c(rep(1,3),rep(17,3)),
+       col&#x3D;c(rep(alpha(c(&quot;purple&quot;,&quot;blue&quot;,&quot;green&quot;),0.7),2)),
+       cex&#x3D;0.9
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>Petal.width와 Petal.length에 산점도를 그리면 setosa는 잘 분류됨</li>
 <li>virginica와 versicolor는 분류가 잘 되지 않음</li>
@@ -321,13 +380,29 @@ ga('send', 'pageview');
 </ul>
 <h3 id="Weighted-kNN"><a href="#Weighted-kNN" class="headerlink" title="Weighted kNN"></a>Weighted kNN</h3><ul>
 <li><p>거리에 따라 가중치를 부여하는 두 가지 알고리즘이 존재</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Weighted KNN packages</span><br><span class="line"># install.packages(&quot;kknn&quot;) # weighted value knn</span><br><span class="line">library(kknn)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Weighted KNN packages
+# install.packages(&quot;kknn&quot;) # weighted value knn
+library(kknn)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>k=5, distance=1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># weighted knn</span><br><span class="line">md2 &lt;- kknn(Species~., train&#x3D;train, test&#x3D;iris.test, k&#x3D;5, distance&#x3D;1, kernel&#x3D;&quot;triangular&quot;)</span><br><span class="line">md2</span><br><span class="line"></span><br><span class="line"># to see results for weighted knn</span><br><span class="line">md2_fit&lt;-fitted(md2)</span><br><span class="line">md2_fit</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># weighted knn
+md2 &lt;- kknn(Species~., train&#x3D;train, test&#x3D;iris.test, k&#x3D;5, distance&#x3D;1, kernel&#x3D;&quot;triangular&quot;)
+md2
+
+# to see results for weighted knn
+md2_fit&lt;-fitted(md2)
+md2_fit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>cross table로 오분류율 보기</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># accuracy of weighted knn</span><br><span class="line">CrossTable(x&#x3D;testLabels,y&#x3D;md2_fit,prop.chisq&#x3D;FALSE,prop.c&#x3D;FALSE)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of weighted knn
+CrossTable(x&#x3D;testLabels,y&#x3D;md2_fit,prop.chisq&#x3D;FALSE,prop.c&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>k=7, distance=2로 옵션 변경 결과</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># weighted knn (k&#x3D;7, distance&#x3D;2)</span><br><span class="line">md3&lt;-kknn(Species~., train&#x3D;train,test&#x3D;iris.test,k&#x3D;7,distance&#x3D;2,kernel&#x3D;&quot;triangular&quot;)</span><br><span class="line">md3</span><br><span class="line"># to see results for weighted knn</span><br><span class="line">md3_fit&lt;-fitted(md3)</span><br><span class="line">md3_fit</span><br><span class="line"># accuracy of weighted knn</span><br><span class="line">CrossTable(x&#x3D;testLabels,y&#x3D;md3_fit,prop.chisq&#x3D;FALSE,prop.c&#x3D;FALSE)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># weighted knn (k&#x3D;7, distance&#x3D;2)
+md3&lt;-kknn(Species~., train&#x3D;train,test&#x3D;iris.test,k&#x3D;7,distance&#x3D;2,kernel&#x3D;&quot;triangular&quot;)
+md3
+# to see results for weighted knn
+md3_fit&lt;-fitted(md3)
+md3_fit
+# accuracy of weighted knn
+CrossTable(x&#x3D;testLabels,y&#x3D;md3_fit,prop.chisq&#x3D;FALSE,prop.c&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-판별분석-Ⅰ"><a href="#3-판별분석-Ⅰ" class="headerlink" title="3. 판별분석 Ⅰ"></a>3. 판별분석 Ⅰ</h2><h3 id="판별분석"><a href="#판별분석" class="headerlink" title="판별분석"></a>판별분석</h3></li>
 <li><p>데이터 마이닝 분류 기법 중 하나</p>
 </li>
@@ -344,13 +419,37 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>예제 데이터</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;gmodels&quot;) #crosstable</span><br><span class="line">library(gmodels)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;gmodels&quot;) #crosstable
+library(gmodels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>train / test 분할</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">iris&lt;-read.csv(&quot;data&#x2F;week10_3&#x2F;iris.csv&quot;)</span><br><span class="line">attach(iris)</span><br><span class="line"></span><br><span class="line"># training&#x2F; test data : n&#x3D;150</span><br><span class="line"></span><br><span class="line">set.seed(1000,sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line"></span><br><span class="line">N&#x3D;nrow(iris)</span><br><span class="line">tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"></span><br><span class="line"># attributes in training and test</span><br><span class="line">iris.train&lt;-iris[tr.idx,-5] # 독립변수 4개 포함한 100개 데이터</span><br><span class="line">iris.test&lt;-iris[-tr.idx,-5] # 독립변수 4개 포함한 50개 데이터</span><br><span class="line"># target value in training and test</span><br><span class="line">trainLabels&lt;-iris[tr.idx,5] # 학습데이터의 타겟변수</span><br><span class="line">testLabels&lt;-iris[-tr.idx,5] # 검증데이터의 타겟변수</span><br><span class="line"></span><br><span class="line">train&lt;-iris[tr.idx,]</span><br><span class="line">test&lt;-iris[-tr.idx,]</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
+iris&lt;-read.csv(&quot;data&#x2F;week10_3&#x2F;iris.csv&quot;)
+attach(iris)
+
+# training&#x2F; test data : n&#x3D;150
+
+set.seed(1000,sample.kind&#x3D;&quot;Rounding&quot;)
+
+N&#x3D;nrow(iris)
+tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
+
+# attributes in training and test
+iris.train&lt;-iris[tr.idx,-5] # 독립변수 4개 포함한 100개 데이터
+iris.test&lt;-iris[-tr.idx,-5] # 독립변수 4개 포함한 50개 데이터
+# target value in training and test
+trainLabels&lt;-iris[tr.idx,5] # 학습데이터의 타겟변수
+testLabels&lt;-iris[-tr.idx,5] # 검증데이터의 타겟변수
+
+train&lt;-iris[tr.idx,]
+test&lt;-iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>LDA함수: lda(종속변수~독립변수, data=학습데이터이름, prior=사전확률)</p>
 <ul>
-<li>사전확률(prioir probability): 원인 A가 발생할 확률인 P(A)와 같이, 결과가 나타나기 전에 결정되어 있는 확률<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># install the MASS package for LDA</span><br><span class="line"># install.packages(&quot;MASS&quot;)</span><br><span class="line">library(MASS)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Linear Discriminant Analysis (LDA) with training data n&#x3D;100</span><br><span class="line">iris.lda &lt;- lda(Species ~ ., data&#x3D;train, prior&#x3D;c(1&#x2F;3,1&#x2F;3,1&#x2F;3)) # .의 의미: 전체 데이터를 사용하겠다(4개)</span><br><span class="line">iris.lda</span><br></pre></td></tr></table></figure></li>
+<li>사전확률(prioir probability): 원인 A가 발생할 확률인 P(A)와 같이, 결과가 나타나기 전에 결정되어 있는 확률<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install the MASS package for LDA
+# install.packages(&quot;MASS&quot;)
+library(MASS)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Linear Discriminant Analysis (LDA) with training data n&#x3D;100
+iris.lda &lt;- lda(Species ~ ., data&#x3D;train, prior&#x3D;c(1&#x2F;3,1&#x2F;3,1&#x2F;3)) # .의 의미: 전체 데이터를 사용하겠다(4개)
+iris.lda<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>결과 해석</p>
@@ -368,7 +467,9 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>검증 데이터에 LDA 결과를 적용하여 범주 추정</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># predict test data set n&#x3D;50</span><br><span class="line">testpred &lt;- predict(iris.lda, test)</span><br><span class="line">testpred</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># predict test data set n&#x3D;50
+testpred &lt;- predict(iris.lda, test)
+testpred<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>결과 해석</p>
 <ul>
 <li>$class: 추정 범주</li>
@@ -376,7 +477,8 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>정확도 산정: 오분류율(검증데이터)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># accuracy of LDA</span><br><span class="line">CrossTable(x&#x3D;testLabels,y&#x3D;testpred$class, prop.chisq&#x3D;FALSE)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of LDA
+CrossTable(x&#x3D;testLabels,y&#x3D;testpred$class, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>결과 해석</p>
 <ul>
 <li>정확도: 49/50 → 98%</li>
@@ -421,7 +523,9 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>등분산 검정을 위한 패키지: biotools  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;biotools&quot;)</span><br><span class="line">library(biotools)</span><br><span class="line">boxM(iris[1:4], iris$Species)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;biotools&quot;)
+library(biotools)
+boxM(iris[1:4], iris$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>결과 해석</p>
 <ul>
 <li>p-value~0: p-value는 거의 0에 가까움 </li>
@@ -431,7 +535,9 @@ ga('send', 'pageview');
 </ul>
 <h3 id="QDA-함수"><a href="#QDA-함수" class="headerlink" title="QDA 함수"></a>QDA 함수</h3><ul>
 <li><p>qda(종속변수~독립변수, data=학습데이터이름, prior=사전확률)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Quadratic Discriminant Analysis (QDA)</span><br><span class="line">iris.qda &lt;- qda(Species ~ ., data&#x3D;train, prior&#x3D;c(1&#x2F;3,1&#x2F;3,1&#x2F;3))</span><br><span class="line">iris.qda</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Quadratic Discriminant Analysis (QDA)
+iris.qda &lt;- qda(Species ~ ., data&#x3D;train, prior&#x3D;c(1&#x2F;3,1&#x2F;3,1&#x2F;3))
+iris.qda<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>추가 설명</p>
 <ul>
 <li>prior은 경우에 따라 다르게 줄 수 있음</li>
@@ -439,7 +545,9 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>검증 데이터에 QDA 결과를 적용하여 범주 추정  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># predict test data set n&#x3D;50</span><br><span class="line">testpredq &lt;- predict(iris.qda, test)</span><br><span class="line">testpredq</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># predict test data set n&#x3D;50
+testpredq &lt;- predict(iris.qda, test)
+testpredq<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>결과 해석</p>
 <ul>
 <li>$class: 추정 범주</li>
@@ -448,14 +556,19 @@ ga('send', 'pageview');
 </li>
 </ul>
 <ul>
-<li>정확도 산정: 오분류율(검증데이터)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># accuracy of QDA</span><br><span class="line">CrossTable(x&#x3D;testLabels,y&#x3D;testpredq$class, prop.chisq&#x3D;FALSE)</span><br></pre></td></tr></table></figure></li>
+<li>정확도 산정: 오분류율(검증데이터)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of QDA
+CrossTable(x&#x3D;testLabels,y&#x3D;testpredq$class, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>선형판별로 했을 때와 동일(단, 데이터가 많아지면 결과가 다르게 나올 수 있음)</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>Partition Plot<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># partimat() function for LDA &amp; QDA</span><br><span class="line"># install.packages(&quot;klaR&quot;)</span><br><span class="line">library(klaR)</span><br><span class="line">partimat(as.factor(iris$Species) ~ ., data&#x3D;iris, method&#x3D;&quot;lda&quot;)</span><br><span class="line">partimat(as.factor(iris$Species) ~ ., data&#x3D;iris, method&#x3D;&quot;qda&quot;)</span><br></pre></td></tr></table></figure>
+<li>Partition Plot<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># partimat() function for LDA &amp; QDA
+# install.packages(&quot;klaR&quot;)
+library(klaR)
+partimat(as.factor(iris$Species) ~ ., data&#x3D;iris, method&#x3D;&quot;lda&quot;)
+partimat(as.factor(iris$Species) ~ ., data&#x3D;iris, method&#x3D;&quot;qda&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 
@@ -465,7 +578,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" data-id="ckknaf2tw000eh8ue2ycn5vib" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" data-id="ckksc0xsm0013ngue6v1282op" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -553,7 +666,7 @@ k-nearest neighbor
 분류(Classification): 지도학습(Supervised Learning)
 
 타겟범주를 알고 있는 데이터로 분류 규칙을 생성하고 새로운 데이터를 ",
-        "wordCount": 1258
+        "wordCount": 1032
     }
 </script>
 
@@ -632,7 +745,7 @@ k-nearest neighbor
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -642,7 +755,7 @@ k-nearest neighbor
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -652,7 +765,7 @@ k-nearest neighbor
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for%EB%AC%B8/" style="font-size: 10px;">for문</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while%EB%AC%B8/" style="font-size: 10px;">while문</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">리스트</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8A%9C%ED%94%8C/" style="font-size: 10px;">튜플</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%95%A8%EC%88%98/" style="font-size: 10px;">함수</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
         </div>
     </div>
 

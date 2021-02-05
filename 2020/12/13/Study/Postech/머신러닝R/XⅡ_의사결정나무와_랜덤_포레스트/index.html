@@ -12,12 +12,12 @@
     
     <meta name="keywords" content="Postech,의사결정나무,랜덤포레스트" />
     
-    <meta name="description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석">
+    <meta name="description" content="setup, includeknitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석과">
 <meta property="og:type" content="article">
 <meta property="og:title" content="머신러닝 기법과 R 프로그래밍 1: XⅡ. 의사결정나무와 랜덤 포레스트">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석">
+<meta property="og:description" content="setup, includeknitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석과">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-13T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-01T00:44:48.244Z">
@@ -222,7 +222,7 @@ ga('send', 'pageview');
 
             
 
-            <figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo &#x3D; TRUE)</span><br></pre></td></tr></table></figure>
+            <pre class="line-numbers language-&#123;r" data-language="&#123;r"><div class="caption"><span>setup, include</span></div><code class="language-&#123;r">knitr::opts_chunk$set(echo &#x3D; TRUE)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  </li>
 </ul>
@@ -245,16 +245,39 @@ ga('send', 'pageview');
 </ol>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#decision tree packages download</span><br><span class="line">#install.packages(&quot;tree&quot;)</span><br><span class="line">#load library</span><br><span class="line">library(tree)</span><br><span class="line"></span><br><span class="line">#package for confusion matrix</span><br><span class="line">#install.packages(&quot;caret&quot;)</span><br><span class="line">library(caret)</span><br><span class="line"></span><br><span class="line"># read csv file</span><br><span class="line">iris&lt;-read.csv(&quot;data&#x2F;week12_1&#x2F;iris.csv&quot;)</span><br><span class="line">attach(iris)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#decision tree packages download
+#install.packages(&quot;tree&quot;)
+#load library
+library(tree)
+
+#package for confusion matrix
+#install.packages(&quot;caret&quot;)
+library(caret)
+
+# read csv file
+iris&lt;-read.csv(&quot;data&#x2F;week12_1&#x2F;iris.csv&quot;)
+attach(iris)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li>학습데이터 / 검증데이터 분할<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># training (n&#x3D;100)&#x2F; test data(n&#x3D;50) </span><br><span class="line">set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">N&lt;-nrow(iris)</span><br><span class="line">tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"># split train data and test data</span><br><span class="line">train&lt;-iris[tr.idx,]</span><br><span class="line">test&lt;-iris[-tr.idx,]</span><br><span class="line">#dim(train)</span><br><span class="line">#dim(test)</span><br></pre></td></tr></table></figure>
+<li>학습데이터 / 검증데이터 분할<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training (n&#x3D;100)&#x2F; test data(n&#x3D;50) 
+set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)
+N&lt;-nrow(iris)
+tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
+# split train data and test data
+train&lt;-iris[tr.idx,]
+test&lt;-iris[-tr.idx,]
+#dim(train)
+#dim(test)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="의사결정나무-함수"><a href="#의사결정나무-함수" class="headerlink" title="의사결정나무 함수"></a>의사결정나무 함수</h3>tree(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용</li>
 </ul>
 <h3 id="step-1-Growing-tree"><a href="#step-1-Growing-tree" class="headerlink" title="step 1: Growing tree"></a>step 1: Growing tree</h3><ul>
 <li>학습데이터의 tree 결과<ul>
-<li>마디 6에서는 더이상 분지할 필요 없음<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">treemod &lt;- tree(Species~., data&#x3D;train)</span><br><span class="line">treemod</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plot(treemod)</span><br><span class="line">text(treemod,cex&#x3D;1.5)</span><br><span class="line"></span><br><span class="line">table(train$Species)</span><br></pre></td></tr></table></figure>
+<li>마디 6에서는 더이상 분지할 필요 없음<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">treemod &lt;- tree(Species~., data&#x3D;train)
+treemod<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">plot(treemod)
+text(treemod,cex&#x3D;1.5)
+
+table(train$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
@@ -264,23 +287,42 @@ ga('send', 'pageview');
 <li>cv.tree(tree모형결과, FUN= )</li>
 <li>최적 tree 모형을 위한 가지치기</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cv.trees &lt;- cv.tree(treemod, FUN&#x3D;prune.misclass)</span><br><span class="line">cv.trees</span><br><span class="line">plot(cv.trees)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">cv.trees &lt;- cv.tree(treemod, FUN&#x3D;prune.misclass)
+cv.trees
+plot(cv.trees)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>최종 트리모형<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># final tree model with the optimal node </span><br><span class="line">prune.trees&lt;-prune.misclass(treemod, best&#x3D;3)</span><br><span class="line">plot(prune.trees)</span><br><span class="line">text(prune.trees,pretty&#x3D;0, cex&#x3D;1.5)</span><br><span class="line">#help(prune.misclass)</span><br></pre></td></tr></table></figure>
+<li>최종 트리모형<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># final tree model with the optimal node 
+prune.trees&lt;-prune.misclass(treemod, best&#x3D;3)
+plot(prune.trees)
+text(prune.trees,pretty&#x3D;0, cex&#x3D;1.5)
+#help(prune.misclass)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
-<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3."></a>step 3.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># step 3: classify test data </span><br><span class="line">treepred&lt;-predict(prune.trees,test,type&#x3D;&#39;class&#39;)</span><br><span class="line"># classification accuracy</span><br><span class="line">confusionMatrix(treepred,test$Species)</span><br></pre></td></tr></table></figure>
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3."></a>step 3.</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># step 3: classify test data 
+treepred&lt;-predict(prune.trees,test,type&#x3D;&#39;class&#39;)
+# classification accuracy
+confusionMatrix(treepred,test$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2-의사결정나무-Ⅱ"><a href="#2-의사결정나무-Ⅱ" class="headerlink" title="2. 의사결정나무 Ⅱ"></a>2. 의사결정나무 Ⅱ</h2><h3 id="rpart-패키지"><a href="#rpart-패키지" class="headerlink" title="rpart 패키지"></a>rpart 패키지</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># other package for tree</span><br><span class="line"># install.packages(&quot;rpart&quot;)</span><br><span class="line"># install.packages(&quot;party&quot;)</span><br><span class="line">library(rpart)</span><br><span class="line">library(party)</span><br></pre></td></tr></table></figure>
+<h2 id="2-의사결정나무-Ⅱ"><a href="#2-의사결정나무-Ⅱ" class="headerlink" title="2. 의사결정나무 Ⅱ"></a>2. 의사결정나무 Ⅱ</h2><h3 id="rpart-패키지"><a href="#rpart-패키지" class="headerlink" title="rpart 패키지"></a>rpart 패키지</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># other package for tree
+# install.packages(&quot;rpart&quot;)
+# install.packages(&quot;party&quot;)
+library(rpart)
+library(party)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>rpart(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cl1&lt;-rpart(Species~., data&#x3D;train)</span><br><span class="line">plot(cl1)</span><br><span class="line">text(cl1, cex&#x3D;1.5)</span><br></pre></td></tr></table></figure></li>
+<li>rpart(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">cl1&lt;-rpart(Species~., data&#x3D;train)
+plot(cl1)
+text(cl1, cex&#x3D;1.5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li>Prunning<ul>
 <li>rpart 패키지는 과적합 우려가 있음(iris의 경우에는 필요 x)</li>
-<li>printcp에서 xerror(cross validation error) 값이 최소가 되는 마디를 선택<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#pruning (cross-validation)-rpart</span><br><span class="line">printcp(cl1)</span><br><span class="line">plotcp(cl1)</span><br></pre></td></tr></table></figure></li>
+<li>printcp에서 xerror(cross validation error) 값이 최소가 되는 마디를 선택<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#pruning (cross-validation)-rpart
+printcp(cl1)
+plotcp(cl1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
-<li>rpart를 사용한 최종 tree 모형<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pcl1&lt;-prune(cl1, cp&#x3D;cl1$cptable[which.min(cl1$cptable[,&quot;xerror&quot;]),&quot;CP&quot;])</span><br><span class="line">plot(pcl1)</span><br><span class="line">text(pcl1)</span><br></pre></td></tr></table></figure></li>
+<li>rpart를 사용한 최종 tree 모형<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pcl1&lt;-prune(cl1, cp&#x3D;cl1$cptable[which.min(cl1$cptable[,&quot;xerror&quot;]),&quot;CP&quot;])
+plot(pcl1)
+text(pcl1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>tree 함수를 이용했을 때와 동일한 결과</li>
 </ul>
@@ -288,7 +330,13 @@ ga('send', 'pageview');
 </ul>
 <ul>
 <li>정확도<ul>
-<li>test data에 대한 정확도<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#measure accuracy(rpart)</span><br><span class="line">#package for confusion matrix</span><br><span class="line">#install.packages(&quot;caret&quot;)</span><br><span class="line">library(caret)</span><br><span class="line"></span><br><span class="line">pred2&lt;- predict(cl1,test, type&#x3D;&#39;class&#39;)</span><br><span class="line">confusionMatrix(pred2,test$Species)</span><br></pre></td></tr></table></figure>
+<li>test data에 대한 정확도<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#measure accuracy(rpart)
+#package for confusion matrix
+#install.packages(&quot;caret&quot;)
+library(caret)
+
+pred2&lt;- predict(cl1,test, type&#x3D;&#39;class&#39;)
+confusionMatrix(pred2,test$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
@@ -296,7 +344,9 @@ ga('send', 'pageview');
 </ul>
 <h3 id="party-패키지"><a href="#party-패키지" class="headerlink" title="party 패키지"></a>party 패키지</h3><ul>
 <li>ctree(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<ul>
-<li>p-value를 기준으로 분지되는 포인트를 잡음<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#decision tree(party)-unbiased recursive partioning based on permutation test</span><br><span class="line">partymod&lt;-ctree(Species~.,data&#x3D;train)</span><br><span class="line">plot(partymod)</span><br></pre></td></tr></table></figure>
+<li>p-value를 기준으로 분지되는 포인트를 잡음<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#decision tree(party)-unbiased recursive partioning based on permutation test
+partymod&lt;-ctree(Species~.,data&#x3D;train)
+plot(partymod)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
@@ -320,21 +370,47 @@ ga('send', 'pageview');
 </ul>
 <h3 id="랜덤-포레스트-패키지"><a href="#랜덤-포레스트-패키지" class="headerlink" title="랜덤 포레스트 패키지"></a>랜덤 포레스트 패키지</h3><ul>
 <li><p>randomForest</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install.packages(&quot;randomForest&quot;)</span><br><span class="line">library(randomForest)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">install.packages(&quot;randomForest&quot;)
+library(randomForest)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>iris 데이터 사용</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">iris&lt;-read.csv(&quot;data&#x2F;week12_3&#x2F;iris.csv&quot;)</span><br><span class="line">attach(iris)</span><br><span class="line"></span><br><span class="line"># training&#x2F; test data : n &#x3D; 150</span><br><span class="line">set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">N&lt;-nrow(iris)</span><br><span class="line">tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"></span><br><span class="line"># split training and test data</span><br><span class="line">train&lt;-iris[tr.idx,]</span><br><span class="line">test&lt;-iris[-tr.idx,]</span><br><span class="line">#dim(train)</span><br><span class="line">#dim(test)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
+iris&lt;-read.csv(&quot;data&#x2F;week12_3&#x2F;iris.csv&quot;)
+attach(iris)
+
+# training&#x2F; test data : n &#x3D; 150
+set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)
+N&lt;-nrow(iris)
+tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
+
+# split training and test data
+train&lt;-iris[tr.idx,]
+test&lt;-iris[-tr.idx,]
+#dim(train)
+#dim(test)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>랜덤포레스트 함수</p>
 <ul>
-<li>ramdomForest(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#Random Forest : mtry&#x3D;2 (default&#x3D;sqrt(p))</span><br><span class="line">iris$Species &lt;- as.numeric(iris@Species)</span><br><span class="line"></span><br><span class="line">rf_out1&lt;-randomForest(Species~.,data&#x3D;train,importance&#x3D;T)</span><br><span class="line">rf_out1</span><br></pre></td></tr></table></figure></li>
+<li>ramdomForest(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#Random Forest : mtry&#x3D;2 (default&#x3D;sqrt(p))
+iris$Species &lt;- as.numeric(iris@Species)
+
+rf_out1&lt;-randomForest(Species~.,data&#x3D;train,importance&#x3D;T)
+rf_out1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>변수의 중요도: ramdom forest 결과로부터 중요 변수 확인</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># important variables for RF</span><br><span class="line">round(importance(rf_out1), 2)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># important variables for RF
+round(importance(rf_out1), 2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>추가</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#Random Forest : mtry&#x3D;4</span><br><span class="line">rf_out2&lt;-randomForest(Species~.,data&#x3D;train,importance&#x3D;T, mtry&#x3D;4)</span><br><span class="line">rf_out2</span><br><span class="line"></span><br><span class="line"># important variables for RF</span><br><span class="line">round(importance(rf_out2), 2)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#Random Forest : mtry&#x3D;4
+rf_out2&lt;-randomForest(Species~.,data&#x3D;train,importance&#x3D;T, mtry&#x3D;4)
+rf_out2
+
+# important variables for RF
+round(importance(rf_out2), 2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>정확도</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#measuring accuracy(rf)</span><br><span class="line">rfpred&lt;-predict(rf_out2,test)</span><br><span class="line">confusionMatrix(rfpred,test$Species)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#measuring accuracy(rf)
+rfpred&lt;-predict(rf_out2,test)
+confusionMatrix(rfpred,test$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 
@@ -344,7 +420,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" data-id="ckknaf2tu000ah8ueextw20ic" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" data-id="ckksc0xsd000knguedzzt0ugh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -422,7 +498,7 @@ ga('send', 'pageview');
         "dateCreated": "2020-12-13",
         "dateModified": "2021-02-01",
         "url": "https://ne-choi.github.io//2020/12/13/Study/Postech/머신러닝R/XⅡ_의사결정나무와_랜덤_포레스트/",
-        "description": "setup, include1knitr::opts_chunk$set(echo &#x3D; TRUE)
+        "description": "setup, includeknitr::opts_chunk$set(echo &#x3D; TRUE)
 
 POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  
 
@@ -430,8 +506,8 @@ XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사�
 Decision Tree
 
 기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법
-분석",
-        "wordCount": 654
+분석과",
+        "wordCount": 503
     }
 </script>
 
@@ -510,7 +586,7 @@ Decision Tree
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -520,7 +596,7 @@ Decision Tree
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -530,7 +606,7 @@ Decision Tree
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for%EB%AC%B8/" style="font-size: 10px;">for문</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while%EB%AC%B8/" style="font-size: 10px;">while문</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">리스트</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8A%9C%ED%94%8C/" style="font-size: 10px;">튜플</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%95%A8%EC%88%98/" style="font-size: 10px;">함수</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
         </div>
     </div>
 

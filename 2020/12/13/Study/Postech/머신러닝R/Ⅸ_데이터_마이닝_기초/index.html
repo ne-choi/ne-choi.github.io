@@ -256,14 +256,20 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>autompg 데이터</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># autompg data</span><br><span class="line">car&lt;-read.csv(&quot;data&#x2F;week9_1&#x2F;autompg.csv&quot;)</span><br><span class="line">head(car)</span><br><span class="line">str(car)</span><br><span class="line">attach(car)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># autompg data
+car&lt;-read.csv(&quot;data&#x2F;week9_1&#x2F;autompg.csv&quot;)
+head(car)
+str(car)
+attach(car)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>다중회귀모형: lm(y변수~x1+x2+x3, data= )</p>
 <ul>
 <li>1st model: 전체변수를 모두 포함한 회귀모형</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># multiple regression : 1st full model </span><br><span class="line">r1&lt;-lm(mpg ~ disp+hp+wt+accler, data&#x3D;car)</span><br><span class="line">summary(r1)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># multiple regression : 1st full model 
+r1&lt;-lm(mpg ~ disp+hp+wt+accler, data&#x3D;car)
+summary(r1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>결과 해석</p>
 <ul>
@@ -277,7 +283,9 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>데이터 탐색(Explanatory Data Analysis)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># pariwise plot - Explanatory Data Analysis</span><br><span class="line">var1&lt;-c(&quot;mpg&quot;,&quot;disp&quot;,&quot;hp&quot;,&quot;wt&quot;, &quot;accler&quot; )</span><br><span class="line">pairs(car[var1], main &#x3D;&quot;Autompg&quot;,cex&#x3D;1, col&#x3D;as.integer(car$cyl))</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># pariwise plot - Explanatory Data Analysis
+var1&lt;-c(&quot;mpg&quot;,&quot;disp&quot;,&quot;hp&quot;,&quot;wt&quot;, &quot;accler&quot; )
+pairs(car[var1], main &#x3D;&quot;Autompg&quot;,cex&#x3D;1, col&#x3D;as.integer(car$cyl))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-다중회귀분석-Ⅱ"><a href="#2-다중회귀분석-Ⅱ" class="headerlink" title="2. 다중회귀분석 Ⅱ"></a>2. 다중회귀분석 Ⅱ</h2><h3 id="다중회귀분석-변수선택방법"><a href="#다중회귀분석-변수선택방법" class="headerlink" title="다중회귀분석: 변수선택방법"></a>다중회귀분석: 변수선택방법</h3></li>
 <li><p>변수선택방법: 다수의 독립변수들이 있을 때 최종모형은?</p>
 <ol>
@@ -289,7 +297,13 @@ ga('send', 'pageview');
 </ul>
 <ul>
 <li>단계별 방법<ul>
-<li>step(모형, direction = “both”)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 2rd model using variable selection method</span><br><span class="line"># step(r1, direction&#x3D;&quot;forward&quot;)</span><br><span class="line"># step(r1, direction&#x3D;&quot;backward&quot;)</span><br><span class="line"></span><br><span class="line"># stepwise selection</span><br><span class="line">step(r1, direction&#x3D;&quot;both&quot;)</span><br><span class="line">#step(lm(mpg ~ disp+hp+wt+accler, data&#x3D;car), direction&#x3D;&quot;both&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>step(모형, direction = “both”)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2rd model using variable selection method
+# step(r1, direction&#x3D;&quot;forward&quot;)
+# step(r1, direction&#x3D;&quot;backward&quot;)
+
+# stepwise selection
+step(r1, direction&#x3D;&quot;both&quot;)
+#step(lm(mpg ~ disp+hp+wt+accler, data&#x3D;car), direction&#x3D;&quot;both&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li>결과 해석<ul>
@@ -300,7 +314,9 @@ ga('send', 'pageview');
 </ul>
 <ul>
 <li>단계별 방법에 따른 최종 다중회귀모형<ul>
-<li>2nd model: 단계별 선택 방법에 의한 회귀모형<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># final multiple regression</span><br><span class="line">r2&lt;-lm(mpg ~ disp+wt+accler, data&#x3D;car)</span><br><span class="line">summary(r2)</span><br></pre></td></tr></table></figure></li>
+<li>2nd model: 단계별 선택 방법에 의한 회귀모형<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># final multiple regression
+r2&lt;-lm(mpg ~ disp+wt+accler, data&#x3D;car)
+summary(r2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li>결과 해석<ul>
@@ -309,7 +325,9 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3 id="회귀분석의-가정과-진단"><a href="#회귀분석의-가정과-진단" class="headerlink" title="회귀분석의 가정과 진단"></a>회귀분석의 가정과 진단</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># residual diagnostic plot </span><br><span class="line">layout(matrix(c(1,2,3,4),2,2)) # optional 4 graphs&#x2F;page </span><br><span class="line">plot(r2)</span><br></pre></td></tr></table></figure>
+<h3 id="회귀분석의-가정과-진단"><a href="#회귀분석의-가정과-진단" class="headerlink" title="회귀분석의 가정과 진단"></a>회귀분석의 가정과 진단</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># residual diagnostic plot 
+layout(matrix(c(1,2,3,4),2,2)) # optional 4 graphs&#x2F;page 
+plot(r2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="다중공선성"><a href="#다중공선성" class="headerlink" title="다중공선성"></a>다중공선성</h3><ul>
 <li><p>다중공선성(Multicollinearity)</p>
 <ul>
@@ -318,7 +336,14 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>독립변수들간의 상관계수</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># check correlation between independent variables</span><br><span class="line">var2&lt;-c(&quot;disp&quot;,&quot;hp&quot;,&quot;wt&quot;, &quot;accler&quot; )</span><br><span class="line">cor(car[var2])</span><br><span class="line"></span><br><span class="line"># get correlation for each pair</span><br><span class="line"># cor(disp, wt)</span><br><span class="line"># cor(disp, accler)</span><br><span class="line"># cor(wt, accler)</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># check correlation between independent variables
+var2&lt;-c(&quot;disp&quot;,&quot;hp&quot;,&quot;wt&quot;, &quot;accler&quot; )
+cor(car[var2])
+
+# get correlation for each pair
+# cor(disp, wt)
+# cor(disp, accler)
+# cor(wt, accler)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>분산팽창계수(VIF; Variance Inflation Factor): 다중공선성의 척도</p>
 <ul>
 <li>VIF<del>j</del> = $\frac{1}{1 - R^2^<del>j</del>}$,  j = 1, 2, …, k</li>
@@ -335,7 +360,11 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>car 패키지 내장 함수</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># check multicollinearity </span><br><span class="line"># variance inflation factor(VIF)</span><br><span class="line"># install.packages(&quot;car&quot;)</span><br><span class="line">library(car)</span><br><span class="line">vif(lm(mpg ~ disp+hp+wt+accler, data&#x3D;car))</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># check multicollinearity 
+# variance inflation factor(VIF)
+# install.packages(&quot;car&quot;)
+library(car)
+vif(lm(mpg ~ disp+hp+wt+accler, data&#x3D;car))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>결과 해석</p>
 <ul>
 <li><p>check point 1: coefficients &amp; R^2^</p>
@@ -357,23 +386,35 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h3 id="퀴즈-자료"><a href="#퀴즈-자료" class="headerlink" title="퀴즈 자료"></a>퀴즈 자료</h3><ul>
-<li>변수 선택에 대한 R^2^ 확인<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># compare R-sqaured in regression </span><br><span class="line"># which one is the most important variable?</span><br><span class="line">summary(lm(mpg ~ disp))</span><br><span class="line">summary(lm(mpg ~ hp))</span><br><span class="line">summary(lm(mpg ~ wt))</span><br><span class="line">summary(lm(mpg ~ accler))</span><br></pre></td></tr></table></figure>
+<li>변수 선택에 대한 R^2^ 확인<pre class="line-numbers language-`&#123;r&#125;" data-language="`&#123;r&#125;"><code class="language-`&#123;r&#125;"># compare R-sqaured in regression 
+# which one is the most important variable?
+summary(lm(mpg ~ disp))
+summary(lm(mpg ~ hp))
+summary(lm(mpg ~ wt))
+summary(lm(mpg ~ accler))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
 <h3 id="다중회귀모형-데이터-탐색"><a href="#다중회귀모형-데이터-탐색" class="headerlink" title="다중회귀모형: 데이터 탐색"></a>다중회귀모형: 데이터 탐색</h3><ul>
 <li>데이터 탐색(EDA: Explanatory Data Analysis)<ul>
-<li>3rd model: a possible fitting method<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># more checking point</span><br><span class="line">plot(hp, mpg, col&#x3D;&quot;blue&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>3rd model: a possible fitting method<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># more checking point
+plot(hp, mpg, col&#x3D;&quot;blue&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
-<li>subset 생상 (hp &lt; 50)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## 2nd model : data split</span><br><span class="line"># subset data hp&lt;50</span><br><span class="line">par(mfrow&#x3D;c(1,1))</span><br><span class="line">car_s1&lt;-subset(car, hp&lt;50)</span><br><span class="line">plot(car_s1$hp, car_s1$mpg,col&#x3D;10,  main&#x3D;&quot;hp&lt;50&quot;)</span><br><span class="line"># regression for hp&lt;50</span><br><span class="line">summary(lm(car_s1$mpg ~ car_s1$hp))</span><br></pre></td></tr></table></figure></li>
+<li>subset 생상 (hp &lt; 50)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">## 2nd model : data split
+# subset data hp&lt;50
+par(mfrow&#x3D;c(1,1))
+car_s1&lt;-subset(car, hp&lt;50)
+plot(car_s1$hp, car_s1$mpg,col&#x3D;10,  main&#x3D;&quot;hp&lt;50&quot;)
+# regression for hp&lt;50
+summary(lm(car_s1$mpg ~ car_s1$hp))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>선형회귀식: mpg = 53.06 - 0.33 hp</li>
 <li>선형회귀식의 결정계수: R^2^ = 0.45</li>
 </ul>
 </li>
 </ul>
-<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">step(r1, direction&#x3D;&quot;backward&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">step(r1, direction&#x3D;&quot;backward&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="3-데이터-마이닝과-분류"><a href="#3-데이터-마이닝과-분류" class="headerlink" title="3. 데이터 마이닝과 분류"></a>3. 데이터 마이닝과 분류</h2><ul>
 <li>분류규칙과 과적합</li>
 </ul>
@@ -425,16 +466,29 @@ ga('send', 'pageview');
 </ol>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># read csv file</span><br><span class="line">iris&lt;-read.csv(&quot;data&#x2F;week9_4&#x2F;iris.csv&quot;)</span><br><span class="line">head(iris)</span><br><span class="line">str(iris)</span><br><span class="line">attach(iris)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
+iris&lt;-read.csv(&quot;data&#x2F;week9_4&#x2F;iris.csv&quot;)
+head(iris)
+str(iris)
+attach(iris)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>input 변수(독립변수): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width</li>
 <li>output 변수(종속변수): Species</li>
 </ul>
 <h3 id="학습데이터와-검증데이터-생성"><a href="#학습데이터와-검증데이터-생성" class="headerlink" title="학습데이터와 검증데이터 생성"></a>학습데이터와 검증데이터 생성</h3><ul>
-<li>iris 데이터: 150개 데이터<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># training&#x2F; test data : n&#x3D;150</span><br><span class="line">set.seed(100, sample.kind&#x3D;&quot;Rounding&quot;) # seed 1000 지정한 이유: 동일한 데이터를 사용하기 위해 임의 숫자로 고정</span><br><span class="line">N&#x3D;nrow(iris) # ramdom sampling을 위해 데이터에 number 부여</span><br><span class="line">tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE) # 100개는 학습데이터, 50개는 검증데이터로 사용하라</span><br><span class="line">tr.idx</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># attributes in training and test</span><br><span class="line">iris.train &lt;- iris[tr.idx, -5] # 5번째 열의 종속변수를 제외한 100개의 데이터</span><br><span class="line">iris.test &lt;- iris[-tr.idx, -5] # 5번째 열의 종속변수를 제외한 50개의 데이터</span><br></pre></td></tr></table></figure></li>
-<li>iris 데이터의 타겟변수(학습데이터의 타겟변수, 검증데이터의 타겟변수)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># target value in training and test</span><br><span class="line">trainLabels &lt;- iris[tr.idx, 5]</span><br><span class="line">testLabels &lt;- iris[-tr.idx, -5]</span><br></pre></td></tr></table></figure>
-<h3 id="퀴즈-1"><a href="#퀴즈-1" class="headerlink" title="퀴즈"></a>퀴즈</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># to get frequency of class in test set</span><br><span class="line">table(testLabels)</span><br></pre></td></tr></table></figure></li>
+<li>iris 데이터: 150개 데이터<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training&#x2F; test data : n&#x3D;150
+set.seed(100, sample.kind&#x3D;&quot;Rounding&quot;) # seed 1000 지정한 이유: 동일한 데이터를 사용하기 위해 임의 숫자로 고정
+N&#x3D;nrow(iris) # ramdom sampling을 위해 데이터에 number 부여
+tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE) # 100개는 학습데이터, 50개는 검증데이터로 사용하라
+tr.idx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># attributes in training and test
+iris.train &lt;- iris[tr.idx, -5] # 5번째 열의 종속변수를 제외한 100개의 데이터
+iris.test &lt;- iris[-tr.idx, -5] # 5번째 열의 종속변수를 제외한 50개의 데이터<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>iris 데이터의 타겟변수(학습데이터의 타겟변수, 검증데이터의 타겟변수)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># target value in training and test
+trainLabels &lt;- iris[tr.idx, 5]
+testLabels &lt;- iris[-tr.idx, -5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="퀴즈-1"><a href="#퀴즈-1" class="headerlink" title="퀴즈"></a>퀴즈</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># to get frequency of class in test set
+table(testLabels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
 
         </div>
@@ -443,7 +497,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A8_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%A7%88%EC%9D%B4%EB%8B%9D_%EA%B8%B0%EC%B4%88/" data-id="ckknaf2tv000dh8uee6xd36ig" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A8_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%A7%88%EC%9D%B4%EB%8B%9D_%EA%B8%B0%EC%B4%88/" data-id="ckksc0xse000mngue6l4rae2s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -536,7 +590,7 @@ POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 
 
 
 분류(classifi",
-        "wordCount": 1028
+        "wordCount": 920
     }
 </script>
 
@@ -615,7 +669,7 @@ POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -625,7 +679,7 @@ POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -635,7 +689,7 @@ POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for%EB%AC%B8/" style="font-size: 10px;">for문</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while%EB%AC%B8/" style="font-size: 10px;">while문</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">리스트</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8A%9C%ED%94%8C/" style="font-size: 10px;">튜플</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%95%A8%EC%88%98/" style="font-size: 10px;">함수</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
         </div>
     </div>
 

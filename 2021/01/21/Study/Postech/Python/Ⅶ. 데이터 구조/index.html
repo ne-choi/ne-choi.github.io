@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Python 프로그래밍 2: Ⅶ. 데이터 구조 | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Postech,Python,리스트,튜플" />
+    
+    <meta name="description" content="POSTECH에서 제공하는 MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.   Ⅶ. 데이터 구조1. 리스트리스트란? 리스트(list)는 여러 개의 데이터가 저장된 장소  선언: [] 안에 쉼표로 구분하여 정보를 기입하면 됨 리스트 이름 &#x3D; [값1, 값2, 값3] scores &#x3D; [32, 56, 64, 72, 12, 37, 98, 7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 프로그래밍 2: Ⅶ. 데이터 구조">
+<meta property="og:url" content="https://ne-choi.github.io/2021/01/21/Study/Postech/Python/%E2%85%A6.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="POSTECH에서 제공하는 MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.   Ⅶ. 데이터 구조1. 리스트리스트란? 리스트(list)는 여러 개의 데이터가 저장된 장소  선언: [] 안에 쉼표로 구분하여 정보를 기입하면 됨 리스트 이름 &#x3D; [값1, 값2, 값3] scores &#x3D; [32, 56, 64, 72, 12, 37, 98, 7">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-21T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-05T13:35:29.742Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="리스트">
+<meta property="article:tag" content="튜플">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-187747665-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/feed.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Contest/">Contest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Kaggle/">Kaggle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Postech/">Postech</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/Programming/">Programming</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/">Postech</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Study/Postech/Python/Ⅶ. 데이터 구조" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Python 프로그래밍 2: Ⅶ. 데이터 구조
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/01/21/Study/Postech/Python/%E2%85%A6.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0/" class="article-date">
+       <time datetime="2021-01-21T00:00:00.000Z" itemprop="datePublished">2021-01-21</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/01/21/Study/Postech/Python/%E2%85%A6.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0/" class="article-date">
+     <time datetime="2021-02-05T13:35:29.742Z" itemprop="dateModified">2021-02-05</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Postech/" rel="tag">Postech</a>, <a class="tag-link-link" href="/tags/Python/" rel="tag">Python</a>, <a class="tag-link-link" href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" rel="tag">리스트</a>, <a class="tag-link-link" href="/tags/%ED%8A%9C%ED%94%8C/" rel="tag">튜플</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <ul>
+<li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, Python 프로그래밍 Ⅱ 과정입니다. </li>
+</ul>
+<h1 id="Ⅶ-데이터-구조"><a href="#Ⅶ-데이터-구조" class="headerlink" title="Ⅶ. 데이터 구조"></a>Ⅶ. 데이터 구조</h1><h2 id="1-리스트"><a href="#1-리스트" class="headerlink" title="1. 리스트"></a>1. 리스트</h2><h3 id="리스트란"><a href="#리스트란" class="headerlink" title="리스트란?"></a>리스트란?</h3><ul>
+<li><p>리스트(list)는 여러 개의 데이터가 저장된 장소</p>
+</li>
+<li><p>선언: [] 안에 쉼표로 구분하여 정보를 기입하면 됨</p>
+<pre class="line-numbers language-none"><code class="language-none">리스트 이름 &#x3D; [값1, 값2, 값3]
+scores &#x3D; [32, 56, 64, 72, 12, 37, 98, 77, 59, 69]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>리스트는 여러 개 데이터를 하나의 이름으로 관리할 수 있는 데이터 구조</p>
+</li>
+<li><p>서로 다른 타입의 데이터를 하나의 리스트 이름으로 관리할 수 있음</p>
+</li>
+<li><p>리스트 종류</p>
+<ul>
+<li>문자열 원소</li>
+<li>숫자 원소</li>
+<li>여러 타입 원소</li>
+<li>Empty list<ul>
+<li>empty_list = []</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="리스트-원소에-접근하기"><a href="#리스트-원소에-접근하기" class="headerlink" title="리스트 원소에 접근하기"></a>리스트 원소에 접근하기</h3><ul>
+<li>인덱스<ul>
+<li>원소가 배열된 순서 (0부터 시작_</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">season &#x3D; [&#39;spring&#39;, &#39;summer&#39;, &#39;fall&#39;, &#39;winter&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>인덱스를 이용해 원소 접근 가능<ul>
+<li>season[1]: ‘summer’</li>
+</ul>
+</li>
+</ul>
+<h3 id="리스트와-연산자"><a href="#리스트와-연산자" class="headerlink" title="리스트와 연산자"></a>리스트와 연산자</h3><ul>
+<li>‘in’ &amp; ‘not in’<ul>
+<li>in: list의 element인가를 결정하는 연산자</li>
+<li>not it: list의 element가 아닌 element를 결정하는 연산자</li>
+</ul>
+</li>
+</ul>
+<h3 id="리스트-순회하기"><a href="#리스트-순회하기" class="headerlink" title="리스트 순회하기"></a>리스트 순회하기</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">72</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">37</span><span class="token punctuation">,</span> <span class="token number">98</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">69</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> element <span class="token keyword">in</span> scores<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span> <span class="token comment">#end=" ": 가로로 배열</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>32 56 64 72 12 37 98 77 59 69 </code></pre>
+<h3 id="예제-성적-처리-프로그램"><a href="#예제-성적-처리-프로그램" class="headerlink" title="예제: 성적 처리 프로그램"></a>예제: 성적 처리 프로그램</h3><ul>
+<li>학생 성적 처리 프로그램 작성<ul>
+<li>사용자로부터 성적을 입력받아 리스트에 저장</li>
+<li>성적 평균을 구하고 80점 이상 성적 받은 학생 수를 계산하여 출력</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">STUDENTS <span class="token operator">=</span> <span class="token number">5</span>
+
+scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+scoreSum <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>STUDENTS<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    value <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"성적을 입력하세요: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    scores<span class="token punctuation">.</span>append<span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token comment">#리스트에 값 추가</span>
+    scoreSum <span class="token operator">+=</span> value
+
+scoreAvg <span class="token operator">=</span> scoreSum <span class="token operator">/</span> <span class="token builtin">len</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span>
+highScoreStudents <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> scores<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token number">80</span><span class="token punctuation">:</span>
+        highScoreStudents <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"성적 평균은"</span><span class="token punctuation">,</span> scoreAvg<span class="token punctuation">,</span> <span class="token string">"입니다."</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"80점 이상 성적을 받은 학생은"</span><span class="token punctuation">,</span> highScoreStudents<span class="token punctuation">,</span><span class="token string">"명입니다."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>성적을 입력하세요: 40
+성적을 입력하세요: 80
+성적을 입력하세요: 50
+성적을 입력하세요: 70
+성적을 입력하세요: 90
+성적 평균은 66.0 입니다.
+80점 이상 성적을 받은 학생은 2 명입니다.</code></pre>
+<h3 id="예제-문자열-처리-프로그램"><a href="#예제-문자열-처리-프로그램" class="headerlink" title="예제: 문자열 처리 프로그램"></a>예제: 문자열 처리 프로그램</h3><ul>
+<li>학생 이름을 저장했다가 출력하는 프로그램 작성</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"학생 이름을 입력하세요: "</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> name <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    Names<span class="token punctuation">.</span>append<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"학생 이름:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> name <span class="token keyword">in</span> Names<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">", "</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>학생 이름을 입력하세요: 나은
+학생 이름을 입력하세요: 선호
+학생 이름을 입력하세요: 더는 안 돼
+학생 이름을 입력하세요: 더 없어
+학생 이름을 입력하세요: 둘이 끝이야
+학생 이름을 입력하세요: 안 돼
+학생 이름을 입력하세요: 
+학생 이름:
+나은, 선호, 더는 안 돼, 더 없어, 둘이 끝이야, 안 돼, </code></pre>
+<h2 id="2-데이터-구조"><a href="#2-데이터-구조" class="headerlink" title="2. 데이터 구조"></a>2. 데이터 구조</h2><h3 id="데이터-구조"><a href="#데이터-구조" class="headerlink" title="데이터 구조"></a>데이터 구조</h3><ul>
+<li>자료 구조(data structure)<ul>
+<li>프로그램에서 자료를 저장하는 여러 구조</li>
+<li>파이썬: 리스트, 튜플, 딕셔너리, 문자열 등 제공</li>
+</ul>
+</li>
+</ul>
+<h3 id="리스트-예제-연락처-관리-프로그램"><a href="#리스트-예제-연락처-관리-프로그램" class="headerlink" title="리스트 예제: 연락처 관리 프로그램"></a>리스트 예제: 연락처 관리 프로그램</h3><ul>
+<li>리스트 자료구조를 이용해 연락처를 관리하는 프로그램을 작성</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">menu <span class="token operator">=</span> <span class="token number">0</span>
+friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">#리스트 생성</span>
+
+<span class="token keyword">while</span> menu <span class="token operator">!=</span> <span class="token number">9</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"---------------"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1. 친구 리스트 출력"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"2. 친구 추가"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"3. 친구 삭제"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"4. 이름 변경"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"9. 종료"</span><span class="token punctuation">)</span>
+    menu <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"메뉴를 선택하시오: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> menu <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>friends<span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> menu <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"이름을 입력하시오: "</span><span class="token punctuation">)</span>
+        friends<span class="token punctuation">.</span>append<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> menu <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">:</span>
+        del_name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"삭제할 이름을 입력하시오: "</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> del_name <span class="token keyword">in</span> friends<span class="token punctuation">:</span>
+            friends<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>del_name<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            pinrt<span class="token punctuation">(</span><span class="token string">"해당되는 이름이 없습니다."</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> menu <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">:</span>
+        old_name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"변경하고 싶은 이름을 입력하시오: "</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> old_name <span class="token keyword">in</span> friends<span class="token punctuation">:</span>
+            index <span class="token operator">=</span> friends<span class="token punctuation">.</span>index<span class="token punctuation">(</span>old_name<span class="token punctuation">)</span>
+            new_name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"새로운 이름을 입력하시오: "</span><span class="token punctuation">)</span>
+            friends<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> new_name
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"해당되는 이름이 없습니다."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>---------------
+1. 친구 리스트 출력
+2. 친구 추가
+3. 친구 삭제
+4. 이름 변경
+9. 종료
+
+
+
+---------------------------------------------------------------------------
+
+KeyboardInterrupt                         Traceback (most recent call last)
+
+&lt;ipython-input-10-b5244f1bc6b3&gt; in &lt;module&gt;
+      9     print(&quot;4. 이름 변경&quot;)
+     10     print(&quot;9. 종료&quot;)
+---&gt; 11     menu = int(input(&quot;메뉴를 선택하시오: &quot;))
+     12     if menu == 1:
+     13         print(friends)
+
+
+~\anaconda3\lib\site-packages\ipykernel\kernelbase.py in raw_input(self, prompt)
+    858                 &quot;raw_input was called, but this frontend does not support input requests.&quot;
+    859             )
+--&gt; 860         return self._input_request(str(prompt),
+    861             self._parent_ident,
+    862             self._parent_header,
+
+
+~\anaconda3\lib\site-packages\ipykernel\kernelbase.py in _input_request(self, prompt, ident, parent, password)
+    902             except KeyboardInterrupt:
+    903                 # re-raise KeyboardInterrupt, to truncate traceback
+--&gt; 904                 raise KeyboardInterrupt(&quot;Interrupted by user&quot;) from None
+    905             except Exception as e:
+    906                 self.log.warning(&quot;Invalid Message:&quot;, exc_info=True)
+
+
+KeyboardInterrupt: Interrupted by user</code></pre>
+<h3 id="튜플-tuple"><a href="#튜플-tuple" class="headerlink" title="튜플(tuple)"></a>튜플(tuple)</h3><ul>
+<li>값을 변경할 수 없는 리스트</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">튜플 &#x3D; (항목1, 항목2, ..., 항목n)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">numbers <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+colors <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"red"</span><span class="token punctuation">,</span> <span class="token string">"pink"</span><span class="token punctuation">,</span> <span class="token string">"blue"</span><span class="token punctuation">,</span> <span class="token string">"purple"</span><span class="token punctuation">)</span>
+t <span class="token operator">=</span> numbers <span class="token operator">+</span> colors
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>(1, 2, 3, 4, 5, &#39;red&#39;, &#39;pink&#39;, &#39;blue&#39;, &#39;purple&#39;)</code></pre>
+<h3 id="딕셔너리"><a href="#딕셔너리" class="headerlink" title="딕셔너리"></a>딕셔너리</h3><ul>
+<li>키(key)와 값(value) 쌍을 저장할 수 있는 객체<pre class="line-numbers language-none"><code class="language-none">딕셔너리 &#x3D; &#123;키1:값1, 키2:값2, 키3:값3&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">contacts <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'Kim'</span><span class="token punctuation">:</span><span class="token string">'0102345678'</span><span class="token punctuation">,</span> <span class="token string">'Choi'</span><span class="token punctuation">:</span><span class="token string">'01067891234'</span><span class="token punctuation">,</span> <span class="token string">'Hwang'</span><span class="token punctuation">:</span><span class="token string">'01013467946'</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>contacts<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>&#123;&#39;Kim&#39;: &#39;0102345678&#39;, &#39;Choi&#39;: &#39;01067891234&#39;, &#39;Hwang&#39;: &#39;01013467946&#39;&#125;</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">contacts<span class="token punctuation">[</span><span class="token string">'Kim'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre><code>&#39;0102345678&#39;</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> <span class="token string">'Kim'</span> <span class="token keyword">in</span> contacts<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"키가 딕셔너리에 있음"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>키가 딕셔너리에 있음</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">contacts <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'Kim'</span><span class="token punctuation">:</span><span class="token string">'0102345678'</span><span class="token punctuation">,</span> <span class="token string">'Choi'</span><span class="token punctuation">:</span><span class="token string">'01067891234'</span><span class="token punctuation">,</span> <span class="token string">'Hwang'</span><span class="token punctuation">:</span><span class="token string">'01013467946'</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> contacts<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>(&#39;Kim&#39;, &#39;0102345678&#39;)
+(&#39;Choi&#39;, &#39;01067891234&#39;)
+(&#39;Hwang&#39;, &#39;01013467946&#39;)</code></pre>
+<h3 id="문자열"><a href="#문자열" class="headerlink" title="문자열"></a>문자열</h3><ul>
+<li>문자열은 문자들의 시퀀스로 정의</li>
+<li>글자들이 실(string)로 묶인 것</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">s1 <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token string">"Naeun"</span><span class="token punctuation">)</span>
+s2 <span class="token operator">=</span> <span class="token string">"Seonho"</span>
+
+s3 <span class="token operator">=</span> s1 <span class="token operator">+</span> s2
+<span class="token keyword">print</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>NaeunSeonho</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">word <span class="token operator">=</span> <span class="token string">'abcdef'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>word<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment">## 슬라이싱</span>
+word1 <span class="token operator">=</span> <span class="token string">'Python'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#인덱스 2보다 작을 때까지 → 0, 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>a
+f
+ab</code></pre>
+<h3 id="in-연산자-not-in-연산자"><a href="#in-연산자-not-in-연산자" class="headerlink" title="in 연산자 not in 연산자"></a>in 연산자 not in 연산자</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'Love will find a way.'</span>
+<span class="token string">'Love'</span> <span class="token keyword">in</span> s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<pre><code>True</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token string">'wi'</span> <span class="token keyword">in</span> s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre><code>True</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token string">'e w'</span> <span class="token keyword">in</span> s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre><code>True</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2021/01/21/Study/Postech/Python/%E2%85%A6.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0/" data-id="ckksc0xsa000gngueh4i626zg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "Python 프로그래밍 2: Ⅶ. 데이터 구조",
+        "image": "https://ne-choi.github.io",
+        "keywords": "Postech Python 리스트 튜플",
+        "genre": "Study Postech Python",
+        "datePublished": "2021-01-21",
+        "dateCreated": "2021-01-21",
+        "dateModified": "2021-02-05",
+        "url": "https://ne-choi.github.io//2021/01/21/Study/Postech/Python/Ⅶ. 데이터 구조/",
+        "description": "
+POSTECH에서 제공하는 MOOC 중, Python 프로그래밍 Ⅱ 과정입니다. 
+
+Ⅶ. 데이터 구조1. 리스트리스트란?
+리스트(list)는 여러 개의 데이터가 저장된 장소
+
+선언: [] 안에 쉼표로 구분하여 정보를 기입하면 됨
+리스트 이름 &#x3D; [값1, 값2, 값3]
+scores &#x3D; [32, 56, 64, 72, 12, 37, 98, 7",
+        "wordCount": 1959
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/01/22/Study/Postech/Python/%E2%85%A7.%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC%20%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Python 프로그래밍 2: Ⅶ. 데이터 구조
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/01/20/Study/Postech/Python/%E2%85%A5.%20%ED%95%A8%EC%88%98%EC%99%80%20%EB%AA%A8%EB%93%88/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Python 프로그래밍 2: Ⅵ. 함수와 모듈</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for%EB%AC%B8/" style="font-size: 10px;">for문</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while%EB%AC%B8/" style="font-size: 10px;">while문</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">리스트</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8A%9C%ED%94%8C/" style="font-size: 10px;">튜플</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%95%A8%EC%88%98/" style="font-size: 10px;">함수</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2021/01/21/Study/Postech/Python/%E2%85%A6.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

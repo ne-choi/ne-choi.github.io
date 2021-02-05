@@ -281,8 +281,18 @@ ga('send', 'pageview');
 <li>서포트벡터머신 수행을 위한 패키지: e1071</li>
 <li>서포트벡터머신 함수: svm(y변수~x변수, data= )</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;e1071&quot;)</span><br><span class="line">library (e1071)</span><br><span class="line"></span><br><span class="line">iris&lt;-read.csv(&quot;data&#x2F;week11_1&#x2F;iris.csv&quot;)</span><br><span class="line">attach(iris)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## classification </span><br><span class="line"># 1. use all data </span><br><span class="line"></span><br><span class="line">iris$Species &lt;- as.factor(iris$Species)</span><br><span class="line"></span><br><span class="line">m1&lt;- svm(Species ~., data &#x3D; iris)</span><br><span class="line">summary(m1)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;e1071&quot;)
+library (e1071)
+
+iris&lt;-read.csv(&quot;data&#x2F;week11_1&#x2F;iris.csv&quot;)
+attach(iris)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">## classification 
+# 1. use all data 
+
+iris$Species &lt;- as.factor(iris$Species)
+
+m1&lt;- svm(Species ~., data &#x3D; iris)
+summary(m1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>svm 옵션(default)<ul>
 <li>kernel = radial basis function</li>
@@ -291,14 +301,23 @@ ga('send', 'pageview');
 </li>
 </ul>
 <h3 id="서포트벡터머신-결과"><a href="#서포트벡터머신-결과" class="headerlink" title="서포트벡터머신 결과"></a>서포트벡터머신 결과</h3><ul>
-<li>svm 모델에 적용한 예측범주와 실제범주 비교(전체 데이터 사용 결과)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># classify all data using svm result (m1)</span><br><span class="line"># first 4 variables as attribute variables</span><br><span class="line">x&lt;-iris[, -5] # iris 데이터엣 타겟값인 5번째 열을 제외한 데이터, 즉 4개의 독립변수만 있는 데이터</span><br><span class="line">pred &lt;- predict(m1, x) # svm모델 m1을 적용해 예측된 범주값을 pred로 저장</span><br><span class="line"></span><br><span class="line"># Check accuracy (compare predicted class(pred) and true class(y))</span><br><span class="line"># y &lt;- Species or y&lt;-iris[,5]</span><br><span class="line">y&lt;-iris[,5]</span><br><span class="line">table(pred, y)</span><br></pre></td></tr></table></figure></li>
+<li>svm 모델에 적용한 예측범주와 실제범주 비교(전체 데이터 사용 결과)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># classify all data using svm result (m1)
+# first 4 variables as attribute variables
+x&lt;-iris[, -5] # iris 데이터엣 타겟값인 5번째 열을 제외한 데이터, 즉 4개의 독립변수만 있는 데이터
+pred &lt;- predict(m1, x) # svm모델 m1을 적용해 예측된 범주값을 pred로 저장
+
+# Check accuracy (compare predicted class(pred) and true class(y))
+# y &lt;- Species or y&lt;-iris[,5]
+y&lt;-iris[,5]
+table(pred, y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>오분류율: (4+1)/150 = 0.033%</li>
 </ul>
 </li>
 </ul>
 <h3 id="서포트벡터머신-시각화"><a href="#서포트벡터머신-시각화" class="headerlink" title="서포트벡터머신 시각화"></a>서포트벡터머신 시각화</h3><ul>
-<li>iris 데이터의 서포트벡터머신 결과(전체 데이터 사용 결과)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># visualize classes by color</span><br><span class="line">plot(m1, iris,  Petal.Width~Petal.Length, slice&#x3D;list(Sepal.Width&#x3D;3, Sepal.Length&#x3D;4))</span><br></pre></td></tr></table></figure></li>
+<li>iris 데이터의 서포트벡터머신 결과(전체 데이터 사용 결과)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># visualize classes by color
+plot(m1, iris,  Petal.Width~Petal.Length, slice&#x3D;list(Sepal.Width&#x3D;3, Sepal.Length&#x3D;4))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>4개 변수 중, petal.width와 petal.length가 중요한 변수</li>
 </ul>
@@ -332,17 +351,38 @@ ga('send', 'pageview');
 <li><p>패키지 설치</p>
 <ul>
 <li>서포트벡터머신 수행 패키지: e1071</li>
-<li>오분류율 교차표(confusion matrix) 생성 패키지: caret<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;caret&quot;)</span><br><span class="line">library(e1071)</span><br><span class="line">library(caret)</span><br></pre></td></tr></table></figure></li>
+<li>오분류율 교차표(confusion matrix) 생성 패키지: caret<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;caret&quot;)
+library(e1071)
+library(caret)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 <li><p>iris 데이터 (학습데이터와 검증데이터 분할)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># training (100) &amp; test set (50)</span><br><span class="line">set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line">N&#x3D;nrow(iris)</span><br><span class="line">tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line"># target variable</span><br><span class="line">y&#x3D;iris[,5]</span><br><span class="line"># split train data and test data</span><br><span class="line">train&#x3D;iris[tr.idx,]</span><br><span class="line">test&#x3D;iris[-tr.idx,]</span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training (100) &amp; test set (50)
+set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)
+N&#x3D;nrow(iris)
+tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
+# target variable
+y&#x3D;iris[,5]
+# split train data and test data
+train&#x3D;iris[tr.idx,]
+test&#x3D;iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>커널함수 적용</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#svm using kernel</span><br><span class="line">m1&lt;-svm(Species~., data &#x3D; train) # default: radial</span><br><span class="line">summary(m1)</span><br><span class="line">m2&lt;-svm(Species~., data &#x3D; train,kernel&#x3D;&quot;polynomial&quot;)</span><br><span class="line">summary(m2)</span><br><span class="line">m3&lt;-svm(Species~., data &#x3D; train,kernel&#x3D;&quot;sigmoid&quot;)</span><br><span class="line">summary(m3)</span><br><span class="line">m4&lt;-svm(Species~., data &#x3D; train,kernel&#x3D;&quot;linear&quot;)</span><br><span class="line">summary(m4)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#svm using kernel
+m1&lt;-svm(Species~., data &#x3D; train) # default: radial
+summary(m1)
+m2&lt;-svm(Species~., data &#x3D; train,kernel&#x3D;&quot;polynomial&quot;)
+summary(m2)
+m3&lt;-svm(Species~., data &#x3D; train,kernel&#x3D;&quot;sigmoid&quot;)
+summary(m3)
+m4&lt;-svm(Species~., data &#x3D; train,kernel&#x3D;&quot;linear&quot;)
+summary(m4)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="서포트벡터머신-결과-1"><a href="#서포트벡터머신-결과-1" class="headerlink" title="서포트벡터머신 결과"></a>서포트벡터머신 결과</h3></li>
 </ul>
 <ol>
-<li>정확도 측정: kernel-radial basis function<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#measure accuracy</span><br><span class="line">pred11&lt;-predict(m1,test) # radial basis</span><br><span class="line">confusionMatrix(pred11, test$Species)</span><br><span class="line">#table(pred11, y[-tr.idx])</span><br></pre></td></tr></table></figure></li>
+<li>정확도 측정: kernel-radial basis function<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#measure accuracy
+pred11&lt;-predict(m1,test) # radial basis
+confusionMatrix(pred11, test$Species)
+#table(pred11, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <ul>
 <li>결과 해석<ul>
@@ -353,7 +393,9 @@ ga('send', 'pageview');
 </li>
 </ul>
 <ol start="2">
-<li>정확도 측정: kernel-polynomial<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pred12&lt;-predict(m2,test) # polynomial</span><br><span class="line">confusionMatrix(pred12, test$Species)</span><br><span class="line">#table(pred12, y[-tr.idx])</span><br></pre></td></tr></table></figure></li>
+<li>정확도 측정: kernel-polynomial<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred12&lt;-predict(m2,test) # polynomial
+confusionMatrix(pred12, test$Species)
+#table(pred12, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <ul>
 <li>결과 해석<ul>
@@ -362,7 +404,9 @@ ga('send', 'pageview');
 </li>
 </ul>
 <ol start="3">
-<li>정확도 측정: kernel-sigmoid<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pred13&lt;-predict(m3,test) # simoid</span><br><span class="line">confusionMatrix(pred13, test$Species)</span><br><span class="line">#table(pred13, y[-tr.idx])</span><br></pre></td></tr></table></figure></li>
+<li>정확도 측정: kernel-sigmoid<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred13&lt;-predict(m3,test) # simoid
+confusionMatrix(pred13, test$Species)
+#table(pred13, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <ul>
 <li>결과 해석<ul>
@@ -371,7 +415,9 @@ ga('send', 'pageview');
 </li>
 </ul>
 <ol start="4">
-<li>정확도 측정: kernel-linear<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pred14&lt;-predict(m4,test) # linear</span><br><span class="line">confusionMatrix(pred14, test$Species)</span><br><span class="line">#table(pred14, y[-tr.idx])</span><br></pre></td></tr></table></figure></li>
+<li>정확도 측정: kernel-linear<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred14&lt;-predict(m4,test) # linear
+confusionMatrix(pred14, test$Species)
+#table(pred14, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <ul>
 <li>결과 해석<ul>
@@ -382,8 +428,23 @@ ga('send', 'pageview');
 <h3 id="서포트벡터머신-정확도-정리"><a href="#서포트벡터머신-정확도-정리" class="headerlink" title="서포트벡터머신 정확도 정리"></a>서포트벡터머신 정확도 정리</h3><ul>
 <li>linear로만 처리해도 정확도 높은 경우가 많음</li>
 </ul>
-<h2 id="3-서포트벡터머신-Ⅲ"><a href="#3-서포트벡터머신-Ⅲ" class="headerlink" title="3. 서포트벡터머신 Ⅲ"></a>3. 서포트벡터머신 Ⅲ</h2><h3 id="Breast-Cancer-데이터"><a href="#Breast-Cancer-데이터" class="headerlink" title="Breast Cancer 데이터"></a>Breast Cancer 데이터</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;e1071&quot;)</span><br><span class="line"># load package for support vector machine</span><br><span class="line">library(e1071) #svm model</span><br><span class="line"></span><br><span class="line"># install.packages(&quot;caret&quot;)</span><br><span class="line"># load package for Confusion matrix</span><br><span class="line">library(caret)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># read data</span><br><span class="line">cancer&lt;-read.csv(&quot;data&#x2F;week11_3&#x2F;cancer.csv&quot;)</span><br><span class="line">head(cancer, n&#x3D;10)</span><br><span class="line"></span><br><span class="line"># remover X1 column(ID number) # ID number 필요 없는 feature로 제거</span><br><span class="line">cancer&lt;-cancer[, names(cancer) !&#x3D; &quot;X1&quot;]</span><br><span class="line">attach(cancer)</span><br><span class="line"></span><br><span class="line"># 종속변수형을 factor 함수로 변경해야 함(R 4.0버전 이후)</span><br><span class="line">cancer$Y &lt;- as.factor(cancer$Y)</span><br></pre></td></tr></table></figure>
+<h2 id="3-서포트벡터머신-Ⅲ"><a href="#3-서포트벡터머신-Ⅲ" class="headerlink" title="3. 서포트벡터머신 Ⅲ"></a>3. 서포트벡터머신 Ⅲ</h2><h3 id="Breast-Cancer-데이터"><a href="#Breast-Cancer-데이터" class="headerlink" title="Breast Cancer 데이터"></a>Breast Cancer 데이터</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;e1071&quot;)
+# load package for support vector machine
+library(e1071) #svm model
+
+# install.packages(&quot;caret&quot;)
+# load package for Confusion matrix
+library(caret)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read data
+cancer&lt;-read.csv(&quot;data&#x2F;week11_3&#x2F;cancer.csv&quot;)
+head(cancer, n&#x3D;10)
+
+# remover X1 column(ID number) # ID number 필요 없는 feature로 제거
+cancer&lt;-cancer[, names(cancer) !&#x3D; &quot;X1&quot;]
+attach(cancer)
+
+# 종속변수형을 factor 함수로 변경해야 함(R 4.0버전 이후)
+cancer$Y &lt;- as.factor(cancer$Y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>Breast Cancer Wisconsin (Diagnostic) Data Set<ul>
 <li>세침흡인 세포검사를 통해 얻은 683개 유방조직의 9개 특성을 나타냄</li>
@@ -392,19 +453,39 @@ ga('send', 'pageview');
 </li>
 </ul>
 <ul>
-<li>학습데이터 / 검증데이터 분할<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># training (455) &amp; test set (228)</span><br><span class="line"># set.seed(1000)</span><br><span class="line">N&#x3D;nrow(cancer)</span><br><span class="line">set.seed(998, sample.kind&#x3D;&quot;Rounding&quot;)</span><br><span class="line"></span><br><span class="line"># split train data and test data</span><br><span class="line">tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)</span><br><span class="line">train &lt;- cancer[ tr.idx,]</span><br><span class="line">test  &lt;- cancer[-tr.idx,]</span><br></pre></td></tr></table></figure>
+<li>학습데이터 / 검증데이터 분할<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training (455) &amp; test set (228)
+# set.seed(1000)
+N&#x3D;nrow(cancer)
+set.seed(998, sample.kind&#x3D;&quot;Rounding&quot;)
+
+# split train data and test data
+tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
+train &lt;- cancer[ tr.idx,]
+test  &lt;- cancer[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
 <h3 id="서포트벡터머신-결과-2"><a href="#서포트벡터머신-결과-2" class="headerlink" title="서포트벡터머신 결과"></a>서포트벡터머신 결과</h3><ul>
-<li>kernel 함수에 따른 서포트벡터머신<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#svm using kernel</span><br><span class="line">m1&lt;-svm(Y~., data &#x3D; train)</span><br><span class="line">summary(m1)</span><br><span class="line"></span><br><span class="line">#measure accuracy</span><br><span class="line">pred11&lt;-predict(m1,test) # radial basis</span><br><span class="line">confusionMatrix(pred11, test$Y)</span><br><span class="line">#table(pred11, y[-tr.idx])</span><br></pre></td></tr></table></figure></li>
+<li>kernel 함수에 따른 서포트벡터머신<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#svm using kernel
+m1&lt;-svm(Y~., data &#x3D; train)
+summary(m1)
+
+#measure accuracy
+pred11&lt;-predict(m1,test) # radial basis
+confusionMatrix(pred11, test$Y)
+#table(pred11, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li>결과 해석<ul>
 <li>악성으로 오분류 4, 정상으로 오분류 1</li>
 <li>정확도: 0.9781</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">m2&lt;-svm(Y~., data &#x3D; train,kernel&#x3D;&quot;polynomial&quot;)</span><br><span class="line">summary(m2)</span><br><span class="line"></span><br><span class="line">pred12&lt;-predict(m2,test) # polynomial</span><br><span class="line">confusionMatrix(pred12, test$Y)</span><br><span class="line">#table(pred12, y[-tr.idx])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">m2&lt;-svm(Y~., data &#x3D; train,kernel&#x3D;&quot;polynomial&quot;)
+summary(m2)
+
+pred12&lt;-predict(m2,test) # polynomial
+confusionMatrix(pred12, test$Y)
+#table(pred12, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>결과 해석<ul>
 <li>악성으로 오분류 0, 정상으로 오분류 12</li>
@@ -414,7 +495,12 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">m3&lt;-svm(Y~., data &#x3D; train,kernel&#x3D;&quot;sigmoid&quot;)</span><br><span class="line">summary(m3)</span><br><span class="line"></span><br><span class="line">pred13&lt;-predict(m3,test) # sigmoid</span><br><span class="line">confusionMatrix(pred13, test$Y)</span><br><span class="line">#table(pred13, y[-tr.idx])</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">m3&lt;-svm(Y~., data &#x3D; train,kernel&#x3D;&quot;sigmoid&quot;)
+summary(m3)
+
+pred13&lt;-predict(m3,test) # sigmoid
+confusionMatrix(pred13, test$Y)
+#table(pred13, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>결과 해석<ul>
 <li>악성으로 오분류 5, 정상으로 오분류 3</li>
@@ -422,7 +508,13 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">m4&lt;-svm(Y~., data &#x3D; train,kernel&#x3D;&quot;linear&quot;)</span><br><span class="line">summary(m4)</span><br><span class="line"></span><br><span class="line">pred14&lt;-predict(m4,test) # linear</span><br><span class="line">confusionMatrix(pred14, test$Y)</span><br><span class="line">#table(pred14, y[-tr.idx])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">m4&lt;-svm(Y~., data &#x3D; train,kernel&#x3D;&quot;linear&quot;)
+summary(m4)
+
+pred14&lt;-predict(m4,test) # linear
+confusionMatrix(pred14, test$Y)
+#table(pred14, y[-tr.idx])
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>결과 해석</p>
 <ul>
@@ -443,7 +535,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/12/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/XI_%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" data-id="ckknaf2tt0009h8ue1emjfi33" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/12/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/XI_%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" data-id="ckksc0xs8000cnguec3uw93w3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -554,7 +646,7 @@ SVM(서포트벡터머신)
 
 상대적으로 정확도가 높음
 해석상 어려움 ",
-        "wordCount": 883
+        "wordCount": 699
     }
 </script>
 
@@ -633,7 +725,7 @@ SVM(서포트벡터머신)
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -643,7 +735,7 @@ SVM(서포트벡터머신)
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -653,7 +745,7 @@ SVM(서포트벡터머신)
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for%EB%AC%B8/" style="font-size: 10px;">for문</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while%EB%AC%B8/" style="font-size: 10px;">while문</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">리스트</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8A%9C%ED%94%8C/" style="font-size: 10px;">튜플</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%95%A8%EC%88%98/" style="font-size: 10px;">함수</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
         </div>
     </div>
 

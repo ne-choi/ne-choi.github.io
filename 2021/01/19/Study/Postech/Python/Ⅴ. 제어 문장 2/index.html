@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Python 프로그래밍 2: Ⅴ. 제어 문장 2 | Better Thinking</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Postech,Python,for문,while문" />
+    
+    <meta name="description" content="POSTECH에서 제공하는 MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.   Ⅴ. 제어 문장 21. 반복문(for, while)제어문(Control statements) 종류 조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문 if, if elif   반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문 for, while   분기문(Jump">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 프로그래밍 2: Ⅴ. 제어 문장 2">
+<meta property="og:url" content="https://ne-choi.github.io/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/index.html">
+<meta property="og:site_name" content="Better Thinking">
+<meta property="og:description" content="POSTECH에서 제공하는 MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.   Ⅴ. 제어 문장 21. 반복문(for, while)제어문(Control statements) 종류 조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문 if, if elif   반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문 for, while   분기문(Jump">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-19T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-05T13:34:14.569Z">
+<meta property="article:author" content="Naeun Choi">
+<meta property="article:tag" content="Postech">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="for문">
+<meta property="article:tag" content="while문">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-187747665-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/feed.xml" title="Better Thinking" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Contest/">Contest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Kaggle/">Kaggle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Postech/">Postech</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/Programming/">Programming</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/">Postech</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Postech/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Study/Postech/Python/Ⅴ. 제어 문장 2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Python 프로그래밍 2: Ⅴ. 제어 문장 2
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/" class="article-date">
+       <time datetime="2021-01-19T00:00:00.000Z" itemprop="datePublished">2021-01-19</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/" class="article-date">
+     <time datetime="2021-02-05T13:34:14.569Z" itemprop="dateModified">2021-02-05</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Postech/" rel="tag">Postech</a>, <a class="tag-link-link" href="/tags/Python/" rel="tag">Python</a>, <a class="tag-link-link" href="/tags/for%EB%AC%B8/" rel="tag">for문</a>, <a class="tag-link-link" href="/tags/while%EB%AC%B8/" rel="tag">while문</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <ul>
+<li>POSTECH에서 제공하는 <a target="_blank" rel="noopener" href="https://pabi.smartlearn.io/">MOOC</a> 중, Python 프로그래밍 Ⅱ 과정입니다. </li>
+</ul>
+<h1 id="Ⅴ-제어-문장-2"><a href="#Ⅴ-제어-문장-2" class="headerlink" title="Ⅴ. 제어 문장 2"></a>Ⅴ. 제어 문장 2</h1><h2 id="1-반복문-for-while"><a href="#1-반복문-for-while" class="headerlink" title="1. 반복문(for, while)"></a>1. 반복문(for, while)</h2><h3 id="제어문-Control-statements-종류"><a href="#제어문-Control-statements-종류" class="headerlink" title="제어문(Control statements) 종류"></a>제어문(Control statements) 종류</h3><ul>
+<li>조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문<ul>
+<li>if, if elif</li>
+</ul>
+</li>
+<li>반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문<ul>
+<li>for, while</li>
+</ul>
+</li>
+<li>분기문(Jump Statements)<ul>
+<li>return, break, continue</li>
+</ul>
+</li>
+</ul>
+<h3 id="Computational-Thinking"><a href="#Computational-Thinking" class="headerlink" title="Computational Thinking"></a>Computational Thinking</h3><ul>
+<li>컴퓨팅 사고력: 컴퓨터가 문제를 해결하는 방식을 현실 문제 해결에 적용하는 것<ul>
+<li>추상화: 실제 세계 문제를 해결 가능한 형태로 표현하기 위한 사고 과정</li>
+<li>자동화: 추상화 과정에서 만들어진 해결 모델을 컴퓨터가 이해할 수 있는 프로그래밍 언어로 표현하는 것</li>
+</ul>
+</li>
+</ul>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><ul>
+<li>반복적이고 지루한 작업을 컴퓨터를 이용해 자동화</li>
+<li>for: 리스트나 튜플, 문자열의 첫 번째 요소부터 마지막 요소까지 차례로 변수에 대입되어 “수행할 문장 1”, “수행할 문장 2” 등 수행</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">for 변수 in 리스트(or 튜플, 문자열):
+    수행할 문장 1
+    수행할 문장 2
+    ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="참고-range-함수"><a href="#참고-range-함수" class="headerlink" title="참고: range() 함수"></a>참고: range() 함수</h3><pre class="line-numbers language-none"><code class="language-none">range([start,] stop [,step]) # [] 생략 가능<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>range(start, stop)과 같이 호출하면 start부터 시작해서 (stop-1)까지의 정수 생성</li>
+<li>stop은 포함되지 않음</li>
+<li>start부터 stop-1까지 step 간격으로 정수 생성</li>
+<li>range(10): 0부터 9까지의 정수가 생성</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">range(start, stop, step)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>지정된 범위 값을 반환</li>
+<li>특정 구간의 정수 생성 가능</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello Python~!!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>Hello Python~!!
+Hello Python~!!
+Hello Python~!!
+Hello Python~!!
+Hello Python~!!</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">## 리스트형</span>
+<span class="token keyword">for</span> name <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"나은"</span><span class="token punctuation">,</span> <span class="token string">"선호"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"안녕! "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>안녕! 나은
+안녕! 선호</code></pre>
+<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><ul>
+<li>조건의 결과(참 or 거짓)에 따라 특정 부분 처리를 반복 실행하는 제어문장</li>
+<li>조건문이 참인 동안 while문 아래에 속하는 문장들이 반복하여 수행</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">while 조건문:
+    수행할 문장 1
+    수행할 문장 2
+    수행할 문장 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> i <span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello 김선호 배우님"</span><span class="token punctuation">)</span>
+    i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"반복이 종료되었습니다."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>Hello 김선호 배우님
+Hello 김선호 배우님
+Hello 김선호 배우님
+Hello 김선호 배우님
+Hello 김선호 배우님
+반복이 종료되었습니다.</code></pre>
+<h3 id="분기문-Jump-Statement"><a href="#분기문-Jump-Statement" class="headerlink" title="분기문(Jump Statement)"></a>분기문(Jump Statement)</h3><ul>
+<li>반복문 탈출하는 break문</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"for문을 %d번 실행"</span> <span class="token operator">%</span> i<span class="token punctuation">)</span>
+    <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>for문을 1번 실행</code></pre>
+<ul>
+<li>반복문으로 다시 돌아가는 continue문<ul>
+<li>블록 남은 부분을 건너 뛰고 무조건 처음으로 돌아감</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">hap<span class="token punctuation">,</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> i <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">continue</span>
+    hap <span class="token operator">+=</span> i
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1-100의 합계(3의 배수 제외): %d"</span> <span class="token operator">%</span> hap<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>1-100의 합계(3의 배수 제외): 3367</code></pre>
+<h2 id="2-반복문-실습"><a href="#2-반복문-실습" class="headerlink" title="2. 반복문 실습"></a>2. 반복문 실습</h2><h3 id="정수들의-합"><a href="#정수들의-합" class="headerlink" title="정수들의 합"></a>정수들의 합</h3><ul>
+<li>for문 사용</li>
+<li>1부터 사용자가 입력한 수 n까지 더하여 (1+2+3+…+n)을 계산하는 프로그램 작성</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 반복을 이용한 정수합 프로그램</span>
+<span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">#sum을 저장할 수 있는 변수 생성</span>
+
+limit <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"어디까지 계산할까요?: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> limit<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#stop이 -1 되어 있기 때문에 +1 해줌</span>
+    <span class="token builtin">sum</span> <span class="token operator">+=</span> i
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1부터 "</span><span class="token punctuation">,</span>limit<span class="token punctuation">,</span><span class="token string">"까지의 정수 합 ="</span><span class="token punctuation">,</span> <span class="token builtin">sum</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>어디까지 계산할까요?: 50
+1부터  50 까지의 정수 합 = 1275</code></pre>
+<h3 id="팩토리얼-계산"><a href="#팩토리얼-계산" class="headerlink" title="팩토리얼 계산"></a>팩토리얼 계산</h3><ul>
+<li>for문 사용</li>
+<li>팩토리얼 n!은 1부터 n까지 정수를 모두 곱한 것</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">fact <span class="token operator">=</span> <span class="token number">1.0</span> <span class="token comment">#초기값으로 실수를 넣음</span>
+n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"정수를 입력하시오: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#range의 stop이 n-1이기 때문에 +1을 해줌</span>
+    fact <span class="token operator">=</span> fact <span class="token operator">*</span> i<span class="token punctuation">;</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token string">"!은"</span><span class="token punctuation">,</span> fact<span class="token punctuation">,</span><span class="token string">"이다."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>정수를 입력하시오: 5
+5 !은 120.0 이다.</code></pre>
+<h3 id="자리수의-합"><a href="#자리수의-합" class="headerlink" title="자리수의 합"></a>자리수의 합</h3><ul>
+<li>정수 안 각 자리수의 합을 계산하는 프로그램 작성</li>
+<li>e.g. 1234 → 1+2+3+4</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">number <span class="token operator">=</span> <span class="token number">1234</span>
+<span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> number <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+    digit <span class="token operator">=</span> number <span class="token operator">%</span> <span class="token number">10</span>
+    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span> <span class="token operator">+</span> digit
+    number <span class="token operator">=</span> number <span class="token operator">//</span> <span class="token number">10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"자리수의 합은 %d입니다."</span> <span class="token operator">%</span> <span class="token builtin">sum</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>자리수의 합은 10입니다.</code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">number <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"정수를 입력하시오: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"입력한 수는: "</span><span class="token punctuation">,</span>number<span class="token punctuation">)</span>
+
+<span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> number <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+    digit <span class="token operator">=</span> number <span class="token operator">%</span> <span class="token number">10</span>
+    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span> <span class="token operator">+</span> digit
+    number <span class="token operator">=</span> number <span class="token operator">//</span> <span class="token number">10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"자리수의 합은 %d입니다."</span> <span class="token operator">%</span> <span class="token builtin">sum</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>정수를 입력하시오: 555
+입력한 수는:  555
+자리수의 합은 15입니다.</code></pre>
+<h3 id="숫자-맞추기-게임"><a href="#숫자-맞추기-게임" class="headerlink" title="숫자 맞추기 게임"></a>숫자 맞추기 게임</h3><ul>
+<li>컴퓨터가 선택한 숫자를 사용자가 맞추는 게임</li>
+<li>입력한 숫자가 선택한 숫자보다 높은 수인지 낮은 수인지 정보 제공</li>
+<li>시도 횟수 제공</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> random
+
+tries <span class="token operator">=</span> <span class="token number">0</span>
+number <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment">#1부터 100사이의 숫자를 랜덤으로 컴퓨터가 선택</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1부터 100 사이의 숫자를 맞추시오."</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> tries <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">:</span> <span class="token comment">#시도횟수 제한: 10회</span>
+    guess <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"숫자를 입력하시오: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    tries <span class="token operator">=</span> tries <span class="token operator">+</span> <span class="token number">199</span>
+    <span class="token keyword">if</span> guess <span class="token operator">&lt;</span> number<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Up."</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> guess <span class="token operator">></span> number<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Down."</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+
+<span class="token keyword">if</span> guess <span class="token operator">==</span> number<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"축하합니다. 시도횟수: "</span><span class="token punctuation">,</span> tries<span class="token punctuation">,</span><span class="token string">"회"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"정답은 "</span><span class="token punctuation">,</span>number<span class="token punctuation">,</span><span class="token string">"입니다."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>1부터 100 사이의 숫자를 맞추시오.
+숫자를 입력하시오: 55
+Down.
+정답은  51 입니다.</code></pre>
+<h3 id="커피-자판기"><a href="#커피-자판기" class="headerlink" title="커피 자판기"></a>커피 자판기</h3><ul>
+<li>수정 필요</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">coffee <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"커피 재고: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+money <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"돈: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> money<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n돈을 받았으니 4000원 짜리 커피를 줍니다."</span><span class="token punctuation">)</span>
+    money <span class="token operator">=</span> money <span class="token operator">-</span> <span class="token number">4000</span>
+    <span class="token keyword">if</span> money <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"커피를 구매할 수 없습니다."</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> money <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"커피를 1잔 구매했습니다. 남은 돈은 %d원입니다."</span> <span class="token operator">%</span> money<span class="token punctuation">)</span>
+        coffee <span class="token operator">=</span> coffee <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">></span> <span class="token number">0</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"남은 커피의 양은 %d개입니다."</span> <span class="token operator">%</span> coffee<span class="token punctuation">)</span>
+        coffee <span class="token operator">&lt;</span> <span class="token number">0</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"커피가 다 떨어졌습니다. 판매를 중지합니다."</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> money<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"예산이 다 떨어졌습니다. 커피를 구매할 수 없습니다."</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://ne-choi.github.io/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/" data-id="ckksc0xs50008ngue1h4pdwlo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Naeun Choi"
+        },
+        "headline": "Python 프로그래밍 2: Ⅴ. 제어 문장 2",
+        "image": "https://ne-choi.github.io",
+        "keywords": "Postech Python for문 while문",
+        "genre": "Study Postech Python",
+        "datePublished": "2021-01-19",
+        "dateCreated": "2021-01-19",
+        "dateModified": "2021-02-05",
+        "url": "https://ne-choi.github.io//2021/01/19/Study/Postech/Python/Ⅴ. 제어 문장 2/",
+        "description": "
+POSTECH에서 제공하는 MOOC 중, Python 프로그래밍 Ⅱ 과정입니다. 
+
+Ⅴ. 제어 문장 21. 반복문(for, while)제어문(Control statements) 종류
+조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문
+if, if elif
+
+
+반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문
+for, while
+
+
+분기문(Jump",
+        "wordCount": 1635
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/01/20/Study/Postech/Python/%E2%85%A5.%20%ED%95%A8%EC%88%98%EC%99%80%20%EB%AA%A8%EB%93%88/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Python 프로그래밍 2: Ⅵ. 함수와 모듈
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/01/18/Study/Postech/Python/%E2%85%A3.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%201/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Python 프로그래밍 1: Ⅳ. 제어 문장 1</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Contest/">Contest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/Kaggle/">Kaggle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ADsP/">ADsP</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/ML/">ML</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/">Postech</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Bigdata/">Bigdata</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/ML/">ML</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Postech/Statistics/">Statistics</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python/">Python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Programming/">Programming</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/10-Minutes-to-Pandas/" style="font-size: 10px;">10 Minutes to Pandas</a> <a href="/tags/ADsP/" style="font-size: 16px;">ADsP</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/EDA/" style="font-size: 14px;">EDA</a> <a href="/tags/F1%EC%8A%A4%EC%BD%94%EC%96%B4/" style="font-size: 10px;">F1스코어</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Kaggle-beginner/" style="font-size: 10px;">Kaggle beginner</a> <a href="/tags/Postech/" style="font-size: 20px;">Postech</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/SVM/" style="font-size: 10px;">SVM</a> <a href="/tags/Titanic/" style="font-size: 10px;">Titanic</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dplyr/" style="font-size: 10px;">dplyr</a> <a href="/tags/for%EB%AC%B8/" style="font-size: 10px;">for문</a> <a href="/tags/ggplot2/" style="font-size: 10px;">ggplot2</a> <a href="/tags/k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95/" style="font-size: 12px;">k-인접기법</a> <a href="/tags/kaggle/" style="font-size: 12px;">kaggle</a> <a href="/tags/lattice/" style="font-size: 10px;">lattice</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/lists-vs-tuples/" style="font-size: 10px;">lists vs tuples</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/p-value/" style="font-size: 10px;">p-value</a> <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/read-csv/" style="font-size: 10px;">read csv</a> <a href="/tags/t-test/" style="font-size: 10px;">t-test</a> <a href="/tags/titanic/" style="font-size: 10px;">titanic</a> <a href="/tags/tuples/" style="font-size: 10px;">tuples</a> <a href="/tags/unzip/" style="font-size: 10px;">unzip</a> <a href="/tags/unzip-multiple-files/" style="font-size: 10px;">unzip multiple files</a> <a href="/tags/while%EB%AC%B8/" style="font-size: 10px;">while문</a> <a href="/tags/%EA%B2%B0%EC%A0%95%ED%8A%B8%EB%A6%AC/" style="font-size: 10px;">결정트리</a> <a href="/tags/%EA%B3%B5%EB%AA%A8%EC%A0%84/" style="font-size: 10px;">공모전</a> <a href="/tags/%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과소적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합</a> <a href="/tags/%EA%B3%BC%EC%A0%81%ED%95%A9%EA%B3%BC%EC%86%8C%EC%A0%81%ED%95%A9/" style="font-size: 10px;">과적합과소적합</a> <a href="/tags/%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">다중회귀모형</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">데이터마이닝</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EC%A4%80%EC%A0%84%EB%AC%B8%EA%B0%80/" style="font-size: 16px;">데이터분석준전문가</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 12px;">데이터시각화</a> <a href="/tags/%EB%94%A5%EB%9F%AC%EB%8B%9D/" style="font-size: 10px;">딥러닝</a> <a href="/tags/%EB%9E%9C%EB%8D%A4%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" style="font-size: 12px;">랜덤포레스트</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">로지스틱회귀</a> <a href="/tags/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로지스틱회귀분석</a> <a href="/tags/%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">리스트</a> <a href="/tags/%EB%A6%BF%EC%A7%80%EB%9D%BC%EC%8F%98%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EB%84%B7/" style="font-size: 10px;">릿지라쏘엘라스틱넷</a> <a href="/tags/%EB%B6%84%EB%A5%98/" style="font-size: 10px;">분류</a> <a href="/tags/%EB%B6%84%EC%82%B0/" style="font-size: 10px;">분산</a> <a href="/tags/%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" style="font-size: 10px;">서포트벡터머신</a> <a href="/tags/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">선형회귀</a> <a href="/tags/%EC%8B%9C%EA%B0%81%ED%99%94/" style="font-size: 10px;">시각화</a> <a href="/tags/%EC%8B%A0%EB%A2%B0%EA%B5%AC%EA%B0%84/" style="font-size: 10px;">신뢰구간</a> <a href="/tags/%EC%95%99%EC%83%81%EB%B8%94%ED%95%99%EC%8A%B5/" style="font-size: 10px;">앙상블학습</a> <a href="/tags/%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99/" style="font-size: 10px;">연관규칙</a> <a href="/tags/%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4/" style="font-size: 10px;">의사결정나무</a> <a href="/tags/%EC%9E%AC%ED%98%84%EC%9C%A8/" style="font-size: 10px;">재현율</a> <a href="/tags/%EC%A0%95%ED%99%95%EB%8F%84/" style="font-size: 10px;">정확도</a> <a href="/tags/%EC%A3%BC%EC%84%B1%EB%B6%84%EB%B6%84%EC%84%9D/" style="font-size: 14px;">주성분분석</a> <a href="/tags/%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C/" style="font-size: 12px;">차원축소</a> <a href="/tags/%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" style="font-size: 10px;">최소자승법</a> <a href="/tags/%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/" style="font-size: 10px;">텍스트마이닝</a> <a href="/tags/%ED%86%B5%EA%B3%84/" style="font-size: 14px;">통계</a> <a href="/tags/%ED%8A%9C%ED%94%8C/" style="font-size: 10px;">튜플</a> <a href="/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%99%84%EB%B2%BD%EA%B0%80%EC%9D%B4%EB%93%9C/" style="font-size: 18px;">파이썬머신러닝완벽가이드</a> <a href="/tags/%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" style="font-size: 12px;">판별분석</a> <a href="/tags/%ED%8F%89%EA%B7%A0/" style="font-size: 10px;">평균</a> <a href="/tags/%ED%91%9C%EB%B3%B8%EC%B6%94%EC%B6%9C/" style="font-size: 10px;">표본추출</a> <a href="/tags/%ED%95%A8%EC%88%98/" style="font-size: 10px;">함수</a> <a href="/tags/%ED%9A%8C%EA%B7%80/" style="font-size: 10px;">회귀</a> <a href="/tags/%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95/" style="font-size: 10px;">회귀모형</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Naeun Choi</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://ne-choi.github.io/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
