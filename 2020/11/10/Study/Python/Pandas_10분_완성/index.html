@@ -1,7 +1,7 @@
     <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <script data-ad-client="ca-pub-4996237567431979" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     
@@ -11,7 +11,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="python,10 Minutes to Pandas,pandas,numpy,matplotlib" />
+    <meta name="keywords" content="python,10 Minutes to Pandas,pandas,numpy,matplotlib">
     
     <meta name="description" content="Pandas 10분 완성(10 Minutes to Pandas) 필사 본 자료의 저작권은 BSD-3-Clause이며, 데잇걸즈2가 번역한 Pandas 10분 완성을 필사한 자료임.    목차  Object Creation (객체 생성)   Viewing Data (데이터 확인하기)   Selection (선택)   Missing Data (결측치)   Op">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta property="article:tag" content="matplotlib">
 <meta name="twitter:card" content="summary">
     
-    <link rel="canonical" href="https://ne-choi.github.io/2020/11/10/study/python/pandas_10분_완성/"/>
+    <link rel="canonical" href="https://ne-choi.github.io/2020/11/10/study/python/pandas_10분_완성/">
 
     
 
@@ -101,13 +101,13 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                     <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Contest/">Contest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Kaggle/">Kaggle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Postech/">Postech</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/Programming/">Programming</a></li></ul></li></ul>
                                 
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
@@ -116,14 +116,14 @@ ga('send', 'pageview');
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -227,7 +227,7 @@ ga('send', 'pageview');
             
 
             <h1 id="Pandas-10분-완성-10-Minutes-to-Pandas-필사"><a href="#Pandas-10분-완성-10-Minutes-to-Pandas-필사" class="headerlink" title="Pandas 10분 완성(10 Minutes to Pandas) 필사"></a><strong>Pandas 10분 완성(10 Minutes to Pandas) 필사</strong></h1><ul>
-<li>본 자료의 저작권은 <a target="_blank" rel="noopener" href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a>이며, <a target="_blank" rel="noopener" href="https://dataitgirls2.github.io/10minutes2pandas/">데잇걸즈2가 번역한 Pandas 10분 완성</a>을 필사한 자료임.  </li>
+<li>본 자료의 저작권은 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a>이며, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://dataitgirls2.github.io/10minutes2pandas/">데잇걸즈2가 번역한 Pandas 10분 완성</a>을 필사한 자료임.  </li>
 </ul>
 <p><strong>목차</strong></p>
 <ol>
@@ -250,8 +250,8 @@ ga('send', 'pageview');
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="1-Object-Creation"><a href="#1-Object-Creation" class="headerlink" title="1. Object Creation"></a><strong>1. Object Creation</strong></h2><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">- 참고: 데이터 구조 소개 섹션</a></p>
-<p>Pansdas는 값을 가지고 있는 리스트를 통해 <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html">Series</a>를 만들고, 정수로 만들어진 인덱스를 기본값으로 불러온다.</p>
+<h2 id="1-Object-Creation"><a href="#1-Object-Creation" class="headerlink" title="1. Object Creation"></a><strong>1. Object Creation</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">- 참고: 데이터 구조 소개 섹션</a></p>
+<p>Pansdas는 값을 가지고 있는 리스트를 통해 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html">Series</a>를 만들고, 정수로 만들어진 인덱스를 기본값으로 불러온다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -291,7 +291,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -375,7 +375,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -443,7 +443,7 @@ D             int32
 E          category
 F            object
 dtype: object</code></pre>
-<h2 id="2-Viewing-Data"><a href="#2-Viewing-Data" class="headerlink" title="2. Viewing Data"></a><strong>2. Viewing Data</strong></h2><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Basic Section</a>  </p>
+<h2 id="2-Viewing-Data"><a href="#2-Viewing-Data" class="headerlink" title="2. Viewing Data"></a><strong>2. Viewing Data</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Basic Section</a>  </p>
 <p>데이터프레임의 가장 윗줄과 마지막 줄을 확인하고 싶을 때 사용하는 방법 알아보기.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 괄호() 안에 숫자를 넣으면 (숫자)줄을 불러오고 넣지 않으면 기본값인 5개를 불러옴</span>
 
@@ -464,7 +464,7 @@ df<span class="token punctuation">.</span>tail<span class="token punctuation">(<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -521,7 +521,7 @@ df<span class="token punctuation">.</span>tail<span class="token punctuation">(<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -614,7 +614,7 @@ df<span class="token punctuation">.</span>tail<span class="token punctuation">(<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -706,7 +706,7 @@ df<span class="token punctuation">.</span>tail<span class="token punctuation">(<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -780,7 +780,7 @@ df<span class="token punctuation">.</span>tail<span class="token punctuation">(<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -858,7 +858,7 @@ df<span class="token punctuation">.</span>tail<span class="token punctuation">(<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -921,7 +921,7 @@ df<span class="token punctuation">.</span>tail<span class="token punctuation">(<
 <h2 id="3-Selection"><a href="#3-Selection" class="headerlink" title="3. Selection"></a><strong>3. Selection</strong></h2><ul>
 <li>주석: Pandas에 최적화된 데이터 접근 방법인 .at, .iat, .loc, .iloc 사용  </li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 데이터 인덱싱 및 선택</a>, <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">다중 인덱싱/심화 인덱싱</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 데이터 인덱싱 및 선택</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">다중 인덱싱/심화 인덱싱</a></p>
 <h3 id="Getting-데이터-얻기"><a href="#Getting-데이터-얻기" class="headerlink" title="- Getting(데이터 얻기)"></a><strong>- Getting(데이터 얻기)</strong></h3><p>df.A와 동일한 Series를 생성하는 단일 열을 선택한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -951,7 +951,7 @@ Freq: D, Name: A, dtype: float64</code></pre>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1008,7 +1008,7 @@ Freq: D, Name: A, dtype: float64</code></pre>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1047,7 +1047,7 @@ Freq: D, Name: A, dtype: float64</code></pre>
 
 
 
-<h3 id="Selection-by-Label"><a href="#Selection-by-Label" class="headerlink" title="- Selection by Label"></a><strong>- Selection by Label</strong></h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: Label을 통한 선택</a></p>
+<h3 id="Selection-by-Label"><a href="#Selection-by-Label" class="headerlink" title="- Selection by Label"></a><strong>- Selection by Label</strong></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: Label을 통한 선택</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 라벨을 사용하여 횡단면 얻기</span>
 df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>dates<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -1076,7 +1076,7 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1141,7 +1141,7 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1193,7 +1193,7 @@ df<span class="token punctuation">.</span>at<span class="token punctuation">[</s
 
 
 <pre><code>-1.6126421545697252</code></pre>
-<h3 id="Selection-by-Position"><a href="#Selection-by-Position" class="headerlink" title="- Selection by Position"></a><strong>- Selection by Position</strong></h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 위치로 선택하기</a></p>
+<h3 id="Selection-by-Position"><a href="#Selection-by-Position" class="headerlink" title="- Selection by Position"></a><strong>- Selection by Position</strong></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 위치로 선택하기</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 넘겨 받은 정수 위치를 기준으로 선택</span>
 df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -1222,7 +1222,7 @@ df<span class="token punctuation">.</span>iloc<span class="token punctuation">[<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1267,7 +1267,7 @@ df<span class="token punctuation">.</span>iloc<span class="token punctuation">[<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1317,7 +1317,7 @@ df<span class="token punctuation">.</span>iloc<span class="token punctuation">[<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1368,7 +1368,7 @@ df<span class="token punctuation">.</span>iloc<span class="token punctuation">[<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1445,7 +1445,7 @@ df<span class="token punctuation">.</span>iat<span class="token punctuation">[</
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1496,7 +1496,7 @@ df<span class="token punctuation">[</span>df <span class="token operator">></spa
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1577,7 +1577,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1662,7 +1662,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1739,7 +1739,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1827,7 +1827,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1894,7 +1894,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 
 
 
-<h2 id="4-Missing-Data"><a href="#4-Missing-Data" class="headerlink" title="4. Missing Data"></a><strong>4. Missing Data</strong></h2><p>Pandas는 결측치를 표현하기 위해, 주로 np.nan 값을 사용한다. (기본 설정값이나 계산에는 포함되지 않음)<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html">- 참고: Missing data section</a>  </p>
+<h2 id="4-Missing-Data"><a href="#4-Missing-Data" class="headerlink" title="4. Missing Data"></a><strong>4. Missing Data</strong></h2><p>Pandas는 결측치를 표현하기 위해, 주로 np.nan 값을 사용한다. (기본 설정값이나 계산에는 포함되지 않음)<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html">- 참고: Missing data section</a>  </p>
 <p>Reindexing으로 지정된 축 상의 인덱스를 변경/추가/삭제할 수 있다. Reindexing은 데이터의 복사본을 반환한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df1 <span class="token operator">=</span> df<span class="token punctuation">.</span>reindex<span class="token punctuation">(</span>index <span class="token operator">=</span> dates<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> columns <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>columns<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token string">'E'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 df1<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>dates<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>dates<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
@@ -1915,7 +1915,7 @@ df1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1990,7 +1990,7 @@ df1<span class="token punctuation">.</span>dropna<span class="token punctuation"
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2038,7 +2038,7 @@ df1<span class="token punctuation">.</span>fillna<span class="token punctuation"
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2113,7 +2113,7 @@ pd<span class="token punctuation">.</span>isna<span class="token punctuation">(<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2169,7 +2169,7 @@ pd<span class="token punctuation">.</span>isna<span class="token punctuation">(<
 
 
 
-<h2 id="5-Operation-연산"><a href="#5-Operation-연산" class="headerlink" title="5. Operation (연산)"></a><strong>5. Operation (연산)</strong></h2><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: 이진(Binary) 연산의 기본 섹션</a>  </p>
+<h2 id="5-Operation-연산"><a href="#5-Operation-연산" class="headerlink" title="5. Operation (연산)"></a><strong>5. Operation (연산)</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: 이진(Binary) 연산의 기본 섹션</a>  </p>
 <h3 id="Stats"><a href="#Stats" class="headerlink" title="- Stats"></a><strong>- Stats</strong></h3><p>통계: 일반적으로 결측치를 제외한 후 연산된다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 기술통계 수행</span>
 df<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -2225,7 +2225,7 @@ Freq: D, dtype: float64</code></pre>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2310,7 +2310,7 @@ df<span class="token punctuation">.</span><span class="token builtin">apply</spa
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2388,7 +2388,7 @@ C    1.391231
 D    0.000000
 F    4.000000
 dtype: float64</code></pre>
-<h3 id="Histogramming"><a href="#Histogramming" class="headerlink" title="- Histogramming"></a><strong>- Histogramming</strong></h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Histogramming and Discretization(히스토그래밍과 이산화)</a></p>
+<h3 id="Histogramming"><a href="#Histogramming" class="headerlink" title="- Histogramming"></a><strong>- Histogramming</strong></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Histogramming and Discretization(히스토그래밍과 이산화)</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> size <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -2421,7 +2421,7 @@ dtype: int64</code></pre>
 9    4
 dtype: int64&gt;</code></pre>
 <h3 id="String-Methods"><a href="#String-Methods" class="headerlink" title="- String Methods"></a><strong>- String Methods</strong></h3><p>Series는 문자열 처리 메소드 모음(set)을 가지고 있다.<br>이 모음은 배열의 각 요소를 쉽게 조작하도록 만드는 문자열의 속성에 포함되어 있다.<br>문자열의 패턴 일치 확인은 기본적으로 정규 표현식을 사용하며, 몇몇 경우에는 항상 정규 표현식을 사용한다.  </p>
-<p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html">- 참고: 벡터화된 문자열 메소드</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html">- 참고: 벡터화된 문자열 메소드</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'Aaba'</span><span class="token punctuation">,</span> <span class="token string">'Baca'</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token string">'CABA'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 s<span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -2438,7 +2438,7 @@ s<span class="token punctuation">.</span><span class="token builtin">str</span><
 8     cat
 dtype: object</code></pre>
 <h2 id="6-Merge"><a href="#6-Merge" class="headerlink" title="6. Merge"></a><strong>6. Merge</strong></h2><h3 id="Concat-연결"><a href="#Concat-연결" class="headerlink" title="- Concat (연결)"></a><strong>- Concat (연결)</strong></h3><p>결합(join)/병합(merge) 형태의 연산에 관한 인덱스, 관계 대수 기능을 위한 다양한 형태의 논리를 포함한 Series, 데이터프레임, Panel 객체를 손쉽게 결합하는 기능이 있다.  </p>
-<p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Merging</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Merging</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># concat()으로 pandas 객체 연결</span>
 df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -2458,7 +2458,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2566,7 +2566,7 @@ pd<span class="token punctuation">.</span>concat<span class="token punctuation">
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2654,7 +2654,7 @@ pd<span class="token punctuation">.</span>concat<span class="token punctuation">
 
 
 
-<h3 id="Join"><a href="#Join" class="headerlink" title="- Join"></a><strong>- Join</strong></h3><p>SQL 방식으로 병합한다.<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: 데이터베이스 스타일 결합</a></p>
+<h3 id="Join"><a href="#Join" class="headerlink" title="- Join"></a><strong>- Join</strong></h3><p>SQL 방식으로 병합한다.<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: 데이터베이스 스타일 결합</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">left <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'key'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'lval'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 right <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'key'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'rval'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -2675,7 +2675,7 @@ right <span class="token operator">=</span> pd<span class="token punctuation">.<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2719,7 +2719,7 @@ right <span class="token operator">=</span> pd<span class="token punctuation">.<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2763,7 +2763,7 @@ right <span class="token operator">=</span> pd<span class="token punctuation">.<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2826,7 +2826,7 @@ right <span class="token operator">=</span> pd<span class="token punctuation">.<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2870,7 +2870,7 @@ right <span class="token operator">=</span> pd<span class="token punctuation">.<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2914,7 +2914,7 @@ right <span class="token operator">=</span> pd<span class="token punctuation">.<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2943,7 +2943,7 @@ right <span class="token operator">=</span> pd<span class="token punctuation">.<
 
 
 
-<h3 id="Append-추가"><a href="#Append-추가" class="headerlink" title="- Append (추가)"></a><strong>- Append (추가)</strong></h3><p>데이터프레임에 행을 추가한다.<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Appending</a></p>
+<h3 id="Append-추가"><a href="#Append-추가" class="headerlink" title="- Append (추가)"></a><strong>- Append (추가)</strong></h3><p>데이터프레임에 행을 추가한다.<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Appending</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> columns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -2962,7 +2962,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3055,7 +3055,7 @@ df<span class="token punctuation">.</span>append<span class="token punctuation">
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3142,7 +3142,7 @@ df<span class="token punctuation">.</span>append<span class="token punctuation">
 <li>각 그룹에 독립적으로 함수를 적용(applying)  </li>
 <li>결과물을 하나의 데이터 구조로 결합(combining)  </li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html">- 참고: 그룹화</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html">- 참고: 그룹화</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>
     <span class="token punctuation">&#123;</span>
         <span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -3168,7 +3168,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3261,7 +3261,7 @@ df<span class="token punctuation">.</span>groupby<span class="token punctuation"
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3311,7 +3311,7 @@ df<span class="token punctuation">.</span>groupby<span class="token punctuation"
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3366,7 +3366,7 @@ df<span class="token punctuation">.</span>groupby<span class="token punctuation"
 
 
 
-<h2 id="8-Reshaping"><a href="#8-Reshaping" class="headerlink" title="8. Reshaping"></a><strong>8. Reshaping</strong></h2><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">- 참고: 계층적 인덱싱</a>, <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">변형</a>  </p>
+<h2 id="8-Reshaping"><a href="#8-Reshaping" class="headerlink" title="8. Reshaping"></a><strong>8. Reshaping</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">- 참고: 계층적 인덱싱</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">변형</a>  </p>
 <h3 id="Stack"><a href="#Stack" class="headerlink" title="- Stack"></a><strong>- Stack</strong></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">tuples <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">,</span>
                      <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'qux'</span><span class="token punctuation">,</span> <span class="token string">'qux'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                     <span class="token punctuation">[</span><span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">,</span>
@@ -3392,7 +3392,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3473,7 +3473,7 @@ stacked<span class="token punctuation">.</span>unstack<span class="token punctua
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3536,7 +3536,7 @@ stacked<span class="token punctuation">.</span>unstack<span class="token punctua
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3599,7 +3599,7 @@ stacked<span class="token punctuation">.</span>unstack<span class="token punctua
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3644,7 +3644,7 @@ stacked<span class="token punctuation">.</span>unstack<span class="token punctua
 
 
 
-<h3 id="Pivot-Tables"><a href="#Pivot-Tables" class="headerlink" title="- Pivot Tables"></a><strong>- Pivot Tables</strong></h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">- 참고: 피봇 테이블</a></p>
+<h3 id="Pivot-Tables"><a href="#Pivot-Tables" class="headerlink" title="- Pivot Tables"></a><strong>- Pivot Tables</strong></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">- 참고: 피봇 테이블</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">,</span>
                    <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">4</span><span class="token punctuation">,</span>
                    <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span>
@@ -3668,7 +3668,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3802,7 +3802,7 @@ pd<span class="token punctuation">.</span>pivot_table<span class="token punctuat
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3873,7 +3873,7 @@ pd<span class="token punctuation">.</span>pivot_table<span class="token punctuat
 
 
 
-<h2 id="9-Time-Series"><a href="#9-Time-Series" class="headerlink" title="9. Time Series"></a><strong>9. Time Series</strong></h2><p>Pandas는 자주 일어나는 변환(ex. 5분마다 일어나는 데이터의 2차 데이터 변환) 사이에 수행하는 리샘플링 연산을 위해 간단하고 강력하고 효율적인 함수를 제공한다.<br>재무(금융) 응용에서 매우 일반적이나 이에 국한되지는 않는다.<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html">- 참고: 시계열</a></p>
+<h2 id="9-Time-Series"><a href="#9-Time-Series" class="headerlink" title="9. Time Series"></a><strong>9. Time Series</strong></h2><p>Pandas는 자주 일어나는 변환(ex. 5분마다 일어나는 데이터의 2차 데이터 변환) 사이에 수행하는 리샘플링 연산을 위해 간단하고 강력하고 효율적인 함수를 제공한다.<br>재무(금융) 응용에서 매우 일반적이나 이에 국한되지는 않는다.<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html">- 참고: 시계열</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">rng <span class="token operator">=</span> pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span><span class="token string">'1/1/2012'</span><span class="token punctuation">,</span> periods<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> freq<span class="token operator">=</span><span class="token string">'S'</span><span class="token punctuation">)</span>
@@ -3967,7 +3967,7 @@ ts<span class="token punctuation">.</span>head<span class="token punctuation">(<
 1990-12-01 00:00   -0.769261
 1991-03-01 00:00   -0.432595
 Freq: H, dtype: float64</code></pre>
-<h2 id="10-Categoricals"><a href="#10-Categoricals" class="headerlink" title="10. Categoricals"></a><strong>10. Categoricals</strong></h2><p>Pandas는 데이터프레임 내에 범주형 데이터를 포함할 수 있다.<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">- 참고: 범주형 소개</a>, <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">API 문서</a>  </p>
+<h2 id="10-Categoricals"><a href="#10-Categoricals" class="headerlink" title="10. Categoricals"></a><strong>10. Categoricals</strong></h2><p>Pandas는 데이터프레임 내에 범주형 데이터를 포함할 수 있다.<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">- 참고: 범주형 소개</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">API 문서</a>  </p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"id"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"raw_grade"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>가공하지 않은 성적을 범주형 데이터로 변환한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">"grade"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">"raw_grade"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token string">"category"</span><span class="token punctuation">)</span>
@@ -4017,7 +4017,7 @@ Categories (5, object): [&#39;very bad&#39;, &#39;bad&#39;, &#39;medium&#39;, &#
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -4082,7 +4082,7 @@ medium       0
 good         2
 very good    3
 dtype: int64</code></pre>
-<h2 id="11-Plotting"><a href="#11-Plotting" class="headerlink" title="11. Plotting"></a><strong>11. Plotting</strong></h2><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">- 참고: Plotting</a></p>
+<h2 id="11-Plotting"><a href="#11-Plotting" class="headerlink" title="11. Plotting"></a><strong>11. Plotting</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">- 참고: Plotting</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">ts <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">=</span>pd<span class="token punctuation">.</span>date_range<span class="token punctuation">(</span><span class="token string">'1/1/2000'</span><span class="token punctuation">,</span> periods<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 ts <span class="token operator">=</span> ts<span class="token punctuation">.</span>cumsum<span class="token punctuation">(</span><span class="token punctuation">)</span>
 ts<span class="token punctuation">.</span>plot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -4272,7 +4272,7 @@ Op",
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -4280,7 +4280,7 @@ Op",
             
                 
                 <li>
-                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-instagram"></i>
                     </a>
                 </li>
@@ -4288,7 +4288,7 @@ Op",
             
                 
                 <li>
-                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100008234148863" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100008234148863" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-facebook"></i>
                     </a>
                 </li>
@@ -4373,7 +4373,7 @@ Op",
                 </h1>
                 <p>&copy; 2021 Naeun Choi</p>
                 
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <p>Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank" rel="external nofollow noopener noreferrer">PPOffice</a></p>
                 
             </div>
             <div class="footer-plugins">

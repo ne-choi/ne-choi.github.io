@@ -1,7 +1,7 @@
     <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <script data-ad-client="ca-pub-4996237567431979" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     
@@ -11,7 +11,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="차원축소,주성분분석,파이썬머신러닝완벽가이드" />
+    <meta name="keywords" content="차원축소,주성분분석,파이썬머신러닝완벽가이드">
     
     <meta name="description" content="해당 자료는 파이썬 머신러닝 완벽가이드 공부를 위한 필사본입니다.  Chapter 06. 차원 축소01.  차원 축소(Dimension Reduction) 개요 차원 축소는 매우 많은 피처로 구성된 다차원 데이터 세트의 차원을 축소해 새로운 차원의 데이터 세트를 생성하는 것이다.  피처가 많을 경우 개별 피처간에 상관관계가 높을 가능성이 크다.  선형모델">
 <meta property="og:type" content="article">
@@ -30,7 +30,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/72365663/100061705-cff42c00-2e71-11eb-9501-966604169200.jpg">
     
-    <link rel="canonical" href="https://ne-choi.github.io/2020/12/04/study/python/ml/ch06_차원_축소/"/>
+    <link rel="canonical" href="https://ne-choi.github.io/2020/12/04/study/python/ml/ch06_차원_축소/">
 
     
 
@@ -101,13 +101,13 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                     <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Contest/">Contest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/Kaggle/">Kaggle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ADsP/">ADsP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Postech/">Postech</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/Programming/">Programming</a></li></ul></li></ul>
                                 
-                                <li class="main-nav-list-item" >
+                                <li class="main-nav-list-item">
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
@@ -116,14 +116,14 @@ ga('send', 'pageview');
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -227,7 +227,7 @@ ga('send', 'pageview');
             
 
             <ul>
-<li>해당 자료는 <a target="_blank" rel="noopener" href="https://book.naver.com/bookdb/book_detail.nhn?bid=16238302">파이썬 머신러닝 완벽가이드</a> 공부를 위한 필사본입니다.</li>
+<li>해당 자료는 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://book.naver.com/bookdb/book_detail.nhn?bid=16238302">파이썬 머신러닝 완벽가이드</a> 공부를 위한 필사본입니다.</li>
 </ul>
 <h1 id="Chapter-06-차원-축소"><a href="#Chapter-06-차원-축소" class="headerlink" title="Chapter 06. 차원 축소"></a>Chapter 06. 차원 축소</h1><h2 id="01-차원-축소-Dimension-Reduction-개요"><a href="#01-차원-축소-Dimension-Reduction-개요" class="headerlink" title="01.  차원 축소(Dimension Reduction) 개요"></a>01.  차원 축소(Dimension Reduction) 개요</h2><ul>
 <li><p>차원 축소는 매우 많은 피처로 구성된 다차원 데이터 세트의 차원을 축소해 새로운 차원의 데이터 세트를 생성하는 것이다.</p>
@@ -400,7 +400,7 @@ irisDF<span class="token punctuation">.</span>head<span class="token punctuation
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -520,7 +520,7 @@ irisDF_pca<span class="token punctuation">.</span>head<span class="token punctua
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -612,7 +612,7 @@ PCA 변환 데이터 평균 정확도: 0.88</code></pre>
 </li>
 <li><p>다운받는 법</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients">https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients</a> 에 접속한다.</li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients">https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients</a> 에 접속한다.</li>
 <li> <strong>Data Folder</strong> 를 클릭 후 <strong>default of credit card clients.xls</strong> 를 클릭하여 데이터를 다운받는다.</li>
 <li>파일명을 credit_card.xls로 바꿔준다.</li>
 </ul>
@@ -659,7 +659,7 @@ df<span class="token punctuation">.</span>head<span class="token punctuation">(<
 .dataframe thead th &#123;
     text-align: right;
 &#125;</code></pre>
-<p></style></p>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1255,7 +1255,7 @@ Chapter 06. 차원 축소01.  차원 축소(Dimension Reduction) 개요
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="github" href="https://github.com/ne-choi" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -1263,7 +1263,7 @@ Chapter 06. 차원 축소01.  차원 축소(Dimension Reduction) 개요
             
                 
                 <li>
-                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/ne_cho1" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-instagram"></i>
                     </a>
                 </li>
@@ -1271,7 +1271,7 @@ Chapter 06. 차원 축소01.  차원 축소(Dimension Reduction) 개요
             
                 
                 <li>
-                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100008234148863" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100008234148863" target="_blank" rel="external nofollow noopener noreferrer">
                         <i class="icon fa fa-facebook"></i>
                     </a>
                 </li>
@@ -1356,7 +1356,7 @@ Chapter 06. 차원 축소01.  차원 축소(Dimension Reduction) 개요
                 </h1>
                 <p>&copy; 2021 Naeun Choi</p>
                 
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <p>Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank" rel="external nofollow noopener noreferrer">PPOffice</a></p>
                 
             </div>
             <div class="footer-plugins">
