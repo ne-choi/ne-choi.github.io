@@ -13,15 +13,15 @@
     
     <meta name="keywords" content="Postech,의사결정나무,랜덤포레스트">
     
-    <meta name="description" content="setup, includeknitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석과">
+    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석과정이 직관적이고 이해하기 쉬움 연속형&#x2F;범주형 변수를 모두 사용할 수 있음 분지규칙은 불순도(범주가 섞여 있는">
 <meta property="og:type" content="article">
 <meta property="og:title" content="머신러닝 기법과 R 프로그래밍 1: XⅡ. 의사결정나무와 랜덤 포레스트">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="setup, includeknitr::opts_chunk$set(echo &#x3D; TRUE)  POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석과">
+<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석과정이 직관적이고 이해하기 쉬움 연속형&#x2F;범주형 변수를 모두 사용할 수 있음 분지규칙은 불순도(범주가 섞여 있는">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-13T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-01T00:44:48.244Z">
+<meta property="article:modified_time" content="2021-02-07T01:39:10.774Z">
 <meta property="article:author" content="Naeun Choi">
 <meta property="article:tag" content="Postech">
 <meta property="article:tag" content="의사결정나무">
@@ -197,7 +197,7 @@ ga('send', 'pageview');
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" class="article-date">
-     <time datetime="2021-02-01T00:44:48.244Z" itemprop="dateModified">2021-02-01</time>
+     <time datetime="2021-02-07T01:39:10.774Z" itemprop="dateModified">2021-02-07</time>
   </a>
 </div>
 
@@ -224,9 +224,8 @@ ga('send', 'pageview');
 
             
 
-            <pre class="line-numbers language-&#123;r" data-language="&#123;r"><div class="caption"><span>setup, include</span></div><code class="language-&#123;r">knitr::opts_chunk$set(echo &#x3D; TRUE)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>POSTECH에서 제공하는 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  </li>
+            <ul>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  </li>
 </ul>
 <h1 id="XⅡ-의사결정나무와-랜덤-포레스트"><a href="#XⅡ-의사결정나무와-랜덤-포레스트" class="headerlink" title="XⅡ. 의사결정나무와 랜덤 포레스트"></a>XⅡ. 의사결정나무와 랜덤 포레스트</h1><h2 id="1-의사결정나무-Ⅰ"><a href="#1-의사결정나무-Ⅰ" class="headerlink" title="1. 의사결정나무 Ⅰ"></a>1. 의사결정나무 Ⅰ</h2><h3 id="의사결정나무"><a href="#의사결정나무" class="headerlink" title="의사결정나무"></a>의사결정나무</h3><ul>
 <li><p>Decision Tree</p>
@@ -498,18 +497,19 @@ confusionMatrix(rfpred,test$Species)<span aria-hidden="true" class="line-numbers
         "genre": "Study Postech ML",
         "datePublished": "2020-12-13",
         "dateCreated": "2020-12-13",
-        "dateModified": "2021-02-01",
+        "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2020/12/13/Study/Postech/머신러닝R/XⅡ_의사결정나무와_랜덤_포레스트/",
-        "description": "setup, includeknitr::opts_chunk$set(echo &#x3D; TRUE)
-
-POSTECH에서 제공하는 MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  
+        "description": "
+POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  
 
 XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무
 Decision Tree
 
 기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법
-분석과",
-        "wordCount": 503,
+분석과정이 직관적이고 이해하기 쉬움
+연속형/범주형 변수를 모두 사용할 수 있음
+분지규칙은 불순도(범주가 섞여 있는 ",
+        "wordCount": 492,
         "publisher": "Naeun Choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

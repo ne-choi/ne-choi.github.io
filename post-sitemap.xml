@@ -9,128 +9,48 @@
 
 
     <url>
-        <loc>https://ne-choi.github.io/2021/01/28/Study/Postech/%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0/%E2%85%A4.%20%EC%BB%B4%ED%93%A8%ED%8C%85%20%EC%82%AC%EA%B3%A0%202%EB%B6%80/</loc>
-        <lastmod>2021-02-06T06:45:51.316Z</lastmod>
+        <loc>https://ne-choi.github.io/2020/12/03/Study/Python/ML/ch05_%ED%9A%8C%EA%B7%80/</loc>
+        <lastmod>2021-02-07T01:44:31.411Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2021/01/25/Study/Postech/%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0/%E2%85%A0.%20%EC%BB%B4%ED%93%A8%ED%8C%85%20%EC%82%AC%EA%B3%A0%201%EB%B6%80/</loc>
-        <lastmod>2021-02-06T06:45:50.379Z</lastmod>
+        <loc>https://ne-choi.github.io/2020/12/04/Study/Python/ML/ch06_%EC%B0%A8%EC%9B%90_%EC%B6%95%EC%86%8C/</loc>
+        <lastmod>2021-02-07T01:44:04.783Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2021/01/22/Study/Postech/Python/%E2%85%A7.%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC%20%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/</loc>
-        <lastmod>2021-02-05T13:35:56.634Z</lastmod>
+        <loc>https://ne-choi.github.io/2020/12/02/Study/Python/ML/ch04_%EB%B6%84%EB%A5%98/</loc>
+        <lastmod>2021-02-07T01:43:49.057Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2021/01/20/Study/Postech/Python/%E2%85%A5.%20%ED%95%A8%EC%88%98%EC%99%80%20%EB%AA%A8%EB%93%88/</loc>
-        <lastmod>2021-02-05T13:35:40.483Z</lastmod>
+        <loc>https://ne-choi.github.io/2020/11/30/Study/Python/ML/ch03_%ED%8F%89%EA%B0%80/</loc>
+        <lastmod>2021-02-07T01:43:22.593Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2021/01/21/Study/Postech/Python/%E2%85%A6.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0/</loc>
-        <lastmod>2021-02-05T13:35:29.742Z</lastmod>
+        <loc>https://ne-choi.github.io/2020/11/29/Study/Python/ML/ch02_%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0%EC%9C%BC%EB%A1%9C_%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/</loc>
+        <lastmod>2021-02-07T01:43:10.153Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/</loc>
-        <lastmod>2021-02-05T13:34:14.569Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2021/01/18/Study/Postech/Python/%E2%85%A3.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%201/</loc>
-        <lastmod>2021-02-05T13:33:38.552Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2021/01/13/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A6_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C%EC%99%80_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/</loc>
-        <lastmod>2021-02-03T07:19:49.307Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/</loc>
-        <lastmod>2021-02-01T01:09:58.633Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/12/22/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A3_%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99%EA%B3%BC_%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/</loc>
-        <lastmod>2021-02-01T01:09:49.587Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2021/01/14/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A7_%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/</loc>
-        <lastmod>2021-02-01T01:02:57.419Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2021/01/12/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A5_%ED%98%84%EC%97%85_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%8A%B9%EC%84%B1%EA%B3%BC_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/</loc>
-        <lastmod>2021-02-01T01:00:03.851Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2021/01/04/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A0_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B3%BC%ED%95%99%EA%B3%BC_%ED%86%B5%EA%B3%84/</loc>
-        <lastmod>2021-02-01T00:58:48.715Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2021/01/05/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A1_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89%EC%9D%98_%EC%B2%AB%EA%B1%B8%EC%9D%8C/</loc>
-        <lastmod>2021-02-01T00:58:44.309Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2021/01/06/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A2_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%8B%9C%EA%B0%81%ED%99%94%EC%99%80_%ED%86%B5%EA%B3%84%EC%A0%81_%ED%95%B4%EC%84%9D/</loc>
-        <lastmod>2021-02-01T00:58:40.495Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2021/01/07/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A3_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D%EC%97%90%EC%84%9C_%ED%99%95%EB%A5%A0%EA%B3%BC_%EB%B6%84%ED%8F%AC/</loc>
-        <lastmod>2021-02-01T00:58:36.934Z</lastmod>
+        <loc>https://ne-choi.github.io/2020/11/10/Study/Python/Pandas_10%EB%B6%84_%EC%99%84%EC%84%B1/</loc>
+        <lastmod>2021-02-07T01:42:41.262Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -138,71 +58,79 @@
 
     <url>
         <loc>https://ne-choi.github.io/2021/01/11/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A4_%ED%86%B5%EA%B3%84%EA%B2%80%EC%A0%95%EB%B0%A9%EB%B2%95/</loc>
-        <lastmod>2021-02-01T00:58:27.877Z</lastmod>
+        <lastmod>2021-02-07T01:41:55.076Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/23/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A4_%EC%A3%BC%EC%84%B1%EB%B6%84_%EB%B6%84%EC%84%9D%EA%B3%BC_%EB%B6%80%EB%B6%84_%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/</loc>
-        <lastmod>2021-02-01T00:51:25.404Z</lastmod>
+        <loc>https://ne-choi.github.io/2021/01/12/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A5_%ED%98%84%EC%97%85_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%8A%B9%EC%84%B1%EA%B3%BC_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/</loc>
+        <lastmod>2021-02-07T01:41:50.920Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/</loc>
-        <lastmod>2021-02-01T00:50:02.752Z</lastmod>
+        <loc>https://ne-choi.github.io/2021/01/13/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A6_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%B0%A8%EC%9B%90%EC%B6%95%EC%86%8C%EC%99%80_%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/</loc>
+        <lastmod>2021-02-07T01:41:46.858Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/</loc>
-        <lastmod>2021-02-01T00:49:04.678Z</lastmod>
+        <loc>https://ne-choi.github.io/2021/01/14/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A7_%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%98%88%EC%B8%A1%EB%AA%A8%ED%98%95/</loc>
+        <lastmod>2021-02-07T01:41:43.431Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A8_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%A7%88%EC%9D%B4%EB%8B%9D_%EA%B8%B0%EC%B4%88/</loc>
-        <lastmod>2021-02-01T00:46:10.533Z</lastmod>
+        <loc>https://ne-choi.github.io/2021/01/04/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A0_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B3%BC%ED%95%99%EA%B3%BC_%ED%86%B5%EA%B3%84/</loc>
+        <lastmod>2021-02-07T01:41:32.878Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/12/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/XI_%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/</loc>
-        <lastmod>2021-02-01T00:44:57.709Z</lastmod>
+        <loc>https://ne-choi.github.io/2021/01/05/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A1_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89%EC%9D%98_%EC%B2%AB%EA%B1%B8%EC%9D%8C/</loc>
+        <lastmod>2021-02-07T01:41:28.406Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/</loc>
-        <lastmod>2021-02-01T00:44:48.244Z</lastmod>
+        <loc>https://ne-choi.github.io/2021/01/06/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A2_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%8B%9C%EA%B0%81%ED%99%94%EC%99%80_%ED%86%B5%EA%B3%84%EC%A0%81_%ED%95%B4%EC%84%9D/</loc>
+        <lastmod>2021-02-07T01:41:23.753Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/10/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/</loc>
-        <lastmod>2021-02-01T00:42:26.217Z</lastmod>
+        <loc>https://ne-choi.github.io/2021/01/07/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A3_%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D%EC%97%90%EC%84%9C_%ED%99%95%EB%A5%A0%EA%B3%BC_%EB%B6%84%ED%8F%AC/</loc>
+        <lastmod>2021-02-07T01:41:15.054Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/09/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/</loc>
-        <lastmod>2021-02-01T00:42:19.485Z</lastmod>
+        <loc>https://ne-choi.github.io/2021/01/25/Study/Postech/%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0/%E2%85%A0.%20%EC%BB%B4%ED%93%A8%ED%8C%85%20%EC%82%AC%EA%B3%A0%201%EB%B6%80/</loc>
+        <lastmod>2021-02-07T01:41:03.091Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2021/01/28/Study/Postech/%EC%BB%B4%ED%93%A8%ED%8C%85%EC%82%AC%EA%B3%A0/%E2%85%A4.%20%EC%BB%B4%ED%93%A8%ED%8C%85%20%EC%82%AC%EA%B3%A0%202%EB%B6%80/</loc>
+        <lastmod>2021-02-07T01:40:57.657Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -210,31 +138,23 @@
 
     <url>
         <loc>https://ne-choi.github.io/2020/12/08/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A5_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%90%EC%83%89/</loc>
-        <lastmod>2021-02-01T00:42:10.517Z</lastmod>
+        <lastmod>2021-02-07T01:40:42.298Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/07/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/</loc>
-        <lastmod>2021-02-01T00:42:03.814Z</lastmod>
+        <loc>https://ne-choi.github.io/2020/12/09/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/</loc>
+        <lastmod>2021-02-07T01:40:37.763Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://ne-choi.github.io/2020/12/06/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A3_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A0/</loc>
-        <lastmod>2021-02-01T00:41:57.309Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/13/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/</loc>
-        <lastmod>2021-02-01T00:41:50.772Z</lastmod>
+        <loc>https://ne-choi.github.io/2020/12/10/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A7_%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%ED%98%95%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A7%88%EC%9D%B4%EB%8B%9D/</loc>
+        <lastmod>2021-02-07T01:40:33.546Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -242,7 +162,167 @@
 
     <url>
         <loc>https://ne-choi.github.io/2020/11/11/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A1_%EB%B2%A1%ED%84%B0,%ED%96%89%EB%A0%AC%EC%9D%98_%EC%97%B0%EC%82%B0_%EB%B0%8F_%ED%95%A8%EC%88%98/</loc>
-        <lastmod>2021-02-01T00:41:22.108Z</lastmod>
+        <lastmod>2021-02-07T01:40:22.038Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/11/13/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/</loc>
+        <lastmod>2021-02-07T01:40:18.690Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/06/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A3_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A0/</loc>
+        <lastmod>2021-02-07T01:40:14.284Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/07/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A4_R_%EA%B7%B8%EB%9E%98%ED%94%BD_%E2%85%A1/</loc>
+        <lastmod>2021-02-07T01:40:09.950Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/22/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A3_%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99%EA%B3%BC_%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D/</loc>
+        <lastmod>2021-02-07T01:39:57.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/23/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A4_%EC%A3%BC%EC%84%B1%EB%B6%84_%EB%B6%84%EC%84%9D%EA%B3%BC_%EB%B6%80%EB%B6%84_%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/</loc>
+        <lastmod>2021-02-07T01:39:50.926Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/</loc>
+        <lastmod>2021-02-07T01:39:45.344Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/21/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A2_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D/</loc>
+        <lastmod>2021-02-07T01:39:37.343Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/</loc>
+        <lastmod>2021-02-07T01:39:30.357Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A8_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%A7%88%EC%9D%B4%EB%8B%9D_%EA%B8%B0%EC%B4%88/</loc>
+        <lastmod>2021-02-07T01:39:19.335Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/</loc>
+        <lastmod>2021-02-07T01:39:10.774Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/12/12/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/XI_%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/</loc>
+        <lastmod>2021-02-07T01:39:00.628Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2021/01/22/Study/Postech/Python/%E2%85%A7.%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%EA%B3%BC%20%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/</loc>
+        <lastmod>2021-02-07T01:38:49.462Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2021/01/21/Study/Postech/Python/%E2%85%A6.%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0/</loc>
+        <lastmod>2021-02-07T01:38:43.502Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2021/01/20/Study/Postech/Python/%E2%85%A5.%20%ED%95%A8%EC%88%98%EC%99%80%20%EB%AA%A8%EB%93%88/</loc>
+        <lastmod>2021-02-07T01:38:36.531Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/</loc>
+        <lastmod>2021-02-07T01:38:23.682Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2021/01/18/Study/Postech/Python/%E2%85%A3.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%201/</loc>
+        <lastmod>2021-02-07T01:38:15.905Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/11/12/Study/ADsP/Part01_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%9D%B4%ED%95%B4/</loc>
+        <lastmod>2021-02-07T01:37:24.415Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/11/14/Study/ADsP/Part02_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_%EA%B8%B0%ED%9A%8D/</loc>
+        <lastmod>2021-02-07T01:37:19.018Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/11/16/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_1/</loc>
+        <lastmod>2021-02-07T01:37:12.706Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ne-choi.github.io/2020/11/17/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_2/</loc>
+        <lastmod>2021-02-07T01:37:06.622Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -267,86 +347,6 @@
     <url>
         <loc>https://ne-choi.github.io/2021/01/07/Projects/Kaggle%20Competition-The_future_of_ML_americans_vs_indians/</loc>
         <lastmod>2021-01-20T04:42:31.814Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/10/Study/Python/Pandas_10%EB%B6%84_%EC%99%84%EC%84%B1/</loc>
-        <lastmod>2021-01-20T04:00:59.832Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/30/Study/Python/ML/ch03_%ED%8F%89%EA%B0%80/</loc>
-        <lastmod>2021-01-20T03:58:12.366Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/29/Study/Python/ML/ch02_%EC%82%AC%EC%9D%B4%ED%82%B7%EB%9F%B0%EC%9C%BC%EB%A1%9C_%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/</loc>
-        <lastmod>2021-01-20T03:58:12.354Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/12/04/Study/Python/ML/ch06_%EC%B0%A8%EC%9B%90_%EC%B6%95%EC%86%8C/</loc>
-        <lastmod>2021-01-20T03:58:12.339Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/12/02/Study/Python/ML/ch04_%EB%B6%84%EB%A5%98/</loc>
-        <lastmod>2021-01-20T03:58:12.305Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/12/03/Study/Python/ML/ch05_%ED%9A%8C%EA%B7%80/</loc>
-        <lastmod>2021-01-20T03:58:12.188Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/12/Study/ADsP/Part01_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%9D%B4%ED%95%B4/</loc>
-        <lastmod>2021-01-20T03:39:16.974Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/16/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_1/</loc>
-        <lastmod>2021-01-20T03:39:04.060Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/17/Study/ADsP/Part03_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_2/</loc>
-        <lastmod>2021-01-20T03:39:04.044Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/14/Study/ADsP/Part02_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EC%84%9D_%EA%B8%B0%ED%9A%8D/</loc>
-        <lastmod>2021-01-20T03:39:04.024Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
