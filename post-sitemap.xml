@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://ne-choi.github.io/2020/02/01/hexo%20update/</loc>
+        <lastmod>2021-02-08T04:06:07.875Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://ne-choi.github.io/2020/12/03/Textbook/PythonML/ch05_%ED%9A%8C%EA%B7%80/</loc>
         <lastmod>2021-02-07T01:44:31.411Z</lastmod>
         <changefreq>weekly</changefreq>
