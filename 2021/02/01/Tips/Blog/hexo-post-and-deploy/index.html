@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="blog,hexo">
     
-    <meta name="description" content="Hexo 블로그 운영 기초hexo 블로그를 만들고 운영하기까지 수많은 분의 블로그 포스팅을 읽었습니다. 저 또한 도움 되는 포스팅을 작성하기 위해 글을 씁니다. 이번 포스트에는 hexo 블로그 운영 초보자가 읽으면 좋을 블로그에 글 올리는 방법을 담았습니다.  1. 블로그 글 올리기1) Hexo 마크다운 파일 생성hexo는 마크다운(.md) 파일을 이용하여">
+    <meta name="description" content="Hexo 블로그 운영 기초 hexo 블로그를 만들고 운영하기까지 수많은 분의 블로그 포스팅을 읽었습니다. 저 또한 도움 되는 포스팅을 작성하기 위해 글을 씁니다. 이번 포스트에는 hexo 블로그 운영 초보자가 읽으면 좋을 블로그에 글 올리는 방법을 담았습니다. 1. 블로그 글 올리기 1) Hexo 마크다운 파일 생성 hexo는 마크다운(.md) 파일을 이용">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 블로그 1. 포스트 작성과 서버 배포">
 <meta property="og:url" content="https://ne-choi.github.io/2021/02/01/Tips/Blog/hexo-post-and-deploy/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="Hexo 블로그 운영 기초hexo 블로그를 만들고 운영하기까지 수많은 분의 블로그 포스팅을 읽었습니다. 저 또한 도움 되는 포스팅을 작성하기 위해 글을 씁니다. 이번 포스트에는 hexo 블로그 운영 초보자가 읽으면 좋을 블로그에 글 올리는 방법을 담았습니다.  1. 블로그 글 올리기1) Hexo 마크다운 파일 생성hexo는 마크다운(.md) 파일을 이용하여">
+<meta property="og:description" content="Hexo 블로그 운영 기초 hexo 블로그를 만들고 운영하기까지 수많은 분의 블로그 포스팅을 읽었습니다. 저 또한 도움 되는 포스팅을 작성하기 위해 글을 씁니다. 이번 포스트에는 hexo 블로그 운영 초보자가 읽으면 좋을 블로그에 글 올리는 방법을 담았습니다. 1. 블로그 글 올리기 1) Hexo 마크다운 파일 생성 hexo는 마크다운(.md) 파일을 이용">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ne-choi.github.io/images/Tips/Blog/img1.png">
 <meta property="article:published_time" content="2021-02-01T00:00:00.000Z">
@@ -228,25 +228,33 @@ ga('send', 'pageview');
 
             
 
-            <h1 id="Hexo-블로그-운영-기초"><a href="#Hexo-블로그-운영-기초" class="headerlink" title="Hexo 블로그 운영 기초"></a>Hexo 블로그 운영 기초</h1><p>hexo 블로그를 만들고 운영하기까지 수많은 분의 블로그 포스팅을 읽었습니다. 저 또한 도움 되는 포스팅을 작성하기 위해 글을 씁니다. 이번 포스트에는 hexo 블로그 운영 초보자가 읽으면 좋을 <strong>블로그에 글 올리는 방법</strong>을 담았습니다. </p>
-<h2 id="1-블로그-글-올리기"><a href="#1-블로그-글-올리기" class="headerlink" title="1. 블로그 글 올리기"></a>1. 블로그 글 올리기</h2><h3 id="1-Hexo-마크다운-파일-생성"><a href="#1-Hexo-마크다운-파일-생성" class="headerlink" title="1) Hexo 마크다운 파일 생성"></a>1) Hexo 마크다운 파일 생성</h3><p>hexo는 <strong>마크다운(.md) 파일</strong>을 이용하여 포스팅을 작성합니다. 저는 보통 RStudio나 Jupyter Notebook을 이용해 작업한 결과물을 블로그에 올리기 때문에, 해당 파일 확장자를 바꿔서 저장하는 방식을 사용하고 있는데요. 지금처럼 아예 hexo blog에만 올릴 포스트를 만들기 위해서는 md 파일을 생성해야 합니다. cmd 창을 이용해서 마크다운 파일을 생성해보겠습니다.</p>
-<h4 id="①-cmd-창-열기"><a href="#①-cmd-창-열기" class="headerlink" title="① cmd 창 열기"></a>① cmd 창 열기</h4><p><img src="/images/Tips/Blog/img1.png">  </p>
+            <h1>Hexo 블로그 운영 기초</h1>
+<p>hexo 블로그를 만들고 운영하기까지 수많은 분의 블로그 포스팅을 읽었습니다. 저 또한 도움 되는 포스팅을 작성하기 위해 글을 씁니다. 이번 포스트에는 hexo 블로그 운영 초보자가 읽으면 좋을 <strong>블로그에 글 올리는 방법</strong>을 담았습니다.</p>
+<h2 id="1-블로그-글-올리기">1. 블로그 글 올리기</h2>
+<h3 id="1-Hexo-마크다운-파일-생성">1) Hexo 마크다운 파일 생성</h3>
+<p>hexo는 <strong>마크다운(.md) 파일</strong>을 이용하여 포스팅을 작성합니다. 저는 보통 RStudio나 Jupyter Notebook을 이용해 작업한 결과물을 블로그에 올리기 때문에, 해당 파일 확장자를 바꿔서 저장하는 방식을 사용하고 있는데요. 지금처럼 아예 hexo blog에만 올릴 포스트를 만들기 위해서는 md 파일을 생성해야 합니다. cmd 창을 이용해서 마크다운 파일을 생성해보겠습니다.</p>
+<h4 id="①-cmd-창-열기">① cmd 창 열기</h4>
+<p><img src="/images/Tips/Blog/img1.png" alt></p>
 <ul>
-<li>윈도우 기준<br>키보드에서 window 키를 누르거나, 화면 왼쪽 하단의 window 아이콘을 누르면 윈도우 창이 뜹니다. 여기서 바로 ‘c’를 입력하면 검색할 수 있는데요. 위 사진과 같이 명령 프롬프트를 검색 후 실행해줍니다. window 보안 사항이 많아서 저는 항상 <strong>관리자 권한으로 실행</strong>을 눌러 사용합니다.  </li>
+<li>윈도우 기준<br>
+키보드에서 window 키를 누르거나, 화면 왼쪽 하단의 window 아이콘을 누르면 윈도우 창이 뜹니다. 여기서 바로 'c’를 입력하면 검색할 수 있는데요. 위 사진과 같이 명령 프롬프트를 검색 후 실행해줍니다. window 보안 사항이 많아서 저는 항상 <strong>관리자 권한으로 실행</strong>을 눌러 사용합니다.</li>
 </ul>
-<h4 id="②-hexo-blog-폴더-경로-잡기"><a href="#②-hexo-blog-폴더-경로-잡기" class="headerlink" title="② hexo blog 폴더 경로 잡기"></a>② hexo blog 폴더 경로 잡기</h4><p>관리자 권한으로 실행하고 나서, 내 hexo 블로그가 있는 폴더로 경로를 잡아줘야 합니다. <code>cd</code>를 이용해서 쉽게 작업할 수 있습니다. 뒤로 가기를 원하는 경우에는 <code>cd ..</code>을 입력하면 됩니다.</p>
+<h4 id="②-hexo-blog-폴더-경로-잡기">② hexo blog 폴더 경로 잡기</h4>
+<p>관리자 권한으로 실행하고 나서, 내 hexo 블로그가 있는 폴더로 경로를 잡아줘야 합니다. <code>cd</code>를 이용해서 쉽게 작업할 수 있습니다. 뒤로 가기를 원하는 경우에는 <code>cd ..</code>을 입력하면 됩니다.</p>
 <pre class="line-numbers language-none"><code class="language-none">C:\&gt;cd Users
 C:\Users&gt;cd naeun
 C:\Users\naeun&gt;cd Documents
 C:\Users\naeun\Documents&gt;cd Bigdata
 C:\Users\naeun\Documents\Bigdata&gt;cd blog
 C:\Users\naeun\Documents\Bigdata\blog&gt;cd myblog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="③-hexo-new-post-‘파일명’-실행"><a href="#③-hexo-new-post-‘파일명’-실행" class="headerlink" title="③ hexo new post ‘파일명’ 실행"></a>③ hexo new post ‘파일명’ 실행</h4><pre class="line-numbers language-none"><code class="language-none">hexo new [layout] &lt;title&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="③-hexo-new-post-‘파일명’-실행">③ hexo new post ‘파일명’ 실행</h4>
+<pre class="line-numbers language-none"><code class="language-none">hexo new [layout] &lt;title&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>위 명령어가 새로운 파일을 만드는 기본 명령어입니다. 블로그를 주로 사용하는 분들은 draft(초안)와 page도 유용하게 사용하시는데, 저는 간단하게 post만 사용하고 있습니다. default 값은 post로 설정되어 있는데, 바꾸고 싶은 경우에는 <code>_config.yml</code> 파일을 열고 <code>default_layout</code>을 변경하면 됩니다.</p>
 <ul>
-<li>layout: 레이아웃 종류 (default: post)<ul>
+<li>layout: 레이아웃 종류 (default: post)
+<ul>
 <li>post: 새로운 포스팅을 작성하기 위해 생성</li>
-<li>page: 해당 경로로 접근해야 볼 수 있는 페이지를 만들기 위해 생성 </li>
+<li>page: 해당 경로로 접근해야 볼 수 있는 페이지를 만들기 위해 생성</li>
 <li>draft: 포스트를 바로 작성하지 않고 초안 잡을 때 생성</li>
 </ul>
 </li>
@@ -254,25 +262,28 @@ C:\Users\naeun\Documents\Bigdata\blog&gt;cd myblog<span aria-hidden="true" class
 <table>
 <thead>
 <tr>
-<th align="center">layout</th>
-<th align="left">route</th>
+<th style="text-align:center">layout</th>
+<th style="text-align:left">route</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">post</td>
-<td align="left">source/_posts</td>
+<tbody>
+<tr>
+<td style="text-align:center">post</td>
+<td style="text-align:left">source/_posts</td>
 </tr>
 <tr>
-<td align="center">page</td>
-<td align="left">source</td>
+<td style="text-align:center">page</td>
+<td style="text-align:left">source</td>
 </tr>
 <tr>
-<td align="center">draft</td>
-<td align="left">source/_drafts</td>
+<td style="text-align:center">draft</td>
+<td style="text-align:left">source/_drafts</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li>title: 생성할 파일 제목<br>파일 제목을 입력해주고 아래와 같이 명령어를 입력하면 <code>sorce/_post</code> 경로에 md파일이 생성됩니다.</li>
+<li>title: 생성할 파일 제목<br>
+파일 제목을 입력해주고 아래와 같이 명령어를 입력하면 <code>sorce/_post</code> 경로에 md파일이 생성됩니다.</li>
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">&gt; C:\Users\naeun\Documents\Bigdata\blog\myblog&gt;hexo new post &#39;update&#39;
 
@@ -281,7 +292,9 @@ INFO  Validating config
 Inferno is in development mode.
 Inferno is in development mode.
 INFO  Created: ~\Documents\Bigdata\blog\myblog\source\_posts\update.md<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-마크다운-글쓰기-기본"><a href="#2-마크다운-글쓰기-기본" class="headerlink" title="2. 마크다운 글쓰기 기본"></a>2. 마크다운 글쓰기 기본</h3><h4 id="①-Front-matter"><a href="#①-Front-matter" class="headerlink" title="① Front-matter"></a>① Front-matter</h4><p>md 파일을 만들면, <code>title / author / date</code>이 <code>---</code>를 기준으로 본문과 구분되어 있는 것을 볼 수 있습니다. 이 부분이 Front-matter로 해당 파일의 정보가 입력된 부분입니다.</p>
+<h3 id="2-마크다운-글쓰기-기본">2. 마크다운 글쓰기 기본</h3>
+<h4 id="①-Front-matter">① Front-matter</h4>
+<p>md 파일을 만들면, <code>title / author / date</code>이 <code>---</code>를 기준으로 본문과 구분되어 있는 것을 볼 수 있습니다. 이 부분이 Front-matter로 해당 파일의 정보가 입력된 부분입니다.</p>
 <p>기본적으로 cmd 창에서 입력한 title, 블로그 사용자 이름, 오늘 날짜가 적혀 있지만, 임의로 수정할 수 있습니다.</p>
 <pre class="line-numbers language-none"><code class="language-none">---
 title: hexo 글 올리기, 버전 업데이트 하기
@@ -300,10 +313,13 @@ tags:
   - &quot;blog&quot;
   - &quot;hexo&quot;
 ---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>위 파일을 배포하면, Tips &gt; Blog 카테고리가 생성되고 해당 카테고리 내에 파일이 업로드 됩니다. 카테고리와 태그를 만드는 방법이 여러 개 있는 것 같은데, 저는 이 방법이 제일 쉽고 편해서 이렇게 사용하고 있습니다. </p>
-<h3 id="3-서버에-포스트-배포하기"><a href="#3-서버에-포스트-배포하기" class="headerlink" title="3. 서버에 포스트 배포하기"></a>3. 서버에 포스트 배포하기</h3><h4 id="①-hexo-generate-정적-파일-생성"><a href="#①-hexo-generate-정적-파일-생성" class="headerlink" title="① hexo generate (정적 파일 생성)"></a>① hexo generate (정적 파일 생성)</h4><p>새로 저장한 내용을 서버에 배포하기 위해 최신 버전으로 만들어주는 명령어입니다. </p>
+<p>위 파일을 배포하면, Tips &gt; Blog 카테고리가 생성되고 해당 카테고리 내에 파일이 업로드 됩니다. 카테고리와 태그를 만드는 방법이 여러 개 있는 것 같은데, 저는 이 방법이 제일 쉽고 편해서 이렇게 사용하고 있습니다.</p>
+<h3 id="3-서버에-포스트-배포하기">3. 서버에 포스트 배포하기</h3>
+<h4 id="①-hexo-generate-정적-파일-생성">① hexo generate (정적 파일 생성)</h4>
+<p>새로 저장한 내용을 서버에 배포하기 위해 최신 버전으로 만들어주는 명령어입니다.</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="②-hexo-server-로컬-서버"><a href="#②-hexo-server-로컬-서버" class="headerlink" title="② hexo server (로컬 서버)"></a>② hexo server (로컬 서버)</h4><pre class="line-numbers language-none"><code class="language-none">hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="②-hexo-server-로컬-서버">② hexo server (로컬 서버)</h4>
+<pre class="line-numbers language-none"><code class="language-none">hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>실제로 파일을 올리기 전에, 내가 만든 파일이 블로그에서 어떻게 보일지 확인하기 위해 사용하는 로컬 서버입니다. 이 작업은 거쳐도 되고 안 거쳐도 되지만, 깔끔하게 한 번에 배포하기 위해서는 미리보기를 해주는 게 좋겠죠?</p>
 <pre class="line-numbers language-none"><code class="language-none">&gt; C:\Users\naeun\Documents\Bigdata\blog\myblog&gt;hexo server
 
@@ -322,17 +338,19 @@ INFO  Hexo is running at http:&#x2F;&#x2F;localhost:4000 . Press Ctrl+C to stop.
 (node:17420) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>확인 url: <a target="_blank" rel="external nofollow noopener noreferrer" href="http://localhost:4000/">http://localhost:4000/</a></li>
-<li>임시 서버 실행 취소 방법: <code>Ctrl+c</code> 입력 후, <code>y</code> 입력  </li>
+<li>임시 서버 실행 취소 방법: <code>Ctrl+c</code> 입력 후, <code>y</code> 입력</li>
 </ul>
-<h4 id="③-hexo-deploy-배포"><a href="#③-hexo-deploy-배포" class="headerlink" title="③ hexo deploy (배포)"></a>③ hexo deploy (배포)</h4><p>실제 블로그에 배포하기 위해 사용하는 명령어입니다.</p>
+<h4 id="③-hexo-deploy-배포">③ hexo deploy (배포)</h4>
+<p>실제 블로그에 배포하기 위해 사용하는 명령어입니다.</p>
 <pre class="line-numbers language-none"><code class="language-none">hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="④-hexo-d-g"><a href="#④-hexo-d-g" class="headerlink" title="④ hexo d -g"></a>④ hexo d -g</h4><p>generate와 deploy를 한 번에 하는 명령어가 있는데요. 아래의 4가지 명령어 모두 같은 작업을 합니다. 그렇지만, 저는 굳이 사용하지는 않아요.</p>
+<h4 id="④-hexo-d-g">④ hexo d -g</h4>
+<p>generate와 deploy를 한 번에 하는 명령어가 있는데요. 아래의 4가지 명령어 모두 같은 작업을 합니다. 그렇지만, 저는 굳이 사용하지는 않아요.</p>
 <pre><code>hexo deploy --generate
 hexo generate --deploy
 hexo d -g
-hexo g -d</code></pre>
+hexo g -d
+</code></pre>
 <br>
-
 <p>이렇게 해서 <strong>hexo 블로그 포스트 작성, 서버에 배포하는 방법</strong> 포스팅을 마치겠습니다. 가장 기본 정보만 담았으니, beginner가 참고하면 딱 좋을 거예요.</p>
 
         </div>
@@ -341,7 +359,7 @@ hexo g -d</code></pre>
 
 
 
-    <a data-url="https://ne-choi.github.io/2021/02/01/Tips/Blog/hexo-post-and-deploy/" data-id="ckkwkp4ye0000ssue4sspdg01" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2021/02/01/Tips/Blog/hexo-post-and-deploy/" data-id="ckl2d8i2k00077cuegdb92a9m" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -419,9 +437,12 @@ hexo g -d</code></pre>
         "dateCreated": "2021-02-01",
         "dateModified": "2021-02-08",
         "url": "https://ne-choi.github.io//2021/02/01/Tips/Blog/hexo-post-and-deploy/",
-        "description": "Hexo 블로그 운영 기초hexo 블로그를 만들고 운영하기까지 수많은 분의 블로그 포스팅을 읽었습니다. 저 또한 도움 되는 포스팅을 작성하기 위해 글을 씁니다. 이번 포스트에는 hexo 블로그 운영 초보자가 읽으면 좋을 블로그에 글 올리는 방법을 담았습니다. 
-1. 블로그 글 올리기1) Hexo 마크다운 파일 생성hexo는 마크다운(.md) 파일을 이용하여",
-        "wordCount": 801,
+        "description": "Hexo 블로그 운영 기초
+hexo 블로그를 만들고 운영하기까지 수많은 분의 블로그 포스팅을 읽었습니다. 저 또한 도움 되는 포스팅을 작성하기 위해 글을 씁니다. 이번 포스트에는 hexo 블로그 운영 초보자가 읽으면 좋을 블로그에 글 올리는 방법을 담았습니다.
+1. 블로그 글 올리기
+1) Hexo 마크다운 파일 생성
+hexo는 마크다운(.md) 파일을 이용",
+        "wordCount": 707,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

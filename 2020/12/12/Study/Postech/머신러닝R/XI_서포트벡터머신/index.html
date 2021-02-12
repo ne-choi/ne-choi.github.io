@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,SVM,서포트벡터머신">
     
-    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XI. 서포트벡터머신1. 서포트벡터머신 ⅠSupport Vector Machine 머신러닝   지도학습 분류모델 kNN모델 SVM(서포트벡터머신)     비지도학습 군집모델     서포트벡터머신 장단점      장점 단점    상대적으로 정확도가 높음 해석상 어려움 발생   다양">
+    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  XI. 서포트벡터머신 1. 서포트벡터머신 Ⅰ Support Vector Machine   머신러닝  지도학습  분류모델  kNN모델 SVM(서포트벡터머신)     비지도학습  군집모델      서포트벡터머신 장단점      장점 단점     상대적으로 정확도가 높음 해석상 어려움 발">
 <meta property="og:type" content="article">
 <meta property="og:title" content="머신러닝 기법과 R 프로그래밍 1: XI. 서포트벡터머신">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/12/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/XI_%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XI. 서포트벡터머신1. 서포트벡터머신 ⅠSupport Vector Machine 머신러닝   지도학습 분류모델 kNN모델 SVM(서포트벡터머신)     비지도학습 군집모델     서포트벡터머신 장단점      장점 단점    상대적으로 정확도가 높음 해석상 어려움 발생   다양">
+<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  XI. 서포트벡터머신 1. 서포트벡터머신 Ⅰ Support Vector Machine   머신러닝  지도학습  분류모델  kNN모델 SVM(서포트벡터머신)     비지도학습  군집모델      서포트벡터머신 장단점      장점 단점     상대적으로 정확도가 높음 해석상 어려움 발">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-12T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:39:00.628Z">
@@ -228,26 +228,34 @@ ga('send', 'pageview');
             
 
             <ul>
-<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  </li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.</li>
 </ul>
-<h1 id="XI-서포트벡터머신"><a href="#XI-서포트벡터머신" class="headerlink" title="XI. 서포트벡터머신"></a>XI. 서포트벡터머신</h1><h2 id="1-서포트벡터머신-Ⅰ"><a href="#1-서포트벡터머신-Ⅰ" class="headerlink" title="1. 서포트벡터머신 Ⅰ"></a>1. 서포트벡터머신 Ⅰ</h2><h3 id="Support-Vector-Machine"><a href="#Support-Vector-Machine" class="headerlink" title="Support Vector Machine"></a>Support Vector Machine</h3><ul>
-<li><p>머신러닝 </p>
+<h1>XI. 서포트벡터머신</h1>
+<h2 id="1-서포트벡터머신-Ⅰ">1. 서포트벡터머신 Ⅰ</h2>
+<h3 id="Support-Vector-Machine">Support Vector Machine</h3>
 <ul>
-<li>지도학습<ul>
-<li>분류모델<ul>
+<li>
+<p>머신러닝</p>
+<ul>
+<li>지도학습
+<ul>
+<li>분류모델
+<ul>
 <li>kNN모델</li>
 <li><strong>SVM(서포트벡터머신)</strong></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>비지도학습<ul>
+<li>비지도학습
+<ul>
 <li>군집모델</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>서포트벡터머신 장단점</p>
+<li>
+<p>서포트벡터머신 장단점</p>
 </li>
 </ul>
 <table>
@@ -257,7 +265,8 @@ ga('send', 'pageview');
 <th>단점</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>상대적으로 정확도가 높음</td>
 <td>해석상 어려움 발생</td>
 </tr>
@@ -265,16 +274,20 @@ ga('send', 'pageview');
 <td>다양한 데이터(연속형, 범주형)를 다룰 수 있음</td>
 <td>데이터가 많을 때 속도와 메모리가 많이 듦</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li><p><strong>선형 SVM</strong></p>
+<li>
+<p><strong>선형 SVM</strong></p>
 <ul>
 <li>각 클래스를 분류해주는 margin(각 클래스를 분류하는 하이퍼플레인)을 최대화하는 벡터를 찾는 분석 기법</li>
 </ul>
 </li>
-<li><p><strong>비선형 SVM</strong></p>
+<li>
+<p><strong>비선형 SVM</strong></p>
 <ul>
-<li>대부분 패턴은 선형적 분리가 불가능<ul>
+<li>대부분 패턴은 선형적 분리가 불가능
+<ul>
 <li>비선형 패턴의 임력공간을 선형 패턴의 feature space로 변환</li>
 <li>Kernel method로 비선형 경계면 도출</li>
 </ul>
@@ -282,7 +295,8 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3 id="서포트백터머신-패키지와-함수"><a href="#서포트백터머신-패키지와-함수" class="headerlink" title="서포트백터머신 패키지와 함수"></a>서포트백터머신 패키지와 함수</h3><ul>
+<h3 id="서포트백터머신-패키지와-함수">서포트백터머신 패키지와 함수</h3>
+<ul>
 <li>서포트벡터머신 수행을 위한 패키지: e1071</li>
 <li>서포트벡터머신 함수: svm(y변수~x변수, data= )</li>
 </ul>
@@ -299,14 +313,18 @@ iris$Species &lt;- as.factor(iris$Species)
 m1&lt;- svm(Species ~., data &#x3D; iris)
 summary(m1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>svm 옵션(default)<ul>
+<li>svm 옵션(default)
+<ul>
 <li>kernel = radial basis function</li>
 <li>gamma = 1/(# of dimension) (1/4=0.25)</li>
 </ul>
 </li>
 </ul>
-<h3 id="서포트벡터머신-결과"><a href="#서포트벡터머신-결과" class="headerlink" title="서포트벡터머신 결과"></a>서포트벡터머신 결과</h3><ul>
-<li>svm 모델에 적용한 예측범주와 실제범주 비교(전체 데이터 사용 결과)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># classify all data using svm result (m1)
+<h3 id="서포트벡터머신-결과">서포트벡터머신 결과</h3>
+<ul>
+<li>svm 모델에 적용한 예측범주와 실제범주 비교(전체 데이터 사용 결과)</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># classify all data using svm result (m1)
 # first 4 variables as attribute variables
 x&lt;-iris[, -5] # iris 데이터엣 타겟값인 5번째 열을 제외한 데이터, 즉 4개의 독립변수만 있는 데이터
 pred &lt;- predict(m1, x) # svm모델 m1을 적용해 예측된 범주값을 pred로 저장
@@ -314,54 +332,73 @@ pred &lt;- predict(m1, x) # svm모델 m1을 적용해 예측된 범주값을 pre
 # Check accuracy (compare predicted class(pred) and true class(y))
 # y &lt;- Species or y&lt;-iris[,5]
 y&lt;-iris[,5]
-table(pred, y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
+table(pred, y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
+<ul>
 <li>오분류율: (4+1)/150 = 0.033%</li>
 </ul>
 </li>
 </ul>
-<h3 id="서포트벡터머신-시각화"><a href="#서포트벡터머신-시각화" class="headerlink" title="서포트벡터머신 시각화"></a>서포트벡터머신 시각화</h3><ul>
-<li>iris 데이터의 서포트벡터머신 결과(전체 데이터 사용 결과)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># visualize classes by color
-plot(m1, iris,  Petal.Width~Petal.Length, slice&#x3D;list(Sepal.Width&#x3D;3, Sepal.Length&#x3D;4))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
+<h3 id="서포트벡터머신-시각화">서포트벡터머신 시각화</h3>
+<ul>
+<li>iris 데이터의 서포트벡터머신 결과(전체 데이터 사용 결과)</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># visualize classes by color
+plot(m1, iris,  Petal.Width~Petal.Length, slice&#x3D;list(Sepal.Width&#x3D;3, Sepal.Length&#x3D;4))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
+<ul>
 <li>4개 변수 중, petal.width와 petal.length가 중요한 변수</li>
 </ul>
 </li>
 </ul>
-<h2 id="2-서포트벡터머신-Ⅱ"><a href="#2-서포트벡터머신-Ⅱ" class="headerlink" title="2. 서포트벡터머신 Ⅱ"></a>2. 서포트벡터머신 Ⅱ</h2><h3 id="서포트벡터머신-kernel-함수"><a href="#서포트벡터머신-kernel-함수" class="headerlink" title="서포트벡터머신(kernel 함수)"></a>서포트벡터머신(kernel 함수)</h3><ul>
-<li><p>커널(kernel)이란?</p>
+<h2 id="2-서포트벡터머신-Ⅱ">2. 서포트벡터머신 Ⅱ</h2>
+<h3 id="서포트벡터머신-kernel-함수">서포트벡터머신(kernel 함수)</h3>
+<ul>
+<li>
+<p>커널(kernel)이란?</p>
 <ul>
 <li>Input Space → Feature Space</li>
 <li>f(x) = φ(x)^T^w + b</li>
 </ul>
 </li>
-<li><p>커널함수(kernel function)</p>
+<li>
+<p>커널함수(kernel function)</p>
 <ul>
-<li><p>x의 기저함수(basis function)</p>
+<li>
+<p>x의 기저함수(basis function)</p>
 </li>
-<li><p>x에 대한 <strong>새로운 특징을 추출하는 변환함수</strong></p>
+<li>
+<p>x에 대한 <strong>새로운 특징을 추출하는 변환함수</strong></p>
 <ul>
 <li>좋은 커널함수: x 데이터의 모든 정보를 보존하면서 class를 잘 분류할 수 있는 커널함수</li>
 </ul>
 </li>
-<li><p>커널함수와 기저함수의 관계: <strong>K(x<del>i</del>,x<del>j</del>) = φ(x<del>i</del>)’φ(x<del>j</del>)</strong></p>
+<li>
+<p>커널함수와 기저함수의 관계: <strong>K(x~i~,x~j~) = φ(x~i~)'φ(x~j~)</strong></p>
 <ul>
-<li>radial: K(x<del>i</del>,x<del>j</del>) = exp($\frac{-||x<del>i</del> - x<del>j</del>||^2^}{2σ^2^}$)</li>
-<li>polynomial: K(x<del>i</del>,x<del>j</del>) = (x<del>i</del>‘x<del>j</del> + 1)^r^</li>
-<li>sigmoid: K(x<del>i</del>,x<del>j</del>) = tanh(kx<del>i</del>‘x<del>j</del> - σ)</li>
+<li>radial: K(x~i~,x~j~) = exp($\frac{-||x~i~ - x~j~||^2^}{2σ^2^}$)</li>
+<li>polynomial: K(x~i~,x~j~) = (x~i~'x~j~ + 1)^r^</li>
+<li>sigmoid: K(x~i~,x~j~) = tanh(kx~i~'x~j~ - σ)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>패키지 설치</p>
+<li>
+<p>패키지 설치</p>
 <ul>
 <li>서포트벡터머신 수행 패키지: e1071</li>
-<li>오분류율 교차표(confusion matrix) 생성 패키지: caret<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;caret&quot;)
-library(e1071)
-library(caret)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>오분류율 교차표(confusion matrix) 생성 패키지: caret</li>
 </ul>
 </li>
-<li><p>iris 데이터 (학습데이터와 검증데이터 분할)</p>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;caret&quot;)
+library(e1071)
+library(caret)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>iris 데이터 (학습데이터와 검증데이터 분할)</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training (100) &amp; test set (50)
 set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)
 N&#x3D;nrow(iris)
@@ -370,8 +407,10 @@ tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
 y&#x3D;iris[,5]
 # split train data and test data
 train&#x3D;iris[tr.idx,]
-test&#x3D;iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>커널함수 적용</p>
+test&#x3D;iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>커널함수 적용</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#svm using kernel
 m1&lt;-svm(Species~., data &#x3D; train) # default: radial
 summary(m1)
@@ -381,16 +420,17 @@ m3&lt;-svm(Species~., data &#x3D; train,kernel&#x3D;&quot;sigmoid&quot;)
 summary(m3)
 m4&lt;-svm(Species~., data &#x3D; train,kernel&#x3D;&quot;linear&quot;)
 summary(m4)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="서포트벡터머신-결과-1"><a href="#서포트벡터머신-결과-1" class="headerlink" title="서포트벡터머신 결과"></a>서포트벡터머신 결과</h3></li>
-</ul>
+<h3 id="서포트벡터머신-결과-2">서포트벡터머신 결과</h3>
 <ol>
-<li>정확도 측정: kernel-radial basis function<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#measure accuracy
+<li>정확도 측정: kernel-radial basis function</li>
+</ol>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#measure accuracy
 pred11&lt;-predict(m1,test) # radial basis
 confusionMatrix(pred11, test$Species)
-#table(pred11, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ol>
+#table(pred11, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>예측범주: Prediction</li>
 <li>실제범주: Reference</li>
 <li>정확도: 0.96</li>
@@ -398,42 +438,51 @@ confusionMatrix(pred11, test$Species)
 </li>
 </ul>
 <ol start="2">
-<li>정확도 측정: kernel-polynomial<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred12&lt;-predict(m2,test) # polynomial
-confusionMatrix(pred12, test$Species)
-#table(pred12, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>정확도 측정: kernel-polynomial</li>
 </ol>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred12&lt;-predict(m2,test) # polynomial
+confusionMatrix(pred12, test$Species)
+#table(pred12, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>정확도: 0.9</li>
 </ul>
 </li>
 </ul>
 <ol start="3">
-<li>정확도 측정: kernel-sigmoid<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred13&lt;-predict(m3,test) # simoid
-confusionMatrix(pred13, test$Species)
-#table(pred13, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>정확도 측정: kernel-sigmoid</li>
 </ol>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred13&lt;-predict(m3,test) # simoid
+confusionMatrix(pred13, test$Species)
+#table(pred13, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>정확도: 0.9</li>
 </ul>
 </li>
 </ul>
 <ol start="4">
-<li>정확도 측정: kernel-linear<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred14&lt;-predict(m4,test) # linear
-confusionMatrix(pred14, test$Species)
-#table(pred14, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>정확도 측정: kernel-linear</li>
 </ol>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pred14&lt;-predict(m4,test) # linear
+confusionMatrix(pred14, test$Species)
+#table(pred14, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>정확도: 0.9393</li>
 </ul>
 </li>
 </ul>
-<h3 id="서포트벡터머신-정확도-정리"><a href="#서포트벡터머신-정확도-정리" class="headerlink" title="서포트벡터머신 정확도 정리"></a>서포트벡터머신 정확도 정리</h3><ul>
+<h3 id="서포트벡터머신-정확도-정리">서포트벡터머신 정확도 정리</h3>
+<ul>
 <li>linear로만 처리해도 정확도 높은 경우가 많음</li>
 </ul>
-<h2 id="3-서포트벡터머신-Ⅲ"><a href="#3-서포트벡터머신-Ⅲ" class="headerlink" title="3. 서포트벡터머신 Ⅲ"></a>3. 서포트벡터머신 Ⅲ</h2><h3 id="Breast-Cancer-데이터"><a href="#Breast-Cancer-데이터" class="headerlink" title="Breast Cancer 데이터"></a>Breast Cancer 데이터</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;e1071&quot;)
+<h2 id="3-서포트벡터머신-Ⅲ">3. 서포트벡터머신 Ⅲ</h2>
+<h3 id="Breast-Cancer-데이터">Breast Cancer 데이터</h3>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;e1071&quot;)
 # load package for support vector machine
 library(e1071) #svm model
 
@@ -451,14 +500,18 @@ attach(cancer)
 # 종속변수형을 factor 함수로 변경해야 함(R 4.0버전 이후)
 cancer$Y &lt;- as.factor(cancer$Y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>Breast Cancer Wisconsin (Diagnostic) Data Set<ul>
+<li>
+<p>Breast Cancer Wisconsin (Diagnostic) Data Set</p>
+<ul>
 <li>세침흡인 세포검사를 통해 얻은 683개 유방조직의 9개 특성을 나타냄</li>
 <li>input변수(독립변수): 9개, output변수(종속, 타겟변수): 1개</li>
 </ul>
 </li>
+<li>
+<p>학습데이터 / 검증데이터 분할</p>
+</li>
 </ul>
-<ul>
-<li>학습데이터 / 검증데이터 분할<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training (455) &amp; test set (228)
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training (455) &amp; test set (228)
 # set.seed(1000)
 N&#x3D;nrow(cancer)
 set.seed(998, sample.kind&#x3D;&quot;Rounding&quot;)
@@ -467,19 +520,21 @@ set.seed(998, sample.kind&#x3D;&quot;Rounding&quot;)
 tr.idx&#x3D;sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
 train &lt;- cancer[ tr.idx,]
 test  &lt;- cancer[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-</li>
+<h3 id="서포트벡터머신-결과-3">서포트벡터머신 결과</h3>
+<ul>
+<li>kernel 함수에 따른 서포트벡터머신</li>
 </ul>
-<h3 id="서포트벡터머신-결과-2"><a href="#서포트벡터머신-결과-2" class="headerlink" title="서포트벡터머신 결과"></a>서포트벡터머신 결과</h3><ul>
-<li>kernel 함수에 따른 서포트벡터머신<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#svm using kernel
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#svm using kernel
 m1&lt;-svm(Y~., data &#x3D; train)
 summary(m1)
 
 #measure accuracy
 pred11&lt;-predict(m1,test) # radial basis
 confusionMatrix(pred11, test$Y)
-#table(pred11, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
+#table(pred11, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
+<ul>
 <li>악성으로 오분류 4, 정상으로 오분류 1</li>
 <li>정확도: 0.9781</li>
 </ul>
@@ -492,7 +547,8 @@ pred12&lt;-predict(m2,test) # polynomial
 confusionMatrix(pred12, test$Y)
 #table(pred12, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>악성으로 오분류 0, 정상으로 오분류 12</li>
 <li>정확도: 0.9474</li>
 <li>정확도는 94% 이상이나, 암 진단 특성상 정상으로 오분류하는 경우가 많으면 안 됨</li>
@@ -507,7 +563,8 @@ pred13&lt;-predict(m3,test) # sigmoid
 confusionMatrix(pred13, test$Y)
 #table(pred13, y[-tr.idx])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>악성으로 오분류 5, 정상으로 오분류 3</li>
 <li>정확도: 0.9649</li>
 </ul>
@@ -521,13 +578,15 @@ confusionMatrix(pred14, test$Y)
 #table(pred14, y[-tr.idx])
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li><p>결과 해석</p>
+<li>
+<p>결과 해석</p>
 <ul>
 <li>악성으로 오분류 1, 정상으로 오분류 3</li>
 <li>정확도: 0.9825</li>
 </ul>
 </li>
-<li><p>전체 결론</p>
+<li>
+<p>전체 결론</p>
 <ul>
 <li>정확도만 보았을 때 linear 모델이 적합하나, True Negative가 위험하기 때문에 radial 모델이 더 적합할 수 있음</li>
 </ul>
@@ -540,7 +599,7 @@ confusionMatrix(pred14, test$Y)
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/12/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/XI_%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" data-id="ckkwkiehk000mdoue2vjkghoz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/12/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/XI_%EC%84%9C%ED%8F%AC%ED%8A%B8%EB%B2%A1%ED%84%B0%EB%A8%B8%EC%8B%A0/" data-id="ckl2d8i37000l7cue99gw3mcw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -619,13 +678,19 @@ confusionMatrix(pred14, test$Y)
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2020/12/12/Study/Postech/머신러닝R/XI_서포트벡터머신/",
         "description": "
-POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  
+POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.
 
-XI. 서포트벡터머신1. 서포트벡터머신 ⅠSupport Vector Machine
-머신러닝 
+XI. 서포트벡터머신
+1. 서포트벡터머신 Ⅰ
+Support Vector Machine
+
+
+머신러닝
 
 지도학습
+
 분류모델
+
 kNN모델
 SVM(서포트벡터머신)
 
@@ -633,7 +698,9 @@ SVM(서포트벡터머신)
 
 
 비지도학습
+
 군집모델
+
 
 
 
@@ -649,12 +716,10 @@ SVM(서포트벡터머신)
 
 
 
+
 상대적으로 정확도가 높음
-해석상 어려움 발생
-
-
-다양",
-        "wordCount": 698,
+해석상 어려움 발",
+        "wordCount": 635,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -715,11 +780,11 @@ SVM(서포트벡터머신)
         
 <nav id="article-nav">
     
-        <a href="/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A8_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%A7%88%EC%9D%B4%EB%8B%9D_%EA%B8%B0%EC%B4%88/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            머신러닝 기법과 R 프로그래밍 1: XⅡ. 의사결정나무와 랜덤 포레스트
+            머신러닝 기법과 R 프로그래밍 1: Ⅸ. 데이터 마이닝 기초
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>

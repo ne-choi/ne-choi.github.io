@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="파이썬머신러닝완벽가이드,회귀,선형회귀,릿지라쏘엘라스틱넷,로지스틱회귀,과적합과소적합">
     
-    <meta name="description" content="출처: 파이썬 머신러닝 완벽가이드  Chapter 05. 회귀01. 회귀 소개 회귀는 현대 통계학을 이루는 큰 축 회귀 분석은 유전적 특성을 연구하던 영국의 통계학자 갈톤이 수행한 연구에서 유래했다는 것이 일반론  &lt; 회귀에 대한 예시&gt;  “부모의 키가 크더라도 자식의 키가 대를 이어 무한정 커지지 않으며, 부모의 키가 작더라도 대를 이어 자식">
+    <meta name="description" content="출처: 파이썬 머신러닝 완벽가이드  Chapter 05. 회귀 01. 회귀 소개  회귀는 현대 통계학을 이루는 큰 축 회귀 분석은 유전적 특성을 연구하던 영국의 통계학자 갈톤이 수행한 연구에서 유래했다는 것이 일반론  &lt; 회귀에 대한 예시&gt;  “부모의 키가 크더라도 자식의 키가 대를 이어 무한정 커지지 않으며, 부모의 키가 작더라도 대를 이어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ch05. 회귀">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/03/Textbook/PythonML/ch05_%ED%9A%8C%EA%B7%80/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="출처: 파이썬 머신러닝 완벽가이드  Chapter 05. 회귀01. 회귀 소개 회귀는 현대 통계학을 이루는 큰 축 회귀 분석은 유전적 특성을 연구하던 영국의 통계학자 갈톤이 수행한 연구에서 유래했다는 것이 일반론  &lt; 회귀에 대한 예시&gt;  “부모의 키가 크더라도 자식의 키가 대를 이어 무한정 커지지 않으며, 부모의 키가 작더라도 대를 이어 자식">
+<meta property="og:description" content="출처: 파이썬 머신러닝 완벽가이드  Chapter 05. 회귀 01. 회귀 소개  회귀는 현대 통계학을 이루는 큰 축 회귀 분석은 유전적 특성을 연구하던 영국의 통계학자 갈톤이 수행한 연구에서 유래했다는 것이 일반론  &lt; 회귀에 대한 예시&gt;  “부모의 키가 크더라도 자식의 키가 대를 이어 무한정 커지지 않으며, 부모의 키가 작더라도 대를 이어">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://user-images.githubusercontent.com/72365693/100684179-2a831000-33bd-11eb-8955-12676993f76b.JPG">
 <meta property="article:published_time" content="2020-12-02T15:00:00.000Z">
@@ -235,7 +235,9 @@ ga('send', 'pageview');
             <ul>
 <li>출처: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://book.naver.com/bookdb/book_detail.nhn?bid=16238302">파이썬 머신러닝 완벽가이드</a></li>
 </ul>
-<h1 id="Chapter-05-회귀"><a href="#Chapter-05-회귀" class="headerlink" title="Chapter 05. 회귀"></a>Chapter 05. 회귀</h1><h2 id="01-회귀-소개"><a href="#01-회귀-소개" class="headerlink" title="01. 회귀 소개"></a><strong>01. 회귀 소개</strong></h2><ul>
+<h1>Chapter 05. 회귀</h1>
+<h2 id="01-회귀-소개"><strong>01. 회귀 소개</strong></h2>
+<ul>
 <li>회귀는 현대 통계학을 이루는 큰 축</li>
 <li>회귀 분석은 유전적 특성을 연구하던 영국의 통계학자 갈톤이 수행한 연구에서 유래했다는 것이 일반론</li>
 </ul>
@@ -243,11 +245,13 @@ ga('send', 'pageview');
 <blockquote>
 <p>“부모의 키가 크더라도 자식의 키가 대를 이어 무한정 커지지 않으며, 부모의 키가 작더라도 대를 이어 자식의 키가 무한정 작아지지 않는다”</p>
 </blockquote>
-<p><strong>즉, 회귀 분석은 이처럼 데이터 값이 평균과 같은 일정한 값으로 돌아가려는 경향을 이용한 통계학 기법이다.</strong> </p>
-<p><img src="https://user-images.githubusercontent.com/72365693/100684179-2a831000-33bd-11eb-8955-12676993f76b.JPG" alt="캡처"><br>[출처 : 인프런]</p>
+<p><strong>즉, 회귀 분석은 이처럼 데이터 값이 평균과 같은 일정한 값으로 돌아가려는 경향을 이용한 통계학 기법이다.</strong></p>
+<p><img src="https://user-images.githubusercontent.com/72365693/100684179-2a831000-33bd-11eb-8955-12676993f76b.JPG" alt="캡처"><br>
+[출처 : 인프런]</p>
 <p>ㅡ&gt; X는 피처값(속성)</p>
 <p>ㅡ&gt; Y는 결정값</p>
-<p>회귀는 회귀 계수의 선형/비선형 여부,<br>독립변수의 개수, 종속변수의 개수에 따라 여러 가지 유형으로 나눌 수 있다. <strong>회귀에서 가장 중요한 것은 바로 회귀 계수이다</strong> 이 회귀 계수가 선형이냐 아니냐에 따라 선형 회귀와 비선형 회귀로 나눌 수 있다. 그리고 독립변수의 개수가 한 개인지 여러 개인지에 따라 단일 회귀, 다중 회귀로 나뉘게 된다.</p>
+<p>회귀는 회귀 계수의 선형/비선형 여부,<br>
+독립변수의 개수, 종속변수의 개수에 따라 여러 가지 유형으로 나눌 수 있다. <strong>회귀에서 가장 중요한 것은 바로 회귀 계수이다</strong> 이 회귀 계수가 선형이냐 아니냐에 따라 선형 회귀와 비선형 회귀로 나눌 수 있다. 그리고 독립변수의 개수가 한 개인지 여러 개인지에 따라 단일 회귀, 다중 회귀로 나뉘게 된다.</p>
 <table>
 <thead>
 <tr>
@@ -255,7 +259,8 @@ ga('send', 'pageview');
 <th>회귀계수의 결합</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1개:단일 회귀</td>
 <td>선형:선형 회귀</td>
 </tr>
@@ -267,59 +272,69 @@ ga('send', 'pageview');
 <td>&lt;회귀 유형 구분&gt;</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>지도학습</strong>은 두 가지 유형으로 나뉘는데, 바로 <strong>분류</strong>와 <strong>회귀</strong>이다. 이 두 가지 기법의 가장 큰 차이는 분류는 예측값이 카테고리와 같은 <strong>이산형 클래스</strong> 값이고 회귀는 <strong>연속형 숫자</strong> 값이라는 것입니다.</p>
 <p><img src="https://user-images.githubusercontent.com/72365693/100416826-c44b7400-30c2-11eb-918b-a8f812ae44ff.jpg" alt="kiki"></p>
 <p>여러 가지 회귀 중에서 선형 회귀가 가장 많이 사용된다. 선형 회귀는 실제값과 예측값의 차이(오류의 제곱 값)를 최소화하는 직선형 회귀선을 최적화하는 방식이다. 선형 회귀 모델은 규제 방법에 따라 다시 별도의유형으로 나뉠 수 있다. 규제는 일반적인 선형 회귀의 과적합 문제를 해결하기 위해서 회귀 계수에 패널티값을 적용하는 것을 말한다.</p>
 <p><strong>- 대표적인 선형 회귀모델</strong></p>
 <ul>
-<li><strong>일반 선형 회귀</strong>: 예측값과 실제값의 RSS(Residual Sum of Squares)를 최소화할 수 있도록 회귀 계수를 최적화하며 규제(Regularization)  </li>
+<li>
+<p><strong>일반 선형 회귀</strong>: 예측값과 실제값의 RSS(Residual Sum of Squares)를 최소화할 수 있도록 회귀 계수를 최적화하며 규제(Regularization)</p>
+</li>
+<li>
+<p><strong>릿지(Ridge)</strong>: 릿지 회귀는 선형 회귀에 L2 규제를 추가한 회귀 모델, 릿지 회귀는 L2 규제를 적용하는데 L2 규제는 상대적으로 큰 회귀 계수 값의 예측 영향도를 감소시키기 위해서 회귀 계수값을 더 작게 만드는 규제 모델</p>
+</li>
+<li>
+<p><strong>라쏘(Lasso)</strong>: 라쏘 회귀는 선형 회귀에 L1 규제를 적용한 방식, L2 규제가 회귀 계수 값의 크기를 줄이는데 반해 L1규제는 예측 영향력이 작은 피처의 회귀 계수를 0으로 만들어 회귀 예측시 피처가 선택되지 않게 함 → 이러한 특성 때문에 L1 규제는 피처 선택 가능으로도 불림</p>
+</li>
+<li>
+<p><strong>엘라스틱넷(ElasticNet)</strong>: L2,L1 규제를 함께 결합한 모델, 주로 피처가 많은 데이터 세트에서 적용되며 L1규제로 피처의 개수를 줄임과 동시에 L2 규제로 계수 값의 크기를 조정</p>
+</li>
+<li>
+<p><strong>로지스틱 회귀(Logistic Regression)</strong>: 로지스틱 회귀는 회귀라는 이름이 붙어 있지만 사실은 분류에 사용되는 선형 모델, 로지스틱 회귀는 매우 강력한 분류 알고리즘이며 일반적으로 이진 분류뿐만 아니라 희소 영역의 분류, 예를 들어 텍스트 분류와 같은 영역에서 뛰어난 예측성능을 보임</p>
+</li>
 </ul>
-<ul>
-<li><strong>릿지(Ridge)</strong>: 릿지 회귀는 선형 회귀에 L2 규제를 추가한 회귀 모델, 릿지 회귀는 L2 규제를 적용하는데 L2 규제는 상대적으로 큰 회귀 계수 값의 예측 영향도를 감소시키기 위해서 회귀 계수값을 더 작게 만드는 규제 모델</li>
-</ul>
-<ul>
-<li><strong>라쏘(Lasso)</strong>: 라쏘 회귀는 선형 회귀에 L1 규제를 적용한 방식, L2 규제가 회귀 계수 값의 크기를 줄이는데 반해 L1규제는 예측 영향력이 작은 피처의 회귀 계수를 0으로 만들어 회귀 예측시 피처가 선택되지 않게 함 → 이러한 특성 때문에 L1 규제는 피처 선택 가능으로도 불림</li>
-</ul>
-<ul>
-<li><strong>엘라스틱넷(ElasticNet)</strong>: L2,L1 규제를 함께 결합한 모델, 주로 피처가 많은 데이터 세트에서 적용되며 L1규제로 피처의 개수를 줄임과 동시에 L2 규제로 계수 값의 크기를 조정</li>
-</ul>
-<ul>
-<li><strong>로지스틱 회귀(Logistic Regression)</strong>: 로지스틱 회귀는 회귀라는 이름이 붙어 있지만 사실은 분류에 사용되는 선형 모델, 로지스틱 회귀는 매우 강력한 분류 알고리즘이며 일반적으로 이진 분류뿐만 아니라 희소 영역의 분류, 예를 들어 텍스트 분류와 같은 영역에서 뛰어난 예측성능을 보임</li>
-</ul>
-<h2 id="02-단순선형-회귀를-통한-회귀-이해"><a href="#02-단순선형-회귀를-통한-회귀-이해" class="headerlink" title="02. 단순선형 회귀를 통한 회귀 이해"></a><strong>02. 단순선형 회귀를 통한 회귀 이해</strong></h2><p>단순선형회귀는 독립변수도 하나 종속변수도 하나인 선형 회귀이다.</p>
+<h2 id="02-단순선형-회귀를-통한-회귀-이해"><strong>02. 단순선형 회귀를 통한 회귀 이해</strong></h2>
+<p>단순선형회귀는 독립변수도 하나 종속변수도 하나인 선형 회귀이다.</p>
 <p><strong>- 예시</strong></p>
 <blockquote>
 <p>주택가격이 주택의 크기로만 결정된다고 할때 일반적으로 주택의 크기가 크면 가격이 높아지는 경향이 있기 때문에 주택가격은 크기에 대해 선형(직선형태)의 관계로 표현할 수 있다.</p>
 </blockquote>
-<p><img src="https://user-images.githubusercontent.com/72365693/100685144-29eb7900-33bf-11eb-8d2d-3a9e7a9f7b26.JPG" alt="1"><br>[출처: 인프라]  </p>
+<p><img src="https://user-images.githubusercontent.com/72365693/100685144-29eb7900-33bf-11eb-8d2d-3a9e7a9f7b26.JPG" alt="1"><br>
+[출처: 인프라]</p>
 <br>
-
 <p><strong>- 오류합 계산 방법</strong></p>
 <ol>
 <li>절대값을 취하여 더하는 방식</li>
 <li>오류값의 제곱을 구해서 더하는 방식(RSS)</li>
 </ol>
-<p>일반적으로 미분 등의 계산을 편리하게 하기 위해서 RSS방식으로 오류합을 구한다<br>즉, Error^2 = RSS</p>
+<p>일반적으로 미분 등의 계산을 편리하게 하기 위해서 RSS방식으로 오류합을 구한다<br>
+즉, Error^2 = RSS</p>
 <ul>
 <li>RSS는 이제 변수가 w0,w1인 식으로 표현 할 수 있으며 RSS를 최소로 하는 w0,w1 즉 회귀 계수를 학습을 통해서 찾는 것이 머신러닝 기반 회귀의 핵심 사항이다.</li>
-<li>RSS는 회귀식의 독립변수 X, 종속변수 Y가 중심 변수가 아니라 w 변수(회귀계수)가 중심 변수임을 인지하는 것이 매우 중요(학습 데이터로 입력되는 독립변수와 종속변수는 RSS에서 모두 상수로 간주한다.)<br><img src="https://user-images.githubusercontent.com/72365693/100685628-14c31a00-33c0-11eb-8a6a-6d93ddfbc99e.JPG" alt="2"></li>
+<li>RSS는 회귀식의 독립변수 X, 종속변수 Y가 중심 변수가 아니라 w 변수(회귀계수)가 중심 변수임을 인지하는 것이 매우 중요(학습 데이터로 입력되는 독립변수와 종속변수는 RSS에서 모두 상수로 간주한다.)<br>
+<img src="https://user-images.githubusercontent.com/72365693/100685628-14c31a00-33c0-11eb-8a6a-6d93ddfbc99e.JPG" alt="2"></li>
 </ul>
 <p>[출처 : 인프라]</p>
-<h2 id="03-비용-최소화하기-경사-하강법-Gradient-Descent"><a href="#03-비용-최소화하기-경사-하강법-Gradient-Descent" class="headerlink" title="03. 비용 최소화하기 - 경사 하강법(Gradient Descent)"></a><strong>03. 비용 최소화하기 - 경사 하강법(Gradient Descent)</strong></h2><p>W 파라미터의 개수가 적다면 고차원 방정식으로 비용 함수가 최소가 되는 W 변숫값을 도출할 수 있겠지만 W 파라미터가 많으면 고차원 방정식을 동원하더라도 해결하기가 어렵다. 경사 하강법은 이러한 고차원 방정식에 대한 문제를 해결해 주며서 비용 함수 RSS를 최소화하는 방법을 직관적으로 제공하는 뛰어난 방식이다.</p>
+<h2 id="03-비용-최소화하기-경사-하강법-Gradient-Descent"><strong>03. 비용 최소화하기 - 경사 하강법(Gradient Descent)</strong></h2>
+<p>W 파라미터의 개수가 적다면 고차원 방정식으로 비용 함수가 최소가 되는 W 변숫값을 도출할 수 있겠지만 W 파라미터가 많으면 고차원 방정식을 동원하더라도 해결하기가 어렵다. 경사 하강법은 이러한 고차원 방정식에 대한 문제를 해결해 주며서 비용 함수 RSS를 최소화하는 방법을 직관적으로 제공하는 뛰어난 방식이다.</p>
 <p><img src="https://user-images.githubusercontent.com/72365693/100686489-c7e04300-33c1-11eb-905b-bea79e742997.JPG" alt="캡처"></p>
-<p>[출처 : 인프라]  </p>
+<p>[출처 : 인프라]</p>
 <ul>
 <li>경사 하강법은 반복적으로 비용 함수의 반환 값, 즉 예측값과 실제값의 차이가 작아지는 <strong>방향성</strong>을 가지고 W 파라미터를 지속해서 보정해 나간다.</li>
 <li>최초 오류 값이 100이었다면 두 번째 오류 값은 100보다 작은 90, 세 번째는 80과 같은 방식으로 지속해서 오류를 감소시키는 방향으로 W 값을 계속 업데이트해 나간다.</li>
 <li>그리고 오류 값이 더 이상 작아지지 않으면 그 오류 값을 최소 비용으로 판단하고 그때의 W 값을 <strong>최적 파라미터로 반환</strong>한다.</li>
 </ul>
 <blockquote>
-<p>경사 하강법의 핵심: “어떻게 하면 오류가 작아지는 방향으로 W 값을 보정할 수 있을까?”  </p>
+<p>경사 하강법의 핵심: “어떻게 하면 오류가 작아지는 방향으로 W 값을 보정할 수 있을까?”</p>
 </blockquote>
-<p><img src="https://user-images.githubusercontent.com/72365693/100687679-0f67ce80-33c4-11eb-96c4-fbbeae25b93f.JPG" alt="캡처"><br>[출처 : 인프런]<br><img src="https://user-images.githubusercontent.com/72365693/100690620-42ad5c00-33ca-11eb-9752-5ab4db677acb.JPG" alt="캡처"></p>
-<p>[출처 : 인프런]  </p>
-<p><strong>- 경사 하강법 수행 프로세스</strong><br><img src="https://user-images.githubusercontent.com/72365693/100690834-b8b1c300-33ca-11eb-9523-45b4d9f438e7.JPG" alt="캡처"></p>
+<p><img src="https://user-images.githubusercontent.com/72365693/100687679-0f67ce80-33c4-11eb-96c4-fbbeae25b93f.JPG" alt="캡처"><br>
+[출처 : 인프런]<br>
+<img src="https://user-images.githubusercontent.com/72365693/100690620-42ad5c00-33ca-11eb-9752-5ab4db677acb.JPG" alt="캡처"></p>
+<p>[출처 : 인프런]</p>
+<p><strong>- 경사 하강법 수행 프로세스</strong><br>
+<img src="https://user-images.githubusercontent.com/72365693/100690834-b8b1c300-33ca-11eb-9523-45b4d9f438e7.JPG" alt="캡처"></p>
 <p><strong>- 실제값을 Y=4X+6 시뮬레이션하는 데이터 값 생성</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
@@ -333,21 +348,20 @@ y <span class="token operator">=</span> <span class="token number">6</span> <spa
 
 <span class="token comment"># X, y 데이터 셋 산점도로 시각화</span>
 plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;matplotlib.collections.PathCollection at 0x1d01316fdc0&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x1d01316fdc0&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_4_1.png" alt="png"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">X<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> y<span class="token punctuation">.</span>shape <span class="token comment"># 100개의 데이터를 다 가지고 있다는 것을 알 수 있다.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre><code>((100, 1), (100, 1))</code></pre>
+<pre><code>((100, 1), (100, 1))
+</code></pre>
 <p><strong>- w0과 w1의 값을 최소화 할 수 있도록 업데이트 수행하는 함수 생성.</strong></p>
 <ul>
-<li><p>예측 배열 y_pred는 np.dot(X, w1.T) + w0 임 100개의 데이터 X(1,2,…,100)이 있다면 예측값은 w0 + X(1)w1 + X(2)w1 +..+ X(100)*w1이며, 이는 입력 배열 X와 w1 배열의 내적임.</p>
+<li>
+<p>예측 배열 y_pred는 np.dot(X, w1.T) + w0 임 100개의 데이터 X(1,2,…,100)이 있다면 예측값은 w0 + X(1)w1 + X(2)w1 +…+ X(100)*w1이며, 이는 입력 배열 X와 w1 배열의 내적임.</p>
 </li>
-<li><p>새로운 w1과 w0를 update함<br><img src="https://user-images.githubusercontent.com/72365693/100700036-d3dafd80-33df-11eb-8883-864619664f52.JPG" alt="캡처"></p>
+<li>
+<p>새로운 w1과 w0를 update함<br>
+<img src="https://user-images.githubusercontent.com/72365693/100700036-d3dafd80-33df-11eb-8883-864619664f52.JPG" alt="캡처"></p>
 </li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># w1 과 w0 를 업데이트 할 w1_update, w0_update를 반환. </span>
@@ -368,7 +382,6 @@ plt<span class="token punctuation">.</span>scatter<span class="token punctuation
     w0_update <span class="token operator">=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">/</span>N<span class="token punctuation">)</span><span class="token operator">*</span>learning_rate<span class="token operator">*</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>w0_factors<span class="token punctuation">.</span>T<span class="token punctuation">,</span> diff<span class="token punctuation">)</span><span class="token punctuation">)</span>    
     
     <span class="token keyword">return</span> w1_update<span class="token punctuation">,</span> w0_update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">w0 <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 w1 <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 y_pred <span class="token operator">=</span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>X<span class="token punctuation">,</span> w1<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">+</span> w0
@@ -386,7 +399,8 @@ w1<span class="token punctuation">,</span> w0<span aria-hidden="true" class="lin
 
 
 
-(array([[0.]]), array([[0.]]))</code></pre>
+(array([[0.]]), array([[0.]]))
+</code></pre>
 <p>반복적으로 경사 하강법을 이용하여 get_weigth_updates()를 호출하여 w1과 w0를 업데이트 하는 함수 생성</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 입력 인자 iters로 주어진 횟수만큼 반복적으로 w1과 w0를 업데이트 적용함. </span>
 <span class="token keyword">def</span> <span class="token function">gradient_descent_steps</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> iters<span class="token operator">=</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -412,13 +426,12 @@ w1<span class="token punctuation">,</span> w0 <span class="token operator">=</sp
 y_pred <span class="token operator">=</span> w1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> X <span class="token operator">+</span> w0
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Gradient Descent Total Cost:&#123;0:.4f&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>get_cost<span class="token punctuation">(</span>y<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>w1:4.022 w0:6.162
-Gradient Descent Total Cost:0.9935</code></pre>
+Gradient Descent Total Cost:0.9935
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>X<span class="token punctuation">,</span>y_pred<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&lt;matplotlib.lines.Line2D at 0x1d0132424f0&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x1d0132424f0&gt;]
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_13_1.png" alt="png"></p>
 <p><strong>- 미니 배치 확률적 경사 하강법을 이용한 최적 비용함수 도출</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">stochastic_gradient_descent_steps</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> iters<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -439,37 +452,39 @@ plt<span class="token punctuation">.</span>plot<span class="token punctuation">(
         w0 <span class="token operator">=</span> w0 <span class="token operator">-</span> w0_update
     
     <span class="token keyword">return</span> w1<span class="token punctuation">,</span> w0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>permutation<span class="token punctuation">(</span>X<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 랜덤 샘플링을 임의로 가져옴</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
 <pre><code>array([66, 71, 54, 88, 82, 12, 36, 46, 14, 67, 10,  3, 62, 29, 97, 69, 70,
        93, 31, 73, 60, 96, 28, 27, 21, 19, 33, 78, 32, 94,  1, 41, 40, 76,
        37, 87, 24, 23, 50,  2, 47, 20, 77, 17, 56, 64, 68, 25, 15, 22, 16,
        98, 63, 92, 86, 38,  6, 57, 95, 44,  9, 42, 81, 99, 35, 84, 59, 48,
        75, 65, 85, 90, 55, 43, 58, 89, 30, 80, 34, 18, 51, 49, 52, 74, 26,
-       45, 39,  4, 11, 53, 91, 79,  8,  0,  5, 13, 61, 72,  7, 83])</code></pre>
+       45, 39,  4, 11, 53, 91, 79,  8,  0,  5, 13, 61, 72,  7, 83])
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">w1<span class="token punctuation">,</span> w0 <span class="token operator">=</span> stochastic_gradient_descent_steps<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">,</span> iters<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"w1:"</span><span class="token punctuation">,</span><span class="token builtin">round</span><span class="token punctuation">(</span>w1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"w0:"</span><span class="token punctuation">,</span><span class="token builtin">round</span><span class="token punctuation">(</span>w0<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 y_pred <span class="token operator">=</span> w1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> X <span class="token operator">+</span> w0
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Stochastic Gradient Descent Total Cost:&#123;0:.4f&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>get_cost<span class="token punctuation">(</span>y<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>w1: 4.028 w0: 6.156
-Stochastic Gradient Descent Total Cost:0.9937</code></pre>
-<h2 id="04-사이킷런-LinearRegression-클래스"><a href="#04-사이킷런-LinearRegression-클래스" class="headerlink" title="04. 사이킷런 LinearRegression 클래스"></a><strong>04. 사이킷런 LinearRegression 클래스</strong></h2><pre class="line-numbers language-none"><code class="language-none">class sklearn.linear_model.LinearRegression(fit_intercept&#x3D;True,normalize&#x3D;False, copy_X&#x3D;True, n_jobs&#x3D;1)
+Stochastic Gradient Descent Total Cost:0.9937
+</code></pre>
+<h2 id="04-사이킷런-LinearRegression-클래스"><strong>04. 사이킷런 LinearRegression 클래스</strong></h2>
+<pre class="line-numbers language-none"><code class="language-none">class sklearn.linear_model.LinearRegression(fit_intercept&#x3D;True,normalize&#x3D;False, copy_X&#x3D;True, n_jobs&#x3D;1)
 
 # fit &#x3D; 학습하다, intercept&#x3D;True(절편을 사용한다), normalize &#x3D; 데이트를 정렬할 것인가<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>LnearRegression 클래스는 예측값과 실제 값의 RSS를 최소화해 OLS 추정 방식으로 구현한 클래스이다.</p>
 <p>LinearRegression 클래스는 fit()메서드로 X,Y 배열을 입력 받으면 회귀 계수인 W를 coef_ 속성에 저장한다.</p>
-<p><img src="https://user-images.githubusercontent.com/72365693/100702704-85c8f880-33e5-11eb-8141-aa89c3bb3348.JPG" alt="캡처"><br>[출처 :인프런]</p>
-<h3 id="1-회귀평가-지표"><a href="#1-회귀평가-지표" class="headerlink" title="(1) 회귀평가 지표"></a><strong>(1) 회귀평가 지표</strong></h3><p><img src="https://user-images.githubusercontent.com/72365693/100703039-1dc6e200-33e6-11eb-8202-a1e23139f09c.JPG" alt="캡처"></p>
+<p><img src="https://user-images.githubusercontent.com/72365693/100702704-85c8f880-33e5-11eb-8141-aa89c3bb3348.JPG" alt="캡처"><br>
+[출처 :인프런]</p>
+<h3 id="1-회귀평가-지표"><strong>(1) 회귀평가 지표</strong></h3>
+<p><img src="https://user-images.githubusercontent.com/72365693/100703039-1dc6e200-33e6-11eb-8202-a1e23139f09c.JPG" alt="캡처"></p>
 <p><strong>- 사이킷런 회귀 평가 API</strong></p>
 <ul>
 <li>사이킷런은 아쉽게도 RMSE를 제공하지 않는다. RMSE를 구하기 위해서는 MSE에 제곱근을 씌워서 계산하는 함수를 직접 만들어야 한다.</li>
-<li>다음은 각 평가 방법에 대한 사이킷런의 API 및 cross_val_score나 GridSearchCV에서 평가 시 사용되는 scoring 파라미터의 적용 값이다<br><img src="https://user-images.githubusercontent.com/72365693/100703523-0b00dd00-33e7-11eb-8180-2ba8b60aaa21.JPG" alt="캡처"></li>
+<li>다음은 각 평가 방법에 대한 사이킷런의 API 및 cross_val_score나 GridSearchCV에서 평가 시 사용되는 scoring 파라미터의 적용 값이다<br>
+<img src="https://user-images.githubusercontent.com/72365693/100703523-0b00dd00-33e7-11eb-8180-2ba8b60aaa21.JPG" alt="캡처"></li>
 </ul>
-<h3 id="2-LinearRegression을-이용한-보스턴-주택-가격-예측"><a href="#2-LinearRegression을-이용한-보스턴-주택-가격-예측" class="headerlink" title="(2) LinearRegression을 이용한 보스턴 주택 가격 예측"></a><strong>(2) LinearRegression을 이용한 보스턴 주택 가격 예측</strong></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<h3 id="2-LinearRegression을-이용한-보스턴-주택-가격-예측"><strong>(2) LinearRegression을 이용한 보스턴 주택 가격 예측</strong></h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns
@@ -487,21 +502,22 @@ bostonDF <span class="token operator">=</span> pd<span class="token punctuation"
 bostonDF<span class="token punctuation">[</span><span class="token string">'PRICE'</span><span class="token punctuation">]</span> <span class="token operator">=</span> boston<span class="token punctuation">.</span>target
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Boston 데이타셋 크기 :'</span><span class="token punctuation">,</span>bostonDF<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
 bostonDF<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>Boston 데이타셋 크기 : (506, 14)</code></pre>
+<pre><code>Boston 데이타셋 크기 : (506, 14)
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
 
 .dataframe thead th &#123;
     text-align: right;
-&#125;</code></pre>
-<p></style><p></p>
+&#125;
+</code></pre>
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -611,9 +627,6 @@ bostonDF<span class="token punctuation">.</span>head<span class="token punctuati
   </tbody>
 </table>
 </div>
-
-
-
 <ul>
 <li>CRIM: 지역별 범죄 발생률</li>
 <li>ZN: 25,000평방피트를 초과하는 거주 지역의 비율</li>
@@ -639,16 +652,20 @@ lm_features <span class="token operator">=</span> <span class="token punctuation
     col <span class="token operator">=</span> i<span class="token operator">%</span><span class="token number">4</span>
     <span class="token comment"># 시본의 regplot을 이용해 산점도와 선형 회귀 직선을 함께 표현</span>
     sns<span class="token punctuation">.</span>regplot<span class="token punctuation">(</span>x<span class="token operator">=</span>feature <span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">'PRICE'</span><span class="token punctuation">,</span>data<span class="token operator">=</span>bostonDF <span class="token punctuation">,</span> ax<span class="token operator">=</span>axs<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="../images/machine_learning/ch05/output_24_0.png" alt="png"></p>
 <ul>
-<li><p>결과 해석</p>
+<li>결과 해석
 <ul>
-<li><p>다른 칼럼보다 RM과 LSTAT의 PRICE 영향도가 가장 두드러지게 나타남</p>
+<li>
+<p>다른 칼럼보다 RM과 LSTAT의 PRICE 영향도가 가장 두드러지게 나타남</p>
 </li>
-<li><p>RM(방 개수)은 양방향의 선형성이 가장 크다<br>→ 방의 크기가 클수록 가격이 증가함  </p>
+<li>
+<p>RM(방 개수)은 양방향의 선형성이 가장 크다<br>
+→ 방의 크기가 클수록 가격이 증가함</p>
 </li>
-<li><p>LSTAT는 음방향의 선형성이 가장 큼<br>→ LSTAT이 적을수록 PRICE가 증가함</p>
+<li>
+<p>LSTAT는 음방향의 선형성이 가장 큼<br>
+→ LSTAT이 적을수록 PRICE가 증가함</p>
 </li>
 </ul>
 </li>
@@ -673,20 +690,19 @@ rmse <span class="token operator">=</span> np<span class="token punctuation">.</
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'MSE : &#123;0:.3f&#125; , RMSE : &#123;1:.3F&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>mse <span class="token punctuation">,</span> rmse<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Variance score : &#123;0:.3f&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>r2_score<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> y_preds<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>MSE : 17.297 , RMSE : 4.159
-Variance score : 0.757</code></pre>
+Variance score : 0.757
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 절편과 회귀 계수 값 보기</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'절편 값:'</span><span class="token punctuation">,</span>lr<span class="token punctuation">.</span>intercept_<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'회귀 계수값:'</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span><span class="token builtin">round</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>coef_<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre><code>절편 값: 40.995595172164585
 회귀 계수값: [ -0.1   0.1   0.    3.  -19.8   3.4   0.   -1.7   0.4  -0.   -0.9   0.
-  -0.6]</code></pre>
+  -0.6]
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># coef_ 속성은 회귀 계수 값만 가지고 있어, 이를 피처별 회귀 계수 값으로 재 매핑</span>
 <span class="token comment"># 회귀 계수를 큰 값 순으로 정렬하기 위해 Series로 생성. index 컬럼명에 유의</span>
 coeff <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>data<span class="token operator">=</span>np<span class="token punctuation">.</span><span class="token builtin">round</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>coef_<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">=</span>X_data<span class="token punctuation">.</span>columns <span class="token punctuation">)</span>
 coeff<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre><code>RM          3.4
 CHAS        3.0
 RAD         0.4
@@ -700,15 +716,19 @@ LSTAT      -0.6
 PTRATIO    -0.9
 DIS        -1.7
 NOX       -19.8
-dtype: float64</code></pre>
+dtype: float64
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>RM이 양의 값으로 회귀 계수가 가장 큼</li>
-<li>NOX 피처의 회귀 계수 - 값이 너무 커보임<br>→ 최적화를 수행하면서 피처 codfficients의 변화 살필 예정  </li>
+<li>NOX 피처의 회귀 계수 - 값이 너무 커보임<br>
+→ 최적화를 수행하면서 피처 codfficients의 변화 살필 예정</li>
 </ul>
 </li>
 </ul>
-<p><strong>- 5개의 폴드 세트에서 cross_val_score()로 교차 검증하기: MSE, RMSE 측정</strong><br>사이킷런은 cross_val_score()를 이용하는데, RMSE를 제공하지 않으므로 MSE 수치 결과를 RMSE로 변환해야 한다. cross_val_score()의 인자로 scoring=’neg_mean_squared_error’를 지칭하면 반환되는 수치 값은 음수이다. 사이킷런은 높은 지표 값일수록 좋은 모델로 평가히는데 반해, <strong>회귀는 MSE 값이 낮을수록 좋은 회귀 모델</strong>로 평가한다.</p>
+<p><strong>- 5개의 폴드 세트에서 cross_val_score()로 교차 검증하기: MSE, RMSE 측정</strong><br>
+사이킷런은 cross_val_score()를 이용하는데, RMSE를 제공하지 않으므로 MSE 수치 결과를 RMSE로 변환해야 한다. cross_val_score()의 인자로 scoring='neg_mean_squared_error’를 지칭하면 반환되는 수치 값은 음수이다. 사이킷런은 높은 지표 값일수록 좋은 모델로 평가히는데 반해, <strong>회귀는 MSE 값이 낮을수록 좋은 회귀 모델</strong>로 평가한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> cross_val_score
 
 y_target <span class="token operator">=</span> bostonDF<span class="token punctuation">[</span><span class="token string">'PRICE'</span><span class="token punctuation">]</span>
@@ -727,34 +747,40 @@ avg_rmse <span class="token operator">=</span> np<span class="token punctuation"
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code> 5 folds 의 개별 Negative MSE scores:  [-12.46 -26.05 -33.07 -80.76 -33.31]
  5 folds 의 개별 RMSE scores :  [3.53 5.1  5.75 8.99 5.77]
- 5 folds 의 평균 RMSE : 5.829 </code></pre>
+ 5 folds 의 평균 RMSE : 5.829 
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>5개 폴드 세트 교차 검증 수행 결과, 평균 RMSE는 약 5.836이 나옴</li>
-<li>corss_val_score(scoring=”neg_mean_squared_error”)로 반환된 값은 모두 음수로 확인됨</li>
+<li>corss_val_score(scoring=“neg_mean_squared_error”)로 반환된 값은 모두 음수로 확인됨</li>
 </ul>
 </li>
 </ul>
-<h2 id="05-다항-회귀-과-대-적합-과소적합"><a href="#05-다항-회귀-과-대-적합-과소적합" class="headerlink" title="05. 다항 회귀, 과(대)적합/과소적합"></a>05. 다항 회귀, 과(대)적합/과소적합</h2><h3 id="1-다항-회귀-이해"><a href="#1-다항-회귀-이해" class="headerlink" title="(1) 다항 회귀 이해"></a>(1) 다항 회귀 이해</h3><ul>
-<li>현재까지 설명한 회귀는 y = $w_{0} + w_{1}*x_{1} + w_{2}*x_{2} + , … , + w_{n}*x_{n}$과 같이 독립변수(feature)와 종속변수(target) 관계가 일차 방정식 형태로 표현된 회귀</li>
-</ul>
+<h2 id="05-다항-회귀-과-대-적합-과소적합">05. 다항 회귀, 과(대)적합/과소적합</h2>
+<h3 id="1-다항-회귀-이해">(1) 다항 회귀 이해</h3>
 <ul>
-<li>세상의 모든 관계를 직선으로만 표현할 수 없기 때문에 다항 회귀 개념이 필요</li>
-</ul>
+<li>
+<p>현재까지 설명한 회귀는 y = $w_{0} + w_{1}*x_{1} + w_{2}*x_{2} + , … , + w_{n}*x_{n}$과 같이 독립변수(feature)와 종속변수(target) 관계가 일차 방정식 형태로 표현된 회귀</p>
+</li>
+<li>
+<p>세상의 모든 관계를 직선으로만 표현할 수 없기 때문에 다항 회귀 개념이 필요</p>
+</li>
+<li>
+<p><strong>다항(Polynomial) 회귀</strong>: 회귀가 독립변수의 단항식이 아닌 2차, 3차 방정식과 같은 다항식으로 표현되는 것</p>
 <ul>
-<li><strong>다항(Polynomial) 회귀</strong>: 회귀가 독립변수의 단항식이 아닌 2차, 3차 방정식과 같은 다항식으로 표현되는 것<ul>
 <li>y = $w_{0} + w_{1}*x_{1} + w_{2}*x_{2} + w_{3}*x_{1}*x_{2} + w_{4}*x_{1}^{2} + w_{5}*x_{2}^{2}$</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>다항 회귀는 선형 회귀(비선형 회귀가 아님)</p>
 <ul>
-<li>다항 회귀는 선형 회귀(비선형 회귀가 아님)<ul>
 <li>cf) <strong>회귀에서 선형/비선형을 나누는 기준은 회귀 계수가 선형/비선형인지에 따른 것</strong>으로, 독립변수의 선형/비선형 여부와는 무관함</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>사이킷런은 다항 회귀를 위한 클래스를 명시적으로 제공하지 않아, 비선형 함수를 선형 모델에 적용시키는 방법으로 구현</p>
 <ul>
-<li>사이킷런은 다항 회귀를 위한 클래스를 명시적으로 제공하지 않아, 비선형 함수를 선형 모델에 적용시키는 방법으로 구현<ul>
 <li>PolynomialFeatures 클래스로 피처를 다항식 피처로 변환함</li>
 </ul>
 </li>
@@ -776,7 +802,8 @@ poly_ftr <span class="token operator">=</span> poly<span class="token punctuatio
  [2 3]]
 변환된 2차 다항식 계수 feature:
  [[1. 0. 1. 0. 0. 1.]
- [1. 2. 3. 4. 6. 9.]]</code></pre>
+ [1. 2. 3. 4. 6. 9.]]
+</code></pre>
 <p><strong>- 3차 다항 회귀 함수를 임의로 설정하고 회귀 계수 예측하기</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">polynomial_func</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">:</span>
     y <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token operator">*</span>X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token operator">*</span>X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">**</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">4</span><span class="token operator">*</span>X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">**</span><span class="token number">3</span>
@@ -795,7 +822,8 @@ y <span class="token operator">=</span> polynomial_func<span class="token punctu
 [0 2]
 [1 3]
 삼차 다항식 결정값: 
- [  5 125]</code></pre>
+ [  5 125]
+</code></pre>
 <p><strong>- 일차 단항식 계수를 삼차 다항식 계수로 변환하고, 선형 회귀에 적용</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 3 차 다항식 변환 </span>
 poly_ftr <span class="token operator">=</span> PolynomialFeatures<span class="token punctuation">(</span>degree<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
@@ -811,9 +839,11 @@ model<span class="token punctuation">.</span>fit<span class="token punctuation">
  [ 1.  2.  3.  4.  6.  9.  8. 12. 18. 27.]]
 Polynomial 회귀 계수
  [0.   0.18 0.18 0.36 0.54 0.72 0.72 1.08 1.62 2.34]
-Polynomial 회귀 Shape : (10,)</code></pre>
+Polynomial 회귀 Shape : (10,)
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>일차 단항식 계수 피처는 2개였지만, 3차 다항식 Polynomial 변환 이후에는 다항식 계수 피처가 10개로 늘어남</li>
 <li>늘어난 피처 데이터 세트에 LinearRegression을 통해 3차 다항 회귀 형태의 다항 회귀를 적용하면 회귀 계수가 10개로 늘어남</li>
 <li>10개의 회귀 계수가 도출됐으며 원래 다항식 계수 값과는 차이가 있지만, 다항 회귀로 근사함을 알 수 있음</li>
@@ -839,18 +869,23 @@ y <span class="token operator">=</span> polynomial_func<span class="token punctu
 model <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Polynomial 회귀 계수\n'</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span><span class="token builtin">round</span><span class="token punctuation">(</span>model<span class="token punctuation">.</span>named_steps<span class="token punctuation">[</span><span class="token string">'linear'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>coef_<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>Polynomial 회귀 계수
- [0.   0.18 0.18 0.36 0.54 0.72 0.72 1.08 1.62 2.34]</code></pre>
-<h3 id="2-다항-회귀를-이용한-과소적합-및-과적합-이해"><a href="#2-다항-회귀를-이용한-과소적합-및-과적합-이해" class="headerlink" title="(2) 다항 회귀를 이용한 과소적합 및 과적합 이해"></a><strong>(2) 다항 회귀를 이용한 과소적합 및 과적합 이해</strong></h3><ul>
+ [0.   0.18 0.18 0.36 0.54 0.72 0.72 1.08 1.62 2.34]
+</code></pre>
+<h3 id="2-다항-회귀를-이용한-과소적합-및-과적합-이해"><strong>(2) 다항 회귀를 이용한 과소적합 및 과적합 이해</strong></h3>
+<ul>
 <li>다항 회귀는 피처의 직선적 관계가 아닌, 복잡한 다항 관계를 모델링할 수 있음</li>
 <li>다항식 차수가 높아질수록 매우 복잡한 피처 관계까지 모델링이 가능함</li>
-<li>단, 다항 회귀의 차수(degree)를 높일수록 학습 데이터에 너무 맞춘 학습이 이루어져서 테스트 데이터 환경에서 예측 정확도가 떨어짐<br>→ 차수가 높아질수록 과적합 문제가 크게 발생</li>
+<li>단, 다항 회귀의 차수(degree)를 높일수록 학습 데이터에 너무 맞춘 학습이 이루어져서 테스트 데이터 환경에서 예측 정확도가 떨어짐<br>
+→ 차수가 높아질수록 과적합 문제가 크게 발생</li>
 </ul>
-<p><strong>- 다항 회귀의 과소적합과 과적합 문제를 잘 보여주는 예시</strong><br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html#sphx-glr-auto-examples-model-selection-plot-underfitting-overfitting-py">- 원본</a></p>
+<p><strong>- 다항 회귀의 과소적합과 과적합 문제를 잘 보여주는 예시</strong><br>
+<a target="_blank" rel="external nofollow noopener noreferrer" href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html#sphx-glr-auto-examples-model-selection-plot-underfitting-overfitting-py">- 원본</a></p>
 <ul>
-<li>소스코드 설명<ul>
+<li>소스코드 설명
+<ul>
 <li>피처 X와 target y가 잡음(Noise)이 포함된 다항식의 코사인 그래프 관계를 가지게 만듦</li>
 <li>이에 기반해 다항 회귀의 차수를 변화시키며 그에 따른 회귀 예측 곡선과 예측 정확도를 비교하는 예제</li>
-<li>학습 데이터: 30개의 임의 데이터 X, X의 코사인 값에서 약간의 잡음 변동 값을 더한 target </li>
+<li>학습 데이터: 30개의 임의 데이터 X, X의 코사인 값에서 약간의 잡음 변동 값을 더한 target</li>
 </ul>
 </li>
 </ul>
@@ -912,7 +947,6 @@ degrees <span class="token operator">=</span> <span class="token punctuation">[<
     plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"Degree &#123;&#125;\nMSE = &#123;:.2e&#125;(+/- &#123;:.2e&#125;)"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>degrees<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">-</span>scores<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> scores<span class="token punctuation">.</span>std<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre><code>Degree 1 회귀 계수는 [-2.] 입니다.
 Degree 1 MSE 는 0.41 입니다.
 
@@ -923,18 +957,27 @@ Degree 15 회귀 계수는 [-2.98300000e+03  1.03899000e+05 -1.87416100e+06  2.0
  -1.44873341e+08  7.09315840e+08 -2.47066022e+09  6.24561781e+09
  -1.15676672e+10  1.56895187e+10 -1.54006300e+10  1.06457475e+10
  -4.91378589e+09  1.35919961e+09 -1.70381209e+08] 입니다.
-Degree 15 MSE 는 182594790.08 입니다.</code></pre>
+Degree 15 MSE 는 182594790.08 입니다.
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_43_1.png" alt="png"></p>
 <ul>
-<li>실선: 다항 회귀 예측 곡선</li>
-<li>점선: 실제 데이터 세트 X, Y의 코사인 곡선</li>
-<li>학습 데이터: 0부터 1까지 30개의 임의 X값과 그에 따른 코사인 Y값에 잡음을 변동 값으로 추가해 구성</li>
-<li>MSE(Mean Squared Error) 평가: 학습 데이터를 10개의 교차 검증 세트로 나누어 측정한 후 평균한 것</li>
-</ul>
+<li>
+<p>실선: 다항 회귀 예측 곡선</p>
+</li>
+<li>
+<p>점선: 실제 데이터 세트 X, Y의 코사인 곡선</p>
+</li>
+<li>
+<p>학습 데이터: 0부터 1까지 30개의 임의 X값과 그에 따른 코사인 Y값에 잡음을 변동 값으로 추가해 구성</p>
+</li>
+<li>
+<p>MSE(Mean Squared Error) 평가: 학습 데이터를 10개의 교차 검증 세트로 나누어 측정한 후 평균한 것</p>
+</li>
+<li>
+<p>결과 해석</p>
 <ul>
-<li><p>결과 해석 </p>
-<ul>
-<li><p>Degree 1 예측 곡선</p>
+<li>
+<p>Degree 1 예측 곡선</p>
 <ul>
 <li>단순한 직선으로 단순 선형 회귀와 동일</li>
 <li>실제 데이터 세트인 코사인 데이터 세트를 직선으로 예측하기에는 너무 단순함</li>
@@ -942,14 +985,16 @@ Degree 15 MSE 는 182594790.08 입니다.</code></pre>
 <li>MSE값: 약 0.407</li>
 </ul>
 </li>
-<li><p>Degree 4 예측 곡선</p>
+<li>
+<p>Degree 4 예측 곡선</p>
 <ul>
 <li>실제 데이터 세트와 유사한 모습</li>
 <li>변동하는 잡음까지는 예측하지 못했지만, 학습 데이터 세트를 비교적 잘 반영해 코사인 곡선 기반으로 테스트 데이터를 잘 예측한 곡선을 가진 모델</li>
 <li>MSE값: 0.043 (가장 뛰어난 예측 성능 = well-fit)</li>
 </ul>
 </li>
-<li><p>Degree 15 예측 곡선</p>
+<li>
+<p>Degree 15 예측 곡선</p>
 <ul>
 <li>MSE값이 182815432이 될 정도로 이상한 오류 값 발생(과적합 강조를 위해 만든 예측 곡선)</li>
 <li>데이터 세트의 변동 잡음까지 지나치게 반영한 결과, 예측 곡선이 학습 데이터 세트만 정확히 예측하고 테스트 값의 실제 곡선과는 완전히 다른 형태의 예측 곡선이 만들어짐</li>
@@ -958,162 +1003,277 @@ Degree 15 MSE 는 182594790.08 입니다.</code></pre>
 </li>
 </ul>
 </li>
-</ul>
+<li>
+<p>결론</p>
 <ul>
-<li>결론<ul>
 <li>좋은 예측 모델은 학습 데이터 패턴을 잘 반영하면서도 복잡하지 않은, <strong>균형 잡힌(Balanced) 모델</strong>을 의미</li>
 </ul>
 </li>
 </ul>
-<h3 id="3-편향-분산-트레이드-오프"><a href="#3-편향-분산-트레이드-오프" class="headerlink" title="(3) 편향-분산 트레이드 오프"></a><strong>(3) 편향-분산 트레이드 오프</strong></h3><ul>
-<li><p>머신러닝이 극복해야 할 이슈</p>
+<h3 id="3-편향-분산-트레이드-오프"><strong>(3) 편향-분산 트레이드 오프</strong></h3>
+<ul>
+<li>
+<p>머신러닝이 극복해야 할 이슈</p>
 </li>
-<li><p><strong>고편향(High Bias)성</strong></p>
+<li>
+<p><strong>고편향(High Bias)성</strong></p>
 <ul>
 <li>Degree 1 모델처럼 매우 단순화된 모델로서 지나치게 한 방향성으로 치우친 경향을 보임</li>
 </ul>
 </li>
-<li><p><strong>고분산(High Variance)성</strong></p>
+<li>
+<p><strong>고분산(High Variance)성</strong></p>
 <ul>
 <li>Degree 15 모델처럼 학습 데이터 하나하나 특성을 반영하여 매우 복잡하고 지나치게 높은 변동성을 가짐</li>
 </ul>
 </li>
 </ul>
-<p><img src="attachment:image.png" alt="image.png"><br><a target="_blank" rel="external nofollow noopener noreferrer" href="http://scott.fortmann-roe.com/docs/BiasVariance.html">- 이미지 출처</a></p>
+<p><img src="attachment:image.png" alt="image.png"><br>
+<a target="_blank" rel="external nofollow noopener noreferrer" href="http://scott.fortmann-roe.com/docs/BiasVariance.html">- 이미지 출처</a></p>
 <ul>
-<li>일반적으로 편향과 분산은 한 쪽이 높으면, 한 쪽이 낮아지는 경향이 있음<br>→ 편향이 높으면 분산이 낮아지고(과소적합), 분산이 높으면 편향이 낮아짐(과적합)</li>
-</ul>
-<ul>
-<li><strong>편향과 분산 관계에 따른 전체 오류 값(Total Error) 변화</strong><br><img src="attachment:image.png" alt="image.png"><br><a target="_blank" rel="external nofollow noopener noreferrer" href="http://scott.fortmann-roe.com/docs/BiasVariance.html">- 이미지 출처</a>  </li>
+<li>
+<p>일반적으로 편향과 분산은 한 쪽이 높으면, 한 쪽이 낮아지는 경향이 있음<br>
+→ 편향이 높으면 분산이 낮아지고(과소적합), 분산이 높으면 편향이 낮아짐(과적합)</p>
+</li>
+<li>
+<p><strong>편향과 분산 관계에 따른 전체 오류 값(Total Error) 변화</strong><br>
+<img src="attachment:image.png" alt="image.png"><br>
+<a target="_blank" rel="external nofollow noopener noreferrer" href="http://scott.fortmann-roe.com/docs/BiasVariance.html">- 이미지 출처</a></p>
+</li>
 </ul>
 <br>
-
 <ul>
-<li>편향이 너무 높으면 전체 오류가 높음</li>
-<li>편향을 낮출수록 분산이 높아지고 전체 오류도 낮아짐</li>
-<li><strong>골디락스</strong>: 편향을 낮추고 분산을 높이며, 전체 오류가 가장 낮아지는 지점</li>
-<li>골디락스 지점을 통과하며 분산을 지속적으로 높이면 전체 오류 값이 오히려 증가하며 예측 성능이 다시 저하됨</li>
-</ul>
+<li>
+<p>편향이 너무 높으면 전체 오류가 높음</p>
+</li>
+<li>
+<p>편향을 낮출수록 분산이 높아지고 전체 오류도 낮아짐</p>
+</li>
+<li>
+<p><strong>골디락스</strong>: 편향을 낮추고 분산을 높이며, 전체 오류가 가장 낮아지는 지점</p>
+</li>
+<li>
+<p>골디락스 지점을 통과하며 분산을 지속적으로 높이면 전체 오류 값이 오히려 증가하며 예측 성능이 다시 저하됨</p>
+</li>
+<li>
+<p>정리</p>
 <ul>
-<li>정리<ul>
 <li>과소적합: 높은 편향/낮은 분산에서 일어나기 쉬움</li>
-<li>과적합: 낮은 편향/높은 분산에서 일어나기 쉬움<br>→ 편향과 분산이 트레이드 오프를 이루며 오류 cost 값이 최대로 낮아지는 모델을 구축하는 것이 중요</li>
+<li>과적합: 낮은 편향/높은 분산에서 일어나기 쉬움<br>
+→ 편향과 분산이 트레이드 오프를 이루며 오류 cost 값이 최대로 낮아지는 모델을 구축하는 것이 중요</li>
 </ul>
 </li>
 </ul>
-<h2 id="06-규제-선형-모델-릿지-라쏘-엘라스틱넷"><a href="#06-규제-선형-모델-릿지-라쏘-엘라스틱넷" class="headerlink" title="06. 규제 선형 모델: 릿지, 라쏘, 엘라스틱넷"></a><strong>06. 규제 선형 모델: 릿지, 라쏘, 엘라스틱넷</strong></h2><h3 id="1-규제-선형-모델의-개요"><a href="#1-규제-선형-모델의-개요" class="headerlink" title="(1) 규제 선형 모델의 개요"></a><strong>(1) 규제 선형 모델의 개요</strong></h3><ul>
-<li>이전까지의 선형 모델 비용 함수는 RSS를 최소화하는(실제값과 예측값의 차이를 최소화하는) 것만 고려<ul>
+<h2 id="06-규제-선형-모델-릿지-라쏘-엘라스틱넷"><strong>06. 규제 선형 모델: 릿지, 라쏘, 엘라스틱넷</strong></h2>
+<h3 id="1-규제-선형-모델의-개요"><strong>(1) 규제 선형 모델의 개요</strong></h3>
+<ul>
+<li>
+<p>이전까지의 선형 모델 비용 함수는 RSS를 최소화하는(실제값과 예측값의 차이를 최소화하는) 것만 고려</p>
+<ul>
 <li>학습 데이터에 지나치게 맞추게 되고, 회귀 계수가 쉽게 커지는 문제가 발생</li>
-<li>변동성이 오히려 심해져 테스트 데이터 세트에서 예측 성능이 저하되게 쉬움<br>→ 비용 함수는 학습 데이터의 잔차 오류값을 최소로 하는 RSS 최소화 방법과 과적합을 방지하기 위해 회귀 계수 값이 커지지 않도록 하는 방법이 균형을 이루어야 함</li>
+<li>변동성이 오히려 심해져 테스트 데이터 세트에서 예측 성능이 저하되게 쉬움<br>
+→ 비용 함수는 학습 데이터의 잔차 오류값을 최소로 하는 RSS 최소화 방법과 과적합을 방지하기 위해 회귀 계수 값이 커지지 않도록 하는 방법이 균형을 이루어야 함</li>
 </ul>
 </li>
+<li>
+<p>회귀 계수의 크기를 제어해 과적합을 개선하려면, 비용(Cost) 함수의 목표가 아래와 같이 <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>M</mi><br>
+<mi>i</mi><br>
+<mi>n</mi><br>
+<mo stretchy="false">(</mo><br>
+<mi>R</mi><br>
+<mi>S</mi><br>
+<mi>S</mi><br>
+<mo stretchy="false">(</mo><br>
+<mi>W</mi><br>
+<mo stretchy="false">)</mo><br>
+<mo>+</mo><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msubsup><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>2</mn><br>
+<mn>2</mn><br>
+</msubsup><br>
+<mo stretchy="false">)</mo><br>
+</math>를 최소화하는 것으로 변경될 수 있음</p>
+</li>
 </ul>
+<p><strong>비용 함수 목표 = <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>M</mi><br>
+<mi>i</mi><br>
+<mi>n</mi><br>
+<mo stretchy="false">(</mo><br>
+<mi>R</mi><br>
+<mi>S</mi><br>
+<mi>S</mi><br>
+<mo stretchy="false">(</mo><br>
+<mi>W</mi><br>
+<mo stretchy="false">)</mo><br>
+<mo>+</mo><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msubsup><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>2</mn><br>
+<mn>2</mn><br>
+</msubsup><br>
+<mo stretchy="false">)</mo><br>
+</math></strong></p>
 <ul>
-<li>회귀 계수의 크기를 제어해 과적합을 개선하려면, 비용(Cost) 함수의 목표가 아래와 같이 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>M</mi><br><mi>i</mi><br><mi>n</mi><br><mo stretchy="false">(</mo><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br><mo>+</mo><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo><mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mi>W</mi>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<msubsup>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">|</mo>
-  </mrow>
-  <mn>2</mn>
-  <mn>2</mn>
-</msubsup>
-<mo stretchy="false">)</mo>
-</math>를 최소화하는 것으로 변경될 수 있음
-
-</li>
-</ul>
-<p><strong>비용 함수 목표 = <math xmlns="http://www.w3.org/1998/Math/MathML"><br>  <mi>M</mi><br>  <mi>i</mi><br>  <mi>n</mi><br>  <mo stretchy="false">(</mo><br>  <mi>R</mi><br>  <mi>S</mi><br>  <mi>S</mi><br>  <mo stretchy="false">(</mo><br>  <mi>W</mi><br>  <mo stretchy="false">)</mo><br>  <mo>+</mo><br>  <mi>a</mi><br>  <mi>l</mi><br>  <mi>p</mi><br>  <mi>h</mi><br>  <mi>a</mi><br>  <mo>&#x2217;</mo><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <mi>W</mi><br>  <mrow class="MJX-TeXAtom-ORD"><br>    <mo stretchy="false">|</mo><br>  </mrow><br>  <msubsup><br>    <mrow class="MJX-TeXAtom-ORD"><br>      <mo stretchy="false">|</mo><br>    </mrow><br>    <mn>2</mn><br>    <mn>2</mn><br>  </msubsup><br>  <mo stretchy="false">)</mo><br></math></strong></p>
+<li>
+<p>alpha: 학습 데이터 적합 정도와 회귀 계수 값의 크기 제어를 수행하는 튜닝 파라미터</p>
 <ul>
-<li>alpha: 학습 데이터 적합 정도와 회귀 계수 값의 크기 제어를 수행하는 튜닝 파라미터<ul>
-<li>alpha가 0(또는 매우 작은 값)이라면 비용 함수 식은 기존과 동일한 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>M</mi><br><mi>i</mi><br><mi>n</mi><br><mo stretchy="false">(</mo><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br><mo>+</mo><br><mn>0</mn><br><mo stretchy="false">)</mo><br></math>가 됨</li>
-<li>alpha가 무한대(또는 매우 큰 값)이라면 비용 함수 식은 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br></math>에 비해 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo><mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mi>W</mi>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<msubsup>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mn>2</mn>
-<mn>2</mn>
-</msubsup>
-</math> 값이 너무 커지므로 W 값을 0 또는 매우 작게 만들어야 Cost가 최소화 되는 비용 함수 목표를 달성할 수 있음  
-→ alpha 값을 크게 하면 비용 함수는 회귀 계수 W의 값을 작게 해 과적합을 개선할 수 있으며 alpha 값을 작게 하면 회귀 계수 W의 값이 커져도 어느 정도 상쇄가 가능하므로 학습 데이터 적합을 더 개선할 수 있음
-
-
-</li>
+<li>alpha가 0(또는 매우 작은 값)이라면 비용 함수 식은 기존과 동일한 <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>M</mi><br>
+<mi>i</mi><br>
+<mi>n</mi><br>
+<mo stretchy="false">(</mo><br>
+<mi>R</mi><br>
+<mi>S</mi><br>
+<mi>S</mi><br>
+<mo stretchy="false">(</mo><br>
+<mi>W</mi><br>
+<mo stretchy="false">)</mo><br>
+<mo>+</mo><br>
+<mn>0</mn><br>
+<mo stretchy="false">)</mo><br>
+</math>가 됨</li>
+<li>alpha가 무한대(또는 매우 큰 값)이라면 비용 함수 식은 <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>R</mi><br>
+<mi>S</mi><br>
+<mi>S</mi><br>
+<mo stretchy="false">(</mo><br>
+<mi>W</mi><br>
+<mo stretchy="false">)</mo><br>
+</math>에 비해 <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msubsup><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>2</mn><br>
+<mn>2</mn><br>
+</msubsup><br>
+</math> 값이 너무 커지므로 W 값을 0 또는 매우 작게 만들어야 Cost가 최소화 되는 비용 함수 목표를 달성할 수 있음<br>
+→ alpha 값을 크게 하면 비용 함수는 회귀 계수 W의 값을 작게 해 과적합을 개선할 수 있으며 alpha 값을 작게 하면 회귀 계수 W의 값이 커져도 어느 정도 상쇄가 가능하므로 학습 데이터 적합을 더 개선할 수 있음</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>alpha를 0에서부터 지속적으로 값을 증가시키면 회귀 계수 값의 크기를 감소시킬 수 있음</p>
 <ul>
-<li><p>alpha를 0에서부터 지속적으로 값을 증가시키면 회귀 계수 값의 크기를 감소시킬 수 있음</p>
+<li><strong>규제(Regularization)</strong>: 비용 함수에 alpha 값으로 패널티를 부여해 회귀 계수 값의 크기를 감소해 과적합을 개선하는 방식</li>
+<li>규제 방식
 <ul>
-<li><p><strong>규제(Regularization)</strong>: 비용 함수에 alpha 값으로 패널티를 부여해 회귀 계수 값의 크기를 감소해 과적합을 개선하는 방식</p>
+<li>
+<p>L2 규제: <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msubsup><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>2</mn><br>
+<mn>2</mn><br>
+</msubsup><br>
+</math>와 같이 W 제곱에 패널티를 부여하는 방식 ← 릿지(Ridge) 회귀</p>
 </li>
-<li><p>규제 방식</p>
+<li>
+<p>L1 규제: <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msub><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>1</mn><br>
+</msub><br>
+</math>와 같이 W의 절대값에 패널티를 부여, 영향력이 크지 않은 회귀 계수 값을 0으로 변환 ← 라쏘(Lasso) 회귀</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-릿지-회귀"><strong>(2) 릿지 회귀</strong></h3>
 <ul>
-<li><p>L2 규제: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo></math></p>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mi>W</mi>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<msubsup>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mn>2</mn>
-<mn>2</mn>
-</msubsup>
-와 같이 W 제곱에 패널티를 부여하는 방식 ← 릿지(Ridge) 회귀  
-</li>
-<li><p>L1 규제: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo></math></p>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mi>W</mi>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<msub>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mn>1</mn>
-</msub>
-와 같이 W의 절대값에 패널티를 부여, 영향력이 크지 않은 회귀 계수 값을 0으로 변환 ← 라쏘(Lasso) 회귀
-
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-릿지-회귀"><a href="#2-릿지-회귀" class="headerlink" title="(2) 릿지 회귀"></a><strong>(2) 릿지 회귀</strong></h3><ul>
-<li>사이킷런은 Ridge 클래스로 릿지 회귀를 구현<ul>
+<li>사이킷런은 Ridge 클래스로 릿지 회귀를 구현
+<ul>
 <li>주요 생성 파라미터: alpha, 릿지 회귀의 alpha L2 규제 계수에 해당</li>
 </ul>
 </li>
@@ -1147,9 +1307,11 @@ avg_rmse <span class="token operator">=</span> np<span class="token punctuation"
 <pre><code>Boston 데이타셋 크기 : (506, 14)
  5 folds 의 개별 Negative MSE scores:  [-11.422 -24.294 -28.144 -74.599 -28.517]
  5 folds 의 개별 RMSE scores :  [3.38  4.929 5.305 8.637 5.34 ]
- 5 folds 의 평균 RMSE : 5.518 </code></pre>
+ 5 folds 의 평균 RMSE : 5.518 
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>릿지의 5개 폴드 세트 평균 RMSE: 5.524</li>
 <li>앞 예제(규제 없는 LinearRegression) 평균인 5.836보다 뛰어난 예측 성능을 보임</li>
 </ul>
@@ -1171,9 +1333,11 @@ alphas <span class="token operator">=</span> <span class="token punctuation">[</
 alpha 0.1 일 때 5 folds 의 평균 RMSE : 5.788 
 alpha 1 일 때 5 folds 의 평균 RMSE : 5.653 
 alpha 10 일 때 5 folds 의 평균 RMSE : 5.518 
-alpha 100 일 때 5 folds 의 평균 RMSE : 5.330 </code></pre>
+alpha 100 일 때 5 folds 의 평균 RMSE : 5.330 
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>alpha가 100일 때, 평균 RMSE가 5.332로 가장 좋음</li>
 </ul>
 </li>
@@ -1200,10 +1364,10 @@ coeff_df <span class="token operator">=</span> pd<span class="token punctuation"
 
 <span class="token comment"># for 문 바깥에서 맷플롯립의 show 호출 및 alpha에 따른 피처별 회귀 계수를 DataFrame으로 표시</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="../images/machine_learning/ch05/output_53_0.png" alt="png"></p>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>alpha 값을 계속 증가시킬수록 회귀 계수 값은 지속적으로 작아짐</li>
 <li>특히, NOX 피처의 경우 alpha 값을 계속 증가시킴에 따라 회귀 계수가 크게 작아지고 있음</li>
 </ul>
@@ -1213,23 +1377,20 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">ridge_alphas <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
 sort_column <span class="token operator">=</span> <span class="token string">'alpha:'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>ridge_alphas<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 coeff_df<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span>sort_column<span class="token punctuation">,</span> ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
 
 .dataframe thead th &#123;
     text-align: right;
-&#125;</code></pre>
-<p></style><p></p>
+&#125;
+</code></pre>
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1349,65 +1510,73 @@ coeff_df<span class="token punctuation">.</span>sort_values<span class="token pu
   </tbody>
 </table>
 </div>
-
-
-
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>alpha 값이 증가하며 회귀 계소가 지속적으로 작아짐</li>
 <li>단, <strong>릿지 회귀는 회귀 계수를 0으로 만들지 않음</strong></li>
 </ul>
 </li>
 </ul>
-<h3 id="3-라쏘-회귀"><a href="#3-라쏘-회귀" class="headerlink" title="(3) 라쏘 회귀"></a><strong>(3) 라쏘 회귀</strong></h3><ul>
-<li>라쏘 회귀: W의 절댓값에 패널티를 부여하는 L1 규제를 선형 회귀에 적용한 것<ul>
-<li>L1 규제는 <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mo>&#x2217;</mo><mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mi>W</mi>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<msub>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mn>1</mn>
-</msub>
-</math>를 의미하며, 라쏘 회귀 비용함수 목표는 RSS(W) + <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mi>a</mi>
-<mi>l</mi>
-<mi>p</mi>
-<mi>h</mi>
-<mi>a</mi>
-<mo>&#x2217;</mo>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<mi>W</mi>
-<mrow class="MJX-TeXAtom-ORD">
-<mo stretchy="false">|</mo>
-</mrow>
-<msub>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mn>1</mn>
-</msub>
+<h3 id="3-라쏘-회귀"><strong>(3) 라쏘 회귀</strong></h3>
+<ul>
+<li>
+<p>라쏘 회귀: W의 절댓값에 패널티를 부여하는 L1 규제를 선형 회귀에 적용한 것</p>
+<ul>
+<li>L1 규제는 <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msub><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>1</mn><br>
+</msub><br>
+</math>를 의미하며, 라쏘 회귀 비용함수 목표는 RSS(W) + <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msub><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>1</mn><br>
+</msub><br>
 </math> 식을 최소화하는 W를 찾는 것</li>
 <li>L2 규제가 회귀 계쑤 크기를 감소시키는 데 반해, L1 규제는 불필요한 회귀 계수를 급격히 감소시켜 0으로 만들고 제거함</li>
 <li>L1 규제는 적절한 피처만 회귀에 포함시키는 피처 선택의 득성을 가짐</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>사이킷런은 Lasso 클래스로 라쏘 회귀를 구현</p>
 <ul>
-<li>사이킷런은 Lasso 클래스로 라쏘 회귀를 구현<ul>
 <li>주요 파라미터: alpha, 라쏘 회귀의 alpha L1 규제 계수에 해당</li>
 </ul>
 </li>
@@ -1439,7 +1608,6 @@ coeff_df<span class="token punctuation">.</span>sort_values<span class="token pu
     
     <span class="token keyword">return</span> coeff_df
 <span class="token comment"># end of get_linear_regre_eval</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 라쏘에 사용될 alpha 파라미터의 값들을 정의하고 get_linear_reg_eval() 함수 호출</span>
 lasso_alphas <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">0.07</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
 coeff_lasso_df <span class="token operator">=</span>get_linear_reg_eval<span class="token punctuation">(</span><span class="token string">'Lasso'</span><span class="token punctuation">,</span> params<span class="token operator">=</span>lasso_alphas<span class="token punctuation">,</span> X_data_n<span class="token operator">=</span>X_data<span class="token punctuation">,</span> y_target_n<span class="token operator">=</span>y_target<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -1448,9 +1616,11 @@ alpha 0.07일 때 5 폴드 세트의 평균 RMSE: 5.612
 alpha 0.1일 때 5 폴드 세트의 평균 RMSE: 5.615 
 alpha 0.5일 때 5 폴드 세트의 평균 RMSE: 5.669 
 alpha 1일 때 5 폴드 세트의 평균 RMSE: 5.776 
-alpha 3일 때 5 폴드 세트의 평균 RMSE: 6.189 </code></pre>
+alpha 3일 때 5 폴드 세트의 평균 RMSE: 6.189 
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>alpha가 0.07일 때, 가장 좋은 평균 RMSE를 보여줌</li>
 </ul>
 </li>
@@ -1459,23 +1629,20 @@ alpha 3일 때 5 폴드 세트의 평균 RMSE: 6.189 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 반환된 coeff_lasso_df를 첫번째 컬럼순으로 내림차순 정렬하여 회귀계수 DataFrame출력</span>
 sort_column <span class="token operator">=</span> <span class="token string">'alpha:'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>lasso_alphas<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 coeff_lasso_df<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span>sort_column<span class="token punctuation">,</span> ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
 
 .dataframe thead th &#123;
     text-align: right;
-&#125;</code></pre>
-<p></style><p></p>
+&#125;
+</code></pre>
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1595,74 +1762,89 @@ coeff_lasso_df<span class="token punctuation">.</span>sort_values<span class="to
   </tbody>
 </table>
 </div>
-
-
-
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>alpha의 크기가 증가함에 따라 일부 피처 회귀 계수는 아예 0으로 바뀜</li>
 <li>NOX 속성은 alpha가 0.07일 때부터 회귀 계수가 0이며, alpha를 증가시키며 INDUS, CHAS와 같은 속성 회귀 계수가 0으로 바뀜</li>
 <li>회귀 계수가 0인 피처는 회귀 식에서 제외되며 피처 선택의 효과를 얻을 수 있음</li>
 </ul>
 </li>
 </ul>
-<h3 id="4-엘라스틱넷-회귀"><a href="#4-엘라스틱넷-회귀" class="headerlink" title="(4) 엘라스틱넷 회귀"></a><strong>(4) 엘라스틱넷 회귀</strong></h3><ul>
-<li>엘라스틱넷(Elastic Net) 회귀: L2 규제와 L1 규제를 결합한 회귀</li>
-<li>엘라스틱넷 회귀 비용함수 목표: <math xmlns="http://www.w3.org/1998/Math/MathML"><br><mi>R</mi><br><mi>S</mi><br><mi>S</mi><br><mo stretchy="false">(</mo><br><mi>W</mi><br><mo stretchy="false">)</mo><br><mo>+</mo><br><mi>a</mi><br><mi>l</mi><br><mi>p</mi><br><mi>h</mi><br><mi>a</mi><br><mn>2</mn><br><mo>&#x2217;</mo><mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mi>W</mi>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<msubsup>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">|</mo>
-  </mrow>
-  <mn>2</mn>
-  <mn>2</mn>
-</msubsup>
-<mo>+</mo>
-<mi>a</mi>
-<mi>l</mi>
-<mi>p</mi>
-<mi>h</mi>
-<mi>a</mi>
-<mn>1</mn>
-<mo>&#x2217;</mo>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<mi>W</mi>
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">|</mo>
-</mrow>
-<msub>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">|</mo>
-  </mrow>
-  <mn>1</mn>
-</msub>
-</math> 식을 최소화하는 W를 찾는 것
-
-
-</li>
-</ul>
+<h3 id="4-엘라스틱넷-회귀"><strong>(4) 엘라스틱넷 회귀</strong></h3>
 <ul>
-<li>엘라스틱넷은 라쏘 회귀가 상관관계가 높은 피처들의 경우에, 중요 피처만을 선택하고 다른 피처 회귀 계수는 0으로 만드는 성향이 강함<ul>
+<li>
+<p>엘라스틱넷(Elastic Net) 회귀: L2 규제와 L1 규제를 결합한 회귀</p>
+</li>
+<li>
+<p>엘라스틱넷 회귀 비용함수 목표: <math xmlns="http://www.w3.org/1998/Math/MathML"><br>
+<mi>R</mi><br>
+<mi>S</mi><br>
+<mi>S</mi><br>
+<mo stretchy="false">(</mo><br>
+<mi>W</mi><br>
+<mo stretchy="false">)</mo><br>
+<mo>+</mo><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mn>2</mn><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msubsup><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>2</mn><br>
+<mn>2</mn><br>
+</msubsup><br>
+<mo>+</mo><br>
+<mi>a</mi><br>
+<mi>l</mi><br>
+<mi>p</mi><br>
+<mi>h</mi><br>
+<mi>a</mi><br>
+<mn>1</mn><br>
+<mo>∗</mo><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mi>W</mi><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<msub><br>
+<mrow class="MJX-TeXAtom-ORD"><br>
+<mo stretchy="false">|</mo><br>
+</mrow><br>
+<mn>1</mn><br>
+</msub><br>
+</math> 식을 최소화하는 W를 찾는 것</p>
+</li>
+<li>
+<p>엘라스틱넷은 라쏘 회귀가 상관관계가 높은 피처들의 경우에, 중요 피처만을 선택하고 다른 피처 회귀 계수는 0으로 만드는 성향이 강함</p>
+<ul>
 <li>alpha 값에 따라 회귀 계쑤 값이 급격히 변동할 수 있는데, 엘라스틱넷 회귀는 이를 완화하기 위해 L2 규제를 라쏘 회귀에 추가한 것</li>
 <li>엘라스틱넷 회귀의 단점은 L1과 L2 규제가 결합된 규제로 인해 수행 시간이 상대적으로 오래 걸림</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>사이킷런은 Elastic Net 클래스로 엘라스틱넷 회귀를 구현</p>
 <ul>
-<li>사이킷런은 Elastic Net 클래스로 엘라스틱넷 회귀를 구현<ul>
 <li>주요 파라미터: aplha, l1_ration</li>
 <li>Elastic Net 클래스의 aplha는 Ridge와 Lasso 클래스의 alpha 값과는 다름</li>
 <li>엘라스틱넷 규제는 a * L1 + b * L2로 정의될 수 있으며, 이 때 a는 L1 규제의 alpha값, b는 L2 규제의 alpha 값</li>
@@ -1686,27 +1868,25 @@ alpha 0.07일 때 5 폴드 세트의 평균 RMSE: 5.542
 alpha 0.1일 때 5 폴드 세트의 평균 RMSE: 5.526 
 alpha 0.5일 때 5 폴드 세트의 평균 RMSE: 5.467 
 alpha 1일 때 5 폴드 세트의 평균 RMSE: 5.597 
-alpha 3일 때 5 폴드 세트의 평균 RMSE: 6.068 </code></pre>
+alpha 3일 때 5 폴드 세트의 평균 RMSE: 6.068 
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 반환된 coeff_elastic_df를 첫번째 컬럼순으로 내림차순 정렬하여 회귀계수 DataFrame출력</span>
 sort_column <span class="token operator">=</span> <span class="token string">'alpha:'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>elastic_alphas<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 coeff_elastic_df<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>by<span class="token operator">=</span>sort_column<span class="token punctuation">,</span> ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
 
 .dataframe thead th &#123;
     text-align: right;
-&#125;</code></pre>
-<p></style><p></p>
+&#125;
+</code></pre>
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1826,42 +2006,49 @@ coeff_elastic_df<span class="token punctuation">.</span>sort_values<span class="
   </tbody>
 </table>
 </div>
-
-
-
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>alpha 0.5일 때, RMSE가 5.468로 가장 좋은 예측 성능을 보임</li>
 <li>alpha 값에 따른 피처들의 회귀 계수 값이 라쏘보다는 0 되는 값이 적음</li>
 </ul>
 </li>
 </ul>
-<h3 id="5-선형-회귀-모델을-위한-데이터-변환"><a href="#5-선형-회귀-모델을-위한-데이터-변환" class="headerlink" title="(5) 선형 회귀 모델을 위한 데이터 변환"></a><strong>(5) 선형 회귀 모델을 위한 데이터 변환</strong></h3><ul>
-<li>선형 회귀 모델과 같은 선형 모델은 일반적으로 피처와 타겟 간에 선형의 관계가 있다 가정하고, 이러한 최적의 선형함수를 찾아내 결과를 예측</li>
-<li>선형 회귀 모델은 피처값과 타겟값의 분포가 정규 분포(즉 평균을 중심으로 종 모양으로 데이터 값이 분포된 형태) 형태를 매우 선호함<ul>
+<h3 id="5-선형-회귀-모델을-위한-데이터-변환"><strong>(5) 선형 회귀 모델을 위한 데이터 변환</strong></h3>
+<ul>
+<li>
+<p>선형 회귀 모델과 같은 선형 모델은 일반적으로 피처와 타겟 간에 선형의 관계가 있다 가정하고, 이러한 최적의 선형함수를 찾아내 결과를 예측</p>
+</li>
+<li>
+<p>선형 회귀 모델은 피처값과 타겟값의 분포가 정규 분포(즉 평균을 중심으로 종 모양으로 데이터 값이 분포된 형태) 형태를 매우 선호함</p>
+<ul>
 <li>타겟값의 경우 정규 분포 형태가 아니라 특정값의 분포가 치우친 왜곡된 형태의 분포도일 경우 예측 성능에 부정적인 영향을 미칠 가능성이 높음</li>
 <li>피처값 역시 왜곡된 분포도로 인해 예측 성능에 부정적인 영향을 미칠 수 있음</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>일반적으로 선형 회귀 모델을 적용하기전에 데이터에 대한 스케일링/정규화 작업을 수행함</p>
 <ul>
-<li>일반적으로 선형 회귀 모델을 적용하기전에 데이터에 대한 스케일링/정규화 작업을 수행함<ul>
 <li>단, 스케일링/정규화 작업을 선행한다고 해서 무조건 예측 성능이 향상되는 것은 아니며 중요한 피처들이나 타겟값의 분포도가 심하게 왜곡됐을 경우에 이러한 변환 작업을 수행함</li>
-<li>피처 데이터 셋과 타겟 데이터 셋에 이러한 스케일링/정규화 작업을 수행하는 방법이 다름  </li>
+<li>피처 데이터 셋과 타겟 데이터 셋에 이러한 스케일링/정규화 작업을 수행하는 방법이 다름</li>
 </ul>
 </li>
 </ul>
 <p><strong>- 사이킷런을 이용해 피처 데이터 세트에 적용하는 방법 세 가지</strong></p>
 <ol>
-<li><p>StandardScaler 클래스를 이용해 평균이 0, 분산이 1인 표준 정규 분포를 가진 데이터 셋으로 변환하거나 MinMaxScaler 클래스를 이용해 최소값이 0이고 최대값이 1인 값으로 정규화를 수행</p>
+<li>
+<p>StandardScaler 클래스를 이용해 평균이 0, 분산이 1인 표준 정규 분포를 가진 데이터 셋으로 변환하거나 MinMaxScaler 클래스를 이용해 최소값이 0이고 최대값이 1인 값으로 정규화를 수행</p>
 </li>
-<li><p>스케일링/정규화를 수행한 데이터 셋에 다시 다항 특성을 적용하여 변환하는 방법이다. 보통 1번 방법을 통해 예측 성능에 향상이 없을 경우 이와 같은 방법을 적용</p>
+<li>
+<p>스케일링/정규화를 수행한 데이터 셋에 다시 다항 특성을 적용하여 변환하는 방법이다. 보통 1번 방법을 통해 예측 성능에 향상이 없을 경우 이와 같은 방법을 적용</p>
 </li>
-<li><p>원래 값에 log 함수를 적용하면 보다 정규 분포에 가까운 형태로 값이 분포(= 로그 변환)된다. 실제로 선형 회귀에서는 앞서 소개한 1,2번 방법보다 로그 변환이 훨씬 많이 사용되는 변환 방법(1번 방법: 예측 성능 향상을 크게 기대하기 어려운 경우가 많음, 2번 방법: 피처 개수가 매우 많을 경우에는 다항 변환으로 생성되는 피처의 개수가 기하급수로 늘어나서 과적합의 이슈가 발생할 수 있음)</p>
+<li>
+<p>원래 값에 log 함수를 적용하면 보다 정규 분포에 가까운 형태로 값이 분포(= 로그 변환)된다. 실제로 선형 회귀에서는 앞서 소개한 1,2번 방법보다 로그 변환이 훨씬 많이 사용되는 변환 방법(1번 방법: 예측 성능 향상을 크게 기대하기 어려운 경우가 많음, 2번 방법: 피처 개수가 매우 많을 경우에는 다항 변환으로 생성되는 피처의 개수가 기하급수로 늘어나서 과적합의 이슈가 발생할 수 있음)</p>
 </li>
 </ol>
 <ul>
-<li>타겟값의 경우 일반적으로 로그 변환을 적용<ul>
+<li>타겟값의 경우 일반적으로 로그 변환을 적용
+<ul>
 <li>결정값을 정규 분포나 다른 정규값으로 변환하면 변환된 값을 다시 원본 타겟값으로 원복하기 어려울 수 있음</li>
 <li>왜곡된 분포도 형태의 타겟값을 로그 변환하여 예측 성능 향상이 된 경우가 많은 사례에서 검증되었기 때문에 타겟값의 경우는 로그 변환을 적용</li>
 </ul>
@@ -1869,7 +2056,8 @@ coeff_elastic_df<span class="token punctuation">.</span>sort_values<span class="
 </ul>
 <p><strong>- 보스턴 주택가격 피처 데이터 세트에 표준 정규 분포 변환, 최댓값/최솟값 정규화, 로그 변환을 적용한 후 RMSE로 각 경우별 예측 성능 측정하기</strong></p>
 <ul>
-<li>사용 함수: get_scaled_data()<ul>
+<li>사용 함수: get_scaled_data()
+<ul>
 <li>method 인자로 변환 방법을 결정하며, 표준 정규 분포 변환(Standard), 최댓값/최솟값 정규와(MinMax), 로그 변환(Log) 중에 하나를 선택</li>
 <li>p_degree: 다항식 특성을 추가할 때, 다항식 차수가 입력됨 (2를 넘기지 않음)</li>
 <li>np.log1p(): log() 함수만 적용하면 언더 플로우가 발생하기 쉬워 1 + log() 함수를 적용</li>
@@ -1895,7 +2083,6 @@ coeff_elastic_df<span class="token punctuation">.</span>sort_values<span class="
                                          include_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>scaled_data<span class="token punctuation">)</span>
     
     <span class="token keyword">return</span> scaled_data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Ridge의 alpha값을 다르게 적용하고 다양한 데이터 변환방법에 따른 RMSE 추출. </span>
 alphas <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
 <span class="token comment">#변환 방법은 모두 6개, 원본 그대로, 표준정규분포, 표준정규분포+다항식 특성</span>
@@ -1950,9 +2137,12 @@ alpha 100일 때 5 폴드 세트의 평균 RMSE: 6.538
 alpha 0.1일 때 5 폴드 세트의 평균 RMSE: 4.770 
 alpha 1일 때 5 폴드 세트의 평균 RMSE: 4.676 
 alpha 10일 때 5 폴드 세트의 평균 RMSE: 4.836 
-alpha 100일 때 5 폴드 세트의 평균 RMSE: 6.241 </code></pre>
+alpha 100일 때 5 폴드 세트의 평균 RMSE: 6.241 
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>
+<p>결과 해석</p>
+<ul>
 <li>표준 정규 분포와 최솟값/최댓값 정규화로 피처 데이터 세트를 변경해도 성능상의 개선은 없음</li>
 <li>표준 정규 분포로 일차 변환 후 2차 다항식 변환 시, alpha = 100에서 4.631로 성능 개선</li>
 <li>최솟값/최댓값 정규화로 일차 변환 후 2차 다항식 변환 시, aplha = 1에서 4.320으로 성능 개선</li>
@@ -1960,19 +2150,22 @@ alpha 100일 때 5 폴드 세트의 평균 RMSE: 6.241 </code></pre>
 <li>반면, 로그 변환은 alpha가 0.1, 1, 10인 경우 모두 성능이 좋게 향상됨</li>
 </ul>
 </li>
+<li>
+<p>일반적으로 선형 회귀를 적용하려는 데이터 세트에, 데이터 값 분포가 심하게 왜곡되어 있을 경우에, 로그 변환을 적용하는 편이 더 좋은 결과를 기대할 수 있음</p>
+</li>
 </ul>
+<h2 id="07-로지스틱-회귀"><strong>07. 로지스틱 회귀</strong></h2>
 <ul>
-<li>일반적으로 선형 회귀를 적용하려는 데이터 세트에, 데이터 값 분포가 심하게 왜곡되어 있을 경우에, 로그 변환을 적용하는 편이 더 좋은 결과를 기대할 수 있음</li>
-</ul>
-<h2 id="07-로지스틱-회귀"><a href="#07-로지스틱-회귀" class="headerlink" title="07. 로지스틱 회귀"></a><strong>07. 로지스틱 회귀</strong></h2><ul>
-<li>로지스틱 회귀: 선형 회귀 방식을 분류에 적용한 알고리즘 → ‘분류’에 사용<ul>
+<li>로지스틱 회귀: 선형 회귀 방식을 분류에 적용한 알고리즘 → '분류’에 사용
+<ul>
 <li>선형 회귀 계열이나, 선형 회귀와 다른 점은 학습을 통해 선형 함수의 회귀 최적선을 찾지 않고 시그모이드(Sigmoid) 함수 최적선을 찾고 시그모이드 함수 반환 값을 확률로 간주하여 확률에 따라 분류를 결정하는 것</li>
 </ul>
 </li>
 </ul>
 <p><img src="attachment:image.png" alt="image.png"></p>
 <ul>
-<li><p>시그모이드 함수</p>
+<li>
+<p>시그모이드 함수</p>
 <ul>
 <li>y = $\frac{1}{1+e-x}$ (-x는 제곱)</li>
 <li>시그모이드 함수는 x 값이 +, -로 아무리 커지거나 작아져도 y 값은 0과 1 사이 값만 반환</li>
@@ -1980,7 +2173,8 @@ alpha 100일 때 5 폴드 세트의 평균 RMSE: 6.241 </code></pre>
 <li>x가 0일 때는 0.5</li>
 </ul>
 </li>
-<li><p>회귀 분제를 분류 문제에 적용하기</p>
+<li>
+<p>회귀 분제를 분류 문제에 적용하기</p>
 <ul>
 <li>종양의 크기에 따라 악성 종양인지(Yes = 1), 아닌지(No = 0)를 회귀를 이용하여 1과 0 값으로 예측하는 것</li>
 <li>종양 크기에 따라 악성될 확률이 높다고 하면 아래 왼쪽 그림과 같이 분포하며 선형 회귀 선을 그릴 수 있으나, 해당 회귀 라인은 0과 1을 제대로 분류하지 못함</li>
@@ -1998,7 +2192,6 @@ alpha 100일 때 5 폴드 세트의 평균 RMSE: 6.241 </code></pre>
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
 
 cancer <span class="token operator">=</span> load_breast_cancer<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> StandardScaler
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
 
@@ -2019,11 +2212,13 @@ lr_preds <span class="token operator">=</span> lr_clf<span class="token punctuat
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'accuracy: &#123;:0.3f&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>accuracy_score<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> lr_preds<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'roc_auc: &#123;:0.3f&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>roc_auc_score<span class="token punctuation">(</span>y_test <span class="token punctuation">,</span> lr_preds<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>accuracy: 0.977
-roc_auc: 0.972</code></pre>
+roc_auc: 0.972
+</code></pre>
 <ul>
 <li>사이킷런 LogisticRegression 클래스의 주요 하이퍼 파라미터로 penalty와 C가 존재</li>
-<li>penalty는 규제의 유형을 설정하며 ‘l2’로 설정 시 L2 규제를, ‘l1’으로 설정 시 L1 규제를 뜻함</li>
-<li>C는 규제 강도를 조절하는 alpha 값의 역수로 C = $\frac{1}{alpha}$<ul>
+<li>penalty는 규제의 유형을 설정하며 'l2’로 설정 시 L2 규제를, 'l1’으로 설정 시 L1 규제를 뜻함</li>
+<li>C는 규제 강도를 조절하는 alpha 값의 역수로 C = $\frac{1}{alpha}$
+<ul>
 <li>C 값이 작을수록 규제 강도가 큼을 의미</li>
 </ul>
 </li>
@@ -2045,8 +2240,8 @@ Traceback (most recent call last):
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 1304, in fit
     solver = _check_solver(self.solver, self.penalty, self.dual)
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 442, in _check_solver
-    raise ValueError(&quot;Solver %s supports only &#39;l2&#39; or &#39;none&#39; penalties, &quot;
-ValueError: Solver lbfgs supports only &#39;l2&#39; or &#39;none&#39; penalties, got l1 penalty.
+    raise ValueError(&quot;Solver %s supports only 'l2' or 'none' penalties, &quot;
+ValueError: Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
 
   warnings.warn(&quot;Estimator fit failed. The score on this train-test&quot;
 C:\Users\naeun\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:548: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
@@ -2056,8 +2251,8 @@ Traceback (most recent call last):
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 1304, in fit
     solver = _check_solver(self.solver, self.penalty, self.dual)
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 442, in _check_solver
-    raise ValueError(&quot;Solver %s supports only &#39;l2&#39; or &#39;none&#39; penalties, &quot;
-ValueError: Solver lbfgs supports only &#39;l2&#39; or &#39;none&#39; penalties, got l1 penalty.
+    raise ValueError(&quot;Solver %s supports only 'l2' or 'none' penalties, &quot;
+ValueError: Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
 
   warnings.warn(&quot;Estimator fit failed. The score on this train-test&quot;
 C:\Users\naeun\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:548: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
@@ -2067,8 +2262,8 @@ Traceback (most recent call last):
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 1304, in fit
     solver = _check_solver(self.solver, self.penalty, self.dual)
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 442, in _check_solver
-    raise ValueError(&quot;Solver %s supports only &#39;l2&#39; or &#39;none&#39; penalties, &quot;
-ValueError: Solver lbfgs supports only &#39;l2&#39; or &#39;none&#39; penalties, got l1 penalty.
+    raise ValueError(&quot;Solver %s supports only 'l2' or 'none' penalties, &quot;
+ValueError: Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
 
   warnings.warn(&quot;Estimator fit failed. The score on this train-test&quot;
 C:\Users\naeun\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:548: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
@@ -2078,13 +2273,13 @@ Traceback (most recent call last):
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 1304, in fit
     solver = _check_solver(self.solver, self.penalty, self.dual)
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 442, in _check_solver
-    raise ValueError(&quot;Solver %s supports only &#39;l2&#39; or &#39;none&#39; penalties, &quot;
-ValueError: Solver lbfgs supports only &#39;l2&#39; or &#39;none&#39; penalties, got l1 penalty.
+    raise ValueError(&quot;Solver %s supports only 'l2' or 'none' penalties, &quot;
+ValueError: Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
 
   warnings.warn(&quot;Estimator fit failed. The score on this train-test&quot;
 
 
-최적 하이퍼 파라미터:&#123;&#39;C&#39;: 1, &#39;penalty&#39;: &#39;l2&#39;&#125;, 최적 평균 정확도:0.975
+최적 하이퍼 파라미터:&#123;'C': 1, 'penalty': 'l2'&#125;, 최적 평균 정확도:0.975
 
 
 C:\Users\naeun\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:548: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
@@ -2094,8 +2289,8 @@ Traceback (most recent call last):
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 1304, in fit
     solver = _check_solver(self.solver, self.penalty, self.dual)
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 442, in _check_solver
-    raise ValueError(&quot;Solver %s supports only &#39;l2&#39; or &#39;none&#39; penalties, &quot;
-ValueError: Solver lbfgs supports only &#39;l2&#39; or &#39;none&#39; penalties, got l1 penalty.
+    raise ValueError(&quot;Solver %s supports only 'l2' or 'none' penalties, &quot;
+ValueError: Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
 
   warnings.warn(&quot;Estimator fit failed. The score on this train-test&quot;
 C:\Users\naeun\anaconda3\lib\site-packages\sklearn\model_selection\_validation.py:548: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
@@ -2105,35 +2300,42 @@ Traceback (most recent call last):
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 1304, in fit
     solver = _check_solver(self.solver, self.penalty, self.dual)
   File &quot;C:\Users\naeun\anaconda3\lib\site-packages\sklearn\linear_model\_logistic.py&quot;, line 442, in _check_solver
-    raise ValueError(&quot;Solver %s supports only &#39;l2&#39; or &#39;none&#39; penalties, &quot;
-ValueError: Solver lbfgs supports only &#39;l2&#39; or &#39;none&#39; penalties, got l1 penalty.
+    raise ValueError(&quot;Solver %s supports only 'l2' or 'none' penalties, &quot;
+ValueError: Solver lbfgs supports only 'l2' or 'none' penalties, got l1 penalty.
 
-  warnings.warn(&quot;Estimator fit failed. The score on this train-test&quot;</code></pre>
+  warnings.warn(&quot;Estimator fit failed. The score on this train-test&quot;
+</code></pre>
 <ul>
-<li>로지스틱 회귀는 가볍고 빠르며, 이진 분류 예측 성능까지 뛰어남<ul>
+<li>로지스틱 회귀는 가볍고 빠르며, 이진 분류 예측 성능까지 뛰어남
+<ul>
 <li>이진 분류의 기본 모델로 사용하는 경우가 많음</li>
 </ul>
 </li>
-<li>로지스틱 회귀는 희소한 데이터 세트 분류에서도 뛰어난 성능을 보임<ul>
+<li>로지스틱 회귀는 희소한 데이터 세트 분류에서도 뛰어난 성능을 보임
+<ul>
 <li>텍스트 분류에서도 자주 사용</li>
 </ul>
 </li>
 </ul>
-<h2 id="08-회귀-트리"><a href="#08-회귀-트리" class="headerlink" title="08. 회귀 트리"></a><strong>08. 회귀 트리</strong></h2><ul>
-<li><p>회귀 함수를 기반으로 하지 않고, 결정 트리와 같이 트리를 기반으로 하는 회귀 방식 소개</p>
+<h2 id="08-회귀-트리"><strong>08. 회귀 트리</strong></h2>
+<ul>
+<li>
+<p>회귀 함수를 기반으로 하지 않고, 결정 트리와 같이 트리를 기반으로 하는 회귀 방식 소개</p>
 </li>
-<li><p>트리 기반이 회귀: 회귀 트리를 이용하는 것</p>
+<li>
+<p>트리 기반이 회귀: 회귀 트리를 이용하는 것</p>
 <ul>
 <li>회귀를 위한 트리를 생성하고 이를 기반으로 회귀를 예측하는 것</li>
-<li>4장 분류에서 언급한 분류 트리와 비슷하나, 리프 노트에서 예측 결정 값을 만드는 과정에 차이가 있음<ul>
+<li>4장 분류에서 언급한 분류 트리와 비슷하나, 리프 노트에서 예측 결정 값을 만드는 과정에 차이가 있음
+<ul>
 <li>분류 트리는 특정 클래스 레이블을 결정하나, 회귀 트리는 리프 노드에 속한 데이터 값의 평균값을 구해 회귀 예측값을 계산</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
+<li>
+<p>예시(p.335-336)</p>
 <ul>
-<li>예시(p.335-336)<ul>
 <li>피처가 단 하나인 X 피처 데이터 세트와 결정값 Y가 2차원 평면에 있다고 가정</li>
 <li>데이터 세트의 X 피처를 결정 트리 기반으로 분할하면 X값의 균일도를 반영한 지니 계수에 따라 분할됨</li>
 <li>루트 노드를 Split 0 기준으로 분할하고, 분할된 규칙 노드에서 다시 Split 1과 Split 2 규칙 노드로 분할할 수 있음</li>
@@ -2141,39 +2343,41 @@ ValueError: Solver lbfgs supports only &#39;l2&#39; or &#39;none&#39; penalties,
 <li>리프 노드 생성 기준에 부합하는 트리 분할이 완료됐다면, 리프 노드에 소속된 데이터 값의 평균값을 구해 최종적으로 리프 노드에 결정 값으로 할당함</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li><strong>사이킷런 트리 기반 회귀와 분류의 Estimator 클래스</strong></li>
+<li>
+<p><strong>사이킷런 트리 기반 회귀와 분류의 Estimator 클래스</strong></p>
+</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th align="center">알고리즘</th>
-<th align="center">회귀 Estimator 클래스</th>
-<th align="center">분류 Estimator 클래스</th>
+<th style="text-align:center">알고리즘</th>
+<th style="text-align:center">회귀 Estimator 클래스</th>
+<th style="text-align:center">분류 Estimator 클래스</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">Decision Tree</td>
-<td align="center">DecisionTreeRegressor</td>
-<td align="center">DecisionTreeClassifier</td>
+<tbody>
+<tr>
+<td style="text-align:center">Decision Tree</td>
+<td style="text-align:center">DecisionTreeRegressor</td>
+<td style="text-align:center">DecisionTreeClassifier</td>
 </tr>
 <tr>
-<td align="center">Gradient Boosting</td>
-<td align="center">GradientBoostingRegressor</td>
-<td align="center">GradientBoostingClassifier</td>
+<td style="text-align:center">Gradient Boosting</td>
+<td style="text-align:center">GradientBoostingRegressor</td>
+<td style="text-align:center">GradientBoostingClassifier</td>
 </tr>
 <tr>
-<td align="center">XGBoost</td>
-<td align="center">XGBRegressor</td>
-<td align="center">XGBClassifier</td>
+<td style="text-align:center">XGBoost</td>
+<td style="text-align:center">XGBRegressor</td>
+<td style="text-align:center">XGBClassifier</td>
 </tr>
 <tr>
-<td align="center">LightGBM</td>
-<td align="center">LGBMRegressor</td>
-<td align="center">LGBMClassifier</td>
+<td style="text-align:center">LightGBM</td>
+<td style="text-align:center">LGBMRegressor</td>
+<td style="text-align:center">LGBMClassifier</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>- 사이킷런 랜덤 포레스트 회귀 트리인 RandomForestRegressor로 보스턴 주택 가격 예측 수행하기</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> load_boston
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> cross_val_score
@@ -2199,10 +2403,12 @@ avg_rmse <span class="token operator">=</span> np<span class="token punctuation"
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">' 5 교차 검증의 평균 RMSE : &#123;0:.3f&#125; '</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>avg_rmse<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code> 5 교차 검증의 개별 Negative MSE scores:  [ -7.88 -13.14 -20.57 -46.23 -18.88]
  5 교차 검증의 개별 RMSE scores :  [2.81 3.63 4.54 6.8  4.34]
- 5 교차 검증의 평균 RMSE : 4.423 </code></pre>
+ 5 교차 검증의 평균 RMSE : 4.423 
+</code></pre>
 <p><strong>- 결정 트리, GBM, XGBoost, LightGBM의 Regressor을 모두 이용해 보스턴 주택 가격 예측 수행</strong></p>
 <ul>
-<li>사용 함수: get_model_cv_prediction()<ul>
+<li>사용 함수: get_model_cv_prediction()
+<ul>
 <li>입력 모델과 데이터 세트를 입력 받아, 교차 검증으로 평균 RMSE를 계산하는 함수</li>
 </ul>
 </li>
@@ -2238,7 +2444,8 @@ models <span class="token operator">=</span> <span class="token punctuation">[</
 #####  XGBRegressor  #####
  5 교차 검증의 평균 RMSE : 4.251 
 #####  LGBMRegressor  #####
- 5 교차 검증의 평균 RMSE : 4.646 </code></pre>
+ 5 교차 검증의 평균 RMSE : 4.646 
+</code></pre>
 <p><strong>- feature_importances_를 이용해 보스턴 주택 가격 모델의 피처별 중요도 시각화하기</strong></p>
 <ul>
 <li>회귀 트리 Regressor 클래스는 선형 회귀와 다른 처리 방식으로, 회귀 계수를 제공하는 coef_ 속성이 없으나, feature_importances_를 이용해 피처별 중요도를 알 수 있음</li>
@@ -2254,14 +2461,13 @@ rf_reg<span class="token punctuation">.</span>fit<span class="token punctuation"
 feature_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>data<span class="token operator">=</span>rf_reg<span class="token punctuation">.</span>feature_importances_<span class="token punctuation">,</span> index<span class="token operator">=</span>X_data<span class="token punctuation">.</span>columns <span class="token punctuation">)</span>
 feature_series <span class="token operator">=</span> feature_series<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
 sns<span class="token punctuation">.</span>barplot<span class="token punctuation">(</span>x<span class="token operator">=</span> feature_series<span class="token punctuation">,</span> y<span class="token operator">=</span>feature_series<span class="token punctuation">.</span>index<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d019a2c850&gt;</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d019a2c850&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_87_1.png" alt="png"></p>
 <p><strong>- 회귀 트리 Regressor가 예측값을 판단하는 방법을 선형 회귀와 비교하여 시각화하기</strong></p>
 <ul>
-<li>보스턴 데이터 세트를 100개만 샘플링하고 RM과 PRICE 칼럼만 추출<ul>
+<li>보스턴 데이터 세트를 100개만 샘플링하고 RM과 PRICE 칼럼만 추출
+<ul>
 <li>2차원 평면상에서 X축에 독립변수인 RM, Y축에 종속변수인 PRICE만 가지고 더 직관적으로 예측값을 시각화하기 위한 것</li>
 </ul>
 </li>
@@ -2280,9 +2486,10 @@ plt<span class="token punctuation">.</span>scatter<span class="token punctuation
 
 
 
-&lt;matplotlib.collections.PathCollection at 0x1d01ef6b520&gt;</code></pre>
+&lt;matplotlib.collections.PathCollection at 0x1d01ef6b520&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_89_2.png" alt="png"></p>
-<p><strong>- LinearRegression과 DecisionTreeRegressor를 max_depth 2, 7로 학습하기</strong> </p>
+<p><strong>- LinearRegression과 DecisionTreeRegressor를 max_depth 2, 7로 학습하기</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LinearRegression
 
@@ -2306,7 +2513,6 @@ rf_reg7<span class="token punctuation">.</span>fit<span class="token punctuation
 pred_lr <span class="token operator">=</span> lr_reg<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
 pred_rf2 <span class="token operator">=</span> rf_reg2<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
 pred_rf7 <span class="token operator">=</span> rf_reg7<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">fig <span class="token punctuation">,</span> <span class="token punctuation">(</span>ax1<span class="token punctuation">,</span> ax2<span class="token punctuation">,</span> ax3<span class="token punctuation">)</span> <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ncols<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
 
 <span class="token comment"># X축값을 4.5 ~ 8.5로 변환하며 입력했을 때, 선형 회귀와 결정 트리 회귀 예측 선 시각화</span>
@@ -2324,29 +2530,31 @@ ax2<span class="token punctuation">.</span>plot<span class="token punctuation">(
 ax3<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Decision Tree Regression: \n max_depth=7'</span><span class="token punctuation">)</span>
 ax3<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>bostonDF_sample<span class="token punctuation">.</span>RM<span class="token punctuation">,</span> bostonDF_sample<span class="token punctuation">.</span>PRICE<span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">"darkorange"</span><span class="token punctuation">)</span>
 ax3<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>X_test<span class="token punctuation">,</span> pred_rf7<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"max_depth:7"</span><span class="token punctuation">,</span> linewidth<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&lt;matplotlib.lines.Line2D at 0x1d01f029910&gt;]</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x1d01f029910&gt;]
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_92_1.png" alt="png"></p>
 <ul>
-<li>정리<ul>
+<li>정리
+<ul>
 <li>선형 회귀: 예측 회귀선을 직선으로 표현</li>
 <li>회귀 트리: 분할되는 데이터 지점에 따라 브랜치를 만들며 계단 형태로 회귀선을 만듦</li>
 <li>DecisionTreeRegressor의 max_depth = 7인 경우, 학습 데이터 세트의 이상치(outlier) 데이터도 학습하면서 복잡한 계단 형태의 회귀선을 만들어 과적합 되기 쉬운 모델이 됨</li>
 </ul>
 </li>
 </ul>
-<h2 id="09-회귀-실습-자전거-대여-수요-예측"><a href="#09-회귀-실습-자전거-대여-수요-예측" class="headerlink" title="09. 회귀 실습- 자전거 대여 수요 예측"></a><strong>09. 회귀 실습- 자전거 대여 수요 예측</strong></h2><ul>
-<li><strong>데이터 설명</strong><ul>
+<h2 id="09-회귀-실습-자전거-대여-수요-예측"><strong>09. 회귀 실습- 자전거 대여 수요 예측</strong></h2>
+<ul>
+<li>
+<p><strong>데이터 설명</strong></p>
+<ul>
 <li>기간: 2011년 1월 - 2012년 12월</li>
 <li>날짜/시간, 기온, 습도, 풍속 등 정보</li>
 <li>1시간 간격으로 자전거 대여 횟수 기록</li>
 </ul>
 </li>
-</ul>
+<li>
+<p><strong>데이터의 주요 칼럼 (결정값: count)</strong></p>
 <ul>
-<li><strong>데이터의 주요 칼럼 (결정값: count)</strong><ul>
 <li>datetime: hourly date + timestamp</li>
 <li>season: 1 = 봄, 2 = 여름, 3 = 가을, 4 = 겨울</li>
 <li>holiday: 1= 토/일요일의 주말 제외한 국경일 등의 휴일, 0 = 휴일 아닌 날</li>
@@ -2362,7 +2570,8 @@ ax3<span class="token punctuation">.</span>plot<span class="token punctuation">(
 </ul>
 </li>
 </ul>
-<h3 id="1-데이터-클렌징-및-가공"><a href="#1-데이터-클렌징-및-가공" class="headerlink" title="(1) 데이터 클렌징 및 가공"></a>(1) 데이터 클렌징 및 가공</h3><ul>
+<h3 id="1-데이터-클렌징-및-가공">(1) 데이터 클렌징 및 가공</h3>
+<ul>
 <li>bike_train.csv 데이터 세트로 모델을 학습한 후, 대여 횟수(count) 예측</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -2377,21 +2586,22 @@ warnings<span class="token punctuation">.</span>filterwarnings<span class="token
 bike_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'./data/bike_train.csv'</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>bike_df<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
 bike_df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>(10886, 12)</code></pre>
+<pre><code>(10886, 12)
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
 
 .dataframe thead th &#123;
     text-align: right;
-&#125;</code></pre>
-<p></style><p></p>
+&#125;
+</code></pre>
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2459,13 +2669,9 @@ bike_df<span class="token punctuation">.</span>head<span class="token punctuatio
   </tbody>
 </table>
 </div>
-
-
-
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 데이터 타입 살펴보기</span>
 bike_df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 10886 entries, 0 to 10885
 Data columns (total 12 columns):
  #   Column      Non-Null Count  Dtype  
@@ -2483,9 +2689,11 @@ Data columns (total 12 columns):
  10  registered  10886 non-null  int64  
  11  count       10886 non-null  int64  
 dtypes: float64(3), int64(8), object(1)
-memory usage: 1020.7+ KB</code></pre>
+memory usage: 1020.7+ KB
+</code></pre>
 <ul>
-<li>데이터 타입 확인<ul>
+<li>데이터 타입 확인
+<ul>
 <li>Null 데이터 없음</li>
 <li>datetime 칼럼만 object형, 년-월-일 시:분:초 형식 가공 필요</li>
 </ul>
@@ -2500,23 +2708,20 @@ bike_df<span class="token punctuation">[</span><span class="token string">'month
 bike_df<span class="token punctuation">[</span><span class="token string">'day'</span><span class="token punctuation">]</span> <span class="token operator">=</span> bike_df<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x <span class="token punctuation">:</span> x<span class="token punctuation">.</span>day<span class="token punctuation">)</span>
 bike_df<span class="token punctuation">[</span><span class="token string">'hour'</span><span class="token punctuation">]</span> <span class="token operator">=</span> bike_df<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>hour<span class="token punctuation">)</span>
 bike_df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
 
 .dataframe thead th &#123;
     text-align: right;
-&#125;</code></pre>
-<p></style><p></p>
+&#125;
+</code></pre>
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2600,10 +2805,6 @@ bike_df<span class="token punctuation">.</span>head<span class="token punctuatio
   </tbody>
 </table>
 </div>
-
-
-
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># datetime 삭제</span>
 <span class="token comment"># casule + registered = count이므로 casule, registered 값도 삭제</span>
 
@@ -2611,7 +2812,8 @@ drop_columns <span class="token operator">=</span> <span class="token punctuatio
 bike_df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>drop_columns<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>- 다양한 회귀 모델을 데이터 세트에 적용해 예측 성능 측정하기</strong></p>
 <ul>
-<li>캐글에서 요구한 성능 평가 방법은 RMSLE(Root Mean Square Log Error)로 오류 값 로그에 대한 RMSE<ul>
+<li>캐글에서 요구한 성능 평가 방법은 RMSLE(Root Mean Square Log Error)로 오류 값 로그에 대한 RMSE
+<ul>
 <li>단, 사이킷런은 RMSLE를 제공하지 않아 RMSLE를 수행하는 성능 형가 함수를 만들어야 함</li>
 </ul>
 </li>
@@ -2637,8 +2839,10 @@ bike_df<span class="token punctuation">.</span>drop<span class="token punctuatio
     <span class="token comment"># MAE 는 scikit learn의 mean_absolute_error() 로 계산</span>
     mae_val <span class="token operator">=</span> mean_absolute_error<span class="token punctuation">(</span>y<span class="token punctuation">,</span>pred<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'RMSLE: &#123;0:.3f&#125;, RMSE: &#123;1:.3F&#125;, MAE: &#123;2:.3F&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>rmsle_val<span class="token punctuation">,</span> rmse_val<span class="token punctuation">,</span> mae_val<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-로그-변환-피처-인코딩-모델-학습-예측-평가"><a href="#2-로그-변환-피처-인코딩-모델-학습-예측-평가" class="headerlink" title="(2) 로그 변환, 피처 인코딩, 모델 학습/예측/평가"></a>(2) 로그 변환, 피처 인코딩, 모델 학습/예측/평가</h3><ul>
-<li>회귀 모델을 이용해 자전거 대여 횟수 예측하기<ul>
+<h3 id="2-로그-변환-피처-인코딩-모델-학습-예측-평가">(2) 로그 변환, 피처 인코딩, 모델 학습/예측/평가</h3>
+<ul>
+<li>회귀 모델을 이용해 자전거 대여 횟수 예측하기
+<ul>
 <li>먼저, 결괏값이 정규 분포로 되어 있는지 확인해야 함</li>
 <li>카테고리형 회귀 모델은 원-핫 인코딩으로 피처를 인코딩해야 함</li>
 </ul>
@@ -2658,9 +2862,11 @@ lr_reg<span class="token punctuation">.</span>fit<span class="token punctuation"
 pred <span class="token operator">=</span> lr_reg<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
 
 evaluate_regr<span class="token punctuation">(</span>y_test <span class="token punctuation">,</span>pred<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>RMSLE: 1.165, RMSE: 140.900, MAE: 105.924</code></pre>
+<pre><code>RMSLE: 1.165, RMSE: 140.900, MAE: 105.924
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>실제 Target 데이터 값인 대여 횟수(Count)를 감안하면 예측 오류로서는 비교적 큰 값</li>
 </ul>
 </li>
@@ -2680,9 +2886,11 @@ get_top_error_data<span class="token punctuation">(</span>y_test<span class="tok
 3151         798            241.0  557.0
 966          884            327.0  557.0
 412          745            194.0  551.0
-2817         856            310.0  546.0</code></pre>
+2817         856            310.0  546.0
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>가장 큰 상위 5 오류값은 546 - 568로 실제값을 감안하면 오류가 꽤 큼</li>
 <li>회귀에서 큰 예측 오류가 발생할 경우, Target 값의 분포가 왜곡된 형태를 이루는지를 확인해야 함</li>
 <li>Target 값 분포는 정규 분포 형태가 가장 좋으며, 왜곡된 경우에는 회귀 예측 성능이 저하되는 경우가 쉽게 발생</li>
@@ -2691,15 +2899,15 @@ get_top_error_data<span class="token punctuation">(</span>y_test<span class="tok
 </ul>
 <p><strong>- 판다스 DataFrame의 hist()를 이용해 자전거 대여 모델의 Target 값인 count 칼럼이 정규 분포를 이루는지 확인하기</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">y_target<span class="token punctuation">.</span>hist<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d0203fafd0&gt;</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d0203fafd0&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_108_1.png" alt="png"></p>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>count 칼럼 값이 정규 분포가 아닌, 0 - 200 사이에 왜곡된 것을 알 수 있음</li>
-<li>왜곡된 값을 정규 분포 형태로 바꾸는 방법: 로그를 적용해 변환하는 것<ul>
+<li>왜곡된 값을 정규 분포 형태로 바꾸는 방법: 로그를 적용해 변환하는 것
+<ul>
 <li>Numpy의 log1p()이용</li>
 <li>변경된 Target 값을 기반으로 학습하고, 예측한 값은 expm1() 함수를 이용해 원래의 scale 값으로 원상 복구</li>
 </ul>
@@ -2707,13 +2915,11 @@ get_top_error_data<span class="token punctuation">(</span>y_test<span class="tok
 </ul>
 </li>
 </ul>
-<p><strong>- lop1p()를 적용한 ‘count’값이 분포 확인하기</strong></p>
+<p><strong>- lop1p()를 적용한 'count’값이 분포 확인하기</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">y_log_transform <span class="token operator">=</span> np<span class="token punctuation">.</span>log1p<span class="token punctuation">(</span>y_target<span class="token punctuation">)</span>
 y_log_transform<span class="token punctuation">.</span>hist<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d01ef87c10&gt;</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d01ef87c10&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_110_1.png" alt="png"></p>
 <ul>
 <li>정규 분포 형태는 아니지만, 왜곡 정도가 많이 향상됨</li>
@@ -2735,7 +2941,8 @@ y_test_exp <span class="token operator">=</span> np<span class="token punctuatio
 pred_exp <span class="token operator">=</span> np<span class="token punctuation">.</span>expm1<span class="token punctuation">(</span>pred<span class="token punctuation">)</span>
 
 evaluate_regr<span class="token punctuation">(</span>y_test_exp <span class="token punctuation">,</span>pred_exp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>RMSLE: 1.017, RMSE: 162.594, MAE: 109.286</code></pre>
+<pre><code>RMSLE: 1.017, RMSE: 162.594, MAE: 109.286
+</code></pre>
 <ul>
 <li>RMSLE 오류는 줄어들었으나, RMSE는 오히려 더 늘어남</li>
 </ul>
@@ -2743,14 +2950,14 @@ evaluate_regr<span class="token punctuation">(</span>y_test_exp <span class="tok
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">coef <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>lr_reg<span class="token punctuation">.</span>coef_<span class="token punctuation">,</span> index<span class="token operator">=</span>X_features<span class="token punctuation">.</span>columns<span class="token punctuation">)</span>
 coef_sort <span class="token operator">=</span> coef<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
 sns<span class="token punctuation">.</span>barplot<span class="token punctuation">(</span>x<span class="token operator">=</span>coef_sort<span class="token punctuation">.</span>values<span class="token punctuation">,</span> y<span class="token operator">=</span>coef_sort<span class="token punctuation">.</span>index<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d020439100&gt;</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d020439100&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_114_1.png" alt="png"></p>
 <ul>
-<li>결과 해석<ul>
-<li>Year 피처 회귀 계수 값이 독보적으로 큼<ul>
+<li>결과 해석
+<ul>
+<li>Year 피처 회귀 계수 값이 독보적으로 큼
+<ul>
 <li>Year는 2011, 2012 두 개의 값으로, year에 따라 자전거 대여 횟수가 크게 영향을 받는다고 할 수 없음</li>
 <li>Category 피처지만 숫자형 값으로 되어 있고 2011, 2012가 매우 큰 숫자라 영향을 주게 됨</li>
 <li>원-핫 인코딩을 적용해 변환하여야 함</li>
@@ -2761,7 +2968,8 @@ sns<span class="token punctuation">.</span>barplot<span class="token punctuation
 </ul>
 <p><strong>- 여러 칼럼 원-핫 인코딩하고 선형 회귀 모델(LinearRegression, Ridge, Lasso) 모두 학습해 예측 성능 확인하기</strong></p>
 <ul>
-<li>사용 함수: get_model_predict()<ul>
+<li>사용 함수: get_model_predict()
+<ul>
 <li>모델과 학습/테스트 데이터 세트를 입력하면 성능 평가 수치를 반환하는 함수</li>
 </ul>
 </li>
@@ -2769,7 +2977,6 @@ sns<span class="token punctuation">.</span>barplot<span class="token punctuation
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 'year', month', 'day', hour'등의 피처들을 One Hot Encoding</span>
 X_features_ohe <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>X_features<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'year'</span><span class="token punctuation">,</span> <span class="token string">'month'</span><span class="token punctuation">,</span><span class="token string">'day'</span><span class="token punctuation">,</span> <span class="token string">'hour'</span><span class="token punctuation">,</span> <span class="token string">'holiday'</span><span class="token punctuation">,</span>
                                               <span class="token string">'workingday'</span><span class="token punctuation">,</span><span class="token string">'season'</span><span class="token punctuation">,</span><span class="token string">'weather'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 원-핫 인코딩이 적용된 feature 데이터 세트 기반으로 학습/예측 데이터 분할. </span>
 X_train<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>X_features_ohe<span class="token punctuation">,</span> y_target_log<span class="token punctuation">,</span>
                                                     test_size<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
@@ -2797,9 +3004,11 @@ RMSLE: 0.590, RMSE: 97.688, MAE: 63.382
 ### Ridge ###
 RMSLE: 0.590, RMSE: 98.529, MAE: 63.893
 ### Lasso ###
-RMSLE: 0.635, RMSE: 113.219, MAE: 72.803</code></pre>
+RMSLE: 0.635, RMSE: 113.219, MAE: 72.803
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>원-핫 인코딩 적용 후, 선형 회귀 예측 성능이 많이 향상됨</li>
 </ul>
 </li>
@@ -2808,15 +3017,16 @@ RMSLE: 0.635, RMSE: 113.219, MAE: 72.803</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">coef <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>lr_reg<span class="token punctuation">.</span>coef_ <span class="token punctuation">,</span> index<span class="token operator">=</span>X_features_ohe<span class="token punctuation">.</span>columns<span class="token punctuation">)</span>
 coef_sort <span class="token operator">=</span> coef<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">]</span>
 sns<span class="token punctuation">.</span>barplot<span class="token punctuation">(</span>x<span class="token operator">=</span>coef_sort<span class="token punctuation">.</span>values <span class="token punctuation">,</span> y<span class="token operator">=</span>coef_sort<span class="token punctuation">.</span>index<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d0204cb2e0&gt;</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d0204cb2e0&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_119_1.png" alt="png"></p>
 <ul>
-<li>결과 해석<ul>
-<li>선형 회귀 모델 시 month_9, month_8, month_7 등의 월 관련 피처와 workingday 관련 피처, hour 관련 피처의 회귀 계수가 높은 것을 알 수 있음<ul>
-<li>월, 주말/주중, 시간대 등 상식선에서 자전거 타는 데 필요한 피처의 회귀 계수가 높아짐<br>→ 선형 회귀 수행 시에는 피처를 어떻게 인코딩하는가가 성능에 큰 영향을 미칠 수 있음</li>
+<li>결과 해석
+<ul>
+<li>선형 회귀 모델 시 month_9, month_8, month_7 등의 월 관련 피처와 workingday 관련 피처, hour 관련 피처의 회귀 계수가 높은 것을 알 수 있음
+<ul>
+<li>월, 주말/주중, 시간대 등 상식선에서 자전거 타는 데 필요한 피처의 회귀 계수가 높아짐<br>
+→ 선형 회귀 수행 시에는 피처를 어떻게 인코딩하는가가 성능에 큰 영향을 미칠 수 있음</li>
 </ul>
 </li>
 </ul>
@@ -2843,32 +3053,40 @@ RMSLE: 0.330, RMSE: 53.336, MAE: 32.746
 ### XGBRegressor ###
 RMSLE: 0.342, RMSE: 51.732, MAE: 31.251
 ### LGBMRegressor ###
-RMSLE: 0.319, RMSE: 47.215, MAE: 29.029</code></pre>
+RMSLE: 0.319, RMSE: 47.215, MAE: 29.029
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>앞의 선형 회귀 모델보다 회귀 예측 성능이 개선됨</li>
-<li>단, 회귀 트리가 선형 트리보다 나은 성능을 가진다는 의미가 아님<ul>
+<li>단, 회귀 트리가 선형 트리보다 나은 성능을 가진다는 의미가 아님
+<ul>
 <li>데이터 세트 유형에 따라 결과는 얼마든지 달라질 수 있음</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="10-회귀-실습-캐글-주택-가격-고급-회귀-기법"><a href="#10-회귀-실습-캐글-주택-가격-고급-회귀-기법" class="headerlink" title="10. 회귀 실습- 캐글 주택 가격: 고급 회귀 기법"></a><strong>10. 회귀 실습- 캐글 주택 가격: 고급 회귀 기법</strong></h2><ul>
-<li><p>데이터 설명</p>
+<h2 id="10-회귀-실습-캐글-주택-가격-고급-회귀-기법"><strong>10. 회귀 실습- 캐글 주택 가격: 고급 회귀 기법</strong></h2>
+<ul>
+<li>
+<p>데이터 설명</p>
 <ul>
 <li>변수: 79개</li>
-<li>미국 아이오와주의 에임스(Ames) 지방 주택 가격 정보<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data?select=train.csv">- 피처별 설명 확인하기</a></li>
+<li>미국 아이오와주의 에임스(Ames) 지방 주택 가격 정보<br>
+<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data?select=train.csv">- 피처별 설명 확인하기</a></li>
 </ul>
 </li>
-<li><p>성능 평가</p>
+<li>
+<p>성능 평가</p>
 <ul>
 <li>RMSLE(Root Mean Squared Log Error) 기반</li>
 <li>가격이 비싼 주택일수록 예측 결과 오류가 전체 오류에 미치는 비중이 높으므로, 이를 상쇄하기 위해 오류 값을 로그 변환한 RMSLE를 이용</li>
 </ul>
 </li>
 </ul>
-<h3 id="1-데이터-사전-처리-Preprocessing"><a href="#1-데이터-사전-처리-Preprocessing" class="headerlink" title="(1) 데이터 사전 처리(Preprocessing)"></a>(1) 데이터 사전 처리(Preprocessing)</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> warnings
+<h3 id="1-데이터-사전-처리-Preprocessing">(1) 데이터 사전 처리(Preprocessing)</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> warnings
 warnings<span class="token punctuation">.</span>filterwarnings<span class="token punctuation">(</span><span class="token string">'ignore'</span><span class="token punctuation">)</span>
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -2879,23 +3097,20 @@ warnings<span class="token punctuation">.</span>filterwarnings<span class="token
 house_df_org <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'./data/house_price.csv'</span><span class="token punctuation">)</span>
 house_df <span class="token operator">=</span> house_df_org<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
 house_df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
 
 .dataframe thead th &#123;
     text-align: right;
-&#125;</code></pre>
-<p></style><p></p>
+&#125;
+</code></pre>
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3000,10 +3215,6 @@ house_df<span class="token punctuation">.</span>head<span class="token punctuati
 </table>
 <p>3 rows × 81 columns</p>
 </div>
-
-
-
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 데이터 세트 전체 크기와 칼럼 타입, Null이 있는 칼럼과 건수를 내림차순으로 출력</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'데이터 세트의 Shape:'</span><span class="token punctuation">,</span> house_df<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
@@ -3038,15 +3249,19 @@ BsmtQual          37
 MasVnrArea         8
 MasVnrType         8
 Electrical         1
-dtype: int64</code></pre>
+dtype: int64
+</code></pre>
 <ul>
-<li>데이터 타입 확인<ul>
+<li>데이터 타입 확인
+<ul>
 <li>테이터 세트는 1460개의 레코드와 81개의 피처로 구성</li>
-<li>피처 타입은 숫자형과 문자형 모두 존재<ul>
+<li>피처 타입은 숫자형과 문자형 모두 존재
+<ul>
 <li>Target을 제외한 80개 피처 중, 43개가 문자형이고 37개가 숫자형</li>
 </ul>
 </li>
-<li>1480개 데이터 중, PoolQC, MiseFeature, Alley, Fence는 1000개가 넘는 Null 값을 가짐<ul>
+<li>1480개 데이터 중, PoolQC, MiseFeature, Alley, Fence는 1000개가 넘는 Null 값을 가짐
+<ul>
 <li>Null 값이 너무 많은 피처는 drop</li>
 </ul>
 </li>
@@ -3059,10 +3274,8 @@ dtype: int64</code></pre>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Original Sale Price Histogram'</span><span class="token punctuation">)</span>
 sns<span class="token punctuation">.</span>distplot<span class="token punctuation">(</span>house_df<span class="token punctuation">[</span><span class="token string">'SalePrice'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d017a30310&gt;</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d017a30310&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_127_1.png" alt="png"></p>
 <p><strong>- 로그 변환(Log Transformation)을 적용하여, 정규 분포가 아닌 결괏값을 정규 분포 형태로 변환하기</strong></p>
 <ul>
@@ -3072,10 +3285,8 @@ sns<span class="token punctuation">.</span>distplot<span class="token punctuatio
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Log Transformed Sale Price Histogram'</span><span class="token punctuation">)</span>
 log_SalePrice <span class="token operator">=</span> np<span class="token punctuation">.</span>log1p<span class="token punctuation">(</span>house_df<span class="token punctuation">[</span><span class="token string">'SalePrice'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 sns<span class="token punctuation">.</span>distplot<span class="token punctuation">(</span>log_SalePrice<span class="token punctuation">,</span> color <span class="token operator">=</span> <span class="token string">'g'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d017b1a790&gt;</code></pre>
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d017b1a790&gt;
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_129_1.png" alt="png"></p>
 <ul>
 <li>SalePrice를 로그 변환해 정규 분포 형태로 결괏값이 분포함을 확인할 수 있음</li>
@@ -3112,16 +3323,19 @@ GarageType      object
 GarageFinish    object
 GarageQual      object
 GarageCond      object
-dtype: object</code></pre>
+dtype: object
+</code></pre>
 <p><strong>- 문자형 피처는 원-핫 인코딩으로 변환하기</strong></p>
 <ul>
-<li>사용 함수: get_dummies()<ul>
+<li>
+<p>사용 함수: get_dummies()</p>
+<ul>
 <li>자동으로 문자열 피처를 원-핫 인코딩으로 변환하면서 Null 값을 ‘None’ 칼럼으로 대체해주어 Null 값을 대체하는 별도의 로직이 필요 없음</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>원-핫 인코딩을 적용하면 칼럼이 증가하기 때문에, 변환 후 늘어난 칼럼 값까지 확인하기</li>
+<li>
+<p>원-핫 인코딩을 적용하면 칼럼이 증가하기 때문에, 변환 후 늘어난 칼럼 값까지 확인하기</p>
+</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'get_dummies() 수행 전 데이터 Shape:'</span><span class="token punctuation">,</span> house_df<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
 house_df_ohe <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>house_df<span class="token punctuation">)</span>
@@ -3132,15 +3346,18 @@ null_column_count <span class="token operator">=</span> house_df_ohe<span class=
 <pre><code>get_dummies() 수행 전 데이터 Shape: (1460, 75)
 get_dummies() 수행 후 데이터 Shape: (1460, 271)
 ## Null 피처의 Type :
- Series([], dtype: object)</code></pre>
+ Series([], dtype: object)
+</code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>원-핫 인코딩 후 피처가 75개에서 272개로 증가</li>
 <li>Null 값을 가진 피처는 없음</li>
 </ul>
 </li>
 </ul>
-<h3 id="2-선형-회귀-모델-학습-예측-평가"><a href="#2-선형-회귀-모델-학습-예측-평가" class="headerlink" title="(2) 선형 회귀 모델 학습/예측/평가"></a><strong>(2) 선형 회귀 모델 학습/예측/평가</strong></h3><p><strong>RMSE 평가 함수 생성</strong></p>
+<h3 id="2-선형-회귀-모델-학습-예측-평가"><strong>(2) 선형 회귀 모델 학습/예측/평가</strong></h3>
+<p><strong>RMSE 평가 함수 생성</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_rmse</span><span class="token punctuation">(</span>model<span class="token punctuation">)</span><span class="token punctuation">:</span>
     pred <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
     mse <span class="token operator">=</span> mean_squared_error<span class="token punctuation">(</span>y_test <span class="token punctuation">,</span> pred<span class="token punctuation">)</span>
@@ -3183,7 +3400,8 @@ Lasso 로그 변환된 RMSE: 0.176
 
 
 
-[0.1318957657915403, 0.1275084633405302, 0.17628250556471403]</code></pre>
+[0.1318957657915403, 0.1275084633405302, 0.17628250556471403]
+</code></pre>
 <p><strong>회귀 계수값과 컬럼명 시각화를 위해 상위 10개, 하위 10개(-값으로 가장 큰 10개) 회귀 계수값과 컬럼명을 가지는 Series생성 함수.</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_top_bottom_coef</span><span class="token punctuation">(</span>model<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment"># coef_ 속성을 기반으로 Series 객체를 생성. index는 컬럼명. </span>
@@ -3216,7 +3434,6 @@ Lasso 로그 변환된 RMSE: 0.176
 <span class="token comment"># 앞 예제에서 학습한 lr_reg, ridge_reg, lasso_reg 모델의 회귀 계수 시각화.    </span>
 models <span class="token operator">=</span> <span class="token punctuation">[</span>lr_reg<span class="token punctuation">,</span> ridge_reg<span class="token punctuation">,</span> lasso_reg<span class="token punctuation">]</span>
 visualize_coefficient<span class="token punctuation">(</span>models<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="../images/machine_learning/ch05/output_142_0.png" alt="png"></p>
 <p><strong>5 폴드 교차검증으로 모델별로 RMSE와 평균 RMSE출력</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> cross_val_score
@@ -3233,7 +3450,6 @@ visualize_coefficient<span class="token punctuation">(</span>models<span class="
 <span class="token comment"># 앞 예제에서 학습한 lr_reg, ridge_reg, lasso_reg 모델의 CV RMSE값 출력           </span>
 models <span class="token operator">=</span> <span class="token punctuation">[</span>lr_reg<span class="token punctuation">,</span> ridge_reg<span class="token punctuation">,</span> lasso_reg<span class="token punctuation">]</span>
 get_avg_rmse_cv<span class="token punctuation">(</span>models<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre><code>LinearRegression CV RMSE 값 리스트: [0.135 0.165 0.168 0.111 0.198]
 LinearRegression CV 평균 RMSE 값: 0.155
 
@@ -3241,7 +3457,8 @@ Ridge CV RMSE 값 리스트: [0.117 0.154 0.142 0.117 0.189]
 Ridge CV 평균 RMSE 값: 0.144
 
 Lasso CV RMSE 값 리스트: [0.161 0.204 0.177 0.181 0.265]
-Lasso CV 평균 RMSE 값: 0.198</code></pre>
+Lasso CV 평균 RMSE 값: 0.198
+</code></pre>
 <p><strong>각 모델들의 alpha값을 변경하면서 하이퍼 파라미터 튜닝 후 다시 학습/예측/평가</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> GridSearchCV
 
@@ -3258,8 +3475,9 @@ ridge_params <span class="token operator">=</span> <span class="token punctuatio
 lasso_params <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token string">'alpha'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">,</span> <span class="token number">0.008</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span> <span class="token punctuation">&#125;</span>
 best_rige <span class="token operator">=</span> get_best_params<span class="token punctuation">(</span>ridge_reg<span class="token punctuation">,</span> ridge_params<span class="token punctuation">)</span>
 best_lasso <span class="token operator">=</span> get_best_params<span class="token punctuation">(</span>lasso_reg<span class="token punctuation">,</span> lasso_params<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>Ridge 5 CV 시 최적 평균 RMSE 값: 0.1418, 최적 alpha:&#123;&#39;alpha&#39;: 12&#125;
-Lasso 5 CV 시 최적 평균 RMSE 값: 0.142, 최적 alpha:&#123;&#39;alpha&#39;: 0.001&#125;</code></pre>
+<pre><code>Ridge 5 CV 시 최적 평균 RMSE 값: 0.1418, 최적 alpha:&#123;'alpha': 12&#125;
+Lasso 5 CV 시 최적 평균 RMSE 값: 0.142, 최적 alpha:&#123;'alpha': 0.001&#125;
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 앞의 최적화 alpha값으로 학습데이터로 학습, 테스트 데이터로 예측 및 평가 수행. </span>
 lr_reg <span class="token operator">=</span> LinearRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
 lr_reg<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
@@ -3277,7 +3495,8 @@ models <span class="token operator">=</span> <span class="token punctuation">[</
 visualize_coefficient<span class="token punctuation">(</span>models<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>LinearRegression 로그 변환된 RMSE: 0.132
 Ridge 로그 변환된 RMSE: 0.124
-Lasso 로그 변환된 RMSE: 0.12</code></pre>
+Lasso 로그 변환된 RMSE: 0.12
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_147_1.png" alt="png"></p>
 <p><strong>숫자 피처들에 대한 데이터 분포 왜곡도 확인 후 높은 왜곡도를 가지는 피처 추출</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> skew <span class="token comment"># skew: 왜곡</span>
@@ -3310,10 +3529,10 @@ TotalBsmtSF       1.522688
 MSSubClass        1.406210
 1stFlrSF          1.375342
 GrLivArea         1.365156
-dtype: float64</code></pre>
+dtype: float64
+</code></pre>
 <p><strong>왜곡도가 1인 피처들은 로그 변환 적용하고 다시 하이퍼 파라미터 튜닝 후 재 학습/예측/평가</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">house_df<span class="token punctuation">[</span>skew_features_top<span class="token punctuation">.</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>log1p<span class="token punctuation">(</span>house_df<span class="token punctuation">[</span>skew_features_top<span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Skew가 높은 피처들을 로그 변환 했으므로 다시 원-핫 인코딩 적용 및 피처/타겟 데이터 셋 생성,</span>
 house_df_ohe <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>house_df<span class="token punctuation">)</span>
 y_target <span class="token operator">=</span> house_df_ohe<span class="token punctuation">[</span><span class="token string">'SalePrice'</span><span class="token punctuation">]</span>
@@ -3325,8 +3544,9 @@ ridge_params <span class="token operator">=</span> <span class="token punctuatio
 lasso_params <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token string">'alpha'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">,</span> <span class="token number">0.008</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span> <span class="token punctuation">&#125;</span>
 best_ridge <span class="token operator">=</span> get_best_params<span class="token punctuation">(</span>ridge_reg<span class="token punctuation">,</span> ridge_params<span class="token punctuation">)</span>
 best_lasso <span class="token operator">=</span> get_best_params<span class="token punctuation">(</span>lasso_reg<span class="token punctuation">,</span> lasso_params<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>Ridge 5 CV 시 최적 평균 RMSE 값: 0.1275, 최적 alpha:&#123;&#39;alpha&#39;: 10&#125;
-Lasso 5 CV 시 최적 평균 RMSE 값: 0.1252, 최적 alpha:&#123;&#39;alpha&#39;: 0.001&#125;</code></pre>
+<pre><code>Ridge 5 CV 시 최적 평균 RMSE 값: 0.1275, 최적 alpha:&#123;'alpha': 10&#125;
+Lasso 5 CV 시 최적 평균 RMSE 값: 0.1252, 최적 alpha:&#123;'alpha': 0.001&#125;
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 앞의 최적화 alpha값으로 학습데이터로 학습, 테스트 데이터로 예측 및 평가 수행. </span>
 lr_reg <span class="token operator">=</span> LinearRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
 lr_reg<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
@@ -3344,14 +3564,14 @@ models <span class="token operator">=</span> <span class="token punctuation">[</
 visualize_coefficient<span class="token punctuation">(</span>models<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>LinearRegression 로그 변환된 RMSE: 0.128
 Ridge 로그 변환된 RMSE: 0.122
-Lasso 로그 변환된 RMSE: 0.119</code></pre>
+Lasso 로그 변환된 RMSE: 0.119
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_153_1.png" alt="png"></p>
 <p><strong>이상치 데이터 검출을 위해 주요 피처인 GrLivArea값에 대한 산포도 확인</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x <span class="token operator">=</span> house_df_org<span class="token punctuation">[</span><span class="token string">'GrLivArea'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> y <span class="token operator">=</span> house_df_org<span class="token punctuation">[</span><span class="token string">'SalePrice'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'SalePrice'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'GrLivArea'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">15</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="../images/machine_learning/ch05/output_155_0.png" alt="png"></p>
 <p><strong>이상치 데이터 삭제 후 재 학습/예측/평가</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># GrLivArea와 SalePrice 모두 로그 변환되었으므로 이를 반영한 조건 생성. </span>
@@ -3366,7 +3586,8 @@ house_df_ohe<span class="token punctuation">.</span>drop<span class="token punct
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'아웃라이어 삭제 후 house_df_ohe shape:'</span><span class="token punctuation">,</span> house_df_ohe<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>아웃라이어 레코드 index : [ 523 1298]
 아웃라이어 삭제 전 house_df_ohe shape: (1460, 271)
-아웃라이어 삭제 후 house_df_ohe shape: (1458, 271)</code></pre>
+아웃라이어 삭제 후 house_df_ohe shape: (1458, 271)
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">y_target <span class="token operator">=</span> house_df_ohe<span class="token punctuation">[</span><span class="token string">'SalePrice'</span><span class="token punctuation">]</span>
 X_features <span class="token operator">=</span> house_df_ohe<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">'SalePrice'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
 X_train<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>X_features<span class="token punctuation">,</span> y_target<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">156</span><span class="token punctuation">)</span>
@@ -3375,8 +3596,9 @@ ridge_params <span class="token operator">=</span> <span class="token punctuatio
 lasso_params <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token string">'alpha'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">,</span> <span class="token number">0.008</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span> <span class="token punctuation">&#125;</span>
 best_ridge <span class="token operator">=</span> get_best_params<span class="token punctuation">(</span>ridge_reg<span class="token punctuation">,</span> ridge_params<span class="token punctuation">)</span>
 best_lasso <span class="token operator">=</span> get_best_params<span class="token punctuation">(</span>lasso_reg<span class="token punctuation">,</span> lasso_params<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>Ridge 5 CV 시 최적 평균 RMSE 값: 0.1125, 최적 alpha:&#123;&#39;alpha&#39;: 8&#125;
-Lasso 5 CV 시 최적 평균 RMSE 값: 0.1122, 최적 alpha:&#123;&#39;alpha&#39;: 0.001&#125;</code></pre>
+<pre><code>Ridge 5 CV 시 최적 평균 RMSE 값: 0.1125, 최적 alpha:&#123;'alpha': 8&#125;
+Lasso 5 CV 시 최적 평균 RMSE 값: 0.1122, 최적 alpha:&#123;'alpha': 0.001&#125;
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 앞의 최적화 alpha값으로 학습데이터로 학습, 테스트 데이터로 예측 및 평가 수행. </span>
 lr_reg <span class="token operator">=</span> LinearRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
 lr_reg<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
@@ -3394,23 +3616,27 @@ models <span class="token operator">=</span> <span class="token punctuation">[</
 visualize_coefficient<span class="token punctuation">(</span>models<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>LinearRegression 로그 변환된 RMSE: 0.129
 Ridge 로그 변환된 RMSE: 0.103
-Lasso 로그 변환된 RMSE: 0.1</code></pre>
+Lasso 로그 변환된 RMSE: 0.1
+</code></pre>
 <p><img src="../images/machine_learning/ch05/output_159_1.png" alt="png"></p>
-<h3 id="3-회귀-트리-학습-예측-평가"><a href="#3-회귀-트리-학습-예측-평가" class="headerlink" title="(3) 회귀 트리 학습/예측/평가"></a><strong>(3) 회귀 트리 학습/예측/평가</strong></h3><p><strong>XGBoost와 LightGBM 학습/예측/평가</strong></p>
+<h3 id="3-회귀-트리-학습-예측-평가"><strong>(3) 회귀 트리 학습/예측/평가</strong></h3>
+<p><strong>XGBoost와 LightGBM 학습/예측/평가</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> xgboost <span class="token keyword">import</span> XGBRegressor
 
 xgb_params <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'n_estimators'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span>
 xgb_reg <span class="token operator">=</span> XGBRegressor<span class="token punctuation">(</span>n_estimators<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> learning_rate<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> 
                        colsample_bytree<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> subsample<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">)</span> <span class="token comment"># subsample=0.8: 80%만 샘플링</span>
 best_xgb <span class="token operator">=</span> get_best_params<span class="token punctuation">(</span>xgb_reg<span class="token punctuation">,</span> xgb_params<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>XGBRegressor 5 CV 시 최적 평균 RMSE 값: 0.1178, 최적 alpha:&#123;&#39;n_estimators&#39;: 1000&#125;</code></pre>
+<pre><code>XGBRegressor 5 CV 시 최적 평균 RMSE 값: 0.1178, 최적 alpha:&#123;'n_estimators': 1000&#125;
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> lightgbm <span class="token keyword">import</span> LGBMRegressor
 
 lgbm_params <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'n_estimators'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span>
 lgbm_reg <span class="token operator">=</span> LGBMRegressor<span class="token punctuation">(</span>n_estimators<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> learning_rate<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> num_leaves<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> 
                          subsample<span class="token operator">=</span><span class="token number">0.6</span><span class="token punctuation">,</span> colsample_bytree<span class="token operator">=</span><span class="token number">0.4</span><span class="token punctuation">,</span> reg_lambda<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> n_jobs<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
 best_lgbm <span class="token operator">=</span> get_best_params<span class="token punctuation">(</span>lgbm_reg<span class="token punctuation">,</span> lgbm_params<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>LGBMRegressor 5 CV 시 최적 평균 RMSE 값: 0.1163, 최적 alpha:&#123;&#39;n_estimators&#39;: 1000&#125;</code></pre>
+<pre><code>LGBMRegressor 5 CV 시 최적 평균 RMSE 값: 0.1163, 최적 alpha:&#123;'n_estimators': 1000&#125;
+</code></pre>
 <p><strong>트리 회귀 모델의 피처 중요도 시각화</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 모델의 중요도 상위 20개의 피처명과 그때의 중요도값을 Series로 반환.</span>
 <span class="token keyword">def</span> <span class="token function">get_top_features</span><span class="token punctuation">(</span>model<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -3439,9 +3665,9 @@ best_lgbm <span class="token operator">=</span> get_best_params<span class="toke
 <span class="token comment"># 앞 예제에서 get_best_params( )가 반환한 GridSearchCV로 최적화된 모델의 피처 중요도 시각화    </span>
 models <span class="token operator">=</span> <span class="token punctuation">[</span>best_xgb<span class="token punctuation">,</span> best_lgbm<span class="token punctuation">]</span>
 visualize_ftr_importances<span class="token punctuation">(</span>models<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><img src="../images/machine_learning/ch05/output_165_0.png" alt="png"></p>
-<h3 id="4-회귀-모델들의-예측-결과-혼합을-통한-최종-예측"><a href="#4-회귀-모델들의-예측-결과-혼합을-통한-최종-예측" class="headerlink" title="(4) 회귀 모델들의 예측 결과 혼합을 통한 최종 예측"></a><strong>(4) 회귀 모델들의 예측 결과 혼합을 통한 최종 예측</strong></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_rmse_pred</span><span class="token punctuation">(</span>preds<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h3 id="4-회귀-모델들의-예측-결과-혼합을-통한-최종-예측"><strong>(4) 회귀 모델들의 예측 결과 혼합을 통한 최종 예측</strong></h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_rmse_pred</span><span class="token punctuation">(</span>preds<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> key <span class="token keyword">in</span> preds<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         pred_value <span class="token operator">=</span> preds<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
         mse <span class="token operator">=</span> mean_squared_error<span class="token punctuation">(</span>y_test <span class="token punctuation">,</span> pred_value<span class="token punctuation">)</span>
@@ -3467,7 +3693,8 @@ preds <span class="token operator">=</span> <span class="token punctuation">&#12
 get_rmse_pred<span class="token punctuation">(</span>preds<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>최종 혼합 모델의 RMSE: 0.10007930884470519
 Ridge 모델의 RMSE: 0.10345177546603257
-Lasso 모델의 RMSE: 0.10024170460890033</code></pre>
+Lasso 모델의 RMSE: 0.10024170460890033
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">xgb_reg <span class="token operator">=</span> XGBRegressor<span class="token punctuation">(</span>n_estimators<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> learning_rate<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> 
                        colsample_bytree<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> subsample<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">)</span>
 lgbm_reg <span class="token operator">=</span> LGBMRegressor<span class="token punctuation">(</span>n_estimators<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> learning_rate<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> num_leaves<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> 
@@ -3486,8 +3713,10 @@ get_rmse_pred<span class="token punctuation">(</span>preds<span class="token pun
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>최종 혼합 모델의 RMSE: 0.1017007808403327
 XGBM 모델의 RMSE: 0.10738299364833828
-LGBM 모델의 RMSE: 0.10382510019327311</code></pre>
-<h3 id="5-스태킹-모델을-통한-회귀-예측"><a href="#5-스태킹-모델을-통한-회귀-예측" class="headerlink" title="(5) 스태킹 모델을 통한 회귀 예측"></a><strong>(5) 스태킹 모델을 통한 회귀 예측</strong></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> KFold
+LGBM 모델의 RMSE: 0.10382510019327311
+</code></pre>
+<h3 id="5-스태킹-모델을-통한-회귀-예측"><strong>(5) 스태킹 모델을 통한 회귀 예측</strong></h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> KFold
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> mean_absolute_error
 
 <span class="token comment"># 개별 기반 모델에서 최종 메타 모델이 사용할 학습 및 테스트용 데이터를 생성하기 위한 함수. </span>
@@ -3530,29 +3759,30 @@ lasso_train<span class="token punctuation">,</span> lasso_test <span class="toke
 xgb_train<span class="token punctuation">,</span> xgb_test <span class="token operator">=</span> get_stacking_base_datasets<span class="token punctuation">(</span>xgb_reg<span class="token punctuation">,</span> X_train_n<span class="token punctuation">,</span> y_train_n<span class="token punctuation">,</span> X_test_n<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>  
 lgbm_train<span class="token punctuation">,</span> lgbm_test <span class="token operator">=</span> get_stacking_base_datasets<span class="token punctuation">(</span>lgbm_reg<span class="token punctuation">,</span> X_train_n<span class="token punctuation">,</span> y_train_n<span class="token punctuation">,</span> X_test_n<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>Ridge  model 시작 
-     폴드 세트:  0  시작 
-     폴드 세트:  1  시작 
-     폴드 세트:  2  시작 
-     폴드 세트:  3  시작 
-     폴드 세트:  4  시작 
+	 폴드 세트:  0  시작 
+	 폴드 세트:  1  시작 
+	 폴드 세트:  2  시작 
+	 폴드 세트:  3  시작 
+	 폴드 세트:  4  시작 
 Lasso  model 시작 
-     폴드 세트:  0  시작 
-     폴드 세트:  1  시작 
-     폴드 세트:  2  시작 
-     폴드 세트:  3  시작 
-     폴드 세트:  4  시작 
+	 폴드 세트:  0  시작 
+	 폴드 세트:  1  시작 
+	 폴드 세트:  2  시작 
+	 폴드 세트:  3  시작 
+	 폴드 세트:  4  시작 
 XGBRegressor  model 시작 
-     폴드 세트:  0  시작 
-     폴드 세트:  1  시작 
-     폴드 세트:  2  시작 
-     폴드 세트:  3  시작 
-     폴드 세트:  4  시작 
+	 폴드 세트:  0  시작 
+	 폴드 세트:  1  시작 
+	 폴드 세트:  2  시작 
+	 폴드 세트:  3  시작 
+	 폴드 세트:  4  시작 
 LGBMRegressor  model 시작 
-     폴드 세트:  0  시작 
-     폴드 세트:  1  시작 
-     폴드 세트:  2  시작 
-     폴드 세트:  3  시작 
-     폴드 세트:  4  시작 </code></pre>
+	 폴드 세트:  0  시작 
+	 폴드 세트:  1  시작 
+	 폴드 세트:  2  시작 
+	 폴드 세트:  3  시작 
+	 폴드 세트:  4  시작 
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 개별 모델이 반환한 학습 및 테스트용 데이터 세트를 Stacking 형태로 결합.  </span>
 Stack_final_X_train <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>ridge_train<span class="token punctuation">,</span> lasso_train<span class="token punctuation">,</span> 
                                       xgb_train<span class="token punctuation">,</span> lgbm_train<span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
@@ -3568,8 +3798,10 @@ final <span class="token operator">=</span> meta_model_lasso<span class="token p
 mse <span class="token operator">=</span> mean_squared_error<span class="token punctuation">(</span>y_test <span class="token punctuation">,</span> final<span class="token punctuation">)</span>
 rmse <span class="token operator">=</span> np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>mse<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'스태킹 회귀 모델의 최종 RMSE 값은:'</span><span class="token punctuation">,</span> rmse<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>스태킹 회귀 모델의 최종 RMSE 값은: 0.09799154066897717</code></pre>
-<h2 id="11-정리"><a href="#11-정리" class="headerlink" title="11. 정리"></a><strong>11. 정리</strong></h2><ul>
+<pre><code>스태킹 회귀 모델의 최종 RMSE 값은: 0.09799154066897717
+</code></pre>
+<h2 id="11-정리"><strong>11. 정리</strong></h2>
+<ul>
 <li>선형 회귀와 비용 함수 RSS</li>
 <li>경사 하강법</li>
 <li>다항회귀와 과소적합/과대적합</li>
@@ -3586,7 +3818,7 @@ rmse <span class="token operator">=</span> np<span class="token punctuation">.</
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/03/Textbook/PythonML/ch05_%ED%9A%8C%EA%B7%80/" data-id="ckkwkiema00cjdoue2p4u2oah" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/03/Textbook/PythonML/ch05_%ED%9A%8C%EA%B7%80/" data-id="ckl2d8ib500ck7cueao91gv9z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -3667,14 +3899,16 @@ rmse <span class="token operator">=</span> np<span class="token punctuation">.</
         "description": "
 출처: 파이썬 머신러닝 완벽가이드
 
-Chapter 05. 회귀01. 회귀 소개
+Chapter 05. 회귀
+01. 회귀 소개
+
 회귀는 현대 통계학을 이루는 큰 축
 회귀 분석은 유전적 특성을 연구하던 영국의 통계학자 갈톤이 수행한 연구에서 유래했다는 것이 일반론
 
 &lt; 회귀에 대한 예시&gt;
 
-“부모의 키가 크더라도 자식의 키가 대를 이어 무한정 커지지 않으며, 부모의 키가 작더라도 대를 이어 자식",
-        "wordCount": 27827,
+“부모의 키가 크더라도 자식의 키가 대를 이어 무한정 커지지 않으며, 부모의 키가 작더라도 대를 이어 ",
+        "wordCount": 27371,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

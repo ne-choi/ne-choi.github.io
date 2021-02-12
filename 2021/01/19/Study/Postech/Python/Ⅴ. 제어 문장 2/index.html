@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,Python,for문,while문">
     
-    <meta name="description" content="POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.   Ⅴ. 제어 문장 21. 반복문(for, while)제어문(Control statements) 종류 조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문 if, if elif   반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문 for, while   분기문(Jump Statem">
+    <meta name="description" content="POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.  Ⅴ. 제어 문장 2 1. 반복문(for, while) 제어문(Control statements) 종류  조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문  if, if elif   반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문  for, while   분기문(Jump St">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 프로그래밍 2: Ⅴ. 제어 문장 2">
 <meta property="og:url" content="https://ne-choi.github.io/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.   Ⅴ. 제어 문장 21. 반복문(for, while)제어문(Control statements) 종류 조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문 if, if elif   반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문 for, while   분기문(Jump Statem">
+<meta property="og:description" content="POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.  Ⅴ. 제어 문장 2 1. 반복문(for, while) 제어문(Control statements) 종류  조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문  if, if elif   반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문  for, while   분기문(Jump St">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-19T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:38:23.682Z">
@@ -229,30 +229,39 @@ ga('send', 'pageview');
             
 
             <ul>
-<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, Python 프로그래밍 Ⅱ 과정입니다. </li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, Python 프로그래밍 Ⅱ 과정입니다.</li>
 </ul>
-<h1 id="Ⅴ-제어-문장-2"><a href="#Ⅴ-제어-문장-2" class="headerlink" title="Ⅴ. 제어 문장 2"></a>Ⅴ. 제어 문장 2</h1><h2 id="1-반복문-for-while"><a href="#1-반복문-for-while" class="headerlink" title="1. 반복문(for, while)"></a>1. 반복문(for, while)</h2><h3 id="제어문-Control-statements-종류"><a href="#제어문-Control-statements-종류" class="headerlink" title="제어문(Control statements) 종류"></a>제어문(Control statements) 종류</h3><ul>
-<li>조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문<ul>
+<h1>Ⅴ. 제어 문장 2</h1>
+<h2 id="1-반복문-for-while">1. 반복문(for, while)</h2>
+<h3 id="제어문-Control-statements-종류">제어문(Control statements) 종류</h3>
+<ul>
+<li>조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문
+<ul>
 <li>if, if elif</li>
 </ul>
 </li>
-<li>반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문<ul>
+<li>반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문
+<ul>
 <li>for, while</li>
 </ul>
 </li>
-<li>분기문(Jump Statements)<ul>
+<li>분기문(Jump Statements)
+<ul>
 <li>return, break, continue</li>
 </ul>
 </li>
 </ul>
-<h3 id="Computational-Thinking"><a href="#Computational-Thinking" class="headerlink" title="Computational Thinking"></a>Computational Thinking</h3><ul>
-<li>컴퓨팅 사고력: 컴퓨터가 문제를 해결하는 방식을 현실 문제 해결에 적용하는 것<ul>
+<h3 id="Computational-Thinking">Computational Thinking</h3>
+<ul>
+<li>컴퓨팅 사고력: 컴퓨터가 문제를 해결하는 방식을 현실 문제 해결에 적용하는 것
+<ul>
 <li>추상화: 실제 세계 문제를 해결 가능한 형태로 표현하기 위한 사고 과정</li>
 <li>자동화: 추상화 과정에서 만들어진 해결 모델을 컴퓨터가 이해할 수 있는 프로그래밍 언어로 표현하는 것</li>
 </ul>
 </li>
 </ul>
-<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><ul>
+<h3 id="for">for</h3>
+<ul>
 <li>반복적이고 지루한 작업을 컴퓨터를 이용해 자동화</li>
 <li>for: 리스트나 튜플, 문자열의 첫 번째 요소부터 마지막 요소까지 차례로 변수에 대입되어 “수행할 문장 1”, “수행할 문장 2” 등 수행</li>
 </ul>
@@ -260,7 +269,8 @@ ga('send', 'pageview');
     수행할 문장 1
     수행할 문장 2
     ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="참고-range-함수"><a href="#참고-range-함수" class="headerlink" title="참고: range() 함수"></a>참고: range() 함수</h3><pre class="line-numbers language-none"><code class="language-none">range([start,] stop [,step]) # [] 생략 가능<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="참고-range-함수">참고: range() 함수</h3>
+<pre class="line-numbers language-none"><code class="language-none">range([start,] stop [,step]) # [] 생략 가능<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>range(start, stop)과 같이 호출하면 start부터 시작해서 (stop-1)까지의 정수 생성</li>
 <li>stop은 포함되지 않음</li>
@@ -278,13 +288,16 @@ ga('send', 'pageview');
 Hello Python~!!
 Hello Python~!!
 Hello Python~!!
-Hello Python~!!</code></pre>
+Hello Python~!!
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">## 리스트형</span>
 <span class="token keyword">for</span> name <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"나은"</span><span class="token punctuation">,</span> <span class="token string">"선호"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"안녕! "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre><code>안녕! 나은
-안녕! 선호</code></pre>
-<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><ul>
+안녕! 선호
+</code></pre>
+<h3 id="while">while</h3>
+<ul>
 <li>조건의 결과(참 or 거짓)에 따라 특정 부분 처리를 반복 실행하는 제어문장</li>
 <li>조건문이 참인 동안 while문 아래에 속하는 문장들이 반복하여 수행</li>
 </ul>
@@ -292,7 +305,6 @@ Hello Python~!!</code></pre>
     수행할 문장 1
     수행할 문장 2
     수행할 문장 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token keyword">while</span> i <span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello 김선호 배우님"</span><span class="token punctuation">)</span>
@@ -303,16 +315,20 @@ Hello 김선호 배우님
 Hello 김선호 배우님
 Hello 김선호 배우님
 Hello 김선호 배우님
-반복이 종료되었습니다.</code></pre>
-<h3 id="분기문-Jump-Statement"><a href="#분기문-Jump-Statement" class="headerlink" title="분기문(Jump Statement)"></a>분기문(Jump Statement)</h3><ul>
+반복이 종료되었습니다.
+</code></pre>
+<h3 id="분기문-Jump-Statement">분기문(Jump Statement)</h3>
+<ul>
 <li>반복문 탈출하는 break문</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"for문을 %d번 실행"</span> <span class="token operator">%</span> i<span class="token punctuation">)</span>
     <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre><code>for문을 1번 실행</code></pre>
+<pre><code>for문을 1번 실행
+</code></pre>
 <ul>
-<li>반복문으로 다시 돌아가는 continue문<ul>
+<li>반복문으로 다시 돌아가는 continue문
+<ul>
 <li>블록 남은 부분을 건너 뛰고 무조건 처음으로 돌아감</li>
 </ul>
 </li>
@@ -324,8 +340,11 @@ Hello 김선호 배우님
     hap <span class="token operator">+=</span> i
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1-100의 합계(3의 배수 제외): %d"</span> <span class="token operator">%</span> hap<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>1-100의 합계(3의 배수 제외): 3367</code></pre>
-<h2 id="2-반복문-실습"><a href="#2-반복문-실습" class="headerlink" title="2. 반복문 실습"></a>2. 반복문 실습</h2><h3 id="정수들의-합"><a href="#정수들의-합" class="headerlink" title="정수들의 합"></a>정수들의 합</h3><ul>
+<pre><code>1-100의 합계(3의 배수 제외): 3367
+</code></pre>
+<h2 id="2-반복문-실습">2. 반복문 실습</h2>
+<h3 id="정수들의-합">정수들의 합</h3>
+<ul>
 <li>for문 사용</li>
 <li>1부터 사용자가 입력한 수 n까지 더하여 (1+2+3+…+n)을 계산하는 프로그램 작성</li>
 </ul>
@@ -338,8 +357,10 @@ limit <span class="token operator">=</span> <span class="token builtin">int</spa
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1부터 "</span><span class="token punctuation">,</span>limit<span class="token punctuation">,</span><span class="token string">"까지의 정수 합 ="</span><span class="token punctuation">,</span> <span class="token builtin">sum</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>어디까지 계산할까요?: 50
-1부터  50 까지의 정수 합 = 1275</code></pre>
-<h3 id="팩토리얼-계산"><a href="#팩토리얼-계산" class="headerlink" title="팩토리얼 계산"></a>팩토리얼 계산</h3><ul>
+1부터  50 까지의 정수 합 = 1275
+</code></pre>
+<h3 id="팩토리얼-계산">팩토리얼 계산</h3>
+<ul>
 <li>for문 사용</li>
 <li>팩토리얼 n!은 1부터 n까지 정수를 모두 곱한 것</li>
 </ul>
@@ -351,8 +372,10 @@ n <span class="token operator">=</span> <span class="token builtin">int</span><s
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token string">"!은"</span><span class="token punctuation">,</span> fact<span class="token punctuation">,</span><span class="token string">"이다."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>정수를 입력하시오: 5
-5 !은 120.0 이다.</code></pre>
-<h3 id="자리수의-합"><a href="#자리수의-합" class="headerlink" title="자리수의 합"></a>자리수의 합</h3><ul>
+5 !은 120.0 이다.
+</code></pre>
+<h3 id="자리수의-합">자리수의 합</h3>
+<ul>
 <li>정수 안 각 자리수의 합을 계산하는 프로그램 작성</li>
 <li>e.g. 1234 → 1+2+3+4</li>
 </ul>
@@ -363,7 +386,8 @@ n <span class="token operator">=</span> <span class="token builtin">int</span><s
     <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span> <span class="token operator">+</span> digit
     number <span class="token operator">=</span> number <span class="token operator">//</span> <span class="token number">10</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"자리수의 합은 %d입니다."</span> <span class="token operator">%</span> <span class="token builtin">sum</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>자리수의 합은 10입니다.</code></pre>
+<pre><code>자리수의 합은 10입니다.
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">number <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"정수를 입력하시오: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"입력한 수는: "</span><span class="token punctuation">,</span>number<span class="token punctuation">)</span>
 
@@ -375,8 +399,10 @@ n <span class="token operator">=</span> <span class="token builtin">int</span><s
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"자리수의 합은 %d입니다."</span> <span class="token operator">%</span> <span class="token builtin">sum</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>정수를 입력하시오: 555
 입력한 수는:  555
-자리수의 합은 15입니다.</code></pre>
-<h3 id="숫자-맞추기-게임"><a href="#숫자-맞추기-게임" class="headerlink" title="숫자 맞추기 게임"></a>숫자 맞추기 게임</h3><ul>
+자리수의 합은 15입니다.
+</code></pre>
+<h3 id="숫자-맞추기-게임">숫자 맞추기 게임</h3>
+<ul>
 <li>컴퓨터가 선택한 숫자를 사용자가 맞추는 게임</li>
 <li>입력한 숫자가 선택한 숫자보다 높은 수인지 낮은 수인지 정보 제공</li>
 <li>시도 횟수 제공</li>
@@ -404,8 +430,10 @@ number <span class="token operator">=</span> random<span class="token punctuatio
 <pre><code>1부터 100 사이의 숫자를 맞추시오.
 숫자를 입력하시오: 55
 Down.
-정답은  51 입니다.</code></pre>
-<h3 id="커피-자판기"><a href="#커피-자판기" class="headerlink" title="커피 자판기"></a>커피 자판기</h3><ul>
+정답은  51 입니다.
+</code></pre>
+<h3 id="커피-자판기">커피 자판기</h3>
+<ul>
 <li>수정 필요</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">coffee <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"커피 재고: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -431,7 +459,7 @@ money <span class="token operator">=</span> <span class="token builtin">int</spa
 
 
 
-    <a data-url="https://ne-choi.github.io/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/" data-id="ckkwkieh1000adouegiwv5i42" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2021/01/19/Study/Postech/Python/%E2%85%A4.%20%EC%A0%9C%EC%96%B4%20%EB%AC%B8%EC%9E%A5%202/" data-id="ckl2d8i2p000a7cue8c776tie" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -510,19 +538,24 @@ money <span class="token operator">=</span> <span class="token builtin">int</spa
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2021/01/19/Study/Postech/Python/Ⅴ. 제어 문장 2/",
         "description": "
-POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다. 
+POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.
 
-Ⅴ. 제어 문장 21. 반복문(for, while)제어문(Control statements) 종류
+Ⅴ. 제어 문장 2
+1. 반복문(for, while)
+제어문(Control statements) 종류
+
 조건문: 조건에 따라 프로그램 흐름을 제어하는 명령문
+
 if, if elif
 
 
 반복문: 조건에 따라 정해진 문장을 반복 수행하는 명령문
+
 for, while
 
 
-분기문(Jump Statem",
-        "wordCount": 1634,
+분기문(Jump St",
+        "wordCount": 1571,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

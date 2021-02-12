@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,주성분분석,최소자승법">
     
-    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅤ. 주성분 분석과 부분 최소자승법1. 주성분분석주성분분석(PCA) 주성분분석(Principle Component Analysis)  다변량 분석기법 ‘주성분’이라고 불리는 선형조합으로 표현하는 기법 주성분은 공분산(X^T^X)로부터 eigenvector와 eigenvalue를">
+    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  ⅩⅤ. 주성분 분석과 부분 최소자승법 1. 주성분분석 주성분분석(PCA)   주성분분석(Principle Component Analysis)  다변량 분석기법 &#39;주성분’이라고 불리는 선형조합으로 표현하는 기법 주성분은 공분산(X^T^X)로부터 eigenvector와 eigenvalu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="머신러닝 기법과 R 프로그래밍 2: ⅩⅤ. 주성분 분석과 부분 최소자승법">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/23/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A4_%EC%A3%BC%EC%84%B1%EB%B6%84_%EB%B6%84%EC%84%9D%EA%B3%BC_%EB%B6%80%EB%B6%84_%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅤ. 주성분 분석과 부분 최소자승법1. 주성분분석주성분분석(PCA) 주성분분석(Principle Component Analysis)  다변량 분석기법 ‘주성분’이라고 불리는 선형조합으로 표현하는 기법 주성분은 공분산(X^T^X)로부터 eigenvector와 eigenvalue를">
+<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  ⅩⅤ. 주성분 분석과 부분 최소자승법 1. 주성분분석 주성분분석(PCA)   주성분분석(Principle Component Analysis)  다변량 분석기법 &#39;주성분’이라고 불리는 선형조합으로 표현하는 기법 주성분은 공분산(X^T^X)로부터 eigenvector와 eigenvalu">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-23T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:39:50.926Z">
@@ -228,235 +228,328 @@ ga('send', 'pageview');
             
 
             <ul>
-<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  </li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.</li>
 </ul>
-<h1 id="ⅩⅤ-주성분-분석과-부분-최소자승법"><a href="#ⅩⅤ-주성분-분석과-부분-최소자승법" class="headerlink" title="ⅩⅤ. 주성분 분석과 부분 최소자승법"></a>ⅩⅤ. 주성분 분석과 부분 최소자승법</h1><h2 id="1-주성분분석"><a href="#1-주성분분석" class="headerlink" title="1. 주성분분석"></a>1. 주성분분석</h2><h3 id="주성분분석-PCA"><a href="#주성분분석-PCA" class="headerlink" title="주성분분석(PCA)"></a>주성분분석(PCA)</h3><ul>
-<li><p>주성분분석(Principle Component Analysis)</p>
+<h1>ⅩⅤ. 주성분 분석과 부분 최소자승법</h1>
+<h2 id="1-주성분분석">1. 주성분분석</h2>
+<h3 id="주성분분석-PCA">주성분분석(PCA)</h3>
+<ul>
+<li>
+<p>주성분분석(Principle Component Analysis)</p>
 <ul>
 <li>다변량 분석기법</li>
-<li>‘주성분’이라고 불리는 선형조합으로 표현하는 기법</li>
+<li>'주성분’이라고 불리는 선형조합으로 표현하는 기법</li>
 <li>주성분은 공분산(X^T^X)로부터 eigenvector와 eigenvalue를 도출하여 계산됨</li>
 </ul>
 </li>
-<li><p>주성분 간의 수직 관계</p>
+<li>
+<p>주성분 간의 수직 관계</p>
 <ul>
 <li>1st 주성분(PC1): 독립변수들의 변동(분산)을 가장 많이 설명하는 성분</li>
 <li>2nd 주성분(PC2): PC1과 수직인 주성분(1st 주성분이 설명하지 못하는 변동을 두 번째로 설명하는 성분)</li>
 </ul>
 </li>
+<li>
+<p>iris 데이터(4개변수)의 주성분 도출: 차원축소&amp;예측력 향상 목적</p>
+</li>
 </ul>
-<ul>
-<li>iris 데이터(4개변수)의 주성분 도출: 차원축소&amp;예측력 향상 목적<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">iris&lt;-read.csv(&quot;data&#x2F;week15_1&#x2F;iris.csv&quot;)
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">iris&lt;-read.csv(&quot;data&#x2F;week15_1&#x2F;iris.csv&quot;)
 iris$Species&lt;-as.factor(iris$Species)
 attach(iris)
-head(iris)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>독립변수 간 상관관계 확인<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Check correlation
-cor(iris[1:4])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>결과 확인<ul>
+head(iris)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>독립변수 간 상관관계 확인</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Check correlation
+cor(iris[1:4])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 확인
+<ul>
 <li>0.96, 0.87 등 높은 상관계수가 관찰됨</li>
 </ul>
 </li>
 </ul>
-<h3 id="주성분분석을-위한-함수"><a href="#주성분분석을-위한-함수" class="headerlink" title="주성분분석을 위한 함수"></a>주성분분석을 위한 함수</h3><ul>
-<li>prcomp(독립변수들, center= , scale= )<ul>
+<h3 id="주성분분석을-위한-함수">주성분분석을 위한 함수</h3>
+<ul>
+<li>prcomp(독립변수들, center= , scale= )
+<ul>
 <li>옵션을 주지 않으면 center=T, scale=F</li>
-<li>center=T, scale=T는 변수들의 평균을 빼고 편차로 나누어 표준화한다는 의미<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 1.PCA(center&#x3D;T-&gt;mean&#x3D;0, scale.&#x3D;T-&gt;variance&#x3D;1)
+<li>center=T, scale=T는 변수들의 평균을 빼고 편차로 나누어 표준화한다는 의미</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 1.PCA(center&#x3D;T-&gt;mean&#x3D;0, scale.&#x3D;T-&gt;variance&#x3D;1)
 ir.pca&lt;-prcomp(iris[,1:4],center&#x3D;T,scale.&#x3D;T)
 ir.pca
-summary(ir.pca)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
-<li>결과 해석<ul>
+summary(ir.pca)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
+<ul>
 <li>PC1 = 0.5211xSepal.Length - 0.2693xSepal.Width + 0.5804xPetal.Length + 0.5649xPetal.Width</li>
-<li>summary의 Proportion of Variance<ul>
+<li>summary의 Proportion of Variance
+<ul>
 <li>전체 분산 중 각 주성분이 설명하는 비율</li>
 <li>PC1: 전체 분산의 72.96%를 설명</li>
-<li>PC2: 22.85%, PC3: 3.67%, PC4: 0.5%<br>→ 누적설명비율을 보면, PC1과 PC2 두 성분으로 전체 분산의 95.81%를 설명</li>
+<li>PC2: 22.85%, PC3: 3.67%, PC4: 0.5%<br>
+→ 누적설명비율을 보면, PC1과 PC2 두 성분으로 전체 분산의 95.81%를 설명</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="최적-주성분-수-찾기"><a href="#최적-주성분-수-찾기" class="headerlink" title="최적 주성분 수 찾기"></a>최적 주성분 수 찾기</h3><ul>
-<li>scree plot을 그려보고 급격히 떨어지기 전까지의 PC를 선택<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2.scree plot : to choose the number of components
-plot(ir.pca,type&#x3D;&quot;l&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
-<li>3rd PC에서 설명력이 급격하게 떨어짐</li>
-<li>기울기가 꺾이는 PC3을 elbow point라고 부름<br>→ PC1, PC2까지 사용하는 것을 추천</li>
-</ul>
-</li>
-</ul>
+<h3 id="최적-주성분-수-찾기">최적 주성분 수 찾기</h3>
 <ul>
-<li>BAR Chart로 보기: screeplt(pca 결과)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># either way to draw scree plot
-screeplot(ir.pca)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>PC계산 = X_data(n* p) % * % PCA_weight(p*p)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># %*%: 행렬의 계산
+<li>scree plot을 그려보고 급격히 떨어지기 전까지의 PC를 선택</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2.scree plot : to choose the number of components
+plot(ir.pca,type&#x3D;&quot;l&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
+<li>3rd PC에서 설명력이 급격하게 떨어짐</li>
+<li>기울기가 꺾이는 PC3을 elbow point라고 부름<br>
+→ PC1, PC2까지 사용하는 것을 추천</li>
+</ul>
+</li>
+<li>
+<p>BAR Chart로 보기: screeplt(pca 결과)</p>
+</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># either way to draw scree plot
+screeplot(ir.pca)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>PC계산 = X_data(n* p) % * % PCA_weight(p*p)</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># %*%: 행렬의 계산
 # 3. Calculate component &#x3D; x_data%*% PCA_weight
 PRC&lt;-as.matrix(iris[,1:4])%*%ir.pca$rotation
-head(PRC)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
+head(PRC)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
+<ul>
 <li>PRC는 n*p행렬, 여기서는 150x4</li>
 <li>PC1 = 0.5211xSepal.Length - 0.2693xSepal.Width + 0.5804xPetal.Length + 0.5649xPetal.Width</li>
 </ul>
 </li>
 </ul>
-<h3 id="주성분을-이용한-분류모형"><a href="#주성분을-이용한-분류모형" class="headerlink" title="주성분을 이용한 분류모형"></a>주성분을 이용한 분류모형</h3><ul>
-<li>iris data → iris.pc data 구성<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 4. classification using principal components
+<h3 id="주성분을-이용한-분류모형">주성분을 이용한 분류모형</h3>
+<ul>
+<li>iris data → iris.pc data 구성</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 4. classification using principal components
 # make data with components
 iris.pc&lt;-cbind(as.data.frame(PRC), Species)
 iris.pc$Species&lt;-as.factor(iris.pc$Species)
-head(iris.pc)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>주성분을 이용한 서포트벡터머신 수행<ul>
-<li>주성분이 input<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 5. support vector machine
+head(iris.pc)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>주성분을 이용한 서포트벡터머신 수행
+<ul>
+<li>주성분이 input</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 5. support vector machine
 # install.packages(&quot;e1071&quot;)
 library (e1071)
 
 # classify all data using PC1-PC4 using support vector machine
 m1&lt;- svm(Species ~., data &#x3D; iris.pc, kernel&#x3D;&quot;linear&quot;)
 # m2&lt;- svm(Species ~PC1+PC2, data &#x3D; iris.pc, kernel&#x3D;&quot;linear&quot;)
-summary(m1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+summary(m1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>서포트벡터머신 결과 vs PCA 결과</li>
 </ul>
-</li>
-<li>서포트벡터머신 결과 vs PCA 결과<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># predict class for all data 
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># predict class for all data 
 x&lt;-iris.pc[, -5]
 pred &lt;- predict(m1, x)
 # check accuracy between true class and predicted class
 y&lt;-iris.pc[,5]
-table(pred, y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
-<li>주성분을 이용한 분류의 오분류율: 2/150 = 0.013(1.33%)<br>→ 이 데이터에서는 SVM(오분류율: 4/150 = 2.66%)보다 PCA 분류가 오분류율이 적다</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-주성분-회귀분석"><a href="#2-주성분-회귀분석" class="headerlink" title="2. 주성분 회귀분석"></a>2. 주성분 회귀분석</h2><h3 id="주성분회귀"><a href="#주성분회귀" class="headerlink" title="주성분회귀"></a>주성분회귀</h3><ul>
-<li><p>주성분회귀(Principle Component Regression)</p>
+table(pred, y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li><p>독립변수 차원을 줄이기 위해 사용 가능, 주성분을 이용해 타겟변수(Y)의 설명력(예측력)을 높일 수 있음</p>
+<li>결과 해석
 <ul>
-<li>Y = b<del>0</del> + b<del>1</del>PC<del>1</del> + b<del>2</del>PC<del>2</del></li>
+<li>주성분을 이용한 분류의 오분류율: 2/150 = 0.013(1.33%)<br>
+→ 이 데이터에서는 SVM(오분류율: 4/150 = 2.66%)보다 PCA 분류가 오분류율이 적다</li>
 </ul>
 </li>
-<li><p>독립변수의 전체분산을 가장 잘 설명하는 component를 사용해 독립변수 간 다중공선성 문제를 해결할 수 있음</p>
+</ul>
+<h2 id="2-주성분-회귀분석">2. 주성분 회귀분석</h2>
+<h3 id="주성분회귀">주성분회귀</h3>
+<ul>
+<li>
+<p>주성분회귀(Principle Component Regression)</p>
+<ul>
+<li>
+<p>독립변수 차원을 줄이기 위해 사용 가능, 주성분을 이용해 타겟변수(Y)의 설명력(예측력)을 높일 수 있음</p>
+<ul>
+<li>Y = b~0~ + b~1~PC~1~ + b~2~PC~2~</li>
+</ul>
 </li>
-<li><p>주요 component score가 Y의 예측력을 보장하지는 않음</p>
+<li>
+<p>독립변수의 전체분산을 가장 잘 설명하는 component를 사용해 독립변수 간 다중공선성 문제를 해결할 수 있음</p>
+</li>
+<li>
+<p>주요 component score가 Y의 예측력을 보장하지는 않음</p>
 <ul>
 <li>주요 component score는 X의 분산을 가장 잘 설명하는 방향의 축을 기준으로 변환된 것으로 Y와의 관계에는 상관성이 없을 수도 있음</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>주성분 회귀 분석 순서</strong></p>
+<li>
+<p><strong>주성분 회귀 분석 순서</strong></p>
 <ol>
 <li>데이터에 다중공선성이 있는지 체크</li>
 <li>주성분 분석을 위한 데이터 전처리(mean-centering or scaling)</li>
 <li>주성분분석</li>
 <li>주성분 개수 결정</li>
-<li>주성분으로 회귀분석모형 수행  </li>
+<li>주성분으로 회귀분석모형 수행</li>
 </ol>
 </li>
-<li><p><strong>주성분회귀분석</strong></p>
+<li>
+<p><strong>주성분회귀분석</strong></p>
 <ul>
 <li>여러 변수를 주성분이라는 새로운 변수로 축소하여 회귀모형 수행</li>
 <li>다중공선성 문제 해결 가능</li>
 <li>적절한 주성분을 사용해 회귀모형 구현 필요</li>
-<li>주성분 순서대로 Y변수에 대한 설명력이 높은 것은 아님  </li>
+<li>주성분 순서대로 Y변수에 대한 설명력이 높은 것은 아님</li>
 </ul>
 </li>
-<li><p>wine 데이터: 독립변수 9개, 타겟변수 Aroma rating</p>
+<li>
+<p>wine 데이터: 독립변수 9개, 타겟변수 Aroma rating</p>
+</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">wine&lt;-read.csv(&quot;data&#x2F;week15_2&#x2F;wine_aroma.csv&quot;)
 attach(wine)
 head(wine)
 
 # Check correlation
-cor(wine[1:9])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>주성분분석</p>
+cor(wine[1:9])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>주성분분석</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 1. PCA(center&#x3D;T → mean&#x3D;0, scale.&#x3D;T → variance&#x3D;1)
 wi.pca&lt;-prcomp(wine[1:9], center&#x3D;T, scale.&#x3D;F)
 wi.pca
-summary(wi.pca)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>최적 주성분 수 찾기</p>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2.scree plot : to choose the number of components
-plot(wi.pca,type&#x3D;&quot;l&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>결과 해석</p>
+summary(wi.pca)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>2rd PC에서 설명력이 급격히 떨어짐<br>→ 이 경우 PC1만 사용해도 됨</li>
+<li>최적 주성분 수 찾기</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2.scree plot : to choose the number of components
+plot(wi.pca,type&#x3D;&quot;l&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
+<li>2rd PC에서 설명력이 급격히 떨어짐<br>
+→ 이 경우 PC1만 사용해도 됨</li>
 </ul>
 </li>
-<li><p>PC 계산</p>
+<li>
+<p>PC 계산</p>
+</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 3. calculate component&#x3D;x_data%*% PCA weight
 PRC&lt;-as.matrix(wine[,1:9])%*%wi.pca$rotation
-head(PRC)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>wine.pc data 구성</p>
+head(PRC)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>wine.pc data 구성</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 4. Principal component regression
 # make data with components
 wine.pc&lt;-cbind(as.data.frame(PRC),Aroma)
 head(wine.pc)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-</li>
+<h3 id="주성분을-이용한-회귀모형">주성분을 이용한 회귀모형</h3>
+<ul>
+<li>
+<p>다중회귀모형과 주성분회귀분석</p>
+<ul>
+<li>
+<p>다중회귀모형</p>
+<ul>
+<li>Y = β~0~ + β~1~X~1~ + β~2~X~2~ + … + β~K~X~K~</li>
 </ul>
-<h3 id="주성분을-이용한-회귀모형"><a href="#주성분을-이용한-회귀모형" class="headerlink" title="주성분을 이용한 회귀모형"></a>주성분을 이용한 회귀모형</h3><ul>
-<li><p>다중회귀모형과 주성분회귀분석</p>
-<ul>
-<li><p>다중회귀모형</p>
-<ul>
-<li>Y = β<del>0</del> + β<del>1</del>X<del>1</del> + β<del>2</del>X<del>2</del> + … + β<del>K</del>X<del>K</del></li>
-</ul>
 </li>
-<li><p>주성분회귀모형</p>
+<li>
+<p>주성분회귀모형</p>
 <ul>
-<li>Y = β<del>0</del> + β<del>1</del>PC<del>1</del> + β<del>2</del>PC<del>2</del> + …</li>
+<li>Y = β~0~ + β~1~PC~1~ + β~2~PC~2~ + …</li>
 <li>타겟값(Y)를 가장 잘 예측하는 선형모형</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>
+<p>주성분을 이용한 회귀분석모형 1(WINE DATA: PC1-PC4 포함)</p>
+</li>
 </ul>
-<ul>
-<li>주성분을 이용한 회귀분석모형 1(WINE DATA: PC1-PC4 포함)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># regression(PC1-PC4)
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># regression(PC1-PC4)
 fit1&lt;-lm(Aroma~PC1+PC2+PC3+PC4, data&#x3D;wine.pc)
 fit1
-summary(fit1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
+summary(fit1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
 <li>PC3의 p-value는 0.7로 매우 높음 → 별로 중요하지 않음</li>
 <li>R^2^= .494</li>
 </ul>
 </li>
+<li>
+<p>주성분을 이용한 회귀분석모형 2(WINE DATA: PC1-PC4 포함)</p>
+</li>
 </ul>
-<ul>
-<li>주성분을 이용한 회귀분석모형 2(WINE DATA: PC1-PC4 포함)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># regression(PC1-PC9)
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># regression(PC1-PC9)
 fit2&lt;-lm(Aroma~., data&#x3D;wine.pc)
 fit2
-summary(fit2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
+summary(fit2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
 <li>R^2^= .741</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>일반 회귀분석모형(wine data: raw data)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Multiple regression with the raw data
-fit3&lt;-lm(Aroma ~., data&#x3D;wine)
-summary(fit3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li>잔차에 대한 가정 확인<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># residual diagnostic plot 
-layout(matrix(c(1,2,3,4),2,2)) # optional 4 graphs&#x2F;page 
-plot(fit3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
+<li>
+<p>일반 회귀분석모형(wine data: raw data)</p>
 </li>
 </ul>
-<h2 id="3-Partial-Least-Square-Regression"><a href="#3-Partial-Least-Square-Regression" class="headerlink" title="3. Partial Least Square Regression"></a>3. Partial Least Square Regression</h2><h3 id="최소자승회귀법-PLS"><a href="#최소자승회귀법-PLS" class="headerlink" title="최소자승회귀법(PLS)"></a>최소자승회귀법(PLS)</h3><ul>
-<li>주성분분석의 component vs 최소자승회귀법의 component<ul>
-<li>PLS는 공정변수의 변동을 설명하는 벡터 t를 구하는 데 X 정보만을 이용하지 않고 타겟변수 y 정보를 동시에 고려하여 도출<ul>
-<li>t<del>1</del>(PLS): Y쪽으로 Shift</li>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Multiple regression with the raw data
+fit3&lt;-lm(Aroma ~., data&#x3D;wine)
+summary(fit3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>잔차에 대한 가정 확인</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># residual diagnostic plot 
+layout(matrix(c(1,2,3,4),2,2)) # optional 4 graphs&#x2F;page 
+plot(fit3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-Partial-Least-Square-Regression">3. Partial Least Square Regression</h2>
+<h3 id="최소자승회귀법-PLS">최소자승회귀법(PLS)</h3>
+<ul>
+<li>
+<p>주성분분석의 component vs 최소자승회귀법의 component</p>
+<ul>
+<li>PLS는 공정변수의 변동을 설명하는 벡터 t를 구하는 데 X 정보만을 이용하지 않고 타겟변수 y 정보를 동시에 고려하여 도출
+<ul>
+<li>t~1~(PLS): Y쪽으로 Shift</li>
 </ul>
 </li>
 <li>Chemometrics, Marketing 분야의 고차원데이터, 독립변수 간 상관성 높은 데이터에 적용</li>
 </ul>
 </li>
+<li>
+<p>PLS 수행을 위한 패키지 설치</p>
+</li>
 </ul>
-<ul>
-<li>PLS 수행을 위한 패키지 설치<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install package for Partial Least Square 
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install package for Partial Least Square 
 #install.packages(&#39;pls&#39;)
-library(pls)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li>사용 데이터 설명<ul>
-<li>가솔린 데이터(근적외선 흡광고, 60개의 가솔린 표본)<ul>
+library(pls)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>사용 데이터 설명
+<ul>
+<li>가솔린 데이터(근적외선 흡광고, 60개의 가솔린 표본)
+<ul>
 <li>독립변수 차원:401</li>
 <li>타겟변수(Y): 옥탄가(octane numbers)</li>
 </ul>
@@ -468,18 +561,24 @@ library(pls)<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 #help(&quot;gasoline&quot;)
 attach(gasoline)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>데이터 요약 설명(타겟변수 Y: 옥탄가)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># descriptive statistics
+<li>데이터 요약 설명(타겟변수 Y: 옥탄가)</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># descriptive statistics
 par(mfrow&#x3D;c(1,1))
 hist(octane, col&#x3D;3)
-summary(octane)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
+summary(octane)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
 <li>옥탄가의 최솟값 83.4, 최댓값 89.6</li>
 <li>히스토그램은 옥탄가의 분포를 보여줌</li>
 </ul>
 </li>
+<li>
+<p>훈련데이터와 검증데이터(50개/10개)</p>
+</li>
 </ul>
-<ul>
-<li><p>훈련데이터와 검증데이터(50개/10개)</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># train and test set
 gasTrain &lt;- gasoline[1:50, ]
 gasTest &lt;- gasoline[51:60, ]
@@ -488,68 +587,93 @@ gasTest &lt;- gasoline[51:60, ]
 ga.pca&lt;-prcomp(gasoline$NIR,center&#x3D;T,scale.&#x3D;F)
 ga.pca
 summary(ga.pca)
-plot(ga.pca,type&#x3D;&quot;l&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>결과 해석</p>
+plot(ga.pca,type&#x3D;&quot;l&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
 <ul>
 <li>최소 5개 정도 사용하기</li>
 </ul>
 </li>
-<li><p>PLS함수: plsr</p>
+<li>
+<p>PLS함수: plsr</p>
 <ul>
 <li>plsr(타겟변수~독립변수, ncomp= , data= )</li>
-<li>옵션사항<ul>
+<li>옵션사항
+<ul>
 <li>ncomp: 잠재변수 수</li>
-<li>validation=c(“none”, “CV”, “LOO”) (CV: cross-validaton, LOO: leave-one-out)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># pls model by training set (find LV by leave-one-out) 
+<li>validation=c(“none”, “CV”, “LOO”) (CV: cross-validaton, LOO: leave-one-out)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># pls model by training set (find LV by leave-one-out) 
 # 1. start with 10 component PLS model
 gas1 &lt;- plsr(octane ~ NIR, ncomp &#x3D; 10, data &#x3D; gasTrain, validation &#x3D; &quot;LOO&quot;)
 # NIR에 401차원의 값이 들어있음, ncomp: 잠재변수의 수
 
-summary(gas1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>결과 해석</p>
+summary(gas1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>CV<ul>
+<li>
+<p>결과 해석</p>
+<ul>
+<li>CV
+<ul>
 <li>1개의 잠재변수 → 10개의 잠재변수</li>
 <li>1개의 잠재변수: 평균오차 1.357, 2개의 잠재변수: 평균오차 0.297 …</li>
 </ul>
 </li>
-<li>TRAINING<ul>
+<li>TRAINING
+<ul>
 <li>X들의 분산설명비율: 2개의 LV로 85.58%</li>
 <li>Y값의 변동분 설명비율: 96.85% 설명</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>
+<p>PLS 모형에서의 최적 잠재변수 수</p>
+</li>
 </ul>
-<ul>
-<li>PLS 모형에서의 최적 잠재변수 수<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2. to choose the number of components
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2. to choose the number of components
 plot(RMSEP(gas1), legendpos &#x3D; &quot;topright&quot;, pch&#x3D;46, cex&#x3D;1.0, main&#x3D;&quot;Cross-validation for # of LV&quot;)
-# for gasoline data, # of LV&#x3D;2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
-<li>최적 잠재변수의 수는 RMSEP가 최저이고 변화가 없는 지점에서 결정<ul>
+# for gasoline data, # of LV&#x3D;2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
+<li>최적 잠재변수의 수는 RMSEP가 최저이고 변화가 없는 지점에서 결정
+<ul>
 <li>2개의 components (LV)를 추천</li>
 <li>예측모형 평가척도: 평균오차</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>
+<p>최적 PLS 모형의 실제값과 예측값 산점도</p>
+</li>
 </ul>
-<ul>
-<li>최적 PLS 모형의 실제값과 예측값 산점도<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 3. Display the PLS model with LV&#x3D;2
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 3. Display the PLS model with LV&#x3D;2
 # scatterplot with true and predicted
-plot(gas1, ncomp &#x3D; 2, asp &#x3D; 1, line &#x3D; TRUE, cex&#x3D;1.5,main&#x3D;&quot;Measured vs Predicted&quot;, xlab&#x3D;&quot;Measured&quot; )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li>잠재변수 수에 따른 전체분산의(독립변수들) 설명 정도<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Check explained variances proportion for X
-explvar(gas1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>결과 해석<ul>
+plot(gas1, ncomp &#x3D; 2, asp &#x3D; 1, line &#x3D; TRUE, cex&#x3D;1.5,main&#x3D;&quot;Measured vs Predicted&quot;, xlab&#x3D;&quot;Measured&quot; )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>잠재변수 수에 따른 전체분산의(독립변수들) 설명 정도</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Check explained variances proportion for X
+explvar(gas1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
 <li>2개의 잠재변수가 전체 분산의 85.58% 설명</li>
 </ul>
 </li>
+<li>
+<p>검증데이터의 RMSEP 계산</p>
+</li>
 </ul>
-<ul>
-<li><p>검증데이터의 RMSEP 계산</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 4. predicted Y for test data
 ypred&lt;-predict(gas1, ncomp &#x3D; 2, newdata &#x3D; gasTest)
 
@@ -559,21 +683,20 @@ y&lt;-gasoline$octane[51:60]
 sqrt((sum(y-ypred)^2)&#x2F;10)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 5. compare with the one from #4 : RMSEP for test data
 RMSEP(gas1, newdata &#x3D; gasTest)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>PLS 예측값 내보내기</p>
+<ul>
+<li>PLS 예측값 내보내기</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># output of y and predicted y
 out1&lt;-cbind(y, ypred)
 # data exporting
-write.csv(out1,file&#x3D;&quot;out1.csv&quot;, row.names &#x3D; FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-
+write.csv(out1,file&#x3D;&quot;out1.csv&quot;, row.names &#x3D; FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/23/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A4_%EC%A3%BC%EC%84%B1%EB%B6%84_%EB%B6%84%EC%84%9D%EA%B3%BC_%EB%B6%80%EB%B6%84_%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" data-id="ckkwkiehs0011doueeybxevwv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/23/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A4_%EC%A3%BC%EC%84%B1%EB%B6%84_%EB%B6%84%EC%84%9D%EA%B3%BC_%EB%B6%80%EB%B6%84_%EC%B5%9C%EC%86%8C%EC%9E%90%EC%8A%B9%EB%B2%95/" data-id="ckl2d8i3q00127cuea90f16uq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -652,15 +775,19 @@ write.csv(out1,file&#x3D;&quot;out1.csv&quot;, row.names &#x3D; FALSE)<span aria
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2020/12/23/Study/Postech/머신러닝R/ⅩⅤ_주성분_분석과_부분_최소자승법/",
         "description": "
-POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  
+POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.
 
-ⅩⅤ. 주성분 분석과 부분 최소자승법1. 주성분분석주성분분석(PCA)
+ⅩⅤ. 주성분 분석과 부분 최소자승법
+1. 주성분분석
+주성분분석(PCA)
+
+
 주성분분석(Principle Component Analysis)
 
 다변량 분석기법
-‘주성분’이라고 불리는 선형조합으로 표현하는 기법
-주성분은 공분산(X^T^X)로부터 eigenvector와 eigenvalue를",
-        "wordCount": 1056,
+'주성분’이라고 불리는 선형조합으로 표현하는 기법
+주성분은 공분산(X^T^X)로부터 eigenvector와 eigenvalu",
+        "wordCount": 996,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

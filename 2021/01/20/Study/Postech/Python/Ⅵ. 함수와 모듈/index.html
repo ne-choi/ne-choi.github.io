@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,Python,함수">
     
-    <meta name="description" content="POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.   Ⅵ. 함수와 모듈1. 함수 개념함수의 개념 함수(function) 독립적으로 수행하는 프로그램 단위로 특정 작업을 수행하는 명령어 모음에 이름 붙인 것 프로그램에서 반복적으로 수행되는 기능을 함수로 만들어 호출할 수 있음 함수는 작업에 필요한 데이터(매개변수)를 받을 수 있고, 작업">
+    <meta name="description" content="POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.  Ⅵ. 함수와 모듈 1. 함수 개념 함수의 개념  함수(function)  독립적으로 수행하는 프로그램 단위로 특정 작업을 수행하는 명령어 모음에 이름 붙인 것 프로그램에서 반복적으로 수행되는 기능을 함수로 만들어 호출할 수 있음 함수는 작업에 필요한 데이터(매개변수)를 받을 수 있고,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 프로그래밍 2: Ⅵ. 함수와 모듈">
 <meta property="og:url" content="https://ne-choi.github.io/2021/01/20/Study/Postech/Python/%E2%85%A5.%20%ED%95%A8%EC%88%98%EC%99%80%20%EB%AA%A8%EB%93%88/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.   Ⅵ. 함수와 모듈1. 함수 개념함수의 개념 함수(function) 독립적으로 수행하는 프로그램 단위로 특정 작업을 수행하는 명령어 모음에 이름 붙인 것 프로그램에서 반복적으로 수행되는 기능을 함수로 만들어 호출할 수 있음 함수는 작업에 필요한 데이터(매개변수)를 받을 수 있고, 작업">
+<meta property="og:description" content="POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.  Ⅵ. 함수와 모듈 1. 함수 개념 함수의 개념  함수(function)  독립적으로 수행하는 프로그램 단위로 특정 작업을 수행하는 명령어 모음에 이름 붙인 것 프로그램에서 반복적으로 수행되는 기능을 함수로 만들어 호출할 수 있음 함수는 작업에 필요한 데이터(매개변수)를 받을 수 있고,">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-20T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:38:36.531Z">
@@ -228,17 +228,22 @@ ga('send', 'pageview');
             
 
             <ul>
-<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, Python 프로그래밍 Ⅱ 과정입니다. </li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, Python 프로그래밍 Ⅱ 과정입니다.</li>
 </ul>
-<h1 id="Ⅵ-함수와-모듈"><a href="#Ⅵ-함수와-모듈" class="headerlink" title="Ⅵ. 함수와 모듈"></a>Ⅵ. 함수와 모듈</h1><h2 id="1-함수-개념"><a href="#1-함수-개념" class="headerlink" title="1. 함수 개념"></a>1. 함수 개념</h2><h3 id="함수의-개념"><a href="#함수의-개념" class="headerlink" title="함수의 개념"></a>함수의 개념</h3><ul>
-<li>함수(function)<ul>
+<h1>Ⅵ. 함수와 모듈</h1>
+<h2 id="1-함수-개념">1. 함수 개념</h2>
+<h3 id="함수의-개념">함수의 개념</h3>
+<ul>
+<li>함수(function)
+<ul>
 <li>독립적으로 수행하는 프로그램 단위로 특정 작업을 수행하는 명령어 모음에 이름 붙인 것</li>
 <li>프로그램에서 반복적으로 수행되는 기능을 함수로 만들어 호출할 수 있음</li>
 <li>함수는 작업에 필요한 데이터(매개변수)를 받을 수 있고, 작업 완료 후에는 작업 결과를 호출자에게 반환할 수 있음</li>
 </ul>
 </li>
 </ul>
-<h3 id="함수-정의-Python"><a href="#함수-정의-Python" class="headerlink" title="함수 정의_Python"></a>함수 정의_Python</h3><ul>
+<h3 id="함수-정의-Python">함수 정의_Python</h3>
+<ul>
 <li>함수 정의는 def로 시작하고 콜론(:)으로 끝</li>
 <li>함수 시작과 끝은 코드의 들여쓰기로 구분</li>
 <li>시작과 끝 명시할 필요 없음</li>
@@ -247,24 +252,27 @@ ga('send', 'pageview');
     수행할 문장
     ...
     return 반환값<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> a<span class="token operator">+</span>b
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"add 결과: "</span><span class="token punctuation">,</span>add<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>add 결과:  20</code></pre>
+<pre><code>add 결과:  20
+</code></pre>
 <ul>
-<li><p>함수 정의</p>
+<li>함수 정의</li>
+</ul>
 <pre class="line-numbers language-none"><code class="language-none">def add(a,b):
     result &#x3D; a + b
-    return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>함수 호출</p>
+    return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>함수 호출</li>
+</ul>
 <pre class="line-numbers language-none"><code class="language-none">sum &#x3D; add(100,200)
 print(sum)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="함수-매개변수와-반환값"><a href="#함수-매개변수와-반환값" class="headerlink" title="함수 매개변수와 반환값"></a>함수 매개변수와 반환값</h3><p>(함수 내 정의된 문장은 바로 실행되지 않음)  </p>
-</li>
-<li><p>입력값, 반환값이 없는 함수</p>
-</li>
+<h3 id="함수-매개변수와-반환값">함수 매개변수와 반환값</h3>
+<p>(함수 내 정의된 문장은 바로 실행되지 않음)</p>
+<ul>
+<li>입력값, 반환값이 없는 함수</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -273,7 +281,8 @@ print(sum)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="함수-작성-예시"><a href="#함수-작성-예시" class="headerlink" title="함수 작성 예시"></a>함수 작성 예시</h3><ul>
+<h3 id="함수-작성-예시">함수 작성 예시</h3>
+<ul>
 <li>정수 거듭제곱값을 계산하여 반환하는 함수 작성(** 연산자 사용 가능)</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">power</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -283,7 +292,8 @@ print(sum)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     <span class="token keyword">return</span> result
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"power 함수 실행: "</span><span class="token punctuation">,</span>power<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>power 함수 실행:  100</code></pre>
+<pre><code>power 함수 실행:  100
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">## main() 함수 호출 활용</span>
 <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>power<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -295,20 +305,26 @@ print(sum)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     <span class="token keyword">return</span> result
 
 main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>100</code></pre>
-<h2 id="2-함수-실습"><a href="#2-함수-실습" class="headerlink" title="2. 함수 실습"></a>2. 함수 실습</h2><h3 id="일상-생활-문제-성적-처리"><a href="#일상-생활-문제-성적-처리" class="headerlink" title="일상 생활 문제: 성적 처리"></a>일상 생활 문제: 성적 처리</h3><ul>
-<li><p>문제</p>
+<pre><code>100
+</code></pre>
+<h2 id="2-함수-실습">2. 함수 실습</h2>
+<h3 id="일상-생활-문제-성적-처리">일상 생활 문제: 성적 처리</h3>
+<ul>
+<li>
+<p>문제</p>
 <ul>
 <li>데이터: 점수</li>
 <li>처리 기능: 총점, 정렬(두 수의 교환)</li>
 </ul>
 </li>
-<li><p>처리</p>
+<li>
+<p>처리</p>
 <ul>
 <li>총점 계산(add())</li>
 <li>총점으로 평균 계산</li>
 <li>총점 반영하여 성적순 정렬</li>
-<li>정렬 시, 두 변수의 값을 바꾸는 함수 필요(swap())<ul>
+<li>정렬 시, 두 변수의 값을 바꾸는 함수 필요(swap())
+<ul>
 <li>a, b = b, a</li>
 </ul>
 </li>
@@ -338,7 +354,8 @@ a<span class="token punctuation">,</span>b<span class="token operator">=</span>s
 정수 2 입력: 5
 두 수의 합:  9
 두 수의 평균:  4.5
-두 수 교환:  5 4</code></pre>
+두 수 교환:  5 4
+</code></pre>
 
         </div>
         <footer class="article-footer">
@@ -346,7 +363,7 @@ a<span class="token punctuation">,</span>b<span class="token operator">=</span>s
 
 
 
-    <a data-url="https://ne-choi.github.io/2021/01/20/Study/Postech/Python/%E2%85%A5.%20%ED%95%A8%EC%88%98%EC%99%80%20%EB%AA%A8%EB%93%88/" data-id="ckkwkieh4000cdoued5gyea7q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2021/01/20/Study/Postech/Python/%E2%85%A5.%20%ED%95%A8%EC%88%98%EC%99%80%20%EB%AA%A8%EB%93%88/" data-id="ckl2d8i2u000e7cuef8hw9ydb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -425,14 +442,18 @@ a<span class="token punctuation">,</span>b<span class="token operator">=</span>s
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2021/01/20/Study/Postech/Python/Ⅵ. 함수와 모듈/",
         "description": "
-POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다. 
+POSTECH MOOC 중, Python 프로그래밍 Ⅱ 과정입니다.
 
-Ⅵ. 함수와 모듈1. 함수 개념함수의 개념
+Ⅵ. 함수와 모듈
+1. 함수 개념
+함수의 개념
+
 함수(function)
+
 독립적으로 수행하는 프로그램 단위로 특정 작업을 수행하는 명령어 모음에 이름 붙인 것
 프로그램에서 반복적으로 수행되는 기능을 함수로 만들어 호출할 수 있음
-함수는 작업에 필요한 데이터(매개변수)를 받을 수 있고, 작업 ",
-        "wordCount": 741,
+함수는 작업에 필요한 데이터(매개변수)를 받을 수 있고, ",
+        "wordCount": 697,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

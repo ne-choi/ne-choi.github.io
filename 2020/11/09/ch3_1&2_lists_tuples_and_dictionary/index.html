@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="python,lists vs tuples,dictionary,list,tuples">
     
-    <meta name="description" content="Lists, Tuples, and Dictionary* 출처: dschloe.github.io Lists List는 [] 형태로 정의 List는 정렬(ordered)됨 List는 다양한 형태의 데이터 유형을 담을 수 있음 List 안에 있는 값에는 인덱스로 접근 List 안에 또 List를 담을 수 있음 List는 변하기 쉬움 List는 동적임  1) Li">
+    <meta name="description" content="Lists, Tuples, and Dictionary * 출처: dschloe.github.io Lists  List는 [] 형태로 정의 List는 정렬(ordered)됨 List는 다양한 형태의 데이터 유형을 담을 수 있음 List 안에 있는 값에는 인덱스로 접근 List 안에 또 List를 담을 수 있음 List는 변하기 쉬움 List는 동적임  1)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python: Lists, Tuples, and Dictionary">
 <meta property="og:url" content="https://ne-choi.github.io/2020/11/09/ch3_1&2_lists_tuples_and_dictionary/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="Lists, Tuples, and Dictionary* 출처: dschloe.github.io Lists List는 [] 형태로 정의 List는 정렬(ordered)됨 List는 다양한 형태의 데이터 유형을 담을 수 있음 List 안에 있는 값에는 인덱스로 접근 List 안에 또 List를 담을 수 있음 List는 변하기 쉬움 List는 동적임  1) Li">
+<meta property="og:description" content="Lists, Tuples, and Dictionary * 출처: dschloe.github.io Lists  List는 [] 형태로 정의 List는 정렬(ordered)됨 List는 다양한 형태의 데이터 유형을 담을 수 있음 List 안에 있는 값에는 인덱스로 접근 List 안에 또 List를 담을 수 있음 List는 변하기 쉬움 List는 동적임  1)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-09T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-01-20T03:24:43.310Z">
@@ -229,8 +229,10 @@ ga('send', 'pageview');
 
             
 
-            <h1 id="Lists-Tuples-and-Dictionary"><a href="#Lists-Tuples-and-Dictionary" class="headerlink" title="Lists, Tuples, and Dictionary"></a><strong>Lists, Tuples, and Dictionary</strong></h1><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://dschloe.github.io/python/python_edu/01_basic/chapter_3_1_lists_and_tuples">* 출처: dschloe.github.io</a></p>
-<h2 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h2><ul>
+            <h1><strong>Lists, Tuples, and Dictionary</strong></h1>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://dschloe.github.io/python/python_edu/01_basic/chapter_3_1_lists_and_tuples">* 출처: dschloe.github.io</a></p>
+<h2 id="Lists">Lists</h2>
+<ul>
 <li>List는 [] 형태로 정의</li>
 <li>List는 정렬(ordered)됨</li>
 <li>List는 다양한 형태의 데이터 유형을 담을 수 있음</li>
@@ -239,53 +241,51 @@ ga('send', 'pageview');
 <li>List는 변하기 쉬움</li>
 <li>List는 동적임</li>
 </ul>
-<h3 id="1-List는-정렬-ordered-됨"><a href="#1-List는-정렬-ordered-됨" class="headerlink" title="1) List는 정렬(ordered)됨"></a>1) List는 정렬(ordered)됨</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 파이썬의 기초 자료형</span>
+<h3 id="1-List는-정렬-ordered-됨">1) List는 정렬(ordered)됨</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 파이썬의 기초 자료형</span>
 alphabet <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>alphabet<span class="token punctuation">)</span>
 
 <span class="token comment"># List 자료형은 Matplolib 시각화에, Numpy 기초 자료(행렬, 딥러닝 연산에 자주 활용)로 활용됨</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>[[&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;, &#39;d&#39;]]</code></pre>
+<pre><code>[['a', 'b'], ['c', 'd']]
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># a1 = a2?</span>
 a1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
 a2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
 
 a1 <span class="token operator">==</span> a2
 <span class="token comment"># False가 나온 이유? 순서가 다르면 서로 다른 자료</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>False</code></pre>
-<h3 id="2-다양한-형태의-List"><a href="#2-다양한-형태의-List" class="headerlink" title="2) 다양한 형태의 List"></a>2) 다양한 형태의 List</h3><ul>
+<pre><code>False
+</code></pre>
+<h3 id="2-다양한-형태의-List">2) 다양한 형태의 List</h3>
+<ul>
 <li>리스트 하나에 여러 형태의 자료를 담을 수 있다</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">multi_values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">11.1</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>multi_values<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>[11.1, &#39;foo&#39;, 3, 5, True]</code></pre>
+<pre><code>[11.1, 'foo', 3, 5, True]
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">float</span> <span class="token comment"># 하나의 함수이자 클래스, List에 담을 수도 있음</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre><code>float</code></pre>
+<pre><code>float
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">len</span> <span class="token comment"># 값의 길이, 값이 몇 개인지 표시, 하나의 함수지만 List에 담을 수 있음</span>
 <span class="token builtin">len</span><span class="token punctuation">(</span>multi_values<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>5</code></pre>
+<pre><code>5
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 사용자 정의 함수, List에 담을 수 있음</span>
 <span class="token keyword">def</span> <span class="token function">temp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">pass</span>
 
 temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&lt;function __main__.temp()&gt;</code></pre>
+<pre><code>&lt;function __main__.temp()&gt;
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 리스트에 다양한 형태 담아보기</span>
 fun_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">,</span> temp<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>fun_list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre><code>[&lt;class &#39;float&#39;&gt;, &lt;function temp at 0x000001D5446B4700&gt;, &lt;built-in function len&gt;]</code></pre>
-<h3 id="3-List-접근-방법-index"><a href="#3-List-접근-방법-index" class="headerlink" title="3) List 접근 방법_index"></a>3) List 접근 방법_index</h3><ul>
+<pre><code>[&lt;class 'float'&gt;, &lt;function temp at 0x000001D5446B4700&gt;, &lt;built-in function len&gt;]
+</code></pre>
+<h3 id="3-List-접근-방법-index">3) List 접근 방법_index</h3>
+<ul>
 <li>순서는 <code>0</code>부터 시작</li>
 <li>역순으로 할 경우 <code>-1</code>부터 시작</li>
 </ul>
@@ -293,17 +293,13 @@ fun_list <span class="token operator">=</span> <span class="token punctuation">[
 
 <span class="token comment"># python에서 순서는 '0'부터 시작</span>
 alphabet_temp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;A&#39;</code></pre>
+<pre><code>'A'
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Negative List</span>
 <span class="token comment"># python에서 거꾸로 지시하는 순서는 ''-1'부터 시작</span>
 alphabet_temp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;E&#39;</code></pre>
+<pre><code>'E'
+</code></pre>
 <p>*** 슬라이싱**</p>
 <ul>
 <li>‘:’ 기호를 이용해 연속한 데이터를 슬라이싱해서 추출</li>
@@ -312,136 +308,108 @@ alphabet_temp<span class="token punctuation">[</span><span class="token operator
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># alphabet 슬라이싱으로 추출해보기</span>
 alphabet_temp<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;C&#39;, &#39;D&#39;]</code></pre>
+<pre><code>['C', 'D']
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">alphabet_temp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;]</code></pre>
-<h3 id="4-List-안에-List-담기"><a href="#4-List-안에-List-담기" class="headerlink" title="4) List 안에 List 담기"></a>4) List 안에 List 담기</h3><ul>
+<pre><code>['A', 'B', 'C', 'D', 'E']
+</code></pre>
+<h3 id="4-List-안에-List-담기">4) List 안에 List 담기</h3>
+<ul>
 <li>List 안에 다양한 데이터를 넣을 수 있는데, 여기에는 List도 포함됨</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'bb'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'ccc'</span><span class="token punctuation">,</span> <span class="token string">'ddd'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'ee'</span><span class="token punctuation">,</span> <span class="token string">'ff'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'hh'</span><span class="token punctuation">,</span> <span class="token string">'ii'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'j'</span><span class="token punctuation">]</span>
 x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;a&#39;, [&#39;bb&#39;, [&#39;ccc&#39;, &#39;ddd&#39;], &#39;ee&#39;, &#39;ff&#39;], &#39;g&#39;, [&#39;hh&#39;, &#39;ii&#39;], &#39;j&#39;]</code></pre>
+<pre><code>['a', ['bb', ['ccc', 'ddd'], 'ee', 'ff'], 'g', ['hh', 'ii'], 'j']
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 인덱스로 접근해보기</span>
 x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;a&#39;</code></pre>
+<pre><code>'a'
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;bb&#39;, [&#39;ccc&#39;, &#39;ddd&#39;], &#39;ee&#39;, &#39;ff&#39;]</code></pre>
+<pre><code>['bb', ['ccc', 'ddd'], 'ee', 'ff']
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment"># x의 2번째 list 중 1번째 값 불러오기</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;bb&#39;</code></pre>
+<pre><code>'bb'
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment"># x의 2번째 list 중, 2번째 list의 1번째 값 불러오기</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;ccc&#39;</code></pre>
+<pre><code>'ccc'
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment"># x의 5번째 list 중, 1번째 값 불러오기</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;hh&#39;</code></pre>
-<h3 id="5-List는-변하기-쉬움"><a href="#5-List는-변하기-쉬움" class="headerlink" title="5) List는 변하기 쉬움"></a>5) List는 변하기 쉬움</h3><ul>
+<pre><code>'hh'
+</code></pre>
+<h3 id="5-List는-변하기-쉬움">5) List는 변하기 쉬움</h3>
+<ul>
 <li>Mutable</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">message <span class="token operator">=</span> <span class="token string">"string immutable"</span>
 message<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;s&#39;</code></pre>
+<pre><code>'s'
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 문자열은 바로 치환되지 않아 에러가 나타남 = Immutable</span>
 message<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'p'</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre><code>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
 &lt;ipython-input-45-e59a77b7a4e6&gt; in &lt;module&gt;
       1 # 문자열은 바로 치환되지 않아 에러가 나타남 = Immutable
-----&gt; 2 message[0] = &#39;p&#39;
+----&gt; 2 message[0] = 'p'
       3 print(message)
 
 
-TypeError: &#39;str&#39; object does not support item assignment</code></pre>
+TypeError: 'str' object does not support item assignment
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># List의 경우 살펴보기</span>
 a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">,</span> <span class="token string">'qux'</span><span class="token punctuation">,</span> <span class="token string">'quux'</span><span class="token punctuation">,</span> <span class="token string">'corge'</span><span class="token punctuation">]</span>
 a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;bar&#39;</code></pre>
+<pre><code>'bar'
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">10</span>
 a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;foo&#39;, 10, &#39;baz&#39;, &#39;qux&#39;, &#39;quux&#39;, &#39;corge&#39;]</code></pre>
+<pre><code>['foo', 10, 'baz', 'qux', 'quux', 'corge']
+</code></pre>
 <ul>
 <li>string에서 바뀌지 않던 것이 list에서는 쉽게 바뀜</li>
-<li>쉽게 바뀌는 list의 성질을 <code>Mutable</code>이라고 표현<br>(Tuple은 immutable)</li>
+<li>쉽게 바뀌는 list의 성질을 <code>Mutable</code>이라고 표현<br>
+(Tuple은 immutable)</li>
 </ul>
-<h3 id="6-List는-동적임"><a href="#6-List는-동적임" class="headerlink" title="6) List는 동적임"></a>6) List는 동적임</h3><ul>
+<h3 id="6-List는-동적임">6) List는 동적임</h3>
+<ul>
 <li>Mutable이라는 뜻 자체가 매우 동적임을 나타냄</li>
 <li>다양한 형태로 작업이 가능함</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">,</span> <span class="token string">'F'</span><span class="token punctuation">]</span>
 temp<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
 temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, 1, 2, 3, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]</code></pre>
+<pre><code>['A', 'B', 'C', 1, 2, 3, 'D', 'E', 'F']
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># list에 값 추가하기</span>
 temp <span class="token operator">+=</span> <span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span>
 temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, 1, 2, 3, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, 1000]</code></pre>
+<pre><code>['A', 'B', 'C', 1, 2, 3, 'D', 'E', 'F', 1000]
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># list에서 값 삭제하기</span>
 temp<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, 1000]</code></pre>
+<pre><code>['A', 'B', 'C', 'D', 'E', 'F', 1000]
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">del</span> temp<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span>
 temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]</code></pre>
-<h2 id="Tuples"><a href="#Tuples" class="headerlink" title="Tuples"></a>Tuples</h2><ul>
+<pre><code>['A', 'B', 'C', 'D', 'E', 'F']
+</code></pre>
+<h2 id="Tuples">Tuples</h2>
+<ul>
 <li>Lists와 비슷하지만 세부 특성이 다름</li>
 <li>List는 []로 표현하나, Tuple은 ()라고 표현</li>
 <li>Tuple은 immutable: 처음부터 바꾸는 것 외에는 방법이 없음</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">temp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">,</span> <span class="token string">'F'</span><span class="token punctuation">)</span>
 temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>(&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;)</code></pre>
+<pre><code>('A', 'B', 'C', 'D', 'E', 'F')
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># immutable이기 때문에 바뀌지 않음</span>
 temp<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Cat"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre><code>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
@@ -451,8 +419,10 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 2 temp[2] = &quot;Cat&quot;
 
 
-TypeError: &#39;tuple&#39; object does not support item assignment</code></pre>
-<h3 id="1-Tuples을-사용하는-이유"><a href="#1-Tuples을-사용하는-이유" class="headerlink" title="1) Tuples을 사용하는 이유?"></a>1) Tuples을 사용하는 이유?</h3><ul>
+TypeError: 'tuple' object does not support item assignment
+</code></pre>
+<h3 id="1-Tuples을-사용하는-이유">1) Tuples을 사용하는 이유?</h3>
+<ul>
 <li>데이터 분석에서 접근하면, 특정 데이터가 변하지 않도록 방지하는 기법</li>
 <li>프로그래밍적으로 Tuple이 List보다 연산 속도가 빠름</li>
 <li>Dictionary도 문자열과 같은 immutable type을 요구</li>
@@ -460,26 +430,21 @@ TypeError: &#39;tuple&#39; object does not support item assignment</code></pre>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">,</span> <span class="token string">"bar"</span><span class="token punctuation">,</span> <span class="token string">"hey"</span><span class="token punctuation">,</span> <span class="token string">"yeah"</span><span class="token punctuation">)</span>
 t<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>(&#39;foo&#39;, &#39;bar&#39;, &#39;hey&#39;, &#39;yeah&#39;)</code></pre>
+<pre><code>('foo', 'bar', 'hey', 'yeah')
+</code></pre>
 <ul>
 <li><strong>Unpacking</strong>: 각각의 <code>element</code>를 다른 이름으로 저장해보기</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">,</span> s3<span class="token punctuation">,</span> s4<span class="token punctuation">)</span> <span class="token operator">=</span> t
 s2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#39;bar&#39;</code></pre>
+<pre><code>'bar'
+</code></pre>
 <ul>
 <li>이때, 반드시 좌우 값이 동일하게 작동해야 함</li>
 <li>만약 좌우 값이 일치하지 않으면 에러가 발생</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 코드를 통해 확인</span>
 <span class="token punctuation">(</span>a1<span class="token punctuation">,</span> a2<span class="token punctuation">,</span> a3<span class="token punctuation">)</span> <span class="token operator">=</span> t<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre><code>---------------------------------------------------------------------------
 
 ValueError                                Traceback (most recent call last)
@@ -488,8 +453,10 @@ ValueError                                Traceback (most recent call last)
 ----&gt; 1 (a1, a2, a3) = t
 
 
-ValueError: too many values to unpack (expected 3)</code></pre>
-<h3 id="2-swap"><a href="#2-swap" class="headerlink" title="2) swap"></a>2) swap</h3><ul>
+ValueError: too many values to unpack (expected 3)
+</code></pre>
+<h3 id="2-swap">2) swap</h3>
+<ul>
 <li>스왑은 맞바꾸다의 뜻</li>
 <li><code>Tuple</code>에서는 매우 쉽게 <code>swap</code>이 가능</li>
 </ul>
@@ -499,34 +466,36 @@ a2 <span class="token operator">=</span> <span class="token string">"evan"</span
 
 temp <span class="token operator">=</span> a1<span class="token punctuation">,</span> v1<span class="token punctuation">,</span> a2 <span class="token comment"># Tuple 형태로 표시됨</span>
 temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>(&#39;chloe&#39;, &#39;loves&#39;, &#39;evan&#39;)</code></pre>
+<pre><code>('chloe', 'loves', 'evan')
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">a1<span class="token punctuation">,</span> a2 <span class="token operator">=</span> a2<span class="token punctuation">,</span> a1
 temp <span class="token operator">=</span> a1<span class="token punctuation">,</span> v1<span class="token punctuation">,</span> a2 <span class="token comment"># Tuple 형태로 표시</span>
 temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>(&#39;evan&#39;, &#39;loves&#39;, &#39;chloe&#39;)</code></pre>
-<h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><ul>
+<pre><code>('evan', 'loves', 'chloe')
+</code></pre>
+<h2 id="Dictionary">Dictionary</h2>
+<ul>
 <li>영어 원뜻 그대로 <code>사전</code>이라는 개념</li>
 <li>Dictionary는 {}로 표현</li>
-<li>List와 유사한 부분이 많음<ul>
+<li>List와 유사한 부분이 많음
+<ul>
 <li>Mutable이라는 뜻을 포함</li>
 <li>다른 Dictionary, List 등을 포함할 수 있음</li>
 </ul>
 </li>
-<li>List와의 차이<ul>
+<li>List와의 차이
+<ul>
 <li>List에서 각 원소에 접근하기 위해 index를 사용</li>
 <li>Dictionary에서는 각 원소에 접근하기 위해 key를 사용</li>
 </ul>
 </li>
 <li>Rename할 때 자주 사용</li>
 </ul>
-<h3 id="1-Dictionary-정의"><a href="#1-Dictionary-정의" class="headerlink" title="1) Dictionary 정의"></a>1) Dictionary 정의</h3><ul>
-<li>Dictionary의 기본적인 문법<pre class="line-numbers language-python" data-language="python"><code class="language-python">d <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+<h3 id="1-Dictionary-정의">1) Dictionary 정의</h3>
+<ul>
+<li>Dictionary의 기본적인 문법</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">d <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
     <span class="token operator">&lt;</span>키<span class="token operator">></span><span class="token punctuation">:</span> <span class="token operator">&lt;</span>값<span class="token operator">></span><span class="token punctuation">,</span>
     <span class="token operator">&lt;</span>키<span class="token operator">></span><span class="token punctuation">:</span> <span class="token operator">&lt;</span>값<span class="token operator">></span><span class="token punctuation">,</span>
       <span class="token punctuation">.</span>
@@ -534,9 +503,6 @@ temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
       <span class="token punctuation">.</span>
     <span class="token operator">&lt;</span>키<span class="token operator">></span><span class="token punctuation">:</span> <span class="token operator">&lt;</span>값<span class="token operator">></span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-</li>
-</ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 국내 야구팀을 Dictionary 형태로 만들기</span>
 kbo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
     <span class="token string">"인천"</span> <span class="token punctuation">:</span> <span class="token string">"SK"</span><span class="token punctuation">,</span>
@@ -545,12 +511,13 @@ kbo <span class="token operator">=</span> <span class="token punctuation">&#123;
 <span class="token punctuation">&#125;</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>kbo<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>&#123;&#39;인천&#39;: &#39;SK&#39;, &#39;수원&#39;: &#39;KT&#39;, &#39;광주&#39;: &#39;기아&#39;&#125;</code></pre>
-<h3 id="2-Dictionary-접근법"><a href="#2-Dictionary-접근법" class="headerlink" title="2) Dictionary 접근법"></a>2) Dictionary 접근법</h3><ul>
+<pre><code>&#123;'인천': 'SK', '수원': 'KT', '광주': '기아'&#125;
+</code></pre>
+<h3 id="2-Dictionary-접근법">2) Dictionary 접근법</h3>
+<ul>
 <li>indexing이 아닌 <code>key 값</code>으로 접근 가능</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>kbo<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># index로 추출할 수 없음</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <pre><code>---------------------------------------------------------------------------
 
 KeyError                                  Traceback (most recent call last)
@@ -559,35 +526,36 @@ KeyError                                  Traceback (most recent call last)
 ----&gt; 1 print(kbo[1]) # index로 추출할 수 없음
 
 
-KeyError: 1</code></pre>
+KeyError: 1
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Dictionary는 key 값을 넣어줘야 호출할 수 있음</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>kbo<span class="token punctuation">[</span><span class="token string">"수원"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>KT</code></pre>
+<pre><code>KT
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Dictionary에 값 추가하기</span>
 kbo<span class="token punctuation">[</span><span class="token string">"대구"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"삼성"</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>kbo<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre><code>&#123;&#39;인천&#39;: &#39;SK&#39;, &#39;수원&#39;: &#39;KT&#39;, &#39;광주&#39;: &#39;기아&#39;, &#39;대구&#39;: &#39;삼성&#39;&#125;</code></pre>
+<pre><code>&#123;'인천': 'SK', '수원': 'KT', '광주': '기아', '대구': '삼성'&#125;
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Dictionary에서 값 삭제하기</span>
 <span class="token keyword">del</span> kbo<span class="token punctuation">[</span><span class="token string">"대구"</span><span class="token punctuation">]</span>
 kbo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#123;&#39;인천&#39;: &#39;SK&#39;, &#39;수원&#39;: &#39;KT&#39;, &#39;광주&#39;: &#39;기아&#39;&#125;</code></pre>
-<h3 id="3-Dictionary-Using-Integer"><a href="#3-Dictionary-Using-Integer" class="headerlink" title="3) Dictionary Using Integer"></a>3) Dictionary Using Integer</h3><ul>
+<pre><code>&#123;'인천': 'SK', '수원': 'KT', '광주': '기아'&#125;
+</code></pre>
+<h3 id="3-Dictionary-Using-Integer">3) Dictionary Using Integer</h3>
+<ul>
 <li>이전까지 접근한 것은 문자를 이요해 접근</li>
 <li><code>Integer</code>로 활용하는 방법은?</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">dic <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">:</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">:</span> <span class="token string">'d'</span><span class="token punctuation">&#125;</span>
 dic<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#123;0: &#39;a&#39;, 1: &#39;b&#39;, 2: &#39;c&#39;, 3: &#39;d&#39;&#125;</code></pre>
+<pre><code>&#123;0: 'a', 1: 'b', 2: 'c', 3: 'd'&#125;
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <pre><code>a
-b</code></pre>
+b
+</code></pre>
 <p>*** 주의할 점**</p>
 <ul>
 <li>dic는 <code>list</code>가 아님</li>
@@ -595,7 +563,6 @@ b</code></pre>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 에러 1: dictionary에는 append라는 속성값이 없음</span>
 dic<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre><code>---------------------------------------------------------------------------
 
 AttributeError                            Traceback (most recent call last)
@@ -605,10 +572,10 @@ AttributeError                            Traceback (most recent call last)
 ----&gt; 2 dic.append(&quot;e&quot;)
 
 
-AttributeError: &#39;dict&#39; object has no attribute &#39;append&#39;</code></pre>
+AttributeError: 'dict' object has no attribute 'append'
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 에러 2: slice 작동하지 않음</span>
 dic<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre><code>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
@@ -618,31 +585,32 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 2 dic[0:2]
 
 
-TypeError: unhashable type: &#39;slice&#39;</code></pre>
-<h3 id="4-Dictionary와-관련된-함수-소개"><a href="#4-Dictionary와-관련된-함수-소개" class="headerlink" title="4) Dictionary와 관련된 함수 소개"></a>4) Dictionary와 관련된 함수 소개</h3><ul>
+TypeError: unhashable type: 'slice'
+</code></pre>
+<h3 id="4-Dictionary와-관련된-함수-소개">4) Dictionary와 관련된 함수 소개</h3>
+<ul>
 <li>Dictionary와 함께 사용하면 좋은 함수들</li>
 </ul>
-<h4 id="d-clear"><a href="#d-clear" class="headerlink" title="d.clear()"></a>d.clear()</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">dic <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">&#125;</span>
+<h4 id="d-clear">d.clear()</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">dic <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">&#125;</span>
 dic<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#123;&#39;A&#39;: 1, &#39;B&#39;: 2, &#39;C&#39;: 3&#125;</code></pre>
+<pre><code>&#123;'A': 1, 'B': 2, 'C': 3&#125;
+</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># clear() 함수 적용 뒤 결괏값 확인</span>
 dic<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
 dic<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre><code>&#123;&#125;</code></pre>
-<h4 id="d-get"><a href="#d-get" class="headerlink" title="d.get()"></a>d.get()</h4><ul>
+<pre><code>&#123;&#125;
+</code></pre>
+<h4 id="d-get">d.get()</h4>
+<ul>
 <li><code>key</code> 값을 활용해서 <code>value</code> 값을 가져오는 함수</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">dic <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">&#125;</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'B'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'Z'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre><code>2
-None</code></pre>
+None
+</code></pre>
 <ul>
 <li>.get(‘B’)에 해당하는 Dictionary값이 존재하기 때문에 2를 반환</li>
 <li>.get(‘Z’)에 해당하는 Dictionary값이 존재하지 않기 때문에 None을 반환</li>
@@ -651,9 +619,12 @@ None</code></pre>
 <span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">,</span> <span class="token string">"없음"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre><code>0
-없음</code></pre>
-<h3 id="d-keys"><a href="#d-keys" class="headerlink" title="d.keys()"></a>d.keys()</h3><ul>
-<li>Dictionary는 key와 value로 구성되어 있는데, keys()의 뜻은 현재 구성된 Dictionary에서 keys()를 dict_keys 형태로 반환<ul>
+없음
+</code></pre>
+<h3 id="d-keys">d.keys()</h3>
+<ul>
+<li>Dictionary는 key와 value로 구성되어 있는데, keys()의 뜻은 현재 구성된 Dictionary에서 keys()를 dict_keys 형태로 반환
+<ul>
 <li>이때, list로 변환하려면 list()를 활용하면 됨</li>
 </ul>
 </li>
@@ -661,16 +632,19 @@ None</code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">dic <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">&#125;</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre><code>dict_keys([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;])
-[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]</code></pre>
-<h4 id="d-values"><a href="#d-values" class="headerlink" title="d.values()"></a>d.values()</h4><ul>
+<pre><code>dict_keys(['A', 'B', 'C'])
+['A', 'B', 'C']
+</code></pre>
+<h4 id="d-values">d.values()</h4>
+<ul>
 <li>keys()를 활용하여 key를 반환한 것처럼, values()를 활용하여 value 진행 가능</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">dic <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">&#125;</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre><code>dict_values([1, 2, 3])
-[1, 2, 3]</code></pre>
+[1, 2, 3]
+</code></pre>
 
         </div>
         <footer class="article-footer">
@@ -678,7 +652,7 @@ None</code></pre>
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/11/09/ch3_1&2_lists_tuples_and_dictionary/" data-id="ckkwkiege0002douef1u59se6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/11/09/ch3_1&2_lists_tuples_and_dictionary/" data-id="ckl2d8i1z00017cuedpixh54m" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -756,8 +730,10 @@ None</code></pre>
         "dateCreated": "2020-11-09",
         "dateModified": "2021-01-20",
         "url": "https://ne-choi.github.io//2020/11/09/ch3_1&2_lists_tuples_and_dictionary/",
-        "description": "Lists, Tuples, and Dictionary* 출처: dschloe.github.io
+        "description": "Lists, Tuples, and Dictionary
+* 출처: dschloe.github.io
 Lists
+
 List는 [] 형태로 정의
 List는 정렬(ordered)됨
 List는 다양한 형태의 데이터 유형을 담을 수 있음
@@ -766,8 +742,8 @@ List 안에 또 List를 담을 수 있음
 List는 변하기 쉬움
 List는 동적임
 
-1) Li",
-        "wordCount": 2655,
+1) ",
+        "wordCount": 2559,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",
