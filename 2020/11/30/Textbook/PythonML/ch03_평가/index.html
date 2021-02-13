@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="파이썬머신러닝완벽가이드,정확도,재현율,F1스코어">
     
-    <meta name="description" content="출처: 파이썬 머신러닝 완벽가이드  Chapter 03. 평가   머신러닝 구성: 데이터 가공&#x2F;변환, 모델 학습&#x2F;예측, 평가(Evaluation) 프로세스로 구성   성능 평가 지표(Evaluation Metric): 모델이 분류인지 회귀인지에 따라 여러 종류로 나뉨   회귀: 대부분 실제값과 예측값의 오차 평균값에 기반  ex) 오차에 절댓값을 씌운 뒤">
+    <meta name="description" content="출처: 파이썬 머신러닝 완벽가이드  Chapter 03. 평가 머신러닝 구성: 데이터 가공&#x2F;변환, 모델 학습&#x2F;예측, 평가(Evaluation) 프로세스로 구성   성능 평가 지표(Evaluation Metric): 모델이 분류인지 회귀인지에 따라 여러 종류로 나뉨     회귀: 대부분 실제값과 예측값의 오차 평균값에 기반    ex) 오차에 절댓값을 씌운">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ch03. 평가">
 <meta property="og:url" content="https://ne-choi.github.io/2020/11/30/Textbook/PythonML/ch03_%ED%8F%89%EA%B0%80/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="출처: 파이썬 머신러닝 완벽가이드  Chapter 03. 평가   머신러닝 구성: 데이터 가공&#x2F;변환, 모델 학습&#x2F;예측, 평가(Evaluation) 프로세스로 구성   성능 평가 지표(Evaluation Metric): 모델이 분류인지 회귀인지에 따라 여러 종류로 나뉨   회귀: 대부분 실제값과 예측값의 오차 평균값에 기반  ex) 오차에 절댓값을 씌운 뒤">
+<meta property="og:description" content="출처: 파이썬 머신러닝 완벽가이드  Chapter 03. 평가 머신러닝 구성: 데이터 가공&#x2F;변환, 모델 학습&#x2F;예측, 평가(Evaluation) 프로세스로 구성   성능 평가 지표(Evaluation Metric): 모델이 분류인지 회귀인지에 따라 여러 종류로 나뉨     회귀: 대부분 실제값과 예측값의 오차 평균값에 기반    ex) 오차에 절댓값을 씌운">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ne-choi.github.io/2020/11/30/Textbook/PythonML/images/machine_learning/output_31_0.png">
 <meta property="article:published_time" content="2020-11-29T15:00:00.000Z">
@@ -233,35 +233,27 @@ ga('send', 'pageview');
             <ul>
 <li>출처: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://book.naver.com/bookdb/book_detail.nhn?bid=16238302">파이썬 머신러닝 완벽가이드</a></li>
 </ul>
-<h1>Chapter 03. 평가</h1>
+<h1 id="Chapter-03-평가"><a href="#Chapter-03-평가" class="headerlink" title="Chapter 03. 평가"></a>Chapter 03. 평가</h1><ul>
+<li><strong>머신러닝 구성</strong>: 데이터 가공/변환, 모델 학습/예측, 평가(Evaluation) 프로세스로 구성  </li>
+<li><strong>성능 평가 지표(Evaluation Metric)</strong>: 모델이 분류인지 회귀인지에 따라 여러 종류로 나뉨  </li>
+</ul>
 <ul>
-<li>
-<p><strong>머신러닝 구성</strong>: 데이터 가공/변환, 모델 학습/예측, 평가(Evaluation) 프로세스로 구성</p>
-</li>
-<li>
-<p><strong>성능 평가 지표(Evaluation Metric)</strong>: 모델이 분류인지 회귀인지에 따라 여러 종류로 나뉨</p>
-</li>
-<li>
-<p><strong>회귀</strong>: 대부분 실제값과 예측값의 오차 평균값에 기반</p>
+<li><p><strong>회귀</strong>: 대부분 실제값과 예측값의 오차 평균값에 기반  </p>
 <ul>
-<li>ex) 오차에 절댓값을 씌운 뒤 평균 오차를 구하거나 오차의 제곱값에 루트를 씌운 뒤, 평균 오차를 구하는 방법<br>
-→ 기본적으로 예측 오차를 가지고 정규화 수준을 재가공하는 방법 (5장에서 다시 설명)</li>
+<li>ex) 오차에 절댓값을 씌운 뒤 평균 오차를 구하거나 오차의 제곱값에 루트를 씌운 뒤, 평균 오차를 구하는 방법<br>→ 기본적으로 예측 오차를 가지고 정규화 수준을 재가공하는 방법 (5장에서 다시 설명)  </li>
 </ul>
 </li>
-<li>
-<p><strong>분류</strong>: 일반적으로는 실제 결과 데이터와 예측 결과 데이터가 얼마나 정확하고 오류가 적게 발생하는가에 기반</p>
+<li><p><strong>분류</strong>: 일반적으로는 실제 결과 데이터와 예측 결과 데이터가 얼마나 정확하고 오류가 적게 발생하는가에 기반</p>
 <ul>
-<li>단, 단순히 이러한 정확도만 가지고 판단할 경우 잘못된 평가 결과로 빠질 수 있음</li>
+<li>단, 단순히 이러한 정확도만 가지고 판단할 경우 잘못된 평가 결과로 빠질 수 있음  </li>
 </ul>
 </li>
-<li>
-<p>0과 1로 결정값이 한정되는 이진 분류의 성능 평가 지표에 관해 집중적으로 살펴볼 예정</p>
+<li><p>0과 1로 결정값이 한정되는 이진 분류의 성능 평가 지표에 관해 집중적으로 살펴볼 예정  </p>
 <ul>
-<li>0이냐 1이냐 혹은 긍정/부정을 판단하는 이진 분류에서는, 정확도보다는 다른 성능 평가 지표가 더 중요시되는 경우가 많음</li>
+<li>0이냐 1이냐 혹은 긍정/부정을 판단하는 이진 분류에서는, 정확도보다는 다른 성능 평가 지표가 더 중요시되는 경우가 많음  </li>
 </ul>
 </li>
-<li>
-<p><strong>분류의 성능 평가 지표</strong></p>
+<li><p><strong>분류의 성능 평가 지표</strong></p>
 <ul>
 <li>정확도(Accuracy)</li>
 <li>오차행렬(Confusion Matrix)</li>
@@ -271,37 +263,31 @@ ga('send', 'pageview');
 <li>ROC AUC</li>
 </ul>
 </li>
-<li>
-<p><strong>분류의 나눔</strong></p>
+<li><p><strong>분류의 나눔</strong></p>
 <ul>
 <li>이진 분류: 결정 클래스 값 종류 유형에 따라 긍정/부정과 같은 2개의 결괏값만을 가짐</li>
 <li>멀티 분류: 여러 개의 결정 클래스 값을 가지는 멀티 분류</li>
 </ul>
 </li>
 </ul>
-<h2 id="01-정확도-Accuracy">01. 정확도(Accuracy)</h2>
+<h2 id="01-정확도-Accuracy"><a href="#01-정확도-Accuracy" class="headerlink" title="01. 정확도(Accuracy)"></a>01. 정확도(Accuracy)</h2><ul>
+<li><p><strong>정확도</strong>: 실제 데이터에서 예측 데이터가 얼마나 같은지 판단하는 지표<br>$$ 정확도(Accuracy) = \frac{예측 결과가 동일한 데이터 수}{전체 예측 데이터 수} $$</p>
 <ul>
-<li>
-<p><strong>정확도</strong>: 실제 데이터에서 예측 데이터가 얼마나 같은지 판단하는 지표<br>
-$$ 정확도(Accuracy) = \frac{예측 결과가 동일한 데이터 수}{전체 예측 데이터 수} $$</p>
-<ul>
-<li>정확도는 직관적으로 모델 예측 성능을 나타내는 평가 지표</li>
-<li>단, 이진 분류의 경우 데이터 구성에 따라 ML 모델 성능을 왜곡할 수 있어서 정확도 수치 하나로만 성능을 평가하지 않음</li>
+<li>정확도는 직관적으로 모델 예측 성능을 나타내는 평가 지표  </li>
+<li>단, 이진 분류의 경우 데이터 구성에 따라 ML 모델 성능을 왜곡할 수 있어서 정확도 수치 하나로만 성능을 평가하지 않음  </li>
 </ul>
 </li>
 </ul>
 <p><strong>- 예시</strong></p>
 <ul>
-<li>2장의 타이타닉 예제 수행 결과를 보면 정확도의 한계를 볼 수 있음</li>
-<li>ML 알고리즘을 적용한 후 예측 정확도 결과가 보통 80%대였지만, 탑승객이 남자인 경우보다 여자인 경우 생존 확률이 높았기 때문에 별다른 알고리즘 적용 없이 성별이 여자인 경우 무조건 생존, 남자인 경우 사망으로 예측 결과를 예측해도 비슷한 수치가 나올 수 있음<br>
-→ 성별 조건 하나만으로 결정하는 수준 낮은 알고리즘도 높은 정확도를 나타내는 상황이 발생할 수 있음</li>
+<li>2장의 타이타닉 예제 수행 결과를 보면 정확도의 한계를 볼 수 있음  </li>
+<li>ML 알고리즘을 적용한 후 예측 정확도 결과가 보통 80%대였지만, 탑승객이 남자인 경우보다 여자인 경우 생존 확률이 높았기 때문에 별다른 알고리즘 적용 없이 성별이 여자인 경우 무조건 생존, 남자인 경우 사망으로 예측 결과를 예측해도 비슷한 수치가 나올 수 있음<br>→ 성별 조건 하나만으로 결정하는 수준 낮은 알고리즘도 높은 정확도를 나타내는 상황이 발생할 수 있음  </li>
 </ul>
 <p><strong>- 추가 실습</strong></p>
 <ul>
-<li>사이킷런의 BaseEstimator 클래스를 상속받아 아무런 학습을 하지 않고, 성별에 따라 생존자를 예측하는 단순한 Classifier를 생성</li>
-<li>(사이킷런은 BaseEstimator를 상속받으면 Customized 형태의 Estimator를 개발자가 생성할 수 있게 함)
-<ul>
-<li>MyDummyClassifier 클래스: 학습을 수행하는 fit() 메서드는 아무것도 수행하지 않고, 예측을 수행하는 predict() 메서드는 단순이 Sex 피처가 1이면 0, 그렇지 않으면 1로 예측하는 매우 단순한 Classifier</li>
+<li>사이킷런의 BaseEstimator 클래스를 상속받아 아무런 학습을 하지 않고, 성별에 따라 생존자를 예측하는 단순한 Classifier를 생성  </li>
+<li>(사이킷런은 BaseEstimator를 상속받으면 Customized 형태의 Estimator를 개발자가 생성할 수 있게 함)  <ul>
+<li>MyDummyClassifier 클래스: 학습을 수행하는 fit() 메서드는 아무것도 수행하지 않고, 예측을 수행하는 predict() 메서드는 단순이 Sex 피처가 1이면 0, 그렇지 않으면 1로 예측하는 매우 단순한 Classifier  </li>
 </ul>
 </li>
 </ul>
@@ -310,6 +296,7 @@ $$ 정확도(Accuracy) = \frac{예측 결과가 동일한 데이터 수}{전체 
 <span class="token keyword">from</span> IPython<span class="token punctuation">.</span>display <span class="token keyword">import</span> Image
 <span class="token keyword">import</span> warnings 
 warnings<span class="token punctuation">.</span>filterwarnings<span class="token punctuation">(</span><span class="token string">'ignore'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>base <span class="token keyword">import</span> BaseEstimator
 
 <span class="token keyword">class</span> <span class="token class-name">MyDummyClassifier</span><span class="token punctuation">(</span>BaseEstimator<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -325,6 +312,7 @@ warnings<span class="token punctuation">.</span>filterwarnings<span class="token
             <span class="token keyword">else</span> <span class="token punctuation">:</span>
                 pred<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span> 
         <span class="token keyword">return</span> pred<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">## 생성된 MyDummyClassifier를 이용해 타이타닉 생존자 예측 수행</span>
 
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
@@ -360,6 +348,7 @@ warnings<span class="token punctuation">.</span>filterwarnings<span class="token
     df <span class="token operator">=</span> drop_features<span class="token punctuation">(</span>df<span class="token punctuation">)</span>
     df <span class="token operator">=</span> format_features<span class="token punctuation">(</span>df<span class="token punctuation">)</span>
     <span class="token keyword">return</span> df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 원본 데이터를 재로딩, 데이터 가공, 학습 데이터/테스트 데이터 분할</span>
 titanic_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'../data/titanic/train.csv'</span><span class="token punctuation">)</span>
 y_titanic_df <span class="token operator">=</span> titanic_df<span class="token punctuation">[</span><span class="token string">'Survived'</span><span class="token punctuation">]</span>
@@ -376,35 +365,29 @@ mypredictions <span class="token operator">=</span> myclf<span class="token punc
 <pre><code>Dummy Classifier의 정확도는: 0.7877
 </code></pre>
 <ul>
-<li>
-<p>단순한 알고리즘으로 예측하더라도 데이터 구성에 따라 정확도 결과는 약 78.77%로 꽤 높은 수치가 나올 수 있음<br>
-→ 정확도를 평가 지표로 사용할 때는 신중할 필요가 있음</p>
-</li>
-<li>
-<p>특히, 불균형한(imbalanced) 레이블 값 분포에서 ML 모델의 성능을 판단할 경우, 적합한 평가 지표가 아님</p>
+<li>단순한 알고리즘으로 예측하더라도 데이터 구성에 따라 정확도 결과는 약 78.77%로 꽤 높은 수치가 나올 수 있음<br>→ 정확도를 평가 지표로 사용할 때는 신중할 필요가 있음  </li>
+</ul>
 <ul>
-<li>ex) 100개의 데이터가 있고 이 중 90개의 데이터 레이블이 0, 단 10개의 데이터 레이블이 1이라고 한다면 무조건 0으로 예측 결과를 반환하는 ML 모델의 경우라도 정확도가 90%가 됨</li>
+<li>특히, 불균형한(imbalanced) 레이블 값 분포에서 ML 모델의 성능을 판단할 경우, 적합한 평가 지표가 아님  <ul>
+<li>ex) 100개의 데이터가 있고 이 중 90개의 데이터 레이블이 0, 단 10개의 데이터 레이블이 1이라고 한다면 무조건 0으로 예측 결과를 반환하는 ML 모델의 경우라도 정확도가 90%가 됨  </li>
 </ul>
 </li>
 </ul>
-<p><strong>- MNIST 데이터 세트로 살펴보기</strong></p>
+<p><strong>- MNIST 데이터 세트로 살펴보기</strong>  </p>
 <ul>
-<li>
-<p>MNIST 데이터 세트를 변환해 불균형한 데이터 세트로 만든 뒤, 정확도 지표 적용 시 발생하는 문제 살펴보기</p>
-<ul>
-<li>MNIST 데이터 세트는 0부터 9까지 숫자 이미지 픽셀 정보를 가지고 있으며, 숫자 Digit를 예측하는데 사용됨</li>
-<li>사이킷런은 load_digits() API를 통해 MNIST 데이터 세트를 제공</li>
+<li>MNIST 데이터 세트를 변환해 불균형한 데이터 세트로 만든 뒤, 정확도 지표 적용 시 발생하는 문제 살펴보기  <ul>
+<li>MNIST 데이터 세트는 0부터 9까지 숫자 이미지 픽셀 정보를 가지고 있으며, 숫자 Digit를 예측하는데 사용됨  </li>
+<li>사이킷런은 load_digits() API를 통해 MNIST 데이터 세트를 제공  </li>
 </ul>
 </li>
-<li>
-<p>원래 MNIST 데이터 세트는 레이블 값이 0부터 9까지 있는 멀티 레이블 분류를 위한 것이나, 이를 레이블 값이 7인 것만 True, 나머지 값은 모두 False로 변환해 이진 분류 문제로 바꾸어 실습<br>
-→ 전체 데이터의 10%만 True, 나머지 90%는 False인 불균형한 데이터 세트로 변형</p>
-</li>
-<li>
-<p>MNIST 데이터셋을 multi classification에서 binary classification으로 변경</p>
+</ul>
 <ul>
-<li>불균형한 데이터 세트에 모든 데이터를 False로, 즉 0으로 예측하는 classifier를 이용해 정확도를 측정하면 약 90%에 가까운 예측 정확도를 나타냄</li>
-<li>아무것도 하지 않고 무조건 특정한 결과로 찍어도 데이터 분포도가 균일하지 않은 경우, 높은 수치가 나타날 수 있음</li>
+<li>원래 MNIST 데이터 세트는 레이블 값이 0부터 9까지 있는 멀티 레이블 분류를 위한 것이나, 이를 레이블 값이 7인 것만 True, 나머지 값은 모두 False로 변환해 이진 분류 문제로 바꾸어 실습<br>→ 전체 데이터의 10%만 True, 나머지 90%는 False인 불균형한 데이터 세트로 변형  </li>
+</ul>
+<ul>
+<li>MNIST 데이터셋을 multi classification에서 binary classification으로 변경  <ul>
+<li>불균형한 데이터 세트에 모든 데이터를 False로, 즉 0으로 예측하는 classifier를 이용해 정확도를 측정하면 약 90%에 가까운 예측 정확도를 나타냄  </li>
+<li>아무것도 하지 않고 무조건 특정한 결과로 찍어도 데이터 분포도가 균일하지 않은 경우, 높은 수치가 나타날 수 있음   </li>
 </ul>
 </li>
 </ul>
@@ -449,144 +432,124 @@ dtype: int64
 모든 예측을 0으로 하여도 정확도는:0.900
 </code></pre>
 <ul>
-<li>단순히 predict() 결과를 np.zero()로 모두 0값으로 반환함에도 불구하고 450개의 테스트 데이터 세트에 수행한 예측 정확도는 90%</li>
-<li>단지 모든 것을 0으로만 예측해도 MyFakeClassifier의 정확도가 90%로 유수의 ML 알고리즘과 비슷한 결과를 냄<br>
-→ 정확도 평가 지표는 불균형한 레이블 데이터 세트에서 성능 세트로 사용해서는 안 됨<br>
-→ 정확도를 분류 평가 지표로 사용 시, 한계를 극복하기 위해 여러 가지 분류 지표를 함께 적용</li>
+<li>단순히 predict() 결과를 np.zero()로 모두 0값으로 반환함에도 불구하고 450개의 테스트 데이터 세트에 수행한 예측 정확도는 90%  </li>
+<li>단지 모든 것을 0으로만 예측해도 MyFakeClassifier의 정확도가 90%로 유수의 ML 알고리즘과 비슷한 결과를 냄<br>→ 정확도 평가 지표는 불균형한 레이블 데이터 세트에서 성능 세트로 사용해서는 안 됨<br>→ 정확도를 분류 평가 지표로 사용 시, 한계를 극복하기 위해 여러 가지 분류 지표를 함께 적용</li>
 </ul>
-<h2 id="02-오차-행렬">02. 오차 행렬</h2>
+<h2 id="02-오차-행렬"><a href="#02-오차-행렬" class="headerlink" title="02. 오차 행렬"></a>02. 오차 행렬</h2><ul>
+<li><p><strong>오차 행렬(confusion matrix, 혼동행렬)</strong></p>
 <ul>
-<li>
-<p><strong>오차 행렬(confusion matrix, 혼동행렬)</strong></p>
-<ul>
-<li>학습된 분류 모델이 예측을 수행하면서 얼마나 헷갈리는지(confused) 보여주는 지표<br>
-→ 이진 분류의 예측 오류가 얼마인지, 어떤 유형의 예측 오류가 발생하는지를 나타내는 지표</li>
+<li>학습된 분류 모델이 예측을 수행하면서 얼마나 헷갈리는지(confused) 보여주는 지표<br>→ 이진 분류의 예측 오류가 얼마인지, 어떤 유형의 예측 오류가 발생하는지를 나타내는 지표  </li>
 </ul>
 </li>
-<li>
-<p>오차 행렬은 4분면 행렬에서 실제 레이블 클래스 값과 예측 레이블 클래스 값이 어떠한 유형을 가지고 매핑되는지를 나타냄</p>
+<li><p>오차 행렬은 4분면 행렬에서 실제 레이블 클래스 값과 예측 레이블 클래스 값이 어떠한 유형을 가지고 매핑되는지를 나타냄  </p>
 <ul>
-<li>4분면의 왼쪽, 오른쪽을 예측된 클래스 값 기준으로 Negative와 Positive로 분류하고 4분면의 위, 아래를 실제 클래스 값 기준으로 Negative와 Positive로 분류하면 예측 클래스와 실제 클래스 값 유형에 따라 결정되는 TN, FP, FN, TP 형태로 오차 행렬의 4분면이 만들어짐</li>
+<li>4분면의 왼쪽, 오른쪽을 예측된 클래스 값 기준으로 Negative와 Positive로 분류하고 4분면의 위, 아래를 실제 클래스 값 기준으로 Negative와 Positive로 분류하면 예측 클래스와 실제 클래스 값 유형에 따라 결정되는 TN, FP, FN, TP 형태로 오차 행렬의 4분면이 만들어짐  </li>
 </ul>
 </li>
-<li>
-<p>True/False: 예측값과 실제값이 같음/틀림, Negative/Positive: 예측 결괏값이 부정(0) / 긍정(1)</p>
+<li><p>True/False: 예측값과 실제값이 같음/틀림, Negative/Positive: 예측 결괏값이 부정(0) / 긍정(1)  </p>
 <ul>
 <li>TN: 예측값을 Negative 값 0으로 예측, 실제 값도 Negative 값 0</li>
 <li>FP: 예측값을 Positive 값 1로 예측, 실제 값은 Negative 값 0</li>
 <li>FN: 예측값을 Negative 값 0으로 예측, 실제 값은 Positive 값 1</li>
-<li>TP: 예측값을 Positive 값 1로 예측, 실제 값도 Positive 값 1</li>
+<li>TP: 예측값을 Positive 값 1로 예측, 실제 값도 Positive 값 1  </li>
 </ul>
 </li>
-<li>
-<p>사이킷런은 오차 행렬을 구하기 위해 confusion_matrix() API를 제공</p>
-</li>
 </ul>
-<p><strong>-</strong> 정확도 예제에서 다룬 MyFakeClassifier의 예측 성능 지표를 오차 행렬로 표현해보기<br>
-(예측 결과인 fakepred와 실제 결과인 y_test를 confusion_matrix()의 인자로 입력해 오차 행렬을 confusion_matrix()를 이용해 배열 형태로 출력)</p>
+<ul>
+<li>사이킷런은 오차 행렬을 구하기 위해 confusion_matrix() API를 제공  </li>
+</ul>
+<p><strong>-</strong> 정확도 예제에서 다룬 MyFakeClassifier의 예측 성능 지표를 오차 행렬로 표현해보기<br>(예측 결과인 fakepred와 실제 결과인 y_test를 confusion_matrix()의 인자로 입력해 오차 행렬을 confusion_matrix()를 이용해 배열 형태로 출력)</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> confusion_matrix
 
 confusion_matrix<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> fakepred<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>array([[405,   0],
        [ 45,   0]], dtype=int64)
 </code></pre>
 <ul>
-<li>
-<p>출력된 오차 행렬은 ndarray 형태</p>
-</li>
-<li>
-<p>이진 분류의 TN, FP, FN, FP는 상단 도표와 동일한 위치를 가지고 array에서 가져올 수 있음<br>
-→ TN은 array[0,0]으로 405, FP는 array[0,1]로 0, FN은 array[1,0]으로 45, TP는 array[1,1]로 0에 해당</p>
-</li>
-<li>
-<p>앞 절의 MyFakeClassifier는 load_digits()에서 target == 7인지 아닌지에 따라 클래스 값을 Ture/False 이진 분류로 변경한 데이터 세트를 사용해서 무조건 Negative로 예측하는 Classifier였고 테스트 데이터 세트의 클래스 값 분포는 0이 405건, 1이 45건</p>
+<li>출력된 오차 행렬은 ndarray 형태  </li>
+<li>이진 분류의 TN, FP, FN, FP는 상단 도표와 동일한 위치를 가지고 array에서 가져올 수 있음<br>→ TN은 array[0,0]으로 405, FP는 array[0,1]로 0, FN은 array[1,0]으로 45, TP는 array[1,1]로 0에 해당   </li>
+</ul>
 <ul>
+<li>앞 절의 MyFakeClassifier는 load_digits()에서 target == 7인지 아닌지에 따라 클래스 값을 Ture/False 이진 분류로 변경한 데이터 세트를 사용해서 무조건 Negative로 예측하는 Classifier였고 테스트 데이터 세트의 클래스 값 분포는 0이 405건, 1이 45건  <ul>
 <li>TN: 전체 450건 데이터 중, 무조건 Negative 0으로 예측해서 True가 된 결과 405건</li>
 <li>FP: Positive 1로 예측한 건수가 없으므로 0건</li>
 <li>FN: Positive 1인 건수 45건을 Negative로 예측해서 False가 된 결과 45건</li>
-<li>TP: Positive 1로 예측한 건수가 없으므로 0건</li>
+<li>TP: Positive 1로 예측한 건수가 없으므로 0건  </li>
 </ul>
 </li>
-<li>
-<p>TP, TN, FP, TN 값은 Classifier 성능의 여러 면모를 판단할 수 있는 기반 정보를 제공</p>
+</ul>
 <ul>
-<li>이 값을 조합해 Classifier 성능을 측정할 수 있는 주요 지표인 정확도(Accuracy), 정밀도(Precision), 재현율(Recall) 값을 알 수 있음</li>
-</ul>
-</li>
-<li>
-<p>cf) 정확도는 예측값과 실제 값이 얼마나 동일한가에 관한 비율만으로 결정<br>
-→ 오차 행렬에서 True에 해당하는 값인 TN과 TP에 좌우됨</p>
-</li>
-<li>
-<p><strong>정확도 = 예측 결과와 실제 값이 동일한 건수 / 전체 데이터 수 = $\frac{TN + TP}{TN + FP + FN + TP}$</strong></p>
-</li>
-<li>
-<p>일반적으로 불균형한 레이블 클래스를 가지는 이진 분류 모델에서는 많은 데이터 중 중점적으로 찾아야 하는 매우 적은 수의 결괏값에 Positive를 설정해 1값을 부여, 그렇지 않은 경우는 Negative로 0값을 부여하는 경우가 많음</p>
+<li><p>TP, TN, FP, TN 값은 Classifier 성능의 여러 면모를 판단할 수 있는 기반 정보를 제공  </p>
 <ul>
-<li>ex) 사기 행위 예측 모델: 사기 행위 Positive 양성, 1 / 정상 행위 Negative 음성, 0<br>
-암 검진 예측 모델: 암이 양성일 경우 Positive 양성, 1 / 암이 음성일 경우 Negative 음성, 0</li>
+<li>이 값을 조합해 Classifier 성능을 측정할 수 있는 주요 지표인 정확도(Accuracy), 정밀도(Precision), 재현율(Recall) 값을 알 수 있음  </li>
 </ul>
 </li>
-<li>
-<p>불균형한 이진 분류 데이터 세트에서는 Positive 데이터 건수가 매우 작기 때문에 데이터에 기반한 ML 알고리즘은 Positive보다는 Negative로 예측 정확도가 높아지는 경향 발생</p>
+<li><p>cf) 정확도는 예측값과 실제 값이 얼마나 동일한가에 관한 비율만으로 결정<br>  → 오차 행렬에서 True에 해당하는 값인 TN과 TP에 좌우됨</p>
+</li>
+</ul>
 <ul>
-<li>10,000건의 데이터 세트에서 9,900건이 Negative고 100건이 Positive라면 Negative로 예측하는 경향이 더 강해 TN은 매우 커지고 TP는 매우 작아짐</li>
-<li>Negative로 예측할 때, 정확도가 높기 때문에 FN(Negative로 예측할 때 틀린 데이터 수)이 매우 작고, Positive로 예측하는 경우가 작기 때문에 FP 역시 작아짐<br>
-→ 정확도 지표는 비대칭한 데이터 세트에서 Positive에 관한 예측 정확도를 판단하지 못한 채 Negative에 관한 예측 정확도만으로도 분류의 정확도가 매우 높게 나타나는 수치적인 판단 오류를 일으킴</li>
+<li><strong>정확도 = 예측 결과와 실제 값이 동일한 건수 / 전체 데이터 수 = $\frac{TN + TP}{TN + FP + FN + TP}$</strong>  </li>
 </ul>
-</li>
-</ul>
-<p><strong>- 정리</strong></p>
 <ul>
-<li>정확도는 분류(Classification) 모델의 성능을 측정할 수 있는 한 가지 요소</li>
-</ul>
-<h2 id="03-정밀도와-재현율">03. 정밀도와 재현율</h2>
-<ul>
-<li>
-<p><strong>정밀도 &amp; 재현율</strong>: Positive 데이터 세트의 예측 성능에 조금 더 초점을 맞춘 평가 지표</p>
-<ul>
-<li>앞서 만든 MyFakeClassifier는 Positive로 예측한 TP 값이 하나도 없기 때문에, 정밀도와 재현율 값이 모두 0</li>
+<li>일반적으로 불균형한 레이블 클래스를 가지는 이진 분류 모델에서는 많은 데이터 중 중점적으로 찾아야 하는 매우 적은 수의 결괏값에 Positive를 설정해 1값을 부여, 그렇지 않은 경우는 Negative로 0값을 부여하는 경우가 많음  <ul>
+<li>ex) 사기 행위 예측 모델: 사기 행위 Positive 양성, 1 / 정상 행위 Negative 음성, 0  <pre><code>암 검진 예측 모델: 암이 양성일 경우 Positive 양성, 1 / 암이 음성일 경우 Negative 음성, 0  
+</code></pre>
+</li>
 </ul>
 </li>
-<li>
-<p>정밀도 = $\frac{TP}{FP + TP}$</p>
+<li>불균형한 이진 분류 데이터 세트에서는 Positive 데이터 건수가 매우 작기 때문에 데이터에 기반한 ML 알고리즘은 Positive보다는 Negative로 예측 정확도가 높아지는 경향 발생  <ul>
+<li>10,000건의 데이터 세트에서 9,900건이 Negative고 100건이 Positive라면 Negative로 예측하는 경향이 더 강해 TN은 매우 커지고 TP는 매우 작아짐  </li>
+<li>Negative로 예측할 때, 정확도가 높기 때문에 FN(Negative로 예측할 때 틀린 데이터 수)이 매우 작고, Positive로 예측하는 경우가 작기 때문에 FP 역시 작아짐<br>→ 정확도 지표는 비대칭한 데이터 세트에서 Positive에 관한 예측 정확도를 판단하지 못한 채 Negative에 관한 예측 정확도만으로도 분류의 정확도가 매우 높게 나타나는 수치적인 판단 오류를 일으킴  </li>
+</ul>
 </li>
-<li>
-<p>재현율 = $\frac{TP}{FN + TP}$</p>
+</ul>
+<p><strong>- 정리</strong>  </p>
+<ul>
+<li>정확도는 분류(Classification) 모델의 성능을 측정할 수 있는 한 가지 요소  </li>
+</ul>
+<h2 id="03-정밀도와-재현율"><a href="#03-정밀도와-재현율" class="headerlink" title="03. 정밀도와 재현율"></a>03. 정밀도와 재현율</h2><ul>
+<li><p><strong>정밀도 &amp; 재현율</strong>: Positive 데이터 세트의 예측 성능에 조금 더 초점을 맞춘 평가 지표  </p>
+<ul>
+<li>앞서 만든 MyFakeClassifier는 Positive로 예측한 TP 값이 하나도 없기 때문에, 정밀도와 재현율 값이 모두 0  </li>
+</ul>
 </li>
-<li>
-<p><strong>정밀도: 예측값을 Positive로 한 대상 중에 예측과 실제 값이 Positive로 일치한 데이터의 비율</strong></p>
+<li><p>정밀도 = $\frac{TP}{FP + TP}$  </p>
+</li>
+<li><p>재현율 = $\frac{TP}{FN + TP}$</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>정밀도: 예측값을 Positive로 한 대상 중에 예측과 실제 값이 Positive로 일치한 데이터의 비율</strong>  </p>
 <ul>
 <li>공식의 분모인 FP + TP: 예측을 Positive로 한 모든 데이터 건수 / 분자인 TP: 예측과 실제 값이 Positive로 일치한 데이터 건수</li>
-<li>Positive 예측 성능을 더욱 정밀히 측정하기 위한 평가 지표로 '양성 예측도’라고도 불림</li>
+<li>Positive 예측 성능을 더욱 정밀히 측정하기 위한 평가 지표로 ‘양성 예측도’라고도 불림  </li>
 </ul>
 </li>
-<li>
-<p><strong>재현율: 실제 값이 Positive인 대상 중에 예측과 실제 값이 Positive로 일치한 데이터의 비율</strong></p>
+<li><p><strong>재현율: 실제 값이 Positive인 대상 중에 예측과 실제 값이 Positive로 일치한 데이터의 비율</strong></p>
 <ul>
 <li>공식의 분모인 FN + TP: 실제 값이 Positive인 모든 데이터 건수 / 분자인 TP: 예측과 실제 값이 Positive로 일치한 데이터 건수</li>
 <li>민감도(Sensitivity) 또는 TPR(True Positive Rate)라고도 불림</li>
 </ul>
 </li>
-<li>
-<p>정밀도와 재현율 지표 중, 이진 분류 모델의 업무 특성에 따라 특정 평가 지표가 더 중요한 지표로 간주될 수 있음</p>
+<li><p>정밀도와 재현율 지표 중, 이진 분류 모델의 업무 특성에 따라 특정 평가 지표가 더 중요한 지표로 간주될 수 있음</p>
 <ul>
 <li>재현율이 중요 지표인 경우: 실제 Positive 양성 데이터를 Negative로 잘못 판단할 시, 업무에 큰 영향이 발생하는 경우</li>
 <li>정밀도가 중요 지표인 경우: 실제 Negative 음성인 데이터 예측을 Positive 양성으로 잘못 판단 시, 업무상 큰 영향이 발생하는 경우</li>
 </ul>
 </li>
 </ul>
-<p><strong>- 정리</strong></p>
+<p><strong>- 정리</strong>  </p>
 <ul>
-<li>재현율과 정밀도 모두 TP를 높이는 데 초점</li>
-<li>재현율은 FN(실제 Positive, 예측 Negative)를 낮추는 데, 정밀도는 FP를 낮추는 데 초점<br>
-→ 서로 보완적인 지표로 분류의 성능을 평가하는 데 적용되며 두 수치 모두 높은 것이 가장 좋은 성능<br>
-(둘 중 어느 한 평가 지표만 매우 높고, 다른 수치는 매우 낮은 경우는 바람직하지 않음)</li>
+<li>재현율과 정밀도 모두 TP를 높이는 데 초점  </li>
+<li>재현율은 FN(실제 Positive, 예측 Negative)를 낮추는 데, 정밀도는 FP를 낮추는 데 초점<br>→ 서로 보완적인 지표로 분류의 성능을 평가하는 데 적용되며 두 수치 모두 높은 것이 가장 좋은 성능<br>   (둘 중 어느 한 평가 지표만 매우 높고, 다른 수치는 매우 낮은 경우는 바람직하지 않음)  </li>
 </ul>
-<p><strong>- ex) 타이타닉 예제</strong></p>
+<p><strong>- ex) 타이타닉 예제</strong>  </p>
 <ul>
-<li>오차 행렬 및 정밀도, 재현율을 모두 구해 예측 성능 평가하기</li>
-<li>사이킷런은 정밀도 계산을 위해 precision_score()를, 재현율 계산을 위해 recall_score()를 API로 제공</li>
+<li>오차 행렬 및 정밀도, 재현율을 모두 구해 예측 성능 평가하기  </li>
+<li>사이킷런은 정밀도 계산을 위해 precision_score()를, 재현율 계산을 위해 recall_score()를 API로 제공  </li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 평가 간편히 적용하기: coufusion, matrix, accuracy, precision, recall 등 평가를 한 번에 호출하는 get_clf_eval() 함수 만들기</span>
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> accuracy_score<span class="token punctuation">,</span> precision_score<span class="token punctuation">,</span> recall_score<span class="token punctuation">,</span> confusion_matrix
@@ -626,23 +589,19 @@ get_clf_eval<span class="token punctuation">(</span>y_test<span class="token pun
 <ul>
 <li>정밀도(Precision)에 비해 재현율(Recall)이 낮게 나옴</li>
 </ul>
-<h3 id="1-정밀도-재현율-트레이드오프">1. 정밀도/재현율 트레이드오프</h3>
-<ul>
-<li>
-<p>분류의 결정 임계값(Threshold)을 조정해 정밀도 또는 재현율의 수치를 높일 수 있음<br>
-단, 정밀도와 재현율은 상호 보완적인 평가 지표로 한쪽을 강제로 높이면 다른 하나의 수치가 떨어지기 쉬움</p>
+<h3 id="1-정밀도-재현율-트레이드오프"><a href="#1-정밀도-재현율-트레이드오프" class="headerlink" title="1. 정밀도/재현율 트레이드오프"></a>1. 정밀도/재현율 트레이드오프</h3><ul>
+<li><p>분류의 결정 임계값(Threshold)을 조정해 정밀도 또는 재현율의 수치를 높일 수 있음<br>단, 정밀도와 재현율은 상호 보완적인 평가 지표로 한쪽을 강제로 높이면 다른 하나의 수치가 떨어지기 쉬움  </p>
 </li>
-<li>
-<p>사이킷런의 분류 알고리즘은 예측 데이터가 특정 레이블(Label, 결정 클래스 값)에 속하는지 계산하기 위해, 먼저 개별 레이블별로 결정 확률을 구함 → 예측 확률이 큰 레이블값으로 예측</p>
+<li><p>사이킷런의 분류 알고리즘은 예측 데이터가 특정 레이블(Label, 결정 클래스 값)에 속하는지 계산하기 위해, 먼저 개별 레이블별로 결정 확률을 구함 → 예측 확률이 큰 레이블값으로 예측  </p>
 </li>
-<li>
-<p>사이킷런은 개별 데이터별로 예측 확률을 반환하는 메서드인 predict_proba()를 제공</p>
+</ul>
 <ul>
-<li>predict_proba(): 학습 완료된 사이킷런 Classifier 객체에서 호출 가능하며 테스트 피처 데이터 세트를 파라미터로 입력해주면 테스트 피처 레코드의 개별 클래스 예측 확률을 반환 (predict() 메서드와 유사하지만 반환 결과가 예측 결과 클래스 값이 아닌 예측 확률 결과)</li>
+<li>사이킷런은 개별 데이터별로 예측 확률을 반환하는 메서드인 predict_proba()를 제공  <ul>
+<li>predict_proba(): 학습 완료된 사이킷런 Classifier 객체에서 호출 가능하며 테스트 피처 데이터 세트를 파라미터로 입력해주면 테스트 피처 레코드의 개별 클래스 예측 확률을 반환 (predict() 메서드와 유사하지만 반환 결과가 예측 결과 클래스 값이 아닌 예측 확률 결과)  </li>
 </ul>
 </li>
 </ul>
-<p><strong>-</strong> 이진 분류에서 predict_proba()를 수행해 반환되는 ndarray는 첫 번째 칼럼이 클래스 값 0에 대한 예측 확률, 두 번째 칼럼이 클래스 값 1에 대한 예측 확률</p>
+<p><strong>-</strong> 이진 분류에서 predict_proba()를 수행해 반환되는 ndarray는 첫 번째 칼럼이 클래스 값 0에 대한 예측 확률, 두 번째 칼럼이 클래스 값 1에 대한 예측 확률  </p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">pred_proba <span class="token operator">=</span> lr_clf<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
 pred <span class="token operator">=</span> lr_clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'pred_proba() 결과 shape: &#123;0&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>pred_proba<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -662,24 +621,19 @@ pred_proba array에서 앞 3개만 샘플로 추출
  [0.87717457 0.12282543 0.        ]]
 </code></pre>
 <ul>
-<li>
-<p>반환 결과인 ndarray는 0과 1에 대한 확률을 나타내므로 첫 번째 칼럼 값과 두 번째 칼럼 값을 더하면 1이 됨</p>
+<li><p>반환 결과인 ndarray는 0과 1에 대한 확률을 나타내므로 첫 번째 칼럼 값과 두 번째 칼럼 값을 더하면 1이 됨  </p>
 </li>
-<li>
-<p>맨 마지막 줄의 predict() 메서드의 결과, 비교에서도 나타나듯이 두 개의 칼럼 중에서 더 큰 확률 값으로 predict() 메서드가 최종 예측</p>
+<li><p>맨 마지막 줄의 predict() 메서드의 결과, 비교에서도 나타나듯이 두 개의 칼럼 중에서 더 큰 확률 값으로 predict() 메서드가 최종 예측  </p>
 </li>
-<li>
-<p>predict() 메서드는 predict_proba() 메서드에 기반해 생성된 API</p>
+<li><p>predict() 메서드는 predict_proba() 메서드에 기반해 생성된 API  </p>
 <ul>
-<li>predict()는 predict_proba() 호출 결과로 반환된 배열에서 분류 결정 임계값보다 큰 값이 들어 있는 칼럼의 위치를 받아서 최종적으로 예측 클래스를 결정하는 API</li>
+<li>predict()는 predict_proba() 호출 결과로 반환된 배열에서 분류 결정 임계값보다 큰 값이 들어 있는 칼럼의 위치를 받아서 최종적으로 예측 클래스를 결정하는 API  </li>
 </ul>
 </li>
 </ul>
-<p><strong>- 코드로 구현해보기</strong></p>
+<p><strong>- 코드로 구현해보기</strong>  </p>
 <ul>
-<li>threshold 변수를 특정 값으로 설정하고 Binarizer 클래스를 객체로 생성<br>
-→ 생성된 Binarizer 객체의 fit_transform() 메서드를 이용해 넘파이 ndarray를 입력<br>
-→ 입력된 ndarray 값이 지정된 threshold보다 같거나 작으면 0 값으로, 크면 1 값으로 변환해 반환</li>
+<li>threshold 변수를 특정 값으로 설정하고 Binarizer 클래스를 객체로 생성<br>→ 생성된 Binarizer 객체의 fit_transform() 메서드를 이용해 넘파이 ndarray를 입력<br>→ 입력된 ndarray 값이 지정된 threshold보다 같거나 작으면 0 값으로, 크면 1 값으로 변환해 반환</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> Binarizer
 
@@ -695,7 +649,7 @@ binarizer <span class="token operator">=</span> Binarizer<span class="token punc
  [0. 0. 1.]]
 </code></pre>
 <ul>
-<li>입력된 X 데이터 세트에서 Binarizer의 threshold 값이 1.1보다 같거나 작으면 0, 크면 1로 변환됨을 알 수 있음</li>
+<li>입력된 X 데이터 세트에서 Binarizer의 threshold 값이 1.1보다 같거나 작으면 0, 크면 1로 변환됨을 알 수 있음   </li>
 </ul>
 <p><strong>-</strong> Binarizer를 이용해 사이킷런 predict()의 의사(pseudo) 코드 만들기</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> Binarizer
@@ -718,8 +672,7 @@ get_clf_eval<span class="token punctuation">(</span>y_test<span class="token pun
 재현율 : 0.7869
 </code></pre>
 <ul>
-<li>위 의사 코드로 계산된 평가 지표는 앞 예제의 타이타닉 데이터로 학습된 로지스틱 회귀 Classifier 객체에서 호출된 predict()로 계산된 지표 값과 정확히 일치<br>
-→ predict()가 predict_proba()에 기반함을 알 수 있음</li>
+<li>위 의사 코드로 계산된 평가 지표는 앞 예제의 타이타닉 데이터로 학습된 로지스틱 회귀 Classifier 객체에서 호출된 predict()로 계산된 지표 값과 정확히 일치<br>→ predict()가 predict_proba()에 기반함을 알 수 있음</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 추가. 분류 결정 임계값을 0.5에서 0.4로 낮춰보기</span>
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> Binarizer
@@ -742,15 +695,10 @@ get_clf_eval<span class="token punctuation">(</span>y_test<span class="token pun
 재현율 : 0.8361
 </code></pre>
 <ul>
-<li>
-<p>임계값을 낮추니 재현율 수치가 올라가고 정밀도가 떨어짐<br>
-→ 분류 결정 임계값은 Positive 예측값을 결정하는 확률의 기준<br>
-→ 확률을 0.5가 아닌 0.4부터 Positive로 예측을 너그럽게 하여 임계값이 낮아질수록 True 값이 많아짐</p>
-</li>
-<li>
-<p>Positive 예측값이 많아지면 상대적으로 재현율 값이 높아짐<br>
-→ 양성 예측을 많이 하다보니 실제 양성을 음성으로 예측하는 획수가 상대적으로 줄기 때문</p>
-</li>
+<li>임계값을 낮추니 재현율 수치가 올라가고 정밀도가 떨어짐<br>→ 분류 결정 임계값은 Positive 예측값을 결정하는 확률의 기준<br>→ 확률을 0.5가 아닌 0.4부터 Positive로 예측을 너그럽게 하여 임계값이 낮아질수록 True 값이 많아짐  </li>
+</ul>
+<ul>
+<li>Positive 예측값이 많아지면 상대적으로 재현율 값이 높아짐<br>→ 양성 예측을 많이 하다보니 실제 양성을 음성으로 예측하는 획수가 상대적으로 줄기 때문  </li>
 </ul>
 <p><strong>-</strong> 임계값을 0.4부터 0.6까지 0.05씩 증가시키며 평가 지표 조사하기</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 테스트를 수행할 모든 임계값을 리스트 객체로 저장</span>
@@ -805,26 +753,23 @@ get_eval_by_threshold<span class="token punctuation">(</span>y_test<span class="
 정밀도 : 0.8824
 재현율 : 0.7377
 </code></pre>
-<p>(지금까지 임계값 변화에 따른 평가 지표 값을 알아보는 코드를 작성)</p>
+<p>(지금까지 임계값 변화에 따른 평가 지표 값을 알아보는 코드를 작성)  </p>
 <ul>
-<li>
-<p>사이킷런은 이와 유사한 precision_recall_curve() API를 제공</p>
+<li><p>사이킷런은 이와 유사한 precision_recall_curve() API를 제공  </p>
 <ul>
 <li>precision_recall_curve() API의 입력 파라미터와 반환 값은 아래와 같음</li>
 </ul>
 </li>
-<li>
-<p><strong>입력 파라미터</strong></p>
+<li><p><strong>입력 파라미터</strong>  </p>
 <ul>
 <li>y_true: 실제 클래스값 배열(배열 크기 = [데이터 건수]</li>
-<li>probas_pred: Positive 칼럼의 예측 확률 배열(배열 크기 = [데이터 건수]</li>
+<li>probas_pred: Positive 칼럼의 예측 확률 배열(배열 크기 = [데이터 건수]  </li>
 </ul>
 </li>
-<li>
-<p><strong>반환값</strong></p>
+<li><p><strong>반환값</strong>  </p>
 <ul>
 <li>정밀도: 임계값별 정밀도 값을 배열로 반환</li>
-<li>재현율: 임계값별 재현율 값을 배열로 반환</li>
+<li>재현율: 임계값별 재현율 값을 배열로 반환  </li>
 </ul>
 </li>
 </ul>
@@ -853,8 +798,7 @@ thr_index <span class="token operator">=</span> np<span class="token punctuation
 샘플 임계값별 재현율 :  [1.    0.967 0.902 0.902 0.902 0.836 0.754 0.607 0.377 0.148]
 </code></pre>
 <ul>
-<li>추출된 임계값 샘플 10개에 해당하는 정밀도 값과 재현율 값을 살펴보면 임계값이 증가할수록 정밀도값은 동시에 높아지나 재현율 값은 낮아짐
-<ul>
+<li>추출된 임계값 샘플 10개에 해당하는 정밀도 값과 재현율 값을 살펴보면 임계값이 증가할수록 정밀도값은 동시에 높아지나 재현율 값은 낮아짐    <ul>
 <li>precision_recall_curve() API는 정밀도와 재현율의 임계값에 따른 값 변화를 곡선 형태의 그래프로 시각화하는 데 이용할 수 있음</li>
 </ul>
 </li>
@@ -886,30 +830,26 @@ thr_index <span class="token operator">=</span> np<span class="token punctuation
     plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 precision_recall_curve_plot<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> lr_clf<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="../images/machine_learning/output_31_0.png" alt="png"></p>
-<p>(정밀도는 점선, 재현율은 실선으로 표현)</p>
+<p>(정밀도는 점선, 재현율은 실선으로 표현)  </p>
 <ul>
-<li>임계값이 낮을수록 많은 수의 양성 예측으로 재현율 값이 극도로 높아지고 정밀도 값이 극도로 낮아짐</li>
+<li>임계값이 낮을수록 많은 수의 양성 예측으로 재현율 값이 극도로 높아지고 정밀도 값이 극도로 낮아짐  </li>
 <li>임계값을 증가시킬수록 재현율 값이 낮아지고 정밀도 값이 높아짐</li>
 </ul>
-<h3 id="2-정밀도와-재현율의-맹점">2. 정밀도와 재현율의 맹점</h3>
+<h3 id="2-정밀도와-재현율의-맹점"><a href="#2-정밀도와-재현율의-맹점" class="headerlink" title="2. 정밀도와 재현율의 맹점"></a>2. 정밀도와 재현율의 맹점</h3><ul>
+<li>임계값의 변경은 정밀도와 재현율을 상호 보완할 수 있는 수준에서 해야 함   </li>
+</ul>
 <ul>
-<li>
-<p>임계값의 변경은 정밀도와 재현율을 상호 보완할 수 있는 수준에서 해야 함</p>
-</li>
-<li>
-<p>정밀도 또는 재현율 평가 지표 수치 중 하나를 극단적으로 높이는 방법이나 잘못된 방법</p>
-<ul>
-<li>
-<p>정밀도가 100%가 되는 방법</p>
+<li>정밀도 또는 재현율 평가 지표 수치 중 하나를 극단적으로 높이는 방법이나 잘못된 방법<ul>
+<li><p>정밀도가 100%가 되는 방법</p>
 <ul>
 <li>확실한 기준이 되는 경우만 Positive로 예측하고 나머지는 모두 Negative로 예측</li>
 <li>정밀도 = TP / (TP + FP)</li>
 <li>전체 환자 1,000명 중 확실한 Positive 징후만 가진 암환자가 1명이라고 하면, 한 명만 Positive로 예측하더라도 정밀도는 1/(1+0) = 100%가 됨</li>
 </ul>
 </li>
-<li>
-<p>재현율이 100%가 되는 방법</p>
+<li><p>재현율이 100%가 되는 방법</p>
 <ul>
 <li>모든 환자를 Positive로 예측</li>
 <li>재현율 = TP / (TP + FN)</li>
@@ -919,18 +859,15 @@ precision_recall_curve_plot<span class="token punctuation">(</span>y_test<span c
 </ul>
 </li>
 </ul>
-<h2 id="04-F1-스코어">04. F1 스코어</h2>
-<ul>
-<li>F1 스코어: 정밀도와 재현율을 결합한 지표, 정밀도와 재현율이 어느 한 쪽으로 치우치지 않을 때 상대적으로 높은 값을 가짐</li>
+<h2 id="04-F1-스코어"><a href="#04-F1-스코어" class="headerlink" title="04. F1 스코어"></a>04. F1 스코어</h2><ul>
+<li>F1 스코어: 정밀도와 재현율을 결합한 지표, 정밀도와 재현율이 어느 한 쪽으로 치우치지 않을 때 상대적으로 높은 값을 가짐  </li>
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">- F1 &#x3D; $\frac&#123;2&#125;&#123;&#123;1&#125;&#123;recall&#125;+&#123;1&#125;&#123;precision&#125;&#125;$ &#x3D; 2 x $\frac&#123;precision x recall&#125;&#123;precision + recall&#125;$  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
-<li>
-<p>만일 A 예측 모델의 정밀도가 0.9, 재현율이 0.1로 극단적인 차이가 나고, B 예측 모델은 정밀도가 0.5, 재현율이 0.5로 큰 차이가 없다면 A 예측 모델의 F1 스코어는 0.18이고, B 예측 모델의 F1 스코어는 0.5로 B 모델이 A 모델에 비해 매우 우수한 F1 스코어를 가지게 됨</p>
-</li>
-<li>
-<p>사이킷런은 F1 스코어를 구하기 위해 f1_score()라는 API를 제공</p>
-</li>
+<li>만일 A 예측 모델의 정밀도가 0.9, 재현율이 0.1로 극단적인 차이가 나고, B 예측 모델은 정밀도가 0.5, 재현율이 0.5로 큰 차이가 없다면 A 예측 모델의 F1 스코어는 0.18이고, B 예측 모델의 F1 스코어는 0.5로 B 모델이 A 모델에 비해 매우 우수한 F1 스코어를 가지게 됨  </li>
+</ul>
+<ul>
+<li>사이킷런은 F1 스코어를 구하기 위해 f1_score()라는 API를 제공  </li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> f1_score
 f1 <span class="token operator">=</span> f1_score<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> pred<span class="token punctuation">)</span>
@@ -1003,45 +940,40 @@ F1: 0.7931
 재현율: 0.7377
 F1: 0.8036
 </code></pre>
-<h2 id="05-ROC-곡선과-AUC">05. ROC 곡선과 AUC</h2>
-<ul>
-<li>
-<p><strong>ROC 곡선</strong>(Receiver Operation Characteristic Curve)</p>
+<h2 id="05-ROC-곡선과-AUC"><a href="#05-ROC-곡선과-AUC" class="headerlink" title="05. ROC 곡선과 AUC"></a>05. ROC 곡선과 AUC</h2><ul>
+<li><p><strong>ROC 곡선</strong>(Receiver Operation Characteristic Curve)</p>
 <ul>
 <li>FPR(Fales Positive Rate)이 변할 때, TPR(True Positive Rate)이 어떻게 변하는지 나타내는 곡선</li>
 <li>FPR을 X 축으로, TPR을 Y 축으로 잡으면 FPR 변화에 따른 TPR 변화가 곡선 형태로 나타남</li>
 </ul>
 </li>
-<li>
-<p>TPR(True Positive Rate): 재현율(Recall)이자 민감도(Sensitivity) =&gt; TPR = TP / (FN + TP)</p>
+<li><p>TPR(True Positive Rate): 재현율(Recall)이자 민감도(Sensitivity) =&gt; TPR = TP / (FN + TP)  </p>
 <ul>
 <li>실제값 Positive가 정확히 예측돼야 하는 수준(질병 보유자를 질병 보유했다고 양성 판정)</li>
 </ul>
 </li>
-<li>
-<p>TNR(True Negative Rate)이자 특이성(Specificity) =&gt; TNR = TN / (TN + FP)</p>
+<li><p>TNR(True Negative Rate)이자 특이성(Specificity) =&gt; TNR = TN / (TN + FP)  </p>
 </li>
-<li>
-<p>TNR인 특이성은 아래 공식으로 구할 수 있음</p>
+</ul>
 <ul>
+<li>TNR인 특이성은 아래 공식으로 구할 수 있음  <ul>
 <li><strong>FPR = FP / (FP + TN) = 1 - TNR = 1 - 특이성</strong></li>
 </ul>
 </li>
-<li>
-<p>ROC 곡선은 FPR을 0부터 1까지 변경하면서 TPR의 변화 값을 구함</p>
-</li>
-<li>
-<p>사이킷런은 ROC 곡선을 구하기 위해 roc_curve() API를 제공</p>
+</ul>
 <ul>
-<li>
-<p>입력 파라미터</p>
+<li>ROC 곡선은 FPR을 0부터 1까지 변경하면서 TPR의 변화 값을 구함  </li>
+</ul>
+<ul>
+<li><p>사이킷런은 ROC 곡선을 구하기 위해 roc_curve() API를 제공  </p>
+<ul>
+<li><p>입력 파라미터</p>
 <ul>
 <li>y_true: 실제 클래스 값 array (array shape = [데이터 건수]</li>
-<li>y_score: predict_proba()의 반환값 array에서 Positive 칼럼의 예측 확률이 보통 사용됨 (array.shape = [n_samples]</li>
+<li>y_score: predict_proba()의 반환값 array에서 Positive 칼럼의 예측 확률이 보통 사용됨 (array.shape = [n_samples]  </li>
 </ul>
 </li>
-<li>
-<p>반환 값</p>
+<li><p>반환 값</p>
 <ul>
 <li>fpr: fpr 값을 array로 반환</li>
 <li>tpr: tpr 값을 array로 반환</li>
@@ -1073,8 +1005,7 @@ thr_index <span class="token operator">=</span> np<span class="token punctuation
 샘플 임계값별 TPR:  [0.033 0.639 0.721 0.754 0.803 0.836 0.885 0.902 0.934 0.967 0.984]
 </code></pre>
 <ul>
-<li>결과를 살펴보면 임계깞이 1에 가까운 값에서 점점 작아지며 FPR이 점점 커짐<br>
-FPR이 조금씩 커질 때 TPR은 가파르게 커짐</li>
+<li>결과를 살펴보면 임계깞이 1에 가까운 값에서 점점 작아지며 FPR이 점점 커짐<br>FPR이 조금씩 커질 때 TPR은 가파르게 커짐</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># ROC 곡선 시각화</span>
 <span class="token keyword">def</span> <span class="token function">roc_curve_plot</span><span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> pred_proba_c1<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1095,18 +1026,14 @@ FPR이 조금씩 커질 때 TPR은 가파르게 커짐</li>
     plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
     
 roc_curve_plot<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> pred_proba<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="../images/machine_learning/output_40_0.png" alt="png"></p>
 <ul>
-<li>
-<p>일반적으로 ROC 곡선 자체는 FPR과 TPR의 변화값을 보는 데 이용</p>
+<li><p>일반적으로 ROC 곡선 자체는 FPR과 TPR의 변화값을 보는 데 이용  </p>
 </li>
-<li>
-<p>분류의 성능 지표로는 ROC 곡선 면적에 기반한 AUC 값으로 결정</p>
+<li><p>분류의 성능 지표로는 ROC 곡선 면적에 기반한 AUC 값으로 결정   </p>
 <ul>
-<li>AUC(Area Under Curve): 곡선 밑의 면적 값으로 1에 가까울 수록 좋은 수치<br>
-AUC 수치가 커지려면 FPR이 작은 사태에서 얼마나 큰 TPR을 얻을 수 있느냐가 관건<br>
-가운데 대각선 직선은 랜덤 수준(동전 던지기 수준) 이진 분류 AUC 값으로 0.5<br>
-→ 보통의 분류는 0.5 이상의 AUC 값을 가짐</li>
+<li>AUC(Area Under Curve): 곡선 밑의 면적 값으로 1에 가까울 수록 좋은 수치<br>AUC 수치가 커지려면 FPR이 작은 사태에서 얼마나 큰 TPR을 얻을 수 있느냐가 관건<br>가운데 대각선 직선은 랜덤 수준(동전 던지기 수준) 이진 분류 AUC 값으로 0.5<br>→ 보통의 분류는 0.5 이상의 AUC 값을 가짐</li>
 </ul>
 </li>
 </ul>
@@ -1117,18 +1044,17 @@ roc_score <span class="token operator">=</span> roc_auc_score<span class="token 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'ROC AUC 값 : &#123;:.4f&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>roc_score<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>ROC AUC 값 : 0.8341
 </code></pre>
-<h2 id="06-피마-인디언-당뇨병-예측">06. 피마 인디언 당뇨병 예측</h2>
-<p>피마 인디언 당뇨병 데이터 세트 구성 살펴보기</p>
+<h2 id="06-피마-인디언-당뇨병-예측"><a href="#06-피마-인디언-당뇨병-예측" class="headerlink" title="06. 피마 인디언 당뇨병 예측"></a>06. 피마 인디언 당뇨병 예측</h2><p>피마 인디언 당뇨병 데이터 세트 구성 살펴보기  </p>
 <ul>
-<li>Pregnancies: 임신횟수</li>
-<li>Glucose: 포도당 부하 검사 수치</li>
-<li>BloodPressure: 혈압</li>
-<li>SkinThickness: 팔 삼두근 뒤쪽의 피하지방 측정값</li>
-<li>Insulin: 혈청 인슐린</li>
-<li>BMI: 체질량 지수</li>
-<li>DiabetesPedigreeFunction : 당뇨 내력 가중치 값</li>
-<li>Age: 나이</li>
-<li>Outcome: 당뇨여부(0 또는 1)</li>
+<li>Pregnancies: 임신횟수  </li>
+<li>Glucose: 포도당 부하 검사 수치  </li>
+<li>BloodPressure: 혈압  </li>
+<li>SkinThickness: 팔 삼두근 뒤쪽의 피하지방 측정값  </li>
+<li>Insulin: 혈청 인슐린  </li>
+<li>BMI: 체질량 지수  </li>
+<li>DiabetesPedigreeFunction : 당뇨 내력 가중치 값  </li>
+<li>Age: 나이   </li>
+<li>Outcome: 당뇨여부(0 또는 1)  </li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -1143,6 +1069,7 @@ roc_score <span class="token operator">=</span> roc_auc_score<span class="token 
 
 <span class="token keyword">import</span> warnings
 warnings<span class="token punctuation">.</span>filterwarnings<span class="token punctuation">(</span><span class="token string">'ignore'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 데이터 불러오기</span>
 diabetes_data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'../data/pima-indians/diabetes.csv'</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>diabetes_data<span class="token punctuation">[</span><span class="token string">'Outcome'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -1156,6 +1083,7 @@ Name: Outcome, dtype: int64
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1164,7 +1092,7 @@ Name: Outcome, dtype: int64
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1220,12 +1148,15 @@ Name: Outcome, dtype: int64
   </tbody>
 </table>
 </div>
+
+
+
 <ul>
 <li>전체 768개의 데이터 중, Negative 값 0이 500개, Positive 값 1이 268개</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># feature 타입과 Null 개수 세어보기</span>
 diabetes_data<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 768 entries, 0 to 767
 Data columns (total 9 columns):
  #   Column                    Non-Null Count  Dtype  
@@ -1243,7 +1174,7 @@ dtypes: float64(2), int64(7)
 memory usage: 54.1 KB
 </code></pre>
 <ul>
-<li>Null 값은 없으며 피처 타입은 모두 숫자형</li>
+<li>Null 값은 없으며 피처 타입은 모두 숫자형  </li>
 </ul>
 <p><strong>-</strong> 로지스틱 회귀를 이용해 예측 모델 생성하기</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 피처 데이터 세트 X, 레이블 데이터 세트 y 추출</span>
@@ -1270,19 +1201,23 @@ F1: 0.6392
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 임계값별로 정밀도 - 재현율 출력</span>
 pred_proba <span class="token operator">=</span> lr_clf<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
 precision_recall_curve_plot<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> pred_proba<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="../images/machine_learning/output_50_0.png" alt="png"></p>
 <ul>
-<li>재현율 곡선을 보면 임계값을 0.42 정도로 낮추면 정밀도와 재현율이 어느 정도 균형을 맞출 것<br>
-그러나, 두 지표 모두 0.7이 되지 않는 수치</li>
+<li>재현율 곡선을 보면 임계값을 0.42 정도로 낮추면 정밀도와 재현율이 어느 정도 균형을 맞출 것<br>그러나, 두 지표 모두 0.7이 되지 않는 수치  </li>
 </ul>
 <p><strong>-</strong> 임계값을 인위 조작하기 전에 다시 데이터 점검해보기</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 원본 데이터 DataFrane describe() 메서드로 피처 값의 분포도 살피기</span>
 diabetes_data<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1291,7 +1226,7 @@ diabetes_data<span class="token punctuation">.</span>describe<span class="token 
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1407,8 +1342,9 @@ diabetes_data<span class="token punctuation">.</span>describe<span class="token 
   </tbody>
 </table>
 </div>
-<p>min() 값이 0으로 된 피처가 상당히 많음<br>
-Glucose 피처는 포도당 수치로 min 값이 0으로 나올 수는 없음</p>
+
+
+<p>min() 값이 0으로 된 피처가 상당히 많음<br>Glucose 피처는 포도당 수치로 min 값이 0으로 나올 수는 없음</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># min() 값이 0으로 된 피처에 대해 0 값의 건수 및 전체 데이터 건수 대비 몇 퍼센트의 비율로 존재하는지 확인해보기</span>
 feature_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Glucose'</span><span class="token punctuation">,</span> <span class="token string">'BloodPressure'</span><span class="token punctuation">,</span> <span class="token string">'SkinThickness'</span><span class="token punctuation">,</span> <span class="token string">'Insulin'</span><span class="token punctuation">,</span> <span class="token string">'BMI'</span><span class="token punctuation">]</span>
 
@@ -1418,13 +1354,14 @@ feature_list <span class="token operator">=</span> <span class="token punctuatio
         plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 hist_plot<span class="token punctuation">(</span>diabetes_data<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="../images/machine_learning/output_54_0.png" alt="png"></p>
 <p><img src="../images/machine_learning/output_54_1.png" alt="png"></p>
 <p><img src="../images/machine_learning/output_54_2.png" alt="png"></p>
 <p><img src="../images/machine_learning/output_54_3.png" alt="png"></p>
 <p><img src="../images/machine_learning/output_54_4.png" alt="png"></p>
 <ul>
-<li>SkinThickness와 Insulin의 0 값은 전체의 29.56%, 48.7%로 많은 수준</li>
+<li>SkinThickness와 Insulin의 0 값은 전체의 29.56%, 48.7%로 많은 수준  </li>
 </ul>
 <p><strong>-</strong> 일괄 삭제 대신 위 피처의 0 값을 평균값으로 대체</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 위 컬럼들에 대한 0 값의 비율 확인</span>
@@ -1437,11 +1374,15 @@ zero_percent <span class="token operator">=</span> <span class="token punctuatio
 
 zero <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span>zero_count<span class="token punctuation">,</span> zero_percent<span class="token punctuation">]</span><span class="token punctuation">,</span> columns<span class="token operator">=</span>feature_list<span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">,</span> <span class="token string">'percent'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>T
 zero<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1450,7 +1391,7 @@ zero<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1488,12 +1429,17 @@ zero<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># zero_features 리스트 내부 저장된 개별 피처의 0 값을 NaN 값으로 대체</span>
 diabetes_data<span class="token punctuation">[</span>feature_list<span class="token punctuation">]</span> <span class="token operator">=</span> diabetes_data<span class="token punctuation">[</span>feature_list<span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">)</span>
 
 <span class="token comment"># 위 5개 feature 에 대해 0값을 평균 값으로 대체</span>
 mean_features <span class="token operator">=</span> diabetes_data<span class="token punctuation">[</span>feature_list<span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
 diabetes_data<span class="token punctuation">[</span>feature_list<span class="token punctuation">]</span> <span class="token operator">=</span> diabetes_data<span class="token punctuation">[</span>feature_list<span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> mean_features<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">X <span class="token operator">=</span> diabetes_data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
 y <span class="token operator">=</span> diabetes_data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
 
@@ -1518,8 +1464,7 @@ get_clf_eval<span class="token punctuation">(</span>y_test<span class="token pun
 F1: 0.6735
 </code></pre>
 <ul>
-<li>데이터 변환과 스케일링으로 성능 수치가 일정 수준 개선<br>
-하지만, 여전히 재현율 수치 개선이 필요함</li>
+<li>데이터 변환과 스케일링으로 성능 수치가 일정 수준 개선<br>하지만, 여전히 재현율 수치 개선이 필요함</li>
 </ul>
 <p><strong>-</strong> 분류 결정 임계값을 변화시키면서 재현율 값의 성능 수치 개선 정도를 확인하기</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 임계값을 0.3에서 0.5까지 0.03씩 변화시키면서 재현율과 다른 평가 지표의 값 변화를 출력</span>
@@ -1607,8 +1552,8 @@ F1: 0.6800
 F1: 0.6735
 </code></pre>
 <ul>
-<li>0.33: 정확도와 정밀도를 희생하고 재현율을 높이는 데 가장 좋은 임계값</li>
-<li>0.48: 전체적인 성능 평가 지표를 유지하며 재현율을 약간 향상시키는 좋은 임계값</li>
+<li>0.33: 정확도와 정밀도를 희생하고 재현율을 높이는 데 가장 좋은 임계값  </li>
+<li>0.48: 전체적인 성능 평가 지표를 유지하며 재현율을 약간 향상시키는 좋은 임계값  </li>
 </ul>
 <p><strong>-</strong> 앞서 학습된 로지스틱 회귀 모델을 이용해 임계값을 0.48로 낮춘 상태에서 다시 예측하기</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 임계값을 0.48로 설정한 Binarizer 생성</span>
@@ -1627,33 +1572,30 @@ get_clf_eval<span class="token punctuation">(</span>y_test<span class="token pun
 재현율: 0.6296
 F1: 0.6800
 </code></pre>
-<h2 id="07-정리">07. 정리</h2>
-<ul>
-<li>
-<p><strong>지금까지 살펴본 것</strong></p>
+<h2 id="07-정리"><a href="#07-정리" class="headerlink" title="07. 정리"></a>07. 정리</h2><ul>
+<li><p><strong>지금까지 살펴본 것</strong></p>
 <ul>
 <li>분류에 사용되는 정확도, 오차 행렬, 정밀도, 재현율, F1 스코어, ROC-AUC</li>
 <li>이진 분류 레이블 값이 불균형하게 분포될 경우, 정확도만으로 머신러닝 모델의 예측 성능을 평가할 수 없음</li>
 </ul>
 </li>
-<li>
-<p><strong>오차 행렬</strong></p>
+<li><p><strong>오차 행렬</strong></p>
 <ul>
-<li>Negative와 Positive 값을 가지는 실제 클래스 값과 예측 클래스 값이 TN, FP, FN, TP로 매핑되는 4분면 행렬을 기반으로 예측 성능 평가</li>
+<li>Negative와 Positive 값을 가지는 실제 클래스 값과 예측 클래스 값이 TN, FP, FN, TP로 매핑되는 4분면 행렬을 기반으로 예측 성능 평가  </li>
 <li>정확도, 정밀도, 재현율 수치는 위 4가지 값을 다양하게 결합하여 만들어짐</li>
 <li>정확도, 정밀도, 재현율 수치를 통해 분류 모델 예측 성능 오류가 어떤 모양으로 발생하는지 확인 가능</li>
 </ul>
 </li>
-<li>
-<p><strong>정밀도(Precision)와 재현율(Recall)</strong></p>
+</ul>
+<ul>
+<li><p><strong>정밀도(Precision)와 재현율(Recall)</strong></p>
 <ul>
 <li>Positive 데이터 세트의 예측 성능에 좀 더 초점을 맞춘 지표</li>
 <li>재현율이 더 중요한 지표인 경우: 실제 Positive 양성인 데이터 예측을 Negative로 잘못 판단할 경우 업무상 큰 영향이 발생할 때</li>
 <li>재현율이 특별히 강조돼야 할 경우 분류의 결정 임계값(Threshold)을 조정해 정밀도 또는 재현율 수치 높이기</li>
 </ul>
 </li>
-<li>
-<p><strong>F1 스코어</strong></p>
+<li><p><strong>F1 스코어</strong></p>
 <ul>
 <li>정밀도와 재현율을 결합한 평가 지표</li>
 <li>정밀도와 재현율이 어느 한쪽으로 치우치지 않을 때 높은 지표값을 가짐</li>
@@ -1669,7 +1611,7 @@ F1: 0.6800
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/11/30/Textbook/PythonML/ch03_%ED%8F%89%EA%B0%80/" data-id="ckl2d8iaf00bl7cue1zgzdzvj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/11/30/Textbook/PythonML/ch03_%ED%8F%89%EA%B0%80/" data-id="ckl3ozu3100blgcuegjhu4j3s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -1751,18 +1693,14 @@ F1: 0.6800
 출처: 파이썬 머신러닝 완벽가이드
 
 Chapter 03. 평가
+머신러닝 구성: 데이터 가공/변환, 모델 학습/예측, 평가(Evaluation) 프로세스로 구성  
+성능 평가 지표(Evaluation Metric): 모델이 분류인지 회귀인지에 따라 여러 종류로 나뉨  
 
 
-머신러닝 구성: 데이터 가공/변환, 모델 학습/예측, 평가(Evaluation) 프로세스로 구성
+회귀: 대부분 실제값과 예측값의 오차 평균값에 기반  
 
-
-성능 평가 지표(Evaluation Metric): 모델이 분류인지 회귀인지에 따라 여러 종류로 나뉨
-
-
-회귀: 대부분 실제값과 예측값의 오차 평균값에 기반
-
-ex) 오차에 절댓값을 씌운 뒤",
-        "wordCount": 9551,
+ex) 오차에 절댓값을 씌운",
+        "wordCount": 9833,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

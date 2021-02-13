@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,딥러닝,텍스트마이닝">
     
-    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  ⅩⅥ. 딥러닝과 텍스트 마이닝 1. Neural Networks Concepts   인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나   컴퓨터 비전, 자연어 처리, 음석 인식 등 영역에서 사용   AI ⊂ Machine Learning ⊂ Neu">
+    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅥ. 딥러닝과 텍스트 마이닝1. Neural NetworksConcepts 인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나  컴퓨터 비전, 자연어 처리, 음석 인식 등 영역에서 사용  AI ⊂ Machine Learning ⊂ Neural">
 <meta property="og:type" content="article">
 <meta property="og:title" content="머신러닝 기법과 R 프로그래밍 2: ⅩⅥ. 딥러닝과 텍스트 마이닝">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  ⅩⅥ. 딥러닝과 텍스트 마이닝 1. Neural Networks Concepts   인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나   컴퓨터 비전, 자연어 처리, 음석 인식 등 영역에서 사용   AI ⊂ Machine Learning ⊂ Neu">
+<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.    ⅩⅥ. 딥러닝과 텍스트 마이닝1. Neural NetworksConcepts 인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나  컴퓨터 비전, 자연어 처리, 음석 인식 등 영역에서 사용  AI ⊂ Machine Learning ⊂ Neural">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-24T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:39:45.344Z">
@@ -228,33 +228,24 @@ ga('send', 'pageview');
             
 
             <ul>
-<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.</li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  </li>
 </ul>
-<h1>ⅩⅥ. 딥러닝과 텍스트 마이닝</h1>
-<h2 id="1-Neural-Networks">1. Neural Networks</h2>
-<h3 id="Concepts">Concepts</h3>
-<ul>
-<li>
-<p>인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나</p>
+<h1 id="ⅩⅥ-딥러닝과-텍스트-마이닝"><a href="#ⅩⅥ-딥러닝과-텍스트-마이닝" class="headerlink" title="ⅩⅥ. 딥러닝과 텍스트 마이닝"></a>ⅩⅥ. 딥러닝과 텍스트 마이닝</h1><h2 id="1-Neural-Networks"><a href="#1-Neural-Networks" class="headerlink" title="1. Neural Networks"></a>1. Neural Networks</h2><h3 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h3><ul>
+<li><p>인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나</p>
 </li>
-<li>
-<p>컴퓨터 비전, 자연어 처리, 음석 인식 등 영역에서 사용</p>
+<li><p>컴퓨터 비전, 자연어 처리, 음석 인식 등 영역에서 사용</p>
 </li>
-<li>
-<p>AI ⊂ Machine Learning ⊂ Neural Network</p>
+<li><p>AI ⊂ Machine Learning ⊂ Neural Network  </p>
 </li>
-<li>
-<p><strong>신경망 모델(Neural Network)</strong></p>
+<li><p><strong>신경망 모델(Neural Network)</strong></p>
 <ul>
 <li>Perceptron을 한 단위로 하는 네트워크를 구축하여, 인간의 신경세포(Neuron)와 유사한 기능을 하도록 제안</li>
 </ul>
 </li>
 </ul>
-<h3 id="Perceptron-Single-Layer">Perceptron - Single Layer</h3>
-<ul>
+<h3 id="Perceptron-Single-Layer"><a href="#Perceptron-Single-Layer" class="headerlink" title="Perceptron - Single Layer"></a>Perceptron - Single Layer</h3><ul>
 <li>하나의 Perceptron은 단순히 다수의 입력과 가중치의 선형 결합을 계산하는 역할을 수행</li>
-<li>Activation 함수에 따라 선형결합으로 생성되는 출력값이 결정
-<ul>
+<li>Activation 함수에 따라 선형결합으로 생성되는 출력값이 결정<ul>
 <li>Binary Threshold</li>
 <li>Sigmoid</li>
 <li>ReLU(Rectified Linear Unit)</li>
@@ -262,27 +253,21 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3 id="Multi-layer-perceptron">Multi-layer perceptron</h3>
-<ul>
-<li>
-<p>Perceptron으로 구성된 Single Layer들이 Multi-layer를 만듦</p>
+<h3 id="Multi-layer-perceptron"><a href="#Multi-layer-perceptron" class="headerlink" title="Multi-layer perceptron"></a>Multi-layer perceptron</h3><ul>
+<li><p>Perceptron으로 구성된 Single Layer들이 Multi-layer를 만듦</p>
 <ul>
 <li>Input layer와 Output layer 사이에는 Hidden layer가 존재하여 Non-linear transformation 수행</li>
 </ul>
 </li>
-<li>
-<p>Output layer에서 Softmax 함수를 통해 가장 큰 값을 손쉽게 알 수 있음</p>
+<li><p>Output layer에서 Softmax 함수를 통해 가장 큰 값을 손쉽게 알 수 있음</p>
 <ul>
 <li>Exponential 함수로 항상 양수 결과치가 도출되고 이를 통해 확률값을 도출</li>
 </ul>
 </li>
 </ul>
-<h3 id="Neural-Network-수행">Neural Network 수행</h3>
-<ul>
+<h3 id="Neural-Network-수행"><a href="#Neural-Network-수행" class="headerlink" title="Neural Network 수행"></a>Neural Network 수행</h3><ul>
 <li>mxnet 패키지는 R4.0 버전 이후부터 실행 불가</li>
-<li>R 3.6.2버전 설치해서 실행 필요</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># require mxnet
+<li>R 3.6.2버전 설치해서 실행 필요<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># require mxnet
 install.packages(&quot;https:&#x2F;&#x2F;github.com&#x2F;jeremiedb&#x2F;mxnet_winbin&#x2F;raw&#x2F;master&#x2F;mxnet.zip&quot;,repos &#x3D; NULL)
 library(mxnet)
 
@@ -295,11 +280,8 @@ install.packages(&quot;DiagrammeR&quot;)
 #devtools::install_github(&quot;rich-iannone&#x2F;DiagrammeR&quot;)
 
 #install.packages(&#39;devtools&#39;)
-#library(devtools)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>데이터 불러오기</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
+#library(devtools)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>데이터 불러오기<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
 iris&lt;-read.csv(&quot;data&#x2F;week16_1&#x2F;iris.csv&quot;)
 attach(iris)
 
@@ -307,11 +289,8 @@ attach(iris)
 iris[,5] &#x3D; as.numeric(iris[,5])-1
 table(Species)
 # check the data
-head(iris, n&#x3D;10)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>학습데이터와 검증데이터</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># split train &amp; test dataset
+head(iris, n&#x3D;10)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>학습데이터와 검증데이터<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># split train &amp; test dataset
 # training (n&#x3D;100)&#x2F; test data(n&#x3D;50) 
 set.seed(1000,sample.kind&#x3D;&quot;Rounding&quot;)
 N&lt;-nrow(iris)
@@ -327,11 +306,8 @@ test&lt;-data.matrix(iris[-tr.idx,])
 train_feature&lt;-train[,-5]
 trainLabels&lt;-train[,5]
 test_feature&lt;-test[,-5]
-testLabels &lt;-test[,5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>Hidden Layer 구성</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Build nn model
+testLabels &lt;-test[,5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>Hidden Layer 구성<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Build nn model
 # first layers
 require(mxnet)
 my_input &#x3D; mx.symbol.Variable(&#39;data&#39;)
@@ -339,20 +315,14 @@ fc1 &#x3D; mx.symbol.FullyConnected(data&#x3D;my_input, num.hidden &#x3D; 200, n
 relu1 &#x3D; mx.symbol.Activation(data&#x3D;fc1, act.type&#x3D;&#39;relu&#39;, name&#x3D;&#39;relu1&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># second layers
 fc2 &#x3D; mx.symbol.FullyConnected(data&#x3D;relu1, num.hidden &#x3D; 100, name&#x3D;&#39;fc2&#39;) # 100개의 뉴런 형성
-relu2 &#x3D; mx.symbol.Activation(data&#x3D;fc2, act.type&#x3D;&#39;relu&#39;, name&#x3D;&#39;relu2&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>Output Layer 구성</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># third layers
+relu2 &#x3D; mx.symbol.Activation(data&#x3D;fc2, act.type&#x3D;&#39;relu&#39;, name&#x3D;&#39;relu2&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>Output Layer 구성<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># third layers
 fc3 &#x3D; mx.symbol.FullyConnected(data&#x3D;relu2, num.hidden &#x3D; 3, name&#x3D;&#39;fc3&#39;) # 3개로 분류(0,1,2)해야 하므로 3개의 Output 뉴런 생성
 
 # softmax
 softmax &#x3D; mx.symbol.SoftmaxOutput(data&#x3D;fc3, name&#x3D;&#39;sm&#39;)
-# sofrmax 결과를 통해 가장 큰 값 선택<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>모델 학습</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training
+# sofrmax 결과를 통해 가장 큰 값 선택<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>모델 학습<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training
 mx.set.seed(123, sample.kind&#x3D;&quot;Rounding&quot;)
 device &lt;- mx.cpu()
 model &lt;- mx.model.FeedForward.create(softmax,
@@ -363,44 +333,36 @@ model &lt;- mx.model.FeedForward.create(softmax,
                                      eval.metric &#x3D; mx.metric.accuracy,
                                      array.layout &#x3D; &quot;rowmajor&quot;,
                                      epoch.end.callback&#x3D;mx.callback.log.train.metric(100))
-graph.viz(model$symbol)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>모델 테스트</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># testing
+graph.viz(model$symbol)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>모델 테스트<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># testing
 predict_probs &lt;- predict(model, test_feature, array.layout &#x3D; &quot;rowmajor&quot;)
 predicted_labels &lt;- max.col(t(predict_probs)) - 1
 table(testLabels, predicted_labels)
 sum(diag(table(testLabels, predicted_labels)))&#x2F;length(predicted_labels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-Convolutional-Neural-Networks">2. Convolutional Neural Networks</h2>
-<h3 id="Features">Features</h3>
-<ul>
-<li>신경망 모델(Neural Net)
-<ul>
+
+</li>
+</ul>
+<h2 id="2-Convolutional-Neural-Networks"><a href="#2-Convolutional-Neural-Networks" class="headerlink" title="2. Convolutional Neural Networks"></a>2. Convolutional Neural Networks</h2><h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
+<li>신경망 모델(Neural Net)<ul>
 <li>입력값으로 객체의 특성(feature)을 받고, 출력된 값과 실제 값을 비교하는 과정을 거침(지도학습; Supervised Learning)</li>
-<li>하나의 이미지는 수많은 픽셀들이 모여 형성하며, 특정 색에 해당하는 특정 값을 가짐
-<ul>
+<li>하나의 이미지는 수많은 픽셀들이 모여 형성하며, 특정 색에 해당하는 특정 값을 가짐<ul>
 <li>이미지의 모든 픽셀값을 입력값으로 갖는 신경망 모델을 만들 수 있음</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="Intuitions">Intuitions</h3>
-<ul>
-<li>
-<p>고해상도 이미지의 경우 특성 feature 수가 너무 많아짐</p>
+<h3 id="Intuitions"><a href="#Intuitions" class="headerlink" title="Intuitions"></a>Intuitions</h3><ul>
+<li><p>고해상도 이미지의 경우 특성 feature 수가 너무 많아짐</p>
 <ul>
 <li>모든 뉴런이 모든 픽셀과 연결(fully connected)되어 있을 경우, 모델 학습에 큰 어려움이 있음</li>
 <li>각 뉴런들이 이미지의 일부 특성 feature에만 연결될 수 있는 구조가 더 더 적합함</li>
 <li>Convolution operation을 통해 구현 가능</li>
 </ul>
 </li>
-<li>
-<p>Convolutional Neural Network</p>
+<li><p>Convolutional Neural Network</p>
 <ul>
-<li>Feed forward Network: x~i~^n^을 구함
-<ul>
+<li>Feed forward Network: x<del>i</del>^n^을 구함<ul>
 <li>Convilution</li>
 <li>Max Pooling</li>
 <li>Activation function</li>
@@ -410,13 +372,10 @@ sum(diag(table(testLabels, predicted_labels)))&#x2F;length(predicted_labels)<spa
 </ul>
 </li>
 </ul>
-<h3 id="Concolution-Operation">Concolution Operation</h3>
-<ul>
-<li>임의의 값으로 설정된 filter가 전체 이미지 중 일부의 선형 결합을 계산
-<ul>
+<h3 id="Concolution-Operation"><a href="#Concolution-Operation" class="headerlink" title="Concolution Operation"></a>Concolution Operation</h3><ul>
+<li>임의의 값으로 설정된 filter가 전체 이미지 중 일부의 선형 결합을 계산<ul>
 <li>각각 결괏값은 하나의 Neuron이 되며, filter는 해당 Neuron의 가중치과 됨</li>
-<li>결괏값의 사이즈를 정하기 위해서는 Stride, Padding, Depth 고려 필요
-<ul>
+<li>결괏값의 사이즈를 정하기 위해서는 Stride, Padding, Depth 고려 필요<ul>
 <li>Stride: filter를 몇 칸 이동할지 결정</li>
 <li>Padding: input 주변에 0으로 padding을 삽입</li>
 <li>Depth number of filter: 3차원상의 neuron의 깊이를 결정</li>
@@ -425,31 +384,24 @@ sum(diag(table(testLabels, predicted_labels)))&#x2F;length(predicted_labels)<spa
 </ul>
 </li>
 </ul>
-<h3 id="Pooling">Pooling</h3>
-<ul>
-<li>Convolutional Layer 사이에 Pooling Layer를 넣는 방법이 많이 사용됨
-<ul>
+<h3 id="Pooling"><a href="#Pooling" class="headerlink" title="Pooling"></a>Pooling</h3><ul>
+<li>Convolutional Layer 사이에 Pooling Layer를 넣는 방법이 많이 사용됨<ul>
 <li>추출한 이미지에서 지역적인 부분 특징만 뽑아 다음 layer로 넘겨줌</li>
 <li>이를 통해 ① 가중치의 수를 줄일 수 있으며, ② 과적합(overfitting)을 방지할 수 있음</li>
 <li>대표적으로 가장 큰 값(Local Maxima)만을 뽑아내는 Max Pooling이 많이 사용됨</li>
 </ul>
 </li>
 </ul>
-<h3 id="MNIST">MNIST</h3>
-<ul>
+<h3 id="MNIST"><a href="#MNIST" class="headerlink" title="MNIST"></a>MNIST</h3><ul>
 <li>Modified National Institute of Standards and Technology</li>
-<li>손으로 쓴 숫자를 인식하기 위해 사용되는 데이터
-<ul>
+<li>손으로 쓴 숫자를 인식하기 위해 사용되는 데이터<ul>
 <li>28x28 pixel(784)의 흑백 이미지(0-255)들이 있음</li>
 <li>0부터 9까지 총 70,000개의 손글씨 이미지가 있음</li>
 </ul>
 </li>
 </ul>
-<h3 id="CNN-in-R">CNN in R</h3>
-<ul>
-<li>신경망 모델 생성을 위한 패키지: mxnet</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Load MNIST mn1
+<h3 id="CNN-in-R"><a href="#CNN-in-R" class="headerlink" title="CNN in R"></a>CNN in R</h3><ul>
+<li>신경망 모델 생성을 위한 패키지: mxnet<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Load MNIST mn1
 # 28*28, 1 channel images
 mn1 &lt;- read.csv(&quot;mini_mnist.csv&quot;)
 set.seed(123,sample.kind&#x3D;&quot;Rounding&quot;)
@@ -474,11 +426,8 @@ test_array &lt;- test
 dim(test_array) &lt;- c(28,28,1,ncol(test))
 
 ncol(features)
-table(labels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>Convolutional Layer 구성</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Build cnn model
+table(labels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>Convolutional Layer 구성<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Build cnn model
 # first conv layers
 my_input &#x3D; mx.symbol.Variable(&#39;data&#39;)
 conv1 &#x3D; mx.symbol.Convolution(data&#x3D;my_input, kernel&#x3D;c(4,4), stride&#x3D;c(2,2), pad&#x3D;c(1,1), num.filter &#x3D; 20, name&#x3D;&#39;conv1&#39;)
@@ -514,50 +463,40 @@ graph.viz(model$symbol)
 predict_probs &lt;- predict(model, test_array)
 predicted_labels &lt;- max.col(t(predict_probs)) - 1
 table(test_data[, 1], predicted_labels)
-sum(diag(table(test_data[, 1], predicted_labels)))&#x2F;length(predicted_labels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>네트워크 시각화 함수: graph.viz(model$symbol)</li>
+sum(diag(table(test_data[, 1], predicted_labels)))&#x2F;length(predicted_labels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>네트워크 시각화 함수: graph.viz(model$symbol)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">graph.viz(model$symbol)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</li>
 </ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">graph.viz(model$symbol)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="3-텍스트-마이닝">3. 텍스트 마이닝</h2>
-<h3 id="텍스트-마이닝이란">텍스트 마이닝이란?</h3>
-<ul>
-<li>텍스트마이닝(Text mining)
-<ul>
+<h2 id="3-텍스트-마이닝"><a href="#3-텍스트-마이닝" class="headerlink" title="3. 텍스트 마이닝"></a>3. 텍스트 마이닝</h2><h3 id="텍스트-마이닝이란"><a href="#텍스트-마이닝이란" class="headerlink" title="텍스트 마이닝이란?"></a>텍스트 마이닝이란?</h3><ul>
+<li>텍스트마이닝(Text mining)<ul>
 <li>웹페이지, 이메일, 소셜네트워크 기록 등 전자문서 파일로부터 특정 연관성(동시적으로 빈도 높은 단어 추출)을 분석하는 방법</li>
 <li>다양한 방식의 알고리즘을 이용해 대용량의 텍스트로부터 트렌드와 관심어를 찾아내는 기법으로 사용</li>
 </ul>
 </li>
 </ul>
-<h3 id="텍스트-마이닝-필요-패키지">텍스트 마이닝 필요 패키지</h3>
-<ul>
-<li>Natural language processing
-<ul>
+<h3 id="텍스트-마이닝-필요-패키지"><a href="#텍스트-마이닝-필요-패키지" class="headerlink" title="텍스트 마이닝 필요 패키지"></a>텍스트 마이닝 필요 패키지</h3><ul>
+<li>Natural language processing<ul>
 <li>install.packages(‘NLP’)</li>
 </ul>
 </li>
-<li>text mining package
-<ul>
+<li>text mining package<ul>
 <li>install.packages(‘tm’)</li>
 </ul>
 </li>
-<li>visualizing
-<ul>
+<li>visualizing<ul>
 <li>install.packages(‘wordcloud’)</li>
 </ul>
 </li>
-<li>color displaying
-<ul>
+<li>color displaying<ul>
 <li>install.packages(‘RColorBrewer’)</li>
 </ul>
 </li>
-<li>Korean processing
-<ul>
+<li>Korean processing<ul>
 <li>install.packages(‘KoNLP’)</li>
 </ul>
 </li>
-<li>import twitter data
-<ul>
+<li>import twitter data<ul>
 <li>install.packages(‘twitteR’)</li>
 </ul>
 </li>
@@ -568,43 +507,13 @@ library(tm)
 library(RColorBrewer)
 library(wordcloud)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>사용 데이터: tm에 포함된 crude</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 20 new articles from Reuter- 21578 data set
+<li>사용 데이터: tm에 포함된 crude<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 20 new articles from Reuter- 21578 data set
 data(crude)
 # To know abour crude data
 help(crude)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="텍스트-마이닝-함수">텍스트 마이닝- 함수</h3>
-<table>
-<thead>
-<tr>
-<th>함수</th>
-<th>설명 및 예제코드</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>str(x[[1]])</td>
-<td>데이터 구조 정보(첫 번째 파일 구조) / str(crude[[1]])</td>
-</tr>
-<tr>
-<td>content(x[[1]])</td>
-<td>문서 내용(첫 번째 분서 내용)</td>
-</tr>
-<tr>
-<td>meta(X)</td>
-<td>메타정보(x에 기록된 저자, 날짜, id 등 정보) / meta(ctude[[1]])</td>
-</tr>
-<tr>
-<td>inspect(X)</td>
-<td>코퍼스, 텍스트, 문서행렬 등 정보 제공 / data(crude), inspect(crude[1:3]), inspect(crude[[1]]), tdm &lt;- TermDocumentMatrix(crude), inspect(tdm)</td>
-</tr>
-<tr>
-<td>lapply(x, content)</td>
-<td>파일 내용을 보여줌 / lapply(crude, content)</td>
-</tr>
-</tbody>
-</table>
+<h3 id="텍스트-마이닝-함수"><a href="#텍스트-마이닝-함수" class="headerlink" title="텍스트 마이닝- 함수"></a>텍스트 마이닝- 함수</h3></li>
+</ul>
+<p>함수|설명 및 예제코드<br>|—|—|<br>str(x[[1]])|데이터 구조 정보(첫 번째 파일 구조) / str(crude[[1]])<br>content(x[[1]])|문서 내용(첫 번째 분서 내용)<br>meta(X)|메타정보(x에 기록된 저자, 날짜, id 등 정보) / meta(ctude[[1]])<br>inspect(X)|코퍼스, 텍스트, 문서행렬 등 정보 제공 / data(crude), inspect(crude[1:3]), inspect(crude[[1]]), tdm &lt;- TermDocumentMatrix(crude), inspect(tdm)<br>lapply(x, content)|파일 내용을 보여줌 / lapply(crude, content)</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># information about the first file in crude data
 str(crude[[1]])
 content(crude[[1]])
@@ -613,93 +522,50 @@ lapply(crude, content)<span aria-hidden="true" class="line-numbers-rows"><span><
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># inspect function
 inspect(crude[1:3]) 
 inspect(crude[[1]]) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="텍스트-마이닝-전처리-함수">텍스트 마이닝- 전처리 함수</h3>
-<table>
-<thead>
-<tr>
-<th>함수</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>tm_map(x, removePunctuation)</td>
-<td>문장부호 제거(. , “” ‘’)</td>
-</tr>
-<tr>
-<td>tm_map(x, stripWhitespace)</td>
-<td>공백문자 제거</td>
-</tr>
-<tr>
-<td>tm_map(x, removeNumbers)</td>
-<td>숫자 제거</td>
-</tr>
-</tbody>
-</table>
-<h3 id="텍스트-마이닝-실습">텍스트 마이닝 실습</h3>
-<ul>
-<li>문장부호 없애기: tm_map(x, removePunctuation)</li>
-</ul>
+<h3 id="텍스트-마이닝-전처리-함수"><a href="#텍스트-마이닝-전처리-함수" class="headerlink" title="텍스트 마이닝- 전처리 함수"></a>텍스트 마이닝- 전처리 함수</h3><p>함수|설명<br>|—|—|<br>tm_map(x, removePunctuation)|문장부호 제거(. , “” ‘’)<br>tm_map(x, stripWhitespace)|공백문자 제거<br>tm_map(x, removeNumbers)|숫자 제거</p>
+<h3 id="텍스트-마이닝-실습"><a href="#텍스트-마이닝-실습" class="headerlink" title="텍스트 마이닝 실습"></a>텍스트 마이닝 실습</h3><ul>
+<li><p>문장부호 없애기: tm_map(x, removePunctuation)</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 1. remove punctuation in documnet
 crude&lt;-tm_map(crude, removePunctuation)
 content(crude[[1]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>숫자 제거: tm_map(x, removeNumbers)</li>
-</ul>
+</li>
+<li><p>숫자 제거: tm_map(x, removeNumbers)</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 2. remove numbers
 crude&lt;-tm_map(crude, removeNumbers)
-content(crude[[1]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>스톱워즈 제거: 언어별로 다르며 별도 지정 가능</li>
-</ul>
+content(crude[[1]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>스톱워즈 제거: 언어별로 다르며 별도 지정 가능</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 3. remove stopwords
 crude&lt;-tm_map(crude, function(x) removeWords(x,stopwords()))
-content(crude[[1]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>참고: 스톱워즈 리스트</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">stopwords() #stopwords(&quot;en&quot;) 174개, stopwords(&quot;SMART&quot;)&quot; 517개<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>문서 행렬 구성: TermDocumentMatrix(문서이름)</li>
-</ul>
+content(crude[[1]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>참고: 스톱워즈 리스트</p>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">stopwords() #stopwords(&quot;en&quot;) 174개, stopwords(&quot;SMART&quot;)&quot; 517개<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>문서 행렬 구성: TermDocumentMatrix(문서이름)</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 4. contruct term-doucument matrix 
 tdm&lt;-TermDocumentMatrix(crude)
-inspect(tdm)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>
-<p>결과 해석</p>
+inspect(tdm)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>결과 해석</p>
 <ul>
 <li>DOCS 144: crude 문서 번호 144에 나오는 단어들의 빈도</li>
 </ul>
 </li>
-<li>
-<p>문서 행렬을 행렬로 변환</p>
-</li>
-</ul>
+<li><p>문서 행렬을 행렬로 변환</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 5. read tdm as a matrix
 m&lt;-as.matrix(tdm)
-head(m)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>단어의 빈도 순서로 정렬</li>
-</ul>
+head(m)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>단어의 빈도 순서로 정렬</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 6. sorting in high frequency to low frequency 
 v&lt;-sort(rowSums(m), decreasing&#x3D;TRUE)
-v[1:10] # 가장 높은 것부터 [1:10]번까지<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>텍스트마이닝 수행
+v[1:10] # 가장 높은 것부터 [1:10]번까지<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>텍스트마이닝 수행</p>
 <ul>
 <li>단어 이름과 빈도를 결합한 행렬을 데이터 프레임으로 저장</li>
-<li>crude 관련 기사 파일로부터 962개 단어를 분류해 빈도 계산</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 7. match with freq and word names
+<li>crude 관련 기사 파일로부터 962개 단어를 분류해 빈도 계산<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 7. match with freq and word names
 d&lt;-data.frame(word&#x3D;names(v), freq&#x3D;v)
 head(d) #가장 빈도 높은 단어 6개
-d[957:962, ] #가장 빈도 낮은 단어 6개<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>텍스트마이닝 결과 그리기</li>
+d[957:962, ] #가장 빈도 낮은 단어 6개<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
+</li>
+<li><p>텍스트마이닝 결과 그리기</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 7. plot a word cloud
 wordcloud(d$word, d$freq)
 # help(wordcloud)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -710,14 +576,16 @@ wordcloud(d$word,d$freq,c(8,.3),2,,FALSE,.1)
 # 7-2. color plot with frequent words plotted first
 pal &lt;- brewer.pal(9,&quot;BuGn&quot;)
 pal &lt;- pal[-(1:4)]
-wordcloud(d$word,d$freq,c(8,.3),2,,FALSE,,.15,pal)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+wordcloud(d$word,d$freq,c(8,.3),2,,FALSE,,.15,pal)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/" data-id="ckl2d8i3u00157cue374f81f6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/24/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9%E2%85%A5_%EB%94%A5%EB%9F%AC%EB%8B%9D%EA%B3%BC_%ED%85%8D%EC%8A%A4%ED%8A%B8_%EB%A7%88%EC%9D%B4%EB%8B%9D/" data-id="ckl3oztzm000zgcue0ts0ghhe" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -796,21 +664,15 @@ wordcloud(d$word,d$freq,c(8,.3),2,,FALSE,,.15,pal)<span aria-hidden="true" class
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2020/12/24/Study/Postech/머신러닝R/ⅩⅥ_딥러닝과_텍스트_마이닝/",
         "description": "
-POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.
+POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅱ 과정입니다.  
 
-ⅩⅥ. 딥러닝과 텍스트 마이닝
-1. Neural Networks
-Concepts
-
-
+ⅩⅥ. 딥러닝과 텍스트 마이닝1. Neural NetworksConcepts
 인공신경망은 기계학습(Machine Learning)의 통계적 학습 알고리즘 중 하나
-
 
 컴퓨터 비전, 자연어 처리, 음석 인식 등 영역에서 사용
 
-
-AI ⊂ Machine Learning ⊂ Neu",
-        "wordCount": 1558,
+AI ⊂ Machine Learning ⊂ Neural ",
+        "wordCount": 1650,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

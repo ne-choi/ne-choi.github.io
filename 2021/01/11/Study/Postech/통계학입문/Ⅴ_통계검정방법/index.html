@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,신뢰구간,t-test,p-value">
     
-    <meta name="description" content="POSTECH MOOC 중, 데이터사이언스를 위한 통계학입문 Ⅱ 과정입니다.  Ⅴ. 통계검정방법 1. 신뢰구간의 의미 신뢰구간  신뢰구간: 구간추정  실제 모수가 존재할 가능성이 높은 구간으로 추정 모평균, 모비율 등 모수를 포함할 확률 신뢰수준(Confidence level): 구간에 모수 μ가 포함될 확률 일반적으로 100(1-α)%로 나타냄    9">
+    <meta name="description" content="POSTECH MOOC 중, 데이터사이언스를 위한 통계학입문 Ⅱ 과정입니다.  Ⅴ. 통계검정방법1. 신뢰구간의 의미신뢰구간 신뢰구간: 구간추정  실제 모수가 존재할 가능성이 높은 구간으로 추정 모평균, 모비율 등 모수를 포함할 확률 신뢰수준(Confidence level): 구간에 모수 μ가 포함될 확률 일반적으로 100(1-α)%로 나타냄    95%">
 <meta property="og:type" content="article">
 <meta property="og:title" content="데이터사이언스를 위한 통계학입문 2: Ⅴ. 통계검정방법">
 <meta property="og:url" content="https://ne-choi.github.io/2021/01/11/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A4_%ED%86%B5%EA%B3%84%EA%B2%80%EC%A0%95%EB%B0%A9%EB%B2%95/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, 데이터사이언스를 위한 통계학입문 Ⅱ 과정입니다.  Ⅴ. 통계검정방법 1. 신뢰구간의 의미 신뢰구간  신뢰구간: 구간추정  실제 모수가 존재할 가능성이 높은 구간으로 추정 모평균, 모비율 등 모수를 포함할 확률 신뢰수준(Confidence level): 구간에 모수 μ가 포함될 확률 일반적으로 100(1-α)%로 나타냄    9">
+<meta property="og:description" content="POSTECH MOOC 중, 데이터사이언스를 위한 통계학입문 Ⅱ 과정입니다.  Ⅴ. 통계검정방법1. 신뢰구간의 의미신뢰구간 신뢰구간: 구간추정  실제 모수가 존재할 가능성이 높은 구간으로 추정 모평균, 모비율 등 모수를 포함할 확률 신뢰수준(Confidence level): 구간에 모수 μ가 포함될 확률 일반적으로 100(1-α)%로 나타냄    95%">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-11T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:41:55.076Z">
@@ -231,60 +231,49 @@ ga('send', 'pageview');
             <ul>
 <li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 데이터사이언스를 위한 통계학입문 Ⅱ 과정입니다.</li>
 </ul>
-<h1>Ⅴ. 통계검정방법</h1>
-<h2 id="1-신뢰구간의-의미">1. 신뢰구간의 의미</h2>
-<h3 id="신뢰구간">신뢰구간</h3>
-<ul>
-<li>신뢰구간: 구간추정
+<h1 id="Ⅴ-통계검정방법"><a href="#Ⅴ-통계검정방법" class="headerlink" title="Ⅴ. 통계검정방법"></a>Ⅴ. 통계검정방법</h1><h2 id="1-신뢰구간의-의미"><a href="#1-신뢰구간의-의미" class="headerlink" title="1. 신뢰구간의 의미"></a>1. 신뢰구간의 의미</h2><h3 id="신뢰구간"><a href="#신뢰구간" class="headerlink" title="신뢰구간"></a>신뢰구간</h3><ul>
+<li><p>신뢰구간: 구간추정</p>
 <ul>
 <li>실제 모수가 존재할 가능성이 높은 구간으로 추정</li>
 <li>모평균, 모비율 등 모수를 포함할 확률</li>
 <li>신뢰수준(Confidence level): 구간에 모수 μ가 포함될 확률</li>
-<li>일반적으로 100(1-α)%로 나타냄</li>
+<li>일반적으로 100(1-α)%로 나타냄  </li>
 </ul>
+<h3 id="95-신뢰구간의-의미"><a href="#95-신뢰구간의-의미" class="headerlink" title="95% 신뢰구간의 의미"></a>95% 신뢰구간의 의미</h3></li>
+<li><p>100번의 반복샘플링으로 얻은 평균과 편차로 계산한 100개의 신뢰구간 중, 5개는 실제 모평균(μ)을 포함하고 있지 않는다.</p>
+</li>
+<li><p>표본을 통해 얻은 95% 신뢰구간에 실제 모평균이 포함되지 않을 확률은 5%이다</p>
+</li>
+<li><p>전체 집단(즉, 모집단 전체)을 조사할 수 없기 때문에 이용한다</p>
+</li>
+<li><p>신뢰구간은 고정된 단일 값이 아닌 움직이는 여러 값이다.</p>
 </li>
 </ul>
-<h3 id="95-신뢰구간의-의미">95% 신뢰구간의 의미</h3>
-<ul>
-<li>100번의 반복샘플링으로 얻은 평균과 편차로 계산한 100개의 신뢰구간 중, 5개는 실제 모평균(μ)을 포함하고 있지 않는다.</li>
-<li>표본을 통해 얻은 95% 신뢰구간에 실제 모평균이 포함되지 않을 확률은 5%이다</li>
-<li>전체 집단(즉, 모집단 전체)을 조사할 수 없기 때문에 이용한다</li>
-<li>신뢰구간은 고정된 단일 값이 아닌 움직이는 여러 값이다.</li>
+<h3 id="적당한-신뢰구간은"><a href="#적당한-신뢰구간은" class="headerlink" title="적당한 신뢰구간은?"></a>적당한 신뢰구간은?</h3><ul>
+<li>90% 신뢰구간: z<del>α/2</del> = z<del>0.5</del> = 1.65</li>
+<li>95% 신뢰구간: z<del>α/2</del> = z<del>0.25</del> = 1.96</li>
+<li>99% 신뢰구간: z<del>α/2</del> = z<del>0.05</del> = 2.57  </li>
 </ul>
-<h3 id="적당한-신뢰구간은">적당한 신뢰구간은?</h3>
-<ul>
-<li>90% 신뢰구간: z~α/2~ = z~0.5~ = 1.65</li>
-<li>95% 신뢰구간: z~α/2~ = z~0.25~ = 1.96</li>
-<li>99% 신뢰구간: z~α/2~ = z~0.05~ = 2.57</li>
-</ul>
-<h3 id="표본사이즈와-허용오차">표본사이즈와 허용오차</h3>
-<ul>
+<h3 id="표본사이즈와-허용오차"><a href="#표본사이즈와-허용오차" class="headerlink" title="표본사이즈와 허용오차"></a>표본사이즈와 허용오차</h3><ul>
 <li>허용오차를 일정수준으로 정하면 그에 따른 표본크기가 정해짐</li>
-<li>신뢰구간에서 허용오차에 영향을 미치는 요소
-<ul>
+<li>신뢰구간에서 허용오차에 영향을 미치는 요소<ul>
 <li>표본의 크기, 유의수준, 표준편차 (표본평균은 X)</li>
 </ul>
 </li>
 </ul>
-<h3 id="요약">요약</h3>
-<ul>
+<h3 id="요약"><a href="#요약" class="headerlink" title="요약"></a>요약</h3><ul>
 <li>실험 및 조사설계 시에는 허용오차 및 신뢰수준을 고려해야 정확한 분석이 가능</li>
 </ul>
-<h2 id="2-통계적-검정은-왜-필요한가">2. 통계적 검정은 왜 필요한가</h2>
-<h3 id="통계적-검정이란">통계적 검정이란?</h3>
+<h2 id="2-통계적-검정은-왜-필요한가"><a href="#2-통계적-검정은-왜-필요한가" class="headerlink" title="2. 통계적 검정은 왜 필요한가"></a>2. 통계적 검정은 왜 필요한가</h2><h3 id="통계적-검정이란"><a href="#통계적-검정이란" class="headerlink" title="통계적 검정이란?"></a>통계적 검정이란?</h3><ul>
+<li><p>가설의 진위 여부를 판단, 증명, 검정하는 통계적 추론 방식</p>
 <ul>
-<li>
-<p>가설의 진위 여부를 판단, 증명, 검정하는 통계적 추론 방식</p>
-<ul>
-<li>
-<p><strong>귀무가설(Null Hypothesis, H0)</strong></p>
+<li><p><strong>귀무가설(Null Hypothesis, H0)</strong></p>
 <ul>
 <li>검정 대상이 되는 가설</li>
 <li>기각(reject)을 목표로 함</li>
 </ul>
 </li>
-<li>
-<p><strong>대립가설(Alternative Hypothesis, H1)</strong></p>
+<li><p><strong>대립가설(Alternative Hypothesis, H1)</strong></p>
 <ul>
 <li>귀무가설이 기각될 때 받아들여지는 가설</li>
 <li>채택(accept)을 목표로 함</li>
@@ -292,40 +281,32 @@ ga('send', 'pageview');
 </li>
 </ul>
 </li>
-<li>
-<p>가설 검정 절차</p>
+<li><p>가설 검정 절차</p>
 <ul>
 <li>가설 설정 → 유의수준 설정 → 검정통계량 산출 → 가설 기각/채택</li>
 </ul>
+<h3 id="검정-예시-T-test"><a href="#검정-예시-T-test" class="headerlink" title="검정 예시: T-test"></a>검정 예시: T-test</h3></li>
+<li><p>단측검정(one-sided test)</p>
+</li>
+<li><p>양측검정(two-sided test): 기각역이 양측</p>
 </li>
 </ul>
-<h3 id="검정-예시-T-test">검정 예시: T-test</h3>
-<ul>
-<li>단측검정(one-sided test)</li>
-<li>양측검정(two-sided test): 기각역이 양측</li>
-</ul>
-<h3 id="단측검정">단측검정</h3>
-<ul>
-<li>소비자 주장) 카페에서 파는 커피 용량이 200ml보다 작다.
-<ul>
-<li>귀무가설(H~0~): 커피 용량은 200ml다</li>
-<li>대립가설(H~1~): 커피 용량은 200ml보다 적다</li>
+<h3 id="단측검정"><a href="#단측검정" class="headerlink" title="단측검정"></a>단측검정</h3><ul>
+<li>소비자 주장) 카페에서 파는 커피 용량이 200ml보다 작다.<ul>
+<li>귀무가설(H<del>0</del>): 커피 용량은 200ml다</li>
+<li>대립가설(H<del>1</del>): 커피 용량은 200ml보다 적다</li>
 </ul>
 </li>
 </ul>
-<h3 id="t-분포를-이용한-검정">t-분포를 이용한 검정</h3>
-<ul>
-<li>한 집단 혹은 두 집단 간 평균 차이에 대한 통계적 검정 방법
-<ul>
-<li><strong>T-distribution</strong>
-<ul>
+<h3 id="t-분포를-이용한-검정"><a href="#t-분포를-이용한-검정" class="headerlink" title="t-분포를 이용한 검정"></a>t-분포를 이용한 검정</h3><ul>
+<li>한 집단 혹은 두 집단 간 평균 차이에 대한 통계적 검정 방법<ul>
+<li><strong>T-distribution</strong><ul>
 <li>사회 현상은 평균 데이터가 많으므로 정규 분포(normal distribution) 형태</li>
 <li>정규 분포는 표본의 데이터 수가 많아야 신뢰도가 향상됨(일반적으로 30개 이상)</li>
 <li>데이터가 적은 경우, 예측 범위가 더 넓은 T-distribution 사용</li>
 </ul>
 </li>
-<li><strong>T-test의 가정</strong>
-<ul>
+<li><strong>T-test의 가정</strong><ul>
 <li>독립성: 두 집단 변수는 서로 독립</li>
 <li>정규성: 두 집단 데이터는 정규분포를 만족</li>
 <li>등분산성: 두 집단 분산은 동일</li>
@@ -334,78 +315,56 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<h3 id="통계적-검정의-계산-예시">통계적 검정의 계산 예시</h3>
-<ul>
+<h3 id="통계적-검정의-계산-예시"><a href="#통계적-검정의-계산-예시" class="headerlink" title="통계적 검정의 계산 예시"></a>통계적 검정의 계산 예시</h3><ul>
 <li>t = 표본평균 - μ / (표본표준편차(s)/표본의 수 루트)</li>
 </ul>
-<h2 id="3-두-집단-t-검정">3. 두 집단 t-검정</h2>
-<h3 id="두-집단-간-평균-비교">두 집단 간 평균 비교</h3>
-<ul>
-<li>학습 목표
-<ul>
+<h2 id="3-두-집단-t-검정"><a href="#3-두-집단-t-검정" class="headerlink" title="3. 두 집단 t-검정"></a>3. 두 집단 t-검정</h2><h3 id="두-집단-간-평균-비교"><a href="#두-집단-간-평균-비교" class="headerlink" title="두 집단 간 평균 비교"></a>두 집단 간 평균 비교</h3><ul>
+<li>학습 목표<ul>
 <li>두 모집단 평균 비교를 위한 t-검정 계산 과정 익히기</li>
 </ul>
 </li>
 </ul>
-<h3 id="t-검정-검정통계량과-기각역">t-검정 검정통계량과 기각역</h3>
-<ul>
-<li>가설 → 조사 → 데이터 → 검정통계량 → 가설에 대한 결정 (유의수준 α)
-<ul>
+<h3 id="t-검정-검정통계량과-기각역"><a href="#t-검정-검정통계량과-기각역" class="headerlink" title="t-검정 검정통계량과 기각역"></a>t-검정 검정통계량과 기각역</h3><ul>
+<li>가설 → 조사 → 데이터 → 검정통계량 → 가설에 대한 결정 (유의수준 α)<ul>
 <li>검정통계량이 기각역 안에 있으면 귀무가설 기각 → 대립가설 인정</li>
 </ul>
 </li>
 </ul>
-<h3 id="퀴즈">퀴즈</h3>
-<h2 id="4-p-value의-실제-의미">4. p-value의 실제 의미</h2>
-<h3 id="p-value">p-value</h3>
-<ul>
+<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><h2 id="4-p-value의-실제-의미"><a href="#4-p-value의-실제-의미" class="headerlink" title="4. p-value의 실제 의미"></a>4. p-value의 실제 의미</h2><h3 id="p-value"><a href="#p-value" class="headerlink" title="p-value"></a>p-value</h3><ul>
 <li>데이터 결과 자료에서 보게 되는 값</li>
 <li>변수의 통계적 유의도를 나타내는 값 (유의확률)</li>
 </ul>
-<h3 id="p-value-찾기">p-value 찾기</h3>
+<h3 id="p-value-찾기"><a href="#p-value-찾기" class="headerlink" title="p-value 찾기"></a>p-value 찾기</h3><ul>
+<li><p>예제</p>
 <ul>
-<li>
-<p>예제</p>
-<ul>
-<li>
-<p>25개 표본의 과자 한 팩 평균 무게가 87g이다. (모표준편차 = 15g) 유의수준 α = 0.05에서 과자 한 팩이 80g 이상이라고 할 수 있는가?</p>
+<li><p>25개 표본의 과자 한 팩 평균 무게가 87g이다. (모표준편차 = 15g) 유의수준 α = 0.05에서 과자 한 팩이 80g 이상이라고 할 수 있는가?</p>
 </li>
-<li>
-<p>귀무가설: μ = 80, 대립가설: μ &gt; 80</p>
+<li><p>귀무가설: μ = 80, 대립가설: μ &gt; 80</p>
 </li>
-<li>
-<p>검정통계량 Z = 2.33</p>
+<li><p>검정통계량 Z = 2.33</p>
 </li>
-<li>
-<p>검정통계량이 기각역 하에 있으면 귀무가설을 기각</p>
+<li><p>검정통계량이 기각역 하에 있으면 귀무가설을 기각</p>
 </li>
 </ul>
 </li>
-<li>
-<p>결과: 과자 한 팩 무게는 80g이라는 주장을 인정</p>
+<li><p>결과: 과자 한 팩 무게는 80g이라는 주장을 인정</p>
 </li>
-<li>
-<p>통계검정에서 p-value는?</p>
+<li><p>통계검정에서 p-value는?</p>
 <ul>
 <li>p-value는 유의확률: 대립가설에 대한 증거의 정도</li>
-<li>p-value가 작다는 것은 그 검정이 매우 유의하다는 증거<br>
-→ p-value는 변수의 유의성 정도 혹은 검정의 유의도를 나타냄</li>
+<li>p-value가 작다는 것은 그 검정이 매우 유의하다는 증거<br>→ p-value는 변수의 유의성 정도 혹은 검정의 유의도를 나타냄</li>
 </ul>
 </li>
 </ul>
-<h3 id="검정의-오류">검정의 오류</h3>
+<h3 id="검정의-오류"><a href="#검정의-오류" class="headerlink" title="검정의 오류"></a>검정의 오류</h3><ul>
+<li><p>통계적 추정을 해석할 때 발생하는 오차</p>
 <ul>
-<li>통계적 추정을 해석할 때 발생하는 오차
-<ul>
-<li>Type 1 error: H~0~이 참인데 기각하는 오류</li>
-<li>Type 2 error: H~0~이 거짓인데 채택하는 오류</li>
+<li>Type 1 error: H<del>0</del>이 참인데 기각하는 오류</li>
+<li>Type 2 error: H<del>0</del>이 거짓인데 채택하는 오류</li>
 </ul>
+<p>|||H<del>0</del> true|H<del>0</del> false|<br>|—|—|—|<br>|H<del>0</del> accept|1-α|Type 2 error(β)|<br>|H<del>0</del> reject|Type 1 error(α)|Power(1-β)|</p>
 </li>
 </ul>
-<p>|||H~0~ true|H~0~ false|<br>
-|—|—|—|<br>
-|H~0~ accept|1-α|Type 2 error(β)|<br>
-|H~0~ reject|Type 1 error(α)|Power(1-β)|</p>
 
         </div>
         <footer class="article-footer">
@@ -413,7 +372,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://ne-choi.github.io/2021/01/11/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A4_%ED%86%B5%EA%B3%84%EA%B2%80%EC%A0%95%EB%B0%A9%EB%B2%95/" data-id="ckl2d8i9g009m7cuehorj764h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2021/01/11/Study/Postech/%ED%86%B5%EA%B3%84%ED%95%99%EC%9E%85%EB%AC%B8/%E2%85%A4_%ED%86%B5%EA%B3%84%EA%B2%80%EC%A0%95%EB%B0%A9%EB%B2%95/" data-id="ckl3ozu2k009mgcue8ubr6if6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -494,21 +453,16 @@ ga('send', 'pageview');
         "description": "
 POSTECH MOOC 중, 데이터사이언스를 위한 통계학입문 Ⅱ 과정입니다.
 
-Ⅴ. 통계검정방법
-1. 신뢰구간의 의미
-신뢰구간
-
+Ⅴ. 통계검정방법1. 신뢰구간의 의미신뢰구간
 신뢰구간: 구간추정
 
 실제 모수가 존재할 가능성이 높은 구간으로 추정
 모평균, 모비율 등 모수를 포함할 확률
 신뢰수준(Confidence level): 구간에 모수 μ가 포함될 확률
-일반적으로 100(1-α)%로 나타냄
+일반적으로 100(1-α)%로 나타냄  
 
-
-
-9",
-        "wordCount": 405,
+95% ",
+        "wordCount": 506,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

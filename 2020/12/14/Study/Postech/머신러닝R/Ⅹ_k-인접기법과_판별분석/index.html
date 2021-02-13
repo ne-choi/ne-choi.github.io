@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,k-인접기법,판별분석">
     
-    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  Ⅹ. k-인접기법과 판별분석 1. k-인접기법  k-nearest neighbor  분류(Classification)   분류(Classification): 지도학습(Supervised Learning)  타겟범주를 알고 있는 데이터로 분류 규칙을 생성하고 새로운 데이터를 특정 범주">
+    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    Ⅹ. k-인접기법과 판별분석1. k-인접기법 k-nearest neighbor  분류(Classification) 분류(Classification): 지도학습(Supervised Learning)  타겟범주를 알고 있는 데이터로 분류 규칙을 생성하고 새로운 데이터를 특정 범주에">
 <meta property="og:type" content="article">
 <meta property="og:title" content="머신러닝 기법과 R 프로그래밍 1: Ⅹ. k-인접기법과 판별분석">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  Ⅹ. k-인접기법과 판별분석 1. k-인접기법  k-nearest neighbor  분류(Classification)   분류(Classification): 지도학습(Supervised Learning)  타겟범주를 알고 있는 데이터로 분류 규칙을 생성하고 새로운 데이터를 특정 범주">
+<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    Ⅹ. k-인접기법과 판별분석1. k-인접기법 k-nearest neighbor  분류(Classification) 분류(Classification): 지도학습(Supervised Learning)  타겟범주를 알고 있는 데이터로 분류 규칙을 생성하고 새로운 데이터를 특정 범주에">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-14T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:39:30.357Z">
@@ -228,55 +228,45 @@ ga('send', 'pageview');
             
 
             <ul>
-<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.</li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  </li>
 </ul>
-<h1>Ⅹ. k-인접기법과 판별분석</h1>
-<h2 id="1-k-인접기법">1. k-인접기법</h2>
-<ul>
+<h1 id="Ⅹ-k-인접기법과-판별분석"><a href="#Ⅹ-k-인접기법과-판별분석" class="headerlink" title="Ⅹ. k-인접기법과 판별분석"></a>Ⅹ. k-인접기법과 판별분석</h1><h2 id="1-k-인접기법"><a href="#1-k-인접기법" class="headerlink" title="1. k-인접기법"></a>1. k-인접기법</h2><ul>
 <li>k-nearest neighbor</li>
 </ul>
-<h3 id="분류-Classification">분류(Classification)</h3>
-<ul>
-<li>
-<p>분류(Classification): 지도학습(Supervised Learning)</p>
+<h3 id="분류-Classification"><a href="#분류-Classification" class="headerlink" title="분류(Classification)"></a>분류(Classification)</h3><ul>
+<li><p>분류(Classification): 지도학습(Supervised Learning)</p>
 <ul>
 <li>타겟범주를 알고 있는 데이터로 분류 규칙을 생성하고 새로운 데이터를 특정 범주에 분류하는 기법</li>
 </ul>
 </li>
-<li>
-<p>군집화(Clustering): 비지도학습(Unsupervised Learning)</p>
+<li><p>군집화(Clustering): 비지도학습(Unsupervised Learning)</p>
 <ul>
 <li>독립변수들의 속성을 기반으로 객체들을 그룹화하는 방법</li>
 </ul>
 </li>
 </ul>
-<h3 id="k-인접기법">k-인접기법</h3>
-<ul>
-<li>
-<p>k-인접방법 (kNN): k개의 가장 가까운 이웃을 사용해서 분류하는 방법</p>
+<h3 id="k-인접기법"><a href="#k-인접기법" class="headerlink" title="k-인접기법"></a>k-인접기법</h3><ul>
+<li><p>k-인접방법 (kNN): k개의 가장 가까운 이웃을 사용해서 분류하는 방법</p>
 <ul>
 <li>거리만 고려하거나, 거리에 따라 가중치를 부여하는 2가지 방법</li>
 <li>사용되는 변수에 결측치가 있는 경우, 미리 처리하고 수행해야 함</li>
 <li>k개의 인접한 관측치의 다수 범주로 할당하는 방법</li>
 </ul>
 </li>
-<li>
-<p>최적 k는?</p>
+<li><p>최적 k는?</p>
 <ul>
 <li>k가 너무 크면 데이터 구조를 파악하기 어렵고, 너무 작으면 과적합(overfitting) 위험이 있음</li>
 <li>교차검증(Cross-validation)으로 정확도가 높은 k를 선정</li>
 </ul>
 </li>
-<li>
-<p>장점</p>
+<li><p>장점</p>
 <ul>
 <li>단순하며 효율적</li>
 <li>데이터 분산을 추정할 필요가 없음</li>
 <li>빠른 훈련 단계</li>
 </ul>
 </li>
-<li>
-<p>단점</p>
+<li><p>단점</p>
 <ul>
 <li>모델을 생성하지 않음</li>
 <li>느린 분류 단계</li>
@@ -284,10 +274,7 @@ ga('send', 'pageview');
 <li>결측치는 추가 작업 필요</li>
 </ul>
 </li>
-<li>
-<p>kNN 수행을 위한 패키지 설치</p>
-</li>
-</ul>
+<li><p>kNN 수행을 위한 패키지 설치</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># packages
 # install.packages(&quot;class&quot;) #no weighted value knn
 # install.packages(&quot;gmodels&quot;) #검증에 사용되는 cross table을 위한 패키지
@@ -295,9 +282,8 @@ ga('send', 'pageview');
 library(class)
 library(gmodels)
 library(scales)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>train/test 데이터 분할(cross-validation)</li>
-</ul>
+</li>
+<li><p>train/test 데이터 분할(cross-validation)</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
 iris &lt;- read.csv(&quot;data&#x2F;week10_1&#x2F;iris.csv&quot;)
 # head(iris)
@@ -316,36 +302,28 @@ trainLabels&lt;-iris[tr.idx,5]
 testLabels&lt;-iris[-tr.idx,5]
 
 train&lt;-iris[tr.idx,]
-test&lt;-iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+test&lt;-iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>kNN 수행과 결과</p>
 <ul>
-<li>kNN 수행과 결과
-<ul>
-<li>kNN 함수: knn(train=학습데이터, test=검증데이터, cl=타겟변수, k= )</li>
+<li>kNN 함수: knn(train=학습데이터, test=검증데이터, cl=타겟변수, k= )<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># knn (5-nearest neighbor)
+md1 &lt;- knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;5)
+md1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># knn (5-nearest neighbor)
-md1 &lt;- knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;5)
-md1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>kNN(k=5)의 결과: 정확도</li>
-</ul>
+<li><p>kNN(k=5)의 결과: 정확도</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of 5-nearest neighbor classification
 CrossTable(x&#x3D;testLabels,y&#x3D;md1, prop.chisq&#x3D;FALSE)
-# x: 타겟변수의 실제값, y: 타겟변수의 예측값<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>결과 해석
+# x: 타겟변수의 실제값, y: 타겟변수의 예측값<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>결과 해석</p>
 <ul>
 <li>정확도: 47/50 → 94%</li>
 <li>versicolor를 virginica로 오분류(2개)</li>
 <li>virginica를 versicolor로 오분류(1개)</li>
-<li>오분류율: 3/50 → 6%</li>
+<li>오분류율: 3/50 → 6%  </li>
 </ul>
 </li>
 </ul>
-<h2 id="2-k-인접기법-가중치">2. k-인접기법: 가중치</h2>
-<h3 id="kNN에서-최적-k-탐색">kNN에서 최적 k 탐색</h3>
-<ul>
+<h2 id="2-k-인접기법-가중치"><a href="#2-k-인접기법-가중치" class="headerlink" title="2. k-인접기법: 가중치"></a>2. k-인접기법: 가중치</h2><h3 id="kNN에서-최적-k-탐색"><a href="#kNN에서-최적-k-탐색" class="headerlink" title="kNN에서 최적 k 탐색"></a>kNN에서 최적 k 탐색</h3><ul>
 <li>최적 k의 탐색: 1 to nrow(tran_data)/2 (여기서는 1 to 50)</li>
 </ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># optimal k selection (1 to n&#x2F;2)
@@ -366,33 +344,24 @@ with(test_k,text(accuracy~k,labels &#x3D; k,pos&#x3D;1,cex&#x3D;0.7))<span aria-
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># minimum k for the highest accuracy
 min(test_k[test_k$accuracy %in% max(accuracy_k),&quot;k&quot;])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
-<li>
-<p>결과 해석</p>
-<ul>
+<li>결과 해석<ul>
 <li>k=7에서 정확도(.98)가 가장 높음</li>
 </ul>
 </li>
-<li>
-<p>최종 kNN 모형 (k=7)</p>
-</li>
 </ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#k&#x3D;7 knn
+<ul>
+<li>최종 kNN 모형 (k=7)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#k&#x3D;7 knn
 md1&lt;-knn(train&#x3D;iris.train,test&#x3D;iris.test,cl&#x3D;trainLabels,k&#x3D;7)
-CrossTable(x&#x3D;testLabels,y&#x3D;md1, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>
-<p>결과 해석</p>
-<ul>
+CrossTable(x&#x3D;testLabels,y&#x3D;md1, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>결과 해석<ul>
 <li>정확도: 49/50 → 98%</li>
 <li>versicolor를 virginica로 오분류 (1개)</li>
 <li>오분류율: 1/50 → 2%</li>
 </ul>
 </li>
-<li>
-<p>kNN(k=7)의 결과: 그래픽</p>
-</li>
 </ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># graphic display
+<ul>
+<li>kNN(k=7)의 결과: 그래픽<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># graphic display
 plot(formula&#x3D;Petal.Length ~ Petal.Width,
      data&#x3D;iris.train,col&#x3D;alpha(c(&quot;purple&quot;,&quot;blue&quot;,&quot;green&quot;),0.7)[trainLabels],
      main&#x3D;&quot;knn(k&#x3D;7)&quot;)
@@ -407,40 +376,30 @@ legend(&quot;bottomright&quot;,
        pch&#x3D;c(rep(1,3),rep(17,3)),
        col&#x3D;c(rep(alpha(c(&quot;purple&quot;,&quot;blue&quot;,&quot;green&quot;),0.7),2)),
        cex&#x3D;0.9
-)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>결과 해석
-<ul>
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>결과 해석<ul>
 <li>Petal.width와 Petal.length에 산점도를 그리면 setosa는 잘 분류됨</li>
 <li>virginica와 versicolor는 분류가 잘 되지 않음</li>
 </ul>
 </li>
 </ul>
-<h3 id="Weighted-kNN">Weighted kNN</h3>
-<ul>
-<li>거리에 따라 가중치를 부여하는 두 가지 알고리즘이 존재</li>
-</ul>
+<h3 id="Weighted-kNN"><a href="#Weighted-kNN" class="headerlink" title="Weighted kNN"></a>Weighted kNN</h3><ul>
+<li><p>거리에 따라 가중치를 부여하는 두 가지 알고리즘이 존재</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Weighted KNN packages
 # install.packages(&quot;kknn&quot;) # weighted value knn
-library(kknn)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>k=5, distance=1</li>
-</ul>
+library(kknn)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>k=5, distance=1</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># weighted knn
 md2 &lt;- kknn(Species~., train&#x3D;train, test&#x3D;iris.test, k&#x3D;5, distance&#x3D;1, kernel&#x3D;&quot;triangular&quot;)
 md2
 
 # to see results for weighted knn
 md2_fit&lt;-fitted(md2)
-md2_fit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>cross table로 오분류율 보기</li>
-</ul>
+md2_fit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>cross table로 오분류율 보기</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of weighted knn
-CrossTable(x&#x3D;testLabels,y&#x3D;md2_fit,prop.chisq&#x3D;FALSE,prop.c&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>k=7, distance=2로 옵션 변경 결과</li>
-</ul>
+CrossTable(x&#x3D;testLabels,y&#x3D;md2_fit,prop.chisq&#x3D;FALSE,prop.c&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>k=7, distance=2로 옵션 변경 결과</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># weighted knn (k&#x3D;7, distance&#x3D;2)
 md3&lt;-kknn(Species~., train&#x3D;train,test&#x3D;iris.test,k&#x3D;7,distance&#x3D;2,kernel&#x3D;&quot;triangular&quot;)
 md3
@@ -449,36 +408,25 @@ md3_fit&lt;-fitted(md3)
 md3_fit
 # accuracy of weighted knn
 CrossTable(x&#x3D;testLabels,y&#x3D;md3_fit,prop.chisq&#x3D;FALSE,prop.c&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-판별분석-Ⅰ">3. 판별분석 Ⅰ</h2>
-<h3 id="판별분석">판별분석</h3>
-<ul>
-<li>
-<p>데이터 마이닝 분류 기법 중 하나</p>
+<h2 id="3-판별분석-Ⅰ"><a href="#3-판별분석-Ⅰ" class="headerlink" title="3. 판별분석 Ⅰ"></a>3. 판별분석 Ⅰ</h2><h3 id="판별분석"><a href="#판별분석" class="headerlink" title="판별분석"></a>판별분석</h3></li>
+<li><p>데이터 마이닝 분류 기법 중 하나</p>
 </li>
-<li>
-<p>객체를 몇 개의 <strong>범주로 분류</strong></p>
+<li><p>객체를 몇 개의 <strong>범주로 분류</strong></p>
 </li>
-<li>
-<p>범주를 가장 잘 구분하는 변수 파악 및 범주간 차이를 가장 잘 표현하는 함수 도출</p>
+<li><p>범주를 가장 잘 구분하는 변수 파악 및 범주간 차이를 가장 잘 표현하는 함수 도출</p>
 <ul>
 <li>피셔(Fisher) 방법</li>
-<li>의사결정이론
-<ul>
+<li>의사결정이론<ul>
 <li>선형판별분석(LDA; Liner DA): 정규분포 분산-공분산 행렬이 범주에 관계 없이 동일한 경우</li>
 <li>이차판별분석(QDA; Quadratic DA): 정규분포의 분산-공분산 행렬이 범주별로 다른 경우</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>예제 데이터</p>
-</li>
-</ul>
+<li><p>예제 데이터</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;gmodels&quot;) #crosstable
-library(gmodels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>train / test 분할</li>
-</ul>
+library(gmodels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>train / test 분할</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
 iris&lt;-read.csv(&quot;data&#x2F;week10_3&#x2F;iris.csv&quot;)
 attach(iris)
@@ -498,88 +446,63 @@ trainLabels&lt;-iris[tr.idx,5] # 학습데이터의 타겟변수
 testLabels&lt;-iris[-tr.idx,5] # 검증데이터의 타겟변수
 
 train&lt;-iris[tr.idx,]
-test&lt;-iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+test&lt;-iris[-tr.idx,]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>LDA함수: lda(종속변수~독립변수, data=학습데이터이름, prior=사전확률)</p>
 <ul>
-<li>LDA함수: lda(종속변수~독립변수, data=학습데이터이름, prior=사전확률)
-<ul>
-<li>사전확률(prioir probability): 원인 A가 발생할 확률인 P(A)와 같이, 결과가 나타나기 전에 결정되어 있는 확률</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install the MASS package for LDA
+<li>사전확률(prioir probability): 원인 A가 발생할 확률인 P(A)와 같이, 결과가 나타나기 전에 결정되어 있는 확률<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install the MASS package for LDA
 # install.packages(&quot;MASS&quot;)
 library(MASS)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Linear Discriminant Analysis (LDA) with training data n&#x3D;100
 iris.lda &lt;- lda(Species ~ ., data&#x3D;train, prior&#x3D;c(1&#x2F;3,1&#x2F;3,1&#x2F;3)) # .의 의미: 전체 데이터를 사용하겠다(4개)
-iris.lda<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+iris.lda<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>결과 해석</p>
 <ul>
-<li>
-<p>결과 해석</p>
-<ul>
-<li>
-<p>Coefficients ~</p>
+<li><p>Coefficients ~</p>
 </li>
-<li>
-<p>첫 번째 범주 판별 함수: LD1 = 0.89 Sepal.Length + 1.71 Sepal.Width - 2.15 Petal.Length - 2.91 Petal.Width</p>
+<li><p>첫 번째 범주 판별 함수: LD1 = 0.89 Sepal.Length + 1.71 Sepal.Width - 2.15 Petal.Length - 2.91 Petal.Width</p>
 </li>
-<li>
-<p>두 번째 범주 판별 함수: LD2 = -0.11 Sepal.Length - 2.23 Sepal.Width + 0.74 Petal.Length - 2.39 Petal.Width</p>
+<li><p>두 번째 범주 판별 함수: LD2 = -0.11 Sepal.Length - 2.23 Sepal.Width + 0.74 Petal.Length - 2.39 Petal.Width</p>
 </li>
-<li>
-<p>LD1이 between-group variance의 99%를 설명</p>
+<li><p>LD1이 between-group variance의 99%를 설명</p>
 </li>
-<li>
-<p>LD2가 between-group variance의 1%를 설명</p>
+<li><p>LD2가 between-group variance의 1%를 설명</p>
 </li>
 </ul>
 </li>
-<li>
-<p>검증 데이터에 LDA 결과를 적용하여 범주 추정</p>
-</li>
-</ul>
+<li><p>검증 데이터에 LDA 결과를 적용하여 범주 추정</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># predict test data set n&#x3D;50
 testpred &lt;- predict(iris.lda, test)
-testpred<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>
-<p>결과 해석</p>
+testpred<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>결과 해석</p>
 <ul>
 <li>$class: 추정 범주</li>
 <li>세 개 범주의 사후 확률(posterior probability)을 구한 후, max 값의 범주로 할당</li>
 </ul>
 </li>
-<li>
-<p>정확도 산정: 오분류율(검증데이터)</p>
-</li>
-</ul>
+<li><p>정확도 산정: 오분류율(검증데이터)</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of LDA
-CrossTable(x&#x3D;testLabels,y&#x3D;testpred$class, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>결과 해석
+CrossTable(x&#x3D;testLabels,y&#x3D;testpred$class, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>결과 해석</p>
 <ul>
 <li>정확도: 49/50 → 98%</li>
 <li>오분류율: 1/50 → 2%</li>
 </ul>
 </li>
 </ul>
-<h3 id="퀴즈">퀴즈</h3>
-<p>iris.lda &lt;- lda(Species ~ ., data=train, prior=c(1/2,1/4,1/4)) # .의 의미: 전체 데이터를 사용하겠다(4개)<br>
-iris.lda</p>
-<p>testpred &lt;- predict(iris.lda, test)<br>
-testpred</p>
+<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><p>iris.lda &lt;- lda(Species ~ ., data=train, prior=c(1/2,1/4,1/4)) # .의 의미: 전체 데이터를 사용하겠다(4개)<br>iris.lda</p>
+<p>testpred &lt;- predict(iris.lda, test)<br>testpred</p>
 <p>CrossTable(x=testLabels,y=testpred$class, prop.chisq=FALSE)</p>
 <p>testpred1 &lt;- round(testpred$posterior, 2) id=150</p>
-<h2 id="4-판별분석-Ⅱ">4. 판별분석 Ⅱ</h2>
-<h3 id="선형판별분석-vs-이차판별분석">선형판별분석 vs 이차판별분석</h3>
-<table>
+<h2 id="4-판별분석-Ⅱ"><a href="#4-판별분석-Ⅱ" class="headerlink" title="4. 판별분석 Ⅱ"></a>4. 판별분석 Ⅱ</h2><h3 id="선형판별분석-vs-이차판별분석"><a href="#선형판별분석-vs-이차판별분석" class="headerlink" title="선형판별분석 vs 이차판별분석"></a>선형판별분석 vs 이차판별분석</h3><table>
 <thead>
 <tr>
 <th>LDA</th>
 <th>QDA</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>분산-공분산 행렬이 범주 관계 없이 동일한 경우</td>
 <td>분산-공분산 행렬이 범주별로 다른 경우</td>
 </tr>
@@ -591,90 +514,68 @@ testpred</p>
 <td>(-) 낮은 유연성</td>
 <td>(=) 높은 유연성</td>
 </tr>
-</tbody>
-</table>
-<h3 id="이차판별분석-QDA">이차판별분석(QDA)</h3>
+</tbody></table>
+<h3 id="이차판별분석-QDA"><a href="#이차판별분석-QDA" class="headerlink" title="이차판별분석(QDA)"></a>이차판별분석(QDA)</h3><ul>
+<li><p>모집단 등분산 검정</p>
 <ul>
-<li>
-<p>모집단 등분산 검정</p>
-<ul>
-<li>분산-공분산 행렬이 범주별로 다른 경우, 이차판별분석 실시</li>
+<li>분산-공분산 행렬이 범주별로 다른 경우, 이차판별분석 실시  </li>
 </ul>
 </li>
-<li>
-<p>Box’s M-test</p>
+<li><p>Box’s M-test</p>
 <ul>
 <li>귀무가설: 모집단의 분산-공분산 행렬이 동일</li>
-<li>대립가설: 모집단의 분산-공분산 행렬이 동일하지 X</li>
+<li>대립가설: 모집단의 분산-공분산 행렬이 동일하지 X  </li>
 </ul>
 </li>
-<li>
-<p>등분산 검정을 위한 패키지: biotools</p>
-</li>
-</ul>
+<li><p>등분산 검정을 위한 패키지: biotools  </p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># install.packages(&quot;biotools&quot;)
 library(biotools)
-boxM(iris[1:4], iris$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+boxM(iris[1:4], iris$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>결과 해석</p>
 <ul>
-<li>결과 해석
-<ul>
-<li>p-value~0: p-value는 거의 0에 가까움</li>
+<li>p-value~0: p-value는 거의 0에 가까움 </li>
 <li>귀무가설(등분산 가정)이 기각 → QDA 실시</li>
 </ul>
 </li>
 </ul>
-<h3 id="QDA-함수">QDA 함수</h3>
-<ul>
-<li>qda(종속변수~독립변수, data=학습데이터이름, prior=사전확률)</li>
-</ul>
+<h3 id="QDA-함수"><a href="#QDA-함수" class="headerlink" title="QDA 함수"></a>QDA 함수</h3><ul>
+<li><p>qda(종속변수~독립변수, data=학습데이터이름, prior=사전확률)</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># Quadratic Discriminant Analysis (QDA)
 iris.qda &lt;- qda(Species ~ ., data&#x3D;train, prior&#x3D;c(1&#x2F;3,1&#x2F;3,1&#x2F;3))
-iris.qda<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>
-<p>추가 설명</p>
+iris.qda<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>추가 설명</p>
 <ul>
 <li>prior은 경우에 따라 다르게 줄 수 있음</li>
-<li>독립변수에 대한 그룹별 평균값</li>
+<li>독립변수에 대한 그룹별 평균값  </li>
 </ul>
 </li>
-<li>
-<p>검증 데이터에 QDA 결과를 적용하여 범주 추정</p>
-</li>
-</ul>
+<li><p>검증 데이터에 QDA 결과를 적용하여 범주 추정  </p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># predict test data set n&#x3D;50
 testpredq &lt;- predict(iris.qda, test)
-testpredq<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>
-<p>결과 해석</p>
+testpredq<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>결과 해석</p>
 <ul>
 <li>$class: 추정 범주</li>
-<li>세 개 범주의 사후 확률(posterior probability)을 구한 후, max 값의 범주로 할당</li>
+<li>세 개 범주의 사후 확률(posterior probability)을 구한 후, max 값의 범주로 할당  </li>
 </ul>
 </li>
-<li>
-<p>정확도 산정: 오분류율(검증데이터)</p>
-</li>
 </ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of QDA
-CrossTable(x&#x3D;testLabels,y&#x3D;testpredq$class, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
-<li>
-<p>결과 해석</p>
-<ul>
+<li>정확도 산정: 오분류율(검증데이터)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># accuracy of QDA
+CrossTable(x&#x3D;testLabels,y&#x3D;testpredq$class, prop.chisq&#x3D;FALSE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>결과 해석<ul>
 <li>선형판별로 했을 때와 동일(단, 데이터가 많아지면 결과가 다르게 나올 수 있음)</li>
 </ul>
 </li>
-<li>
-<p>Partition Plot</p>
-</li>
 </ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># partimat() function for LDA &amp; QDA
+<ul>
+<li>Partition Plot<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># partimat() function for LDA &amp; QDA
 # install.packages(&quot;klaR&quot;)
 library(klaR)
 partimat(as.factor(iris$Species) ~ ., data&#x3D;iris, method&#x3D;&quot;lda&quot;)
 partimat(as.factor(iris$Species) ~ ., data&#x3D;iris, method&#x3D;&quot;qda&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -682,7 +583,7 @@ partimat(as.factor(iris$Species) ~ ., data&#x3D;iris, method&#x3D;&quot;qda&quot
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" data-id="ckl2d8i3m000z7cue0mcaai2r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/14/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/%E2%85%A9_k-%EC%9D%B8%EC%A0%91%EA%B8%B0%EB%B2%95%EA%B3%BC_%ED%8C%90%EB%B3%84%EB%B6%84%EC%84%9D/" data-id="ckl3oztzk000vgcue1obmepx7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -761,20 +662,16 @@ partimat(as.factor(iris$Species) ~ ., data&#x3D;iris, method&#x3D;&quot;qda&quot
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2020/12/14/Study/Postech/머신러닝R/Ⅹ_k-인접기법과_판별분석/",
         "description": "
-POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.
+POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  
 
-Ⅹ. k-인접기법과 판별분석
-1. k-인접기법
-
+Ⅹ. k-인접기법과 판별분석1. k-인접기법
 k-nearest neighbor
 
 분류(Classification)
-
-
 분류(Classification): 지도학습(Supervised Learning)
 
-타겟범주를 알고 있는 데이터로 분류 규칙을 생성하고 새로운 데이터를 특정 범주",
-        "wordCount": 955,
+타겟범주를 알고 있는 데이터로 분류 규칙을 생성하고 새로운 데이터를 특정 범주에 ",
+        "wordCount": 1031,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

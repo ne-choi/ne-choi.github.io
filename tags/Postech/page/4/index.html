@@ -200,24 +200,13 @@ ga('send', 'pageview');
 
         <p class="article-excerpt">
             
-POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.
+POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  
 
-Ⅶ. R을 이용한 통계분석
-1. 두 그룹간 평균비교(t-test)
-단일표본의 평균검정
-
-
+Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정
 t.test(변수, mu=검정하고자 하는 평균값)
 
 가설 1: G3(최종성적)의 평균은 10인가?
-
-H~0~(null Hypothesis: 귀무가설): μ = 10
-
-
-
-
-
-stud&lt;-re
+H0(null Hypothesis: 귀무가설): μ = 10stud&lt;-read.csv(&quo
         </p>
     </div>
 </article>
@@ -245,19 +234,14 @@ stud&lt;-re
 
         <p class="article-excerpt">
             
-POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.
+POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  
 
-Ⅵ. 데이터 탐색
-1. 데이터 다루기
-
+Ⅵ. 데이터 탐색1. 데이터 다루기
 데이터 결합, 분할, 정렬
 
 데이터 결합: merge
-
-merge(data1, data2, by=“ID”)
-
-# practice data
-dat1&lt;-read.csv(file&#x3D;&quot;week6_1&#x2F;data1.csv&qu
+merge(data1, data2, by=”ID”)# practice data
+dat1&lt;-read.csv(file&#x3D;&quot;week6_1&#x2F;data1.csv&quot;
         </p>
     </div>
 </article>
@@ -289,17 +273,13 @@ dat1&lt;-read.csv(file&#x3D;&quot;week6_1&#x2F;data1.csv&qu
 
         <p class="article-excerpt">
             
-POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.
+POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  
 
-Ⅴ. R 그래픽 Ⅰ
-1. R 그래픽: ggplot2
-데이터 시각화
-
+Ⅴ. R 그래픽 Ⅰ1. R 그래픽: ggplot2데이터 시각화
 R 기본 그래픽스(Base program)
 Lattice 그래픽스: 직교형태의 멀티패널 툴
 ggplot2 그래픽 시스템: Hadley Wickham이 구현
-
-Grammar of Graphic 개념은 그래픽 생성 시,
+Grammar of Graphic 개념은 그래픽 생성 시, 각
         </p>
     </div>
 </article>
@@ -327,19 +307,14 @@ Grammar of Graphic 개념은 그래픽 생성 시,
 
         <p class="article-excerpt">
             
-POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.
+POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.  
 
-Ⅳ. R 그래픽 Ⅰ
-1. R 그래픽 Ⅲ: 히스토그램
-히스토그램 (1차원)
-
-데이터 불러오기
-
-# read brain data
+Ⅳ. R 그래픽 Ⅰ1. R 그래픽 Ⅲ: 히스토그램히스토그램 (1차원)
+데이터 불러오기# read brain data
 brain &lt;- read.csv(file&#x3D;&quot;week4_1&#x2F;brain2210.csv&quot;)
 
 # attach 적용하기
-at
+attac
         </p>
     </div>
 </article>
@@ -373,20 +348,15 @@ at
             
 POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.
 
-1. R 데이터 생성
-파일 불러들이기
-
-
+1. R 데이터 생성파일 불러들이기
 csv
-brain &lt;- read.csv(“week3_2/brain2210.csv”, header=T)
+ brain &lt;- read.csv(“week3_2/brain2210.csv”, header=T)
+
+ xls  
 
 
-xls
 
-
-
-*.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한
-다음 read.csv 함수를
+*.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한  다음 read.csv 함수
         </p>
     </div>
 </article>
@@ -416,20 +386,16 @@ xls
             
 POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.
 
-1. 벡터 및 행렬 생성
-벡터 생성
-
+1. 벡터 및 행렬 생성벡터 생성
 벡터
-
-seq 함수 사용 (sequence)
-
+  seq 함수 사용 (sequence)
 
 
-0부터 10까지, 20개의 값을 생성
-y1 &lt;- seq(0, 10, length=20)
+
+0부터 10까지, 20개의 값을 생성y1 &lt;- seq(0, 10, length=20)
 y1
 
-[1]  0.0000000  0.5263158  1.0526316  1.5789474  2.10
+[1]  0.0000000  0.5263158  1.0526316  1.5789474  2.1052
         </p>
     </div>
 </article>
