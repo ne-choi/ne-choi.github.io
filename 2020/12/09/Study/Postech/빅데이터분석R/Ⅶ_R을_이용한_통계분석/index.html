@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech">
     
-    <meta name="description" content="POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정 t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균은 10인가? H0(null Hypothesis: 귀무가설): μ &#x3D; 10stud&lt;-read.csv(&amp;quo">
+    <meta name="description" content="POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  Ⅶ. R을 이용한 통계분석 1. 두 그룹간 평균비교(t-test) 단일표본의 평균검정   t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균은 10인가?  H~0~(null Hypothesis: 귀무가설): μ &#x3D; 10      stud&lt;-re">
 <meta property="og:type" content="article">
 <meta property="og:title" content="빅데이터 분석과 R 프로그래밍 2: Ⅶ. R을 이용한 통계분석">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/09/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.    Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정 t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균은 10인가? H0(null Hypothesis: 귀무가설): μ &#x3D; 10stud&lt;-read.csv(&amp;quo">
+<meta property="og:description" content="POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  Ⅶ. R을 이용한 통계분석 1. 두 그룹간 평균비교(t-test) 단일표본의 평균검정   t.test(변수, mu&#x3D;검정하고자 하는 평균값)  가설 1: G3(최종성적)의 평균은 10인가?  H~0~(null Hypothesis: 귀무가설): μ &#x3D; 10      stud&lt;-re">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-08T15:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:40:37.763Z">
@@ -226,24 +226,33 @@ ga('send', 'pageview');
             
 
             <ul>
-<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  </li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.</li>
 </ul>
-<h1 id="Ⅶ-R을-이용한-통계분석"><a href="#Ⅶ-R을-이용한-통계분석" class="headerlink" title="Ⅶ. R을 이용한 통계분석"></a>Ⅶ. R을 이용한 통계분석</h1><h2 id="1-두-그룹간-평균비교-t-test"><a href="#1-두-그룹간-평균비교-t-test" class="headerlink" title="1. 두 그룹간 평균비교(t-test)"></a>1. 두 그룹간 평균비교(t-test)</h2><h3 id="단일표본의-평균검정"><a href="#단일표본의-평균검정" class="headerlink" title="단일표본의 평균검정"></a>단일표본의 평균검정</h3><ul>
-<li><p>t.test(변수, mu=검정하고자 하는 평균값)</p>
+<h1>Ⅶ. R을 이용한 통계분석</h1>
+<h2 id="1-두-그룹간-평균비교-t-test">1. 두 그룹간 평균비교(t-test)</h2>
+<h3 id="단일표본의-평균검정">단일표본의 평균검정</h3>
+<ul>
+<li>
+<p>t.test(변수, mu=검정하고자 하는 평균값)</p>
 <ol>
-<li>가설 1: G3(최종성적)의 평균은 10인가?<ul>
-<li>H<del>0</del>(null Hypothesis: 귀무가설): μ = 10<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">stud&lt;-read.csv(&quot;week7_1&#x2F;stud_math.csv&quot;,stringsAsFactors &#x3D; TRUE)
-
-attach(stud)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># single t-test
-t.test(G3, mu&#x3D;10)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>가설 1: G3(최종성적)의 평균은 10인가?
+<ul>
+<li>H~0~(null Hypothesis: 귀무가설): μ = 10</li>
 </ul>
 </li>
 </ol>
 </li>
-<li><p>결과 해석</p>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">stud&lt;-read.csv(&quot;week7_1&#x2F;stud_math.csv&quot;,stringsAsFactors &#x3D; TRUE)
+
+attach(stud)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># single t-test
+t.test(G3, mu&#x3D;10)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
-<li>t: t검정통계량, df: 자유도, p-value<ul>
+<li>결과 해석
+<ul>
+<li>t: t검정통계량, df: 자유도, p-value
+<ul>
 <li>p-value 유의 수준 0.05에서는 G3 평균이 10이라고 할 수 있는 근거가 있음</li>
 </ul>
 </li>
@@ -252,10 +261,13 @@ t.test(G3, mu&#x3D;10)<span aria-hidden="true" class="line-numbers-rows"><span><
 </ul>
 </li>
 </ul>
-<h3 id="두-집단의-평균검정"><a href="#두-집단의-평균검정" class="headerlink" title="두 집단의 평균검정"></a>두 집단의 평균검정</h3><ul>
-<li><p>두 평균 차이 비교</p>
+<h3 id="두-집단의-평균검정">두 집단의 평균검정</h3>
+<ul>
+<li>
+<p>두 평균 차이 비교</p>
 </li>
-<li><p>두 집단 표본평균 비교검정: t.test(타겟변수~범주형변수, data= )</p>
+<li>
+<p>두 집단 표본평균 비교검정: t.test(타겟변수~범주형변수, data= )</p>
 <ol start="2">
 <li>가설 2: 거주지역(R, U)에 따른 G3(최종성적) 평균에 차이가 있는가?</li>
 </ol>
@@ -265,47 +277,64 @@ t.test(G3, mu&#x3D;10)<span aria-hidden="true" class="line-numbers-rows"><span><
 t.test(G3~address, data&#x3D;stud)
 boxplot(G3~address, boxwet&#x3D;0.5, col&#x3D;c(&quot;yellow&quot;, &quot;coral&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
-<li>p-value=0.03으로 유의수준 0.05에서 거주지역에 따라 G3은 유의한 차이가 있다고 할 수 있음  </li>
-</ul>
-</li>
-</ul>
+<li>
+<p>결과 해석</p>
 <ul>
-<li>단측검정: 기각역이 한 쪽에만 있는 경우, alternative=c(“less”) or alternative=c(“greater”)<ul>
-<li>같으냐 다르냐가 아니라, 도심지역이 더 높으냐에 관해 test 하고 싶은 경우<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># alternative H : mu(Rural)&lt; mu(Urban)
-t.test(G3~address, data&#x3D;stud, alternative &#x3D; c(&quot;less&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>p-value=0.03으로 유의수준 0.05에서 거주지역에 따라 G3은 유의한 차이가 있다고 할 수 있음</li>
 </ul>
 </li>
-<li>결과 해석<ul>
+<li>
+<p>단측검정: 기각역이 한 쪽에만 있는 경우, alternative=c(“less”) or alternative=c(“greater”)</p>
+<ul>
+<li>같으냐 다르냐가 아니라, 도심지역이 더 높으냐에 관해 test 하고 싶은 경우</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># alternative H : mu(Rural)&lt; mu(Urban)
+t.test(G3~address, data&#x3D;stud, alternative &#x3D; c(&quot;less&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
 <li>p-value=0.018로 유의수준을 0.05로 했을 때, 성적(Rural) &lt; 성적(Urban)이라고 할 수 있음</li>
 </ul>
+<ol start="3">
+<li>가설 3: 방과후 활동 여부(yes, no)에 따른 G3(최종성적) 평균에 차이가 있는가?</li>
+</ol>
 </li>
 </ul>
-<ol start="3">
-<li>가설 3: 방과후 활동 여부(yes, no)에 따른 G3(최종성적) 평균에 차이가 있는가?<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># to test whether or not mean of G3 is equal for activities 
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># to test whether or not mean of G3 is equal for activities 
 t.test(G3~activities, data&#x3D;stud)
-boxplot(G3~activities, boxwex &#x3D; 0.5, col &#x3D; c(&quot;blue&quot;, &quot;red&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-</ol>
+boxplot(G3~activities, boxwex &#x3D; 0.5, col &#x3D; c(&quot;blue&quot;, &quot;red&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
-<li>p-value=0.75로 유의수준 0.05보다 많이 큼<br>= 검정통계량 값이 기각역에 있지 않다<br>= 귀무가설(평균이 같다)을 기각할 수 없다<br>= 방과후 활동 여부는 G3에 유의한 영향이 없다는 결론</li>
+<li>결과 해석
+<ul>
+<li>p-value=0.75로 유의수준 0.05보다 많이 큼<br>
+= 검정통계량 값이 기각역에 있지 않다<br>
+= 귀무가설(평균이 같다)을 기각할 수 없다<br>
+= 방과후 활동 여부는 G3에 유의한 영향이 없다는 결론</li>
 <li>신뢰구간(-1.05, 0.79) 사이에 0값이 있으면 차이가 없음을 의미</li>
 </ul>
 </li>
 </ul>
-<h3 id="두-집단의-비모수적-비교검정"><a href="#두-집단의-비모수적-비교검정" class="headerlink" title="두 집단의 비모수적 비교검정"></a>두 집단의 비모수적 비교검정</h3><ul>
-<li>두 모집단의 비모수적 방법(Wilcoxon rank sum Test): wilcox.test(x,y)<ul>
-<li>wilcos.test는 타겟변수가 등간척도(통증 정도, 만족도,,)일 때 사용 가능</li>
+<h3 id="두-집단의-비모수적-비교검정">두 집단의 비모수적 비교검정</h3>
+<ul>
+<li>두 모집단의 비모수적 방법(Wilcoxon rank sum Test): wilcox.test(x,y)
+<ul>
+<li>wilcos.test는 타겟변수가 등간척도(통증 정도, 만족도,)일 때 사용 가능</li>
 </ul>
 </li>
 </ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># wilcoxon signed-rank test
 # wilcox.test(G3, mu&#x3D;10)
 wilcox.test(G3~address)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="퀴즈"><a href="#퀴즈" class="headerlink" title="퀴즈"></a>퀴즈</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">t.test(G3~internet, data&#x3D;stud) <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="2-짝을-이룬-그룹-간-비교"><a href="#2-짝을-이룬-그룹-간-비교" class="headerlink" title="2. 짝을 이룬 그룹 간 비교"></a>2. 짝을 이룬 그룹 간 비교</h2><h3 id="짝을-이룬-그룹-간-비교-paired-t-test"><a href="#짝을-이룬-그룹-간-비교-paired-t-test" class="headerlink" title="짝을 이룬 그룹 간 비교(paired t-test)"></a>짝을 이룬 그룹 간 비교(paired t-test)</h3><ul>
-<li><p>paired t-test: t.test(before, after, mu=0, paired=T)</p>
+<h3 id="퀴즈">퀴즈</h3>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">t.test(G3~internet, data&#x3D;stud) <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2-짝을-이룬-그룹-간-비교">2. 짝을 이룬 그룹 간 비교</h2>
+<h3 id="짝을-이룬-그룹-간-비교-paired-t-test">짝을 이룬 그룹 간 비교(paired t-test)</h3>
+<ul>
+<li>
+<p>paired t-test: t.test(before, after, mu=0, paired=T)</p>
 <ul>
 <li>특정 처리(treatment)의 효과를 비교분석할 때 사용</li>
 <li>동일한 실험표본 before &amp; after 측정</li>
@@ -313,11 +342,12 @@ wilcox.test(G3~address)<span aria-hidden="true" class="line-numbers-rows"><span>
 <li>방식: Before/After 차이를 구한 뒤, 평균과 편차를 계산해서 검정통계량을 구함</li>
 </ul>
 </li>
-<li><p>paired: 양측 검정, 유의한 차이가 있는지 없는지를 검정</p>
+<li>
+<p>paired: 양측 검정, 유의한 차이가 있는지 없는지를 검정</p>
 </li>
-</ul>
-<ul>
-<li>예제 1: 고혈압 환자 10명에게 혈압강하제를 12주 동안 투여한 후, 복용 전의 혈압과 복용 후의 혈압을 비교하였다. 새로운 혈압강하제가 효과 있다고 말할 수 있는가?</li>
+<li>
+<p>예제 1: 고혈압 환자 10명에게 혈압강하제를 12주 동안 투여한 후, 복용 전의 혈압과 복용 후의 혈압을 비교하였다. 새로운 혈압강하제가 효과 있다고 말할 수 있는가?</p>
+</li>
 </ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">bp&lt;-read.csv(&quot;week7_2&#x2F;bp.csv&quot;) 
 attach(bp)
@@ -325,20 +355,28 @@ attach(bp)
 # two-sided
 t.test(bp_pre, bp_post, mu&#x3D;0, paired&#x3D;T)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
-<li>p-value = 0.0015(매우 작음)로 유의수준 0.05보다 작기 때문에 H<del>0</del>를 기각<br>→ 투약 전과 투약 후 혈압에 유의한 차이가 있다고 볼 수 있음  </li>
-</ul>
-</li>
-</ul>
+<li>
+<p>결과 해석</p>
 <ul>
-<li>단측검정 옵션 주기<ul>
-<li>paired t-test: t.test(before, after, mu=0, <strong>alternative=”greater”</strong>, paired=T)</li>
-<li>혈압(투약 전 - 투약 후) 차이가 0보다 큰가?<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># paired t-test (one-sided)
-t.test(bp_pre, bp_post, mu&#x3D;0, alternative&#x3D;&quot;greater&quot;, paired&#x3D;T)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>p-value = 0.0015(매우 작음)로 유의수준 0.05보다 작기 때문에 H~0~를 기각<br>
+→ 투약 전과 투약 후 혈압에 유의한 차이가 있다고 볼 수 있음</li>
 </ul>
 </li>
-<li>결과 해석<ul>
-<li>p-value=0.0007로 유의수준 0.05보다 매우 작으므로 H<del>0</del>를 기간<br>→ 투약효과가 매우 유의하다고 볼 수 있음</li>
+<li>
+<p>단측검정 옵션 주기</p>
+<ul>
+<li>paired t-test: t.test(before, after, mu=0, <strong>alternative=“greater”</strong>, paired=T)</li>
+<li>혈압(투약 전 - 투약 후) 차이가 0보다 큰가?</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># paired t-test (one-sided)
+t.test(bp_pre, bp_post, mu&#x3D;0, alternative&#x3D;&quot;greater&quot;, paired&#x3D;T)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
+<ul>
+<li>p-value=0.0007로 유의수준 0.05보다 매우 작으므로 H~0~를 기간<br>
+→ 투약효과가 매우 유의하다고 볼 수 있음</li>
 </ul>
 </li>
 </ul>
@@ -353,72 +391,93 @@ attach(diet)
 # 양측 검정: 극저칼로리 식이요법이 체중감량에 유의한 효과가 있는지 없는지에 관한 검정
 t.test(wt_pre, wt_post, mu&#x3D;0, paired&#x3D;T)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>p-value: 0.000001357 (0.001 = 1e-3)</li>
 </ul>
 </li>
 </ul>
-<h2 id="3-분산분석-ANOVA"><a href="#3-분산분석-ANOVA" class="headerlink" title="3. 분산분석(ANOVA)"></a>3. 분산분석(ANOVA)</h2><h3 id="분산분석의-개념"><a href="#분산분석의-개념" class="headerlink" title="분산분석의 개념"></a>분산분석의 개념</h3><ul>
-<li>ANOVA(Analysis of Variance)<ul>
+<h2 id="3-분산분석-ANOVA">3. 분산분석(ANOVA)</h2>
+<h3 id="분산분석의-개념">분산분석의 개념</h3>
+<ul>
+<li>ANOVA(Analysis of Variance)
+<ul>
 <li>전체 분산(variance)을 분할(분석, analysis)하여 어떤 요인(factor)의 영향이 유의(significant)한지 검정하는 방법</li>
 </ul>
 </li>
 </ul>
-<h3 id="factor가-한-개일-때"><a href="#factor가-한-개일-때" class="headerlink" title="factor가 한 개일 때"></a>factor가 한 개일 때</h3><ul>
-<li><p>분산분석모형 적용</p>
+<h3 id="factor가-한-개일-때">factor가 한 개일 때</h3>
+<ul>
+<li>분산분석모형 적용
 <ol>
 <li>거주 지역에 따른 학업성취도: 거주지역(factor: R/U), 학업성적(1-20)</li>
 </ol>
 <ul>
 <li>가설 1: 거주지역에 따라 G3에 유의한 차이가 있나?</li>
-<li>aov(타겟변수~factor)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># ANOVA
-a1 &lt;- aov(G3~address)
-summary(a1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>aov(타겟변수~factor)</li>
 </ul>
 </li>
-<li><p>결과 해석</p>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># ANOVA
+a1 &lt;- aov(G3~address)
+summary(a1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
 <ul>
 <li>p-value=0.035로 유의수준을 0.05로 할 때, 0,05보다 작으므로 거주지역에 따른 학업성적에 유의한 차이가 있다고 할 수 있음</li>
 </ul>
+</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># tapply - give FUN value by address
 round(tapply(G3, address, mean),2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
 <ol start="2">
-<li>통학 시간에 따른 학업성취도: 통학시간(factor: 1-4), 학업성적(1-20)<ul>
-<li>가설 2: 통학 시간에 따라 G3에는 유의한 차이가 있나?<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">traveltime&lt;-as.factor(traveltime)
-
-a2 &lt;- aov(G3~traveltime)
-summary(a2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>통학 시간에 따른 학업성취도: 통학시간(factor: 1-4), 학업성적(1-20)
+<ul>
+<li>가설 2: 통학 시간에 따라 G3에는 유의한 차이가 있나?</li>
 </ul>
 </li>
 </ol>
-</li>
-<li><p>결과 해석</p>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">traveltime&lt;-as.factor(traveltime)
+
+a2 &lt;- aov(G3~traveltime)
+summary(a2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
 <ul>
 <li>p-value=0.139로 유의수준 0.05 하에서는 통학 시간에 따른 학업성적에는 유의한 차이가 없다고 할 수 있음</li>
 <li>단, p-value가 0.139로 너무 크지 않기 때문에 어느정도 차이가 존재함을 알 수 있음</li>
 </ul>
+</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># tapply - give FUN value by address
 round(tapply(G3, traveltime, mean),2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-</li>
-</ul>
-<h3 id="사후검정-post-hoc-analysis"><a href="#사후검정-post-hoc-analysis" class="headerlink" title="사후검정(post-hoc analysis)"></a>사후검정(post-hoc analysis)</h3><ul>
-<li>사후검정: ANOVA에서 어떤 factor의 유의성이 검정되면, 그 이후에 하는 검정<ul>
-<li>Tukey’s Honest Significant Difference Test<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># should be foctor for Tukey&#39;s Honest Significant Difference test
-TukeyHSD(a2, &quot;traveltime&quot;, ordered&#x3D;TRUE)
-plot(TukeyHSD(a2, &quot;traveltime&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
-<li>결과 해석<ul>
-<li>모든 pairwise 신뢰구간에 0이 포함됨<br>→ 유의한 차이가 없음</li>
-</ul>
-</li>
-</ul>
+<h3 id="사후검정-post-hoc-analysis">사후검정(post-hoc analysis)</h3>
 <ul>
-<li>추가 예제: 분산분석<ul>
-<li>연애경험 여부에 따른 학업성취도: 연애경험(yes, no), 학업성적(1-20)<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 4. ANOVA by romantic 
+<li>사후검정: ANOVA에서 어떤 factor의 유의성이 검정되면, 그 이후에 하는 검정
+<ul>
+<li>Tukey’s Honest Significant Difference Test</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># should be foctor for Tukey&#39;s Honest Significant Difference test
+TukeyHSD(a2, &quot;traveltime&quot;, ordered&#x3D;TRUE)
+plot(TukeyHSD(a2, &quot;traveltime&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
+<ul>
+<li>모든 pairwise 신뢰구간에 0이 포함됨<br>
+→ 유의한 차이가 없음</li>
+</ul>
+</li>
+<li>
+<p>추가 예제: 분산분석</p>
+<ul>
+<li>연애경험 여부에 따른 학업성취도: 연애경험(yes, no), 학업성적(1-20)</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 4. ANOVA by romantic 
 a4 &lt;- aov(G3~romantic)
 summary(a4)
 
@@ -431,75 +490,96 @@ boxplot(G3~romantic, boxwex &#x3D; 0.5, col &#x3D; c(&quot;yellow&quot;, &quot;c
 # posthoc analysis
 TukeyHSD(a4, &quot;romantic&quot;, ordered&#x3D;TRUE)
 plot(TukeyHSD(a4, &quot;romantic&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="퀴즈-1"><a href="#퀴즈-1" class="headerlink" title="퀴즈"></a>퀴즈</h3>studytime &lt;- as.factor(studytime)</li>
-</ul>
-</li>
-</ul>
-<p>a0 &lt;- aov(G3~studytime)<br>summary(a0)</p>
+<h3 id="퀴즈-2">퀴즈</h3>
+<p>studytime &lt;- as.factor(studytime)</p>
+<p>a0 &lt;- aov(G3~studytime)<br>
+summary(a0)</p>
 <p>tapply(G3, studytime, mean)</p>
-<h2 id="4-이원분산분석"><a href="#4-이원분산분석" class="headerlink" title="4. 이원분산분석"></a>4. 이원분산분석</h2><ul>
-<li><p>이원분산분석(two-way ANOVA)</p>
-</li>
-<li><p>데이터: High-Density Lipoprotein (HDL) 콜레스테롤</p>
+<h2 id="4-이원분산분석">4. 이원분산분석</h2>
 <ul>
-<li>HDL(고밀도 리포 단백질): 높을수록 좋은 것으로 알려진 콜레스테롤, 40mg/dl 이상이 정상 범위  </li>
+<li>
+<p>이원분산분석(two-way ANOVA)</p>
+</li>
+<li>
+<p>데이터: High-Density Lipoprotein (HDL) 콜레스테롤</p>
+<ul>
+<li>HDL(고밀도 리포 단백질): 높을수록 좋은 것으로 알려진 콜레스테롤, 40mg/dl 이상이 정상 범위</li>
 </ul>
 </li>
-<li><p>factor가 2개</p>
+<li>
+<p>factor가 2개</p>
 <ol>
 <li>투약효과가 있는가? 5mg, 10mg, 위약</li>
-<li>연령그룹(young/old)에 따른 영향이 있는가?<ul>
+<li>연령그룹(young/old)에 따른 영향이 있는가?
+<ul>
 <li>가설 1. 신약 투약효과가 있나? HDL을 상승시키는 효과가 있나?</li>
 <li>가설 2. 연령그룹에 따라 투약효과(HDL변화)에 차이가 있나?</li>
-<li>가설 3. 신약의 투약과 연령그룹 간 상호작용 효과가 있나?  </li>
+<li>가설 3. 신약의 투약과 연령그룹 간 상호작용 효과가 있나?</li>
 </ul>
 </li>
 </ol>
 </li>
-<li><p>이원분산분석: aov(타겟변수~factor1 + factor2)  </p>
+<li>
+<p>이원분산분석: aov(타겟변수~factor1 + factor2)</p>
+</li>
+</ul>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">dat &lt;- read.csv(&quot;week7_4&#x2F;chol_ex.csv&quot;)
 attach(dat)
 
 # two-way ANOVA
 a6 &lt;- aov(value ~ drug + age)
-summary(a6)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>결과 해석</p>
+summary(a6)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>
+<p>결과 해석</p>
 <ul>
 <li>drug effect: p-value~0이므로 HDL값에 통계적으로 유의한 차이가 있음</li>
-<li>age: p-value=0.19로 유의수준 0.05에서 유의한 차이는 없음  </li>
+<li>age: p-value=0.19로 유의수준 0.05에서 유의한 차이는 없음</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>aov(타겟변수~factor1 + factor2 + 상호작용)</p>
 <ul>
-<li>aov(타겟변수~factor1 + factor2 + 상호작용)<ul>
-<li>두 개의 factor 간 상호작용의 유의성을 검정하기 위한 분석<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># two-way ANOVA with interaction
-a7 &lt;- aov(value ~ drug + age+ drug*age)
-summary(a7)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>두 개의 factor 간 상호작용의 유의성을 검정하기 위한 분석</li>
 </ul>
 </li>
-<li>결과 해석<ul>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># two-way ANOVA with interaction
+a7 &lt;- aov(value ~ drug + age+ drug*age)
+summary(a7)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>결과 해석
+<ul>
 <li>drug와 age 그룹 간 상호작용: p-value=0.286으로 유의수준 0.05에서 유의한 차이는 없음</li>
 </ul>
 </li>
 </ul>
-<h3 id="두-요인의-상자그림"><a href="#두-요인의-상자그림" class="headerlink" title="두 요인의 상자그림"></a>두 요인의 상자그림</h3><ul>
-<li>투약용량과 연령그룹에 따른 상자그림<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># two-way ANOVA
+<h3 id="두-요인의-상자그림">두 요인의 상자그림</h3>
+<ul>
+<li>투약용량과 연령그룹에 따른 상자그림</li>
+</ul>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># two-way ANOVA
 par(mfrow&#x3D;c(1,2))
 boxplot(value ~ drug, boxwex &#x3D; 0.7, main&#x3D;&quot;HDL by drug dose&quot;, col &#x3D; c(&quot;yellow&quot;,&quot;orange&quot;, &quot;green&quot;))
-boxplot(value ~ age, boxwex &#x3D; 0.5, main&#x3D;&quot;HDL by Age&quot;, col &#x3D; c(&quot;blue&quot;, &quot;coral&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
+boxplot(value ~ age, boxwex &#x3D; 0.5, main&#x3D;&quot;HDL by Age&quot;, col &#x3D; c(&quot;blue&quot;, &quot;coral&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
-<li>drug effect: 10mg인 경우, HDL 상승효과가 가장 높음<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># tapply - give FUN value by drug
-round(tapply(value, drug, mean),2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>age: young 그룹(18-40)의 HDL 상승효과가 더 높음<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># tapply - give FUN value by age
+<li>drug effect: 10mg인 경우, HDL 상승효과가 가장 높음</li>
+</ol>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># tapply - give FUN value by drug
+round(tapply(value, drug, mean),2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>age: young 그룹(18-40)의 HDL 상승효과가 더 높음</li>
+</ol>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># tapply - give FUN value by age
 round(tapply(value, age, mean),2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="상호작용-그래프"><a href="#상호작용-그래프" class="headerlink" title="상호작용 그래프"></a>상호작용 그래프</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># interaction plot
+<h3 id="상호작용-그래프">상호작용 그래프</h3>
+<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># interaction plot
 par(mfrow&#x3D;c(1,2))
 interaction.plot(drug, age, value)
-interaction.plot(age, drug, value)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ol>
+interaction.plot(age, drug, value)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>결과 해석<ul>
+<li>결과 해석
+<ul>
 <li>투약용량 10mg에서 young 그룹 상승효과가 old 그룹보다 훨씬 높음</li>
 <li>5mg에서와 placebo에서는 연령그룹 차이가 거의 없음</li>
 </ul>
@@ -512,7 +592,10 @@ interaction.plot(dat$age, dat$drug, dat$value)<span aria-hidden="true" class="li
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># two-way ANOVA model with interaction
 results &#x3D; lm(value ~ drug + age + drug*age, data&#x3D;dat)
 anova(results)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="퀴즈-2"><a href="#퀴즈-2" class="headerlink" title="퀴즈"></a>퀴즈</h3><p>a00 &lt;- aov(G3<del>studytime+sex)<br>summary(a00)<br>boxplot(G3</del>sex, boxwex = 0.5, col = c(“yellow”, “coral”))</p>
+<h3 id="퀴즈-3">퀴즈</h3>
+<p>a00 &lt;- aov(G3~studytime+sex)<br>
+summary(a00)<br>
+boxplot(G3~sex, boxwex = 0.5, col = c(“yellow”, “coral”))</p>
 
         </div>
         <footer class="article-footer">
@@ -520,7 +603,7 @@ anova(results)<span aria-hidden="true" class="line-numbers-rows"><span></span><s
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/09/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" data-id="ckl3ozu02001tgcue8igxdt0l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/09/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A6_R%EC%9D%84_%EC%9D%B4%EC%9A%A9%ED%95%9C_%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D/" data-id="ckl3pbogb0015wsuee8bnheun" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -599,14 +682,25 @@ anova(results)<span aria-hidden="true" class="line-numbers-rows"><span></span><s
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2020/12/09/Study/Postech/빅데이터분석R/Ⅶ_R을_이용한_통계분석/",
         "description": "
-POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.  
+POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅱ 과정입니다.
 
-Ⅶ. R을 이용한 통계분석1. 두 그룹간 평균비교(t-test)단일표본의 평균검정
+Ⅶ. R을 이용한 통계분석
+1. 두 그룹간 평균비교(t-test)
+단일표본의 평균검정
+
+
 t.test(변수, mu=검정하고자 하는 평균값)
 
 가설 1: G3(최종성적)의 평균은 10인가?
-H0(null Hypothesis: 귀무가설): μ = 10stud&lt;-read.csv(&quo",
-        "wordCount": 1092,
+
+H~0~(null Hypothesis: 귀무가설): μ = 10
+
+
+
+
+
+stud&lt;-re",
+        "wordCount": 995,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",
