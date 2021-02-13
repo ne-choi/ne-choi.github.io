@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="python,EDA,kaggle,titanic">
     
-    <meta name="description" content="I. Practice Kaggle Data  구글 드라이브 연동 Kaggle API 설치 Kaggle Token 다운로드 Titanic 데이터 불러오기  1. 구글 드라이브 연동 Google Colab을 시작하면 항상 드라이브 연동을 해야 한다. from google.colab import drive # 패키지 불러오기  from os.path import">
+    <meta name="description" content="I. Practice Kaggle Data 구글 드라이브 연동 Kaggle API 설치 Kaggle Token 다운로드 Titanic 데이터 불러오기  1. 구글 드라이브 연동Google Colab을 시작하면 항상 드라이브 연동을 해야 한다. from google.colab import drive # 패키지 불러오기  from os.path import j">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Practice Kaggle Data_Titanic">
 <meta property="og:url" content="https://ne-choi.github.io/2020/11/04/titanic/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="I. Practice Kaggle Data  구글 드라이브 연동 Kaggle API 설치 Kaggle Token 다운로드 Titanic 데이터 불러오기  1. 구글 드라이브 연동 Google Colab을 시작하면 항상 드라이브 연동을 해야 한다. from google.colab import drive # 패키지 불러오기  from os.path import">
+<meta property="og:description" content="I. Practice Kaggle Data 구글 드라이브 연동 Kaggle API 설치 Kaggle Token 다운로드 Titanic 데이터 불러오기  1. 구글 드라이브 연동Google Colab을 시작하면 항상 드라이브 연동을 해야 한다. from google.colab import drive # 패키지 불러오기  from os.path import j">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ne-choi.github.io/images/titanic/output_40_0.png">
 <meta property="article:published_time" content="2020-11-04T00:00:00.000Z">
@@ -230,15 +230,13 @@ ga('send', 'pageview');
 
             
 
-            <h1><strong>I. Practice Kaggle Data</strong></h1>
-<ol>
+            <h1 id="I-Practice-Kaggle-Data"><a href="#I-Practice-Kaggle-Data" class="headerlink" title="I. Practice Kaggle Data"></a><strong>I. Practice Kaggle Data</strong></h1><ol>
 <li>구글 드라이브 연동</li>
 <li>Kaggle API 설치</li>
 <li>Kaggle Token 다운로드</li>
 <li>Titanic 데이터 불러오기</li>
 </ol>
-<h2 id="1-구글-드라이브-연동">1. 구글 드라이브 연동</h2>
-<p>Google Colab을 시작하면 항상 드라이브 연동을 해야 한다.</p>
+<h2 id="1-구글-드라이브-연동"><a href="#1-구글-드라이브-연동" class="headerlink" title="1. 구글 드라이브 연동"></a>1. 구글 드라이브 연동</h2><p>Google Colab을 시작하면 항상 드라이브 연동을 해야 한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">from google.colab import drive # 패키지 불러오기 
 from os.path import join  
 
@@ -257,8 +255,7 @@ Drive already mounted at /content/drive; to attempt to forcibly remount, call dr
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">%cd &quot;&#123;PROJECT_PATH&#125;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <pre><code>/content/drive/My Drive/Colab Notebooks/Python/python/practice
 </code></pre>
-<h2 id="2-Kaggle-API-설치">2. Kaggle API 설치</h2>
-<p>Google Colab에서 Kaggle API를 불러오는 소스코드를 실행한다.</p>
+<h2 id="2-Kaggle-API-설치"><a href="#2-Kaggle-API-설치" class="headerlink" title="2. Kaggle API 설치"></a>2. Kaggle API 설치</h2><p>Google Colab에서 Kaggle API를 불러오는 소스코드를 실행한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">!pip install kaggle # Google Colab에서 설치할 때는 ! 필요<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <pre><code>Requirement already satisfied: kaggle in /usr/local/lib/python3.6/dist-packages (1.5.9)
 Requirement already satisfied: requests in /usr/local/lib/python3.6/dist-packages (from kaggle) (2.23.0)
@@ -273,10 +270,7 @@ Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /usr/local/lib/python3
 Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.6/dist-packages (from requests-&gt;kaggle) (2.10)
 Requirement already satisfied: text-unidecode&gt;=1.3 in /usr/local/lib/python3.6/dist-packages (from python-slugify-&gt;kaggle) (1.3)
 </code></pre>
-<h2 id="3-Kaggle-Token-다운로드">3. Kaggle Token 다운로드</h2>
-<p>Kaggle에서 API Token을 다운로드한다.<br>
-[Kaggle] - [My Account] - [API] - [Create New API Token]을 누르면 kaggle.json 파일이 다운로드 된다.<br>
-파일을 바탕화면에 옮긴 뒤, 아래 코드를 실행한다.</p>
+<h2 id="3-Kaggle-Token-다운로드"><a href="#3-Kaggle-Token-다운로드" class="headerlink" title="3. Kaggle Token 다운로드"></a>3. Kaggle Token 다운로드</h2><p>Kaggle에서 API Token을 다운로드한다.<br>[Kaggle] - [My Account] - [API] - [Create New API Token]을 누르면 kaggle.json 파일이 다운로드 된다.<br>파일을 바탕화면에 옮긴 뒤, 아래 코드를 실행한다.  </p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">from google.colab import files
 uploaded &#x3D; files.upload()
 for fn in uploaded.keys():
@@ -285,12 +279,9 @@ for fn in uploaded.keys():
   
 # kaggle.json을 아래 폴더로 옮긴 뒤, file을 사용할 수 있도록 권한을 부여한다. 
 !mkdir -p ~&#x2F;.kaggle&#x2F; &amp;&amp; mv kaggle.json ~&#x2F;.kaggle&#x2F; &amp;&amp; chmod 600 ~&#x2F;.kaggle&#x2F;kaggle.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><input type="file" id="files-6c30160a-add1-4728-b3ee-a0d4c9477dc8" name="files[]" multiple disabled style="border:none"><br>
-<output id="result-6c30160a-add1-4728-b3ee-a0d4c9477dc8"><br>
-Upload widget is only available when the cell has been executed in the<br>
-current browser session. Please rerun this cell to enable.<br>
-</output></p>
- <script src="/nbextensions/google.colab/files.js"></script> 
+
+
+<p><input type="file" id="files-6c30160a-add1-4728-b3ee-a0d4c9477dc8" name="files[]" multiple disabled style="border:none"><br><output id="result-6c30160a-add1-4728-b3ee-a0d4c9477dc8"><br> Upload widget is only available when the cell has been executed in the<br> current browser session. Please rerun this cell to enable.<br> </output><br> <script src="/nbextensions/google.colab/files.js"></script> </p>
 <pre><code>Saving kaggle.json to kaggle.json
 uploaded file &quot;kaggle.json&quot; with length 62 bytes
 </code></pre>
@@ -298,10 +289,9 @@ uploaded file &quot;kaggle.json&quot; with length 62 bytes
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">ls -1ha ~&#x2F;.kaggle&#x2F;kaggle.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <pre><code>/root/.kaggle/kaggle.json
 </code></pre>
-<h2 id="4-Kaggle-데이터-불러오기">4. Kaggle 데이터 불러오기</h2>
-<p>Kaggle competition list를 불러온다.</p>
+<h2 id="4-Kaggle-데이터-불러오기"><a href="#4-Kaggle-데이터-불러오기" class="headerlink" title="4. Kaggle 데이터 불러오기"></a>4. Kaggle 데이터 불러오기</h2><p>Kaggle competition list를 불러온다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">!kaggle competitions list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre><code>Warning: Looks like you're using an outdated API Version, please consider updating (server 1.5.9 / client 1.5.4)
+<pre><code>Warning: Looks like you&#39;re using an outdated API Version, please consider updating (server 1.5.9 / client 1.5.4)
 ref                                            deadline             category            reward  teamCount  userHasEntered  
 ---------------------------------------------  -------------------  ---------------  ---------  ---------  --------------  
 contradictory-my-dear-watson                   2030-07-01 23:59:00  Getting Started     Prizes        134           False  
@@ -328,7 +318,7 @@ lyft-motion-prediction-autonomous-vehicles     2020-11-25 23:59:00  Featured    
 <p>코드 실행 시 나오는 대회 목록에서 원하는 대회의 데이터셋을 불러온다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 실습: 타이타닉 데이터 불러오기
 !kaggle competitions download -c titanic<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>Warning: Looks like you're using an outdated API Version, please consider updating (server 1.5.9 / client 1.5.4)
+<pre><code>Warning: Looks like you&#39;re using an outdated API Version, please consider updating (server 1.5.9 / client 1.5.4)
 Downloading train.csv to /content/drive/My Drive/Colab Notebooks/Python/python/practice/data
   0% 0.00/59.8k [00:00&lt;?, ?B/s]
 100% 59.8k/59.8k [00:00&lt;00:00, 8.18MB/s]
@@ -348,13 +338,11 @@ Downloading test.csv to /content/drive/My Drive/Colab Notebooks/Python/python/pr
 <li>test.csv</li>
 <li>train.csv</li>
 </ul>
-<h1>II. Kaggle Data 실습_Titanic</h1>
-<ol>
+<h1 id="II-Kaggle-Data-실습-Titanic"><a href="#II-Kaggle-Data-실습-Titanic" class="headerlink" title="II. Kaggle Data 실습_Titanic"></a>II. Kaggle Data 실습_Titanic</h1><ol>
 <li>데이터 살펴보기</li>
 <li>Kaggle Code 필사</li>
 </ol>
-<h2 id="1-데이터-살펴보기">1. 데이터 살펴보기</h2>
-<p>아래 코드를 실행하여 EDA 필수 패키지를 설치한다.</p>
+<h2 id="1-데이터-살펴보기"><a href="#1-데이터-살펴보기" class="headerlink" title="1. 데이터 살펴보기"></a>1. 데이터 살펴보기</h2><p>아래 코드를 실행하여 EDA 필수 패키지를 설치한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">import pandas as pd # 데이터 가공, 변환
 import pandas_profiling # 보고서 기능
 import numpy as np # 수치 연산&amp;배열, 행렬
@@ -365,6 +353,7 @@ import seaborn as sns
 
 from IPython.core.display import display, HTML
 from pandas_profiling import ProfileReport<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">%matplotlib inline
 import matplotlib.pylab as plt
 
@@ -384,23 +373,26 @@ test &#x3D; pd.read_csv(&#39;data&#x2F;test.csv&#39;)
 print(&quot;data import is done&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <pre><code>data import is done
 </code></pre>
-<p>(2) 데이터 확인<br>
-Kaggle 데이터를 불러와서 가장 먼저 확인해야 할 것은 데이터셋의 크기다.</p>
+<p>(2) 데이터 확인<br>Kaggle 데이터를 불러와서 가장 먼저 확인해야 할 것은 데이터셋의 크기다.</p>
 <ul>
 <li>변수의 개수</li>
-<li>Numeric 변수 &amp; Categorical 변수의 개수 등 파악<br>
-cf) 보통 test 데이터의 변수 개수가 train 변수 개수보다 하나 적음</li>
+<li>Numeric 변수 &amp; Categorical 변수의 개수 등 파악<br> cf) 보통 test 데이터의 변수 개수가 train 변수 개수보다 하나 적음</li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">gender.shape, train.shape, test.shape<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>((418, 2), (891, 12), (418, 11))
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># train 데이터의 상위 5개 데이터만 확인해보기
 display(train.head())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -409,7 +401,7 @@ display(train.head())<span aria-hidden="true" class="line-numbers-rows"><span></
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -507,6 +499,8 @@ display(train.head())<span aria-hidden="true" class="line-numbers-rows"><span></
   </tbody>
 </table>
 </div>
+
+
 <p>Numerical 변수와 Categorical 변수를 구분한다.</p>
 <ul>
 <li>numeric_features 구분</li>
@@ -518,13 +512,12 @@ print(&quot;The total number of numeric features are: &quot;, len(numeric_featur
 numeric_features &#x3D; test.select_dtypes(include&#x3D;[np.number])
 print(numeric_features.columns)
 print(&quot;The total number of numeric features are: &quot;, len(numeric_features.columns))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>Index(['PassengerId', 'Survived', 'Pclass', 'Age', 'SibSp', 'Parch', 'Fare'], dtype='object')
+<pre><code>Index([&#39;PassengerId&#39;, &#39;Survived&#39;, &#39;Pclass&#39;, &#39;Age&#39;, &#39;SibSp&#39;, &#39;Parch&#39;, &#39;Fare&#39;], dtype=&#39;object&#39;)
 The total number of numeric features are:  7
-Index(['PassengerId', 'Pclass', 'Age', 'SibSp', 'Parch', 'Fare'], dtype='object')
+Index([&#39;PassengerId&#39;, &#39;Pclass&#39;, &#39;Age&#39;, &#39;SibSp&#39;, &#39;Parch&#39;, &#39;Fare&#39;], dtype=&#39;object&#39;)
 The total number of numeric features are:  6
 </code></pre>
-<p>train의 numeric 데이터는 7개, test의 numeric 데이터는 6개이다.<br>
-<br></p>
+<p>train의 numeric 데이터는 7개, test의 numeric 데이터는 6개이다.<br><br></p>
 <ul>
 <li>numeric_features 제외한 나머지 변수 추출</li>
 </ul>
@@ -535,16 +528,14 @@ print(&quot;The total number of non numeric features are: &quot;, len(categorica
 categorical_features &#x3D; test.select_dtypes(exclude&#x3D;[np.number])
 print(categorical_features.columns)
 print(&quot;The total number of non numeric features are: &quot;, len(categorical_features.columns))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>Index(['Name', 'Sex', 'Ticket', 'Cabin', 'Embarked'], dtype='object')
+<pre><code>Index([&#39;Name&#39;, &#39;Sex&#39;, &#39;Ticket&#39;, &#39;Cabin&#39;, &#39;Embarked&#39;], dtype=&#39;object&#39;)
 The total number of non numeric features are:  5
-Index(['Name', 'Sex', 'Ticket', 'Cabin', 'Embarked'], dtype='object')
+Index([&#39;Name&#39;, &#39;Sex&#39;, &#39;Ticket&#39;, &#39;Cabin&#39;, &#39;Embarked&#39;], dtype=&#39;object&#39;)
 The total number of non numeric features are:  5
 </code></pre>
-<p>train의 numeric 아닌 데이터는 5개, test의 numeric 아닌 데이터는 5개이다.</p>
-<h3 id="2-Kaggle-Code-필사">2. Kaggle Code 필사</h3>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">- 필사 자료: EDA to Prediction(DieTanic)</a></p>
-<h4 id="part1-Exploratory-Data-Analysis-EDA">part1: Exploratory Data Analysis(EDA)</h4>
-<ol>
+<p>train의 numeric 아닌 데이터는 5개, test의 numeric 아닌 데이터는 5개이다.  </p>
+<h3 id="2-Kaggle-Code-필사"><a href="#2-Kaggle-Code-필사" class="headerlink" title="2. Kaggle Code 필사"></a>2. Kaggle Code 필사</h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">- 필사 자료: EDA to Prediction(DieTanic)</a></p>
+<h4 id="part1-Exploratory-Data-Analysis-EDA"><a href="#part1-Exploratory-Data-Analysis-EDA" class="headerlink" title="part1: Exploratory Data Analysis(EDA)"></a>part1: Exploratory Data Analysis(EDA)</h4><ol>
 <li>Analysis of the features</li>
 <li>Finding any relations or trends considering multiple features</li>
 </ol>
@@ -557,12 +548,17 @@ plt.style.use(&#39;fivethirtyeight&#39;)
 import warnings
 warnings.filterwarnings(&#39;ignore&#39;)
 %matplotlib inline<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train.head()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -571,7 +567,7 @@ warnings.filterwarnings(&#39;ignore&#39;)
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -669,7 +665,14 @@ warnings.filterwarnings(&#39;ignore&#39;)
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train.isnull().sum() # checking for total null values<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>PassengerId      0
 Survived         0
 Pclass           0
@@ -693,44 +696,41 @@ ax[0].set_ylabel(&#39;&#39;)
 sns.countplot(&#39;Survived&#39;, data&#x3D;train, ax&#x3D;ax[1])
 ax[1].set_title(&#39;Survived&#39;)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_40_0.png" alt="png"></p>
-<p>It is evident that not many passengers survived the accident.</p>
-<p>Out of 891 passengers in traing set, only around 350 survived i.e Only 38.4% of the total training set survived the crash. We need to dig down more to get better insights from the data and see which categories of the passengers did survive and who didn’t.</p>
-<p>We will try to chek the survival rate by using the different features of the dataset. Some of the features being Sex, Port Of Embarcation, Age, etc.</p>
+<p>It is evident that not many passengers survived the accident.  </p>
+<p>Out of 891 passengers in traing set, only around 350 survived i.e Only 38.4% of the total training set survived the crash. We need to dig down more to get better insights from the data and see which categories of the passengers did survive and who didn’t.  </p>
+<p>We will try to chek the survival rate by using the different features of the dataset. Some of the features being Sex, Port Of Embarcation, Age, etc.  </p>
 <p>First let us understand the different types of features.</p>
 <p>*** Types Of Features**</p>
 <ul>
-<li>
-<p>Categorical Features:<br>
-A categorical variable is one that has two or more categories and each value in that feature can be categorised by them. For example, gender is a categorical variable having two categories(male and female). Now we cannot sort or give any ordering to such variables. They are also known as Nominal Variables(명목형 변수).</p>
+<li><p>Categorical Features:<br>A categorical variable is one that has two or more categories and each value in that feature can be categorised by them. For example, gender is a categorical variable having two categories(male and female). Now we cannot sort or give any ordering to such variables. They are also known as Nominal Variables(명목형 변수).  </p>
 </li>
-<li>
-<p>Categorical Features in the dataset: Sex, Embarked</p>
+<li><p>Categorical Features in the dataset: Sex, Embarked</p>
 </li>
 </ul>
 <br>
+
 <ul>
-<li>
-<p>Ordinal Features:<br>
-An ordinal variable is similar to categorical values, but the difference between them is that we can have relative ordering or sorting between the values. For eg: if we have a feature like Height with values Tall, Medium, Short, then Height is a ordinal variable. Here we can have a relative sort in the variable.</p>
+<li><p>Ordinal Features:<br>An ordinal variable is similar to categorical values, but the difference between them is that we can have relative ordering or sorting between the values. For eg: if we have a feature like Height with values Tall, Medium, Short, then Height is a ordinal variable. Here we can have a relative sort in the variable.  </p>
 </li>
-<li>
-<p>Ordinal(순위) Features in the dataset: PClass</p>
+<li><p>Ordinal(순위) Features in the dataset: PClass</p>
 </li>
 </ul>
 <br>
+
 <ul>
-<li>
-<p>Continuous Feature:<br>
-A feature is said to be continous if it can take values between any two points or between the minimun or maximum values in the features column.</p>
+<li><p>Continuous Feature:<br>A feature is said to be continous if it can take values between any two points or between the minimun or maximum values in the features column.  </p>
 </li>
-<li>
-<p>Coutinuous Features in the dataset: Age</p>
+<li><p>Coutinuous Features in the dataset: Age</p>
 </li>
 </ul>
 <p>*** Analysing The Features**</p>
 <p>Sex -&gt; Catagorical Feature</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train.groupby([&#39;Sex&#39;, &#39;Survived&#39;])[&#39;Survived&#39;].count()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>Sex     Survived
 female  0            81
         1           233
@@ -744,12 +744,16 @@ ax[0].set_title(&#39;Survived vs Sex&#39;)
 sns.countplot(&#39;Sex&#39;, hue&#x3D;&#39;Survived&#39;, data&#x3D;train, ax &#x3D; ax[1])
 ax[1].set_title(&#39;Sex: Survived vs Dead&#39;)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_45_0.png" alt="png"></p>
-<p>This looks interesting. The number of men on the ship is lot more than the number of women. Still the number of women saved is almost twice the number of males saved. The survival rates for a women on the ship is around 75% while that for men in around 18-19%.</p>
+<p>This looks interesting. The number of men on the ship is lot more than the number of women. Still the number of women saved is almost twice the number of males saved. The survival rates for a women on the ship is around 75% while that for men in around 18-19%.  </p>
 <p>This looks to be a very important feature for modeling. But is it the best? Let’s check other features.</p>
 <p>*** Pclass -&gt; Ordinal Feature**</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 클래스별 사망자&#x2F;생존자 수
 pd.crosstab(train.Pclass, train.Survived, margins&#x3D;True).style.background_gradient(cmap &#x3D; &#39;summer_r&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <style type="text/css">
 #T_8a5ee43e_1e4d_11eb_98db_0242ac1c0002row0_col0,#T_8a5ee43e_1e4d_11eb_98db_0242ac1c0002row1_col1,#T_8a5ee43e_1e4d_11eb_98db_0242ac1c0002row1_col2{
             background-color:  #ffff66;
@@ -809,12 +813,16 @@ ax[0].set_ylabel(&#39;Count&#39;)
 sns.countplot(&#39;Pclass&#39;, hue&#x3D;&#39;Survived&#39;, data&#x3D;train, ax &#x3D; ax[1])
 ax[1].set_title(&#39;Pclass:Survived vs Dead&#39;)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_49_0.png" alt="png"></p>
-<p>People say <strong>Money Can’t Buy Everything</strong>. But we can clearly see that Passengers Of Pclass 1 were given a very high priority while rescue. Even thouugh the number of Passengers in Pclass 3 were a lot higher, still the number of survival from them is very low, somewhere around 25%.</p>
-<p>For Pclass 1% survived is around 63% while for Pclass 2 is around 48%. So money and status matters. Such a materialistic world.</p>
+<p>People say <strong>Money Can’t Buy Everything</strong>. But we can clearly see that Passengers Of Pclass 1 were given a very high priority while rescue. Even thouugh the number of Passengers in Pclass 3 were a lot higher, still the number of survival from them is very low, somewhere around 25%.  </p>
+<p>For Pclass 1% survived is around 63% while for Pclass 2 is around 48%. So money and status matters. Such a materialistic world.  </p>
 <p>Let’s dive in little bit more and check for other interesting observations. Let’s check survival rate with Sex and Pclass Together.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># Sex, Pclss 기준으로 Survived 인원 보기
 pd.crosstab([train.Sex, train.Survived], train.Pclass, margins&#x3D;True).style.background_gradient(cmap&#x3D;&#39;summer_r&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <style type="text/css">
 #T_ed10372a_1e4f_11eb_98db_0242ac1c0002row0_col0,#T_ed10372a_1e4f_11eb_98db_0242ac1c0002row0_col1,#T_ed10372a_1e4f_11eb_98db_0242ac1c0002row0_col3,#T_ed10372a_1e4f_11eb_98db_0242ac1c0002row3_col2{
             background-color:  #ffff66;
@@ -895,10 +903,11 @@ pd.crosstab([train.Sex, train.Survived], train.Pclass, margins&#x3D;True).style.
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">sns.factorplot(&#39;Pclass&#39;, &#39;Survived&#39;, hue &#x3D; &#39;Sex&#39;, data &#x3D; train)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_52_0.png" alt="png"></p>
-<p>We use FactorPlot in this case, because they make the seperation of categorical values easy.</p>
-<p>Looking at the CrossTab and the FactorPlot, we can easily infer that survival for Women from Pclass 1 is about 95-96%, as only 3 out of 94 Women from Pclass 1 died.</p>
-<p>It is evident that irrespective of Pclass, Women were given first priority while rescue. Even Men from Pclass 1 have a very low survival rate.</p>
+<p>We use FactorPlot in this case, because they make the seperation of categorical values easy.  </p>
+<p>Looking at the CrossTab and the FactorPlot, we can easily infer that survival for Women from Pclass 1 is about 95-96%, as only 3 out of 94 Women from Pclass 1 died.  </p>
+<p>It is evident that irrespective of Pclass, Women were given first priority while rescue. Even Men from Pclass 1 have a very low survival rate.  </p>
 <p>Looks like Pclass is also an important feature. Let’s analyse other features.</p>
 <p>*** Age -&gt; Continous Feature**</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">print(&#39;Oldest Passenger was of:&#39;, train[&#39;Age&#39;].max(), &#39;Years&#39;)
@@ -916,30 +925,33 @@ sns.violinplot(&quot;Sex&quot;, &quot;Age&quot;, hue&#x3D;&quot;Survived&quot;, 
 ax[1].set_title(&#39;Sex and Age vs Survived&#39;)
 ax[1].set_yticks(range(0, 110, 10))
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_56_0.png" alt="png"></p>
 <p><strong>Observations:</strong></p>
 <ul>
-<li>
-<p>The number of cildren increases with Pclass and the survival rate for passengers below Age 10(i.e children) looks to be good irrespective of the Pclass.</p>
+<li><p>The number of cildren increases with Pclass and the survival rate for passengers below Age 10(i.e children) looks to be good irrespective of the Pclass.  </p>
 </li>
-<li>
-<p>Survival chances for passengers aged 20-50 from Pclass 1 is high and is even better for women.</p>
+<li><p>Survival chances for passengers aged 20-50 from Pclass 1 is high and is even better for women.  </p>
 </li>
-<li>
-<p>For males, the survival chances decreases with an increase in age.</p>
+<li><p>For males, the survival chances decreases with an increase in age.  </p>
 </li>
 </ul>
 <br>
-<p>As we had seen earlier, the Age feature has 177 null values. To replace these NaN values, we can assign them the mean age of the dataset.</p>
-<p>But the problem is, there were many people with many different ages. We just can’t assign a 4 year kid with the mean age that is 29 years. Is there any way to find out what age-band does the passenger lie?</p>
+
+<p>As we had seen earlier, the Age feature has 177 null values. To replace these NaN values, we can assign them the mean age of the dataset.  </p>
+<p>But the problem is, there were many people with many different ages. We just can’t assign a 4 year kid with the mean age that is 29 years. Is there any way to find out what age-band does the passenger lie?  </p>
 <br>
-<p>We can check the <strong>Name</strong> feature. Looking upon the feature, we cas see that the names have a salutaion like Mr or Mrs. Thus we can assign the mean values of Mr and Mrs to the respective groups.</p>
-<p><strong>“What’s in a name?” ----&gt; Feature</strong></p>
+
+<p>We can check the <strong>Name</strong> feature. Looking upon the feature, we cas see that the names have a salutaion like Mr or Mrs. Thus we can assign the mean values of Mr and Mrs to the respective groups.  </p>
+<p><strong>“What’s in a name?” —-&gt; Feature</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train[&#39;Initial&#39;]&#x3D;0
 for i in train:
     train[&#39;Initial&#39;]&#x3D;train.Name.str.extract(&#39;([A-Za-z]+)\.&#39;) # extract the Salutations<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>Using the Regex: <strong>[A-Za-z]+)</strong>… So what it does is, it looks for strings which lie between <strong>A-Z or a-z</strong> and followed by a <strong>.(dot)</strong>. So we successfully extract the Initials from the Name.</p>
+<p>Using the Regex: <strong>[A-Za-z]+)</strong>.. So what it does is, it looks for strings which lie between <strong>A-Z or a-z</strong> and followed by a <strong>.(dot)</strong>. So we successfully extract the Initials from the Name.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">pd.crosstab(train.Initial, train.Sex).T.style.background_gradient(cmap&#x3D;&#39;summer_r&#39;) # checking the Initials with the sex<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <style type="text/css">
 #T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col0,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col1,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col3,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col4,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col5,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col7,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col8,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col12,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col15,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row0_col16,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row1_col2,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row1_col6,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row1_col9,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row1_col10,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row1_col11,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row1_col13,#T_dae012f4_1e5f_11eb_98db_0242ac1c0002row1_col14{
             background-color:  #ffff66;
@@ -992,7 +1004,11 @@ for i in train:
 </code></pre>
 <p>There are some misspelled Initials like Mlle of Mme that stand for Miss. I will replace them with Miss and same thing for other values.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train[&#39;Initial&#39;].replace([&#39;Mlle&#39;, &#39;Mme&#39;, &#39;Ms&#39;, &#39;Dr&#39;, &#39;Major&#39;, &#39;Lady&#39;, &#39;Countess&#39;, &#39;Jonkheer&#39;, &#39;Col&#39;, &#39;Rev&#39;, &#39;Capt&#39;, &#39;Sir&#39;, &#39;Don&#39;], [&#39;Miss&#39;, &#39;Miss&#39;, &#39;Miss&#39;, &#39;Mr&#39;, &#39;Mr&#39;, &#39;Mrs&#39;, &#39;Mrs&#39;, &#39;Other&#39;, &#39;Other&#39;, &#39;Other&#39;, &#39;Mr&#39;, &#39;Mr&#39;, &#39;Mr&#39;], inplace&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train.groupby(&#39;Initial&#39;)[&#39;Age&#39;].mean() # check the average age by Initials<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>Initial
 Master     4.574167
 Miss      21.860000
@@ -1001,14 +1017,18 @@ Mrs       35.981818
 Other     45.888889
 Name: Age, dtype: float64
 </code></pre>
-<p><strong>Filling NaN Ages</strong></p>
+<p><strong>Filling NaN Ages</strong>  </p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># assigning the NaN Values with the Ceil values of the mean ages
 train.loc[(train.Age.isnull())&amp;(train.Initial&#x3D;&#x3D;&#39;Mr&#39;),&#39;Age&#39;]&#x3D;33
 train.loc[(train.Age.isnull())&amp;(train.Initial&#x3D;&#x3D;&#39;Mrs&#39;),&#39;Age&#39;]&#x3D;36
 train.loc[(train.Age.isnull())&amp;(train.Initial&#x3D;&#x3D;&#39;Master&#39;),&#39;Age&#39;]&#x3D;5
 train.loc[(train.Age.isnull())&amp;(train.Initial&#x3D;&#x3D;&#39;Miss&#39;),&#39;Age&#39;]&#x3D;22
 train.loc[(train.Age.isnull())&amp;(train.Initial&#x3D;&#x3D;&#39;Other&#39;),&#39;Age&#39;]&#x3D;46<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train.Age.isnull().any() # so no null values left finally<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>False
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">f, ax&#x3D;plt.subplots(1, 2, figsize&#x3D;(20, 10))
@@ -1021,19 +1041,24 @@ ax[1].set_title(&#39;Survived&#x3D;1&#39;)
 x2&#x3D;list(range(0, 85, 5))
 ax[1].set_xticks(x2)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_67_0.png" alt="png"></p>
 <p><strong>Observations:</strong></p>
 <ul>
-<li>The Toddlers(age &lt; 5) were saved in large numbers(<em>The Women and Child First Policy</em>)</li>
-<li>The oldest Passenger was saved(80 years)</li>
-<li>Maximum number of deaths were in the age group of 30-40</li>
+<li>The Toddlers(age &lt; 5) were saved in large numbers(<em>The Women and Child First Policy</em>)  </li>
+<li>The oldest Passenger was saved(80 years)  </li>
+<li>Maximum number of deaths were in the age group of 30-40  </li>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">sns.factorplot(&#39;Pclass&#39;, &#39;Survived&#39;, col&#x3D;&#39;Initial&#39;, data&#x3D;train)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_69_0.png" alt="png"></p>
-<p>The Women and Child first policy thus holds true irrespective of the class.</p>
+<p>The Women and Child first policy thus holds true irrespective of the class.  </p>
 <p>*** Embarked -&gt; Categorical Value**</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">pd.crosstab([train.Embarked, train.Pclass], [train.Sex, train.Survived], margins&#x3D;True).style.background_gradient(cmap&#x3D;&#39;summer_r&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <style type="text/css">
 #T_7944395a_1e62_11eb_98db_0242ac1c0002row0_col0,#T_7944395a_1e62_11eb_98db_0242ac1c0002row1_col2{
             background-color:  #fcfe66;
@@ -1217,6 +1242,7 @@ plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 fig&#x3D;plt.gcf()
 fig.set_size_inches(5, 3)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_74_0.png" alt="png"></p>
 <p>The chances for survival for Port C is highest around 0.55 while it is lowest for S.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">f,ax&#x3D;plt.subplots(2,2,figsize&#x3D;(20,15))
@@ -1230,6 +1256,7 @@ sns.countplot(&#39;Embarked&#39;,hue&#x3D;&#39;Pclass&#39;,data&#x3D;train,ax&#x
 ax[1,1].set_title(&#39;Embarked vs Pclass&#39;)
 plt.subplots_adjust(wspace&#x3D;0.2,hspace&#x3D;0.5)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_76_0.png" alt="png"></p>
 <p><strong>Observations:</strong></p>
 <ul>
@@ -1240,35 +1267,35 @@ plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">sns.factorplot(&#39;Pclass&#39;, &#39;Survived&#39;, hue&#x3D;&#39;Sex&#39;, col&#x3D;&#39;Embarked&#39;, data&#x3D;train)
 plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><img src="/images/titanic/output_78_0.png" alt="png"></p>
 <p><strong>0bservations:</strong></p>
 <ul>
 <li>The survival chances are almost 1 for women for Pclass 1 and Pclass 2 irrespective of the Pclass.</li>
 <li>Port S looks to be very unlucky for Pclass 3 passengers as the survival rate for both men and women is very low.(Money Matters)</li>
-<li>Port Q looks to be unlukiest for Men, as almost all were from Pclass 3.</li>
+<li>Port Q looks to be unlukiest for Men, as almost all were from Pclass 3.  </li>
 </ul>
 <br>
-<p><strong>Filling Embarked NaN</strong><br>
-As we saw that maximum passengers boarded from Port S, we replace NaN with S.</p>
+
+<p><strong>Filling Embarked NaN</strong><br>As we saw that maximum passengers boarded from Port S, we replace NaN with S.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train[&#39;Embarked&#39;].fillna(&#39;S&#39;, inplace&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">train.Embarked.isnull().any() # Finally No NaN values<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>False
 </code></pre>
-<p>*** SibSip -&gt; Discrete Feature**<br>
-This feature represents whether a person is alone of with their family members.<br>
-<br><br>
-Sibling = brother, sister, stepbrother, stepsister<br>
-Spouse = husband, wife</p>
-<h4 id="Part2-Feature-Engineering-and-Data-Cleaning">Part2: Feature Engineering and Data Cleaning</h4>
-<ol>
+<p>*** SibSip -&gt; Discrete Feature**<br>This feature represents whether a person is alone of with their family members.<br><br><br>Sibling = brother, sister, stepbrother, stepsister<br>Spouse = husband, wife</p>
+<h4 id="Part2-Feature-Engineering-and-Data-Cleaning"><a href="#Part2-Feature-Engineering-and-Data-Cleaning" class="headerlink" title="Part2: Feature Engineering and Data Cleaning"></a>Part2: Feature Engineering and Data Cleaning</h4><ol>
 <li>Adding any few features</li>
 <li>Removing redundant features</li>
 <li>Converting features into suitable from for modiling</li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="Part3-Rredictive-Modeling">Part3: Rredictive Modeling</h4>
-<ol>
+<h4 id="Part3-Rredictive-Modeling"><a href="#Part3-Rredictive-Modeling" class="headerlink" title="Part3: Rredictive Modeling"></a>Part3: Rredictive Modeling</h4><ol>
 <li>Running Basic Algorithms</li>
 <li>Cross Validation</li>
 <li>Ensembling</li>
@@ -1281,7 +1308,7 @@ Spouse = husband, wife</p>
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/11/04/titanic/" data-id="ckl3pbojd00bjwsue9r1x1lu4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/11/04/titanic/" data-id="ckl3pgmd200b7f4ueail1bqax" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -1360,17 +1387,15 @@ Spouse = husband, wife</p>
         "dateModified": "2020-11-15",
         "url": "https://ne-choi.github.io//2020/11/04/titanic/",
         "description": "I. Practice Kaggle Data
-
 구글 드라이브 연동
 Kaggle API 설치
 Kaggle Token 다운로드
 Titanic 데이터 불러오기
 
-1. 구글 드라이브 연동
-Google Colab을 시작하면 항상 드라이브 연동을 해야 한다.
+1. 구글 드라이브 연동Google Colab을 시작하면 항상 드라이브 연동을 해야 한다.
 from google.colab import drive # 패키지 불러오기 
-from os.path import",
-        "wordCount": 11717,
+from os.path import j",
+        "wordCount": 11841,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

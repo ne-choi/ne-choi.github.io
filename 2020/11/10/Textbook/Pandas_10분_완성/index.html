@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="python,10 Minutes to Pandas,pandas,numpy,matplotlib">
     
-    <meta name="description" content="Pandas 10분 완성(10 Minutes to Pandas) 필사  출처: 데잇걸즈2가 번역한 Pandas 10분 완성  목차  Object Creation (객체 생성) Viewing Data (데이터 확인하기) Selection (선택) Missing Data (결측치) Operation (연산) Merge (병합) Grouping (그룹화) Res">
+    <meta name="description" content="Pandas 10분 완성(10 Minutes to Pandas) 필사 출처: 데잇걸즈2가 번역한 Pandas 10분 완성    목차  Object Creation (객체 생성)   Viewing Data (데이터 확인하기)   Selection (선택)   Missing Data (결측치)   Operation (연산)   Merge (병합) Groupin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pandas 10분 완성(10 Minutes to Pandas)">
 <meta property="og:url" content="https://ne-choi.github.io/2020/11/10/Textbook/Pandas_10%EB%B6%84_%EC%99%84%EC%84%B1/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="Pandas 10분 완성(10 Minutes to Pandas) 필사  출처: 데잇걸즈2가 번역한 Pandas 10분 완성  목차  Object Creation (객체 생성) Viewing Data (데이터 확인하기) Selection (선택) Missing Data (결측치) Operation (연산) Merge (병합) Grouping (그룹화) Res">
+<meta property="og:description" content="Pandas 10분 완성(10 Minutes to Pandas) 필사 출처: 데잇걸즈2가 번역한 Pandas 10분 완성    목차  Object Creation (객체 생성)   Viewing Data (데이터 확인하기)   Selection (선택)   Missing Data (결측치)   Operation (연산)   Merge (병합) Groupin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-10T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:42:41.262Z">
@@ -229,17 +229,16 @@ ga('send', 'pageview');
 
             
 
-            <h1><strong>Pandas 10분 완성(10 Minutes to Pandas) 필사</strong></h1>
-<ul>
-<li>출처: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://dataitgirls2.github.io/10minutes2pandas/">데잇걸즈2가 번역한 Pandas 10분 완성</a></li>
+            <h1 id="Pandas-10분-완성-10-Minutes-to-Pandas-필사"><a href="#Pandas-10분-완성-10-Minutes-to-Pandas-필사" class="headerlink" title="Pandas 10분 완성(10 Minutes to Pandas) 필사"></a><strong>Pandas 10분 완성(10 Minutes to Pandas) 필사</strong></h1><ul>
+<li>출처: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://dataitgirls2.github.io/10minutes2pandas/">데잇걸즈2가 번역한 Pandas 10분 완성</a>  </li>
 </ul>
 <p><strong>목차</strong></p>
 <ol>
-<li>Object Creation (객체 생성)</li>
-<li>Viewing Data (데이터 확인하기)</li>
-<li>Selection (선택)</li>
-<li>Missing Data (결측치)</li>
-<li>Operation (연산)</li>
+<li>Object Creation (객체 생성)  </li>
+<li>Viewing Data (데이터 확인하기)  </li>
+<li>Selection (선택)  </li>
+<li>Missing Data (결측치)  </li>
+<li>Operation (연산)  </li>
 <li>Merge (병합)</li>
 <li>Grouping (그룹화)</li>
 <li>Reshaping (변형)</li>
@@ -254,11 +253,13 @@ ga('send', 'pageview');
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="1-Object-Creation"><strong>1. Object Creation</strong></h2>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">- 참고: 데이터 구조 소개 섹션</a></p>
+<h2 id="1-Object-Creation"><a href="#1-Object-Creation" class="headerlink" title="1. Object Creation"></a><strong>1. Object Creation</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">- 참고: 데이터 구조 소개 섹션</a></p>
 <p>Pansdas는 값을 가지고 있는 리스트를 통해 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html">Series</a>를 만들고, 정수로 만들어진 인덱스를 기본값으로 불러온다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s &#x3D; pd.Series([1, 3, 5, np.nan, 6, 8])
 s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>0    1.0
 1    3.0
 2    5.0
@@ -270,17 +271,24 @@ dtype: float64
 <p>datetime 인덱스와 레이블이 있는 열을 가진 numpy 배열을 전달하여 데이터프레임을 만든다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">dates &#x3D; pd.date_range(&#39;20130101&#39;, periods &#x3D; 6)
 dates<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
-               '2013-01-05', '2013-01-06'],
-              dtype='datetime64[ns]', freq='D')
+
+
+
+<pre><code>DatetimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;,
+               &#39;2013-01-05&#39;, &#39;2013-01-06&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df &#x3D; pd.DataFrame(np.random.randn(6, 4), index &#x3D; dates, columns &#x3D; list(&#39;ABCD&#39;))
 df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -289,7 +297,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -346,6 +354,9 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
   </tbody>
 </table>
 </div>
+
+
+
 <p>Series와 같은 것으로 변환될 수 있는 객체들의 dict로 구성된 데이터프레임을 만든다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df2 &#x3D; pd.DataFrame(&#123;&#39;A&#39;: 1.,
                     &#39;B&#39;: pd.Timestamp(&#39;20130102&#39;),
@@ -354,11 +365,15 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
                     &#39;E&#39;: pd.Categorical([&quot;test&quot;, &quot;train&quot;, &quot;test&quot;, &quot;train&quot;]),
                     &#39;F&#39;: &#39;foo&#39;&#125;)
 df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -367,7 +382,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -420,7 +435,14 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df2.dtypes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>A           float64
 B    datetime64[ns]
 C           float32
@@ -429,17 +451,20 @@ E          category
 F            object
 dtype: object
 </code></pre>
-<h2 id="2-Viewing-Data"><strong>2. Viewing Data</strong></h2>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Basic Section</a></p>
+<h2 id="2-Viewing-Data"><a href="#2-Viewing-Data" class="headerlink" title="2. Viewing Data"></a><strong>2. Viewing Data</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Basic Section</a>  </p>
 <p>데이터프레임의 가장 윗줄과 마지막 줄을 확인하고 싶을 때 사용하는 방법 알아보기.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 괄호() 안에 숫자를 넣으면 (숫자)줄을 불러오고 넣지 않으면 기본값인 5개를 불러옴
 
 df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -448,7 +473,7 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -484,12 +509,20 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.head()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -498,7 +531,7 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -548,16 +581,28 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
   </tbody>
 </table>
 </div>
+
+
+
 <p>index, column, numpy 데이터 세부 정보를 알아보자.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.index<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre><code>DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
-               '2013-01-05', '2013-01-06'],
-              dtype='datetime64[ns]', freq='D')
+
+
+
+<pre><code>DatetimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;,
+               &#39;2013-01-05&#39;, &#39;2013-01-06&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.columns<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre><code>Index(['A', 'B', 'C', 'D'], dtype='object')
+
+
+
+<pre><code>Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;], dtype=&#39;object&#39;)
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.values<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>array([[-1.61264215, -0.2023848 ,  1.36936106,  0.35404822],
        [-0.41459705,  0.74983681,  0.09588737, -0.74053093],
        [ 0.60731344,  0.78256437,  0.14000027,  0.89485905],
@@ -566,11 +611,15 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
        [ 1.49444451, -0.58202719,  1.0530883 ,  0.57417186]])
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.describe() # 데이터의 대략적인 통계적 정보 요약을 보여줌<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -579,7 +628,7 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -650,12 +699,20 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.T # 데이터 전치<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -664,7 +721,7 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -717,12 +774,20 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.sort_index(axis &#x3D; 1, ascending &#x3D; False) # 축별로 정리<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -731,7 +796,7 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -788,12 +853,20 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.sort_values(by &#x3D; &#39;B&#39;) # 값별로 정렬<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -802,7 +875,7 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -859,14 +932,18 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
   </tbody>
 </table>
 </div>
-<h2 id="3-Selection"><strong>3. Selection</strong></h2>
-<ul>
-<li>주석: Pandas에 최적화된 데이터 접근 방법인 .at, .iat, .loc, .iloc 사용</li>
+
+
+
+<h2 id="3-Selection"><a href="#3-Selection" class="headerlink" title="3. Selection"></a><strong>3. Selection</strong></h2><ul>
+<li>주석: Pandas에 최적화된 데이터 접근 방법인 .at, .iat, .loc, .iloc 사용  </li>
 </ul>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 데이터 인덱싱 및 선택</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">다중 인덱싱/심화 인덱싱</a></p>
-<h3 id="Getting-데이터-얻기"><strong>- Getting(데이터 얻기)</strong></h3>
-<p>df.A와 동일한 Series를 생성하는 단일 열을 선택한다.</p>
+<h3 id="Getting-데이터-얻기"><a href="#Getting-데이터-얻기" class="headerlink" title="- Getting(데이터 얻기)"></a><strong>- Getting(데이터 얻기)</strong></h3><p>df.A와 동일한 Series를 생성하는 단일 열을 선택한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df[&#39;A&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>2013-01-01   -1.612642
 2013-01-02   -0.414597
 2013-01-03    0.607313
@@ -876,11 +953,15 @@ df.tail(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 Freq: D, Name: A, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df[0:3]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -889,7 +970,7 @@ Freq: D, Name: A, dtype: float64
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -925,12 +1006,20 @@ Freq: D, Name: A, dtype: float64
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df[&#39;20130102&#39;:&#39;20130104&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -939,7 +1028,7 @@ Freq: D, Name: A, dtype: float64
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -975,10 +1064,15 @@ Freq: D, Name: A, dtype: float64
   </tbody>
 </table>
 </div>
-<h3 id="Selection-by-Label"><strong>- Selection by Label</strong></h3>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: Label을 통한 선택</a></p>
+
+
+
+<h3 id="Selection-by-Label"><a href="#Selection-by-Label" class="headerlink" title="- Selection by Label"></a><strong>- Selection by Label</strong></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: Label을 통한 선택</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 라벨을 사용하여 횡단면 얻기
 df.loc[dates[0]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>A   -1.612642
 B   -0.202385
 C    1.369361
@@ -987,11 +1081,15 @@ Name: 2013-01-01 00:00:00, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 라벨을 사용하여 여러 축(의 데이터) 얻기
 df.loc[:, [&#39;A&#39;, &#39;B&#39;]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1000,7 +1098,7 @@ df.loc[:, [&#39;A&#39;, &#39;B&#39;]]<span aria-hidden="true" class="line-number
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1043,13 +1141,21 @@ df.loc[:, [&#39;A&#39;, &#39;B&#39;]]<span aria-hidden="true" class="line-number
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 양쪽 종단점을 포함한 라벨 슬라이싱 보기
 df.loc[&#39;20130102&#39;:&#39;20130104&#39;, [&#39;A&#39;, &#39;B&#39;]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1058,7 +1164,7 @@ df.loc[&#39;20130102&#39;:&#39;20130104&#39;, [&#39;A&#39;, &#39;B&#39;]]<span a
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1086,24 +1192,39 @@ df.loc[&#39;20130102&#39;:&#39;20130104&#39;, [&#39;A&#39;, &#39;B&#39;]]<span a
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 반환되는 객체의 차원 줄이기
 df.loc[&#39;20130102&#39;, [&#39;A&#39;, &#39;B&#39;]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>A   -0.414597
 B    0.749837
 Name: 2013-01-02 00:00:00, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 스킬라 값 얻기
 df.loc[dates[0], &#39;A&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>-1.6126421545697252
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># cf. 스킬라 값 더 빠르게 구하는 법
 df.at[dates[0], &#39;A&#39;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>-1.6126421545697252
 </code></pre>
-<h3 id="Selection-by-Position"><strong>- Selection by Position</strong></h3>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 위치로 선택하기</a></p>
+<h3 id="Selection-by-Position"><a href="#Selection-by-Position" class="headerlink" title="- Selection by Position"></a><strong>- Selection by Position</strong></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">- 참고: 위치로 선택하기</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 넘겨 받은 정수 위치를 기준으로 선택
 df.iloc[3]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>A   -0.748149
 B    0.417369
 C    0.823899
@@ -1112,11 +1233,15 @@ Name: 2013-01-04 00:00:00, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 정수로 표기된 슬라이스를 통해, numpy &#x2F; python과 유사하게 작동
 df.iloc[3:5, 0:2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1125,7 +1250,7 @@ df.iloc[3:5, 0:2]<span aria-hidden="true" class="line-numbers-rows"><span></span
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1148,13 +1273,21 @@ df.iloc[3:5, 0:2]<span aria-hidden="true" class="line-numbers-rows"><span></span
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 정수로 표기된 위치값 리스트를 통해, numpy &#x2F; python 스타일과 유사해짐
 df.iloc[[1, 2, 4], [0, 2]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1163,7 +1296,7 @@ df.iloc[[1, 2, 4], [0, 2]]<span aria-hidden="true" class="line-numbers-rows"><sp
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1191,13 +1324,21 @@ df.iloc[[1, 2, 4], [0, 2]]<span aria-hidden="true" class="line-numbers-rows"><sp
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 명시적으로 행을 나누고자 하는 경우
 df.iloc[1:3, :]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1206,7 +1347,7 @@ df.iloc[1:3, :]<span aria-hidden="true" class="line-numbers-rows"><span></span><
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1235,13 +1376,21 @@ df.iloc[1:3, :]<span aria-hidden="true" class="line-numbers-rows"><span></span><
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 명시적으로 열을 나누고자 하는 경우
 df.iloc[:, 1:3]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1250,7 +1399,7 @@ df.iloc[:, 1:3]<span aria-hidden="true" class="line-numbers-rows"><span></span><
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1293,22 +1442,35 @@ df.iloc[:, 1:3]<span aria-hidden="true" class="line-numbers-rows"><span></span><
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 명시적으로 (특정한) 값을 얻고자 하는 경우
 df.iloc[1, 1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>0.7498368136559216
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 스칼라 값을 빠르게 얻는 방법
 df.iat[1, 1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>0.7498368136559216
 </code></pre>
-<h3 id="Boolean-Indexing"><strong>- Boolean Indexing</strong></h3>
-<p>데이터를 선택하기 위해 단일 열 값을 사용한다.</p>
+<h3 id="Boolean-Indexing"><a href="#Boolean-Indexing" class="headerlink" title="- Boolean Indexing"></a><strong>- Boolean Indexing</strong></h3><p>데이터를 선택하기 위해 단일 열 값을 사용한다.  </p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df[df.A &gt; 0]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1317,7 +1479,7 @@ df.iat[1, 1]<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1346,13 +1508,21 @@ df.iat[1, 1]<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># Boolean 조건을 충족하는 데이터프레임에서 값 선택
 df[df &gt; 0]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1361,7 +1531,7 @@ df[df &gt; 0]<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1418,15 +1588,23 @@ df[df &gt; 0]<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 필터링을 위한 메소드 isin()을 사용
 df2 &#x3D; df.copy()
 df2[&#39;E&#39;] &#x3D; [&#39;one&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;, &#39;three&#39;]
 df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1435,7 +1613,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1499,12 +1677,20 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df2[df2[&#39;E&#39;].isin([&#39;two&#39;, &#39;four&#39;])]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1513,7 +1699,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1545,10 +1731,15 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
   </tbody>
 </table>
 </div>
-<h3 id="Setting"><strong>- Setting</strong></h3>
-<p>새 열을 설정하면 데이터가 인덱스별로 자동정렬 된다.</p>
+
+
+
+<h3 id="Setting"><a href="#Setting" class="headerlink" title="- Setting"></a><strong>- Setting</strong></h3><p>새 열을 설정하면 데이터가 인덱스별로 자동정렬 된다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s1 &#x3D; pd.Series([1, 2, 3, 4, 5, 6], index &#x3D; pd.date_range(&#39;20130102&#39;, periods&#x3D;6))
 s1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2013-01-02    1
 2013-01-03    2
 2013-01-04    3
@@ -1558,19 +1749,27 @@ s1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 Freq: D, dtype: int64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df[&#39;F&#39;] &#x3D; s1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 라벨에 의해 값 설정
 df.at[dates[0], &#39;A&#39;] &#x3D; 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 위치에 의해 값 설정
 df.iat[0, 1] &#x3D; 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># Numpy 배열을 사용한 할당에 의해 값 설정
 df.loc[:, &#39;D&#39;] &#x3D; np.array([5] * len(df))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 위 설정대로 작동한 결과
 df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1579,7 +1778,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1643,15 +1842,23 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># where 연산 설정
 df2 &#x3D; df.copy()
 df2[df2 &gt; 0] &#x3D; -df2
 df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1660,7 +1867,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1724,18 +1931,23 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
   </tbody>
 </table>
 </div>
-<h2 id="4-Missing-Data"><strong>4. Missing Data</strong></h2>
-<p>Pandas는 결측치를 표현하기 위해, 주로 np.nan 값을 사용한다. (기본 설정값이나 계산에는 포함되지 않음)<br>
-<a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html">- 참고: Missing data section</a></p>
+
+
+
+<h2 id="4-Missing-Data"><a href="#4-Missing-Data" class="headerlink" title="4. Missing Data"></a><strong>4. Missing Data</strong></h2><p>Pandas는 결측치를 표현하기 위해, 주로 np.nan 값을 사용한다. (기본 설정값이나 계산에는 포함되지 않음)<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html">- 참고: Missing data section</a>  </p>
 <p>Reindexing으로 지정된 축 상의 인덱스를 변경/추가/삭제할 수 있다. Reindexing은 데이터의 복사본을 반환한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df1 &#x3D; df.reindex(index &#x3D; dates[0:4], columns &#x3D; list(df.columns) + [&#39;E&#39;])
 df1.loc[dates[0]:dates[1], &#39;E&#39;] &#x3D; 1
 df1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1744,7 +1956,7 @@ df1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1797,13 +2009,21 @@ df1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 결측치를 가지고 있는 행 지우기
 df1.dropna(how &#x3D; &#39;any&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1812,7 +2032,7 @@ df1.dropna(how &#x3D; &#39;any&#39;)<span aria-hidden="true" class="line-numbers
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1838,13 +2058,21 @@ df1.dropna(how &#x3D; &#39;any&#39;)<span aria-hidden="true" class="line-numbers
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 결측치 채워 넣기
 df1.fillna(value &#x3D; 5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1853,7 +2081,7 @@ df1.fillna(value &#x3D; 5)<span aria-hidden="true" class="line-numbers-rows"><sp
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1906,13 +2134,21 @@ df1.fillna(value &#x3D; 5)<span aria-hidden="true" class="line-numbers-rows"><sp
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># NAN 값에 boolean을 통한 표식
 pd.isna(df1) # 데이터프레임의 모든 값이 boolean 형태로 표시되게 하며, nan인 값만 True가 표시되게 하는 함수<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -1921,7 +2157,7 @@ pd.isna(df1) # 데이터프레임의 모든 값이 boolean 형태로 표시되�
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1974,12 +2210,16 @@ pd.isna(df1) # 데이터프레임의 모든 값이 boolean 형태로 표시되�
   </tbody>
 </table>
 </div>
-<h2 id="5-Operation-연산"><strong>5. Operation (연산)</strong></h2>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: 이진(Binary) 연산의 기본 섹션</a></p>
-<h3 id="Stats"><strong>- Stats</strong></h3>
-<p>통계: 일반적으로 결측치를 제외한 후 연산된다.</p>
+
+
+
+<h2 id="5-Operation-연산"><a href="#5-Operation-연산" class="headerlink" title="5. Operation (연산)"></a><strong>5. Operation (연산)</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: 이진(Binary) 연산의 기본 섹션</a>  </p>
+<h3 id="Stats"><a href="#Stats" class="headerlink" title="- Stats"></a><strong>- Stats</strong></h3><p>통계: 일반적으로 결측치를 제외한 후 연산된다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 기술통계 수행
 df.mean()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>A    0.086420
 B    0.198790
 C    0.576728
@@ -1989,6 +2229,9 @@ dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 다른 축에서 동일한 연산 수행
 df.mean(1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2013-01-01    1.592340
 2013-01-02    1.286225
 2013-01-03    1.705976
@@ -2001,6 +2244,9 @@ Freq: D, dtype: float64
 # broadcast: nympy에서 유래, n차원이나 스칼라 값으로 연산 수행 시 도출되는 결과의 규칙을 설명하는 것  
 s &#x3D; pd.Series([1, 3, 5, np.nan, 6, 8], index &#x3D; dates).shift(2)
 s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2013-01-01    NaN
 2013-01-02    NaN
 2013-01-03    1.0
@@ -2010,11 +2256,15 @@ s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><s
 Freq: D, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.sub(s, axis &#x3D; &#39;index&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2023,7 +2273,7 @@ Freq: D, dtype: float64
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2087,14 +2337,20 @@ Freq: D, dtype: float64
   </tbody>
 </table>
 </div>
-<h3 id="Apply"><strong>- Apply</strong></h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 데이터에 함수 적용
+
+
+
+<h3 id="Apply"><a href="#Apply" class="headerlink" title="- Apply"></a><strong>- Apply</strong></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"># 데이터에 함수 적용
 df.apply(np.cumsum)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2103,7 +2359,7 @@ df.apply(np.cumsum)<span aria-hidden="true" class="line-numbers-rows"><span></sp
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2167,7 +2423,14 @@ df.apply(np.cumsum)<span aria-hidden="true" class="line-numbers-rows"><span></sp
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.apply(lambda x: x.max() - x.min())<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>A    2.242594
 B    1.364592
 C    1.391231
@@ -2175,10 +2438,12 @@ D    0.000000
 F    4.000000
 dtype: float64
 </code></pre>
-<h3 id="Histogramming"><strong>- Histogramming</strong></h3>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Histogramming and Discretization(히스토그래밍과 이산화)</a></p>
+<h3 id="Histogramming"><a href="#Histogramming" class="headerlink" title="- Histogramming"></a><strong>- Histogramming</strong></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html">- 참고: Histogramming and Discretization(히스토그래밍과 이산화)</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s &#x3D; pd.Series(np.random.randint(0, 7, size &#x3D; 10))
 s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>0    6
 1    6
 2    4
@@ -2192,6 +2457,9 @@ s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></
 dtype: int64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s.value_counts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>&lt;bound method IndexOpsMixin.value_counts of 0    6
 1    6
 2    4
@@ -2204,13 +2472,13 @@ dtype: int64
 9    4
 dtype: int64&gt;
 </code></pre>
-<h3 id="String-Methods"><strong>- String Methods</strong></h3>
-<p>Series는 문자열 처리 메소드 모음(set)을 가지고 있다.<br>
-이 모음은 배열의 각 요소를 쉽게 조작하도록 만드는 문자열의 속성에 포함되어 있다.<br>
-문자열의 패턴 일치 확인은 기본적으로 정규 표현식을 사용하며, 몇몇 경우에는 항상 정규 표현식을 사용한다.</p>
+<h3 id="String-Methods"><a href="#String-Methods" class="headerlink" title="- String Methods"></a><strong>- String Methods</strong></h3><p>Series는 문자열 처리 메소드 모음(set)을 가지고 있다.<br>이 모음은 배열의 각 요소를 쉽게 조작하도록 만드는 문자열의 속성에 포함되어 있다.<br>문자열의 패턴 일치 확인은 기본적으로 정규 표현식을 사용하며, 몇몇 경우에는 항상 정규 표현식을 사용한다.  </p>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html">- 참고: 벡터화된 문자열 메소드</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s &#x3D; pd.Series([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;Aaba&#39;, &#39;Baca&#39;, np.nan, &#39;CABA&#39;, &#39;dog&#39;, &#39;cat&#39;])
 s.str.lower()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>0       a
 1       b
 2       c
@@ -2222,18 +2490,20 @@ s.str.lower()<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 8     cat
 dtype: object
 </code></pre>
-<h2 id="6-Merge"><strong>6. Merge</strong></h2>
-<h3 id="Concat-연결"><strong>- Concat (연결)</strong></h3>
-<p>결합(join)/병합(merge) 형태의 연산에 관한 인덱스, 관계 대수 기능을 위한 다양한 형태의 논리를 포함한 Series, 데이터프레임, Panel 객체를 손쉽게 결합하는 기능이 있다.</p>
+<h2 id="6-Merge"><a href="#6-Merge" class="headerlink" title="6. Merge"></a><strong>6. Merge</strong></h2><h3 id="Concat-연결"><a href="#Concat-연결" class="headerlink" title="- Concat (연결)"></a><strong>- Concat (연결)</strong></h3><p>결합(join)/병합(merge) 형태의 연산에 관한 인덱스, 관계 대수 기능을 위한 다양한 형태의 논리를 포함한 Series, 데이터프레임, Panel 객체를 손쉽게 결합하는 기능이 있다.  </p>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Merging</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># concat()으로 pandas 객체 연결
 df &#x3D; pd.DataFrame(np.random.randn(10, 4))
 df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2242,7 +2512,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2327,14 +2597,22 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># break it into pieces
 pieces &#x3D; [df[:3], df[3:7], df[7:]]
 pd.concat(pieces)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2343,7 +2621,7 @@ pd.concat(pieces)<span aria-hidden="true" class="line-numbers-rows"><span></span
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2428,17 +2706,23 @@ pd.concat(pieces)<span aria-hidden="true" class="line-numbers-rows"><span></span
   </tbody>
 </table>
 </div>
-<h3 id="Join"><strong>- Join</strong></h3>
-<p>SQL 방식으로 병합한다.<br>
-<a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: 데이터베이스 스타일 결합</a></p>
+
+
+
+<h3 id="Join"><a href="#Join" class="headerlink" title="- Join"></a><strong>- Join</strong></h3><p>SQL 방식으로 병합한다.<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: 데이터베이스 스타일 결합</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">left &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &#39;lval&#39;: [1, 2]&#125;)
 right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &#39;rval&#39;: [4, 5]&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">left<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2447,7 +2731,7 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2470,12 +2754,20 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">right<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2484,7 +2776,7 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2507,12 +2799,20 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">pd.merge(left, right, on &#x3D; &#39;key&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2521,7 +2821,7 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2559,15 +2859,24 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 다른 예시
 left &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &#39;lval&#39;: [1, 2]&#125;)
 right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &#39;rval&#39;: [4, 5]&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">left<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2576,7 +2885,7 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2599,12 +2908,20 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">right<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2613,7 +2930,7 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2636,12 +2953,20 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">pd.merge(left, right, on &#x3D; &#39;key&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2650,7 +2975,7 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2676,16 +3001,21 @@ right &#x3D; pd.DataFrame(&#123;&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &
   </tbody>
 </table>
 </div>
-<h3 id="Append-추가"><strong>- Append (추가)</strong></h3>
-<p>데이터프레임에 행을 추가한다.<br>
-<a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Appending</a></p>
+
+
+
+<h3 id="Append-추가"><a href="#Append-추가" class="headerlink" title="- Append (추가)"></a><strong>- Append (추가)</strong></h3><p>데이터프레임에 행을 추가한다.<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">- 참고: Appending</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df &#x3D; pd.DataFrame(np.random.randn(8, 4), columns &#x3D; [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;])
 df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2694,7 +3024,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2765,13 +3095,21 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">s &#x3D; df.iloc[3]
 df.append(s, ignore_index&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2780,7 +3118,7 @@ df.append(s, ignore_index&#x3D;True)<span aria-hidden="true" class="line-numbers
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2858,12 +3196,14 @@ df.append(s, ignore_index&#x3D;True)<span aria-hidden="true" class="line-numbers
   </tbody>
 </table>
 </div>
-<h2 id="7-Grouping"><strong>7. Grouping</strong></h2>
-<p>그룹화는 다음 단계 중 하나 이상을 포함하는 과정을 말한다.</p>
+
+
+
+<h2 id="7-Grouping"><a href="#7-Grouping" class="headerlink" title="7. Grouping"></a><strong>7. Grouping</strong></h2><p>그룹화는 다음 단계 중 하나 이상을 포함하는 과정을 말한다.  </p>
 <ul>
-<li>몇몇 기준에 따라 여러 그룹으로 데이터를 분할(splitting)</li>
-<li>각 그룹에 독립적으로 함수를 적용(applying)</li>
-<li>결과물을 하나의 데이터 구조로 결합(combining)</li>
+<li>몇몇 기준에 따라 여러 그룹으로 데이터를 분할(splitting)  </li>
+<li>각 그룹에 독립적으로 함수를 적용(applying)  </li>
+<li>결과물을 하나의 데이터 구조로 결합(combining)  </li>
 </ul>
 <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html">- 참고: 그룹화</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df &#x3D; pd.DataFrame(
@@ -2875,11 +3215,15 @@ df.append(s, ignore_index&#x3D;True)<span aria-hidden="true" class="line-numbers
     &#125;)
 
 df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2888,7 +3232,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2959,13 +3303,21 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 생성된 데이터프레임을 그룹화한 후, 각 그룹에 sum() 함수 적용
 df.groupby(&#39;A&#39;).sum()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -2974,7 +3326,7 @@ df.groupby(&#39;A&#39;).sum()<span aria-hidden="true" class="line-numbers-rows">
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3002,13 +3354,21 @@ df.groupby(&#39;A&#39;).sum()<span aria-hidden="true" class="line-numbers-rows">
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 여러 열을 기준으로 그룹화하면 계층적 인덱스가 형성, 여기에도 sum 함수 적용 가능
 df.groupby([&#39;A&#39;, &#39;B&#39;]).sum()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -3017,7 +3377,7 @@ df.groupby([&#39;A&#39;, &#39;B&#39;]).sum()<span aria-hidden="true" class="line
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3069,10 +3429,11 @@ df.groupby([&#39;A&#39;, &#39;B&#39;]).sum()<span aria-hidden="true" class="line
   </tbody>
 </table>
 </div>
-<h2 id="8-Reshaping"><strong>8. Reshaping</strong></h2>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">- 참고: 계층적 인덱싱</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">변형</a></p>
-<h3 id="Stack"><strong>- Stack</strong></h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">tuples &#x3D; list(zip(*[[&#39;bar&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;baz&#39;,
+
+
+
+<h2 id="8-Reshaping"><a href="#8-Reshaping" class="headerlink" title="8. Reshaping"></a><strong>8. Reshaping</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">- 참고: 계층적 인덱싱</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">변형</a>  </p>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="- Stack"></a><strong>- Stack</strong></h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">tuples &#x3D; list(zip(*[[&#39;bar&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;baz&#39;,
                      &#39;foo&#39;, &#39;foo&#39;, &#39;qux&#39;, &#39;qux&#39;],
                     [&#39;one&#39;, &#39;two&#39;, &#39;one&#39;, &#39;two&#39;,
                      &#39;one&#39;, &#39;two&#39;, &#39;one&#39;, &#39;two&#39;]]))
@@ -3081,11 +3442,15 @@ index &#x3D; pd.MultiIndex.from_tuples(tuples, names &#x3D; [&#39;first&#39;, &#
 df &#x3D; pd.DataFrame(np.random.randn(8, 2), index&#x3D;index, columns&#x3D;[&#39;A&#39;, &#39;B&#39;])
 df2 &#x3D; df[:4]
 df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -3094,7 +3459,7 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3136,9 +3501,16 @@ df2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># stack() 메소드는 데이터프레임 열들의 계층을 압축
 stacked &#x3D; df2.stack()
 stacked<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>first  second   
 bar    one     A    0.164873
                B   -1.599363
@@ -3153,11 +3525,15 @@ dtype: float64
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># Stack된 데이터프레임 또는 MultiIndex를 인덱스로 사용하는 Series인 경우,
 # stack()의 역연산은 unstack()이며 기본적으로 마지막 계층을 unstack함
 stacked.unstack()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -3166,7 +3542,7 @@ stacked.unstack()<span aria-hidden="true" class="line-numbers-rows"><span></span
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3208,12 +3584,20 @@ stacked.unstack()<span aria-hidden="true" class="line-numbers-rows"><span></span
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">stacked.unstack(1)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -3222,7 +3606,7 @@ stacked.unstack()<span aria-hidden="true" class="line-numbers-rows"><span></span
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3264,12 +3648,20 @@ stacked.unstack()<span aria-hidden="true" class="line-numbers-rows"><span></span
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">stacked.unstack(0)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -3278,7 +3670,7 @@ stacked.unstack()<span aria-hidden="true" class="line-numbers-rows"><span></span
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3320,8 +3712,10 @@ stacked.unstack()<span aria-hidden="true" class="line-numbers-rows"><span></span
   </tbody>
 </table>
 </div>
-<h3 id="Pivot-Tables"><strong>- Pivot Tables</strong></h3>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">- 참고: 피봇 테이블</a></p>
+
+
+
+<h3 id="Pivot-Tables"><a href="#Pivot-Tables" class="headerlink" title="- Pivot Tables"></a><strong>- Pivot Tables</strong></h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">- 참고: 피봇 테이블</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df &#x3D; pd.DataFrame(&#123;&#39;A&#39;: [&#39;one&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;] * 3,
                    &#39;B&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;] * 4,
                    &#39;C&#39;: [&#39;foo&#39;, &#39;foo&#39;, &#39;foo&#39;, &#39;bar&#39;, &#39;bar&#39;, &#39;bar&#39;] * 2,
@@ -3329,11 +3723,15 @@ stacked.unstack()<span aria-hidden="true" class="line-numbers-rows"><span></span
                    &#39;E&#39;: np.random.randn(12)&#125;)
 
 df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -3342,7 +3740,7 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3454,13 +3852,21 @@ df<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
   </tbody>
 </table>
 </div>
+
+
+
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 피봇 테이블 생성
 pd.pivot_table(df, values&#x3D;&#39;D&#39;, index&#x3D;[&#39;A&#39;, &#39;B&#39;], columns&#x3D;[&#39;C&#39;])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -3469,7 +3875,7 @@ pd.pivot_table(df, values&#x3D;&#39;D&#39;, index&#x3D;[&#39;A&#39;, &#39;B&#39;
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3537,14 +3943,18 @@ pd.pivot_table(df, values&#x3D;&#39;D&#39;, index&#x3D;[&#39;A&#39;, &#39;B&#39;
   </tbody>
 </table>
 </div>
-<h2 id="9-Time-Series"><strong>9. Time Series</strong></h2>
-<p>Pandas는 자주 일어나는 변환(ex. 5분마다 일어나는 데이터의 2차 데이터 변환) 사이에 수행하는 리샘플링 연산을 위해 간단하고 강력하고 효율적인 함수를 제공한다.<br>
-재무(금융) 응용에서 매우 일반적이나 이에 국한되지는 않는다.<br>
-<a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html">- 참고: 시계열</a></p>
+
+
+
+<h2 id="9-Time-Series"><a href="#9-Time-Series" class="headerlink" title="9. Time Series"></a><strong>9. Time Series</strong></h2><p>Pandas는 자주 일어나는 변환(ex. 5분마다 일어나는 데이터의 2차 데이터 변환) 사이에 수행하는 리샘플링 연산을 위해 간단하고 강력하고 효율적인 함수를 제공한다.<br>재무(금융) 응용에서 매우 일반적이나 이에 국한되지는 않는다.<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html">- 참고: 시계열</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">rng &#x3D; pd.date_range(&#39;1&#x2F;1&#x2F;2012&#39;, periods&#x3D;100, freq&#x3D;&#39;S&#39;)
 ts &#x3D; pd.Series(np.random.randint(0, 500, len(rng)), index&#x3D;rng)
 ts.resample(&#39;5Min&#39;).sum()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2012-01-01    25049
 Freq: 5T, dtype: int64
 </code></pre>
@@ -3552,6 +3962,9 @@ Freq: 5T, dtype: int64
 rng &#x3D; pd.date_range(&#39;3&#x2F;6&#x2F;2012 00:00&#39;, periods&#x3D;5, freq&#x3D;&#39;D&#39;)
 ts &#x3D; pd.Series(np.random.randn(len(rng)), rng)
 ts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2012-03-06    0.099699
 2012-03-07    0.235671
 2012-03-08    0.636022
@@ -3561,6 +3974,9 @@ Freq: D, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">ts_utc &#x3D; ts.tz_localize(&#39;UTC&#39;)
 ts_utc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2012-03-06 00:00:00+00:00    0.099699
 2012-03-07 00:00:00+00:00    0.235671
 2012-03-08 00:00:00+00:00    0.636022
@@ -3570,6 +3986,9 @@ Freq: D, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"># 다른 시간대로 변환
 ts_utc.tz_convert(&#39;US&#x2F;Eastern&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2012-03-05 19:00:00-05:00    0.099699
 2012-03-06 19:00:00-05:00    0.235671
 2012-03-07 19:00:00-05:00    0.636022
@@ -3581,6 +4000,9 @@ Freq: D, dtype: float64
 rng &#x3D; pd.date_range(&#39;1&#x2F;1&#x2F;2012&#39;, periods&#x3D;5, freq&#x3D;&#39;M&#39;)
 ts &#x3D; pd.Series(np.random.randn(len(rng)), index&#x3D;rng)
 ts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2012-01-31   -1.161855
 2012-02-29    0.262081
 2012-03-31    0.238179
@@ -3590,6 +4012,9 @@ Freq: M, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">ps &#x3D; ts.to_period()
 ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>2012-01   -1.161855
 2012-02    0.262081
 2012-03    0.238179
@@ -3598,6 +4023,9 @@ ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 Freq: M, dtype: float64
 </code></pre>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">ps.to_timestamp()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>2012-01-01   -1.161855
 2012-02-01    0.262081
 2012-03-01    0.238179
@@ -3605,12 +4033,14 @@ Freq: M, dtype: float64
 2012-05-01    0.816160
 Freq: MS, dtype: float64
 </code></pre>
-<p>기간 ↔ 시간 변환은 편리한 산술 기능을 사용할 수 있도록 만든다.<br>
-11월에 끝나는 연말 결산의 분기별 빈도를, 분기말 익월의 월말일 오전 9시로 변환해보자.</p>
+<p>기간 ↔ 시간 변환은 편리한 산술 기능을 사용할 수 있도록 만든다.<br>11월에 끝나는 연말 결산의 분기별 빈도를, 분기말 익월의 월말일 오전 9시로 변환해보자.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">prng &#x3D; pd.period_range(&#39;1990Q1&#39;, &#39;2000Q4&#39;, freq&#x3D;&#39;Q-NOV&#39;)
 ts &#x3D; pd.Series(np.random.randn(len(prng)), prng)
 ts.index &#x3D; (prng.asfreq(&#39;M&#39;, &#39;e&#39;) + 1).asfreq(&#39;H&#39;, &#39;S&#39;)
 ts.head()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>1990-03-01 00:00    0.671614
 1990-06-01 00:00   -0.141739
 1990-09-01 00:00    0.070749
@@ -3618,13 +4048,14 @@ ts.head()<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 1991-03-01 00:00   -0.432595
 Freq: H, dtype: float64
 </code></pre>
-<h2 id="10-Categoricals"><strong>10. Categoricals</strong></h2>
-<p>Pandas는 데이터프레임 내에 범주형 데이터를 포함할 수 있다.<br>
-<a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">- 참고: 범주형 소개</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">API 문서</a></p>
+<h2 id="10-Categoricals"><a href="#10-Categoricals" class="headerlink" title="10. Categoricals"></a><strong>10. Categoricals</strong></h2><p>Pandas는 데이터프레임 내에 범주형 데이터를 포함할 수 있다.<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">- 참고: 범주형 소개</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">API 문서</a>  </p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df &#x3D; pd.DataFrame(&#123;&quot;id&quot;:[1,2,3,4,5,6], &quot;raw_grade&quot;:[&#39;a&#39;, &#39;b&#39;, &#39;b&#39;, &#39;a&#39;, &#39;a&#39;, &#39;e&#39;]&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>가공하지 않은 성적을 범주형 데이터로 변환한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df[&quot;grade&quot;] &#x3D; df[&quot;raw_grade&quot;].astype(&quot;category&quot;)
 df[&quot;grade&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>0    a
 1    b
 2    b
@@ -3632,13 +4063,16 @@ df[&quot;grade&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></
 4    a
 5    e
 Name: grade, dtype: category
-Categories (3, object): ['a', 'b', 'e']
+Categories (3, object): [&#39;a&#39;, &#39;b&#39;, &#39;e&#39;]
 </code></pre>
 <p>범주에 더 의미있는 이름을 붙이자. (Series.cat.categories로 할당하는 것이 적합)</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df[&quot;grade&quot;].cat.categories &#x3D; [&quot;very good&quot;, &quot;good&quot;, &quot;very bad&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>범주 순서를 바꾸고 동시에 누락된 범주를 추가한다. (Series.cat에 속하는 메소드는 기본적으로 새로운 Series를 반환)</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df[&quot;grade&quot;] &#x3D; df[&quot;grade&quot;].cat.set_categories([&quot;very bad&quot;, &quot;bad&quot;, &quot;medium&quot;, &quot;good&quot;, &quot;very good&quot;])
 df[&quot;grade&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>0    very good
 1         good
 2         good
@@ -3646,15 +4080,19 @@ df[&quot;grade&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></
 4    very good
 5     very bad
 Name: grade, dtype: category
-Categories (5, object): ['very bad', 'bad', 'medium', 'good', 'very good']
+Categories (5, object): [&#39;very bad&#39;, &#39;bad&#39;, &#39;medium&#39;, &#39;good&#39;, &#39;very good&#39;]
 </code></pre>
 <p>정렬은 사전 순서가 아니라, 해당 범주에서 지정된 순서대로 배열한다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.sort_values(by&#x3D;&quot;grade&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+
 <pre><code>.dataframe tbody tr th &#123;
     vertical-align: top;
 &#125;
@@ -3663,7 +4101,7 @@ Categories (5, object): ['very bad', 'bad', 'medium', 'good', 'very good']
     text-align: right;
 &#125;
 </code></pre>
-</style>
+<p></style><p></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3713,8 +4151,14 @@ Categories (5, object): ['very bad', 'bad', 'medium', 'good', 'very good']
   </tbody>
 </table>
 </div>
+
+
+
 <p>범주의 열을 기준으로 그룹화하면 빈 범주도 표시된다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df.groupby(&quot;grade&quot;).size()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre><code>grade
 very bad     1
 bad          0
@@ -3723,11 +4167,13 @@ good         2
 very good    3
 dtype: int64
 </code></pre>
-<h2 id="11-Plotting"><strong>11. Plotting</strong></h2>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">- 참고: Plotting</a></p>
+<h2 id="11-Plotting"><a href="#11-Plotting" class="headerlink" title="11. Plotting"></a><strong>11. Plotting</strong></h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">- 참고: Plotting</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">ts &#x3D; pd.Series(np.random.randn(1000), index&#x3D;pd.date_range(&#39;1&#x2F;1&#x2F;2000&#39;, periods&#x3D;1000))
 ts &#x3D; ts.cumsum()
 ts.plot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre><code>&lt;pandas.plotting._core.PlotAccessor object at 0x7f4670f2ae80&gt;
 </code></pre>
 <p>데이터프레임에서 plot() 메소드는 라벨이 존재하는 모든 열을 그릴 때 편리하다.</p>
@@ -3735,15 +4181,16 @@ ts.plot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                   columns&#x3D;[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;])  
 df &#x3D; df.cumsum()
 plt.figure(); df.plot(); plt.legend(loc&#x3D;&#39;best&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre><code>---------------------------------------------------------------------------
 
 AttributeError                            Traceback (most recent call last)
 
 &lt;ipython-input-97-bc219ebae1fe&gt; in &lt;module&gt;()
 ----&gt; 1 df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index,
-      2                   columns=['A', 'B', 'C', 'D'])  
+      2                   columns=[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;])  
       3 df = df.cumsum()
-      4 plt.figure(); df.plot(); plt.legend(loc='best')
+      4 plt.figure(); df.plot(); plt.legend(loc=&#39;best&#39;)
 
 
 /usr/local/lib/python3.6/dist-packages/pandas/core/generic.py in __getattr__(self, name)
@@ -3754,28 +4201,16 @@ AttributeError                            Traceback (most recent call last)
    5141     def __setattr__(self, name: str, value) -&gt; None:
 
 
-AttributeError: 'DataFrame' object has no attribute 'DataFrame'
+AttributeError: &#39;DataFrame&#39; object has no attribute &#39;DataFrame&#39;
 </code></pre>
-<h2 id="12-Getting-Data-In-Out"><strong>12. Getting Data In / Out</strong></h2>
-<h3 id="CSV"><strong>CSV</strong></h3>
-<p>csv 파일에 쓴다.<br>
-df.to_csv(‘foo.csv’)</p>
-<p>csv 파일을 읽는다.<br>
-pd.read_csv(‘foo.csv’)</p>
-<h3 id="HDF5"><strong>HDF5</strong></h3>
-<p>HDF5 Store에 쓴다.<br>
-df.to_hdf(‘foo.h5’,‘df’)<br>
-HDF5 Store에서 읽는다.<br>
-pd.read_hdf(‘foo.h5’,‘df’)</p>
-<h3 id="Excel"><strong>Excel</strong></h3>
-<p>엑셀 파일에 쓴다.<br>
-df.to_excel(‘foo.xlsx’, sheet_name=‘Sheet1’)<br>
-엑셀 파일을 읽는다.<br>
-pd.read_excel(‘foo.xlsx’, ‘Sheet1’, index_col=None, na_values=[‘NA’])</p>
-<h2 id="13-Gotchas"><strong>13. Gotchas</strong></h2>
-<p>연산 수행 시, 다음과 같은 예외 상황이 나타날 수 있다.</p>
+<h2 id="12-Getting-Data-In-Out"><a href="#12-Getting-Data-In-Out" class="headerlink" title="12. Getting Data In / Out"></a><strong>12. Getting Data In / Out</strong></h2><h3 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a><strong>CSV</strong></h3><p>csv 파일에 쓴다.<br>df.to_csv(‘foo.csv’)  </p>
+<p>csv 파일을 읽는다.<br>pd.read_csv(‘foo.csv’)</p>
+<h3 id="HDF5"><a href="#HDF5" class="headerlink" title="HDF5"></a><strong>HDF5</strong></h3><p>HDF5 Store에 쓴다.<br>df.to_hdf(‘foo.h5’,’df’)<br>HDF5 Store에서 읽는다.<br>pd.read_hdf(‘foo.h5’,’df’)  </p>
+<h3 id="Excel"><a href="#Excel" class="headerlink" title="Excel"></a><strong>Excel</strong></h3><p>엑셀 파일에 쓴다.<br>df.to_excel(‘foo.xlsx’, sheet_name=’Sheet1’)<br>엑셀 파일을 읽는다.<br>pd.read_excel(‘foo.xlsx’, ‘Sheet1’, index_col=None, na_values=[‘NA’])  </p>
+<h2 id="13-Gotchas"><a href="#13-Gotchas" class="headerlink" title="13. Gotchas"></a><strong>13. Gotchas</strong></h2><p>연산 수행 시, 다음과 같은 예외 상황이 나타날 수 있다.</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">if pd.Series([False, True, False]):
   print(&quot;I was true&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <pre><code>---------------------------------------------------------------------------
 
 AttributeError                            Traceback (most recent call last)
@@ -3793,9 +4228,9 @@ AttributeError                            Traceback (most recent call last)
    5141     def __setattr__(self, name: str, value) -&gt; None:
 
 
-AttributeError: 'DataFrame' object has no attribute 'Series'
+AttributeError: &#39;DataFrame&#39; object has no attribute &#39;Series&#39;
 </code></pre>
-<p>이러한 경우에는 any(), all(), empty 등을 사용해서 무엇을 원하는지를 선택해주어야 한다.</p>
+<p>이러한 경우에는 any(), all(), empty 등을 사용해서 무엇을 원하는지를 선택해주어야 한다.  </p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">if pd.Series([False, True, False]) is not None:
       print(&quot;I was not None&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
         </div>
@@ -3804,7 +4239,7 @@ AttributeError: 'DataFrame' object has no attribute 'Series'
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/11/10/Textbook/Pandas_10%EB%B6%84_%EC%99%84%EC%84%B1/" data-id="ckl3pbojm00c1wsuecs9manbc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/11/10/Textbook/Pandas_10%EB%B6%84_%EC%99%84%EC%84%B1/" data-id="ckl3pgmdc00bpf4ueb6s37zsp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -3883,20 +4318,18 @@ AttributeError: 'DataFrame' object has no attribute 'Series'
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2020/11/10/Textbook/Pandas_10분_완성/",
         "description": "Pandas 10분 완성(10 Minutes to Pandas) 필사
-
-출처: 데잇걸즈2가 번역한 Pandas 10분 완성
+출처: 데잇걸즈2가 번역한 Pandas 10분 완성  
 
 목차
 
-Object Creation (객체 생성)
-Viewing Data (데이터 확인하기)
-Selection (선택)
-Missing Data (결측치)
-Operation (연산)
+Object Creation (객체 생성)  
+Viewing Data (데이터 확인하기)  
+Selection (선택)  
+Missing Data (결측치)  
+Operation (연산)  
 Merge (병합)
-Grouping (그룹화)
-Res",
-        "wordCount": 16462,
+Groupin",
+        "wordCount": 16654,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

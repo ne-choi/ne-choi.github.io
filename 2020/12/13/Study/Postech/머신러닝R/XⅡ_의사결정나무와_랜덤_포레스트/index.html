@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,의사결정나무,랜덤포레스트">
     
-    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  XⅡ. 의사결정나무와 랜덤 포레스트 1. 의사결정나무 Ⅰ 의사결정나무   Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법  분석과정이 직관적이고 이해하기 쉬움 연속형&#x2F;범주형 변수를 모두 사용할 수 있음 분지규칙은 불순도(범주가 섞여">
+    <meta name="description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석과정이 직관적이고 이해하기 쉬움 연속형&#x2F;범주형 변수를 모두 사용할 수 있음 분지규칙은 불순도(범주가 섞여 있는">
 <meta property="og:type" content="article">
 <meta property="og:title" content="머신러닝 기법과 R 프로그래밍 1: XⅡ. 의사결정나무와 랜덤 포레스트">
 <meta property="og:url" content="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  XⅡ. 의사결정나무와 랜덤 포레스트 1. 의사결정나무 Ⅰ 의사결정나무   Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법  분석과정이 직관적이고 이해하기 쉬움 연속형&#x2F;범주형 변수를 모두 사용할 수 있음 분지규칙은 불순도(범주가 섞여">
+<meta property="og:description" content="POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.    XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무 Decision Tree  기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법 분석과정이 직관적이고 이해하기 쉬움 연속형&#x2F;범주형 변수를 모두 사용할 수 있음 분지규칙은 불순도(범주가 섞여 있는">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-13T00:00:00.000Z">
 <meta property="article:modified_time" content="2021-02-07T01:39:10.774Z">
@@ -228,17 +228,12 @@ ga('send', 'pageview');
             
 
             <ul>
-<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.</li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  </li>
 </ul>
-<h1>XⅡ. 의사결정나무와 랜덤 포레스트</h1>
-<h2 id="1-의사결정나무-Ⅰ">1. 의사결정나무 Ⅰ</h2>
-<h3 id="의사결정나무">의사결정나무</h3>
+<h1 id="XⅡ-의사결정나무와-랜덤-포레스트"><a href="#XⅡ-의사결정나무와-랜덤-포레스트" class="headerlink" title="XⅡ. 의사결정나무와 랜덤 포레스트"></a>XⅡ. 의사결정나무와 랜덤 포레스트</h1><h2 id="1-의사결정나무-Ⅰ"><a href="#1-의사결정나무-Ⅰ" class="headerlink" title="1. 의사결정나무 Ⅰ"></a>1. 의사결정나무 Ⅰ</h2><h3 id="의사결정나무"><a href="#의사결정나무" class="headerlink" title="의사결정나무"></a>의사결정나무</h3><ul>
+<li><p>Decision Tree</p>
 <ul>
-<li>
-<p>Decision Tree</p>
-<ul>
-<li>기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법
-<ul>
+<li>기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법<ul>
 <li>분석과정이 직관적이고 이해하기 쉬움</li>
 <li>연속형/범주형 변수를 모두 사용할 수 있음</li>
 <li>분지규칙은 불순도(범주가 섞여 있는 정도)를 최소화함</li>
@@ -246,8 +241,7 @@ ga('send', 'pageview');
 </li>
 </ul>
 </li>
-<li>
-<p>과정</p>
+<li><p>과정</p>
 <ol>
 <li>tree 형성(Growing tree): 너무 많이 키워서 분류하면 과적합 문제가 생김</li>
 <li>tree 가지치기(Pruning tree): 과적합 예방을 위해</li>
@@ -267,10 +261,9 @@ library(caret)
 # read csv file
 iris&lt;-read.csv(&quot;data&#x2F;week12_1&#x2F;iris.csv&quot;)
 attach(iris)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
-<li>학습데이터 / 검증데이터 분할</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training (n&#x3D;100)&#x2F; test data(n&#x3D;50) 
+<li>학습데이터 / 검증데이터 분할<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># training (n&#x3D;100)&#x2F; test data(n&#x3D;50) 
 set.seed(1000, sample.kind&#x3D;&quot;Rounding&quot;)
 N&lt;-nrow(iris)
 tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
@@ -279,24 +272,22 @@ train&lt;-iris[tr.idx,]
 test&lt;-iris[-tr.idx,]
 #dim(train)
 #dim(test)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="의사결정나무-함수">의사결정나무 함수</h3>
-<p>tree(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용</p>
-<h3 id="step-1-Growing-tree">step 1: Growing tree</h3>
-<ul>
-<li>학습데이터의 tree 결과
-<ul>
-<li>마디 6에서는 더이상 분지할 필요 없음</li>
+<h3 id="의사결정나무-함수"><a href="#의사결정나무-함수" class="headerlink" title="의사결정나무 함수"></a>의사결정나무 함수</h3>tree(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용</li>
 </ul>
-</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">treemod &lt;- tree(Species~., data&#x3D;train)
+<h3 id="step-1-Growing-tree"><a href="#step-1-Growing-tree" class="headerlink" title="step 1: Growing tree"></a>step 1: Growing tree</h3><ul>
+<li>학습데이터의 tree 결과<ul>
+<li>마디 6에서는 더이상 분지할 필요 없음<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">treemod &lt;- tree(Species~., data&#x3D;train)
 treemod<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">plot(treemod)
 text(treemod,cex&#x3D;1.5)
 
 table(train$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="step-2-Pruning">step 2. Pruning</h3>
-<ul>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-2-Pruning"><a href="#step-2-Pruning" class="headerlink" title="step 2. Pruning"></a>step 2. Pruning</h3><ul>
 <li>cv.tree(tree모형결과, FUN= )</li>
 <li>최적 tree 모형을 위한 가지치기</li>
 </ul>
@@ -304,110 +295,91 @@ table(train$Species)<span aria-hidden="true" class="line-numbers-rows"><span></s
 cv.trees
 plot(cv.trees)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>최종 트리모형</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># final tree model with the optimal node 
+<li>최종 트리모형<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># final tree model with the optimal node 
 prune.trees&lt;-prune.misclass(treemod, best&#x3D;3)
 plot(prune.trees)
 text(prune.trees,pretty&#x3D;0, cex&#x3D;1.5)
 #help(prune.misclass)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="step-3">step 3.</h3>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># step 3: classify test data 
+
+</li>
+</ul>
+<h3 id="step-3"><a href="#step-3" class="headerlink" title="step 3."></a>step 3.</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># step 3: classify test data 
 treepred&lt;-predict(prune.trees,test,type&#x3D;&#39;class&#39;)
 # classification accuracy
 confusionMatrix(treepred,test$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-의사결정나무-Ⅱ">2. 의사결정나무 Ⅱ</h2>
-<h3 id="rpart-패키지">rpart 패키지</h3>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># other package for tree
+
+<h2 id="2-의사결정나무-Ⅱ"><a href="#2-의사결정나무-Ⅱ" class="headerlink" title="2. 의사결정나무 Ⅱ"></a>2. 의사결정나무 Ⅱ</h2><h3 id="rpart-패키지"><a href="#rpart-패키지" class="headerlink" title="rpart 패키지"></a>rpart 패키지</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># other package for tree
 # install.packages(&quot;rpart&quot;)
 # install.packages(&quot;party&quot;)
 library(rpart)
 library(party)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>rpart(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용</li>
-</ul>
+<li><p>rpart(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">cl1&lt;-rpart(Species~., data&#x3D;train)
 plot(cl1)
-text(cl1, cex&#x3D;1.5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>Prunning
+text(cl1, cex&#x3D;1.5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>Prunning</p>
 <ul>
 <li>rpart 패키지는 과적합 우려가 있음(iris의 경우에는 필요 x)</li>
-<li>printcp에서 xerror(cross validation error) 값이 최소가 되는 마디를 선택</li>
+<li>printcp에서 xerror(cross validation error) 값이 최소가 되는 마디를 선택<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#pruning (cross-validation)-rpart
+printcp(cl1)
+plotcp(cl1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#pruning (cross-validation)-rpart
-printcp(cl1)
-plotcp(cl1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>rpart를 사용한 최종 tree 모형</li>
-</ul>
+<li><p>rpart를 사용한 최종 tree 모형</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">pcl1&lt;-prune(cl1, cp&#x3D;cl1$cptable[which.min(cl1$cptable[,&quot;xerror&quot;]),&quot;CP&quot;])
 plot(pcl1)
-text(pcl1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>
-<p>결과 해석</p>
+text(pcl1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>결과 해석</p>
 <ul>
 <li>tree 함수를 이용했을 때와 동일한 결과</li>
 </ul>
 </li>
-<li>
-<p>정확도</p>
+<li><p>정확도</p>
 <ul>
-<li>test data에 대한 정확도</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#measure accuracy(rpart)
+<li>test data에 대한 정확도<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#measure accuracy(rpart)
 #package for confusion matrix
 #install.packages(&quot;caret&quot;)
 library(caret)
 
 pred2&lt;- predict(cl1,test, type&#x3D;&#39;class&#39;)
 confusionMatrix(pred2,test$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="party-패키지">party 패키지</h3>
-<ul>
-<li>ctree(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용
-<ul>
-<li>p-value를 기준으로 분지되는 포인트를 잡음</li>
+
+</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#decision tree(party)-unbiased recursive partioning based on permutation test
+<h3 id="party-패키지"><a href="#party-패키지" class="headerlink" title="party 패키지"></a>party 패키지</h3><ul>
+<li>ctree(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<ul>
+<li>p-value를 기준으로 분지되는 포인트를 잡음<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#decision tree(party)-unbiased recursive partioning based on permutation test
 partymod&lt;-ctree(Species~.,data&#x3D;train)
 plot(partymod)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-랜덤-포레스트">3. 랜덤 포레스트</h2>
-<h3 id="랜덤-포레스트">랜덤 포레스트</h3>
-<ul>
-<li>Random Forest
-<ul>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-랜덤-포레스트"><a href="#3-랜덤-포레스트" class="headerlink" title="3. 랜덤 포레스트"></a>3. 랜덤 포레스트</h2><h3 id="랜덤-포레스트"><a href="#랜덤-포레스트" class="headerlink" title="랜덤 포레스트"></a>랜덤 포레스트</h3><ul>
+<li>Random Forest<ul>
 <li>2001년 Leo Breiman이 제안</li>
 <li>의사결정나무의 단점(과적합)을 개선한 알고리즘</li>
 <li>앙상블(Ensemble, 결합) 기법을 사용한 모델로, 주어진 데이터를 리샘플링하여 다수의 의사결정나무를 만든 다음, 여러 모델의 예측 결과를 종합해 정확도를 높이는 방법</li>
 </ul>
 </li>
 </ul>
-<h3 id="Bagging">Bagging</h3>
-<ul>
-<li>Bagging(Bootstrap Aggregating)
-<ul>
+<h3 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h3><ul>
+<li>Bagging(Bootstrap Aggregating)<ul>
 <li>전체 데이터에서 학습데이터를 복원추출(resampling)하여 트리 구성</li>
 <li>Training Data에서 Random Sampling</li>
 <li>클래스 값 중 가장 많이 voting된 값이 결정</li>
 </ul>
 </li>
 </ul>
-<h3 id="랜덤-포레스트-패키지">랜덤 포레스트 패키지</h3>
-<ul>
-<li>randomForest</li>
-</ul>
+<h3 id="랜덤-포레스트-패키지"><a href="#랜덤-포레스트-패키지" class="headerlink" title="랜덤 포레스트 패키지"></a>랜덤 포레스트 패키지</h3><ul>
+<li><p>randomForest</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">install.packages(&quot;randomForest&quot;)
-library(randomForest)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>iris 데이터 사용</li>
-</ul>
+library(randomForest)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>iris 데이터 사용</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># read csv file
 iris&lt;-read.csv(&quot;data&#x2F;week12_3&#x2F;iris.csv&quot;)
 attach(iris)
@@ -421,39 +393,33 @@ tr.idx&lt;-sample(1:N, size&#x3D;N*2&#x2F;3, replace&#x3D;FALSE)
 train&lt;-iris[tr.idx,]
 test&lt;-iris[-tr.idx,]
 #dim(train)
-#dim(test)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+#dim(test)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>랜덤포레스트 함수</p>
 <ul>
-<li>랜덤포레스트 함수
-<ul>
-<li>ramdomForest(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#Random Forest : mtry&#x3D;2 (default&#x3D;sqrt(p))
+<li>ramdomForest(종속변수~x1+x2+x3+x4, data= ) #종속변수를 모두 사용<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#Random Forest : mtry&#x3D;2 (default&#x3D;sqrt(p))
 iris$Species &lt;- as.numeric(iris@Species)
 
 rf_out1&lt;-randomForest(Species~.,data&#x3D;train,importance&#x3D;T)
-rf_out1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>변수의 중요도: ramdom forest 결과로부터 중요 변수 확인</li>
+rf_out1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
+</li>
+<li><p>변수의 중요도: ramdom forest 결과로부터 중요 변수 확인</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># important variables for RF
-round(importance(rf_out1), 2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>추가</li>
-</ul>
+round(importance(rf_out1), 2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>추가</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#Random Forest : mtry&#x3D;4
 rf_out2&lt;-randomForest(Species~.,data&#x3D;train,importance&#x3D;T, mtry&#x3D;4)
 rf_out2
 
 # important variables for RF
 round(importance(rf_out2), 2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>정확도</li>
-</ul>
+</li>
+<li><p>정확도</p>
 <pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#measuring accuracy(rf)
 rfpred&lt;-predict(rf_out2,test)
 confusionMatrix(rfpred,test$Species)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -461,7 +427,7 @@ confusionMatrix(rfpred,test$Species)<span aria-hidden="true" class="line-numbers
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" data-id="ckl3pbogb0016wsue9m0x89t3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/12/13/Study/Postech/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9DR/X%E2%85%A1_%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%EB%82%98%EB%AC%B4%EC%99%80_%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8/" data-id="ckl3pgma50016f4ue8l9k6ct8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -540,21 +506,16 @@ confusionMatrix(rfpred,test$Species)<span aria-hidden="true" class="line-numbers
         "dateModified": "2021-02-07",
         "url": "https://ne-choi.github.io//2020/12/13/Study/Postech/머신러닝R/XⅡ_의사결정나무와_랜덤_포레스트/",
         "description": "
-POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.
+POSTECH MOOC 중, 머신러닝기법과 R프로그래밍 Ⅰ 과정입니다.  
 
-XⅡ. 의사결정나무와 랜덤 포레스트
-1. 의사결정나무 Ⅰ
-의사결정나무
-
-
+XⅡ. 의사결정나무와 랜덤 포레스트1. 의사결정나무 Ⅰ의사결정나무
 Decision Tree
 
 기계학습 중 하나로, 의사결정 규칙을 나무 형태로 분류해가는 분석 기법
-
 분석과정이 직관적이고 이해하기 쉬움
 연속형/범주형 변수를 모두 사용할 수 있음
-분지규칙은 불순도(범주가 섞여 ",
-        "wordCount": 426,
+분지규칙은 불순도(범주가 섞여 있는 ",
+        "wordCount": 492,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",

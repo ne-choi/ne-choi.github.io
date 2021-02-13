@@ -1846,49 +1846,72 @@ i.icon:before {
   height: 1.6em;
 }
 .highlight {
-  color: #4d4d4c;
-  background: #fff;
+  color: #333;
+  background: #f8f8f8;
 }
 .highlight .code .comment,
 .highlight .code .quote {
-  color: #8e908c;
-}
-.highlight .code .variable,
-.highlight .code .template-variable,
-.highlight .code .tag,
-.highlight .code .name,
-.highlight .code .selector-id,
-.highlight .code .selector-class,
-.highlight .code .regexp,
-.highlight .code .deletion {
-  color: #c82829;
-}
-.highlight .code .number,
-.highlight .code .built_in,
-.highlight .code .builtin-name,
-.highlight .code .literal,
-.highlight .code .type,
-.highlight .code .params,
-.highlight .code .meta,
-.highlight .code .link {
-  color: #f5871f;
-}
-.highlight .code .attribute {
-  color: #eab700;
-}
-.highlight .code .string,
-.highlight .code .symbol,
-.highlight .code .bullet,
-.highlight .code .addition {
-  color: #718c00;
-}
-.highlight .code .title,
-.highlight .code .section {
-  color: #4271ae;
+  color: #998;
+  font-style: italic;
 }
 .highlight .code .keyword,
-.highlight .code .selector-tag {
-  color: #8959a8;
+.highlight .code .selector-tag,
+.highlight .code .subst {
+  color: #333;
+  font-weight: bold;
+}
+.highlight .code .number,
+.highlight .code .literal,
+.highlight .code .variable,
+.highlight .code .template-variable,
+.highlight .code .tag .attr {
+  color: #008080;
+}
+.highlight .code .string,
+.highlight .code .doctag {
+  color: #d14;
+}
+.highlight .code .title,
+.highlight .code .section,
+.highlight .code .selector-id {
+  color: #900;
+  font-weight: bold;
+}
+.highlight .code .subst {
+  font-weight: normal;
+}
+.highlight .code .type,
+.highlight .code .class .title {
+  color: #458;
+  font-weight: bold;
+}
+.highlight .code .tag,
+.highlight .code .name,
+.highlight .code .attribute {
+  color: #000080;
+  font-weight: normal;
+}
+.highlight .code .regexp,
+.highlight .code .link {
+  color: #009926;
+}
+.highlight .code .symbol,
+.highlight .code .bullet {
+  color: #990073;
+}
+.highlight .code .built_in,
+.highlight .code .builtin-name {
+  color: #0086b3;
+}
+.highlight .code .meta {
+  color: #999;
+  font-weight: bold;
+}
+.highlight .code .deletion {
+  background: #fdd;
+}
+.highlight .code .addition {
+  background: #dfd;
 }
 .highlight .code .emphasis {
   font-style: italic;

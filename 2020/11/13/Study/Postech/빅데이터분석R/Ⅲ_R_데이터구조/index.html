@@ -13,12 +13,12 @@
     
     <meta name="keywords" content="Postech,dplyr,read csv">
     
-    <meta name="description" content="POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.  1. R 데이터 생성 파일 불러들이기   csv brain &lt;- read.csv(“week3_2&#x2F;brain2210.csv”, header&#x3D;T)   xls    *.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한 다음 read.csv 함수를">
+    <meta name="description" content="POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.  1. R 데이터 생성파일 불러들이기 csv  brain &lt;- read.csv(“week3_2&#x2F;brain2210.csv”, header&#x3D;T)   xls      *.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한  다음 read.csv 함수">
 <meta property="og:type" content="article">
 <meta property="og:title" content="빅데이터 분석과 R 프로그래밍 1: Ⅲ. R 데이터구조">
 <meta property="og:url" content="https://ne-choi.github.io/2020/11/13/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/index.html">
 <meta property="og:site_name" content="Better Thinking">
-<meta property="og:description" content="POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.  1. R 데이터 생성 파일 불러들이기   csv brain &lt;- read.csv(“week3_2&#x2F;brain2210.csv”, header&#x3D;T)   xls    *.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한 다음 read.csv 함수를">
+<meta property="og:description" content="POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.  1. R 데이터 생성파일 불러들이기 csv  brain &lt;- read.csv(“week3_2&#x2F;brain2210.csv”, header&#x3D;T)   xls      *.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한  다음 read.csv 함수">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ne-choi.github.io/images/mooc/r_programming/unnamed-chunk-7-1.png">
 <meta property="article:published_time" content="2020-11-13T00:00:00.000Z">
@@ -232,47 +232,37 @@ ga('send', 'pageview');
             <ul>
 <li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://pabi.smartlearn.io/">POSTECH MOOC</a> 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.</li>
 </ul>
-<h2 id="1-R-데이터-생성">1. R 데이터 생성</h2>
-<h3 id="파일-불러들이기">파일 불러들이기</h3>
-<ol>
-<li>
-<p>csv</p>
-<p>brain &lt;- read.csv(“week3_2/brain2210.csv”, header=T)</p>
+<h2 id="1-R-데이터-생성"><a href="#1-R-데이터-생성" class="headerlink" title="1. R 데이터 생성"></a>1. R 데이터 생성</h2><h3 id="파일-불러들이기"><a href="#파일-불러들이기" class="headerlink" title="파일 불러들이기"></a>파일 불러들이기</h3><ol>
+<li><p>csv</p>
+<p> brain &lt;- read.csv(“week3_2/brain2210.csv”, header=T)</p>
 </li>
-<li>
-<p>xls</p>
+<li><p> xls  </p>
 </li>
 </ol>
 <ul>
-<li>*.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한<br>
-다음 read.csv 함수를 사용해 r로 불러들이는 게 편리</li>
-<li>readxl로도 가능함</li>
+<li>*.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한<br>  다음 read.csv 함수를 사용해 r로 불러들이는 게 편리  </li>
+<li>  readxl로도 가능함</li>
 </ul>
 <ol>
-<li>
-<p>txt</p>
-<p>파일을 부를 이름 &lt;- read.table(file = &quot;파일명.txt, na = &quot; &quot;, header = TRUE)</p>
-</li>
+<li> txt</li>
 </ol>
-<h3 id="데이터-저장-폴더">데이터 저장 폴더</h3>
-<ul>
-<li>
-<p>데이터와 프로그램 저장 폴더 지정</p>
-<ul>
-<li>폴더 이름은 영문으로 생성할 것</li>
+<pre><code>파일을 부를 이름 &lt;- read.table(file = &quot;파일명.txt, na = &quot; &quot;, header = TRUE)
+</code></pre>
+<h3 id="데이터-저장-폴더"><a href="#데이터-저장-폴더" class="headerlink" title="데이터 저장 폴더"></a>데이터 저장 폴더</h3><ul>
+<li>데이터와 프로그램 저장 폴더 지정<ul>
+<li>  폴더 이름은 영문으로 생성할 것</li>
 </ul>
 </li>
-<li>
-<p>r 프로그램의 기본 경로 지정하는 명령어</p>
-<h1>change working directory</h1>
-<p>#set working directory<br>
-setwd(“경로”)</p>
-<h1>check the current working directory</h1>
-<p>getwd()</p>
-</li>
+<li>  r 프로그램의 기본 경로 지정하는 명령어</li>
 </ul>
-<h3 id="데이터와-변수-이름">데이터와 변수 이름</h3>
-<p>attach를 사용하면 정의된 파일 이름 입력 없이 바로 항목 조회가 가능</p>
+<pre><code># change working directory
+#set working directory
+setwd(&quot;경로&quot;) 
+
+# check the current working directory
+getwd()
+</code></pre>
+<h3 id="데이터와-변수-이름"><a href="#데이터와-변수-이름" class="headerlink" title="데이터와 변수 이름"></a>데이터와 변수 이름</h3><p>attach를 사용하면 정의된 파일 이름 입력 없이 바로 항목 조회가 가능</p>
 <pre><code># attach 사용  
 attach(brain)  
 
@@ -290,17 +280,14 @@ table(sex)
 ##   f   m 
 ##  77 108
 </code></pre>
-<h2 id="2-R-데이터-활용-Ⅰ">2. R 데이터 활용 Ⅰ</h2>
-<h3 id="데이터-추출-subset">데이터 추출_subset</h3>
-<ul>
-<li>
-<p>subset(데이터 이름, 조건)<br>
-예제 1. brain 데이터에서 female만 있는 subset 데이터 생성</p>
-<p>brainf &lt;- subset(brain, sex = “f”)<br>
-mean(brainf$wt)</p>
-<h2 id="1-1206-822">[1] 1206.822</h2>
-</li>
+<h2 id="2-R-데이터-활용-Ⅰ"><a href="#2-R-데이터-활용-Ⅰ" class="headerlink" title="2. R 데이터 활용 Ⅰ"></a>2. R 데이터 활용 Ⅰ</h2><h3 id="데이터-추출-subset"><a href="#데이터-추출-subset" class="headerlink" title="데이터 추출_subset"></a>데이터 추출_subset</h3><ul>
+<li>subset(데이터 이름, 조건)<br>  예제 1. brain 데이터에서 female만 있는 subset 데이터 생성</li>
 </ul>
+<pre><code>brainf &lt;- subset(brain, sex = &quot;f&quot;)
+mean(brainf$wt)
+
+## [1] 1206.822
+</code></pre>
 <p>예제 2. brain 데이터에서 wt &lt; 1300 이하인 데이터 생성</p>
 <pre><code># subset with wt &lt; 1300
 brain1300 &lt;- subset(brain, brain$wt &lt; 1300)
@@ -338,73 +325,74 @@ sd(brainm$wt)
 
 ## [1] 129.22
 </code></pre>
-<h3 id="요약통계치-그룹별-aggregate">요약통계치 (그룹별)_aggregate</h3>
-<ul>
-<li>
-<p>aggregate(변수~그룹, 데이터, 함수)</p>
-<h1>‘aggregate’ for statistics by group</h1>
-<p>aggregate(wt~sex, data = brain, FUN = mean)</p>
-<h2 id="sex-wt">sex       wt</h2>
-<h2 id="1-f-1117-169">1   f 1117.169</h2>
-<h2 id="2-m-1270-741">2   m 1270.741</h2>
-<p>aggregate(wt~sex, data = brain, FUN = sd)</p>
-<h2 id="sex-wt-2">sex        wt</h2>
-<h2 id="1-f-98-97094">1   f  98.97094</h2>
-<h2 id="2-m-129-21997">2   m 129.21997</h2>
-</li>
-<li>
-<p>추출한 데이터의 활용 (그룹별 히스토그램)</p>
-<h1>histogram for female and male</h1>
-<h1>2*2 multiple plot</h1>
-<p>par(mfrow=c(2,2))<br>
-brainf&lt;-subset(brain,brain$sex==‘f’)<br>
-hist(brainf$wt, breaks = 12,col = “green”,cex=0.7, main=“Histogram (Female)” ,xlab=“brain weight”)</p>
-<h1>subset with male</h1>
-<p>brainm&lt;-subset(brain,brain$sex==‘m’)<br>
-hist(brainm$wt, breaks = 12,col = “orange”, main=“Histogram with (Male)” ,  xlab=“brain weight”)</p>
-</li>
+<h3 id="요약통계치-그룹별-aggregate"><a href="#요약통계치-그룹별-aggregate" class="headerlink" title="요약통계치 (그룹별)_aggregate"></a>요약통계치 (그룹별)_aggregate</h3><ul>
+<li>  aggregate(변수~그룹, 데이터, 함수)</li>
 </ul>
-<p><img src="/images/mooc/r_programming/unnamed-chunk-7-1.png" alt></p>
+<pre><code># &#39;aggregate&#39; for statistics by group
+aggregate(wt~sex, data = brain, FUN = mean)
+
+##   sex       wt
+## 1   f 1117.169
+## 2   m 1270.741
+
+aggregate(wt~sex, data = brain, FUN = sd)
+
+##   sex        wt
+## 1   f  98.97094
+## 2   m 129.21997
+</code></pre>
 <ul>
-<li>
-<p>추출한 데이터의 활용</p>
-<h1>histogram with same scale</h1>
-<p>hist(brainf$wt, breaks = 12,col = “green”,cex=0.7, main=“Histogram with Normal Curve (Female)” , xlim=c(900,1700),ylim=c(0,25), xlab=“brain weight”)</p>
-</li>
+<li>  추출한 데이터의 활용 (그룹별 히스토그램)</li>
 </ul>
-<p><img src="/images/mooc/r_programming/unnamed-chunk-8-1.png" alt></p>
+<pre><code># histogram for female and male
+# 2*2 multiple plot
+par(mfrow=c(2,2))
+brainf&lt;-subset(brain,brain$sex==&#39;f&#39;) 
+hist(brainf$wt, breaks = 12,col = &quot;green&quot;,cex=0.7, main=&quot;Histogram (Female)&quot; ,xlab=&quot;brain weight&quot;)
+
+# subset with male
+brainm&lt;-subset(brain,brain$sex==&#39;m&#39;) 
+hist(brainm$wt, breaks = 12,col = &quot;orange&quot;, main=&quot;Histogram with (Male)&quot; ,  xlab=&quot;brain weight&quot;)
+</code></pre>
+<p><img src="/images/mooc/r_programming/unnamed-chunk-7-1.png"></p>
+<ul>
+<li>  추출한 데이터의 활용</li>
+</ul>
+<pre><code># histogram with same scale
+hist(brainf$wt, breaks = 12,col = &quot;green&quot;,cex=0.7, main=&quot;Histogram with Normal Curve (Female)&quot; , xlim=c(900,1700),ylim=c(0,25), xlab=&quot;brain weight&quot;)
+</code></pre>
+<p><img src="/images/mooc/r_programming/unnamed-chunk-8-1.png"></p>
 <pre><code>hist(brainm$wt, breaks = 12,col = &quot;orange&quot;, main=&quot;Histogram with Normal Curve (Male)&quot; , xlim=c(900,1700), ylim=c(0,25),xlab=&quot;brain weight&quot;)
 </code></pre>
-<p><img src="/images/mooc/r_programming/unnamed-chunk-8-2.png" alt></p>
+<p><img src="/images/mooc/r_programming/unnamed-chunk-8-2.png"></p>
 <ul>
-<li>
-<p>csv로 내보내기</p>
-<h1>plot margin</h1>
-<h1>par(mar=c(2,2,2,2))</h1>
-<h1>export csv file - write out to csv file</h1>
-<p>write.table(brainf,file=“week3_2/brainf.csv”, row.names = FALSE, sep=“,”, na=&quot; &quot;)</p>
-<p>write.csv(brainf,file=“week3_2/brainf.csv”, row.names = FALSE)</p>
-<h1>export txt file</h1>
-<p>write.table(brainm, file=“week3_2/brainm.txt”, row.names = FALSE,  na=&quot; &quot;)</p>
-</li>
-<li>
-<p>퀴즈<br>
-brain1000 &lt;- subset(brain, brain$wt &lt; 1000) brain1000</p>
-</li>
+<li>  csv로 내보내기</li>
+</ul>
+<pre><code># plot margin
+# par(mar=c(2,2,2,2))
+
+# export csv file - write out to csv file 
+write.table(brainf,file=&quot;week3_2/brainf.csv&quot;, row.names = FALSE, sep=&quot;,&quot;, na=&quot; &quot;)
+
+write.csv(brainf,file=&quot;week3_2/brainf.csv&quot;, row.names = FALSE)
+
+# export txt file 
+write.table(brainm, file=&quot;week3_2/brainm.txt&quot;, row.names = FALSE,  na=&quot; &quot;)
+</code></pre>
+<ul>
+<li>퀴즈<br>  brain1000 &lt;- subset(brain, brain$wt &lt; 1000) brain1000</li>
 </ul>
 <p>table(brain1000)</p>
-<h2 id="3-R-데이터-활용-Ⅱ">3. R 데이터 활용 Ⅱ</h2>
-<h3 id="dplyr-패키지">dplyr 패키지</h3>
-<pre><code>library(dplyr)
+<h2 id="3-R-데이터-활용-Ⅱ"><a href="#3-R-데이터-활용-Ⅱ" class="headerlink" title="3. R 데이터 활용 Ⅱ"></a>3. R 데이터 활용 Ⅱ</h2><h3 id="dplyr-패키지"><a href="#dplyr-패키지" class="headerlink" title="dplyr 패키지"></a>dplyr 패키지</h3><pre><code>library(dplyr)
 
 ## 
-## Attaching package: 'dplyr'
+## Attaching package: &#39;dplyr&#39;
 
-## The following objects are masked from 'package:stats':
+## The following objects are masked from &#39;package:stats&#39;:
 ## 
 ##     filter, lag
 
-## The following objects are masked from 'package:base':
+## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     intersect, setdiff, setequal, union
 
@@ -430,7 +418,7 @@ dim(car)
 # 데이터 전체 주고 파악하기: str 함수
 str(car)
 
-## 'data.frame':    398 obs. of  9 variables:
+## &#39;data.frame&#39;:    398 obs. of  9 variables:
 ##  $ mpg    : num  18 15 18 16 17 15 14 14 14 15 ...
 ##  $ cyl    : int  8 8 8 8 8 8 8 8 8 8 ...
 ##  $ disp   : num  307 350 318 304 302 429 454 440 455 390 ...
@@ -493,9 +481,7 @@ mean(wt)
 
 ## [1] 2970.425
 </code></pre>
-<h2 id="4-데이터-핸들링">4. 데이터 핸들링</h2>
-<h3 id="dplyr-활용">dplyr 활용</h3>
-<p>dplyr: 전처리 과정을 하기 위한 편리한 기능</p>
+<h2 id="4-데이터-핸들링"><a href="#4-데이터-핸들링" class="headerlink" title="4. 데이터 핸들링"></a>4. 데이터 핸들링</h2><h3 id="dplyr-활용"><a href="#dplyr-활용" class="headerlink" title="dplyr 활용"></a>dplyr 활용</h3><p>dplyr: 전처리 과정을 하기 위한 편리한 기능</p>
 <pre><code>library(dplyr)
 
 attach(car)
@@ -510,7 +496,7 @@ attach(car)
 
 str(car)
 
-## 'data.frame':    398 obs. of  9 variables:
+## &#39;data.frame&#39;:    398 obs. of  9 variables:
 ##  $ mpg    : num  18 15 18 16 17 15 14 14 14 15 ...
 ##  $ cyl    : int  8 8 8 8 8 8 8 8 8 8 ...
 ##  $ disp   : num  307 350 318 304 302 429 454 440 455 390 ...
@@ -521,8 +507,7 @@ str(car)
 ##  $ origin : int  1 1 1 1 1 1 1 1 1 1 ...
 ##  $ carname: chr  &quot;chevrolet chevelle malibu&quot; &quot;buick skylark 320&quot; &quot;plymouth satellite&quot; &quot;amc rebel sst&quot; ...
 </code></pre>
-<h3 id="변수-추출-select">변수 추출: select</h3>
-<p>car 데이터에서 mpg, hp 변수만 추출</p>
+<h3 id="변수-추출-select"><a href="#변수-추출-select" class="headerlink" title="변수 추출: select"></a>변수 추출: select</h3><p>car 데이터에서 mpg, hp 변수만 추출</p>
 <pre><code># Data handling usin &quot;dplyr&quot;
 # 1 subset data: selecting a few variables
 set1 &lt;- select(car, mpg, hp)
@@ -549,154 +534,172 @@ head(set2)
 ## 5   8  302 24 3449   10.5   70      1               ford torino
 ## 6   8  429 42 4341   10.0   70      1          ford galaxie 500
 </code></pre>
-<h3 id="데이터-추출-filter">데이터 추출: filter</h3>
-<ul>
-<li>
-<p>조건에 맞는 데이터 추출: filter(데이터, 변수 조건, …)<br>
-car 데이터에서 mpg가 30보다 큰 행 추출</p>
-<h1>3 subset data: filter mpg &gt; 50</h1>
-<p>set3 &lt;- filter(car, mpg &gt; 30)<br>
-head(set3)</p>
-<h2 id="mpg-cyl-disp-hp-wt-accler-year-origin-carname">mpg cyl disp hp   wt accler year origin             carname</h2>
-<h2 id="1-31-4-71-62-1773-19-0-71-3-toyota-corolla-1200">1  31   4   71 62 1773   19.0   71      3 toyota corolla 1200</h2>
-<h2 id="2-35-4-72-66-1613-18-0-71-3-datsun-1200">2  35   4   72 66 1613   18.0   71      3         datsun 1200</h2>
-<h2 id="3-31-4-79-64-1950-19-0-74-3-datsun-b210">3  31   4   79 64 1950   19.0   74      3         datsun b210</h2>
-<h2 id="4-32-4-71-62-1836-21-0-74-3-toyota-corolla-1200">4  32   4   71 62 1836   21.0   74      3 toyota corolla 1200</h2>
-<h2 id="5-31-4-76-53-1649-16-5-74-3-toyota-corona">5  31   4   76 53 1649   16.5   74      3       toyota corona</h2>
-<h2 id="6-32-4-83-58-2003-19-0-74-3-datsun-710">6  32   4   83 58 2003   19.0   74      3          datsun 710</h2>
-</li>
+<h3 id="데이터-추출-filter"><a href="#데이터-추출-filter" class="headerlink" title="데이터 추출: filter"></a>데이터 추출: filter</h3><ul>
+<li>조건에 맞는 데이터 추출: filter(데이터, 변수 조건, …)<br>  car 데이터에서 mpg가 30보다 큰 행 추출</li>
 </ul>
-<h3 id="변수-생성-mutate">변수 생성: mutate</h3>
-<ul>
-<li>
-<p>mutate(새로운 변수 이름 = 기존 변수 활용)</p>
-</li>
-<li>
-<p><strong>%&gt;% 파이프 연산자</strong>: 연산자 사용하여 연결</p>
-<h1>create a derived variable</h1>
-<p>set4 &lt;- car %&gt;%<br>
-filter(!<a target="_blank" rel="external nofollow noopener noreferrer" href="http://is.na">is.na</a>(mpg)) %&gt;%<br>
-mutate(mpg_km = mpg*1.609)<br>
-head(set4)</p>
-<h2 id="mpg-cyl-disp-hp-wt-accler-year-origin-carname-mpg-km">mpg cyl disp hp   wt accler year origin                   carname mpg_km</h2>
-<h2 id="1-18-8-307-17-3504-12-0-70-1-chevrolet-chevelle-malibu-28-962">1  18   8  307 17 3504   12.0   70      1 chevrolet chevelle malibu 28.962</h2>
-<h2 id="2-15-8-350-35-3693-11-5-70-1-buick-skylark-320-24-135">2  15   8  350 35 3693   11.5   70      1         buick skylark 320 24.135</h2>
-<h2 id="3-18-8-318-29-3436-11-0-70-1-plymouth-satellite-28-962">3  18   8  318 29 3436   11.0   70      1        plymouth satellite 28.962</h2>
-<h2 id="4-16-8-304-29-3433-12-0-70-1-amc-rebel-sst-25-744">4  16   8  304 29 3433   12.0   70      1             amc rebel sst 25.744</h2>
-<h2 id="5-17-8-302-24-3449-10-5-70-1-ford-torino-27-353">5  17   8  302 24 3449   10.5   70      1               ford torino 27.353</h2>
-<h2 id="6-15-8-429-42-4341-10-0-70-1-ford-galaxie-500-24-135">6  15   8  429 42 4341   10.0   70      1          ford galaxie 500 24.135</h2>
-<h1>filter: car 데이터 mpg열의 NA가 아닌 모든 데이터 추출</h1>
-<h1>mutate: 기존 mpg열을 사용해 새로운 mpg_km열 생성</h1>
-</li>
+<pre><code># 3 subset data: filter mpg &gt; 50
+set3 &lt;- filter(car, mpg &gt; 30)
+head(set3)
+
+##   mpg cyl disp hp   wt accler year origin             carname
+## 1  31   4   71 62 1773   19.0   71      3 toyota corolla 1200
+## 2  35   4   72 66 1613   18.0   71      3         datsun 1200
+## 3  31   4   79 64 1950   19.0   74      3         datsun b210
+## 4  32   4   71 62 1836   21.0   74      3 toyota corolla 1200
+## 5  31   4   76 53 1649   16.5   74      3       toyota corona
+## 6  32   4   83 58 2003   19.0   74      3          datsun 710
+</code></pre>
+<h3 id="변수-생성-mutate"><a href="#변수-생성-mutate" class="headerlink" title="변수 생성: mutate"></a>변수 생성: mutate</h3><ul>
+<li>  mutate(새로운 변수 이름 = 기존 변수 활용)</li>
+<li>  <strong>%&gt;% 파이프 연산자</strong>: 연산자 사용하여 연결</li>
 </ul>
-<h3 id="데이터-요약-통계치-평균">데이터 요약 통계치(평균)</h3>
-<ul>
-<li>
-<p>summarize(mean(변수이름))</p>
-<h1>mean and standard deviation</h1>
-<p>car %&gt;%<br>
-summarize(mean(mpg), mean(hp), mean(wt))</p>
-<h2 id="mean-mpg-mean-hp-mean-wt">mean(mpg) mean(hp) mean(wt)</h2>
-<h2 id="1-23-51457-51-38945-2970-425">1  23.51457 51.38945 2970.425</h2>
-<h1>몇 개 변수의 평균값 한 번에 구하기</h1>
-<p>select(car, 1:6) %&gt;%<br>
-colMeans() # 데이터를 열로 재구성하여 평균값 구함</p>
-<h2 id="mpg-cyl-disp-hp-wt-accler">mpg         cyl        disp          hp          wt      accler</h2>
-<h2 id="23-514573-5-454774-193-425879-51-389447-2970-424623-15-568090">23.514573    5.454774  193.425879   51.389447 2970.424623   15.568090</h2>
-</li>
+<pre><code># create a derived variable
+set4 &lt;- car %&gt;%
+   filter(!is.na(mpg)) %&gt;%
+   mutate(mpg_km = mpg*1.609)
+head(set4)
+
+##   mpg cyl disp hp   wt accler year origin                   carname mpg_km
+## 1  18   8  307 17 3504   12.0   70      1 chevrolet chevelle malibu 28.962
+## 2  15   8  350 35 3693   11.5   70      1         buick skylark 320 24.135
+## 3  18   8  318 29 3436   11.0   70      1        plymouth satellite 28.962
+## 4  16   8  304 29 3433   12.0   70      1             amc rebel sst 25.744
+## 5  17   8  302 24 3449   10.5   70      1               ford torino 27.353
+## 6  15   8  429 42 4341   10.0   70      1          ford galaxie 500 24.135
+
+# filter: car 데이터 mpg열의 NA가 아닌 모든 데이터 추출
+# mutate: 기존 mpg열을 사용해 새로운 mpg_km열 생성
+</code></pre>
+<h3 id="데이터-요약-통계치-평균"><a href="#데이터-요약-통계치-평균" class="headerlink" title="데이터 요약 통계치(평균)"></a>데이터 요약 통계치(평균)</h3><ul>
+<li>  summarize(mean(변수이름))</li>
 </ul>
-<h3 id="백터화-요약치-summarize-all-FUN">백터화 요약치: summarize_all(FUN)</h3>
-<ul>
-<li>
-<p>열추출하여 기술통계치 구하고 요약치 보기</p>
-<p>a1 &lt;- select(car, 1:6) %&gt;% summarize_all(mean)<br>
-a2 &lt;- select(car, 1:6) %&gt;% summarize_all(sd)<br>
-a3 &lt;- select(car, 1:6) %&gt;% summarize_all(min)<br>
-a4 &lt;- select(car, 1:6) %&gt;% summarize_all(max)</p>
-<p>table1 &lt;- data.frame(rbind(a1,a2,a3,a4))<br>
-rownames(table1) &lt;- c(“mean”, “sd”, “min”, “max”) # data.frame을 tbl_df로 전환시켰으므로 data.frame으로 원상복귀하여 행 이름을 바꿈</p>
-<p>table1</p>
-<h2 id="mpg-cyl-disp-hp-wt-accler-2">mpg      cyl     disp       hp        wt    accler</h2>
-<h2 id="mean-23-514573-5-454774-193-4259-51-38945-2970-4246-15-568090">mean 23.514573 5.454774 193.4259 51.38945 2970.4246 15.568090</h2>
-<h2 id="sd-7-815984-1-701004-104-2698-29-93236-846-8418-2-757689">sd    7.815984 1.701004 104.2698 29.93236  846.8418  2.757689</h2>
-<h2 id="min-9-000000-3-000000-68-0000-1-00000-1613-0000-8-000000">min   9.000000 3.000000  68.0000  1.00000 1613.0000  8.000000</h2>
-<h2 id="max-46-600000-8-000000-455-0000-94-00000-5140-0000-24-800000">max  46.600000 8.000000 455.0000 94.00000 5140.0000 24.800000</h2>
-</li>
+<pre><code># mean and standard deviation
+car %&gt;%
+   summarize(mean(mpg), mean(hp), mean(wt))
+
+##   mean(mpg) mean(hp) mean(wt)
+## 1  23.51457 51.38945 2970.425
+
+# 몇 개 변수의 평균값 한 번에 구하기
+select(car, 1:6) %&gt;%
+   colMeans() # 데이터를 열로 재구성하여 평균값 구함
+
+##         mpg         cyl        disp          hp          wt      accler 
+##   23.514573    5.454774  193.425879   51.389447 2970.424623   15.568090
+</code></pre>
+<h3 id="백터화-요약치-summarize-all-FUN"><a href="#백터화-요약치-summarize-all-FUN" class="headerlink" title="백터화 요약치: summarize_all(FUN)"></a>백터화 요약치: summarize_all(FUN)</h3><ul>
+<li>  열추출하여 기술통계치 구하고 요약치 보기</li>
 </ul>
-<h3 id="그룹별-통계량-group-by">그룹별 통계량: group_by</h3>
-<ul>
-<li>
-<p>group_by(변수), summarize(__=FUN()) 그룹별 요약통계량 구하기</p>
-<h1>summary statistics by group variable</h1>
-<p>car %&gt;%<br>
-group_by(cyl) %&gt;%<br>
-summarize(mean_mpg = mean(mpg), na.rm = TRUE)</p>
-<h2 id="summarise-ungrouping-output-override-with-groups-argument"><code>summarise()</code> ungrouping output (override with <code>.groups</code> argument)</h2>
-<h2 id="A-tibble-5-x-3"># A tibble: 5 x 3</h2>
-<h2 id="cyl-mean-mpg-na-rm">cyl mean_mpg na.rm</h2>
-<h2 id="int-dbl-lgl"><int>    <dbl> <lgl></lgl></dbl></int></h2>
-<h2 id="1-3-20-6-TRUE">1     3     20.6 TRUE</h2>
-<h2 id="2-4-29-3-TRUE">2     4     29.3 TRUE</h2>
-<h2 id="3-5-27-4-TRUE">3     5     27.4 TRUE</h2>
-<h2 id="4-6-20-0-TRUE">4     6     20.0 TRUE</h2>
-<h2 id="5-8-15-0-TRUE">5     8     15.0 TRUE</h2>
-<h1>group_by: car 데이터의 cyl열을 그룹으로 묶음</h1>
-<h1>summarize: cyl그룹의 mpg 평균을 구함</h1>
-<h1>na.rm = TURE: 통계 분석 시 결측값을 제외</h1>
-</li>
-<li>
-<p>퀴즈</p>
-<p>height &lt;- c(165, 170, 155, 185)<br>
-weight &lt;- c(55, 65, 50, 110)<br>
-gender &lt;- c(“Female”, “Male”, “Female”, “Male”)</p>
-<p>df &lt;- data.frame(height, weight, gender)</p>
-<p>df</p>
-<h2 id="height-weight-gender">height weight gender</h2>
-<h2 id="1-165-55-Female">1    165     55 Female</h2>
-<h2 id="2-170-65-Male">2    170     65   Male</h2>
-<h2 id="3-155-50-Female">3    155     50 Female</h2>
-<h2 id="4-185-110-Male">4    185    110   Male</h2>
-<p>df %&gt;%<br>
-group_by(height) %&gt;%<br>
-summarize(result = mean(gender))</p>
-<h2 id="Warning-in-mean-default-gender-argument-is-not-numeric-or-logical-returning">Warning in mean.default(gender): argument is not numeric or logical: returning</h2>
-<h2 id="NA">NA</h2>
-<h2 id="Warning-in-mean-default-gender-argument-is-not-numeric-or-logical-returning-2">Warning in mean.default(gender): argument is not numeric or logical: returning</h2>
-<h2 id="NA-2">NA</h2>
-<h2 id="Warning-in-mean-default-gender-argument-is-not-numeric-or-logical-returning-3">Warning in mean.default(gender): argument is not numeric or logical: returning</h2>
-<h2 id="NA-3">NA</h2>
-<h2 id="Warning-in-mean-default-gender-argument-is-not-numeric-or-logical-returning-4">Warning in mean.default(gender): argument is not numeric or logical: returning</h2>
-<h2 id="NA-4">NA</h2>
-<h2 id="summarise-ungrouping-output-override-with-groups-argument-2"><code>summarise()</code> ungrouping output (override with <code>.groups</code> argument)</h2>
-<h2 id="A-tibble-4-x-2"># A tibble: 4 x 2</h2>
-<h2 id="height-result">height result</h2>
-<h2 id="dbl-dbl"><dbl>  <dbl></dbl></dbl></h2>
-<h2 id="1-155-NA">1    155     NA</h2>
-<h2 id="2-165-NA">2    165     NA</h2>
-<h2 id="3-170-NA">3    170     NA</h2>
-<h2 id="4-185-NA">4    185     NA</h2>
-<p>summarize(group_by(df, gender), result=mean(height))</p>
-<h2 id="summarise-ungrouping-output-override-with-groups-argument-3"><code>summarise()</code> ungrouping output (override with <code>.groups</code> argument)</h2>
-<h2 id="A-tibble-2-x-2"># A tibble: 2 x 2</h2>
-<h2 id="gender-result">gender result</h2>
-<h2 id="chr-dbl"><chr>   <dbl></dbl></chr></h2>
-<h2 id="1-Female-160">1 Female   160</h2>
-<h2 id="2-Male-178">2 Male     178.</h2>
-<p>filter(df, gender = c(“Male”, “Female”)) %&gt;%<br>
-summarize(result = mean())</p>
-<h2 id="Error-Problem-with-filter-input-1">Error: Problem with <code>filter()</code> input <code>..1</code>.</h2>
-<h2 id="x-Input-1-is-named">x Input <code>..1</code> is named.</h2>
-<h2 id="i-This-usually-means-that-you’ve-used-instead-of">i This usually means that you’ve used <code>=</code> instead of <code>==</code>.</h2>
-<h2 id="i-Did-you-mean-gender-c-Male-Female">i Did you mean <code>gender == c(&quot;Male&quot;, &quot;Female&quot;)</code>?</h2>
-<p>df %&gt;%<br>
-select(height) %&gt;%<br>
-summarize(result = mean(gender))</p>
-<h2 id="Warning-in-mean-default-gender-argument-is-not-numeric-or-logical-returning-5">Warning in mean.default(gender): argument is not numeric or logical: returning</h2>
-<h2 id="NA-5">NA</h2>
-<h2 id="result">result</h2>
-<h2 id="1-NA">1     NA</h2>
-</li>
+<pre><code>a1 &lt;- select(car, 1:6) %&gt;% summarize_all(mean)
+a2 &lt;- select(car, 1:6) %&gt;% summarize_all(sd)
+a3 &lt;- select(car, 1:6) %&gt;% summarize_all(min)
+a4 &lt;- select(car, 1:6) %&gt;% summarize_all(max)
+
+table1 &lt;- data.frame(rbind(a1,a2,a3,a4))
+rownames(table1) &lt;- c(&quot;mean&quot;, &quot;sd&quot;, &quot;min&quot;, &quot;max&quot;) # data.frame을 tbl_df로 전환시켰으므로 data.frame으로 원상복귀하여 행 이름을 바꿈
+
+table1
+
+##            mpg      cyl     disp       hp        wt    accler
+## mean 23.514573 5.454774 193.4259 51.38945 2970.4246 15.568090
+## sd    7.815984 1.701004 104.2698 29.93236  846.8418  2.757689
+## min   9.000000 3.000000  68.0000  1.00000 1613.0000  8.000000
+## max  46.600000 8.000000 455.0000 94.00000 5140.0000 24.800000
+</code></pre>
+<h3 id="그룹별-통계량-group-by"><a href="#그룹별-통계량-group-by" class="headerlink" title="그룹별 통계량: group_by"></a>그룹별 통계량: group_by</h3><ul>
+<li>  group_by(변수), summarize(__=FUN()) 그룹별 요약통계량 구하기</li>
 </ul>
+<pre><code># summary statistics by group variable
+car %&gt;%
+   group_by(cyl) %&gt;%
+   summarize(mean_mpg = mean(mpg), na.rm = TRUE)
+
+## `summarise()` ungrouping output (override with `.groups` argument)
+
+## # A tibble: 5 x 3
+##     cyl mean_mpg na.rm
+##   &lt;int&gt;    &lt;dbl&gt; &lt;lgl&gt;
+## 1     3     20.6 TRUE 
+## 2     4     29.3 TRUE 
+## 3     5     27.4 TRUE 
+## 4     6     20.0 TRUE 
+## 5     8     15.0 TRUE
+
+# group_by: car 데이터의 cyl열을 그룹으로 묶음
+# summarize: cyl그룹의 mpg 평균을 구함
+# na.rm = TURE: 통계 분석 시 결측값을 제외
+</code></pre>
+<ul>
+<li>  퀴즈</li>
+</ul>
+<pre><code>height &lt;- c(165, 170, 155, 185)  
+weight &lt;- c(55, 65, 50, 110)  
+gender &lt;- c(&quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;, &quot;Male&quot;)
+
+df &lt;- data.frame(height, weight, gender)
+
+df
+
+##   height weight gender
+## 1    165     55 Female
+## 2    170     65   Male
+## 3    155     50 Female
+## 4    185    110   Male
+
+df %&gt;% 
+   group_by(height) %&gt;%
+   summarize(result = mean(gender))
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+## `summarise()` ungrouping output (override with `.groups` argument)
+
+## # A tibble: 4 x 2
+##   height result
+##    &lt;dbl&gt;  &lt;dbl&gt;
+## 1    155     NA
+## 2    165     NA
+## 3    170     NA
+## 4    185     NA
+
+summarize(group_by(df, gender), result=mean(height))
+
+## `summarise()` ungrouping output (override with `.groups` argument)
+
+## # A tibble: 2 x 2
+##   gender result
+##   &lt;chr&gt;   &lt;dbl&gt;
+## 1 Female   160 
+## 2 Male     178.
+
+filter(df, gender = c(&quot;Male&quot;, &quot;Female&quot;)) %&gt;%
+   summarize(result = mean())
+
+## Error: Problem with `filter()` input `..1`.
+## x Input `..1` is named.
+## i This usually means that you&#39;ve used `=` instead of `==`.
+## i Did you mean `gender == c(&quot;Male&quot;, &quot;Female&quot;)`?
+
+df %&gt;%
+   select(height) %&gt;%
+   summarize(result = mean(gender))
+
+## Warning in mean.default(gender): argument is not numeric or logical: returning
+## NA
+
+##   result
+## 1     NA
+</code></pre>
 
         </div>
         <footer class="article-footer">
@@ -704,7 +707,7 @@ summarize(result = mean(gender))</p>
 
 
 
-    <a data-url="https://ne-choi.github.io/2020/11/13/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/" data-id="ckl3pbofr000ewsue9or41wvb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ne-choi.github.io/2020/11/13/Study/Postech/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9DR/%E2%85%A2_R_%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%A1%B0/" data-id="ckl3pgm9v000if4ue7zih2rql" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -785,21 +788,16 @@ summarize(result = mean(gender))</p>
         "description": "
 POSTECH MOOC 중, 빅데이터분석과 R프로그래밍 Ⅰ 과정입니다.
 
-1. R 데이터 생성
-파일 불러들이기
-
-
+1. R 데이터 생성파일 불러들이기
 csv
-brain &lt;- read.csv(“week3_2/brain2210.csv”, header=T)
+ brain &lt;- read.csv(“week3_2/brain2210.csv”, header=T)
+
+ xls  
 
 
-xls
 
-
-
-*.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한
-다음 read.csv 함수를",
-        "wordCount": 3075,
+*.xls 파일인 경우, 데이터를 csv(comma separated value)로 저장한  다음 read.csv 함수",
+        "wordCount": 3317,
         "publisher": "ne_choi",
         "mainEntityOfPage": {
             "@type": "WebPage",
