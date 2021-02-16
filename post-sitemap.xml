@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://ne-choi.github.io/2020/11/20/Projects/Consumption_Trend_Analysis/</loc>
+        <lastmod>2021-02-16T14:40:26.655Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://ne-choi.github.io/2021/02/01/Tips/Blog/hexo-post-and-deploy/</loc>
         <lastmod>2021-02-08T12:55:43.725Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -347,14 +355,6 @@
     <url>
         <loc>https://ne-choi.github.io/2020/11/05/Tips/Programming/How%20to%20unzip%20multiple%20zip%20files%20at%20once/</loc>
         <lastmod>2021-01-27T01:28:11.323Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ne-choi.github.io/2020/11/20/Projects/Consumption_Trend_Analysis/</loc>
-        <lastmod>2021-01-26T12:43:15.349Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
