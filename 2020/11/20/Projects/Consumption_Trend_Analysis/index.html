@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -228,7 +228,7 @@ ga('send', 'pageview');
             
 
             <h1 id="KDX-Contest-2020-final-analysis"><a href="#KDX-Contest-2020-final-analysis" class="headerlink" title="KDX_Contest_2020_final_analysis"></a>KDX_Contest_2020_final_analysis</h1><p>코로나19 이후, 유의미한 소비 인사이트를 발굴하기 위해 뷰티 업종 소비 추이를 분석하였습니다. 해당 파일은 코드 위주의 파일이며 세부 내역은 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/ne-choi/project/blob/main/Consumption_Trend_Analysis/KDX%20Contest_R%EB%9F%AC%EB%B7%B0%ED%8C%80.pdf">최종 제출한 PPT</a>에서 확인 가능합니다.  </p>
-<h2 id="1-준비-작업"><a href="#1-준비-작업" class="headerlink" title="1. 준비 작업"></a>1. 준비 작업</h2><h3 id="1-1-패키지-설치-및-불러오기"><a href="#1-1-패키지-설치-및-불러오기" class="headerlink" title="1.1 패키지 설치 및 불러오기"></a>1.1 패키지 설치 및 불러오기</h3><pre class="line-numbers language-r" data-language="r"><code class="language-r"># 패키지 설치하기
+<h2 id="1-준비-작업"><a href="#1-준비-작업" class="headerlink" title="1. 준비 작업"></a>1. 준비 작업</h2><h3 id="1-1-패키지-설치-및-불러오기"><a href="#1-1-패키지-설치-및-불러오기" class="headerlink" title="1.1 패키지 설치 및 불러오기"></a>1.1 패키지 설치 및 불러오기</h3><figure class="line-numbers language-r" data-language="r"><code class="language-r"># 패키지 설치하기
 install.packages(&quot;readxl&quot;)
 install.packages(&quot;dplyr&quot;)
 install.packages(&quot;tidyr&quot;)
@@ -238,8 +238,8 @@ install.packages(&quot;lubridate&quot;)
 install.packages(&quot;labeling&quot;)
 install.packages(&quot;extrafont&quot;)
 install.packages(&#39;devtools&#39;)
-devtools::install_github(&#39;bbc&#x2F;bbplot&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 패키지 불러오기
+devtools::install_github(&#39;bbc&#x2F;bbplot&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 패키지 불러오기
 library(readxl)
 library(dplyr)
 library(tidyr)
@@ -247,8 +247,8 @@ library(reshape2)
 library(ggplot2)
 library(lubridate)
 library(labeling)
-library(extrafont)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 시각화 테마를 위한 bbplot 패키지 설치 
+library(extrafont)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 시각화 테마를 위한 bbplot 패키지 설치 
 if(!require(pacman))install.packages(&quot;pacman&quot;)
 
 pacman::p_load(&#39;dplyr&#39;, &#39;tidyr&#39;, &#39;gapminder&#39;,
@@ -256,49 +256,49 @@ pacman::p_load(&#39;dplyr&#39;, &#39;tidyr&#39;, &#39;gapminder&#39;,
                &#39;forcats&#39;, &#39;R.utils&#39;, &#39;png&#39;, 
                &#39;grid&#39;, &#39;ggpubr&#39;, &#39;scales&#39;,
                &#39;bbplot&#39;)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
 
-<h2 id="2-Mcorpotarion-Data"><a href="#2-Mcorpotarion-Data" class="headerlink" title="2. Mcorpotarion Data"></a>2. Mcorpotarion Data</h2><h3 id="2-1-기초-amp-색조-화장품-엑셀-정리"><a href="#2-1-기초-amp-색조-화장품-엑셀-정리" class="headerlink" title="2.1 기초 &amp; 색조 화장품 엑셀 정리"></a>2.1 기초 &amp; 색조 화장품 엑셀 정리</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 사용할 데이터만 정리하기(메이크업, 스킨케어)
+<h2 id="2-Mcorpotarion-Data"><a href="#2-Mcorpotarion-Data" class="headerlink" title="2. Mcorpotarion Data"></a>2. Mcorpotarion Data</h2><h3 id="2-1-기초-amp-색조-화장품-엑셀-정리"><a href="#2-1-기초-amp-색조-화장품-엑셀-정리" class="headerlink" title="2.1 기초 &amp; 색조 화장품 엑셀 정리"></a>2.1 기초 &amp; 색조 화장품 엑셀 정리</h3><figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 사용할 데이터만 정리하기(메이크업, 스킨케어)
 files &lt;- list.files(path &#x3D; &quot;data&#x2F;use&quot;, pattern &#x3D; &quot;*.xlsx&quot;, full.names &#x3D; T)  
 products &lt;- sapply(files, read_excel, simplify &#x3D; FALSE) %&gt;% 
   bind_rows(.id &#x3D; &quot;id&quot;)
 
-glimpse(products)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-2-월별-추이-확인을-위한-전처리-및-시각화"><a href="#2-2-월별-추이-확인을-위한-전처리-및-시각화" class="headerlink" title="2.2 월별 추이 확인을 위한 전처리 및 시각화"></a>2.2 월별 추이 확인을 위한 전처리 및 시각화</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 전체 필터 넣기
+glimpse(products)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<h3 id="2-2-월별-추이-확인을-위한-전처리-및-시각화"><a href="#2-2-월별-추이-확인을-위한-전처리-및-시각화" class="headerlink" title="2.2 월별 추이 확인을 위한 전처리 및 시각화"></a>2.2 월별 추이 확인을 위한 전처리 및 시각화</h3><figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 전체 필터 넣기
 filter_products &lt;- group_by(products, 카테고리명, 구매날짜, 고객성별, 고객나이, 구매금액, 구매수) %&gt;%
   separate(구매날짜, into &#x3D; c(&quot;구매연월&quot;, &quot;삭제(일자)&quot;), sep &#x3D; 6) %&gt;%
   select(카테고리명, 구매연월, 고객성별, 고객나이, 구매금액, 구매수)
 
-head(filter_products, 2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+head(filter_products, 2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
 
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 성별&amp;나이 결측치 제거하기(성별 F, M, 나이 0 이상만 추출)
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 성별&amp;나이 결측치 제거하기(성별 F, M, 나이 0 이상만 추출)
 nomiss_products &lt;- filter_products %&gt;%
   filter(!is.na(고객성별) &amp; !is.na(고객나이)) %&gt;%
   filter((고객성별 %in% c(&quot;F&quot;, &quot;M&quot;)), 고객나이 &gt; 0)
 
-head(nomiss_products)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># &quot;메이크업 용품&quot; 카테고리 추출
+head(nomiss_products)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># &quot;메이크업 용품&quot; 카테고리 추출
 cosmetics &lt;- filter(nomiss_products, 카테고리명 &#x3D;&#x3D; &quot;메이크업 용품&quot;)
 
-cosmetics<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 월별 데이터 합계_메이크업 용품
+cosmetics<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 월별 데이터 합계_메이크업 용품
 summarise_cosmetics &lt;- cosmetics %&gt;%
   group_by(구매연월, 고객성별) %&gt;%
   summarise(금액합계 &#x3D; sum(구매금액))
 
-summarise_cosmetics<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+summarise_cosmetics<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
 
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># &quot;스킨 케어&quot; 카테코리 추출
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># &quot;스킨 케어&quot; 카테코리 추출
 skincare &lt;- filter(nomiss_products, 카테고리명 &#x3D;&#x3D; &quot;스킨케어&quot;)
 
-skincare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 월별 데이터 합계_스킨케어
+skincare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 월별 데이터 합계_스킨케어
 summarise_skincare &lt;- skincare %&gt;%
   group_by(구매연월, 고객성별) %&gt;%
   summarise(금액합계 &#x3D; sum(구매금액))
 
-summarise_skincare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 시각화하기
+summarise_skincare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 시각화하기
 ## &#39;단위: 억&#39; 적용
 label_ko_num &#x3D; function(num)&#123;
   ko_num &#x3D; function(x)&#123;
@@ -306,8 +306,8 @@ label_ko_num &#x3D; function(num)&#123;
     return(paste(new_num, &#39;억&#39;, sep &#x3D; &#39;&#39;))
   &#125;
   return(sapply(num, ko_num))
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#색조 화장품(메이크업 용품)_월별 추이_ppt.12p
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;">#색조 화장품(메이크업 용품)_월별 추이_ppt.12p
 library(ggplot2)
 
 graph_cosmetics &lt;- ggplot(summarise_cosmetics, aes(x &#x3D; 구매연월, y &#x3D; 금액합계, color &#x3D; 고객성별)) +
@@ -323,8 +323,8 @@ theme(
   scale_colour_manual(values &#x3D; c(&quot;#EB3232&quot;, &quot;#FAAB18&quot;)) +
   bbc_style()
 
-graph_cosmetics<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 기초 화장품(스킨케어)_월별 추이_ppt.12p
+graph_cosmetics<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 기초 화장품(스킨케어)_월별 추이_ppt.12p
 graph_skincare &lt;- ggplot(summarise_skincare, aes(x &#x3D; 구매연월, y &#x3D; 금액합계, color &#x3D; 고객성별)) +
   geom_point(size &#x3D; 2) +
   scale_y_continuous(labels &#x3D; label_ko_num) +
@@ -338,33 +338,33 @@ graph_skincare &lt;- ggplot(summarise_skincare, aes(x &#x3D; 구매연월, y &#x
   scale_colour_manual(values &#x3D; c(&quot;#EB3232&quot;, &quot;#FAAB18&quot;)) +
   bbc_style()
 
-graph_skincare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-3-실제-분석을-위한-데이터-전처리-및-시각화"><a href="#2-3-실제-분석을-위한-데이터-전처리-및-시각화" class="headerlink" title="2.3 실제 분석을 위한 데이터 전처리 및 시각화"></a>2.3 실제 분석을 위한 데이터 전처리 및 시각화</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 성별&amp;나이 결측치 제거하기(성별 F, M, 나이 0 이상만 추출)
+graph_skincare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<h3 id="2-3-실제-분석을-위한-데이터-전처리-및-시각화"><a href="#2-3-실제-분석을-위한-데이터-전처리-및-시각화" class="headerlink" title="2.3 실제 분석을 위한 데이터 전처리 및 시각화"></a>2.3 실제 분석을 위한 데이터 전처리 및 시각화</h3><figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 성별&amp;나이 결측치 제거하기(성별 F, M, 나이 0 이상만 추출)
 nomiss_products &lt;- products %&gt;%
   filter(!is.na(고객성별) &amp; !is.na(고객나이)) %&gt;%
   filter((고객성별 %in% c(&quot;F&quot;, &quot;M&quot;)), 고객나이 &gt; 0) %&gt;%
-  select(카테고리명, 구매날짜, 고객성별, 고객나이, OS유형, 구매금액, 구매수)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 비교값 만들기
+  select(카테고리명, 구매날짜, 고객성별, 고객나이, OS유형, 구매금액, 구매수)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 비교값 만들기
 compare_products &lt;- nomiss_products %&gt;%
   group_by(카테고리명, 구매날짜, 고객성별) %&gt;%
   summarise(금액합계 &#x3D; sum(구매금액))
 
-head(compare_products)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 억 원 단위 생성
+head(compare_products)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 억 원 단위 생성
 label_ko_num &#x3D; function(num)&#123;
   ko_num &#x3D; function(x)&#123;
     new_num &#x3D; x %&#x2F;% 100000000
     return(paste(new_num, &#39;억&#39;, sep &#x3D; &#39;&#39;))
    &#125;
     return(sapply(num, ko_num))
-   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터 -&gt; 날짜 데이터로 전환
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터 -&gt; 날짜 데이터로 전환
 library(lubridate)
 
 final_products &lt;- compare_products %&gt;%
-  mutate(구매일 &#x3D; ymd(구매날짜))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  mutate(구매일 &#x3D; ymd(구매날짜))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></figure>
 <ul>
-<li>시각화<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 색조화장품(메이크업 용품) 데이터 시각화 _ppt.14p
+<li>시각화<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 색조화장품(메이크업 용품) 데이터 시각화 _ppt.14p
 
 final_products
 
@@ -391,8 +391,8 @@ graph_cosmetics &lt;- ggplot(cosmetics, aes(x &#x3D; 구매일, y &#x3D; 금액�
   scale_colour_manual(values &#x3D; c(&quot;#EB3232&quot;, &quot;#FAAB18&quot;)) +
   bbc_style()
 
-graph_cosmetics<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 기초화장품(스킨케어) 데이터 시각화_ppt.14p
+graph_cosmetics<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 기초화장품(스킨케어) 데이터 시각화_ppt.14p
 skincare &lt;- final_products %&gt;%
   filter(카테고리명 &#x3D;&#x3D; &quot;스킨케어&quot;)
 
@@ -416,40 +416,40 @@ graph_skincare &lt;- ggplot(skincare, aes(x &#x3D; 구매일, y &#x3D; 금액합
   scale_colour_manual(values &#x3D; c(&quot;#EB3232&quot;, &quot;#FAAB18&quot;)) +
   bbc_style()
 
-graph_skincare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+graph_skincare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
 <h2 id="3-Shinhancard-Data"><a href="#3-Shinhancard-Data" class="headerlink" title="3. Shinhancard Data"></a>3. Shinhancard Data</h2><h3 id="3-1-신한카드-‘화장품’-카테고리-데이터-전처리"><a href="#3-1-신한카드-‘화장품’-카테고리-데이터-전처리" class="headerlink" title="3.1 신한카드 ‘화장품’ 카테고리 데이터 전처리"></a>3.1 신한카드 ‘화장품’ 카테고리 데이터 전처리</h3></li>
 </ul>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 오프라인 구매 데이터 불러오기 
-shinhancard &lt;- read_xlsx(&quot;data&#x2F;Shinhancard.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 오프라인 구매 데이터 결측치 제거
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 오프라인 구매 데이터 불러오기 
+shinhancard &lt;- read_xlsx(&quot;data&#x2F;Shinhancard.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 오프라인 구매 데이터 결측치 제거
 shinhancard &lt;- shinhancard %&gt;%
   select(-c(6:8))
 
-head(shinhancard)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 데이터 필터링
+head(shinhancard)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 데이터 필터링
 filter_sh_beauty &lt;- shinhancard %&gt;%
   select(업종, 일별, 성별, 연령대별, &#39;카드이용건수(천건)&#39;) %&gt;%
   filter(업종 &#x3D;&#x3D; &quot;M018_화장품&quot;)
 
-head(filter_sh_beauty)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 성별&amp;나이 결측치 제거하기(성별 F, M, 나이 0 이상만 추출)
+head(filter_sh_beauty)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 성별&amp;나이 결측치 제거하기(성별 F, M, 나이 0 이상만 추출)
 nomiss_sh_beauty &lt;- filter_sh_beauty %&gt;%
   filter(!is.na(성별) &amp; !is.na(연령대별)) %&gt;%
   filter((성별 %in% c(&quot;F&quot;, &quot;M&quot;)), 연령대별 &gt; 0)
 
-nomiss_sh_beauty<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 &#39;화장품&#39; 카테고리 구매수 합계
+nomiss_sh_beauty<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 &#39;화장품&#39; 카테고리 구매수 합계
 sum_sh_beauty &lt;- nomiss_sh_beauty %&gt;%
   group_by(일별, 성별) %&gt;%
   summarise(&#39;구매횟수&#39; &#x3D; sum(&#96;카드이용건수(천건)&#96;))
 
-sum_sh_beauty<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 데이터 시계열 데이터로 변환
+sum_sh_beauty<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 데이터 시계열 데이터로 변환
 final_sh_beauty &lt;- sum_sh_beauty %&gt;%
   mutate(구매일자 &#x3D; ymd(일별))
 
-final_sh_beauty<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-2-신한카드-데이터-시각화"><a href="#3-2-신한카드-데이터-시각화" class="headerlink" title="3.2 신한카드 데이터 시각화"></a>3.2 신한카드 데이터 시각화</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 &#39;화장품&#39; 카테고리 데이터 시각화_ppt.13p
+final_sh_beauty<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<h3 id="3-2-신한카드-데이터-시각화"><a href="#3-2-신한카드-데이터-시각화" class="headerlink" title="3.2 신한카드 데이터 시각화"></a>3.2 신한카드 데이터 시각화</h3><figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 신한카드 &#39;화장품&#39; 카테고리 데이터 시각화_ppt.13p
 graph_sh_beauty &lt;- ggplot(final_sh_beauty, aes(x &#x3D; 구매일자, y &#x3D; 구매횟수, color &#x3D; 성별)) +
   geom_smooth() + geom_point(size &#x3D; 0.1) +
   scale_x_date(date_breaks&#x3D;&quot;3 month&quot;, minor_breaks&#x3D;NULL, date_labels &#x3D; &quot;%Y.%m&quot;) +
@@ -464,19 +464,19 @@ graph_sh_beauty &lt;- ggplot(final_sh_beauty, aes(x &#x3D; 구매일자, y &#x3D
   scale_colour_manual(values &#x3D; c(&quot;#EB3232&quot;, &quot;#FAAB18&quot;)) +
   bbc_style()
    
-graph_sh_beauty<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="4-Naver-Keyword-Data"><a href="#4-Naver-Keyword-Data" class="headerlink" title="4. Naver Keyword Data"></a>4. Naver Keyword Data</h2><h3 id="4-1-마스크-키워드-검색량-데이터"><a href="#4-1-마스크-키워드-검색량-데이터" class="headerlink" title="4.1 마스크 키워드 검색량 데이터"></a>4.1 마스크 키워드 검색량 데이터</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 마스크 키워드 검색량 데이터 불러오기
-mask &lt;- read_excel(&quot;data&#x2F;mask_keywords_data.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 숫자형으로 변환
+graph_sh_beauty<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<h2 id="4-Naver-Keyword-Data"><a href="#4-Naver-Keyword-Data" class="headerlink" title="4. Naver Keyword Data"></a>4. Naver Keyword Data</h2><h3 id="4-1-마스크-키워드-검색량-데이터"><a href="#4-1-마스크-키워드-검색량-데이터" class="headerlink" title="4.1 마스크 키워드 검색량 데이터"></a>4.1 마스크 키워드 검색량 데이터</h3><figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 마스크 키워드 검색량 데이터 불러오기
+mask &lt;- read_excel(&quot;data&#x2F;mask_keywords_data.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 숫자형으로 변환
 
-mask$마스크검색량 &lt;- as.numeric(mask$마스크검색량)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+mask$마스크검색량 &lt;- as.numeric(mask$마스크검색량)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></figure>
 
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 날짜형으로 변환
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 날짜형으로 변환
 final_mask &lt;- mask %&gt;%
   mutate(검색일자 &#x3D; ymd(구매날짜))
 
-final_mask<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 마스크 키워드 검색량 데이터 시각화_ppt.15p
+final_mask<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 마스크 키워드 검색량 데이터 시각화_ppt.15p
 graph_mask &lt;- ggplot(final_mask, aes(x &#x3D; 검색일자, y &#x3D; 마스크검색량)) +
   geom_smooth(color &#x3D; &quot;#EB3232&quot;) +
   scale_y_continuous(breaks &#x3D; seq(0, 100, by &#x3D; 10)) +
@@ -488,19 +488,19 @@ graph_mask &lt;- ggplot(final_mask, aes(x &#x3D; 검색일자, y &#x3D; 마스�
     axis.title.y &#x3D; element_text(size &#x3D; 12, family &#x3D; &quot;NanumSquare_ac&quot;)) +
   bbc_style()
   
-graph_mask<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-2-색조-amp-기초-화장품-키워드-검색량-데이터"><a href="#4-2-색조-amp-기초-화장품-키워드-검색량-데이터" class="headerlink" title="4.2 (색조 &amp; 기초) 화장품 키워드 검색량 데이터"></a>4.2 (색조 &amp; 기초) 화장품 키워드 검색량 데이터</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># (색조 &amp; 기초) 화장품 키워드 검색량 데이터 불러오기
-makeup &lt;- read_excel(&quot;data&#x2F;색조 vs 기초 화장품 키워드 검색량.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 숫자형으로 변환
+graph_mask<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<h3 id="4-2-색조-amp-기초-화장품-키워드-검색량-데이터"><a href="#4-2-색조-amp-기초-화장품-키워드-검색량-데이터" class="headerlink" title="4.2 (색조 &amp; 기초) 화장품 키워드 검색량 데이터"></a>4.2 (색조 &amp; 기초) 화장품 키워드 검색량 데이터</h3><figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># (색조 &amp; 기초) 화장품 키워드 검색량 데이터 불러오기
+makeup &lt;- read_excel(&quot;data&#x2F;색조 vs 기초 화장품 키워드 검색량.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 숫자형으로 변환
 makeup$색조화장품 &lt;- as.numeric(makeup$색조화장품)
-makeup$기초화장품 &lt;- as.numeric(makeup$기초화장품)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 날짜형으로 변환
+makeup$기초화장품 &lt;- as.numeric(makeup$기초화장품)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 날짜형으로 변환
 trans_makeup &lt;- makeup %&gt;%
   mutate(검색일자 &#x3D; ymd(날짜))
 
-trans_makeup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+trans_makeup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></figure>
 
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 색조 &amp; 기초 메이크업 화장품 키워드 검색량 데이터 시각화_ppt.16p
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 색조 &amp; 기초 메이크업 화장품 키워드 검색량 데이터 시각화_ppt.16p
 
 graph_makeup &lt;- ggplot(trans_makeup, aes(x &#x3D; 검색일자, y &#x3D; &#96;색조 &amp; 기초 화장품 검색량&#96;)) +
   geom_line(aes(y &#x3D; &#96;색조화장품&#96;), color &#x3D; &quot;#EB3232&quot;) + 
@@ -515,17 +515,17 @@ graph_makeup &lt;- ggplot(trans_makeup, aes(x &#x3D; 검색일자, y &#x3D; &#96
   geom_hline(yintercept &#x3D; 0, size &#x3D; 1, colour&#x3D;&quot;#999999&quot;) +
   bbc_style()
 
-graph_makeup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-3-립-amp-아이-화장품-키워드-검색량-데이터"><a href="#4-3-립-amp-아이-화장품-키워드-검색량-데이터" class="headerlink" title="4.3 (립 &amp; 아이) 화장품 키워드 검색량 데이터"></a>4.3 (립 &amp; 아이) 화장품 키워드 검색량 데이터</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># (립 &amp; 아이) 화장품 키워드 검색량 데이터 불러오기
-lipeye &lt;- read_excel(&quot;data&#x2F;메이크업 제품 비교(아이, 립).xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+graph_makeup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<h3 id="4-3-립-amp-아이-화장품-키워드-검색량-데이터"><a href="#4-3-립-amp-아이-화장품-키워드-검색량-데이터" class="headerlink" title="4.3 (립 &amp; 아이) 화장품 키워드 검색량 데이터"></a>4.3 (립 &amp; 아이) 화장품 키워드 검색량 데이터</h3><figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># (립 &amp; 아이) 화장품 키워드 검색량 데이터 불러오기
+lipeye &lt;- read_excel(&quot;data&#x2F;메이크업 제품 비교(아이, 립).xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></figure>
 
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 날짜형으로 변환
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 날짜형으로 변환
 trans_lipeye &lt;- lipeye %&gt;%
   mutate(검색일자 &#x3D; ymd(날짜))
 
-trans_lipeye<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+trans_lipeye<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></figure>
 
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 립 &amp; 아이 메이크업 화장품 키워드 검색량 데이터 시각화_ppt.15p
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 립 &amp; 아이 메이크업 화장품 키워드 검색량 데이터 시각화_ppt.15p
 
 graph_lipeye &lt;- ggplot(trans_lipeye, aes(x &#x3D; 검색일자, y &#x3D; &#96;립 &amp; 아이 메이크업 검색량&#96;)) +
   geom_line(aes(y &#x3D; &#96;립 메이크업&#96;), color &#x3D; &quot;#EB3232&quot;) + 
@@ -540,18 +540,18 @@ graph_lipeye &lt;- ggplot(trans_lipeye, aes(x &#x3D; 검색일자, y &#x3D; &#96
   geom_hline(yintercept &#x3D; 0, size &#x3D; 1, colour&#x3D;&quot;#999999&quot;) +
   bbc_style()
 
-graph_lipeye<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-4-마스크프루프-화장품-키워드-검색량-데이터"><a href="#4-4-마스크프루프-화장품-키워드-검색량-데이터" class="headerlink" title="4.4 (마스크프루프) 화장품 키워드 검색량 데이터"></a>4.4 (마스크프루프) 화장품 키워드 검색량 데이터</h3><pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># (마스크프루프) 화장품 키워드 검색량 데이터 불러오기
-maskproof &lt;- read_excel(&quot;data&#x2F;마스크프루프 키워드 데이터.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 숫자형으로 변환
-maskproof$마스크프루프 &lt;- as.numeric(maskproof$마스크프루프)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+graph_lipeye<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<h3 id="4-4-마스크프루프-화장품-키워드-검색량-데이터"><a href="#4-4-마스크프루프-화장품-키워드-검색량-데이터" class="headerlink" title="4.4 (마스크프루프) 화장품 키워드 검색량 데이터"></a>4.4 (마스크프루프) 화장품 키워드 검색량 데이터</h3><figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># (마스크프루프) 화장품 키워드 검색량 데이터 불러오기
+maskproof &lt;- read_excel(&quot;data&#x2F;마스크프루프 키워드 데이터.xlsx&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 숫자형으로 변환
+maskproof$마스크프루프 &lt;- as.numeric(maskproof$마스크프루프)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></figure>
 
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 날짜형으로 변환
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 문자형 데이터를 날짜형으로 변환
 trans_maskproof &lt;- maskproof %&gt;%
   mutate(검색일자 &#x3D; ymd(날짜))
 
-trans_maskproof<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 마스크프루프 화장품 키워드 검색량 데이터 시각화
+trans_maskproof<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></figure>
+<figure class="line-numbers language-&#123;r&#125;" data-language="&#123;r&#125;"><code class="language-&#123;r&#125;"># 마스크프루프 화장품 키워드 검색량 데이터 시각화
 
 graph_maskproof &lt;- ggplot(trans_maskproof, aes(x &#x3D; 검색일자, y &#x3D; &#96;마스크프루프 제품 검색량&#96;)) +
   geom_line(aes(y &#x3D; &#96;마스크프루프&#96;), color &#x3D; &quot;#EB3232&quot;) +
@@ -564,7 +564,7 @@ graph_maskproof &lt;- ggplot(trans_maskproof, aes(x &#x3D; 검색일자, y &#x3D
     axis.title.y &#x3D; element_text(size &#x3D; 12, family &#x3D; &quot;NanumSquare_ac&quot;)) +
   bbc_style()
   
-graph_maskproof<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+graph_maskproof<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></figure>
 
         </div>
         <footer class="article-footer">
